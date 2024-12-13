@@ -112,21 +112,11 @@ type GetDomainsUserAttributesSettingResult struct {
 }
 
 func GetDomainsUserAttributesSettingOutput(ctx *pulumi.Context, args GetDomainsUserAttributesSettingOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUserAttributesSettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsUserAttributesSettingResultOutput, error) {
 			args := v.(GetDomainsUserAttributesSettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsUserAttributesSettingResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsUserAttributesSettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsUserAttributesSettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsUserAttributesSettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args, GetDomainsUserAttributesSettingResultOutput{}, options).(GetDomainsUserAttributesSettingResultOutput), nil
 		}).(GetDomainsUserAttributesSettingResultOutput)
 }
 

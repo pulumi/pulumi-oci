@@ -86,21 +86,11 @@ type LookupSdmMaskingPolicyDifferenceResult struct {
 }
 
 func LookupSdmMaskingPolicyDifferenceOutput(ctx *pulumi.Context, args LookupSdmMaskingPolicyDifferenceOutputArgs, opts ...pulumi.InvokeOption) LookupSdmMaskingPolicyDifferenceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSdmMaskingPolicyDifferenceResultOutput, error) {
 			args := v.(LookupSdmMaskingPolicyDifferenceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSdmMaskingPolicyDifferenceResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSdmMaskingPolicyDifferenceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSdmMaskingPolicyDifferenceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSdmMaskingPolicyDifferenceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args, LookupSdmMaskingPolicyDifferenceResultOutput{}, options).(LookupSdmMaskingPolicyDifferenceResultOutput), nil
 		}).(LookupSdmMaskingPolicyDifferenceResultOutput)
 }
 

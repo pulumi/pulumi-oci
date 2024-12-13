@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCrossConnectGroupResult> Invoke(GetCrossConnectGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectGroupResult>("oci:Core/getCrossConnectGroup:getCrossConnectGroup", args ?? new GetCrossConnectGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified cross-connect group's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCrossConnectGroup = Oci.Core.GetCrossConnectGroup.Invoke(new()
+        ///     {
+        ///         CrossConnectGroupId = testCrossConnectGroupOciCoreCrossConnectGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCrossConnectGroupResult> Invoke(GetCrossConnectGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectGroupResult>("oci:Core/getCrossConnectGroup:getCrossConnectGroup", args ?? new GetCrossConnectGroupInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityReservationResult> Invoke(GetComputeCapacityReservationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationResult>("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", args ?? new GetComputeCapacityReservationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information about the specified compute capacity reservation.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityReservation = Oci.Core.GetComputeCapacityReservation.Invoke(new()
+        ///     {
+        ///         CapacityReservationId = testCapacityReservation.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityReservationResult> Invoke(GetComputeCapacityReservationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationResult>("oci:Core/getComputeCapacityReservation:getComputeCapacityReservation", args ?? new GetComputeCapacityReservationInvokeArgs(), options.WithDefaults());
     }
 
 

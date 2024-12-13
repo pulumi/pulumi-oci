@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// </summary>
         public static Output<GetServiceEnvironmentsResult> Invoke(GetServiceEnvironmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
+        /// 
+        /// List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
+        /// Information includes the service instance endpoints and service definition details.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceEnvironments = Oci.ServiceManagerProxy.GetServiceEnvironments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = serviceEnvironmentDisplayName,
+        ///         ServiceEnvironmentId = testServiceEnvironment.Id,
+        ///         ServiceEnvironmentType = serviceEnvironmentServiceEnvironmentType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceEnvironmentsResult> Invoke(GetServiceEnvironmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentsResult>("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args ?? new GetServiceEnvironmentsInvokeArgs(), options.WithDefaults());
     }
 
 

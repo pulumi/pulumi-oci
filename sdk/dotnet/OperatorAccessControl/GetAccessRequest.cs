@@ -62,6 +62,32 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public static Output<GetAccessRequestResult> Invoke(GetAccessRequestInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestResult>("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args ?? new GetAccessRequestInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
+        /// 
+        /// Gets details of an access request.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessRequest = Oci.OperatorAccessControl.GetAccessRequest.Invoke(new()
+        ///     {
+        ///         AccessRequestId = testAccessRequestOciOperatorAccessControlAccessRequest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAccessRequestResult> Invoke(GetAccessRequestInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestResult>("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args ?? new GetAccessRequestInvokeArgs(), options.WithDefaults());
     }
 
 

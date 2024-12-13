@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpInventorySubnetCidrResult> Invoke(GetIpInventorySubnetCidrInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpInventorySubnetCidrResult>("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", args ?? new GetIpInventorySubnetCidrInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpInventorySubnetCidr = Oci.Core.GetIpInventorySubnetCidr.Invoke(new()
+        ///     {
+        ///         SubnetId = testSubnet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpInventorySubnetCidrResult> Invoke(GetIpInventorySubnetCidrInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpInventorySubnetCidrResult>("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", args ?? new GetIpInventorySubnetCidrInvokeArgs(), options.WithDefaults());
     }
 
 

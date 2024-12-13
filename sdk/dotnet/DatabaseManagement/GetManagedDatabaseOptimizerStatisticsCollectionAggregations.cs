@@ -82,6 +82,42 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+        /// You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+        /// Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+        /// If the date-time range is not specified, then the operations in the last seven days are listed.
+        /// You can further filter the results by providing the optional type of TaskTypeQueryParam.
+        /// If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseOptimizerStatisticsCollectionAggregations = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregations.Invoke(new()
+        ///     {
+        ///         GroupType = managedDatabaseOptimizerStatisticsCollectionAggregationGroupType,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo,
+        ///         TaskType = managedDatabaseOptimizerStatisticsCollectionAggregationTaskType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> Invoke(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", args ?? new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs(), options.WithDefaults());
     }
 
 

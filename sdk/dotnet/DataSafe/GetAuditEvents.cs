@@ -94,6 +94,48 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditEventsResult> Invoke(GetAuditEventsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventsResult>("oci:DataSafe/getAuditEvents:getAuditEvents", args ?? new GetAuditEventsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Audit Events in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// The ListAuditEvents operation returns specified `compartmentId` audit Events only.
+        /// The list does not include any audit Events associated with the `subcompartments` of the specified `compartmentId`.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListAuditEvents on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditEvents = Oci.DataSafe.GetAuditEvents.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditEventAccessLevel,
+        ///         CompartmentIdInSubtree = auditEventCompartmentIdInSubtree,
+        ///         ScimQuery = auditEventScimQuery,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditEventsResult> Invoke(GetAuditEventsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventsResult>("oci:DataSafe/getAuditEvents:getAuditEvents", args ?? new GetAuditEventsInvokeArgs(), options.WithDefaults());
     }
 
 

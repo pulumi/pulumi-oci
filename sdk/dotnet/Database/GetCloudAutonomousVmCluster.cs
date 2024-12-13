@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudAutonomousVmClusterResult> Invoke(GetCloudAutonomousVmClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterResult>("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args ?? new GetCloudAutonomousVmClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudAutonomousVmCluster = Oci.Database.GetCloudAutonomousVmCluster.Invoke(new()
+        ///     {
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmClusterOciDatabaseCloudAutonomousVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudAutonomousVmClusterResult> Invoke(GetCloudAutonomousVmClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterResult>("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args ?? new GetCloudAutonomousVmClusterInvokeArgs(), options.WithDefaults());
     }
 
 

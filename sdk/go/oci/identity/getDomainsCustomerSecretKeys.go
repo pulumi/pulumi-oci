@@ -104,21 +104,11 @@ type GetDomainsCustomerSecretKeysResult struct {
 }
 
 func GetDomainsCustomerSecretKeysOutput(ctx *pulumi.Context, args GetDomainsCustomerSecretKeysOutputArgs, opts ...pulumi.InvokeOption) GetDomainsCustomerSecretKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsCustomerSecretKeysResultOutput, error) {
 			args := v.(GetDomainsCustomerSecretKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsCustomerSecretKeysResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsCustomerSecretKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsCustomerSecretKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsCustomerSecretKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", args, GetDomainsCustomerSecretKeysResultOutput{}, options).(GetDomainsCustomerSecretKeysResultOutput), nil
 		}).(GetDomainsCustomerSecretKeysResultOutput)
 }
 

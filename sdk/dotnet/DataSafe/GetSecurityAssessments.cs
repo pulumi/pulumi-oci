@@ -116,6 +116,59 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentsResult> Invoke(GetSecurityAssessmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentsResult>("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", args ?? new GetSecurityAssessmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of security assessments.
+        /// 
+        /// The ListSecurityAssessments operation returns only the assessments in the specified `compartmentId`.
+        /// The list does not include any subcompartments of the compartmentId passed.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAssessments = Oci.DataSafe.GetSecurityAssessments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentCompartmentIdInSubtree,
+        ///         DisplayName = securityAssessmentDisplayName,
+        ///         IsBaseline = securityAssessmentIsBaseline,
+        ///         IsScheduleAssessment = securityAssessmentIsScheduleAssessment,
+        ///         ScheduleAssessmentId = testScheduleAssessment.Id,
+        ///         State = securityAssessmentState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = securityAssessmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = securityAssessmentTimeCreatedLessThan,
+        ///         TriggeredBy = securityAssessmentTriggeredBy,
+        ///         Type = securityAssessmentType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAssessmentsResult> Invoke(GetSecurityAssessmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentsResult>("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", args ?? new GetSecurityAssessmentsInvokeArgs(), options.WithDefaults());
     }
 
 

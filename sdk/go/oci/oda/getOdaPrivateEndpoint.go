@@ -84,21 +84,11 @@ type LookupOdaPrivateEndpointResult struct {
 }
 
 func LookupOdaPrivateEndpointOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupOdaPrivateEndpointResultOutput, error) {
 			args := v.(LookupOdaPrivateEndpointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupOdaPrivateEndpointResult
-			secret, err := ctx.InvokePackageRaw("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", args, &rv, "", opts...)
-			if err != nil {
-				return LookupOdaPrivateEndpointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupOdaPrivateEndpointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupOdaPrivateEndpointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", args, LookupOdaPrivateEndpointResultOutput{}, options).(LookupOdaPrivateEndpointResultOutput), nil
 		}).(LookupOdaPrivateEndpointResultOutput)
 }
 

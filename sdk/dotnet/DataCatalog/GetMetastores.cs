@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetMetastoresResult> Invoke(GetMetastoresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetastoresResult>("oci:DataCatalog/getMetastores:getMetastores", args ?? new GetMetastoresInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Returns a list of all metastores in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMetastores = Oci.DataCatalog.GetMetastores.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = metastoreDisplayName,
+        ///         State = metastoreState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMetastoresResult> Invoke(GetMetastoresInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetastoresResult>("oci:DataCatalog/getMetastores:getMetastores", args ?? new GetMetastoresInvokeArgs(), options.WithDefaults());
     }
 
 

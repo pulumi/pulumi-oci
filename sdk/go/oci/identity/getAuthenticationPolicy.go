@@ -69,21 +69,11 @@ type LookupAuthenticationPolicyResult struct {
 }
 
 func LookupAuthenticationPolicyOutput(ctx *pulumi.Context, args LookupAuthenticationPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAuthenticationPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAuthenticationPolicyResultOutput, error) {
 			args := v.(LookupAuthenticationPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAuthenticationPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAuthenticationPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAuthenticationPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAuthenticationPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args, LookupAuthenticationPolicyResultOutput{}, options).(LookupAuthenticationPolicyResultOutput), nil
 		}).(LookupAuthenticationPolicyResultOutput)
 }
 

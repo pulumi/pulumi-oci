@@ -66,6 +66,34 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetSubscriptionRewardsResult> Invoke(GetSubscriptionRewardsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRewardsResult>("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args ?? new GetSubscriptionRewardsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Returns the list of rewards for a subscription ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriptionRewards = Oci.UsageProxy.GetSubscriptionRewards.Invoke(new()
+        ///     {
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriptionRewardsResult> Invoke(GetSubscriptionRewardsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRewardsResult>("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args ?? new GetSubscriptionRewardsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsOauthPartnerCertificateResult> Invoke(GetDomainsOauthPartnerCertificateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthPartnerCertificateResult>("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", args ?? new GetDomainsOauthPartnerCertificateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get an OAuth Partner Certificate
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOauthPartnerCertificate = Oci.Identity.GetDomainsOauthPartnerCertificate.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuthPartnerCertificateId = testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.Id,
+        ///         Authorization = oauthPartnerCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthPartnerCertificateResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsOauthPartnerCertificateResult> Invoke(GetDomainsOauthPartnerCertificateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthPartnerCertificateResult>("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", args ?? new GetDomainsOauthPartnerCertificateInvokeArgs(), options.WithDefaults());
     }
 
 

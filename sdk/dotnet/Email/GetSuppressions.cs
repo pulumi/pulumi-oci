@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public static Output<GetSuppressionsResult> Invoke(GetSuppressionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSuppressionsResult>("oci:Email/getSuppressions:getSuppressions", args ?? new GetSuppressionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
+        /// 
+        /// Gets a list of suppressed recipient email addresses for a user. The
+        /// `compartmentId` for suppressions must be a tenancy OCID. The returned list
+        /// is sorted by creation time in descending order.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSuppressions = Oci.Email.GetSuppressions.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         EmailAddress = suppressionEmailAddress,
+        ///         TimeCreatedGreaterThanOrEqualTo = suppressionTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = suppressionTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSuppressionsResult> Invoke(GetSuppressionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSuppressionsResult>("oci:Email/getSuppressions:getSuppressions", args ?? new GetSuppressionsInvokeArgs(), options.WithDefaults());
     }
 
 

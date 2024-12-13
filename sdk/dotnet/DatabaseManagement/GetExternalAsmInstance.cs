@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalAsmInstanceResult> Invoke(GetExternalAsmInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmInstanceResult>("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", args ?? new GetExternalAsmInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalAsmInstance = Oci.DatabaseManagement.GetExternalAsmInstance.Invoke(new()
+        ///     {
+        ///         ExternalAsmInstanceId = testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalAsmInstanceResult> Invoke(GetExternalAsmInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmInstanceResult>("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", args ?? new GetExternalAsmInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

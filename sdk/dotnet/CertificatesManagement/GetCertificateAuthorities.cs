@@ -74,6 +74,38 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetCertificateAuthoritiesResult> Invoke(GetCertificateAuthoritiesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthoritiesResult>("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args ?? new GetCertificateAuthoritiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Lists all certificate authorities (CAs) in the specified compartment.
+        /// Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateAuthorities = Oci.CertificatesManagement.GetCertificateAuthorities.Invoke(new()
+        ///     {
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IssuerCertificateAuthorityId = testCertificateAuthority.Id,
+        ///         Name = certificateAuthorityName,
+        ///         State = certificateAuthorityState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCertificateAuthoritiesResult> Invoke(GetCertificateAuthoritiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthoritiesResult>("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args ?? new GetCertificateAuthoritiesInvokeArgs(), options.WithDefaults());
     }
 
 

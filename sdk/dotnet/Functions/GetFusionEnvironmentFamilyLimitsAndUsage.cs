@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> Invoke(GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyLimitsAndUsageResult>("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args ?? new GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that's allowed to be created based on the group's associated subscriptions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentFamilyLimitsAndUsage = Oci.Functions.GetFusionEnvironmentFamilyLimitsAndUsage.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> Invoke(GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyLimitsAndUsageResult>("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args ?? new GetFusionEnvironmentFamilyLimitsAndUsageInvokeArgs(), options.WithDefaults());
     }
 
 

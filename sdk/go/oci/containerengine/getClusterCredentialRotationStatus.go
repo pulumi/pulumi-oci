@@ -70,21 +70,11 @@ type GetClusterCredentialRotationStatusResult struct {
 }
 
 func GetClusterCredentialRotationStatusOutput(ctx *pulumi.Context, args GetClusterCredentialRotationStatusOutputArgs, opts ...pulumi.InvokeOption) GetClusterCredentialRotationStatusResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetClusterCredentialRotationStatusResultOutput, error) {
 			args := v.(GetClusterCredentialRotationStatusArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetClusterCredentialRotationStatusResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", args, &rv, "", opts...)
-			if err != nil {
-				return GetClusterCredentialRotationStatusResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetClusterCredentialRotationStatusResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetClusterCredentialRotationStatusResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", args, GetClusterCredentialRotationStatusResultOutput{}, options).(GetClusterCredentialRotationStatusResultOutput), nil
 		}).(GetClusterCredentialRotationStatusResultOutput)
 }
 

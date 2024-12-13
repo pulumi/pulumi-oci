@@ -86,6 +86,44 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaAssetsResult> Invoke(GetMediaAssetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetsResult>("oci:MediaServices/getMediaAssets:getMediaAssets", args ?? new GetMediaAssetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Returns a list of MediaAssetSummary.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaAssets = Oci.MediaServices.GetMediaAssets.Invoke(new()
+        ///     {
+        ///         Bucket = mediaAssetBucket,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mediaAssetDisplayName,
+        ///         DistributionChannelId = testChannel.Id,
+        ///         MasterMediaAssetId = testMediaAsset.Id,
+        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
+        ///         Object = mediaAssetObject,
+        ///         ParentMediaAssetId = testMediaAsset.Id,
+        ///         SourceMediaWorkflowId = testMediaWorkflow.Id,
+        ///         SourceMediaWorkflowVersion = mediaAssetSourceMediaWorkflowVersion,
+        ///         State = mediaAssetState,
+        ///         Type = mediaAssetType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMediaAssetsResult> Invoke(GetMediaAssetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetsResult>("oci:MediaServices/getMediaAssets:getMediaAssets", args ?? new GetMediaAssetsInvokeArgs(), options.WithDefaults());
     }
 
 

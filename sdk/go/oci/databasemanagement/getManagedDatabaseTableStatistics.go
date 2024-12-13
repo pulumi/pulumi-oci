@@ -69,21 +69,11 @@ type GetManagedDatabaseTableStatisticsResult struct {
 }
 
 func GetManagedDatabaseTableStatisticsOutput(ctx *pulumi.Context, args GetManagedDatabaseTableStatisticsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseTableStatisticsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseTableStatisticsResultOutput, error) {
 			args := v.(GetManagedDatabaseTableStatisticsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseTableStatisticsResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseTableStatisticsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseTableStatisticsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseTableStatisticsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args, GetManagedDatabaseTableStatisticsResultOutput{}, options).(GetManagedDatabaseTableStatisticsResultOutput), nil
 		}).(GetManagedDatabaseTableStatisticsResultOutput)
 }
 

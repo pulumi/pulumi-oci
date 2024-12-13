@@ -94,6 +94,48 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public static Output<GetMetricDataResult> Invoke(GetMetricDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricDataResult>("oci:Monitoring/getMetricData:getMetricData", args ?? new GetMetricDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
+        /// 
+        /// Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
+        /// For more information, see
+        /// [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+        /// and
+        /// [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+        /// 
+        /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMetricData = Oci.Monitoring.GetMetricData.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = metricDataNamespace,
+        ///         Query = metricDataQuery,
+        ///         CompartmentIdInSubtree = metricDataCompartmentIdInSubtree,
+        ///         EndTime = metricDataEndTime,
+        ///         Resolution = metricDataResolution,
+        ///         ResourceGroup = metricDataResourceGroup,
+        ///         StartTime = metricDataStartTime,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMetricDataResult> Invoke(GetMetricDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetricDataResult>("oci:Monitoring/getMetricData:getMetricData", args ?? new GetMetricDataInvokeArgs(), options.WithDefaults());
     }
 
 

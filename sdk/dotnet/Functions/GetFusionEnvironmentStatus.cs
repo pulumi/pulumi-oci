@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentStatusResult> Invoke(GetFusionEnvironmentStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Gets the status of a Fusion environment identified by its OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentStatus = Oci.Functions.GetFusionEnvironmentStatus.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentStatusResult> Invoke(GetFusionEnvironmentStatusInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusInvokeArgs(), options.WithDefaults());
     }
 
 

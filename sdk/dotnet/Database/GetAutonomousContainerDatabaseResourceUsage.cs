@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseResourceUsageResult> Invoke(GetAutonomousContainerDatabaseResourceUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResourceUsageResult>("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args ?? new GetAutonomousContainerDatabaseResourceUsageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Get resource usage details for the specified Autonomous Container Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousContainerDatabaseResourceUsage = Oci.Database.GetAutonomousContainerDatabaseResourceUsage.Invoke(new()
+        ///     {
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousContainerDatabaseResourceUsageResult> Invoke(GetAutonomousContainerDatabaseResourceUsageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResourceUsageResult>("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args ?? new GetAutonomousContainerDatabaseResourceUsageInvokeArgs(), options.WithDefaults());
     }
 
 

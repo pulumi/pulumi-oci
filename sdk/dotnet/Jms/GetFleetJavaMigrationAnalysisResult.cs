@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetJavaMigrationAnalysisResultResult> Invoke(GetFleetJavaMigrationAnalysisResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetJavaMigrationAnalysisResultResult>("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args ?? new GetFleetJavaMigrationAnalysisResultInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Retrieve Java Migration Analysis result.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetJavaMigrationAnalysisResult = Oci.Jms.GetFleetJavaMigrationAnalysisResult.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         JavaMigrationAnalysisResultId = fleetJavaMigrationAnalysisResultId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetJavaMigrationAnalysisResultResult> Invoke(GetFleetJavaMigrationAnalysisResultInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetJavaMigrationAnalysisResultResult>("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args ?? new GetFleetJavaMigrationAnalysisResultInvokeArgs(), options.WithDefaults());
     }
 
 

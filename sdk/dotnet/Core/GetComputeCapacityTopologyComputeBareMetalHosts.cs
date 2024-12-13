@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> Invoke(GetComputeCapacityTopologyComputeBareMetalHostsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeBareMetalHostsResult>("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", args ?? new GetComputeCapacityTopologyComputeBareMetalHostsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists compute bare metal hosts in the specified compute capacity topology.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityTopologyComputeBareMetalHosts = Oci.Core.GetComputeCapacityTopologyComputeBareMetalHosts.Invoke(new()
+        ///     {
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeHpcIslandId = testComputeHpcIsland.Id,
+        ///         ComputeLocalBlockId = testComputeLocalBlock.Id,
+        ///         ComputeNetworkBlockId = testComputeNetworkBlock.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> Invoke(GetComputeCapacityTopologyComputeBareMetalHostsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeBareMetalHostsResult>("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", args ?? new GetComputeCapacityTopologyComputeBareMetalHostsInvokeArgs(), options.WithDefaults());
     }
 
 

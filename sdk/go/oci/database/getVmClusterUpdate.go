@@ -84,21 +84,11 @@ type GetVmClusterUpdateResult struct {
 }
 
 func GetVmClusterUpdateOutput(ctx *pulumi.Context, args GetVmClusterUpdateOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterUpdateResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVmClusterUpdateResultOutput, error) {
 			args := v.(GetVmClusterUpdateArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVmClusterUpdateResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getVmClusterUpdate:getVmClusterUpdate", args, &rv, "", opts...)
-			if err != nil {
-				return GetVmClusterUpdateResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVmClusterUpdateResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVmClusterUpdateResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getVmClusterUpdate:getVmClusterUpdate", args, GetVmClusterUpdateResultOutput{}, options).(GetVmClusterUpdateResultOutput), nil
 		}).(GetVmClusterUpdateResultOutput)
 }
 

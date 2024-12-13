@@ -66,6 +66,34 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetDataSourceEventResult> Invoke(GetDataSourceEventInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a list of events from CloudGuard DataSource
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataSourceEvent = Oci.CloudGuard.GetDataSourceEvent.Invoke(new()
+        ///     {
+        ///         DataSourceId = testDataSource.Id,
+        ///         Region = dataSourceEventRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataSourceEventResult> Invoke(GetDataSourceEventInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventInvokeArgs(), options.WithDefaults());
     }
 
 

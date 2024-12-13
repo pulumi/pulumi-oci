@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbNodeConsoleConnectionsResult> Invoke(GetDbNodeConsoleConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the console connections for the specified database node.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbNodeConsoleConnections = Oci.Database.GetDbNodeConsoleConnections.Invoke(new()
+        ///     {
+        ///         DbNodeId = testDbNode.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbNodeConsoleConnectionsResult> Invoke(GetDbNodeConsoleConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleConnectionsResult>("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args ?? new GetDbNodeConsoleConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

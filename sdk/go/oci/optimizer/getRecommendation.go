@@ -94,21 +94,11 @@ type LookupRecommendationResult struct {
 }
 
 func LookupRecommendationOutput(ctx *pulumi.Context, args LookupRecommendationOutputArgs, opts ...pulumi.InvokeOption) LookupRecommendationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupRecommendationResultOutput, error) {
 			args := v.(LookupRecommendationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupRecommendationResult
-			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getRecommendation:getRecommendation", args, &rv, "", opts...)
-			if err != nil {
-				return LookupRecommendationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupRecommendationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupRecommendationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Optimizer/getRecommendation:getRecommendation", args, LookupRecommendationResultOutput{}, options).(LookupRecommendationResultOutput), nil
 		}).(LookupRecommendationResultOutput)
 }
 

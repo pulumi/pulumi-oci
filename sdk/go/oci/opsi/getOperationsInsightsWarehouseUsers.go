@@ -86,21 +86,11 @@ type GetOperationsInsightsWarehouseUsersResult struct {
 }
 
 func GetOperationsInsightsWarehouseUsersOutput(ctx *pulumi.Context, args GetOperationsInsightsWarehouseUsersOutputArgs, opts ...pulumi.InvokeOption) GetOperationsInsightsWarehouseUsersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOperationsInsightsWarehouseUsersResultOutput, error) {
 			args := v.(GetOperationsInsightsWarehouseUsersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOperationsInsightsWarehouseUsersResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args, &rv, "", opts...)
-			if err != nil {
-				return GetOperationsInsightsWarehouseUsersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOperationsInsightsWarehouseUsersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOperationsInsightsWarehouseUsersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args, GetOperationsInsightsWarehouseUsersResultOutput{}, options).(GetOperationsInsightsWarehouseUsersResultOutput), nil
 		}).(GetOperationsInsightsWarehouseUsersResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetHostnamesResult> Invoke(GetHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all hostname resources associated with the specified load balancer.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHostnames = Oci.LoadBalancer.GetHostnames.Invoke(new()
+        ///     {
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHostnamesResult> Invoke(GetHostnamesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

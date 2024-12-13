@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowStepsResult> Invoke(GetDomainsApprovalWorkflowStepsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowStepsResult>("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", args ?? new GetDomainsApprovalWorkflowStepsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Approval Workflow Steps in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search ApprovalWorkflowStep
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApprovalWorkflowSteps = Oci.Identity.GetDomainsApprovalWorkflowSteps.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowStepCount = approvalWorkflowStepApprovalWorkflowStepCount,
+        ///         ApprovalWorkflowStepFilter = approvalWorkflowStepApprovalWorkflowStepFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = approvalWorkflowStepAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowStepStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApprovalWorkflowStepsResult> Invoke(GetDomainsApprovalWorkflowStepsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowStepsResult>("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", args ?? new GetDomainsApprovalWorkflowStepsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,21 +72,11 @@ type GetTunnelSecurityAssociationsResult struct {
 }
 
 func GetTunnelSecurityAssociationsOutput(ctx *pulumi.Context, args GetTunnelSecurityAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetTunnelSecurityAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetTunnelSecurityAssociationsResultOutput, error) {
 			args := v.(GetTunnelSecurityAssociationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetTunnelSecurityAssociationsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args, &rv, "", opts...)
-			if err != nil {
-				return GetTunnelSecurityAssociationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetTunnelSecurityAssociationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetTunnelSecurityAssociationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args, GetTunnelSecurityAssociationsResultOutput{}, options).(GetTunnelSecurityAssociationsResultOutput), nil
 		}).(GetTunnelSecurityAssociationsResultOutput)
 }
 

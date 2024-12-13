@@ -16,6 +16,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         public static Output<GetBackendSetHealthResult> Invoke(GetBackendSetHealthInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetHealthResult>("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBackendSetHealthResult> Invoke(GetBackendSetHealthInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetHealthResult>("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthInvokeArgs(), options.WithDefaults());
     }
 
 

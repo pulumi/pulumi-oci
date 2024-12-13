@@ -94,21 +94,11 @@ type LookupJavaDownloadsJavaDownloadReportResult struct {
 }
 
 func LookupJavaDownloadsJavaDownloadReportOutput(ctx *pulumi.Context, args LookupJavaDownloadsJavaDownloadReportOutputArgs, opts ...pulumi.InvokeOption) LookupJavaDownloadsJavaDownloadReportResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupJavaDownloadsJavaDownloadReportResultOutput, error) {
 			args := v.(LookupJavaDownloadsJavaDownloadReportArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupJavaDownloadsJavaDownloadReportResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", args, &rv, "", opts...)
-			if err != nil {
-				return LookupJavaDownloadsJavaDownloadReportResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupJavaDownloadsJavaDownloadReportResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupJavaDownloadsJavaDownloadReportResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", args, LookupJavaDownloadsJavaDownloadReportResultOutput{}, options).(LookupJavaDownloadsJavaDownloadReportResultOutput), nil
 		}).(LookupJavaDownloadsJavaDownloadReportResultOutput)
 }
 

@@ -88,21 +88,11 @@ type LookupSteeringPolicyResult struct {
 }
 
 func LookupSteeringPolicyOutput(ctx *pulumi.Context, args LookupSteeringPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupSteeringPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSteeringPolicyResultOutput, error) {
 			args := v.(LookupSteeringPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSteeringPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:Dns/getSteeringPolicy:getSteeringPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSteeringPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSteeringPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSteeringPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Dns/getSteeringPolicy:getSteeringPolicy", args, LookupSteeringPolicyResultOutput{}, options).(LookupSteeringPolicyResultOutput), nil
 		}).(LookupSteeringPolicyResultOutput)
 }
 

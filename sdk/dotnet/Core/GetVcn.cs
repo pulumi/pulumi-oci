@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVcnResult> Invoke(GetVcnInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVcnResult>("oci:Core/getVcn:getVcn", args ?? new GetVcnInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vcn resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified VCN's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVcn = Oci.Core.GetVcn.Invoke(new()
+        ///     {
+        ///         VcnId = testVcnOciCoreVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVcnResult> Invoke(GetVcnInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVcnResult>("oci:Core/getVcn:getVcn", args ?? new GetVcnInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegatedResourceAccessRequestAuditLogReportResult> Invoke(GetDelegatedResourceAccessRequestAuditLogReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestAuditLogReportResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", args ?? new GetDelegatedResourceAccessRequestAuditLogReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Delegated Resource Access Request Audit Log Report resource in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Gets the audit log report for the given Delegated Resource Access Request.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegatedResourceAccessRequestAuditLogReport = Oci.DelegateAccessControl.GetDelegatedResourceAccessRequestAuditLogReport.Invoke(new()
+        ///     {
+        ///         DelegatedResourceAccessRequestId = testDelegatedResourceAccessRequest.Id,
+        ///         IsProcessTreeEnabled = delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegatedResourceAccessRequestAuditLogReportResult> Invoke(GetDelegatedResourceAccessRequestAuditLogReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestAuditLogReportResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", args ?? new GetDelegatedResourceAccessRequestAuditLogReportInvokeArgs(), options.WithDefaults());
     }
 
 

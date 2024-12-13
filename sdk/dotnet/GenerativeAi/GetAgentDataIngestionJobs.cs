@@ -74,6 +74,38 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetAgentDataIngestionJobsResult> Invoke(GetAgentDataIngestionJobsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentDataIngestionJobsResult>("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", args ?? new GetAgentDataIngestionJobsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Data Ingestion Jobs in Oracle Cloud Infrastructure Generative Ai Agent service.
+        /// 
+        /// **ListDataIngestionJobs**
+        /// 
+        /// Gets a list of data ingestion jobs.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataIngestionJobs = Oci.GenerativeAi.GetAgentDataIngestionJobs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DataSourceId = testDataSource.Id,
+        ///         DisplayName = dataIngestionJobDisplayName,
+        ///         State = dataIngestionJobState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentDataIngestionJobsResult> Invoke(GetAgentDataIngestionJobsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentDataIngestionJobsResult>("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", args ?? new GetAgentDataIngestionJobsInvokeArgs(), options.WithDefaults());
     }
 
 

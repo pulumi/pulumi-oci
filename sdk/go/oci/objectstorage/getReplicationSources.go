@@ -72,21 +72,11 @@ type GetReplicationSourcesResult struct {
 }
 
 func GetReplicationSourcesOutput(ctx *pulumi.Context, args GetReplicationSourcesOutputArgs, opts ...pulumi.InvokeOption) GetReplicationSourcesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetReplicationSourcesResultOutput, error) {
 			args := v.(GetReplicationSourcesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetReplicationSourcesResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getReplicationSources:getReplicationSources", args, &rv, "", opts...)
-			if err != nil {
-				return GetReplicationSourcesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetReplicationSourcesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetReplicationSourcesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getReplicationSources:getReplicationSources", args, GetReplicationSourcesResultOutput{}, options).(GetReplicationSourcesResultOutput), nil
 		}).(GetReplicationSourcesResultOutput)
 }
 

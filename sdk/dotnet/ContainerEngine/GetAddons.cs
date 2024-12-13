@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetAddonsResult> Invoke(GetAddonsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddonsResult>("oci:ContainerEngine/getAddons:getAddons", args ?? new GetAddonsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// List addon for a provisioned cluster.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddons = Oci.ContainerEngine.GetAddons.Invoke(new()
+        ///     {
+        ///         ClusterId = testCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddonsResult> Invoke(GetAddonsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddonsResult>("oci:ContainerEngine/getAddons:getAddons", args ?? new GetAddonsInvokeArgs(), options.WithDefaults());
     }
 
 

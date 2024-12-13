@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceCatalog
         /// </summary>
         public static Output<GetPrivateApplicationResult> Invoke(GetPrivateApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationResult>("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", args ?? new GetPrivateApplicationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
+        /// 
+        /// Gets the details of the specified private application.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPrivateApplication = Oci.ServiceCatalog.GetPrivateApplication.Invoke(new()
+        ///     {
+        ///         PrivateApplicationId = testPrivateApplicationOciServiceCatalogPrivateApplication.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPrivateApplicationResult> Invoke(GetPrivateApplicationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationResult>("oci:ServiceCatalog/getPrivateApplication:getPrivateApplication", args ?? new GetPrivateApplicationInvokeArgs(), options.WithDefaults());
     }
 
 

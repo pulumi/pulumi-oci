@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVnicAttachmentsResult> Invoke(GetVnicAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the VNIC attachments in the specified compartment. A VNIC attachment
+        /// resides in the same compartment as the attached instance. The list can be
+        /// filtered by instance, VNIC, or availability domain.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVnicAttachments = Oci.Core.GetVnicAttachments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = vnicAttachmentAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         VnicId = testVnic.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVnicAttachmentsResult> Invoke(GetVnicAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVnicAttachmentsResult>("oci:Core/getVnicAttachments:getVnicAttachments", args ?? new GetVnicAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

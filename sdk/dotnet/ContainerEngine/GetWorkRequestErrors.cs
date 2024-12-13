@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetWorkRequestErrorsResult> Invoke(GetWorkRequestErrorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestErrorsResult>("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", args ?? new GetWorkRequestErrorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Get the errors of a work request.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkRequestErrors = Oci.ContainerEngine.GetWorkRequestErrors.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         WorkRequestId = testWorkRequest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkRequestErrorsResult> Invoke(GetWorkRequestErrorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestErrorsResult>("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", args ?? new GetWorkRequestErrorsInvokeArgs(), options.WithDefaults());
     }
 
 

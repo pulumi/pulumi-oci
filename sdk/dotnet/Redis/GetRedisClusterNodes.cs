@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         public static Output<GetRedisClusterNodesResult> Invoke(GetRedisClusterNodesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRedisClusterNodesResult>("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", args ?? new GetRedisClusterNodesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Redis Cluster Nodes in Oracle Cloud Infrastructure Redis service.
+        /// 
+        /// Gets the list of all nodes in a cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRedisClusterNodes = Oci.Redis.GetRedisClusterNodes.Invoke(new()
+        ///     {
+        ///         RedisClusterId = testRedisCluster.Id,
+        ///         DisplayName = redisClusterNodeDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRedisClusterNodesResult> Invoke(GetRedisClusterNodesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRedisClusterNodesResult>("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", args ?? new GetRedisClusterNodesInvokeArgs(), options.WithDefaults());
     }
 
 

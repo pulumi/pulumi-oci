@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetNodePoolsResult> Invoke(GetNodePoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolsResult>("oci:ContainerEngine/getNodePools:getNodePools", args ?? new GetNodePoolsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// List all the node pools in a compartment, and optionally filter by cluster.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNodePools = Oci.ContainerEngine.GetNodePools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         Name = nodePoolName,
+        ///         States = nodePoolState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNodePoolsResult> Invoke(GetNodePoolsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolsResult>("oci:ContainerEngine/getNodePools:getNodePools", args ?? new GetNodePoolsInvokeArgs(), options.WithDefaults());
     }
 
 

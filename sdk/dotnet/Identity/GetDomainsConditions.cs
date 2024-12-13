@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsConditionsResult> Invoke(GetDomainsConditionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsConditionsResult>("oci:Identity/getDomainsConditions:getDomainsConditions", args ?? new GetDomainsConditionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search conditions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConditions = Oci.Identity.GetDomainsConditions.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ConditionCount = conditionConditionCount,
+        ///         ConditionFilter = conditionConditionFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = conditionAuthorization,
+        ///         ResourceTypeSchemaVersion = conditionResourceTypeSchemaVersion,
+        ///         StartIndex = conditionStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsConditionsResult> Invoke(GetDomainsConditionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsConditionsResult>("oci:Identity/getDomainsConditions:getDomainsConditions", args ?? new GetDomainsConditionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainResult> Invoke(GetDomainInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainResult>("oci:Identity/getDomain:getDomain", args ?? new GetDomainInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Get the specified domain's information.
+        /// 
+        /// - If the domain doesn't exists, returns 404 NOT FOUND.
+        /// - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDomain = Oci.Identity.GetDomain.Invoke(new()
+        ///     {
+        ///         DomainId = testDomainOciIdentityDomain.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainResult> Invoke(GetDomainInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainResult>("oci:Identity/getDomain:getDomain", args ?? new GetDomainInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -104,21 +104,11 @@ type GetSteeringPoliciesResult struct {
 }
 
 func GetSteeringPoliciesOutput(ctx *pulumi.Context, args GetSteeringPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetSteeringPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSteeringPoliciesResultOutput, error) {
 			args := v.(GetSteeringPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSteeringPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:Dns/getSteeringPolicies:getSteeringPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetSteeringPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSteeringPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSteeringPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Dns/getSteeringPolicies:getSteeringPolicies", args, GetSteeringPoliciesResultOutput{}, options).(GetSteeringPoliciesResultOutput), nil
 		}).(GetSteeringPoliciesResultOutput)
 }
 

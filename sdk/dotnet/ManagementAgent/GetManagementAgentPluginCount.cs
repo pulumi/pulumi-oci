@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentPluginCountResult> Invoke(GetManagementAgentPluginCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
+        /// Supported groupBy parameter: pluginName
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentPluginCount = Oci.ManagementAgent.GetManagementAgentPluginCount.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         GroupBy = managementAgentPluginCountGroupBy,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentPluginCountResult> Invoke(GetManagementAgentPluginCountInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountInvokeArgs(), options.WithDefaults());
     }
 
 

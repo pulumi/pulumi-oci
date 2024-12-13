@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetConfigurationsResult> Invoke(GetConfigurationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConfigurationsResult>("oci:Psql/getConfigurations:getConfigurations", args ?? new GetConfigurationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Configurations in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Returns a list of configurations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConfigurations = Oci.Psql.GetConfigurations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = testConfiguration.Id,
+        ///         DbVersion = configurationDbVersion,
+        ///         DisplayName = configurationDisplayName,
+        ///         Shape = configurationShape,
+        ///         State = configurationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConfigurationsResult> Invoke(GetConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigurationsResult>("oci:Psql/getConfigurations:getConfigurations", args ?? new GetConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

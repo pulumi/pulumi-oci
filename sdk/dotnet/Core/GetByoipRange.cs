@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetByoipRangeResult> Invoke(GetByoipRangeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoipRangeResult>("oci:Core/getByoipRange:getByoipRange", args ?? new GetByoipRangeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testByoipRange = Oci.Core.GetByoipRange.Invoke(new()
+        ///     {
+        ///         ByoipRangeId = testByoipRangeOciCoreByoipRange.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetByoipRangeResult> Invoke(GetByoipRangeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetByoipRangeResult>("oci:Core/getByoipRange:getByoipRange", args ?? new GetByoipRangeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetApplianceImageResult> Invoke(GetApplianceImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplianceImageResult>("oci:CloudBridge/getApplianceImage:getApplianceImage", args ?? new GetApplianceImageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Appliance Image resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Returns a list of Appliance Images.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApplianceImage = Oci.CloudBridge.GetApplianceImage.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applianceImageDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApplianceImageResult> Invoke(GetApplianceImageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApplianceImageResult>("oci:CloudBridge/getApplianceImage:getApplianceImage", args ?? new GetApplianceImageInvokeArgs(), options.WithDefaults());
     }
 
 

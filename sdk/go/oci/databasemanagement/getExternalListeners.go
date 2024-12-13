@@ -79,21 +79,11 @@ type GetExternalListenersResult struct {
 }
 
 func GetExternalListenersOutput(ctx *pulumi.Context, args GetExternalListenersOutputArgs, opts ...pulumi.InvokeOption) GetExternalListenersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalListenersResultOutput, error) {
 			args := v.(GetExternalListenersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalListenersResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalListeners:getExternalListeners", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalListenersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalListenersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalListenersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalListeners:getExternalListeners", args, GetExternalListenersResultOutput{}, options).(GetExternalListenersResultOutput), nil
 		}).(GetExternalListenersResultOutput)
 }
 

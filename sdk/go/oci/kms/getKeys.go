@@ -101,21 +101,11 @@ type GetKeysResult struct {
 }
 
 func GetKeysOutput(ctx *pulumi.Context, args GetKeysOutputArgs, opts ...pulumi.InvokeOption) GetKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetKeysResultOutput, error) {
 			args := v.(GetKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetKeysResult
-			secret, err := ctx.InvokePackageRaw("oci:Kms/getKeys:getKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Kms/getKeys:getKeys", args, GetKeysResultOutput{}, options).(GetKeysResultOutput), nil
 		}).(GetKeysResultOutput)
 }
 

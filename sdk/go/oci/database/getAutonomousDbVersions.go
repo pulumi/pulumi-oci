@@ -77,21 +77,11 @@ type GetAutonomousDbVersionsResult struct {
 }
 
 func GetAutonomousDbVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousDbVersionsResultOutput, error) {
 			args := v.(GetAutonomousDbVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousDbVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousDbVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousDbVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousDbVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args, GetAutonomousDbVersionsResultOutput{}, options).(GetAutonomousDbVersionsResultOutput), nil
 		}).(GetAutonomousDbVersionsResultOutput)
 }
 

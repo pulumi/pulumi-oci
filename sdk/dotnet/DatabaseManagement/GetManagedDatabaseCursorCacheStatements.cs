@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseCursorCacheStatementsResult> Invoke(GetManagedDatabaseCursorCacheStatementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseCursorCacheStatementsResult>("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", args ?? new GetManagedDatabaseCursorCacheStatementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the SQL statements from shared SQL area, also called the cursor cache.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseCursorCacheStatements = Oci.DatabaseManagement.GetManagedDatabaseCursorCacheStatements.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = managedDatabaseCursorCacheStatementOpcNamedCredentialId,
+        ///         SqlText = managedDatabaseCursorCacheStatementSqlText,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseCursorCacheStatementsResult> Invoke(GetManagedDatabaseCursorCacheStatementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseCursorCacheStatementsResult>("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", args ?? new GetManagedDatabaseCursorCacheStatementsInvokeArgs(), options.WithDefaults());
     }
 
 

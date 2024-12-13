@@ -68,6 +68,35 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsLogGroupsResult> Invoke(GetLogAnalyticsLogGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsLogGroupsResult>("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", args ?? new GetLogAnalyticsLogGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsLogGroups = Oci.LogAnalytics.GetLogAnalyticsLogGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = logAnalyticsLogGroupNamespace,
+        ///         DisplayName = logAnalyticsLogGroupDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsLogGroupsResult> Invoke(GetLogAnalyticsLogGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsLogGroupsResult>("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", args ?? new GetLogAnalyticsLogGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

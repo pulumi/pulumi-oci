@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsIdentityProvidersResult> Invoke(GetDomainsIdentityProvidersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityProvidersResult>("oci:Identity/getDomainsIdentityProviders:getDomainsIdentityProviders", args ?? new GetDomainsIdentityProvidersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Identity Providers
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIdentityProviders = Oci.Identity.GetDomainsIdentityProviders.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityProviderCount = identityProviderIdentityProviderCount,
+        ///         IdentityProviderFilter = identityProviderIdentityProviderFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = identityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
+        ///         StartIndex = identityProviderStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsIdentityProvidersResult> Invoke(GetDomainsIdentityProvidersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityProvidersResult>("oci:Identity/getDomainsIdentityProviders:getDomainsIdentityProviders", args ?? new GetDomainsIdentityProvidersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpv6Result> Invoke(GetIpv6InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpv6Result>("oci:Core/getIpv6:getIpv6", args ?? new GetIpv6InvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ipv6 resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified IPv6. You must specify the object's OCID.
+        /// Alternatively, you can get the object by using
+        /// [ListIpv6s](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/ListIpv6s)
+        /// with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpv6 = Oci.Core.GetIpv6.Invoke(new()
+        ///     {
+        ///         Ipv6id = testIpv6OciCoreIpv6.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpv6Result> Invoke(GetIpv6InvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpv6Result>("oci:Core/getIpv6:getIpv6", args ?? new GetIpv6InvokeArgs(), options.WithDefaults());
     }
 
 

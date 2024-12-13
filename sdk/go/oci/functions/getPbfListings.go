@@ -91,21 +91,11 @@ type GetPbfListingsResult struct {
 }
 
 func GetPbfListingsOutput(ctx *pulumi.Context, args GetPbfListingsOutputArgs, opts ...pulumi.InvokeOption) GetPbfListingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPbfListingsResultOutput, error) {
 			args := v.(GetPbfListingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPbfListingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getPbfListings:getPbfListings", args, &rv, "", opts...)
-			if err != nil {
-				return GetPbfListingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPbfListingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPbfListingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getPbfListings:getPbfListings", args, GetPbfListingsResultOutput{}, options).(GetPbfListingsResultOutput), nil
 		}).(GetPbfListingsResultOutput)
 }
 

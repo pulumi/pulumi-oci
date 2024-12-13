@@ -148,21 +148,11 @@ type GetPrivateIpsResult struct {
 }
 
 func GetPrivateIpsOutput(ctx *pulumi.Context, args GetPrivateIpsOutputArgs, opts ...pulumi.InvokeOption) GetPrivateIpsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPrivateIpsResultOutput, error) {
 			args := v.(GetPrivateIpsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPrivateIpsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getPrivateIps:getPrivateIps", args, &rv, "", opts...)
-			if err != nil {
-				return GetPrivateIpsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPrivateIpsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPrivateIpsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getPrivateIps:getPrivateIps", args, GetPrivateIpsResultOutput{}, options).(GetPrivateIpsResultOutput), nil
 		}).(GetPrivateIpsResultOutput)
 }
 

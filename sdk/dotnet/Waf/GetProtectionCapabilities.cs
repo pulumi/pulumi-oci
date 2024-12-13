@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Waf
         /// </summary>
         public static Output<GetProtectionCapabilitiesResult> Invoke(GetProtectionCapabilitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilitiesResult>("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args ?? new GetProtectionCapabilitiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
+        /// 
+        /// Lists of protection capabilities filtered by query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectionCapabilities = Oci.Waf.GetProtectionCapabilities.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectionCapabilityDisplayName,
+        ///         GroupTags = protectionCapabilityGroupTag,
+        ///         IsLatestVersions = protectionCapabilityIsLatestVersion,
+        ///         Key = protectionCapabilityKey,
+        ///         Type = protectionCapabilityType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectionCapabilitiesResult> Invoke(GetProtectionCapabilitiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilitiesResult>("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args ?? new GetProtectionCapabilitiesInvokeArgs(), options.WithDefaults());
     }
 
 

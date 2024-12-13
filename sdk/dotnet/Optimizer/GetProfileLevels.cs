@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetProfileLevelsResult> Invoke(GetProfileLevelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProfileLevelsResult>("oci:Optimizer/getProfileLevels:getProfileLevels", args ?? new GetProfileLevelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Profile Levels in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the existing profile levels.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProfileLevels = Oci.Optimizer.GetProfileLevels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = profileLevelCompartmentIdInSubtree,
+        ///         Name = profileLevelName,
+        ///         RecommendationName = testRecommendation.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProfileLevelsResult> Invoke(GetProfileLevelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProfileLevelsResult>("oci:Optimizer/getProfileLevels:getProfileLevels", args ?? new GetProfileLevelsInvokeArgs(), options.WithDefaults());
     }
 
 

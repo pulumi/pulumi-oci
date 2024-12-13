@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public static Output<GetDatabaseToolsEndpointServiceResult> Invoke(GetDatabaseToolsEndpointServiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsEndpointServiceResult>("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", args ?? new GetDatabaseToolsEndpointServiceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
+        /// 
+        /// Gets details for the specified Database Tools endpoint service.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseToolsEndpointService = Oci.DatabaseTools.GetDatabaseToolsEndpointService.Invoke(new()
+        ///     {
+        ///         DatabaseToolsEndpointServiceId = testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseToolsEndpointServiceResult> Invoke(GetDatabaseToolsEndpointServiceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsEndpointServiceResult>("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", args ?? new GetDatabaseToolsEndpointServiceInvokeArgs(), options.WithDefaults());
     }
 
 

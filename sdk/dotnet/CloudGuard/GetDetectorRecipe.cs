@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetDetectorRecipeResult> Invoke(GetDetectorRecipeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectorRecipeResult>("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args ?? new GetDetectorRecipeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDetectorRecipe = Oci.CloudGuard.GetDetectorRecipe.Invoke(new()
+        ///     {
+        ///         DetectorRecipeId = testDetectorRecipeOciCloudGuardDetectorRecipe.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDetectorRecipeResult> Invoke(GetDetectorRecipeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectorRecipeResult>("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args ?? new GetDetectorRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

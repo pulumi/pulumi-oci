@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetCryptoAnalysisResultResult> Invoke(GetFleetCryptoAnalysisResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetCryptoAnalysisResultResult>("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", args ?? new GetFleetCryptoAnalysisResultInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Retrieve the metadata for the result of a Crypto event analysis.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetCryptoAnalysisResult = Oci.Jms.GetFleetCryptoAnalysisResult.Invoke(new()
+        ///     {
+        ///         CryptoAnalysisResultId = fleetCryptoAnalysisResultId,
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetCryptoAnalysisResultResult> Invoke(GetFleetCryptoAnalysisResultInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetCryptoAnalysisResultResult>("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", args ?? new GetFleetCryptoAnalysisResultInvokeArgs(), options.WithDefaults());
     }
 
 

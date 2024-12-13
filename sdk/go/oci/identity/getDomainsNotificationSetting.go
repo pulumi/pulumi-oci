@@ -126,21 +126,11 @@ type LookupDomainsNotificationSettingResult struct {
 }
 
 func LookupDomainsNotificationSettingOutput(ctx *pulumi.Context, args LookupDomainsNotificationSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsNotificationSettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsNotificationSettingResultOutput, error) {
 			args := v.(LookupDomainsNotificationSettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsNotificationSettingResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsNotificationSettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsNotificationSettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsNotificationSettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", args, LookupDomainsNotificationSettingResultOutput{}, options).(LookupDomainsNotificationSettingResultOutput), nil
 		}).(LookupDomainsNotificationSettingResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Events
         /// </summary>
         public static Output<GetRuleResult> Invoke(GetRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRuleResult>("oci:Events/getRule:getRule", args ?? new GetRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Events service.
+        /// 
+        /// Retrieves a rule.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRule = Oci.Events.GetRule.Invoke(new()
+        ///     {
+        ///         RuleId = testRuleOciEventsRule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRuleResult> Invoke(GetRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRuleResult>("oci:Events/getRule:getRule", args ?? new GetRuleInvokeArgs(), options.WithDefaults());
     }
 
 

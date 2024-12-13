@@ -78,21 +78,11 @@ type GetAutonomousCharacterSetsResult struct {
 }
 
 func GetAutonomousCharacterSetsOutput(ctx *pulumi.Context, args GetAutonomousCharacterSetsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousCharacterSetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousCharacterSetsResultOutput, error) {
 			args := v.(GetAutonomousCharacterSetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousCharacterSetsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousCharacterSetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousCharacterSetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousCharacterSetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args, GetAutonomousCharacterSetsResultOutput{}, options).(GetAutonomousCharacterSetsResultOutput), nil
 		}).(GetAutonomousCharacterSetsResultOutput)
 }
 

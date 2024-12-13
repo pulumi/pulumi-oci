@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceMaintenanceRebootResult> Invoke(GetInstanceMaintenanceRebootInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceRebootResult>("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args ?? new GetInstanceMaintenanceRebootInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
+        /// [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceMaintenanceReboot = Oci.Core.GetInstanceMaintenanceReboot.Invoke(new()
+        ///     {
+        ///         InstanceId = testInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceMaintenanceRebootResult> Invoke(GetInstanceMaintenanceRebootInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceRebootResult>("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args ?? new GetInstanceMaintenanceRebootInvokeArgs(), options.WithDefaults());
     }
 
 

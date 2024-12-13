@@ -64,6 +64,33 @@ namespace Pulumi.Oci.GloballyDistributedDatabase
         /// </summary>
         public static Output<GetPrivateEndpointResult> Invoke(GetPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointResult>("oci:GloballyDistributedDatabase/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+        /// 
+        /// Get the PrivateEndpoint resource.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPrivateEndpoint = Oci.GloballyDistributedDatabase.GetPrivateEndpoint.Invoke(new()
+        ///     {
+        ///         PrivateEndpointId = testPrivateEndpointOciGloballyDistributedDatabasePrivateEndpoint.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPrivateEndpointResult> Invoke(GetPrivateEndpointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointResult>("oci:GloballyDistributedDatabase/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -121,21 +121,11 @@ type GetInvoiceResult struct {
 }
 
 func GetInvoiceOutput(ctx *pulumi.Context, args GetInvoiceOutputArgs, opts ...pulumi.InvokeOption) GetInvoiceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInvoiceResultOutput, error) {
 			args := v.(GetInvoiceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInvoiceResult
-			secret, err := ctx.InvokePackageRaw("oci:OspGateway/getInvoice:getInvoice", args, &rv, "", opts...)
-			if err != nil {
-				return GetInvoiceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInvoiceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInvoiceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OspGateway/getInvoice:getInvoice", args, GetInvoiceResultOutput{}, options).(GetInvoiceResultOutput), nil
 		}).(GetInvoiceResultOutput)
 }
 

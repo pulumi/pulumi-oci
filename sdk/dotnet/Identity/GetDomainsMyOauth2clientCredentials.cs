@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyOauth2clientCredentialsResult> Invoke(GetDomainsMyOauth2clientCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyOauth2clientCredentialsResult>("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", args ?? new GetDomainsMyOauth2clientCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's own OAuth2 client credential.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyOauth2clientCredentials = Oci.Identity.GetDomainsMyOauth2clientCredentials.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyOauth2clientCredentialCount = myOauth2clientCredentialMyOauth2clientCredentialCount,
+        ///         MyOauth2clientCredentialFilter = myOauth2clientCredentialMyOauth2clientCredentialFilter,
+        ///         Authorization = myOauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myOauth2clientCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = myOauth2clientCredentialStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyOauth2clientCredentialsResult> Invoke(GetDomainsMyOauth2clientCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyOauth2clientCredentialsResult>("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", args ?? new GetDomainsMyOauth2clientCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

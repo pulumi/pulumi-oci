@@ -81,21 +81,11 @@ type LookupPeerResult struct {
 }
 
 func LookupPeerOutput(ctx *pulumi.Context, args LookupPeerOutputArgs, opts ...pulumi.InvokeOption) LookupPeerResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupPeerResultOutput, error) {
 			args := v.(LookupPeerArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupPeerResult
-			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getPeer:getPeer", args, &rv, "", opts...)
-			if err != nil {
-				return LookupPeerResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupPeerResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupPeerResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Blockchain/getPeer:getPeer", args, LookupPeerResultOutput{}, options).(LookupPeerResultOutput), nil
 		}).(LookupPeerResultOutput)
 }
 

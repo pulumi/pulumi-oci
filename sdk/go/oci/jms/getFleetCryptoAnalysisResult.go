@@ -103,21 +103,11 @@ type GetFleetCryptoAnalysisResultResult struct {
 }
 
 func GetFleetCryptoAnalysisResultOutput(ctx *pulumi.Context, args GetFleetCryptoAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetCryptoAnalysisResultResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetCryptoAnalysisResultResultOutput, error) {
 			args := v.(GetFleetCryptoAnalysisResultArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetCryptoAnalysisResultResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetCryptoAnalysisResultResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetCryptoAnalysisResultResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetCryptoAnalysisResultResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", args, GetFleetCryptoAnalysisResultResultOutput{}, options).(GetFleetCryptoAnalysisResultResultOutput), nil
 		}).(GetFleetCryptoAnalysisResultResultOutput)
 }
 

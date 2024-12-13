@@ -103,21 +103,11 @@ type LookupWorkspaceExportRequestResult struct {
 }
 
 func LookupWorkspaceExportRequestOutput(ctx *pulumi.Context, args LookupWorkspaceExportRequestOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceExportRequestResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupWorkspaceExportRequestResultOutput, error) {
 			args := v.(LookupWorkspaceExportRequestArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupWorkspaceExportRequestResult
-			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", args, &rv, "", opts...)
-			if err != nil {
-				return LookupWorkspaceExportRequestResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupWorkspaceExportRequestResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupWorkspaceExportRequestResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", args, LookupWorkspaceExportRequestResultOutput{}, options).(LookupWorkspaceExportRequestResultOutput), nil
 		}).(LookupWorkspaceExportRequestResultOutput)
 }
 

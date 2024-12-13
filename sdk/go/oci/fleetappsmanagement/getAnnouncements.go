@@ -73,21 +73,11 @@ type GetAnnouncementsResult struct {
 }
 
 func GetAnnouncementsOutput(ctx *pulumi.Context, args GetAnnouncementsOutputArgs, opts ...pulumi.InvokeOption) GetAnnouncementsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAnnouncementsResultOutput, error) {
 			args := v.(GetAnnouncementsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAnnouncementsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", args, &rv, "", opts...)
-			if err != nil {
-				return GetAnnouncementsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAnnouncementsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAnnouncementsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", args, GetAnnouncementsResultOutput{}, options).(GetAnnouncementsResultOutput), nil
 		}).(GetAnnouncementsResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Logging
         /// </summary>
         public static Output<GetLogGroupResult> Invoke(GetLogGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogGroupResult>("oci:Logging/getLogGroup:getLogGroup", args ?? new GetLogGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
+        /// 
+        /// Get the specified log group's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogGroup = Oci.Logging.GetLogGroup.Invoke(new()
+        ///     {
+        ///         LogGroupId = testLogGroupOciLoggingLogGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogGroupResult> Invoke(GetLogGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogGroupResult>("oci:Logging/getLogGroup:getLogGroup", args ?? new GetLogGroupInvokeArgs(), options.WithDefaults());
     }
 
 

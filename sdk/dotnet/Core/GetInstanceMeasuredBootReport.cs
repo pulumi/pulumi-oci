@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceMeasuredBootReportResult> Invoke(GetInstanceMeasuredBootReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMeasuredBootReportResult>("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args ?? new GetInstanceMeasuredBootReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the measured boot report for this shielded instance.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceMeasuredBootReport = Oci.Core.GetInstanceMeasuredBootReport.Invoke(new()
+        ///     {
+        ///         InstanceId = testInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceMeasuredBootReportResult> Invoke(GetInstanceMeasuredBootReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMeasuredBootReportResult>("oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport", args ?? new GetInstanceMeasuredBootReportInvokeArgs(), options.WithDefaults());
     }
 
 

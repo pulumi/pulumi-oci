@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetVaultUsageResult> Invoke(GetVaultUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVaultUsageResult>("oci:Kms/getVaultUsage:getVaultUsage", args ?? new GetVaultUsageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVaultUsage = Oci.Kms.GetVaultUsage.Invoke(new()
+        ///     {
+        ///         VaultId = testVault.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVaultUsageResult> Invoke(GetVaultUsageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVaultUsageResult>("oci:Kms/getVaultUsage:getVaultUsage", args ?? new GetVaultUsageInvokeArgs(), options.WithDefaults());
     }
 
 

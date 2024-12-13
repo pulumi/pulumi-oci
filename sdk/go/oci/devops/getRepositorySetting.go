@@ -69,21 +69,11 @@ type LookupRepositorySettingResult struct {
 }
 
 func LookupRepositorySettingOutput(ctx *pulumi.Context, args LookupRepositorySettingOutputArgs, opts ...pulumi.InvokeOption) LookupRepositorySettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupRepositorySettingResultOutput, error) {
 			args := v.(LookupRepositorySettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupRepositorySettingResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositorySetting:getRepositorySetting", args, &rv, "", opts...)
-			if err != nil {
-				return LookupRepositorySettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupRepositorySettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupRepositorySettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getRepositorySetting:getRepositorySetting", args, LookupRepositorySettingResultOutput{}, options).(LookupRepositorySettingResultOutput), nil
 		}).(LookupRepositorySettingResultOutput)
 }
 

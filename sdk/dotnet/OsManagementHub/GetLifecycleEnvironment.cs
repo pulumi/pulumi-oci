@@ -62,6 +62,32 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetLifecycleEnvironmentResult> Invoke(GetLifecycleEnvironmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleEnvironmentResult>("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", args ?? new GetLifecycleEnvironmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Gets information about the specified lifecycle environment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLifecycleEnvironment = Oci.OsManagementHub.GetLifecycleEnvironment.Invoke(new()
+        ///     {
+        ///         LifecycleEnvironmentId = testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLifecycleEnvironmentResult> Invoke(GetLifecycleEnvironmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleEnvironmentResult>("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", args ?? new GetLifecycleEnvironmentInvokeArgs(), options.WithDefaults());
     }
 
 

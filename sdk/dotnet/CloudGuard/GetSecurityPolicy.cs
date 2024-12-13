@@ -68,6 +68,35 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetSecurityPolicyResult> Invoke(GetSecurityPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyResult>("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", args ?? new GetSecurityPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+        /// (securityPolicyId). When a policy is enabled in a security zone, then any action in
+        /// the zone that attempts to violate that policy is blocked.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicy = Oci.CloudGuard.GetSecurityPolicy.Invoke(new()
+        ///     {
+        ///         SecurityPolicyId = testSecurityPolicyOciCloudGuardSecurityPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyResult> Invoke(GetSecurityPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyResult>("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", args ?? new GetSecurityPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

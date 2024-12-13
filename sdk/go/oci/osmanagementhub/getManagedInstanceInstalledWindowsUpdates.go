@@ -85,21 +85,11 @@ type GetManagedInstanceInstalledWindowsUpdatesResult struct {
 }
 
 func GetManagedInstanceInstalledWindowsUpdatesOutput(ctx *pulumi.Context, args GetManagedInstanceInstalledWindowsUpdatesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceInstalledWindowsUpdatesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedInstanceInstalledWindowsUpdatesResultOutput, error) {
 			args := v.(GetManagedInstanceInstalledWindowsUpdatesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedInstanceInstalledWindowsUpdatesResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedInstanceInstalledWindowsUpdatesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedInstanceInstalledWindowsUpdatesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedInstanceInstalledWindowsUpdatesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", args, GetManagedInstanceInstalledWindowsUpdatesResultOutput{}, options).(GetManagedInstanceInstalledWindowsUpdatesResultOutput), nil
 		}).(GetManagedInstanceInstalledWindowsUpdatesResultOutput)
 }
 

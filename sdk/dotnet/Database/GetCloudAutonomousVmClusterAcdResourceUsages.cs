@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> Invoke(GetCloudAutonomousVmClusterAcdResourceUsagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterAcdResourceUsagesResult>("oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages", args ?? new GetCloudAutonomousVmClusterAcdResourceUsagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the list of resource usage details for all the Cloud Autonomous Container Database
+        /// in the specified Cloud Autonomous Exadata VM cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudAutonomousVmClusterAcdResourceUsages = Oci.Database.GetCloudAutonomousVmClusterAcdResourceUsages.Invoke(new()
+        ///     {
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> Invoke(GetCloudAutonomousVmClusterAcdResourceUsagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterAcdResourceUsagesResult>("oci:Database/getCloudAutonomousVmClusterAcdResourceUsages:getCloudAutonomousVmClusterAcdResourceUsages", args ?? new GetCloudAutonomousVmClusterAcdResourceUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

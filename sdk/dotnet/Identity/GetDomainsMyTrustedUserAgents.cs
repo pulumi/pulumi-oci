@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyTrustedUserAgentsResult> Invoke(GetDomainsMyTrustedUserAgentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyTrustedUserAgentsResult>("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", args ?? new GetDomainsMyTrustedUserAgentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Trusted User Agents in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Trusted User Agents
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyTrustedUserAgents = Oci.Identity.GetDomainsMyTrustedUserAgents.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyTrustedUserAgentCount = myTrustedUserAgentMyTrustedUserAgentCount,
+        ///         MyTrustedUserAgentFilter = myTrustedUserAgentMyTrustedUserAgentFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = myTrustedUserAgentAuthorization,
+        ///         ResourceTypeSchemaVersion = myTrustedUserAgentResourceTypeSchemaVersion,
+        ///         StartIndex = myTrustedUserAgentStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyTrustedUserAgentsResult> Invoke(GetDomainsMyTrustedUserAgentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyTrustedUserAgentsResult>("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", args ?? new GetDomainsMyTrustedUserAgentsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -96,21 +96,11 @@ type LookupDetectorRecipeResult struct {
 }
 
 func LookupDetectorRecipeOutput(ctx *pulumi.Context, args LookupDetectorRecipeOutputArgs, opts ...pulumi.InvokeOption) LookupDetectorRecipeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDetectorRecipeResultOutput, error) {
 			args := v.(LookupDetectorRecipeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDetectorRecipeResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDetectorRecipeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDetectorRecipeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDetectorRecipeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args, LookupDetectorRecipeResultOutput{}, options).(LookupDetectorRecipeResultOutput), nil
 		}).(LookupDetectorRecipeResultOutput)
 }
 

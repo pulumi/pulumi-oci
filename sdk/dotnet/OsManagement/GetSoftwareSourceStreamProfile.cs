@@ -96,6 +96,49 @@ namespace Pulumi.Oci.OsManagement
         /// </summary>
         public static Output<GetSoftwareSourceStreamProfileResult> Invoke(GetSoftwareSourceStreamProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceStreamProfileResult>("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", args ?? new GetSoftwareSourceStreamProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+        /// 
+        /// Retrieve a list of module stream profiles from a software source.
+        /// Filters may be applied to select a subset of module stream profiles
+        /// based on the filter criteria.
+        /// 
+        /// The "moduleName", "streamName", and "profileName" attributes combine
+        /// to form a set of filters on the list of module stream profiles.  If
+        /// a "moduleName" is provided, only profiles that belong to that module
+        /// are returned.  If both a "moduleName" and "streamName" are given,
+        /// only profiles belonging to that module stream are returned.  Finally,
+        /// if all three are given then only the particular profile indicated
+        /// by the triple is returned.  It is not valid to supply a "streamName"
+        /// without a "moduleName".  It is also not valid to supply a "profileName"
+        /// without a "streamName".
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceStreamProfiles = Oci.OsManagement.GetSoftwareSourceStreamProfile.Invoke(new()
+        ///     {
+        ///         SoftwareSourceId = softwareSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = softwareSourceModuleName,
+        ///         ProfileName = softwareSourceModuleStreamProfileName,
+        ///         StreamName = softwareSourceModuleStreamName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceStreamProfileResult> Invoke(GetSoftwareSourceStreamProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceStreamProfileResult>("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", args ?? new GetSoftwareSourceStreamProfileInvokeArgs(), options.WithDefaults());
     }
 
 

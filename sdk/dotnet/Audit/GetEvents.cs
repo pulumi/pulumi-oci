@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Audit
         /// </summary>
         public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
+        /// 
+        /// Returns all the audit events processed for the specified compartment within the specified
+        /// time range.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditEvents = Oci.Audit.GetEvents.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         EndTime = auditEventEndTime,
+        ///         StartTime = auditEventStartTime,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
     }
 
 

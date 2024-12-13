@@ -84,6 +84,43 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceGroupsResult> Invoke(GetManagedInstanceGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupsResult>("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroups = Oci.OsManagementHub.GetManagedInstanceGroups.Invoke(new()
+        ///     {
+        ///         ArchType = managedInstanceGroupArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupDisplayNameContains,
+        ///         IsManagedByAutonomousLinux = managedInstanceGroupIsManagedByAutonomousLinux,
+        ///         Locations = managedInstanceGroupLocation,
+        ///         LocationNotEqualTos = managedInstanceGroupLocationNotEqualTo,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         OsFamily = managedInstanceGroupOsFamily,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         State = managedInstanceGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupsResult> Invoke(GetManagedInstanceGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupsResult>("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

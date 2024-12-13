@@ -100,6 +100,51 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public static Output<GetAlarmStatusesResult> Invoke(GetAlarmStatusesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlarmStatusesResult>("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args ?? new GetAlarmStatusesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
+        /// 
+        /// List the status of each alarm in the specified compartment.
+        /// Status is collective, across all metric streams in the alarm.
+        /// To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// Optionally filter by resource or status value.
+        /// 
+        /// For more information, see
+        /// [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+        /// 
+        /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        /// or transactions, per second (TPS) for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlarmStatuses = Oci.Monitoring.GetAlarmStatuses.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmStatusCompartmentIdInSubtree,
+        ///         DisplayName = alarmStatusDisplayName,
+        ///         EntityId = testEntity.Id,
+        ///         ResourceId = testResource.Id,
+        ///         ServiceName = testService.Name,
+        ///         Status = alarmStatusStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlarmStatusesResult> Invoke(GetAlarmStatusesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlarmStatusesResult>("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args ?? new GetAlarmStatusesInvokeArgs(), options.WithDefaults());
     }
 
 

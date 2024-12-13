@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryDiffsResult> Invoke(GetRepositoryDiffsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffsResult>("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args ?? new GetRepositoryDiffsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Compares two revisions and lists the differences. Supports comparison between two references or commits.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryDiffs = Oci.DevOps.GetRepositoryDiffs.Invoke(new()
+        ///     {
+        ///         BaseVersion = repositoryDiffBaseVersion,
+        ///         RepositoryId = testRepository.Id,
+        ///         TargetVersion = repositoryDiffTargetVersion,
+        ///         IsComparisonFromMergeBase = repositoryDiffIsComparisonFromMergeBase,
+        ///         TargetRepositoryId = testRepository.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryDiffsResult> Invoke(GetRepositoryDiffsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffsResult>("oci:DevOps/getRepositoryDiffs:getRepositoryDiffs", args ?? new GetRepositoryDiffsInvokeArgs(), options.WithDefaults());
     }
 
 

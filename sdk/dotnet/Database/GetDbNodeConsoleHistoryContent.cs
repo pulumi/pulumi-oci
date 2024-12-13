@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbNodeConsoleHistoryContentResult> Invoke(GetDbNodeConsoleHistoryContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleHistoryContentResult>("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", args ?? new GetDbNodeConsoleHistoryContentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Retrieves the specified database node console history contents upto a megabyte.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbNodeConsoleHistoryContent = Oci.Database.GetDbNodeConsoleHistoryContent.Invoke(new()
+        ///     {
+        ///         ConsoleHistoryId = testConsoleHistory.Id,
+        ///         DbNodeId = testDbNode.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbNodeConsoleHistoryContentResult> Invoke(GetDbNodeConsoleHistoryContentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleHistoryContentResult>("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", args ?? new GetDbNodeConsoleHistoryContentInvokeArgs(), options.WithDefaults());
     }
 
 

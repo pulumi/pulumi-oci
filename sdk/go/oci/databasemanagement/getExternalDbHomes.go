@@ -79,21 +79,11 @@ type GetExternalDbHomesResult struct {
 }
 
 func GetExternalDbHomesOutput(ctx *pulumi.Context, args GetExternalDbHomesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbHomesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalDbHomesResultOutput, error) {
 			args := v.(GetExternalDbHomesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalDbHomesResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalDbHomesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalDbHomesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalDbHomesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", args, GetExternalDbHomesResultOutput{}, options).(GetExternalDbHomesResultOutput), nil
 		}).(GetExternalDbHomesResultOutput)
 }
 

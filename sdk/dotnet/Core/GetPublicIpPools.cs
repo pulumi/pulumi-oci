@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetPublicIpPoolsResult> Invoke(GetPublicIpPoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolsResult>("oci:Core/getPublicIpPools:getPublicIpPools", args ?? new GetPublicIpPoolsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the public IP pools in the specified compartment.
+        /// You can filter the list using query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublicIpPools = Oci.Core.GetPublicIpPools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ByoipRangeId = testByoipRange.Id,
+        ///         DisplayName = publicIpPoolDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublicIpPoolsResult> Invoke(GetPublicIpPoolsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolsResult>("oci:Core/getPublicIpPools:getPublicIpPools", args ?? new GetPublicIpPoolsInvokeArgs(), options.WithDefaults());
     }
 
 

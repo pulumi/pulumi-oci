@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetJobShapesResult> Invoke(GetJobShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobShapesResult>("oci:DataScience/getJobShapes:getJobShapes", args ?? new GetJobShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// List job shapes available in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJobShapes = Oci.DataScience.GetJobShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJobShapesResult> Invoke(GetJobShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobShapesResult>("oci:DataScience/getJobShapes:getJobShapes", args ?? new GetJobShapesInvokeArgs(), options.WithDefaults());
     }
 
 

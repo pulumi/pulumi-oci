@@ -16,6 +16,9 @@ namespace Pulumi.Oci.ObjectStorage
 
         public static Output<GetPrivateEndpointSummariesResult> Invoke(GetPrivateEndpointSummariesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointSummariesResult>("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args ?? new GetPrivateEndpointSummariesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetPrivateEndpointSummariesResult> Invoke(GetPrivateEndpointSummariesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointSummariesResult>("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args ?? new GetPrivateEndpointSummariesInvokeArgs(), options.WithDefaults());
     }
 
 

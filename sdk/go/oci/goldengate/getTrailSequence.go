@@ -81,21 +81,11 @@ type GetTrailSequenceResult struct {
 }
 
 func GetTrailSequenceOutput(ctx *pulumi.Context, args GetTrailSequenceOutputArgs, opts ...pulumi.InvokeOption) GetTrailSequenceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetTrailSequenceResultOutput, error) {
 			args := v.(GetTrailSequenceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetTrailSequenceResult
-			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getTrailSequence:getTrailSequence", args, &rv, "", opts...)
-			if err != nil {
-				return GetTrailSequenceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetTrailSequenceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetTrailSequenceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GoldenGate/getTrailSequence:getTrailSequence", args, GetTrailSequenceResultOutput{}, options).(GetTrailSequenceResultOutput), nil
 		}).(GetTrailSequenceResultOutput)
 }
 

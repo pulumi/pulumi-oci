@@ -68,6 +68,35 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicySecurityRulesResult> Invoke(GetNetworkFirewallPolicySecurityRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules", args ?? new GetNetworkFirewallPolicySecurityRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Returns a list of Security Rule for the Network Firewall Policy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicySecurityRules = Oci.NetworkFirewall.GetNetworkFirewallPolicySecurityRules.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicySecurityRuleDisplayName,
+        ///         SecurityRulePriorityOrder = networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicySecurityRulesResult> Invoke(GetNetworkFirewallPolicySecurityRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules", args ?? new GetNetworkFirewallPolicySecurityRulesInvokeArgs(), options.WithDefaults());
     }
 
 

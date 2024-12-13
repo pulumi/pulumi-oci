@@ -83,21 +83,11 @@ type GetMigrationsResult struct {
 }
 
 func GetMigrationsOutput(ctx *pulumi.Context, args GetMigrationsOutputArgs, opts ...pulumi.InvokeOption) GetMigrationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMigrationsResultOutput, error) {
 			args := v.(GetMigrationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMigrationsResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getMigrations:getMigrations", args, &rv, "", opts...)
-			if err != nil {
-				return GetMigrationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMigrationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMigrationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudMigrations/getMigrations:getMigrations", args, GetMigrationsResultOutput{}, options).(GetMigrationsResultOutput), nil
 		}).(GetMigrationsResultOutput)
 }
 

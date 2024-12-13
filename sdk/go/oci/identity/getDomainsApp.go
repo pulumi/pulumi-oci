@@ -319,21 +319,11 @@ type LookupDomainsAppResult struct {
 }
 
 func LookupDomainsAppOutput(ctx *pulumi.Context, args LookupDomainsAppOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAppResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsAppResultOutput, error) {
 			args := v.(LookupDomainsAppArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsAppResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsApp:getDomainsApp", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsAppResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsAppResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsAppResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsApp:getDomainsApp", args, LookupDomainsAppResultOutput{}, options).(LookupDomainsAppResultOutput), nil
 		}).(LookupDomainsAppResultOutput)
 }
 

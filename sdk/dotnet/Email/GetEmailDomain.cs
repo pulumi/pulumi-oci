@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public static Output<GetEmailDomainResult> Invoke(GetEmailDomainInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEmailDomainResult>("oci:Email/getEmailDomain:getEmailDomain", args ?? new GetEmailDomainInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
+        /// 
+        /// Retrieves the specified email domain.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEmailDomain = Oci.Email.GetEmailDomain.Invoke(new()
+        ///     {
+        ///         EmailDomainId = testEmailDomainOciEmailEmailDomain.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEmailDomainResult> Invoke(GetEmailDomainInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEmailDomainResult>("oci:Email/getEmailDomain:getEmailDomain", args ?? new GetEmailDomainInvokeArgs(), options.WithDefaults());
     }
 
 

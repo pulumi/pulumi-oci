@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSocialIdentityProvidersResult> Invoke(GetDomainsSocialIdentityProvidersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSocialIdentityProvidersResult>("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args ?? new GetDomainsSocialIdentityProvidersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Social Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Social Identity Providers
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSocialIdentityProviders = Oci.Identity.GetDomainsSocialIdentityProviders.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SocialIdentityProviderCount = socialIdentityProviderSocialIdentityProviderCount,
+        ///         SocialIdentityProviderFilter = socialIdentityProviderSocialIdentityProviderFilter,
+        ///         Authorization = socialIdentityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = socialIdentityProviderResourceTypeSchemaVersion,
+        ///         StartIndex = socialIdentityProviderStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSocialIdentityProvidersResult> Invoke(GetDomainsSocialIdentityProvidersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSocialIdentityProvidersResult>("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args ?? new GetDomainsSocialIdentityProvidersInvokeArgs(), options.WithDefaults());
     }
 
 

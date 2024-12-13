@@ -88,21 +88,11 @@ type GetUserGroupMembershipsResult struct {
 }
 
 func GetUserGroupMembershipsOutput(ctx *pulumi.Context, args GetUserGroupMembershipsOutputArgs, opts ...pulumi.InvokeOption) GetUserGroupMembershipsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetUserGroupMembershipsResultOutput, error) {
 			args := v.(GetUserGroupMembershipsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetUserGroupMembershipsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args, &rv, "", opts...)
-			if err != nil {
-				return GetUserGroupMembershipsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetUserGroupMembershipsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetUserGroupMembershipsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args, GetUserGroupMembershipsResultOutput{}, options).(GetUserGroupMembershipsResultOutput), nil
 		}).(GetUserGroupMembershipsResultOutput)
 }
 

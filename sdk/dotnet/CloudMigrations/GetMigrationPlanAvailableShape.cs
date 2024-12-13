@@ -70,6 +70,36 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public static Output<GetMigrationPlanAvailableShapeResult> Invoke(GetMigrationPlanAvailableShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanAvailableShapeResult>("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", args ?? new GetMigrationPlanAvailableShapeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Migration Plan Available Shape resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        /// 
+        /// List of shapes by parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrationPlanAvailableShape = Oci.CloudMigrations.GetMigrationPlanAvailableShape.Invoke(new()
+        ///     {
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         AvailabilityDomain = migrationPlanAvailableShapeAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DvhHostId = testDvhHost.Id,
+        ///         ReservedCapacityId = testReservedCapacity.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMigrationPlanAvailableShapeResult> Invoke(GetMigrationPlanAvailableShapeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanAvailableShapeResult>("oci:CloudMigrations/getMigrationPlanAvailableShape:getMigrationPlanAvailableShape", args ?? new GetMigrationPlanAvailableShapeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetBucketResult> Invoke(GetBucketInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBucketResult>("oci:ObjectStorage/getBucket:getBucket", args ?? new GetBucketInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets the current representation of the given bucket in the given Object Storage namespace.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBucket = Oci.ObjectStorage.GetBucket.Invoke(new()
+        ///     {
+        ///         Name = bucketName,
+        ///         Namespace = bucketNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBucketResult> Invoke(GetBucketInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBucketResult>("oci:ObjectStorage/getBucket:getBucket", args ?? new GetBucketInvokeArgs(), options.WithDefaults());
     }
 
 

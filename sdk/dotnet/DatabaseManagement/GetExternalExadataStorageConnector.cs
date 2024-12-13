@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageConnectorResult> Invoke(GetExternalExadataStorageConnectorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageConnectorResult>("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", args ?? new GetExternalExadataStorageConnectorInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageConnector = Oci.DatabaseManagement.GetExternalExadataStorageConnector.Invoke(new()
+        ///     {
+        ///         ExternalExadataStorageConnectorId = testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageConnectorResult> Invoke(GetExternalExadataStorageConnectorInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageConnectorResult>("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", args ?? new GetExternalExadataStorageConnectorInvokeArgs(), options.WithDefaults());
     }
 
 

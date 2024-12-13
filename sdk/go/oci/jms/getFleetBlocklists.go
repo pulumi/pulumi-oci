@@ -79,21 +79,11 @@ type GetFleetBlocklistsResult struct {
 }
 
 func GetFleetBlocklistsOutput(ctx *pulumi.Context, args GetFleetBlocklistsOutputArgs, opts ...pulumi.InvokeOption) GetFleetBlocklistsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetBlocklistsResultOutput, error) {
 			args := v.(GetFleetBlocklistsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetBlocklistsResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetBlocklists:getFleetBlocklists", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetBlocklistsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetBlocklistsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetBlocklistsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getFleetBlocklists:getFleetBlocklists", args, GetFleetBlocklistsResultOutput{}, options).(GetFleetBlocklistsResultOutput), nil
 		}).(GetFleetBlocklistsResultOutput)
 }
 

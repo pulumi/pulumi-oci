@@ -88,21 +88,11 @@ type GetRemediationRunsResult struct {
 }
 
 func GetRemediationRunsOutput(ctx *pulumi.Context, args GetRemediationRunsOutputArgs, opts ...pulumi.InvokeOption) GetRemediationRunsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRemediationRunsResultOutput, error) {
 			args := v.(GetRemediationRunsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRemediationRunsResult
-			secret, err := ctx.InvokePackageRaw("oci:Adm/getRemediationRuns:getRemediationRuns", args, &rv, "", opts...)
-			if err != nil {
-				return GetRemediationRunsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRemediationRunsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRemediationRunsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Adm/getRemediationRuns:getRemediationRuns", args, GetRemediationRunsResultOutput{}, options).(GetRemediationRunsResultOutput), nil
 		}).(GetRemediationRunsResultOutput)
 }
 

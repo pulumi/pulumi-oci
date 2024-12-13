@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Waf
         /// </summary>
         public static Output<GetProtectionCapabilityGroupTagsResult> Invoke(GetProtectionCapabilityGroupTagsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
+        /// 
+        /// Lists of available group tags filtered by query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectionCapabilityGroupTags = Oci.Waf.GetProtectionCapabilityGroupTags.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = protectionCapabilityGroupTagName,
+        ///         Type = protectionCapabilityGroupTagType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectionCapabilityGroupTagsResult> Invoke(GetProtectionCapabilityGroupTagsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsInvokeArgs(), options.WithDefaults());
     }
 
 

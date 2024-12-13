@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDatabaseMaintenanceRunHistoriesResult> Invoke(GetDatabaseMaintenanceRunHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseMaintenanceRunHistoriesResult>("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", args ?? new GetDatabaseMaintenanceRunHistoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the maintenance run histories in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaintenanceRunHistories = Oci.Database.GetDatabaseMaintenanceRunHistories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = maintenanceRunHistoryAvailabilityDomain,
+        ///         MaintenanceType = maintenanceRunHistoryMaintenanceType,
+        ///         State = maintenanceRunHistoryState,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = maintenanceRunHistoryTargetResourceType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseMaintenanceRunHistoriesResult> Invoke(GetDatabaseMaintenanceRunHistoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseMaintenanceRunHistoriesResult>("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", args ?? new GetDatabaseMaintenanceRunHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

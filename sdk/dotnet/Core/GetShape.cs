@@ -16,6 +16,9 @@ namespace Pulumi.Oci.Core
 
         public static Output<GetShapeResult> Invoke(GetShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShapeResult>("oci:Core/getShape:getShape", args ?? new GetShapeInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetShapeResult> Invoke(GetShapeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapeResult>("oci:Core/getShape:getShape", args ?? new GetShapeInvokeArgs(), options.WithDefaults());
     }
 
 

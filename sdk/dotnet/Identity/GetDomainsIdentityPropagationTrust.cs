@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsIdentityPropagationTrustResult> Invoke(GetDomainsIdentityPropagationTrustInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityPropagationTrustResult>("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", args ?? new GetDomainsIdentityPropagationTrustInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get an existing Identity Propagation Trust configuration.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIdentityPropagationTrust = Oci.Identity.GetDomainsIdentityPropagationTrust.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityPropagationTrustId = testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = identityPropagationTrustAuthorization,
+        ///         ResourceTypeSchemaVersion = identityPropagationTrustResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsIdentityPropagationTrustResult> Invoke(GetDomainsIdentityPropagationTrustInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityPropagationTrustResult>("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", args ?? new GetDomainsIdentityPropagationTrustInvokeArgs(), options.WithDefaults());
     }
 
 

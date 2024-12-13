@@ -102,6 +102,52 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetUserAssessmentProfileAnalyticsResult> Invoke(GetUserAssessmentProfileAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentProfileAnalyticsResult>("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", args ?? new GetUserAssessmentProfileAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of aggregated user profile details in the specified compartment. This provides information about the
+        /// overall profiles available. For example, the user profile details include how many users have the profile assigned
+        /// and do how many use password verification function. This data is especially useful content for dashboards or to support analytics.
+        /// 
+        /// When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+        /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+        /// compartmentId, then "Not Authorized" is returned.
+        /// 
+        /// The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
+        /// set to true, the entire hierarchy of compartments can be returned.
+        /// 
+        /// To use ListProfileAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+        /// set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAssessmentProfileAnalytics = Oci.DataSafe.GetUserAssessmentProfileAnalytics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentProfileAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = userAssessmentProfileAnalyticCompartmentIdInSubtree,
+        ///         ProfileName = testProfile.Name,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserAssessmentProfileAnalyticsResult> Invoke(GetUserAssessmentProfileAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentProfileAnalyticsResult>("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", args ?? new GetUserAssessmentProfileAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetSteeringPolicyResult> Invoke(GetSteeringPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyResult>("oci:Dns/getSteeringPolicy:getSteeringPolicy", args ?? new GetSteeringPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets information about the specified steering policy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSteeringPolicy = Oci.Dns.GetSteeringPolicy.Invoke(new()
+        ///     {
+        ///         SteeringPolicyId = testSteeringPolicyOciDnsSteeringPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSteeringPolicyResult> Invoke(GetSteeringPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSteeringPolicyResult>("oci:Dns/getSteeringPolicy:getSteeringPolicy", args ?? new GetSteeringPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

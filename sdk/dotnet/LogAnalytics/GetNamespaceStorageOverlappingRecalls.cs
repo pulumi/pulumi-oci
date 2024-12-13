@@ -68,6 +68,35 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceStorageOverlappingRecallsResult> Invoke(GetNamespaceStorageOverlappingRecallsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageOverlappingRecallsResult>("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", args ?? new GetNamespaceStorageOverlappingRecallsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// This API gets the list of overlapping recalls made in the given timeframe
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceStorageOverlappingRecalls = Oci.LogAnalytics.GetNamespaceStorageOverlappingRecalls.Invoke(new()
+        ///     {
+        ///         Namespace = namespaceStorageOverlappingRecallNamespace,
+        ///         TimeDataEnded = namespaceStorageOverlappingRecallTimeDataEnded,
+        ///         TimeDataStarted = namespaceStorageOverlappingRecallTimeDataStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceStorageOverlappingRecallsResult> Invoke(GetNamespaceStorageOverlappingRecallsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageOverlappingRecallsResult>("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", args ?? new GetNamespaceStorageOverlappingRecallsInvokeArgs(), options.WithDefaults());
     }
 
 

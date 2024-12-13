@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousContainerPatchesResult> Invoke(GetAutonomousContainerPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerPatchesResult>("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", args ?? new GetAutonomousContainerPatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the patches applicable to the requested container database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousContainerPatches = Oci.Database.GetAutonomousContainerPatches.Invoke(new()
+        ///     {
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousPatchType = autonomousContainerPatchAutonomousPatchType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousContainerPatchesResult> Invoke(GetAutonomousContainerPatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerPatchesResult>("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", args ?? new GetAutonomousContainerPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.ComputeCloud
         /// </summary>
         public static Output<GetAtCustomerCccUpgradeSchedulesResult> Invoke(GetAtCustomerCccUpgradeSchedulesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccUpgradeSchedulesResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", args ?? new GetAtCustomerCccUpgradeSchedulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+        /// 
+        /// Returns a list of Compute Cloud@Customer upgrade schedules.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCccUpgradeSchedules = Oci.ComputeCloud.GetAtCustomerCccUpgradeSchedules.Invoke(new()
+        ///     {
+        ///         AccessLevel = cccUpgradeScheduleAccessLevel,
+        ///         CccUpgradeScheduleId = testCccUpgradeSchedule.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = cccUpgradeScheduleCompartmentIdInSubtree,
+        ///         DisplayName = cccUpgradeScheduleDisplayName,
+        ///         DisplayNameContains = cccUpgradeScheduleDisplayNameContains,
+        ///         State = cccUpgradeScheduleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAtCustomerCccUpgradeSchedulesResult> Invoke(GetAtCustomerCccUpgradeSchedulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccUpgradeSchedulesResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedules:getAtCustomerCccUpgradeSchedules", args ?? new GetAtCustomerCccUpgradeSchedulesInvokeArgs(), options.WithDefaults());
     }
 
 

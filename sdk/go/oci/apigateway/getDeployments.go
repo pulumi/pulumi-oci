@@ -84,21 +84,11 @@ type GetDeploymentsResult struct {
 }
 
 func GetDeploymentsOutput(ctx *pulumi.Context, args GetDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDeploymentsResultOutput, error) {
 			args := v.(GetDeploymentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDeploymentsResult
-			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getDeployments:getDeployments", args, &rv, "", opts...)
-			if err != nil {
-				return GetDeploymentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDeploymentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDeploymentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApiGateway/getDeployments:getDeployments", args, GetDeploymentsResultOutput{}, options).(GetDeploymentsResultOutput), nil
 		}).(GetDeploymentsResultOutput)
 }
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ManagementDashboard
         /// </summary>
         public static Output<GetManagementDashboardsExportResult> Invoke(GetManagementDashboardsExportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
+        /// 
+        /// Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. 
+        /// Here's an example of how you can use CLI to export a dashboard: 
+        /// `$oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  &gt; dashboards.json`
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementDashboardsExport = Oci.ManagementDashboard.GetManagementDashboardsExport.Invoke(new()
+        ///     {
+        ///         ExportDashboardId = testExportDashboard.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementDashboardsExportResult> Invoke(GetManagementDashboardsExportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportInvokeArgs(), options.WithDefaults());
     }
 
 

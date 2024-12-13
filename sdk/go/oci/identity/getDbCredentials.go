@@ -78,21 +78,11 @@ type GetDbCredentialsResult struct {
 }
 
 func GetDbCredentialsOutput(ctx *pulumi.Context, args GetDbCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDbCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDbCredentialsResultOutput, error) {
 			args := v.(GetDbCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDbCredentialsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDbCredentials:getDbCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return GetDbCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDbCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDbCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDbCredentials:getDbCredentials", args, GetDbCredentialsResultOutput{}, options).(GetDbCredentialsResultOutput), nil
 		}).(GetDbCredentialsResultOutput)
 }
 

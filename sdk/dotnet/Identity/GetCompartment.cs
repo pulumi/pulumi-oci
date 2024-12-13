@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetCompartmentResult> Invoke(GetCompartmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCompartmentResult>("oci:Identity/getCompartment:getCompartment", args ?? new GetCompartmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Gets the specified compartment's information.
+        /// 
+        /// This operation does not return a list of all the resources inside the compartment. There is no single
+        /// API operation that does that. Compartments can contain multiple types of resources (instances, block
+        /// storage volumes, etc.). To find out what's in a compartment, you must call the "List" operation for
+        /// each resource type and specify the compartment's OCID as a query parameter in the request. For example,
+        /// call the [ListInstances](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances) operation in the Cloud Compute
+        /// Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCompartment = Oci.Identity.GetCompartment.Invoke(new()
+        ///     {
+        ///         Id = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCompartmentResult> Invoke(GetCompartmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompartmentResult>("oci:Identity/getCompartment:getCompartment", args ?? new GetCompartmentInvokeArgs(), options.WithDefaults());
     }
 
 

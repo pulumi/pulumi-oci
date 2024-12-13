@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeGroupReplicasResult> Invoke(GetVolumeGroupReplicasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupReplicasResult>("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args ?? new GetVolumeGroupReplicasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
+        /// For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeGroupReplicas = Oci.Core.GetVolumeGroupReplicas.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = volumeGroupReplicaAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeGroupReplicaDisplayName,
+        ///         State = volumeGroupReplicaState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeGroupReplicasResult> Invoke(GetVolumeGroupReplicasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupReplicasResult>("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args ?? new GetVolumeGroupReplicasInvokeArgs(), options.WithDefaults());
     }
 
 

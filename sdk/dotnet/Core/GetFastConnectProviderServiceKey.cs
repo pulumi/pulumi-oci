@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetFastConnectProviderServiceKeyResult> Invoke(GetFastConnectProviderServiceKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServiceKeyResult>("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args ?? new GetFastConnectProviderServiceKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified provider service key's information. Use this operation to validate a
+        /// provider service key. An invalid key returns a 404 error.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFastConnectProviderServiceKey = Oci.Core.GetFastConnectProviderServiceKey.Invoke(new()
+        ///     {
+        ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
+        ///         ProviderServiceKeyName = fastConnectProviderServiceKeyProviderServiceKeyName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFastConnectProviderServiceKeyResult> Invoke(GetFastConnectProviderServiceKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServiceKeyResult>("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args ?? new GetFastConnectProviderServiceKeyInvokeArgs(), options.WithDefaults());
     }
 
 

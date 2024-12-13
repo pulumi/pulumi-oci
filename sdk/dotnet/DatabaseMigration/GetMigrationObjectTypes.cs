@@ -54,6 +54,28 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public static Output<GetMigrationObjectTypesResult> Invoke(GetMigrationObjectTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke(new()
+        ///     {
+        ///         ConnectionType = migrationObjectTypeConnectionType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMigrationObjectTypesResult> Invoke(GetMigrationObjectTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesInvokeArgs(), options.WithDefaults());
     }
 
 

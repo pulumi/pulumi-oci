@@ -118,21 +118,11 @@ type LookupExternalListenerResult struct {
 }
 
 func LookupExternalListenerOutput(ctx *pulumi.Context, args LookupExternalListenerOutputArgs, opts ...pulumi.InvokeOption) LookupExternalListenerResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalListenerResultOutput, error) {
 			args := v.(LookupExternalListenerArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalListenerResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalListener:getExternalListener", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalListenerResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalListenerResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalListenerResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalListener:getExternalListener", args, LookupExternalListenerResultOutput{}, options).(LookupExternalListenerResultOutput), nil
 		}).(LookupExternalListenerResultOutput)
 }
 

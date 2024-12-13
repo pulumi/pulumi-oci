@@ -85,21 +85,11 @@ type LookupZprPolicyResult struct {
 }
 
 func LookupZprPolicyOutput(ctx *pulumi.Context, args LookupZprPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupZprPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupZprPolicyResultOutput, error) {
 			args := v.(LookupZprPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupZprPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:Zpr/getZprPolicy:getZprPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupZprPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupZprPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupZprPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Zpr/getZprPolicy:getZprPolicy", args, LookupZprPolicyResultOutput{}, options).(LookupZprPolicyResultOutput), nil
 		}).(LookupZprPolicyResultOutput)
 }
 

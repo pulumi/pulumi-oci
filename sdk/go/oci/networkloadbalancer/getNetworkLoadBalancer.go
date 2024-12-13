@@ -102,21 +102,11 @@ type LookupNetworkLoadBalancerResult struct {
 }
 
 func LookupNetworkLoadBalancerOutput(ctx *pulumi.Context, args LookupNetworkLoadBalancerOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkLoadBalancerResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNetworkLoadBalancerResultOutput, error) {
 			args := v.(LookupNetworkLoadBalancerArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNetworkLoadBalancerResult
-			secret, err := ctx.InvokePackageRaw("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNetworkLoadBalancerResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNetworkLoadBalancerResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNetworkLoadBalancerResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", args, LookupNetworkLoadBalancerResultOutput{}, options).(LookupNetworkLoadBalancerResultOutput), nil
 		}).(LookupNetworkLoadBalancerResultOutput)
 }
 

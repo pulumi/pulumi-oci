@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetRegionSubscriptionsResult> Invoke(GetRegionSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRegionSubscriptionsResult>("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args ?? new GetRegionSubscriptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the region subscriptions for the specified tenancy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRegionSubscriptions = Oci.Identity.GetRegionSubscriptions.Invoke(new()
+        ///     {
+        ///         TenancyId = testTenancy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRegionSubscriptionsResult> Invoke(GetRegionSubscriptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegionSubscriptionsResult>("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args ?? new GetRegionSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

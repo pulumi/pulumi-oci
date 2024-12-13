@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbNodeConsoleHistoryResult> Invoke(GetDbNodeConsoleHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleHistoryResult>("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", args ?? new GetDbNodeConsoleHistoryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified database node console history.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbNodeConsoleHistory = Oci.Database.GetDbNodeConsoleHistory.Invoke(new()
+        ///     {
+        ///         ConsoleHistoryId = testConsoleHistory.Id,
+        ///         DbNodeId = testDbNode.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbNodeConsoleHistoryResult> Invoke(GetDbNodeConsoleHistoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeConsoleHistoryResult>("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", args ?? new GetDbNodeConsoleHistoryInvokeArgs(), options.WithDefaults());
     }
 
 

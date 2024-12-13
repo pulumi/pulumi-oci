@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetBackendSetHealthResult> Invoke(GetBackendSetHealthInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetHealthResult>("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Gets the health status for the specified backend set.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackendSetHealth = Oci.LoadBalancer.GetBackendSetHealth.Invoke(new()
+        ///     {
+        ///         BackendSetName = testBackendSet.Name,
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackendSetHealthResult> Invoke(GetBackendSetHealthInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetHealthResult>("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthInvokeArgs(), options.WithDefaults());
     }
 
 

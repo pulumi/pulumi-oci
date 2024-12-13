@@ -76,6 +76,39 @@ namespace Pulumi.Oci.ComputeCloud
         /// </summary>
         public static Output<GetAtCustomerCccInfrastructuresResult> Invoke(GetAtCustomerCccInfrastructuresInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccInfrastructuresResult>("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args ?? new GetAtCustomerCccInfrastructuresInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+        /// 
+        /// Returns a list of Compute Cloud@Customer infrastructures.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCccInfrastructures = Oci.ComputeCloud.GetAtCustomerCccInfrastructures.Invoke(new()
+        ///     {
+        ///         AccessLevel = cccInfrastructureAccessLevel,
+        ///         CccInfrastructureId = testCccInfrastructure.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = cccInfrastructureCompartmentIdInSubtree,
+        ///         DisplayName = cccInfrastructureDisplayName,
+        ///         DisplayNameContains = cccInfrastructureDisplayNameContains,
+        ///         State = cccInfrastructureState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAtCustomerCccInfrastructuresResult> Invoke(GetAtCustomerCccInfrastructuresInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccInfrastructuresResult>("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args ?? new GetAtCustomerCccInfrastructuresInvokeArgs(), options.WithDefaults());
     }
 
 

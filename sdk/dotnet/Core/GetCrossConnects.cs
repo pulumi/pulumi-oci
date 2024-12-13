@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCrossConnectsResult> Invoke(GetCrossConnectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectsResult>("oci:Core/getCrossConnects:getCrossConnects", args ?? new GetCrossConnectsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cross Connects in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the cross-connects in the specified compartment. You can filter the list
+        /// by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCrossConnects = Oci.Core.GetCrossConnects.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CrossConnectGroupId = testCrossConnectGroup.Id,
+        ///         DisplayName = crossConnectDisplayName,
+        ///         State = crossConnectState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCrossConnectsResult> Invoke(GetCrossConnectsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectsResult>("oci:Core/getCrossConnects:getCrossConnects", args ?? new GetCrossConnectsInvokeArgs(), options.WithDefaults());
     }
 
 

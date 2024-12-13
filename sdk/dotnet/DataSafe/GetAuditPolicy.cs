@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditPolicyResult> Invoke(GetAuditPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditPolicyResult>("oci:DataSafe/getAuditPolicy:getAuditPolicy", args ?? new GetAuditPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a audit policy by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditPolicy = Oci.DataSafe.GetAuditPolicy.Invoke(new()
+        ///     {
+        ///         AuditPolicyId = testAuditPolicyOciDataSafeAuditPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditPolicyResult> Invoke(GetAuditPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditPolicyResult>("oci:DataSafe/getAuditPolicy:getAuditPolicy", args ?? new GetAuditPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

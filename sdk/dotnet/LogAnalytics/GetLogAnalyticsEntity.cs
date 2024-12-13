@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsEntityResult> Invoke(GetLogAnalyticsEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityResult>("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", args ?? new GetLogAnalyticsEntityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Retrieve the log analytics entity with the given id.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsEntity = Oci.LogAnalytics.GetLogAnalyticsEntity.Invoke(new()
+        ///     {
+        ///         LogAnalyticsEntityId = testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
+        ///         Namespace = logAnalyticsEntityNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsEntityResult> Invoke(GetLogAnalyticsEntityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityResult>("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", args ?? new GetLogAnalyticsEntityInvokeArgs(), options.WithDefaults());
     }
 
 

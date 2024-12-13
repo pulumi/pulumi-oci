@@ -72,21 +72,11 @@ type GetRepositoryProtectedBranchesResult struct {
 }
 
 func GetRepositoryProtectedBranchesOutput(ctx *pulumi.Context, args GetRepositoryProtectedBranchesOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryProtectedBranchesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRepositoryProtectedBranchesResultOutput, error) {
 			args := v.(GetRepositoryProtectedBranchesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRepositoryProtectedBranchesResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", args, &rv, "", opts...)
-			if err != nil {
-				return GetRepositoryProtectedBranchesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRepositoryProtectedBranchesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRepositoryProtectedBranchesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", args, GetRepositoryProtectedBranchesResultOutput{}, options).(GetRepositoryProtectedBranchesResultOutput), nil
 		}).(GetRepositoryProtectedBranchesResultOutput)
 }
 

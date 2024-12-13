@@ -116,21 +116,11 @@ type GetMetricDataResult struct {
 }
 
 func GetMetricDataOutput(ctx *pulumi.Context, args GetMetricDataOutputArgs, opts ...pulumi.InvokeOption) GetMetricDataResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMetricDataResultOutput, error) {
 			args := v.(GetMetricDataArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMetricDataResult
-			secret, err := ctx.InvokePackageRaw("oci:Monitoring/getMetricData:getMetricData", args, &rv, "", opts...)
-			if err != nil {
-				return GetMetricDataResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMetricDataResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMetricDataResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Monitoring/getMetricData:getMetricData", args, GetMetricDataResultOutput{}, options).(GetMetricDataResultOutput), nil
 		}).(GetMetricDataResultOutput)
 }
 

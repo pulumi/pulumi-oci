@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetDeploymentsResult> Invoke(GetDeploymentsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:DevOps/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of deployments.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeployments = Oci.DevOps.GetDeployments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DeployPipelineId = testDeployPipeline.Id,
+        ///         DisplayName = deploymentDisplayName,
+        ///         Id = deploymentId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deploymentState,
+        ///         TimeCreatedGreaterThanOrEqualTo = deploymentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = deploymentTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentsResult> Invoke(GetDeploymentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:DevOps/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
     }
 
 

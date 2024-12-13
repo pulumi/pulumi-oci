@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Core/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the shapes that can be used to launch an instance within the specified compartment. You can
+        /// filter the list by compatibility with a specific image.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testShapes = Oci.Core.GetShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = shapeAvailabilityDomain,
+        ///         ImageId = testImage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Core/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
     }
 
 

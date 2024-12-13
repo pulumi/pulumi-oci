@@ -77,21 +77,11 @@ type GetDedicatedVmHostShapesResult struct {
 }
 
 func GetDedicatedVmHostShapesOutput(ctx *pulumi.Context, args GetDedicatedVmHostShapesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostShapesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDedicatedVmHostShapesResultOutput, error) {
 			args := v.(GetDedicatedVmHostShapesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDedicatedVmHostShapesResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args, &rv, "", opts...)
-			if err != nil {
-				return GetDedicatedVmHostShapesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDedicatedVmHostShapesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDedicatedVmHostShapesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args, GetDedicatedVmHostShapesResultOutput{}, options).(GetDedicatedVmHostShapesResultOutput), nil
 		}).(GetDedicatedVmHostShapesResultOutput)
 }
 

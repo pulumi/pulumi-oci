@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetAllowedDomainLicenseTypesResult> Invoke(GetAllowedDomainLicenseTypesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAllowedDomainLicenseTypesResult>("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args ?? new GetAllowedDomainLicenseTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+        /// If {@code name} is provided, it filters and returns resources that match the given license type name.
+        /// Otherwise, returns all valid license types that are currently supported.
+        /// 
+        /// - If license type details are retrieved sucessfully, return 202 ACCEPTED.
+        /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAllowedDomainLicenseTypes = Oci.Identity.GetAllowedDomainLicenseTypes.Invoke(new()
+        ///     {
+        ///         CurrentLicenseTypeName = allowedDomainLicenseTypeCurrentLicenseTypeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAllowedDomainLicenseTypesResult> Invoke(GetAllowedDomainLicenseTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAllowedDomainLicenseTypesResult>("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args ?? new GetAllowedDomainLicenseTypesInvokeArgs(), options.WithDefaults());
     }
 
 

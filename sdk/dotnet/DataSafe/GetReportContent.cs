@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetReportContentResult> Invoke(GetReportContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReportContentResult>("oci:DataSafe/getReportContent:getReportContent", args ?? new GetReportContentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Downloads the specified report in the form of .xls or .pdf.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReportContent = Oci.DataSafe.GetReportContent.Invoke(new()
+        ///     {
+        ///         ReportId = testReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReportContentResult> Invoke(GetReportContentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportContentResult>("oci:DataSafe/getReportContent:getReportContent", args ?? new GetReportContentInvokeArgs(), options.WithDefaults());
     }
 
 

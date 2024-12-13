@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseUserProxiedForUsersResult> Invoke(GetManagedDatabaseUserProxiedForUsersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserProxiedForUsersResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args ?? new GetManagedDatabaseUserProxiedForUsersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database User Proxied For Users in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of users on whose behalf the current user acts as proxy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseUserProxiedForUsers = Oci.DatabaseManagement.GetManagedDatabaseUserProxiedForUsers.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabaseUserProxiedForUserName,
+        ///         OpcNamedCredentialId = managedDatabaseUserProxiedForUserOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseUserProxiedForUsersResult> Invoke(GetManagedDatabaseUserProxiedForUsersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserProxiedForUsersResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args ?? new GetManagedDatabaseUserProxiedForUsersInvokeArgs(), options.WithDefaults());
     }
 
 

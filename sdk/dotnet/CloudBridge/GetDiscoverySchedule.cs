@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetDiscoveryScheduleResult> Invoke(GetDiscoveryScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryScheduleResult>("oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule", args ?? new GetDiscoveryScheduleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Reads information about the specified discovery schedule.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDiscoverySchedule = Oci.CloudBridge.GetDiscoverySchedule.Invoke(new()
+        ///     {
+        ///         DiscoveryScheduleId = testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDiscoveryScheduleResult> Invoke(GetDiscoveryScheduleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryScheduleResult>("oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule", args ?? new GetDiscoveryScheduleInvokeArgs(), options.WithDefaults());
     }
 
 

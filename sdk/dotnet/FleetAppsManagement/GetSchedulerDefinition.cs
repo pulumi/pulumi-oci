@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetSchedulerDefinitionResult> Invoke(GetSchedulerDefinitionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerDefinitionResult>("oci:FleetAppsManagement/getSchedulerDefinition:getSchedulerDefinition", args ?? new GetSchedulerDefinitionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Get the details of a SchedulerDefinition that performs lifecycle management operations.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedulerDefinition = Oci.FleetAppsManagement.GetSchedulerDefinition.Invoke(new()
+        ///     {
+        ///         SchedulerDefinitionId = testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSchedulerDefinitionResult> Invoke(GetSchedulerDefinitionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerDefinitionResult>("oci:FleetAppsManagement/getSchedulerDefinition:getSchedulerDefinition", args ?? new GetSchedulerDefinitionInvokeArgs(), options.WithDefaults());
     }
 
 

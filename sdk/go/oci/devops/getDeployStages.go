@@ -87,21 +87,11 @@ type GetDeployStagesResult struct {
 }
 
 func GetDeployStagesOutput(ctx *pulumi.Context, args GetDeployStagesOutputArgs, opts ...pulumi.InvokeOption) GetDeployStagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDeployStagesResultOutput, error) {
 			args := v.(GetDeployStagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDeployStagesResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getDeployStages:getDeployStages", args, &rv, "", opts...)
-			if err != nil {
-				return GetDeployStagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDeployStagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDeployStagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getDeployStages:getDeployStages", args, GetDeployStagesResultOutput{}, options).(GetDeployStagesResultOutput), nil
 		}).(GetDeployStagesResultOutput)
 }
 

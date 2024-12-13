@@ -68,6 +68,35 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetStreamDistributionChannelsResult> Invoke(GetStreamDistributionChannelsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamDistributionChannelsResult>("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", args ?? new GetStreamDistributionChannelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Stream Distribution Channels in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Lists the Stream Distribution Channels.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStreamDistributionChannels = Oci.MediaServices.GetStreamDistributionChannels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = streamDistributionChannelDisplayName,
+        ///         Id = streamDistributionChannelId,
+        ///         State = streamDistributionChannelState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStreamDistributionChannelsResult> Invoke(GetStreamDistributionChannelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamDistributionChannelsResult>("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", args ?? new GetStreamDistributionChannelsInvokeArgs(), options.WithDefaults());
     }
 
 

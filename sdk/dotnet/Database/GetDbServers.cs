@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbServersResult> Invoke(GetDbServersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbServersResult>("oci:Database/getDbServers:getDbServers", args ?? new GetDbServersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Servers in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbServers = Oci.Database.GetDbServers.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         DisplayName = dbServerDisplayName,
+        ///         State = dbServerState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbServersResult> Invoke(GetDbServersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbServersResult>("oci:Database/getDbServers:getDbServers", args ?? new GetDbServersInvokeArgs(), options.WithDefaults());
     }
 
 

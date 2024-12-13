@@ -74,6 +74,38 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourcePackageGroupsResult> Invoke(GetSoftwareSourcePackageGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcePackageGroupsResult>("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", args ?? new GetSoftwareSourcePackageGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
+        /// variety of criteria including but not limited to its name, and package group type.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourcePackageGroups = Oci.OsManagementHub.GetSoftwareSourcePackageGroups.Invoke(new()
+        ///     {
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         GroupTypes = softwareSourcePackageGroupGroupType,
+        ///         Name = softwareSourcePackageGroupName,
+        ///         NameContains = softwareSourcePackageGroupNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourcePackageGroupsResult> Invoke(GetSoftwareSourcePackageGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcePackageGroupsResult>("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", args ?? new GetSoftwareSourcePackageGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

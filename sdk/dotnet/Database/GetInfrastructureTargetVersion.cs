@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetInfrastructureTargetVersionResult> Invoke(GetInfrastructureTargetVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
+        /// Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInfrastructureTargetVersion = Oci.Database.GetInfrastructureTargetVersion.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = infrastructureTargetVersionTargetResourceType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInfrastructureTargetVersionResult> Invoke(GetInfrastructureTargetVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInfrastructureTargetVersionResult>("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args ?? new GetInfrastructureTargetVersionInvokeArgs(), options.WithDefaults());
     }
 
 

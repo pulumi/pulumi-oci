@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetBootVolumeAttachmentsResult> Invoke(GetBootVolumeAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Boot Volume Attachments in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the boot volume attachments in the specified compartment. You can filter the
+        /// list by specifying an instance OCID, boot volume OCID, or both.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBootVolumeAttachments = Oci.Core.GetBootVolumeAttachments.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = bootVolumeAttachmentAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         BootVolumeId = testBootVolume.Id,
+        ///         InstanceId = testInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// For more detailed implementation refer the instance example
+        /// </summary>
+        public static Output<GetBootVolumeAttachmentsResult> Invoke(GetBootVolumeAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeAttachmentsResult>("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args ?? new GetBootVolumeAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

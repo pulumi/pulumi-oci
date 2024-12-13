@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsPreferenceResult> Invoke(GetLogAnalyticsPreferenceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsPreferenceResult>("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args ?? new GetLogAnalyticsPreferenceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsPreference = Oci.LogAnalytics.GetLogAnalyticsPreference.Invoke(new()
+        ///     {
+        ///         Namespace = logAnalyticsPreferenceNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsPreferenceResult> Invoke(GetLogAnalyticsPreferenceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsPreferenceResult>("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args ?? new GetLogAnalyticsPreferenceInvokeArgs(), options.WithDefaults());
     }
 
 

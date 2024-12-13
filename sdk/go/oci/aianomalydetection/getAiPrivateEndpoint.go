@@ -88,21 +88,11 @@ type LookupAiPrivateEndpointResult struct {
 }
 
 func LookupAiPrivateEndpointOutput(ctx *pulumi.Context, args LookupAiPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupAiPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAiPrivateEndpointResultOutput, error) {
 			args := v.(LookupAiPrivateEndpointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAiPrivateEndpointResult
-			secret, err := ctx.InvokePackageRaw("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAiPrivateEndpointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAiPrivateEndpointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAiPrivateEndpointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args, LookupAiPrivateEndpointResultOutput{}, options).(LookupAiPrivateEndpointResultOutput), nil
 		}).(LookupAiPrivateEndpointResultOutput)
 }
 

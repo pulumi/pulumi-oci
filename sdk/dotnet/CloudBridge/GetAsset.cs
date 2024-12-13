@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetAssetResult> Invoke(GetAssetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssetResult>("oci:CloudBridge/getAsset:getAsset", args ?? new GetAssetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Gets an asset by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAsset = Oci.CloudBridge.GetAsset.Invoke(new()
+        ///     {
+        ///         AssetId = testAssetOciCloudBridgeAsset.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAssetResult> Invoke(GetAssetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAssetResult>("oci:CloudBridge/getAsset:getAsset", args ?? new GetAssetInvokeArgs(), options.WithDefaults());
     }
 
 

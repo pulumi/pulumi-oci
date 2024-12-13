@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetWaasPoliciesResult> Invoke(GetWaasPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWaasPoliciesResult>("oci:Waas/getWaasPolicies:getWaasPolicies", args ?? new GetWaasPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Gets a list of WAAS policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWaasPolicies = Oci.Waas.GetWaasPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = waasPolicyDisplayNames,
+        ///         Ids = waasPolicyIds,
+        ///         States = waasPolicyStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = waasPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = waasPolicyTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWaasPoliciesResult> Invoke(GetWaasPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWaasPoliciesResult>("oci:Waas/getWaasPolicies:getWaasPolicies", args ?? new GetWaasPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetOnboardingsResult> Invoke(GetOnboardingsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnboardingsResult>("oci:FleetAppsManagement/getOnboardings:getOnboardings", args ?? new GetOnboardingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Onboardings in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of onboarding information for the Tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOnboardings = Oci.FleetAppsManagement.GetOnboardings.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = onboardingId,
+        ///         State = onboardingState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOnboardingsResult> Invoke(GetOnboardingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnboardingsResult>("oci:FleetAppsManagement/getOnboardings:getOnboardings", args ?? new GetOnboardingsInvokeArgs(), options.WithDefaults());
     }
 
 

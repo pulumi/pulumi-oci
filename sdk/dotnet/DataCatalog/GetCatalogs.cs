@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetCatalogsResult> Invoke(GetCatalogsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCatalogsResult>("oci:DataCatalog/getCatalogs:getCatalogs", args ?? new GetCatalogsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Returns a list of all the data catalogs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCatalogs = Oci.DataCatalog.GetCatalogs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = catalogDisplayName,
+        ///         State = catalogState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCatalogsResult> Invoke(GetCatalogsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogsResult>("oci:DataCatalog/getCatalogs:getCatalogs", args ?? new GetCatalogsInvokeArgs(), options.WithDefaults());
     }
 
 

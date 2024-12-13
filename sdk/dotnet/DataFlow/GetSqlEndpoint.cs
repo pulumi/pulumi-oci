@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetSqlEndpointResult> Invoke(GetSqlEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlEndpointResult>("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", args ?? new GetSqlEndpointInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Retrieves a SQL Endpoint using a sqlEndpointId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlEndpoint = Oci.DataFlow.GetSqlEndpoint.Invoke(new()
+        ///     {
+        ///         SqlEndpointId = testSqlEndpointOciDataflowSqlEndpoint.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlEndpointResult> Invoke(GetSqlEndpointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlEndpointResult>("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", args ?? new GetSqlEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

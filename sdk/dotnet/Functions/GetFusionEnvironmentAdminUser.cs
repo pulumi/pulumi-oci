@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentAdminUserResult> Invoke(GetFusionEnvironmentAdminUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentAdminUserResult>("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", args ?? new GetFusionEnvironmentAdminUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// List all FusionEnvironment admin users
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentAdminUser = Oci.Functions.GetFusionEnvironmentAdminUser.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentAdminUserResult> Invoke(GetFusionEnvironmentAdminUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentAdminUserResult>("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", args ?? new GetFusionEnvironmentAdminUserInvokeArgs(), options.WithDefaults());
     }
 
 

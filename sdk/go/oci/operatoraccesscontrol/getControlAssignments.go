@@ -88,21 +88,11 @@ type GetControlAssignmentsResult struct {
 }
 
 func GetControlAssignmentsOutput(ctx *pulumi.Context, args GetControlAssignmentsOutputArgs, opts ...pulumi.InvokeOption) GetControlAssignmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetControlAssignmentsResultOutput, error) {
 			args := v.(GetControlAssignmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetControlAssignmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", args, &rv, "", opts...)
-			if err != nil {
-				return GetControlAssignmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetControlAssignmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetControlAssignmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", args, GetControlAssignmentsResultOutput{}, options).(GetControlAssignmentsResultOutput), nil
 		}).(GetControlAssignmentsResultOutput)
 }
 

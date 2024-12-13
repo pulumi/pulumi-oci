@@ -93,21 +93,11 @@ type GetFsuCyclesResult struct {
 }
 
 func GetFsuCyclesOutput(ctx *pulumi.Context, args GetFsuCyclesOutputArgs, opts ...pulumi.InvokeOption) GetFsuCyclesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFsuCyclesResultOutput, error) {
 			args := v.(GetFsuCyclesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFsuCyclesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", args, &rv, "", opts...)
-			if err != nil {
-				return GetFsuCyclesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFsuCyclesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFsuCyclesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", args, GetFsuCyclesResultOutput{}, options).(GetFsuCyclesResultOutput), nil
 		}).(GetFsuCyclesResultOutput)
 }
 

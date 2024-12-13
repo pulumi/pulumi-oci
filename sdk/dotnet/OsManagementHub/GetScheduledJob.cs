@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetScheduledJobResult> Invoke(GetScheduledJobInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetScheduledJobResult>("oci:OsManagementHub/getScheduledJob:getScheduledJob", args ?? new GetScheduledJobInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Gets information about the specified scheduled job.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testScheduledJob = Oci.OsManagementHub.GetScheduledJob.Invoke(new()
+        ///     {
+        ///         ScheduledJobId = testScheduledJobOciOsManagementHubScheduledJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetScheduledJobResult> Invoke(GetScheduledJobInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetScheduledJobResult>("oci:OsManagementHub/getScheduledJob:getScheduledJob", args ?? new GetScheduledJobInvokeArgs(), options.WithDefaults());
     }
 
 

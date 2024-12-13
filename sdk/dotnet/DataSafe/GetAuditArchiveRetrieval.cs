@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditArchiveRetrievalResult> Invoke(GetAuditArchiveRetrievalInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalResult>("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args ?? new GetAuditArchiveRetrievalInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified archive retreival.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditArchiveRetrieval = Oci.DataSafe.GetAuditArchiveRetrieval.Invoke(new()
+        ///     {
+        ///         AuditArchiveRetrievalId = testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditArchiveRetrievalResult> Invoke(GetAuditArchiveRetrievalInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalResult>("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args ?? new GetAuditArchiveRetrievalInvokeArgs(), options.WithDefaults());
     }
 
 

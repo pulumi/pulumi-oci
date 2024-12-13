@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetEnrollmentStatusesResult> Invoke(GetEnrollmentStatusesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEnrollmentStatusesResult>("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args ?? new GetEnrollmentStatusesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Enrollment Statuses in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the Cloud Advisor enrollment statuses.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEnrollmentStatuses = Oci.Optimizer.GetEnrollmentStatuses.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         State = enrollmentStatusState,
+        ///         Status = enrollmentStatusStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEnrollmentStatusesResult> Invoke(GetEnrollmentStatusesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEnrollmentStatusesResult>("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args ?? new GetEnrollmentStatusesInvokeArgs(), options.WithDefaults());
     }
 
 

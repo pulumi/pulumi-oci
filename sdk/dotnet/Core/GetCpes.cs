@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCpesResult> Invoke(GetCpesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpesResult>("oci:Core/getCpes:getCpes", args ?? new GetCpesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the customer-premises equipment objects (CPEs) in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCpes = Oci.Core.GetCpes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCpesResult> Invoke(GetCpesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpesResult>("oci:Core/getCpes:getCpes", args ?? new GetCpesInvokeArgs(), options.WithDefaults());
     }
 
 

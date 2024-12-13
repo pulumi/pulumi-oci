@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDedicatedVmHostInstanceShapesResult> Invoke(GetDedicatedVmHostInstanceShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual machine host within the specified compartment.
+        /// You can filter the list by compatibility with a specific dedicated virtual machine host shape.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedVmHostInstanceShapes = Oci.Core.GetDedicatedVmHostInstanceShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostInstanceShapeAvailabilityDomain,
+        ///         DedicatedVmHostShape = dedicatedVmHostInstanceShapeDedicatedVmHostShape,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedVmHostInstanceShapesResult> Invoke(GetDedicatedVmHostInstanceShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -104,21 +104,11 @@ type GetDomainsMyTrustedUserAgentsResult struct {
 }
 
 func GetDomainsMyTrustedUserAgentsOutput(ctx *pulumi.Context, args GetDomainsMyTrustedUserAgentsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyTrustedUserAgentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsMyTrustedUserAgentsResultOutput, error) {
 			args := v.(GetDomainsMyTrustedUserAgentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsMyTrustedUserAgentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsMyTrustedUserAgentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsMyTrustedUserAgentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsMyTrustedUserAgentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", args, GetDomainsMyTrustedUserAgentsResultOutput{}, options).(GetDomainsMyTrustedUserAgentsResultOutput), nil
 		}).(GetDomainsMyTrustedUserAgentsResultOutput)
 }
 

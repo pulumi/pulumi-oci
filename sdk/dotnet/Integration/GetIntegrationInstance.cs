@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public static Output<GetIntegrationInstanceResult> Invoke(GetIntegrationInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIntegrationInstanceResult>("oci:Integration/getIntegrationInstance:getIntegrationInstance", args ?? new GetIntegrationInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+        /// 
+        /// Gets a IntegrationInstance by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIntegrationInstance = Oci.Integration.GetIntegrationInstance.Invoke(new()
+        ///     {
+        ///         IntegrationInstanceId = testIntegrationInstanceOciIntegrationIntegrationInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIntegrationInstanceResult> Invoke(GetIntegrationInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIntegrationInstanceResult>("oci:Integration/getIntegrationInstance:getIntegrationInstance", args ?? new GetIntegrationInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

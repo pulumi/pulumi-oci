@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetAgentInstallersResult> Invoke(GetAgentInstallersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentInstallersResult>("oci:Jms/getAgentInstallers:getAgentInstallers", args ?? new GetAgentInstallersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns a list of the agent installer information.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAgentInstallers = Oci.Jms.GetAgentInstallers.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         FleetId = testFleet.Id,
+        ///         OsFamily = agentInstallerOsFamily,
+        ///         PlatformArchitecture = agentInstallerPlatformArchitecture,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentInstallersResult> Invoke(GetAgentInstallersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentInstallersResult>("oci:Jms/getAgentInstallers:getAgentInstallers", args ?? new GetAgentInstallersInvokeArgs(), options.WithDefaults());
     }
 
 

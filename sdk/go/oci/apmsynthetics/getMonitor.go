@@ -118,21 +118,11 @@ type GetMonitorResult struct {
 }
 
 func GetMonitorOutput(ctx *pulumi.Context, args GetMonitorOutputArgs, opts ...pulumi.InvokeOption) GetMonitorResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMonitorResultOutput, error) {
 			args := v.(GetMonitorArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMonitorResult
-			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getMonitor:getMonitor", args, &rv, "", opts...)
-			if err != nil {
-				return GetMonitorResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMonitorResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMonitorResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApmSynthetics/getMonitor:getMonitor", args, GetMonitorResultOutput{}, options).(GetMonitorResultOutput), nil
 		}).(GetMonitorResultOutput)
 }
 

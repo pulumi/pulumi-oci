@@ -55,21 +55,11 @@ type GetVirtualNodePoolsResult struct {
 }
 
 func GetVirtualNodePoolsOutput(ctx *pulumi.Context, args GetVirtualNodePoolsOutputArgs, opts ...pulumi.InvokeOption) GetVirtualNodePoolsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVirtualNodePoolsResultOutput, error) {
 			args := v.(GetVirtualNodePoolsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVirtualNodePoolsResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args, &rv, "", opts...)
-			if err != nil {
-				return GetVirtualNodePoolsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVirtualNodePoolsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVirtualNodePoolsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args, GetVirtualNodePoolsResultOutput{}, options).(GetVirtualNodePoolsResultOutput), nil
 		}).(GetVirtualNodePoolsResultOutput)
 }
 

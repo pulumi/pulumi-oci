@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetSecurityListsResult> Invoke(GetSecurityListsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityListsResult>("oci:Core/getSecurityLists:getSecurityLists", args ?? new GetSecurityListsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the security lists in the specified VCN and compartment.
+        /// If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityLists = Oci.Core.GetSecurityLists.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityListDisplayName,
+        ///         State = securityListState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityListsResult> Invoke(GetSecurityListsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityListsResult>("oci:Core/getSecurityLists:getSecurityLists", args ?? new GetSecurityListsInvokeArgs(), options.WithDefaults());
     }
 
 

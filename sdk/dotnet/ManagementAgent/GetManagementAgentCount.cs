@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentCountResult> Invoke(GetManagementAgentCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
+        /// Supported groupBy parameters: availabilityStatus, platformType, version
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentCount = Oci.ManagementAgent.GetManagementAgentCount.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         GroupBies = managementAgentCountGroupBy,
+        ///         HasPlugins = managementAgentCountHasPlugins,
+        ///         InstallType = managementAgentCountInstallType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentCountResult> Invoke(GetManagementAgentCountInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountInvokeArgs(), options.WithDefaults());
     }
 
 

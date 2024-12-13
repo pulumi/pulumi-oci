@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetByoipRangesResult> Invoke(GetByoipRangesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoipRangesResult>("oci:Core/getByoipRanges:getByoipRanges", args ?? new GetByoipRangesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the `ByoipRange` resources in the specified compartment.
+        /// You can filter the list using query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testByoipRanges = Oci.Core.GetByoipRanges.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = byoipRangeDisplayName,
+        ///         State = byoipRangeState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetByoipRangesResult> Invoke(GetByoipRangesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetByoipRangesResult>("oci:Core/getByoipRanges:getByoipRanges", args ?? new GetByoipRangesInvokeArgs(), options.WithDefaults());
     }
 
 

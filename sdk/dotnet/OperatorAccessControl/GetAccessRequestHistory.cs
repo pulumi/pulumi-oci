@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public static Output<GetAccessRequestHistoryResult> Invoke(GetAccessRequestHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestHistoryResult>("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args ?? new GetAccessRequestHistoryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
+        /// 
+        /// Returns a history of all status associated with the accessRequestId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessRequestHistory = Oci.OperatorAccessControl.GetAccessRequestHistory.Invoke(new()
+        ///     {
+        ///         AccessRequestId = testAccessRequest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAccessRequestHistoryResult> Invoke(GetAccessRequestHistoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestHistoryResult>("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args ?? new GetAccessRequestHistoryInvokeArgs(), options.WithDefaults());
     }
 
 

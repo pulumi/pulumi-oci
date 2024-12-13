@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVnicResult> Invoke(GetVnicInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVnicResult>("oci:Core/getVnic:getVnic", args ?? new GetVnicInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the information for the specified virtual network interface card (VNIC).
+        /// You can get the VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
+        /// [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+        /// operation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVnic = Oci.Core.GetVnic.Invoke(new()
+        ///     {
+        ///         VnicId = testVnicOciCoreVnic.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVnicResult> Invoke(GetVnicInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVnicResult>("oci:Core/getVnic:getVnic", args ?? new GetVnicInvokeArgs(), options.WithDefaults());
     }
 
 

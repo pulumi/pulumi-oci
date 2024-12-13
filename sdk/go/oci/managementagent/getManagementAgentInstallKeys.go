@@ -87,21 +87,11 @@ type GetManagementAgentInstallKeysResult struct {
 }
 
 func GetManagementAgentInstallKeysOutput(ctx *pulumi.Context, args GetManagementAgentInstallKeysOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentInstallKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagementAgentInstallKeysResultOutput, error) {
 			args := v.(GetManagementAgentInstallKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagementAgentInstallKeysResult
-			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagementAgentInstallKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagementAgentInstallKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagementAgentInstallKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args, GetManagementAgentInstallKeysResultOutput{}, options).(GetManagementAgentInstallKeysResultOutput), nil
 		}).(GetManagementAgentInstallKeysResultOutput)
 }
 

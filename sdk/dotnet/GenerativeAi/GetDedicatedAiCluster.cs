@@ -62,6 +62,32 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetDedicatedAiClusterResult> Invoke(GetDedicatedAiClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedAiClusterResult>("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", args ?? new GetDedicatedAiClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
+        /// 
+        /// Gets information about a dedicated AI cluster.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedAiCluster = Oci.GenerativeAi.GetDedicatedAiCluster.Invoke(new()
+        ///     {
+        ///         DedicatedAiClusterId = testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedAiClusterResult> Invoke(GetDedicatedAiClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedAiClusterResult>("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", args ?? new GetDedicatedAiClusterInvokeArgs(), options.WithDefaults());
     }
 
 

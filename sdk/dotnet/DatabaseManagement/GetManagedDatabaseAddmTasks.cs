@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseAddmTasksResult> Invoke(GetManagedDatabaseAddmTasksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTasksResult>("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args ?? new GetManagedDatabaseAddmTasksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
+        /// the name of the ADDM task, description, user, status and creation date time.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseAddmTasks = Oci.DatabaseManagement.GetManagedDatabaseAddmTasks.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         TimeEnd = managedDatabaseAddmTaskTimeEnd,
+        ///         TimeStart = managedDatabaseAddmTaskTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseAddmTasksResult> Invoke(GetManagedDatabaseAddmTasksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTasksResult>("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args ?? new GetManagedDatabaseAddmTasksInvokeArgs(), options.WithDefaults());
     }
 
 

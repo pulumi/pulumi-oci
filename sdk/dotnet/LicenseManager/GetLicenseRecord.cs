@@ -62,6 +62,32 @@ namespace Pulumi.Oci.LicenseManager
         /// </summary>
         public static Output<GetLicenseRecordResult> Invoke(GetLicenseRecordInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLicenseRecordResult>("oci:LicenseManager/getLicenseRecord:getLicenseRecord", args ?? new GetLicenseRecordInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
+        /// 
+        /// Retrieves license record details by the license record ID in a given compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLicenseRecord = Oci.LicenseManager.GetLicenseRecord.Invoke(new()
+        ///     {
+        ///         LicenseRecordId = testLicenseRecordOciLicenseManagerLicenseRecord.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLicenseRecordResult> Invoke(GetLicenseRecordInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLicenseRecordResult>("oci:LicenseManager/getLicenseRecord:getLicenseRecord", args ?? new GetLicenseRecordInvokeArgs(), options.WithDefaults());
     }
 
 

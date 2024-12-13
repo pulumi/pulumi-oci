@@ -124,21 +124,11 @@ type LookupIntegrationInstanceResult struct {
 }
 
 func LookupIntegrationInstanceOutput(ctx *pulumi.Context, args LookupIntegrationInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupIntegrationInstanceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupIntegrationInstanceResultOutput, error) {
 			args := v.(LookupIntegrationInstanceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupIntegrationInstanceResult
-			secret, err := ctx.InvokePackageRaw("oci:Integration/getIntegrationInstance:getIntegrationInstance", args, &rv, "", opts...)
-			if err != nil {
-				return LookupIntegrationInstanceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupIntegrationInstanceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupIntegrationInstanceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Integration/getIntegrationInstance:getIntegrationInstance", args, LookupIntegrationInstanceResultOutput{}, options).(LookupIntegrationInstanceResultOutput), nil
 		}).(LookupIntegrationInstanceResultOutput)
 }
 

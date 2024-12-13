@@ -86,21 +86,11 @@ type LookupModelVersionSetResult struct {
 }
 
 func LookupModelVersionSetOutput(ctx *pulumi.Context, args LookupModelVersionSetOutputArgs, opts ...pulumi.InvokeOption) LookupModelVersionSetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupModelVersionSetResultOutput, error) {
 			args := v.(LookupModelVersionSetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupModelVersionSetResult
-			secret, err := ctx.InvokePackageRaw("oci:DataScience/getModelVersionSet:getModelVersionSet", args, &rv, "", opts...)
-			if err != nil {
-				return LookupModelVersionSetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupModelVersionSetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupModelVersionSetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataScience/getModelVersionSet:getModelVersionSet", args, LookupModelVersionSetResultOutput{}, options).(LookupModelVersionSetResultOutput), nil
 		}).(LookupModelVersionSetResultOutput)
 }
 

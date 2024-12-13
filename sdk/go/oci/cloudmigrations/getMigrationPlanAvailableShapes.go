@@ -85,21 +85,11 @@ type GetMigrationPlanAvailableShapesResult struct {
 }
 
 func GetMigrationPlanAvailableShapesOutput(ctx *pulumi.Context, args GetMigrationPlanAvailableShapesOutputArgs, opts ...pulumi.InvokeOption) GetMigrationPlanAvailableShapesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMigrationPlanAvailableShapesResultOutput, error) {
 			args := v.(GetMigrationPlanAvailableShapesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMigrationPlanAvailableShapesResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args, &rv, "", opts...)
-			if err != nil {
-				return GetMigrationPlanAvailableShapesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMigrationPlanAvailableShapesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMigrationPlanAvailableShapesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args, GetMigrationPlanAvailableShapesResultOutput{}, options).(GetMigrationPlanAvailableShapesResultOutput), nil
 		}).(GetMigrationPlanAvailableShapesResultOutput)
 }
 

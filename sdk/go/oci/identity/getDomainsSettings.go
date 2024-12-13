@@ -91,21 +91,11 @@ type GetDomainsSettingsResult struct {
 }
 
 func GetDomainsSettingsOutput(ctx *pulumi.Context, args GetDomainsSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSettingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsSettingsResultOutput, error) {
 			args := v.(GetDomainsSettingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsSettingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSettings:getDomainsSettings", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsSettingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsSettingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsSettingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsSettings:getDomainsSettings", args, GetDomainsSettingsResultOutput{}, options).(GetDomainsSettingsResultOutput), nil
 		}).(GetDomainsSettingsResultOutput)
 }
 

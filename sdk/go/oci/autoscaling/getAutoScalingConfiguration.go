@@ -86,21 +86,11 @@ type LookupAutoScalingConfigurationResult struct {
 }
 
 func LookupAutoScalingConfigurationOutput(ctx *pulumi.Context, args LookupAutoScalingConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupAutoScalingConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAutoScalingConfigurationResultOutput, error) {
 			args := v.(LookupAutoScalingConfigurationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAutoScalingConfigurationResult
-			secret, err := ctx.InvokePackageRaw("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAutoScalingConfigurationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAutoScalingConfigurationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAutoScalingConfigurationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", args, LookupAutoScalingConfigurationResultOutput{}, options).(LookupAutoScalingConfigurationResultOutput), nil
 		}).(LookupAutoScalingConfigurationResultOutput)
 }
 

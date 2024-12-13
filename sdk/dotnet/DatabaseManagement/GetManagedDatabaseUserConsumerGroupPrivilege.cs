@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> Invoke(GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of consumer group privileges granted to a specific user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseUserConsumerGroupPrivilege = Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilege.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabaseUserConsumerGroupPrivilegeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> Invoke(GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs(), options.WithDefaults());
     }
 
 

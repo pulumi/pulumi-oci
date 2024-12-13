@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyPendingApprovalsResult> Invoke(GetDomainsMyPendingApprovalsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyPendingApprovalsResult>("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", args ?? new GetDomainsMyPendingApprovalsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Pending Approvals in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search My Approvals
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyPendingApprovals = Oci.Identity.GetDomainsMyPendingApprovals.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyPendingApprovalCount = myPendingApprovalMyPendingApprovalCount,
+        ///         MyPendingApprovalFilter = myPendingApprovalMyPendingApprovalFilter,
+        ///         Authorization = myPendingApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myPendingApprovalResourceTypeSchemaVersion,
+        ///         StartIndex = myPendingApprovalStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyPendingApprovalsResult> Invoke(GetDomainsMyPendingApprovalsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyPendingApprovalsResult>("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", args ?? new GetDomainsMyPendingApprovalsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> Invoke(GetJavaDownloadsJavaLicenseAcceptanceRecordsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult>("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", args ?? new GetJavaDownloadsJavaLicenseAcceptanceRecordsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Returns a list of all the Java license acceptance records in a tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaLicenseAcceptanceRecords = Oci.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecords.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Id = javaLicenseAcceptanceRecordId,
+        ///         LicenseType = javaLicenseAcceptanceRecordLicenseType,
+        ///         SearchByUser = javaLicenseAcceptanceRecordSearchByUser,
+        ///         Status = javaLicenseAcceptanceRecordStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> Invoke(GetJavaDownloadsJavaLicenseAcceptanceRecordsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult>("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", args ?? new GetJavaDownloadsJavaLicenseAcceptanceRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

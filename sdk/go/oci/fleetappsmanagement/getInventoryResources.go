@@ -105,21 +105,11 @@ type GetInventoryResourcesResult struct {
 }
 
 func GetInventoryResourcesOutput(ctx *pulumi.Context, args GetInventoryResourcesOutputArgs, opts ...pulumi.InvokeOption) GetInventoryResourcesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInventoryResourcesResultOutput, error) {
 			args := v.(GetInventoryResourcesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInventoryResourcesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", args, &rv, "", opts...)
-			if err != nil {
-				return GetInventoryResourcesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInventoryResourcesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInventoryResourcesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", args, GetInventoryResourcesResultOutput{}, options).(GetInventoryResourcesResultOutput), nil
 		}).(GetInventoryResourcesResultOutput)
 }
 

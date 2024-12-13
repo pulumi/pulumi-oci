@@ -82,6 +82,42 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAlertPoliciesResult> Invoke(GetAlertPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertPoliciesResult>("oci:DataSafe/getAlertPolicies:getAlertPolicies", args ?? new GetAlertPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of all alert policies.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlertPolicies = Oci.DataSafe.GetAlertPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = alertPolicyAccessLevel,
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         CompartmentIdInSubtree = alertPolicyCompartmentIdInSubtree,
+        ///         DisplayName = alertPolicyDisplayName,
+        ///         IsUserDefined = alertPolicyIsUserDefined,
+        ///         State = alertPolicyState,
+        ///         TimeCreatedGreaterThanOrEqualTo = alertPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = alertPolicyTimeCreatedLessThan,
+        ///         Type = alertPolicyType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertPoliciesResult> Invoke(GetAlertPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertPoliciesResult>("oci:DataSafe/getAlertPolicies:getAlertPolicies", args ?? new GetAlertPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

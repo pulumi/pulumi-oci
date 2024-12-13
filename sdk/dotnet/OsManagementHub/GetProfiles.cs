@@ -88,6 +88,45 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetProfilesResult> Invoke(GetProfilesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProfilesResult>("oci:OsManagementHub/getProfiles:getProfiles", args ?? new GetProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a 
+        /// variety of criteria including but not limited to its name, status, vendor name, and architecture type.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProfiles = Oci.OsManagementHub.GetProfiles.Invoke(new()
+        ///     {
+        ///         ArchType = profileArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = profileDisplayName,
+        ///         DisplayNameContains = profileDisplayNameContains,
+        ///         IsDefaultProfile = profileIsDefaultProfile,
+        ///         IsServiceProvidedProfile = profileIsServiceProvidedProfile,
+        ///         OsFamily = profileOsFamily,
+        ///         ProfileId = testProfile.Id,
+        ///         ProfileTypes = profileProfileType,
+        ///         RegistrationTypes = profileRegistrationType,
+        ///         State = profileState,
+        ///         VendorName = profileVendorName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProfilesResult> Invoke(GetProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProfilesResult>("oci:OsManagementHub/getProfiles:getProfiles", args ?? new GetProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

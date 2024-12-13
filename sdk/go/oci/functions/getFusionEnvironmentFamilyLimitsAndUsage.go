@@ -70,21 +70,11 @@ type GetFusionEnvironmentFamilyLimitsAndUsageResult struct {
 }
 
 func GetFusionEnvironmentFamilyLimitsAndUsageOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamilyLimitsAndUsageResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilyLimitsAndUsageResultOutput, error) {
 			args := v.(GetFusionEnvironmentFamilyLimitsAndUsageArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFusionEnvironmentFamilyLimitsAndUsageResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args, &rv, "", opts...)
-			if err != nil {
-				return GetFusionEnvironmentFamilyLimitsAndUsageResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args, GetFusionEnvironmentFamilyLimitsAndUsageResultOutput{}, options).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput), nil
 		}).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput)
 }
 

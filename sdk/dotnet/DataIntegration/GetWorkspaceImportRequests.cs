@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceImportRequestsResult> Invoke(GetWorkspaceImportRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceImportRequestsResult>("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", args ?? new GetWorkspaceImportRequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspace Import Requests in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// This endpoint can be used to get the list of import object requests.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceImportRequests = Oci.DataIntegration.GetWorkspaceImportRequests.Invoke(new()
+        ///     {
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         ImportStatus = workspaceImportRequestImportStatus,
+        ///         Name = workspaceImportRequestName,
+        ///         Projection = workspaceImportRequestProjection,
+        ///         TimeEndedInMillis = workspaceImportRequestTimeEndedInMillis,
+        ///         TimeStartedInMillis = workspaceImportRequestTimeStartedInMillis,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceImportRequestsResult> Invoke(GetWorkspaceImportRequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceImportRequestsResult>("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", args ?? new GetWorkspaceImportRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

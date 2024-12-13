@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetVantagePointResult> Invoke(GetVantagePointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Returns a list of public vantage points.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublicVantagePoint = Oci.ApmSynthetics.GetVantagePoint.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = publicVantagePointDisplayName,
+        ///         Name = publicVantagePointName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVantagePointResult> Invoke(GetVantagePointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointInvokeArgs(), options.WithDefaults());
     }
 
 

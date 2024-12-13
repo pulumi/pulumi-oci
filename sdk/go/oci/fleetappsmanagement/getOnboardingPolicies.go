@@ -63,21 +63,11 @@ type GetOnboardingPoliciesResult struct {
 }
 
 func GetOnboardingPoliciesOutput(ctx *pulumi.Context, args GetOnboardingPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetOnboardingPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOnboardingPoliciesResultOutput, error) {
 			args := v.(GetOnboardingPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOnboardingPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetOnboardingPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOnboardingPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOnboardingPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", args, GetOnboardingPoliciesResultOutput{}, options).(GetOnboardingPoliciesResultOutput), nil
 		}).(GetOnboardingPoliciesResultOutput)
 }
 

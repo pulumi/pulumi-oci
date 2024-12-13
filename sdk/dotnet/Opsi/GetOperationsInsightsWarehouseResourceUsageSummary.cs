@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> Invoke(GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResourceUsageSummaryResult>("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args ?? new GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets the details of resources used by an Operations Insights Warehouse.
+        /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperationsInsightsWarehouseResourceUsageSummary = Oci.Opsi.GetOperationsInsightsWarehouseResourceUsageSummary.Invoke(new()
+        ///     {
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> Invoke(GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResourceUsageSummaryResult>("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args ?? new GetOperationsInsightsWarehouseResourceUsageSummaryInvokeArgs(), options.WithDefaults());
     }
 
 

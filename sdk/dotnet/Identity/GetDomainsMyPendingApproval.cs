@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyPendingApprovalResult> Invoke(GetDomainsMyPendingApprovalInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyPendingApprovalResult>("oci:Identity/getDomainsMyPendingApproval:getDomainsMyPendingApproval", args ?? new GetDomainsMyPendingApprovalInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get My MyPendingApproval
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyPendingApproval = Oci.Identity.GetDomainsMyPendingApproval.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyPendingApprovalId = testMyPendingApprovalOciIdentityDomainsMyPendingApproval.Id,
+        ///         Authorization = myPendingApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myPendingApprovalResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyPendingApprovalResult> Invoke(GetDomainsMyPendingApprovalInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyPendingApprovalResult>("oci:Identity/getDomainsMyPendingApproval:getDomainsMyPendingApproval", args ?? new GetDomainsMyPendingApprovalInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -92,21 +92,11 @@ type LookupContainerImageSignatureResult struct {
 }
 
 func LookupContainerImageSignatureOutput(ctx *pulumi.Context, args LookupContainerImageSignatureOutputArgs, opts ...pulumi.InvokeOption) LookupContainerImageSignatureResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupContainerImageSignatureResultOutput, error) {
 			args := v.(LookupContainerImageSignatureArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupContainerImageSignatureResult
-			secret, err := ctx.InvokePackageRaw("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", args, &rv, "", opts...)
-			if err != nil {
-				return LookupContainerImageSignatureResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupContainerImageSignatureResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupContainerImageSignatureResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", args, LookupContainerImageSignatureResultOutput{}, options).(LookupContainerImageSignatureResultOutput), nil
 		}).(LookupContainerImageSignatureResultOutput)
 }
 

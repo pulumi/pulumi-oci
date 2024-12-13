@@ -64,6 +64,33 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetQueryResult> Invoke(GetQueryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQueryResult>("oci:MeteringComputation/getQuery:getQuery", args ?? new GetQueryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Returns the saved query.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testQuery = Oci.MeteringComputation.GetQuery.Invoke(new()
+        ///     {
+        ///         QueryId = testQueryOciMeteringComputationQuery.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetQueryResult> Invoke(GetQueryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetQueryResult>("oci:MeteringComputation/getQuery:getQuery", args ?? new GetQueryInvokeArgs(), options.WithDefaults());
     }
 
 

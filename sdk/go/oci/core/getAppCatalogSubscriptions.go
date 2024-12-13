@@ -74,21 +74,11 @@ type GetAppCatalogSubscriptionsResult struct {
 }
 
 func GetAppCatalogSubscriptionsOutput(ctx *pulumi.Context, args GetAppCatalogSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogSubscriptionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppCatalogSubscriptionsResultOutput, error) {
 			args := v.(GetAppCatalogSubscriptionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppCatalogSubscriptionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppCatalogSubscriptionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppCatalogSubscriptionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppCatalogSubscriptionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args, GetAppCatalogSubscriptionsResultOutput{}, options).(GetAppCatalogSubscriptionsResultOutput), nil
 		}).(GetAppCatalogSubscriptionsResultOutput)
 }
 

@@ -101,21 +101,11 @@ type GetFleetCredentialsResult struct {
 }
 
 func GetFleetCredentialsOutput(ctx *pulumi.Context, args GetFleetCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetFleetCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetCredentialsResultOutput, error) {
 			args := v.(GetFleetCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetCredentialsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials", args, GetFleetCredentialsResultOutput{}, options).(GetFleetCredentialsResultOutput), nil
 		}).(GetFleetCredentialsResultOutput)
 }
 

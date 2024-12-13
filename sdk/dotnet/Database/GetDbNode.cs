@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbNodeResult> Invoke(GetDbNodeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeResult>("oci:Database/getDbNode:getDbNode", args ?? new GetDbNodeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified database node.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbNode = Oci.Database.GetDbNode.Invoke(new()
+        ///     {
+        ///         DbNodeId = dbNodeId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbNodeResult> Invoke(GetDbNodeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbNodeResult>("oci:Database/getDbNode:getDbNode", args ?? new GetDbNodeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -91,21 +91,11 @@ type GetResultResult struct {
 }
 
 func GetResultOutput(ctx *pulumi.Context, args GetResultOutputArgs, opts ...pulumi.InvokeOption) GetResultResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetResultResultOutput, error) {
 			args := v.(GetResultArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetResultResult
-			secret, err := ctx.InvokePackageRaw("oci:ApmSynthetics/getResult:getResult", args, &rv, "", opts...)
-			if err != nil {
-				return GetResultResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetResultResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetResultResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApmSynthetics/getResult:getResult", args, GetResultResultOutput{}, options).(GetResultResultOutput), nil
 		}).(GetResultResultOutput)
 }
 

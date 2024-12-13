@@ -74,6 +74,38 @@ namespace Pulumi.Oci.HealthChecks
         /// </summary>
         public static Output<GetHttpProbeResultsResult> Invoke(GetHttpProbeResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHttpProbeResultsResult>("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", args ?? new GetHttpProbeResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
+        /// 
+        /// Gets the HTTP probe results for the specified probe or monitor, where
+        /// the `probeConfigurationId` is the OCID of either a monitor or an
+        /// on-demand probe.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHttpProbeResults = Oci.HealthChecks.GetHttpProbeResults.Invoke(new()
+        ///     {
+        ///         ProbeConfigurationId = testProbeConfiguration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = httpProbeResultStartTimeGreaterThanOrEqualTo,
+        ///         StartTimeLessThanOrEqualTo = httpProbeResultStartTimeLessThanOrEqualTo,
+        ///         Target = httpProbeResultTarget,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHttpProbeResultsResult> Invoke(GetHttpProbeResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHttpProbeResultsResult>("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", args ?? new GetHttpProbeResultsInvokeArgs(), options.WithDefaults());
     }
 
 

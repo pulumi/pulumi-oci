@@ -73,21 +73,11 @@ type GetProductLicensesResult struct {
 }
 
 func GetProductLicensesOutput(ctx *pulumi.Context, args GetProductLicensesOutputArgs, opts ...pulumi.InvokeOption) GetProductLicensesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProductLicensesResultOutput, error) {
 			args := v.(GetProductLicensesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProductLicensesResult
-			secret, err := ctx.InvokePackageRaw("oci:LicenseManager/getProductLicenses:getProductLicenses", args, &rv, "", opts...)
-			if err != nil {
-				return GetProductLicensesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProductLicensesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProductLicensesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LicenseManager/getProductLicenses:getProductLicenses", args, GetProductLicensesResultOutput{}, options).(GetProductLicensesResultOutput), nil
 		}).(GetProductLicensesResultOutput)
 }
 

@@ -83,21 +83,11 @@ type LookupDbNodeConsoleHistoryResult struct {
 }
 
 func LookupDbNodeConsoleHistoryOutput(ctx *pulumi.Context, args LookupDbNodeConsoleHistoryOutputArgs, opts ...pulumi.InvokeOption) LookupDbNodeConsoleHistoryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDbNodeConsoleHistoryResultOutput, error) {
 			args := v.(LookupDbNodeConsoleHistoryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDbNodeConsoleHistoryResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDbNodeConsoleHistoryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDbNodeConsoleHistoryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDbNodeConsoleHistoryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", args, LookupDbNodeConsoleHistoryResultOutput{}, options).(LookupDbNodeConsoleHistoryResultOutput), nil
 		}).(LookupDbNodeConsoleHistoryResultOutput)
 }
 

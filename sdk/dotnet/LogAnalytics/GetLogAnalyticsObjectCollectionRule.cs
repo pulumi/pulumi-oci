@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsObjectCollectionRuleResult> Invoke(GetLogAnalyticsObjectCollectionRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Gets a configured object storage based collection rule by given id
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsObjectCollectionRule = Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRule.Invoke(new()
+        ///     {
+        ///         LogAnalyticsObjectCollectionRuleId = testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.Id,
+        ///         Namespace = logAnalyticsObjectCollectionRuleNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsObjectCollectionRuleResult> Invoke(GetLogAnalyticsObjectCollectionRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 

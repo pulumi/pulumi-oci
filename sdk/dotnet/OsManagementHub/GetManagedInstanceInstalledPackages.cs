@@ -74,6 +74,38 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceInstalledPackagesResult> Invoke(GetManagedInstanceInstalledPackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceInstalledPackagesResult>("oci:OsManagementHub/getManagedInstanceInstalledPackages:getManagedInstanceInstalledPackages", args ?? new GetManagedInstanceInstalledPackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Installed Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists the packages that are installed on the managed instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceInstalledPackages = Oci.OsManagementHub.GetManagedInstanceInstalledPackages.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceInstalledPackageDisplayName,
+        ///         DisplayNameContains = managedInstanceInstalledPackageDisplayNameContains,
+        ///         TimeInstallDateEnd = managedInstanceInstalledPackageTimeInstallDateEnd,
+        ///         TimeInstallDateStart = managedInstanceInstalledPackageTimeInstallDateStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceInstalledPackagesResult> Invoke(GetManagedInstanceInstalledPackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceInstalledPackagesResult>("oci:OsManagementHub/getManagedInstanceInstalledPackages:getManagedInstanceInstalledPackages", args ?? new GetManagedInstanceInstalledPackagesInvokeArgs(), options.WithDefaults());
     }
 
 

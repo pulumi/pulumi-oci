@@ -80,21 +80,11 @@ type GetLogAnalyticsResourceCategoriesListResult struct {
 }
 
 func GetLogAnalyticsResourceCategoriesListOutput(ctx *pulumi.Context, args GetLogAnalyticsResourceCategoriesListOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsResourceCategoriesListResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsResourceCategoriesListResultOutput, error) {
 			args := v.(GetLogAnalyticsResourceCategoriesListArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsResourceCategoriesListResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsResourceCategoriesListResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsResourceCategoriesListResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsResourceCategoriesListResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", args, GetLogAnalyticsResourceCategoriesListResultOutput{}, options).(GetLogAnalyticsResourceCategoriesListResultOutput), nil
 		}).(GetLogAnalyticsResourceCategoriesListResultOutput)
 }
 

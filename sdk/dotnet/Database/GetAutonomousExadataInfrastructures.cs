@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousExadataInfrastructuresResult> Invoke(GetAutonomousExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructuresResult>("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", args ?? new GetAutonomousExadataInfrastructuresInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousExadataInfrastructures = Oci.Database.GetAutonomousExadataInfrastructures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = autonomousExadataInfrastructureAvailabilityDomain,
+        ///         DisplayName = autonomousExadataInfrastructureDisplayName,
+        ///         State = autonomousExadataInfrastructureState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousExadataInfrastructuresResult> Invoke(GetAutonomousExadataInfrastructuresInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructuresResult>("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", args ?? new GetAutonomousExadataInfrastructuresInvokeArgs(), options.WithDefaults());
     }
 
 

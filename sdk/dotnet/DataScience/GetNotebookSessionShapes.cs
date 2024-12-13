@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetNotebookSessionShapesResult> Invoke(GetNotebookSessionShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionShapesResult>("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", args ?? new GetNotebookSessionShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Lists the valid notebook session shapes.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotebookSessionShapes = Oci.DataScience.GetNotebookSessionShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNotebookSessionShapesResult> Invoke(GetNotebookSessionShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionShapesResult>("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", args ?? new GetNotebookSessionShapesInvokeArgs(), options.WithDefaults());
     }
 
 

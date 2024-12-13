@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public static Output<GetDesktopPoolDesktopsResult> Invoke(GetDesktopPoolDesktopsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolDesktopsResult>("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", args ?? new GetDesktopPoolDesktopsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Desktop Pool Desktops in Oracle Cloud Infrastructure Desktops service.
+        /// 
+        /// Returns a list of desktops within a given desktop pool. You can limit the results to an availability domain, desktop name, or desktop state. You can limit the number of results returned, sort the results by time or name, and sort in ascending or descending order.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDesktopPoolDesktops = Oci.Desktops.GetDesktopPoolDesktops.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DesktopPoolId = testDesktopPool.Id,
+        ///         AvailabilityDomain = desktopPoolDesktopAvailabilityDomain,
+        ///         DisplayName = desktopPoolDesktopDisplayName,
+        ///         Id = desktopPoolDesktopId,
+        ///         State = desktopPoolDesktopState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDesktopPoolDesktopsResult> Invoke(GetDesktopPoolDesktopsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolDesktopsResult>("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", args ?? new GetDesktopPoolDesktopsInvokeArgs(), options.WithDefaults());
     }
 
 

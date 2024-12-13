@@ -67,21 +67,11 @@ type GetInstanceMaintenanceRebootResult struct {
 }
 
 func GetInstanceMaintenanceRebootOutput(ctx *pulumi.Context, args GetInstanceMaintenanceRebootOutputArgs, opts ...pulumi.InvokeOption) GetInstanceMaintenanceRebootResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInstanceMaintenanceRebootResultOutput, error) {
 			args := v.(GetInstanceMaintenanceRebootArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInstanceMaintenanceRebootResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args, &rv, "", opts...)
-			if err != nil {
-				return GetInstanceMaintenanceRebootResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInstanceMaintenanceRebootResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInstanceMaintenanceRebootResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args, GetInstanceMaintenanceRebootResultOutput{}, options).(GetInstanceMaintenanceRebootResultOutput), nil
 		}).(GetInstanceMaintenanceRebootResultOutput)
 }
 

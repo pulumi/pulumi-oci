@@ -108,21 +108,11 @@ type LookupDomainsMyApiKeyResult struct {
 }
 
 func LookupDomainsMyApiKeyOutput(ctx *pulumi.Context, args LookupDomainsMyApiKeyOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMyApiKeyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsMyApiKeyResultOutput, error) {
 			args := v.(LookupDomainsMyApiKeyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsMyApiKeyResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyApiKey:getDomainsMyApiKey", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsMyApiKeyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsMyApiKeyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsMyApiKeyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMyApiKey:getDomainsMyApiKey", args, LookupDomainsMyApiKeyResultOutput{}, options).(LookupDomainsMyApiKeyResultOutput), nil
 		}).(LookupDomainsMyApiKeyResultOutput)
 }
 

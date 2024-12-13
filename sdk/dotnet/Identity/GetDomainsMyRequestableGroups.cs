@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyRequestableGroupsResult> Invoke(GetDomainsMyRequestableGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyRequestableGroupsResult>("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args ?? new GetDomainsMyRequestableGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Requestable Groups in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search My Requestable Groups
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyRequestableGroups = Oci.Identity.GetDomainsMyRequestableGroups.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyRequestableGroupCount = myRequestableGroupMyRequestableGroupCount,
+        ///         MyRequestableGroupFilter = myRequestableGroupMyRequestableGroupFilter,
+        ///         Authorization = myRequestableGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = myRequestableGroupResourceTypeSchemaVersion,
+        ///         StartIndex = myRequestableGroupStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyRequestableGroupsResult> Invoke(GetDomainsMyRequestableGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyRequestableGroupsResult>("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args ?? new GetDomainsMyRequestableGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentComparisonResult> Invoke(GetSecurityAssessmentComparisonInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentComparisonResult>("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", args ?? new GetSecurityAssessmentComparisonInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the comparison report for the security assessments submitted for comparison.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAssessmentComparison = Oci.DataSafe.GetSecurityAssessmentComparison.Invoke(new()
+        ///     {
+        ///         ComparisonSecurityAssessmentId = testSecurityAssessment.Id,
+        ///         SecurityAssessmentId = testSecurityAssessment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAssessmentComparisonResult> Invoke(GetSecurityAssessmentComparisonInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentComparisonResult>("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", args ?? new GetSecurityAssessmentComparisonInvokeArgs(), options.WithDefaults());
     }
 
 

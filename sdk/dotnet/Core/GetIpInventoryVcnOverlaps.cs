@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpInventoryVcnOverlapsResult> Invoke(GetIpInventoryVcnOverlapsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpInventoryVcnOverlapsResult>("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", args ?? new GetIpInventoryVcnOverlapsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpInventoryVcnOverlaps = Oci.Core.GetIpInventoryVcnOverlaps.Invoke(new()
+        ///     {
+        ///         CompartmentLists = ipInventoryVcnOverlapCompartmentList,
+        ///         RegionLists = ipInventoryVcnOverlapRegionList,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpInventoryVcnOverlapsResult> Invoke(GetIpInventoryVcnOverlapsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpInventoryVcnOverlapsResult>("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", args ?? new GetIpInventoryVcnOverlapsInvokeArgs(), options.WithDefaults());
     }
 
 

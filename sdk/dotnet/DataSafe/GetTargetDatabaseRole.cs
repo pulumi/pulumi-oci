@@ -16,6 +16,9 @@ namespace Pulumi.Oci.DataSafe
 
         public static Output<GetTargetDatabaseRoleResult> Invoke(GetTargetDatabaseRoleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseRoleResult>("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args ?? new GetTargetDatabaseRoleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetTargetDatabaseRoleResult> Invoke(GetTargetDatabaseRoleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseRoleResult>("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args ?? new GetTargetDatabaseRoleInvokeArgs(), options.WithDefaults());
     }
 
 

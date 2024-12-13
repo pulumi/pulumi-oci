@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCrossConnectLocationsResult> Invoke(GetCrossConnectLocationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectLocationsResult>("oci:Core/getCrossConnectLocations:getCrossConnectLocations", args ?? new GetCrossConnectLocationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the available FastConnect locations for cross-connect installation. You need
+        /// this information so you can specify your desired location when you create a cross-connect.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCrossConnectLocations = Oci.Core.GetCrossConnectLocations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCrossConnectLocationsResult> Invoke(GetCrossConnectLocationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectLocationsResult>("oci:Core/getCrossConnectLocations:getCrossConnectLocations", args ?? new GetCrossConnectLocationsInvokeArgs(), options.WithDefaults());
     }
 
 

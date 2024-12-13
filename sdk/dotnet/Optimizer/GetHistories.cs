@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetHistoriesResult> Invoke(GetHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists changes to the recommendations based on user activity. 
+        /// For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHistories = Oci.Optimizer.GetHistories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = historyCompartmentIdInSubtree,
+        ///         IncludeResourceMetadata = historyIncludeResourceMetadata,
+        ///         Name = historyName,
+        ///         RecommendationId = testRecommendation.Id,
+        ///         RecommendationName = testRecommendation.Name,
+        ///         ResourceType = historyResourceType,
+        ///         State = historyState,
+        ///         Status = historyStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHistoriesResult> Invoke(GetHistoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHistoriesResult>("oci:Optimizer/getHistories:getHistories", args ?? new GetHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

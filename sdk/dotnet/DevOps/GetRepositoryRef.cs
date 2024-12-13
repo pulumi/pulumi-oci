@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryRefResult> Invoke(GetRepositoryRefInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryRefResult>("oci:DevOps/getRepositoryRef:getRepositoryRef", args ?? new GetRepositoryRefInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/refs". Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like "heads/&lt;name&gt;" or "tags/&lt;name&gt;".
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryRef = Oci.DevOps.GetRepositoryRef.Invoke(new()
+        ///     {
+        ///         RefName = repositoryRefRefName,
+        ///         RepositoryId = testRepository.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryRefResult> Invoke(GetRepositoryRefInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryRefResult>("oci:DevOps/getRepositoryRef:getRepositoryRef", args ?? new GetRepositoryRefInvokeArgs(), options.WithDefaults());
     }
 
 

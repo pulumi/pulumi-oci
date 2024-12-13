@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetPublicIpPoolResult> Invoke(GetPublicIpPoolInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolResult>("oci:Core/getPublicIpPool:getPublicIpPool", args ?? new GetPublicIpPoolInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublicIpPool = Oci.Core.GetPublicIpPool.Invoke(new()
+        ///     {
+        ///         PublicIpPoolId = testPublicIpPoolOciCorePublicIpPool.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublicIpPoolResult> Invoke(GetPublicIpPoolInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolResult>("oci:Core/getPublicIpPool:getPublicIpPool", args ?? new GetPublicIpPoolInvokeArgs(), options.WithDefaults());
     }
 
 

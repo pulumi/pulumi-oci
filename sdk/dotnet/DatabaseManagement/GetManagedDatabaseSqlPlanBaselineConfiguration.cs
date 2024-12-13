@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> Invoke(GetManagedDatabaseSqlPlanBaselineConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineConfigurationResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", args ?? new GetManagedDatabaseSqlPlanBaselineConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the configuration details of SQL plan baselines for the specified
+        /// Managed Database. The details include the settings for the capture and use of
+        /// SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlPlanBaselineConfiguration = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfiguration.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> Invoke(GetManagedDatabaseSqlPlanBaselineConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineConfigurationResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", args ?? new GetManagedDatabaseSqlPlanBaselineConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

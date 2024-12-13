@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceConfigurationResult> Invoke(GetInstanceConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceConfigurationResult>("oci:Core/getInstanceConfiguration:getInstanceConfiguration", args ?? new GetInstanceConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified instance configuration
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceConfiguration = Oci.Core.GetInstanceConfiguration.Invoke(new()
+        ///     {
+        ///         InstanceConfigurationId = testInstanceConfigurationOciCoreInstanceConfiguration.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceConfigurationResult> Invoke(GetInstanceConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceConfigurationResult>("oci:Core/getInstanceConfiguration:getInstanceConfiguration", args ?? new GetInstanceConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

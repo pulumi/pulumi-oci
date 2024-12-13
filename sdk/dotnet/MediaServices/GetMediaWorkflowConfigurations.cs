@@ -70,6 +70,36 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaWorkflowConfigurationsResult> Invoke(GetMediaWorkflowConfigurationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowConfigurationsResult>("oci:MediaServices/getMediaWorkflowConfigurations:getMediaWorkflowConfigurations", args ?? new GetMediaWorkflowConfigurationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Media Workflow Configurations in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Returns a list of MediaWorkflowConfigurations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaWorkflowConfigurations = Oci.MediaServices.GetMediaWorkflowConfigurations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mediaWorkflowConfigurationDisplayName,
+        ///         Id = mediaWorkflowConfigurationId,
+        ///         State = mediaWorkflowConfigurationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMediaWorkflowConfigurationsResult> Invoke(GetMediaWorkflowConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowConfigurationsResult>("oci:MediaServices/getMediaWorkflowConfigurations:getMediaWorkflowConfigurations", args ?? new GetMediaWorkflowConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

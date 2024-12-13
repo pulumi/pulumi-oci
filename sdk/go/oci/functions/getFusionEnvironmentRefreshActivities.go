@@ -86,21 +86,11 @@ type GetFusionEnvironmentRefreshActivitiesResult struct {
 }
 
 func GetFusionEnvironmentRefreshActivitiesOutput(ctx *pulumi.Context, args GetFusionEnvironmentRefreshActivitiesOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentRefreshActivitiesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFusionEnvironmentRefreshActivitiesResultOutput, error) {
 			args := v.(GetFusionEnvironmentRefreshActivitiesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFusionEnvironmentRefreshActivitiesResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args, &rv, "", opts...)
-			if err != nil {
-				return GetFusionEnvironmentRefreshActivitiesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFusionEnvironmentRefreshActivitiesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFusionEnvironmentRefreshActivitiesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args, GetFusionEnvironmentRefreshActivitiesResultOutput{}, options).(GetFusionEnvironmentRefreshActivitiesResultOutput), nil
 		}).(GetFusionEnvironmentRefreshActivitiesResultOutput)
 }
 

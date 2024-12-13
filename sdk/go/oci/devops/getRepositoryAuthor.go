@@ -70,21 +70,11 @@ type GetRepositoryAuthorResult struct {
 }
 
 func GetRepositoryAuthorOutput(ctx *pulumi.Context, args GetRepositoryAuthorOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryAuthorResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRepositoryAuthorResultOutput, error) {
 			args := v.(GetRepositoryAuthorArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRepositoryAuthorResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args, &rv, "", opts...)
-			if err != nil {
-				return GetRepositoryAuthorResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRepositoryAuthorResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRepositoryAuthorResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args, GetRepositoryAuthorResultOutput{}, options).(GetRepositoryAuthorResultOutput), nil
 		}).(GetRepositoryAuthorResultOutput)
 }
 

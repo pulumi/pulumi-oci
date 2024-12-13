@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetClusterKubeConfigResult> Invoke(GetClusterKubeConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Create the Kubeconfig YAML for a cluster.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testClusterKubeConfig = Oci.ContainerEngine.GetClusterKubeConfig.Invoke(new()
+        ///     {
+        ///         ClusterId = testCluster.Id,
+        ///         Endpoint = clusterKubeConfigEndpoint,
+        ///         Expiration = clusterKubeConfigExpiration,
+        ///         TokenVersion = clusterKubeConfigTokenVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetClusterKubeConfigResult> Invoke(GetClusterKubeConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigInvokeArgs(), options.WithDefaults());
     }
 
 

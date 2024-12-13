@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetImageShapesResult> Invoke(GetImageShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageShapesResult>("oci:Core/getImageShapes:getImageShapes", args ?? new GetImageShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the compatible shapes for the specified image.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImageShapes = Oci.Core.GetImageShapes.Invoke(new()
+        ///     {
+        ///         ImageId = testImage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetImageShapesResult> Invoke(GetImageShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetImageShapesResult>("oci:Core/getImageShapes:getImageShapes", args ?? new GetImageShapesInvokeArgs(), options.WithDefaults());
     }
 
 

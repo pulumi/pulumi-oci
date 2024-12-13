@@ -81,21 +81,11 @@ type LookupSuppressionResult struct {
 }
 
 func LookupSuppressionOutput(ctx *pulumi.Context, args LookupSuppressionOutputArgs, opts ...pulumi.InvokeOption) LookupSuppressionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSuppressionResultOutput, error) {
 			args := v.(LookupSuppressionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSuppressionResult
-			secret, err := ctx.InvokePackageRaw("oci:Email/getSuppression:getSuppression", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSuppressionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSuppressionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSuppressionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Email/getSuppression:getSuppression", args, LookupSuppressionResultOutput{}, options).(LookupSuppressionResultOutput), nil
 		}).(LookupSuppressionResultOutput)
 }
 

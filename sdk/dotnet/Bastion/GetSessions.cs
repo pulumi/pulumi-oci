@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         public static Output<GetSessionsResult> Invoke(GetSessionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSessionsResult>("oci:Bastion/getSessions:getSessions", args ?? new GetSessionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
+        /// 
+        /// Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSessions = Oci.Bastion.GetSessions.Invoke(new()
+        ///     {
+        ///         BastionId = testBastion.Id,
+        ///         DisplayName = sessionDisplayName,
+        ///         SessionId = testSession.Id,
+        ///         SessionLifecycleState = sessionSessionLifecycleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSessionsResult> Invoke(GetSessionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSessionsResult>("oci:Bastion/getSessions:getSessions", args ?? new GetSessionsInvokeArgs(), options.WithDefaults());
     }
 
 

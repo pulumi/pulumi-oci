@@ -96,21 +96,11 @@ type GetDomainsOauthClientCertificatesResult struct {
 }
 
 func GetDomainsOauthClientCertificatesOutput(ctx *pulumi.Context, args GetDomainsOauthClientCertificatesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsOauthClientCertificatesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsOauthClientCertificatesResultOutput, error) {
 			args := v.(GetDomainsOauthClientCertificatesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsOauthClientCertificatesResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsOauthClientCertificatesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsOauthClientCertificatesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsOauthClientCertificatesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", args, GetDomainsOauthClientCertificatesResultOutput{}, options).(GetDomainsOauthClientCertificatesResultOutput), nil
 		}).(GetDomainsOauthClientCertificatesResultOutput)
 }
 

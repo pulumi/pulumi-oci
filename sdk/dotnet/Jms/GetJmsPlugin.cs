@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJmsPluginResult> Invoke(GetJmsPluginInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJmsPluginResult>("oci:Jms/getJmsPlugin:getJmsPlugin", args ?? new GetJmsPluginInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns the JmsPlugin.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJmsPlugin = Oci.Jms.GetJmsPlugin.Invoke(new()
+        ///     {
+        ///         JmsPluginId = testJmsPluginOciJmsJmsPlugin.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJmsPluginResult> Invoke(GetJmsPluginInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJmsPluginResult>("oci:Jms/getJmsPlugin:getJmsPlugin", args ?? new GetJmsPluginInvokeArgs(), options.WithDefaults());
     }
 
 

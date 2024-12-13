@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetCatalogTypeResult> Invoke(GetCatalogTypeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCatalogTypeResult>("oci:DataCatalog/getCatalogType:getCatalogType", args ?? new GetCatalogTypeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Gets a specific type by key within a data catalog.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCatalogType = Oci.DataCatalog.GetCatalogType.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         TypeKey = catalogTypeTypeKey,
+        ///         Fields = catalogTypeFields,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCatalogTypeResult> Invoke(GetCatalogTypeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogTypeResult>("oci:DataCatalog/getCatalogType:getCatalogType", args ?? new GetCatalogTypeInvokeArgs(), options.WithDefaults());
     }
 
 

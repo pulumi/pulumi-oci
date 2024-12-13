@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetClusterCredentialRotationStatusResult> Invoke(GetClusterCredentialRotationStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterCredentialRotationStatusResult>("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", args ?? new GetClusterCredentialRotationStatusInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Get cluster credential rotation status.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testClusterCredentialRotationStatus = Oci.ContainerEngine.GetClusterCredentialRotationStatus.Invoke(new()
+        ///     {
+        ///         ClusterId = testCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetClusterCredentialRotationStatusResult> Invoke(GetClusterCredentialRotationStatusInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterCredentialRotationStatusResult>("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", args ?? new GetClusterCredentialRotationStatusInvokeArgs(), options.WithDefaults());
     }
 
 

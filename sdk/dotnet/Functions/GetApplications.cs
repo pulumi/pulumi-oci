@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetApplicationsResult> Invoke(GetApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplicationsResult>("oci:Functions/getApplications:getApplications", args ?? new GetApplicationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
+        /// 
+        /// Lists applications for a compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApplications = Oci.Functions.GetApplications.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applicationDisplayName,
+        ///         Id = applicationId,
+        ///         State = applicationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApplicationsResult> Invoke(GetApplicationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApplicationsResult>("oci:Functions/getApplications:getApplications", args ?? new GetApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

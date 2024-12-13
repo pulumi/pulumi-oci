@@ -74,6 +74,38 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetInternalNamespaceOccOverviewsResult> Invoke(GetInternalNamespaceOccOverviewsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInternalNamespaceOccOverviewsResult>("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", args ?? new GetInternalNamespaceOccOverviewsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Internal Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// Lists an overview of all resources in that namespace in a given time interval.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInternalNamespaceOccOverviews = Oci.CapacityManagement.GetInternalNamespaceOccOverviews.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = internalNamespaceOccOverviewNamespace,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
+        ///         From = internalNamespaceOccOverviewFrom,
+        ///         To = internalNamespaceOccOverviewTo,
+        ///         WorkloadType = internalNamespaceOccOverviewWorkloadType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInternalNamespaceOccOverviewsResult> Invoke(GetInternalNamespaceOccOverviewsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInternalNamespaceOccOverviewsResult>("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", args ?? new GetInternalNamespaceOccOverviewsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetMaintenanceRunResult> Invoke(GetMaintenanceRunInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceRunResult>("oci:Database/getMaintenanceRun:getMaintenanceRun", args ?? new GetMaintenanceRunInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified maintenance run.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaintenanceRun = Oci.Database.GetMaintenanceRun.Invoke(new()
+        ///     {
+        ///         MaintenanceRunId = testMaintenanceRunOciDatabaseMaintenanceRun.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaintenanceRunResult> Invoke(GetMaintenanceRunInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceRunResult>("oci:Database/getMaintenanceRun:getMaintenanceRun", args ?? new GetMaintenanceRunInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetByoipAllocatedRangesResult> Invoke(GetByoipAllocatedRangesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoipAllocatedRangesResult>("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args ?? new GetByoipAllocatedRangesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
+        /// Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testByoipAllocatedRanges = Oci.Core.GetByoipAllocatedRanges.Invoke(new()
+        ///     {
+        ///         ByoipRangeId = testByoipRange.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetByoipAllocatedRangesResult> Invoke(GetByoipAllocatedRangesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetByoipAllocatedRangesResult>("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args ?? new GetByoipAllocatedRangesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstanceApiKeyResult> Invoke(GetBdsInstanceApiKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns the user's API key information for the given ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstanceApiKey = Oci.BigDataService.GetBdsInstanceApiKey.Invoke(new()
+        ///     {
+        ///         ApiKeyId = testApiKey.Id,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstanceApiKeyResult> Invoke(GetBdsInstanceApiKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());
     }
 
 

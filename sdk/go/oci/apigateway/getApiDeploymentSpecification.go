@@ -70,21 +70,11 @@ type GetApiDeploymentSpecificationResult struct {
 }
 
 func GetApiDeploymentSpecificationOutput(ctx *pulumi.Context, args GetApiDeploymentSpecificationOutputArgs, opts ...pulumi.InvokeOption) GetApiDeploymentSpecificationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetApiDeploymentSpecificationResultOutput, error) {
 			args := v.(GetApiDeploymentSpecificationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetApiDeploymentSpecificationResult
-			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args, &rv, "", opts...)
-			if err != nil {
-				return GetApiDeploymentSpecificationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetApiDeploymentSpecificationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetApiDeploymentSpecificationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args, GetApiDeploymentSpecificationResultOutput{}, options).(GetApiDeploymentSpecificationResultOutput), nil
 		}).(GetApiDeploymentSpecificationResultOutput)
 }
 

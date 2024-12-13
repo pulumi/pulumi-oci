@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetVaultReplicasResult> Invoke(GetVaultReplicasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVaultReplicasResult>("oci:Kms/getVaultReplicas:getVaultReplicas", args ?? new GetVaultReplicasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// Lists the replicas for a vault
+        /// 
+        /// As a provisioning operation, this call is subject to a Key Management limit that applies to
+        /// the total number of requests across all provisioning write operations. Key Management might
+        /// throttle this call to reject an otherwise valid request when the total rate of provisioning
+        /// write operations exceeds 10 requests per second for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVaultReplicas = Oci.Kms.GetVaultReplicas.Invoke(new()
+        ///     {
+        ///         VaultId = testVault.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVaultReplicasResult> Invoke(GetVaultReplicasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVaultReplicasResult>("oci:Kms/getVaultReplicas:getVaultReplicas", args ?? new GetVaultReplicasInvokeArgs(), options.WithDefaults());
     }
 
 

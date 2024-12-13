@@ -88,21 +88,11 @@ type GetSupportedHostShapesResult struct {
 }
 
 func GetSupportedHostShapesOutput(ctx *pulumi.Context, args GetSupportedHostShapesOutputArgs, opts ...pulumi.InvokeOption) GetSupportedHostShapesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSupportedHostShapesResultOutput, error) {
 			args := v.(GetSupportedHostShapesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSupportedHostShapesResult
-			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args, &rv, "", opts...)
-			if err != nil {
-				return GetSupportedHostShapesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSupportedHostShapesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSupportedHostShapesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args, GetSupportedHostShapesResultOutput{}, options).(GetSupportedHostShapesResultOutput), nil
 		}).(GetSupportedHostShapesResultOutput)
 }
 

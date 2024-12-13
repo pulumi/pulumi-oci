@@ -81,21 +81,11 @@ type GetServiceEnvironmentResult struct {
 }
 
 func GetServiceEnvironmentOutput(ctx *pulumi.Context, args GetServiceEnvironmentOutputArgs, opts ...pulumi.InvokeOption) GetServiceEnvironmentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetServiceEnvironmentResultOutput, error) {
 			args := v.(GetServiceEnvironmentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetServiceEnvironmentResult
-			secret, err := ctx.InvokePackageRaw("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args, &rv, "", opts...)
-			if err != nil {
-				return GetServiceEnvironmentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetServiceEnvironmentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetServiceEnvironmentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args, GetServiceEnvironmentResultOutput{}, options).(GetServiceEnvironmentResultOutput), nil
 		}).(GetServiceEnvironmentResultOutput)
 }
 

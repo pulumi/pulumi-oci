@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDrgRouteDistributionsResult> Invoke(GetDrgRouteDistributionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteDistributionsResult>("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", args ?? new GetDrgRouteDistributionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the route distributions in the specified DRG.
+        /// 
+        /// To retrieve the statements in a distribution, use the
+        /// ListDrgRouteDistributionStatements operation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrgRouteDistributions = Oci.Core.GetDrgRouteDistributions.Invoke(new()
+        ///     {
+        ///         DrgId = testDrg.Id,
+        ///         DisplayName = drgRouteDistributionDisplayName,
+        ///         State = drgRouteDistributionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrgRouteDistributionsResult> Invoke(GetDrgRouteDistributionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteDistributionsResult>("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", args ?? new GetDrgRouteDistributionsInvokeArgs(), options.WithDefaults());
     }
 
 

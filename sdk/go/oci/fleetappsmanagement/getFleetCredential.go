@@ -88,21 +88,11 @@ type LookupFleetCredentialResult struct {
 }
 
 func LookupFleetCredentialOutput(ctx *pulumi.Context, args LookupFleetCredentialOutputArgs, opts ...pulumi.InvokeOption) LookupFleetCredentialResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupFleetCredentialResultOutput, error) {
 			args := v.(LookupFleetCredentialArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupFleetCredentialResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getFleetCredential:getFleetCredential", args, &rv, "", opts...)
-			if err != nil {
-				return LookupFleetCredentialResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupFleetCredentialResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupFleetCredentialResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetCredential:getFleetCredential", args, LookupFleetCredentialResultOutput{}, options).(LookupFleetCredentialResultOutput), nil
 		}).(LookupFleetCredentialResultOutput)
 }
 

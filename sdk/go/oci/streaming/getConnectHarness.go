@@ -78,21 +78,11 @@ type LookupConnectHarnessResult struct {
 }
 
 func LookupConnectHarnessOutput(ctx *pulumi.Context, args LookupConnectHarnessOutputArgs, opts ...pulumi.InvokeOption) LookupConnectHarnessResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupConnectHarnessResultOutput, error) {
 			args := v.(LookupConnectHarnessArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupConnectHarnessResult
-			secret, err := ctx.InvokePackageRaw("oci:Streaming/getConnectHarness:getConnectHarness", args, &rv, "", opts...)
-			if err != nil {
-				return LookupConnectHarnessResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupConnectHarnessResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupConnectHarnessResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Streaming/getConnectHarness:getConnectHarness", args, LookupConnectHarnessResultOutput{}, options).(LookupConnectHarnessResultOutput), nil
 		}).(LookupConnectHarnessResultOutput)
 }
 

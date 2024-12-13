@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetNewsReportResult> Invoke(GetNewsReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNewsReportResult>("oci:Opsi/getNewsReport:getNewsReport", args ?? new GetNewsReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets details of a news report.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNewsReport = Oci.Opsi.GetNewsReport.Invoke(new()
+        ///     {
+        ///         NewsReportId = testNewsReportOciOpsiNewsReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNewsReportResult> Invoke(GetNewsReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNewsReportResult>("oci:Opsi/getNewsReport:getNewsReport", args ?? new GetNewsReportInvokeArgs(), options.WithDefaults());
     }
 
 

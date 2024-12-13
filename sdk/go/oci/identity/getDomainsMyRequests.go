@@ -107,21 +107,11 @@ type GetDomainsMyRequestsResult struct {
 }
 
 func GetDomainsMyRequestsOutput(ctx *pulumi.Context, args GetDomainsMyRequestsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyRequestsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsMyRequestsResultOutput, error) {
 			args := v.(GetDomainsMyRequestsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsMyRequestsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsMyRequestsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsMyRequestsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsMyRequestsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", args, GetDomainsMyRequestsResultOutput{}, options).(GetDomainsMyRequestsResultOutput), nil
 		}).(GetDomainsMyRequestsResultOutput)
 }
 

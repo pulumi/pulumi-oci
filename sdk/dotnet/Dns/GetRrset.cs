@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetRrsetResult> Invoke(GetRrsetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRrsetResult>("oci:Dns/getRrset:getRrset", args ?? new GetRrsetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets a list of all records in the specified RRSet.
+        /// 
+        /// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+        /// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRrset = Oci.Dns.GetRrset.Invoke(new()
+        ///     {
+        ///         Domain = rrsetDomain,
+        ///         Rtype = rrsetRtype,
+        ///         ZoneNameOrId = testZone.Id,
+        ///         Scope = rrsetScope,
+        ///         ViewId = testView.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRrsetResult> Invoke(GetRrsetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRrsetResult>("oci:Dns/getRrset:getRrset", args ?? new GetRrsetInvokeArgs(), options.WithDefaults());
     }
 
 

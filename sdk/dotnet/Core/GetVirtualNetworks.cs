@@ -16,6 +16,9 @@ namespace Pulumi.Oci.Core
 
         public static Output<GetVirtualNetworksResult> Invoke(GetVirtualNetworksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNetworksResult>("oci:Core/getVirtualNetworks:getVirtualNetworks", args ?? new GetVirtualNetworksInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetVirtualNetworksResult> Invoke(GetVirtualNetworksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNetworksResult>("oci:Core/getVirtualNetworks:getVirtualNetworks", args ?? new GetVirtualNetworksInvokeArgs(), options.WithDefaults());
     }
 
 

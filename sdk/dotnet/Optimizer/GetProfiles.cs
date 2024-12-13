@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetProfilesResult> Invoke(GetProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProfilesResult>("oci:Optimizer/getProfiles:getProfiles", args ?? new GetProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Profiles in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the existing profiles.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProfiles = Oci.Optimizer.GetProfiles.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = profileName,
+        ///         State = profileState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProfilesResult> Invoke(GetProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProfilesResult>("oci:Optimizer/getProfiles:getProfiles", args ?? new GetProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

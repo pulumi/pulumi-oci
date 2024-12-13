@@ -68,21 +68,11 @@ type GetPathRouteSetsResult struct {
 }
 
 func GetPathRouteSetsOutput(ctx *pulumi.Context, args GetPathRouteSetsOutputArgs, opts ...pulumi.InvokeOption) GetPathRouteSetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPathRouteSetsResultOutput, error) {
 			args := v.(GetPathRouteSetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPathRouteSetsResult
-			secret, err := ctx.InvokePackageRaw("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args, &rv, "", opts...)
-			if err != nil {
-				return GetPathRouteSetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPathRouteSetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPathRouteSetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args, GetPathRouteSetsResultOutput{}, options).(GetPathRouteSetsResultOutput), nil
 		}).(GetPathRouteSetsResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetDataSafeConfigurationResult> Invoke(GetDataSafeConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataSafeConfigurationResult>("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", args ?? new GetDataSafeConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the Data Safe configuration.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataSafeConfiguration = Oci.DataSafe.GetDataSafeConfiguration.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataSafeConfigurationResult> Invoke(GetDataSafeConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataSafeConfigurationResult>("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", args ?? new GetDataSafeConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

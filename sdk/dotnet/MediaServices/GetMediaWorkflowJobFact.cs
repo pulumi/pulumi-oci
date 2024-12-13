@@ -66,6 +66,34 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaWorkflowJobFactResult> Invoke(GetMediaWorkflowJobFactInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobFactResult>("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", args ?? new GetMediaWorkflowJobFactInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// &gt; **_NOTE:_** This data source has been deprecated and is no longer supported.
+        /// This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaWorkflowJobFact = Oci.MediaServices.GetMediaWorkflowJobFact.Invoke(new()
+        ///     {
+        ///         Key = mediaWorkflowJobFactKey,
+        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMediaWorkflowJobFactResult> Invoke(GetMediaWorkflowJobFactInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobFactResult>("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", args ?? new GetMediaWorkflowJobFactInvokeArgs(), options.WithDefaults());
     }
 
 

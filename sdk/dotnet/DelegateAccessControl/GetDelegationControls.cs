@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegationControlsResult> Invoke(GetDelegationControlsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegationControlsResult>("oci:DelegateAccessControl/getDelegationControls:getDelegationControls", args ?? new GetDelegationControlsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Delegation Controls in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Lists the Delegation Controls in the compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegationControls = Oci.DelegateAccessControl.GetDelegationControls.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = delegationControlDisplayName,
+        ///         ResourceId = testResource.Id,
+        ///         ResourceType = delegationControlResourceType,
+        ///         State = delegationControlState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegationControlsResult> Invoke(GetDelegationControlsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegationControlsResult>("oci:DelegateAccessControl/getDelegationControls:getDelegationControls", args ?? new GetDelegationControlsInvokeArgs(), options.WithDefaults());
     }
 
 

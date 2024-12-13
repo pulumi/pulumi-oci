@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetSddcsResult> Invoke(GetSddcsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSddcsResult>("oci:Ocvp/getSddcs:getSddcs", args ?? new GetSddcsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sddcs in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists the SDDCs in the specified compartment. The list can be
+        /// filtered by display name or availability domain.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSddcs = Oci.Ocvp.GetSddcs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ComputeAvailabilityDomain = sddcComputeAvailabilityDomain,
+        ///         DisplayName = sddcDisplayName,
+        ///         State = sddcState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSddcsResult> Invoke(GetSddcsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSddcsResult>("oci:Ocvp/getSddcs:getSddcs", args ?? new GetSddcsInvokeArgs(), options.WithDefaults());
     }
 
 

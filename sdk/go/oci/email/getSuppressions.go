@@ -88,21 +88,11 @@ type GetSuppressionsResult struct {
 }
 
 func GetSuppressionsOutput(ctx *pulumi.Context, args GetSuppressionsOutputArgs, opts ...pulumi.InvokeOption) GetSuppressionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSuppressionsResultOutput, error) {
 			args := v.(GetSuppressionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSuppressionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Email/getSuppressions:getSuppressions", args, &rv, "", opts...)
-			if err != nil {
-				return GetSuppressionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSuppressionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSuppressionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Email/getSuppressions:getSuppressions", args, GetSuppressionsResultOutput{}, options).(GetSuppressionsResultOutput), nil
 		}).(GetSuppressionsResultOutput)
 }
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public static Output<GetRecoveryServiceSubnetsResult> Invoke(GetRecoveryServiceSubnetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryServiceSubnetsResult>("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args ?? new GetRecoveryServiceSubnetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
+        /// 
+        /// Returns a list of Recovery Service Subnets.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecoveryServiceSubnets = Oci.RecoveryMod.GetRecoveryServiceSubnets.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = recoveryServiceSubnetDisplayName,
+        ///         Id = recoveryServiceSubnetId,
+        ///         State = recoveryServiceSubnetState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRecoveryServiceSubnetsResult> Invoke(GetRecoveryServiceSubnetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryServiceSubnetsResult>("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args ?? new GetRecoveryServiceSubnetsInvokeArgs(), options.WithDefaults());
     }
 
 

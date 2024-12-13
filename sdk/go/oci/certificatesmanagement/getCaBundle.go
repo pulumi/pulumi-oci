@@ -81,21 +81,11 @@ type LookupCaBundleResult struct {
 }
 
 func LookupCaBundleOutput(ctx *pulumi.Context, args LookupCaBundleOutputArgs, opts ...pulumi.InvokeOption) LookupCaBundleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCaBundleResultOutput, error) {
 			args := v.(LookupCaBundleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCaBundleResult
-			secret, err := ctx.InvokePackageRaw("oci:CertificatesManagement/getCaBundle:getCaBundle", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCaBundleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCaBundleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCaBundleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CertificatesManagement/getCaBundle:getCaBundle", args, LookupCaBundleResultOutput{}, options).(LookupCaBundleResultOutput), nil
 		}).(LookupCaBundleResultOutput)
 }
 

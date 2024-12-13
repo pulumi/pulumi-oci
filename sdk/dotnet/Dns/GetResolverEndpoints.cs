@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetResolverEndpointsResult> Invoke(GetResolverEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
+        /// It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
+        /// query parameter is provided, the collection does not include resolver endpoints in the DELETED
+        /// lifecycle state to be consistent with other operations of the API.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResolverEndpoints = Oci.Dns.GetResolverEndpoints.Invoke(new()
+        ///     {
+        ///         ResolverId = testResolver.Id,
+        ///         Scope = "PRIVATE",
+        ///         Name = resolverEndpointName,
+        ///         State = resolverEndpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResolverEndpointsResult> Invoke(GetResolverEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

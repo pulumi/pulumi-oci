@@ -99,21 +99,11 @@ type GetDomainsMyRequestableGroupsResult struct {
 }
 
 func GetDomainsMyRequestableGroupsOutput(ctx *pulumi.Context, args GetDomainsMyRequestableGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyRequestableGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsMyRequestableGroupsResultOutput, error) {
 			args := v.(GetDomainsMyRequestableGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsMyRequestableGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsMyRequestableGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsMyRequestableGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsMyRequestableGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args, GetDomainsMyRequestableGroupsResultOutput{}, options).(GetDomainsMyRequestableGroupsResultOutput), nil
 		}).(GetDomainsMyRequestableGroupsResultOutput)
 }
 

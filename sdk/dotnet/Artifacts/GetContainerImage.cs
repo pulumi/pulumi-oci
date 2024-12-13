@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public static Output<GetContainerImageResult> Invoke(GetContainerImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerImageResult>("oci:Artifacts/getContainerImage:getContainerImage", args ?? new GetContainerImageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
+        /// 
+        /// Get container image metadata.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testContainerImage = Oci.Artifacts.GetContainerImage.Invoke(new()
+        ///     {
+        ///         ImageId = containerImageId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetContainerImageResult> Invoke(GetContainerImageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerImageResult>("oci:Artifacts/getContainerImage:getContainerImage", args ?? new GetContainerImageInvokeArgs(), options.WithDefaults());
     }
 
 

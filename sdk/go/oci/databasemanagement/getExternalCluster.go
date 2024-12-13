@@ -104,21 +104,11 @@ type LookupExternalClusterResult struct {
 }
 
 func LookupExternalClusterOutput(ctx *pulumi.Context, args LookupExternalClusterOutputArgs, opts ...pulumi.InvokeOption) LookupExternalClusterResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalClusterResultOutput, error) {
 			args := v.(LookupExternalClusterArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalClusterResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalCluster:getExternalCluster", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalClusterResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalClusterResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalClusterResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalCluster:getExternalCluster", args, LookupExternalClusterResultOutput{}, options).(LookupExternalClusterResultOutput), nil
 		}).(LookupExternalClusterResultOutput)
 }
 

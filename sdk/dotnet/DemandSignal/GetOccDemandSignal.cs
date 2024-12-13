@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DemandSignal
         /// </summary>
         public static Output<GetOccDemandSignalResult> Invoke(GetOccDemandSignalInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccDemandSignalResult>("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", args ?? new GetOccDemandSignalInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
+        /// 
+        /// Gets information about a OccDemandSignal.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccDemandSignal = Oci.DemandSignal.GetOccDemandSignal.Invoke(new()
+        ///     {
+        ///         OccDemandSignalId = testOccDemandSignalOciDemandSignalOccDemandSignal.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccDemandSignalResult> Invoke(GetOccDemandSignalInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccDemandSignalResult>("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", args ?? new GetOccDemandSignalInvokeArgs(), options.WithDefaults());
     }
 
 

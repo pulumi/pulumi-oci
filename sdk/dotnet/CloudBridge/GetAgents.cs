@@ -72,6 +72,37 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetAgentsResult> Invoke(GetAgentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentsResult>("oci:CloudBridge/getAgents:getAgents", args ?? new GetAgentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Agents in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Returns a list of Agents.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAgents = Oci.CloudBridge.GetAgents.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AgentId = testAgent.Id,
+        ///         DisplayName = agentDisplayName,
+        ///         EnvironmentId = testEnvironment.Id,
+        ///         State = agentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentsResult> Invoke(GetAgentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentsResult>("oci:CloudBridge/getAgents:getAgents", args ?? new GetAgentsInvokeArgs(), options.WithDefaults());
     }
 
 

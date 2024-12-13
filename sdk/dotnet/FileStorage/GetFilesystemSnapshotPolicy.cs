@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetFilesystemSnapshotPolicyResult> Invoke(GetFilesystemSnapshotPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFilesystemSnapshotPolicyResult>("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args ?? new GetFilesystemSnapshotPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Gets the specified file system snapshot policy's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFilesystemSnapshotPolicy = Oci.FileStorage.GetFilesystemSnapshotPolicy.Invoke(new()
+        ///     {
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFilesystemSnapshotPolicyResult> Invoke(GetFilesystemSnapshotPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFilesystemSnapshotPolicyResult>("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args ?? new GetFilesystemSnapshotPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Retrieves a comparison of the existing SQL execution plan and a new plan.
+        /// A SQL tuning task may suggest a new execution plan for a SQL,
+        /// and this API retrieves the comparison report of the statistics of the two plans.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.Invoke(new()
+        ///     {
+        ///         ExecutionId = testExecution.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlObjectId = testObject.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs(), options.WithDefaults());
     }
 
 

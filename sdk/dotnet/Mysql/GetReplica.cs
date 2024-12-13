@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetReplicaResult> Invoke(GetReplicaInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicaResult>("oci:Mysql/getReplica:getReplica", args ?? new GetReplicaInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Gets the full details of the specified read replica.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplica = Oci.Mysql.GetReplica.Invoke(new()
+        ///     {
+        ///         ReplicaId = testReplicaOciMysqlReplica.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicaResult> Invoke(GetReplicaInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicaResult>("oci:Mysql/getReplica:getReplica", args ?? new GetReplicaInvokeArgs(), options.WithDefaults());
     }
 
 

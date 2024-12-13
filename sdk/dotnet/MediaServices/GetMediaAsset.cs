@@ -62,6 +62,32 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaAssetResult> Invoke(GetMediaAssetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetResult>("oci:MediaServices/getMediaAsset:getMediaAsset", args ?? new GetMediaAssetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Gets a MediaAsset by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaAsset = Oci.MediaServices.GetMediaAsset.Invoke(new()
+        ///     {
+        ///         MediaAssetId = testMediaAssetOciMediaServicesMediaAsset.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMediaAssetResult> Invoke(GetMediaAssetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetResult>("oci:MediaServices/getMediaAsset:getMediaAsset", args ?? new GetMediaAssetInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -92,6 +92,47 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public static Output<GetOpensearchVersionsResult> Invoke(GetOpensearchVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchVersionsResult>("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", args ?? new GetOpensearchVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
+        /// 
+        /// Lists the supported Opensearch versions
+        /// 
+        /// ## Prerequisites
+        /// 
+        /// The below policies must be created in compartment before creating OpensearchCluster
+        /// 
+        /// ##### {Compartment-Name} - Name of  your compartment
+        /// ```
+        /// Allow service opensearch to manage vnics in compartment {Compartment-Name}
+        /// Allow service opensearch to use subnets in compartment {Compartment-Name}
+        /// Allow service opensearch to use network-security-groups in compartment {Compartment-Name}
+        /// Allow service opensearch to manage vcns in compartment {Compartment-Name}
+        /// ```
+        /// 
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOpensearchVersions = Oci.Opensearch.GetOpensearchVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOpensearchVersionsResult> Invoke(GetOpensearchVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchVersionsResult>("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", args ?? new GetOpensearchVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

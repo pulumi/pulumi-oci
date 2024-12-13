@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeGroupReplicaResult> Invoke(GetVolumeGroupReplicaInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupReplicaResult>("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", args ?? new GetVolumeGroupReplicaInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information for the specified volume group replica.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeGroupReplica = Oci.Core.GetVolumeGroupReplica.Invoke(new()
+        ///     {
+        ///         VolumeGroupReplicaId = testVolumeGroupReplicaOciCoreVolumeGroupReplica.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeGroupReplicaResult> Invoke(GetVolumeGroupReplicaInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupReplicaResult>("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", args ?? new GetVolumeGroupReplicaInvokeArgs(), options.WithDefaults());
     }
 
 

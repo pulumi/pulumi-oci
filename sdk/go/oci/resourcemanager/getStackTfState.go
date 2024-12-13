@@ -62,21 +62,11 @@ type GetStackTfStateResult struct {
 }
 
 func GetStackTfStateOutput(ctx *pulumi.Context, args GetStackTfStateOutputArgs, opts ...pulumi.InvokeOption) GetStackTfStateResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetStackTfStateResultOutput, error) {
 			args := v.(GetStackTfStateArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetStackTfStateResult
-			secret, err := ctx.InvokePackageRaw("oci:ResourceManager/getStackTfState:getStackTfState", args, &rv, "", opts...)
-			if err != nil {
-				return GetStackTfStateResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetStackTfStateResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetStackTfStateResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ResourceManager/getStackTfState:getStackTfState", args, GetStackTfStateResultOutput{}, options).(GetStackTfStateResultOutput), nil
 		}).(GetStackTfStateResultOutput)
 }
 

@@ -90,21 +90,11 @@ type LookupProtectionPolicyResult struct {
 }
 
 func LookupProtectionPolicyOutput(ctx *pulumi.Context, args LookupProtectionPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupProtectionPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupProtectionPolicyResultOutput, error) {
 			args := v.(LookupProtectionPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupProtectionPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:RecoveryMod/getProtectionPolicy:getProtectionPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupProtectionPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupProtectionPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupProtectionPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:RecoveryMod/getProtectionPolicy:getProtectionPolicy", args, LookupProtectionPolicyResultOutput{}, options).(LookupProtectionPolicyResultOutput), nil
 		}).(LookupProtectionPolicyResultOutput)
 }
 

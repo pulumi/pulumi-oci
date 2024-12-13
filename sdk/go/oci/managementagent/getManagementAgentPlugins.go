@@ -86,21 +86,11 @@ type GetManagementAgentPluginsResult struct {
 }
 
 func GetManagementAgentPluginsOutput(ctx *pulumi.Context, args GetManagementAgentPluginsOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentPluginsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagementAgentPluginsResultOutput, error) {
 			args := v.(GetManagementAgentPluginsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagementAgentPluginsResult
-			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagementAgentPluginsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagementAgentPluginsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagementAgentPluginsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", args, GetManagementAgentPluginsResultOutput{}, options).(GetManagementAgentPluginsResultOutput), nil
 		}).(GetManagementAgentPluginsResultOutput)
 }
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public static Output<GetAnalyticsInstanceResult> Invoke(GetAnalyticsInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
+        /// 
+        /// Info for a specific Analytics instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAnalyticsInstance = Oci.Analytics.GetAnalyticsInstance.Invoke(new()
+        ///     {
+        ///         AnalyticsInstanceId = testAnalyticsInstanceOciAnalyticsAnalyticsInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAnalyticsInstanceResult> Invoke(GetAnalyticsInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

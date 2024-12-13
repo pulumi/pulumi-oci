@@ -78,21 +78,11 @@ type GetAssociationResult struct {
 }
 
 func GetAssociationOutput(ctx *pulumi.Context, args GetAssociationOutputArgs, opts ...pulumi.InvokeOption) GetAssociationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAssociationResultOutput, error) {
 			args := v.(GetAssociationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAssociationResult
-			secret, err := ctx.InvokePackageRaw("oci:CertificatesManagement/getAssociation:getAssociation", args, &rv, "", opts...)
-			if err != nil {
-				return GetAssociationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAssociationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAssociationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CertificatesManagement/getAssociation:getAssociation", args, GetAssociationResultOutput{}, options).(GetAssociationResultOutput), nil
 		}).(GetAssociationResultOutput)
 }
 

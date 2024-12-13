@@ -64,6 +64,33 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetScheduledRunsResult> Invoke(GetScheduledRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetScheduledRunsResult>("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", args ?? new GetScheduledRunsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Returns schedule history list.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testScheduledRuns = Oci.MeteringComputation.GetScheduledRuns.Invoke(new()
+        ///     {
+        ///         ScheduleId = testSchedule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetScheduledRunsResult> Invoke(GetScheduledRunsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetScheduledRunsResult>("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", args ?? new GetScheduledRunsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> Invoke(GetSecurityPolicyReportDatabaseTableAccessEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseTableAccessEntryResult>("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", args ?? new GetSecurityPolicyReportDatabaseTableAccessEntryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Policy Report Database Table Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a database table access entry object by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyReportDatabaseTableAccessEntry = Oci.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntry.Invoke(new()
+        ///     {
+        ///         DatabaseTableAccessEntryKey = securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyReportDatabaseTableAccessEntryResult> Invoke(GetSecurityPolicyReportDatabaseTableAccessEntryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseTableAccessEntryResult>("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", args ?? new GetSecurityPolicyReportDatabaseTableAccessEntryInvokeArgs(), options.WithDefaults());
     }
 
 

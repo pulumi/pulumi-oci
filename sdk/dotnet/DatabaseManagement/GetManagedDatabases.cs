@@ -84,6 +84,43 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabasesResult> Invoke(GetManagedDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
+        /// Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+        /// should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+        /// are listed. Managed Databases can also be filtered based on the deployment type and management option.
+        /// If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+        /// considered and Managed Databases with `ADVANCED` management option are listed.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabases = Oci.DatabaseManagement.GetManagedDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentType = managedDatabaseDeploymentType,
+        ///         ExternalExadataInfrastructureId = testExternalExadataInfrastructure.Id,
+        ///         Id = managedDatabaseId,
+        ///         ManagementOption = managedDatabaseManagementOption,
+        ///         Name = managedDatabaseName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabasesResult> Invoke(GetManagedDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

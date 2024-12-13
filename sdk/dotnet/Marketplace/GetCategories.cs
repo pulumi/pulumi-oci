@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetCategoriesResult> Invoke(GetCategoriesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Marketplace/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
+        /// to the software product provided by the listing.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCategories = Oci.Marketplace.GetCategories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCategoriesResult> Invoke(GetCategoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Marketplace/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
     }
 
 

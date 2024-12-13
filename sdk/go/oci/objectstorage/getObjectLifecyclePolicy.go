@@ -71,21 +71,11 @@ type LookupObjectLifecyclePolicyResult struct {
 }
 
 func LookupObjectLifecyclePolicyOutput(ctx *pulumi.Context, args LookupObjectLifecyclePolicyOutputArgs, opts ...pulumi.InvokeOption) LookupObjectLifecyclePolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupObjectLifecyclePolicyResultOutput, error) {
 			args := v.(LookupObjectLifecyclePolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupObjectLifecyclePolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupObjectLifecyclePolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupObjectLifecyclePolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupObjectLifecyclePolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args, LookupObjectLifecyclePolicyResultOutput{}, options).(LookupObjectLifecyclePolicyResultOutput), nil
 		}).(LookupObjectLifecyclePolicyResultOutput)
 }
 

@@ -80,21 +80,11 @@ type GetDatabaseRegistrationsResult struct {
 }
 
 func GetDatabaseRegistrationsOutput(ctx *pulumi.Context, args GetDatabaseRegistrationsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseRegistrationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatabaseRegistrationsResultOutput, error) {
 			args := v.(GetDatabaseRegistrationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatabaseRegistrationsResult
-			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatabaseRegistrationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatabaseRegistrationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatabaseRegistrationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", args, GetDatabaseRegistrationsResultOutput{}, options).(GetDatabaseRegistrationsResultOutput), nil
 		}).(GetDatabaseRegistrationsResultOutput)
 }
 

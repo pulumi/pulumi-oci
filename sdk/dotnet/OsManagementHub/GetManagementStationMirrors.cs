@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagementStationMirrorsResult> Invoke(GetManagementStationMirrorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementStationMirrorsResult>("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", args ?? new GetManagementStationMirrorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists all software source mirrors associated with a specified management station.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementStationMirrors = Oci.OsManagementHub.GetManagementStationMirrors.Invoke(new()
+        ///     {
+        ///         ManagementStationId = testManagementStation.Id,
+        ///         DisplayName = managementStationMirrorDisplayName,
+        ///         DisplayNameContains = managementStationMirrorDisplayNameContains,
+        ///         MirrorStates = managementStationMirrorMirrorStates,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementStationMirrorsResult> Invoke(GetManagementStationMirrorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementStationMirrorsResult>("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", args ?? new GetManagementStationMirrorsInvokeArgs(), options.WithDefaults());
     }
 
 

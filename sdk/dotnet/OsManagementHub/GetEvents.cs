@@ -84,6 +84,43 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:OsManagementHub/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Events in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists events that match the specified criteria, such as compartment, state, and event type.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEvents = Oci.OsManagementHub.GetEvents.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         EventFingerprint = eventEventFingerprint,
+        ///         EventSummary = eventEventSummary,
+        ///         EventSummaryContains = eventEventSummaryContains,
+        ///         Id = eventId,
+        ///         IsManagedByAutonomousLinux = eventIsManagedByAutonomousLinux,
+        ///         ResourceId = testResource.Id,
+        ///         State = eventState,
+        ///         TimeCreatedGreaterThanOrEqualTo = eventTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = eventTimeCreatedLessThan,
+        ///         Types = eventType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:OsManagementHub/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDatabasesResult> Invoke(GetExternalDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDatabasesResult>("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", args ?? new GetExternalDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the external databases in the specified compartment or in the specified DB system.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDatabases = Oci.DatabaseManagement.GetExternalDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalDatabaseDisplayName,
+        ///         ExternalDatabaseId = testExternalDatabase.Id,
+        ///         ExternalDbSystemId = testExternalDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDatabasesResult> Invoke(GetExternalDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDatabasesResult>("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", args ?? new GetExternalDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetDedicatedVantagePointsResult> Invoke(GetDedicatedVantagePointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVantagePointsResult>("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", args ?? new GetDedicatedVantagePointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Returns a list of dedicated vantage points.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedVantagePoints = Oci.ApmSynthetics.GetDedicatedVantagePoints.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = dedicatedVantagePointDisplayName,
+        ///         Name = dedicatedVantagePointName,
+        ///         Status = dedicatedVantagePointStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedVantagePointsResult> Invoke(GetDedicatedVantagePointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVantagePointsResult>("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", args ?? new GetDedicatedVantagePointsInvokeArgs(), options.WithDefaults());
     }
 
 

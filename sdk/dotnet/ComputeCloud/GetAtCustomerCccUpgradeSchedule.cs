@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ComputeCloud
         /// </summary>
         public static Output<GetAtCustomerCccUpgradeScheduleResult> Invoke(GetAtCustomerCccUpgradeScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccUpgradeScheduleResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args ?? new GetAtCustomerCccUpgradeScheduleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+        /// 
+        /// Gets a Compute Cloud@Customer upgrade schedule by the specified
+        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCccUpgradeSchedule = Oci.ComputeCloud.GetAtCustomerCccUpgradeSchedule.Invoke(new()
+        ///     {
+        ///         CccUpgradeScheduleId = testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAtCustomerCccUpgradeScheduleResult> Invoke(GetAtCustomerCccUpgradeScheduleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccUpgradeScheduleResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args ?? new GetAtCustomerCccUpgradeScheduleInvokeArgs(), options.WithDefaults());
     }
 
 

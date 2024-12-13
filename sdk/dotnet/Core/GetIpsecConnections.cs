@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpsecConnectionsResult> Invoke(GetIpsecConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionsResult>("oci:Core/getIpsecConnections:getIpsecConnections", args ?? new GetIpsecConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the IPSec connections for the specified compartment. You can filter the
+        /// results by DRG or CPE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpSecConnections = Oci.Core.GetIpsecConnections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CpeId = testCpe.Id,
+        ///         DrgId = testDrg.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpsecConnectionsResult> Invoke(GetIpsecConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionsResult>("oci:Core/getIpsecConnections:getIpsecConnections", args ?? new GetIpsecConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingReportsMaskedColumnResult> Invoke(GetMaskingReportsMaskedColumnInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportsMaskedColumnResult>("oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn", args ?? new GetMaskingReportsMaskedColumnInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Masking Reports Masked Column resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingReportsMaskedColumn = Oci.DataSafe.GetMaskingReportsMaskedColumn.Invoke(new()
+        ///     {
+        ///         MaskingReportId = testMaskingReport.Id,
+        ///         ColumnNames = maskingReportsMaskedColumnColumnName,
+        ///         MaskingColumnGroups = maskingReportsMaskedColumnMaskingColumnGroup,
+        ///         Objects = maskingReportsMaskedColumnObject,
+        ///         ObjectTypes = maskingReportsMaskedColumnObjectType,
+        ///         SchemaNames = maskingReportsMaskedColumnSchemaName,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingReportsMaskedColumnResult> Invoke(GetMaskingReportsMaskedColumnInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportsMaskedColumnResult>("oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn", args ?? new GetMaskingReportsMaskedColumnInvokeArgs(), options.WithDefaults());
     }
 
 

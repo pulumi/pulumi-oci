@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public static Output<GetLimitValuesResult> Invoke(GetLimitValuesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLimitValuesResult>("oci:Limits/getLimitValues:getLimitValues", args ?? new GetLimitValuesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
+        /// 
+        /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLimitValues = Oci.Limits.GetLimitValues.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         ServiceName = testService.Name,
+        ///         AvailabilityDomain = limitValueAvailabilityDomain,
+        ///         Name = limitValueName,
+        ///         ScopeType = limitValueScopeType,
+        ///         SubscriptionId = subscriptionOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLimitValuesResult> Invoke(GetLimitValuesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLimitValuesResult>("oci:Limits/getLimitValues:getLimitValues", args ?? new GetLimitValuesInvokeArgs(), options.WithDefaults());
     }
 
 

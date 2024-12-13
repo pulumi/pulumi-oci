@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public static Output<GetAlarmResult> Invoke(GetAlarmInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlarmResult>("oci:Monitoring/getAlarm:getAlarm", args ?? new GetAlarmInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
+        /// 
+        /// Gets the specified alarm.
+        /// For more information, see
+        /// [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+        /// 
+        /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        /// or transactions, per second (TPS) for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlarm = Oci.Monitoring.GetAlarm.Invoke(new()
+        ///     {
+        ///         AlarmId = testAlarmOciMonitoringAlarm.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlarmResult> Invoke(GetAlarmInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlarmResult>("oci:Monitoring/getAlarm:getAlarm", args ?? new GetAlarmInvokeArgs(), options.WithDefaults());
     }
 
 

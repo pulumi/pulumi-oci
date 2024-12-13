@@ -85,21 +85,11 @@ type LookupBdsInstanceResourcePrincipalConfigurationResult struct {
 }
 
 func LookupBdsInstanceResourcePrincipalConfigurationOutput(ctx *pulumi.Context, args LookupBdsInstanceResourcePrincipalConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceResourcePrincipalConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBdsInstanceResourcePrincipalConfigurationResultOutput, error) {
 			args := v.(LookupBdsInstanceResourcePrincipalConfigurationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBdsInstanceResourcePrincipalConfigurationResult
-			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBdsInstanceResourcePrincipalConfigurationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", args, LookupBdsInstanceResourcePrincipalConfigurationResultOutput{}, options).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput), nil
 		}).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput)
 }
 

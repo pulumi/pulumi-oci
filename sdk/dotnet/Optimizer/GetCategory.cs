@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetCategoryResult> Invoke(GetCategoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoryResult>("oci:Optimizer/getCategory:getCategory", args ?? new GetCategoryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Gets the category that corresponds to the specified OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCategory = Oci.Optimizer.GetCategory.Invoke(new()
+        ///     {
+        ///         CategoryId = testCategoryOciOptimizerCategory.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCategoryResult> Invoke(GetCategoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoryResult>("oci:Optimizer/getCategory:getCategory", args ?? new GetCategoryInvokeArgs(), options.WithDefaults());
     }
 
 

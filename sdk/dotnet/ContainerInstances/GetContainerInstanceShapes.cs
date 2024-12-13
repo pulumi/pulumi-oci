@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ContainerInstances
         /// </summary>
         public static Output<GetContainerInstanceShapesResult> Invoke(GetContainerInstanceShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstanceShapesResult>("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args ?? new GetContainerInstanceShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
+        /// 
+        /// Lists the shapes that can be used to create container instances.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testContainerInstanceShapes = Oci.ContainerInstances.GetContainerInstanceShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = containerInstanceShapeAvailabilityDomain,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetContainerInstanceShapesResult> Invoke(GetContainerInstanceShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerInstanceShapesResult>("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args ?? new GetContainerInstanceShapesInvokeArgs(), options.WithDefaults());
     }
 
 

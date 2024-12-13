@@ -62,6 +62,32 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public static Output<GetRecoveryServiceSubnetResult> Invoke(GetRecoveryServiceSubnetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryServiceSubnetResult>("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", args ?? new GetRecoveryServiceSubnetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
+        /// 
+        /// Gets information about a specified recovery service subnet.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecoveryServiceSubnet = Oci.RecoveryMod.GetRecoveryServiceSubnet.Invoke(new()
+        ///     {
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRecoveryServiceSubnetResult> Invoke(GetRecoveryServiceSubnetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryServiceSubnetResult>("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", args ?? new GetRecoveryServiceSubnetInvokeArgs(), options.WithDefaults());
     }
 
 

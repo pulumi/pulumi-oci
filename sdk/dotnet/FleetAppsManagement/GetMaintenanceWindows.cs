@@ -72,6 +72,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetMaintenanceWindowsResult> Invoke(GetMaintenanceWindowsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceWindowsResult>("oci:FleetAppsManagement/getMaintenanceWindows:getMaintenanceWindows", args ?? new GetMaintenanceWindowsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// List maintenance windows for a specified tenancy in Fleet Application Management.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaintenanceWindows = Oci.FleetAppsManagement.GetMaintenanceWindows.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = maintenanceWindowDisplayName,
+        ///         Id = maintenanceWindowId,
+        ///         State = maintenanceWindowState,
+        ///         TimeScheduleStartGreaterThanOrEqualTo = maintenanceWindowTimeScheduleStartGreaterThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaintenanceWindowsResult> Invoke(GetMaintenanceWindowsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceWindowsResult>("oci:FleetAppsManagement/getMaintenanceWindows:getMaintenanceWindows", args ?? new GetMaintenanceWindowsInvokeArgs(), options.WithDefaults());
     }
 
 

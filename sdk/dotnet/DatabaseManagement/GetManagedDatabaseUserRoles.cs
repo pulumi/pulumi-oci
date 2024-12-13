@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseUserRolesResult> Invoke(GetManagedDatabaseUserRolesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserRolesResult>("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args ?? new GetManagedDatabaseUserRolesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database User Roles in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of roles granted to a specific user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseUserRoles = Oci.DatabaseManagement.GetManagedDatabaseUserRoles.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabaseUserRoleName,
+        ///         OpcNamedCredentialId = managedDatabaseUserRoleOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseUserRolesResult> Invoke(GetManagedDatabaseUserRolesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserRolesResult>("oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles", args ?? new GetManagedDatabaseUserRolesInvokeArgs(), options.WithDefaults());
     }
 
 

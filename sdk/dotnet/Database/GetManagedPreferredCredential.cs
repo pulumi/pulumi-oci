@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetManagedPreferredCredentialResult> Invoke(GetManagedPreferredCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedPreferredCredentialResult>("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", args ?? new GetManagedPreferredCredentialInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the preferred credential details for a Managed Database based on credentialName.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabasePreferredCredential = Oci.Database.GetManagedPreferredCredential.Invoke(new()
+        ///     {
+        ///         CredentialName = managedDatabasePreferredCredentialCredentialName,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedPreferredCredentialResult> Invoke(GetManagedPreferredCredentialInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedPreferredCredentialResult>("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", args ?? new GetManagedPreferredCredentialInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsEntityTopologyResult> Invoke(GetLogAnalyticsEntityTopologyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsEntityTopology = Oci.LogAnalytics.GetLogAnalyticsEntityTopology.Invoke(new()
+        ///     {
+        ///         LogAnalyticsEntityId = testLogAnalyticsEntity.Id,
+        ///         Namespace = logAnalyticsEntityTopologyNamespace,
+        ///         MetadataEquals = logAnalyticsEntityTopologyMetadataEquals,
+        ///         State = logAnalyticsEntityTopologyState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsEntityTopologyResult> Invoke(GetLogAnalyticsEntityTopologyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyInvokeArgs(), options.WithDefaults());
     }
 
 

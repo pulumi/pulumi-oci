@@ -94,21 +94,11 @@ type LookupManagedListResult struct {
 }
 
 func LookupManagedListOutput(ctx *pulumi.Context, args LookupManagedListOutputArgs, opts ...pulumi.InvokeOption) LookupManagedListResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupManagedListResultOutput, error) {
 			args := v.(LookupManagedListArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupManagedListResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getManagedList:getManagedList", args, &rv, "", opts...)
-			if err != nil {
-				return LookupManagedListResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupManagedListResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupManagedListResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getManagedList:getManagedList", args, LookupManagedListResultOutput{}, options).(LookupManagedListResultOutput), nil
 		}).(LookupManagedListResultOutput)
 }
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDbHomeResult> Invoke(GetExternalDbHomeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbHomeResult>("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args ?? new GetExternalDbHomeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external DB home specified by `externalDbHomeId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDbHome = Oci.DatabaseManagement.GetExternalDbHome.Invoke(new()
+        ///     {
+        ///         ExternalDbHomeId = testExternalDbHomeOciDatabaseManagementExternalDbHome.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDbHomeResult> Invoke(GetExternalDbHomeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbHomeResult>("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args ?? new GetExternalDbHomeInvokeArgs(), options.WithDefaults());
     }
 
 

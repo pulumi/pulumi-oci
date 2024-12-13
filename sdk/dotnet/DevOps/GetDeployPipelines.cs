@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetDeployPipelinesResult> Invoke(GetDeployPipelinesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeployPipelinesResult>("oci:DevOps/getDeployPipelines:getDeployPipelines", args ?? new GetDeployPipelinesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deploy Pipelines in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of deployment pipelines.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeployPipelines = Oci.DevOps.GetDeployPipelines.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deployPipelineDisplayName,
+        ///         Id = deployPipelineId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deployPipelineState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeployPipelinesResult> Invoke(GetDeployPipelinesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployPipelinesResult>("oci:DevOps/getDeployPipelines:getDeployPipelines", args ?? new GetDeployPipelinesInvokeArgs(), options.WithDefaults());
     }
 
 

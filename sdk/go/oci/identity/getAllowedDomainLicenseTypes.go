@@ -73,21 +73,11 @@ type GetAllowedDomainLicenseTypesResult struct {
 }
 
 func GetAllowedDomainLicenseTypesOutput(ctx *pulumi.Context, args GetAllowedDomainLicenseTypesOutputArgs, opts ...pulumi.InvokeOption) GetAllowedDomainLicenseTypesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAllowedDomainLicenseTypesResultOutput, error) {
 			args := v.(GetAllowedDomainLicenseTypesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAllowedDomainLicenseTypesResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args, &rv, "", opts...)
-			if err != nil {
-				return GetAllowedDomainLicenseTypesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAllowedDomainLicenseTypesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAllowedDomainLicenseTypesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args, GetAllowedDomainLicenseTypesResultOutput{}, options).(GetAllowedDomainLicenseTypesResultOutput), nil
 		}).(GetAllowedDomainLicenseTypesResultOutput)
 }
 

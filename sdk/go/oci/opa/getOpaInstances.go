@@ -82,21 +82,11 @@ type GetOpaInstancesResult struct {
 }
 
 func GetOpaInstancesOutput(ctx *pulumi.Context, args GetOpaInstancesOutputArgs, opts ...pulumi.InvokeOption) GetOpaInstancesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOpaInstancesResultOutput, error) {
 			args := v.(GetOpaInstancesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOpaInstancesResult
-			secret, err := ctx.InvokePackageRaw("oci:Opa/getOpaInstances:getOpaInstances", args, &rv, "", opts...)
-			if err != nil {
-				return GetOpaInstancesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOpaInstancesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOpaInstancesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opa/getOpaInstances:getOpaInstances", args, GetOpaInstancesResultOutput{}, options).(GetOpaInstancesResultOutput), nil
 		}).(GetOpaInstancesResultOutput)
 }
 

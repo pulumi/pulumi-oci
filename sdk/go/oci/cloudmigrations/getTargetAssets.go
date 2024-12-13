@@ -83,21 +83,11 @@ type GetTargetAssetsResult struct {
 }
 
 func GetTargetAssetsOutput(ctx *pulumi.Context, args GetTargetAssetsOutputArgs, opts ...pulumi.InvokeOption) GetTargetAssetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetTargetAssetsResultOutput, error) {
 			args := v.(GetTargetAssetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetTargetAssetsResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getTargetAssets:getTargetAssets", args, &rv, "", opts...)
-			if err != nil {
-				return GetTargetAssetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetTargetAssetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetTargetAssetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudMigrations/getTargetAssets:getTargetAssets", args, GetTargetAssetsResultOutput{}, options).(GetTargetAssetsResultOutput), nil
 		}).(GetTargetAssetsResultOutput)
 }
 

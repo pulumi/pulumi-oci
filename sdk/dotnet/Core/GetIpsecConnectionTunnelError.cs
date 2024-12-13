@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpsecConnectionTunnelErrorResult> Invoke(GetIpsecConnectionTunnelErrorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the identified error for the specified IPSec tunnel ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpsecConnectionTunnelError = Oci.Core.GetIpsecConnectionTunnelError.Invoke(new()
+        ///     {
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpsecConnectionTunnelErrorResult> Invoke(GetIpsecConnectionTunnelErrorInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelErrorResult>("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args ?? new GetIpsecConnectionTunnelErrorInvokeArgs(), options.WithDefaults());
     }
 
 

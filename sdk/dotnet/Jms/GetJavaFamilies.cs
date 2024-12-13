@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaFamiliesResult> Invoke(GetJavaFamiliesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns a list of the Java release family information.
+        /// A Java release family is typically a major version in the Java version identifier.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaFamilies = Oci.Jms.GetJavaFamilies.Invoke(new()
+        ///     {
+        ///         DisplayName = javaFamilyDisplayName,
+        ///         FamilyVersion = javaFamilyFamilyVersion,
+        ///         IsSupportedVersion = javaFamilyIsSupportedVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaFamiliesResult> Invoke(GetJavaFamiliesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaFamiliesResult>("oci:Jms/getJavaFamilies:getJavaFamilies", args ?? new GetJavaFamiliesInvokeArgs(), options.WithDefaults());
     }
 
 

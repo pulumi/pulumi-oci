@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterNetworksResult> Invoke(GetVmClusterNetworksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworksResult>("oci:Database/getVmClusterNetworks:getVmClusterNetworks", args ?? new GetVmClusterNetworksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterNetworks = Oci.Database.GetVmClusterNetworks.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         DisplayName = vmClusterNetworkDisplayName,
+        ///         State = vmClusterNetworkState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterNetworksResult> Invoke(GetVmClusterNetworksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworksResult>("oci:Database/getVmClusterNetworks:getVmClusterNetworks", args ?? new GetVmClusterNetworksInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -87,21 +87,11 @@ type GetOutboundConnectorsResult struct {
 }
 
 func GetOutboundConnectorsOutput(ctx *pulumi.Context, args GetOutboundConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetOutboundConnectorsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOutboundConnectorsResultOutput, error) {
 			args := v.(GetOutboundConnectorsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOutboundConnectorsResult
-			secret, err := ctx.InvokePackageRaw("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", args, &rv, "", opts...)
-			if err != nil {
-				return GetOutboundConnectorsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOutboundConnectorsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOutboundConnectorsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FileStorage/getOutboundConnectors:getOutboundConnectors", args, GetOutboundConnectorsResultOutput{}, options).(GetOutboundConnectorsResultOutput), nil
 		}).(GetOutboundConnectorsResultOutput)
 }
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetTrailSequenceResult> Invoke(GetTrailSequenceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTrailSequenceResult>("oci:GoldenGate/getTrailSequence:getTrailSequence", args ?? new GetTrailSequenceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Trail Sequence resource in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the Trail Sequences for a TrailFile in a given deployment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTrailSequence = Oci.GoldenGate.GetTrailSequence.Invoke(new()
+        ///     {
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailSequenceDisplayName,
+        ///         TrailSequenceId = testTrailSequenceOciGoldenGateTrailSequence.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTrailSequenceResult> Invoke(GetTrailSequenceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTrailSequenceResult>("oci:GoldenGate/getTrailSequence:getTrailSequence", args ?? new GetTrailSequenceInvokeArgs(), options.WithDefaults());
     }
 
 

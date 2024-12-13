@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetBackupResult> Invoke(GetBackupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackupResult>("oci:Psql/getBackup:getBackup", args ?? new GetBackupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Backup resource in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Gets a backup by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackup = Oci.Psql.GetBackup.Invoke(new()
+        ///     {
+        ///         BackupId = testBackupOciPsqlBackup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackupResult> Invoke(GetBackupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackupResult>("oci:Psql/getBackup:getBackup", args ?? new GetBackupInvokeArgs(), options.WithDefaults());
     }
 
 

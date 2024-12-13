@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetPublishersResult> Invoke(GetPublishersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublishersResult>("oci:Marketplace/getPublishers:getPublishers", args ?? new GetPublishersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublishers = Oci.Marketplace.GetPublishers.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         PublisherId = testPublisher.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublishersResult> Invoke(GetPublishersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublishersResult>("oci:Marketplace/getPublishers:getPublishers", args ?? new GetPublishersInvokeArgs(), options.WithDefaults());
     }
 
 

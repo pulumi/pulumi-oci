@@ -94,6 +94,48 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditProfileAnalyticResult> Invoke(GetAuditProfileAnalyticInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAnalyticResult>("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args ?? new GetAuditProfileAnalyticInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of audit profile aggregated details . A audit profile  aggregation helps understand the overall  state of audit profile profiles.
+        /// As an example, it helps understand how many audit profiles have paid usage. It is especially useful to create dashboards or to support analytics.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform AuditProfileAnalytics on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditProfileAnalytic = Oci.DataSafe.GetAuditProfileAnalytic.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditProfileAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = auditProfileAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = auditProfileAnalyticGroupBy,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditProfileAnalyticResult> Invoke(GetAuditProfileAnalyticInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAnalyticResult>("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args ?? new GetAuditProfileAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

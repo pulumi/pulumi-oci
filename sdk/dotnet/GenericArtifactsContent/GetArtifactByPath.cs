@@ -66,6 +66,34 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// </summary>
         public static Output<GetArtifactByPathResult> Invoke(GetArtifactByPathInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetArtifactByPathResult>("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", args ?? new GetArtifactByPathInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
+        /// 
+        /// Get generic artifact content.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testArtifactByPath = Oci.GenericArtifactsContent.GetArtifactByPath.Invoke(new()
+        ///     {
+        ///         ArtifactPath = artifactByPathArtifactPath,
+        ///         RepositoryId = testRepository.Id,
+        ///         Version = artifactByPathVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetArtifactByPathResult> Invoke(GetArtifactByPathInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetArtifactByPathResult>("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", args ?? new GetArtifactByPathInvokeArgs(), options.WithDefaults());
     }
 
 

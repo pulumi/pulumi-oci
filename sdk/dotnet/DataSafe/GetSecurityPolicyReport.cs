@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyReportResult> Invoke(GetSecurityPolicyReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportResult>("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", args ?? new GetSecurityPolicyReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Policy Report resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a security policy report by the specified OCID of the security policy report resource.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyReport = Oci.DataSafe.GetSecurityPolicyReport.Invoke(new()
+        ///     {
+        ///         SecurityPolicyReportId = testSecurityPolicyReportOciDataSafeSecurityPolicyReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyReportResult> Invoke(GetSecurityPolicyReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportResult>("oci:DataSafe/getSecurityPolicyReport:getSecurityPolicyReport", args ?? new GetSecurityPolicyReportInvokeArgs(), options.WithDefaults());
     }
 
 

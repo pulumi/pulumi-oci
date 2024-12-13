@@ -82,21 +82,11 @@ type GetAgentInstallersResult struct {
 }
 
 func GetAgentInstallersOutput(ctx *pulumi.Context, args GetAgentInstallersOutputArgs, opts ...pulumi.InvokeOption) GetAgentInstallersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAgentInstallersResultOutput, error) {
 			args := v.(GetAgentInstallersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAgentInstallersResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getAgentInstallers:getAgentInstallers", args, &rv, "", opts...)
-			if err != nil {
-				return GetAgentInstallersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAgentInstallersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAgentInstallersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getAgentInstallers:getAgentInstallers", args, GetAgentInstallersResultOutput{}, options).(GetAgentInstallersResultOutput), nil
 		}).(GetAgentInstallersResultOutput)
 }
 

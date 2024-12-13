@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetRuleSetResult> Invoke(GetRuleSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRuleSetResult>("oci:LoadBalancer/getRuleSet:getRuleSet", args ?? new GetRuleSetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Gets the specified set of rules.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRuleSet = Oci.LoadBalancer.GetRuleSet.Invoke(new()
+        ///     {
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///         Name = ruleSetName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRuleSetResult> Invoke(GetRuleSetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRuleSetResult>("oci:LoadBalancer/getRuleSet:getRuleSet", args ?? new GetRuleSetInvokeArgs(), options.WithDefaults());
     }
 
 

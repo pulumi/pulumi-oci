@@ -70,6 +70,36 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsResourceCategoriesListResult> Invoke(GetLogAnalyticsResourceCategoriesListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsResourceCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", args ?? new GetLogAnalyticsResourceCategoriesListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of resources and their category assignments.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
+        ///     {
+        ///         Namespace = logAnalyticsResourceCategoriesListNamespace,
+        ///         ResourceIds = logAnalyticsResourceCategoriesListResourceIds,
+        ///         ResourceTypes = logAnalyticsResourceCategoriesListResourceTypes,
+        ///         ResourceCategories = logAnalyticsResourceCategoriesListResourceCategories,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsResourceCategoriesListResult> Invoke(GetLogAnalyticsResourceCategoriesListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsResourceCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", args ?? new GetLogAnalyticsResourceCategoriesListInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetCatalogPrivateEndpointResult> Invoke(GetCatalogPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Gets a specific private reverse connection by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCatalogPrivateEndpoint = Oci.DataCatalog.GetCatalogPrivateEndpoint.Invoke(new()
+        ///     {
+        ///         CatalogPrivateEndpointId = testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCatalogPrivateEndpointResult> Invoke(GetCatalogPrivateEndpointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

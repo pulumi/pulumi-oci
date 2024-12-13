@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> Invoke(GetExternalExadataStorageServerTopSqlCpuActivityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerTopSqlCpuActivityResult>("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", args ?? new GetExternalExadataStorageServerTopSqlCpuActivityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the SQL IDs with the top CPU activity from the Exadata storage server.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageServerTopSqlCpuActivity = Oci.DatabaseManagement.GetExternalExadataStorageServerTopSqlCpuActivity.Invoke(new()
+        ///     {
+        ///         ExternalExadataStorageServerId = testExternalExadataStorageServer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> Invoke(GetExternalExadataStorageServerTopSqlCpuActivityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerTopSqlCpuActivityResult>("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", args ?? new GetExternalExadataStorageServerTopSqlCpuActivityInvokeArgs(), options.WithDefaults());
     }
 
 

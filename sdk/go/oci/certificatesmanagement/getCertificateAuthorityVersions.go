@@ -75,21 +75,11 @@ type GetCertificateAuthorityVersionsResult struct {
 }
 
 func GetCertificateAuthorityVersionsOutput(ctx *pulumi.Context, args GetCertificateAuthorityVersionsOutputArgs, opts ...pulumi.InvokeOption) GetCertificateAuthorityVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCertificateAuthorityVersionsResultOutput, error) {
 			args := v.(GetCertificateAuthorityVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCertificateAuthorityVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetCertificateAuthorityVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCertificateAuthorityVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCertificateAuthorityVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", args, GetCertificateAuthorityVersionsResultOutput{}, options).(GetCertificateAuthorityVersionsResultOutput), nil
 		}).(GetCertificateAuthorityVersionsResultOutput)
 }
 

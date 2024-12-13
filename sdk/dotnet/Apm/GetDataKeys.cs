@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Apm
         /// </summary>
         public static Output<GetDataKeysResult> Invoke(GetDataKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataKeysResult>("oci:Apm/getDataKeys:getDataKeys", args ?? new GetDataKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
+        /// 
+        /// Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
+        /// query parameter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataKeys = Oci.Apm.GetDataKeys.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DataKeyType = dataKeyDataKeyType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataKeysResult> Invoke(GetDataKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataKeysResult>("oci:Apm/getDataKeys:getDataKeys", args ?? new GetDataKeysInvokeArgs(), options.WithDefaults());
     }
 
 

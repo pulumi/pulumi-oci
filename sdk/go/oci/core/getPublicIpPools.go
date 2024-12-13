@@ -79,21 +79,11 @@ type GetPublicIpPoolsResult struct {
 }
 
 func GetPublicIpPoolsOutput(ctx *pulumi.Context, args GetPublicIpPoolsOutputArgs, opts ...pulumi.InvokeOption) GetPublicIpPoolsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPublicIpPoolsResultOutput, error) {
 			args := v.(GetPublicIpPoolsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPublicIpPoolsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getPublicIpPools:getPublicIpPools", args, &rv, "", opts...)
-			if err != nil {
-				return GetPublicIpPoolsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPublicIpPoolsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPublicIpPoolsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getPublicIpPools:getPublicIpPools", args, GetPublicIpPoolsResultOutput{}, options).(GetPublicIpPoolsResultOutput), nil
 		}).(GetPublicIpPoolsResultOutput)
 }
 

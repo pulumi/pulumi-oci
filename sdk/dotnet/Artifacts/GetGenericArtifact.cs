@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public static Output<GetGenericArtifactResult> Invoke(GetGenericArtifactInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGenericArtifactResult>("oci:Artifacts/getGenericArtifact:getGenericArtifact", args ?? new GetGenericArtifactInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
+        /// 
+        /// Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGenericArtifact = Oci.Artifacts.GetGenericArtifact.Invoke(new()
+        ///     {
+        ///         ArtifactId = testArtifact.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGenericArtifactResult> Invoke(GetGenericArtifactInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGenericArtifactResult>("oci:Artifacts/getGenericArtifact:getGenericArtifact", args ?? new GetGenericArtifactInvokeArgs(), options.WithDefaults());
     }
 
 

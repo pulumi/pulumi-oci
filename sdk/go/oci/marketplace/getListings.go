@@ -125,21 +125,11 @@ type GetListingsResult struct {
 }
 
 func GetListingsOutput(ctx *pulumi.Context, args GetListingsOutputArgs, opts ...pulumi.InvokeOption) GetListingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetListingsResultOutput, error) {
 			args := v.(GetListingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetListingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getListings:getListings", args, &rv, "", opts...)
-			if err != nil {
-				return GetListingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetListingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetListingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Marketplace/getListings:getListings", args, GetListingsResultOutput{}, options).(GetListingsResultOutput), nil
 		}).(GetListingsResultOutput)
 }
 

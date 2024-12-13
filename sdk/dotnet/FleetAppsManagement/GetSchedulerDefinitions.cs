@@ -78,6 +78,40 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetSchedulerDefinitionsResult> Invoke(GetSchedulerDefinitionsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerDefinitionsResult>("oci:FleetAppsManagement/getSchedulerDefinitions:getSchedulerDefinitions", args ?? new GetSchedulerDefinitionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// List all lifecycle management schedules in Fleet Application Management.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedulerDefinitions = Oci.FleetAppsManagement.GetSchedulerDefinitions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = schedulerDefinitionDisplayName,
+        ///         FleetId = testFleet.Id,
+        ///         Id = schedulerDefinitionId,
+        ///         MaintenanceWindowId = testMaintenanceWindow.Id,
+        ///         Product = schedulerDefinitionProduct,
+        ///         RunbookId = testRunbook.Id,
+        ///         State = schedulerDefinitionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSchedulerDefinitionsResult> Invoke(GetSchedulerDefinitionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerDefinitionsResult>("oci:FleetAppsManagement/getSchedulerDefinitions:getSchedulerDefinitions", args ?? new GetSchedulerDefinitionsInvokeArgs(), options.WithDefaults());
     }
 
 

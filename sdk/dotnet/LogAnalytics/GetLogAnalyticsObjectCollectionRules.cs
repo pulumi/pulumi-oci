@@ -68,6 +68,35 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsObjectCollectionRulesResult> Invoke(GetLogAnalyticsObjectCollectionRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRulesResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args ?? new GetLogAnalyticsObjectCollectionRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Gets list of configuration details of Object Storage based collection rules.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsObjectCollectionRules = Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRules.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = logAnalyticsObjectCollectionRuleNamespace,
+        ///         Name = logAnalyticsObjectCollectionRuleName,
+        ///         State = logAnalyticsObjectCollectionRuleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsObjectCollectionRulesResult> Invoke(GetLogAnalyticsObjectCollectionRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRulesResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args ?? new GetLogAnalyticsObjectCollectionRulesInvokeArgs(), options.WithDefaults());
     }
 
 

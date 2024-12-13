@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousExadataInfrastructureResult> Invoke(GetAutonomousExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructureResult>("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args ?? new GetAutonomousExadataInfrastructureInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousExadataInfrastructure = Oci.Database.GetAutonomousExadataInfrastructure.Invoke(new()
+        ///     {
+        ///         AutonomousExadataInfrastructureId = testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousExadataInfrastructureResult> Invoke(GetAutonomousExadataInfrastructureInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructureResult>("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args ?? new GetAutonomousExadataInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 

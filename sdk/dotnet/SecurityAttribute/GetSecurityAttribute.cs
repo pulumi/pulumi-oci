@@ -64,6 +64,33 @@ namespace Pulumi.Oci.SecurityAttribute
         /// </summary>
         public static Output<GetSecurityAttributeResult> Invoke(GetSecurityAttributeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAttributeResult>("oci:SecurityAttribute/getSecurityAttribute:getSecurityAttribute", args ?? new GetSecurityAttributeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
+        /// 
+        /// Gets the specified security attribute's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAttribute = Oci.SecurityAttribute.GetSecurityAttribute.Invoke(new()
+        ///     {
+        ///         SecurityAttributeName = testSecurityAttributeOciSecurityAttributeSecurityAttribute.Name,
+        ///         SecurityAttributeNamespaceId = testSecurityAttributeNamespace.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAttributeResult> Invoke(GetSecurityAttributeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAttributeResult>("oci:SecurityAttribute/getSecurityAttribute:getSecurityAttribute", args ?? new GetSecurityAttributeInvokeArgs(), options.WithDefaults());
     }
 
 

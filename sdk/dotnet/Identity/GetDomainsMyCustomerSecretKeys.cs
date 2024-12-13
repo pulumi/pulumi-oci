@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyCustomerSecretKeysResult> Invoke(GetDomainsMyCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCustomerSecretKeysResult>("oci:Identity/getDomainsMyCustomerSecretKeys:getDomainsMyCustomerSecretKeys", args ?? new GetDomainsMyCustomerSecretKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's own customer secret key.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyCustomerSecretKeys = Oci.Identity.GetDomainsMyCustomerSecretKeys.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCustomerSecretKeyCount = myCustomerSecretKeyMyCustomerSecretKeyCount,
+        ///         MyCustomerSecretKeyFilter = myCustomerSecretKeyMyCustomerSecretKeyFilter,
+        ///         Authorization = myCustomerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
+        ///         StartIndex = myCustomerSecretKeyStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyCustomerSecretKeysResult> Invoke(GetDomainsMyCustomerSecretKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCustomerSecretKeysResult>("oci:Identity/getDomainsMyCustomerSecretKeys:getDomainsMyCustomerSecretKeys", args ?? new GetDomainsMyCustomerSecretKeysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetRouteTablesResult> Invoke(GetRouteTablesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteTablesResult>("oci:Core/getRouteTables:getRouteTables", args ?? new GetRouteTablesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the route tables in the specified VCN and specified compartment.
+        /// If the VCN ID is not provided, then the list includes the route tables from all VCNs in the specified compartment.
+        /// The response includes the default route table that automatically comes with
+        /// each VCN in the specified compartment, plus any route tables you've created.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRouteTables = Oci.Core.GetRouteTables.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = routeTableDisplayName,
+        ///         State = routeTableState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRouteTablesResult> Invoke(GetRouteTablesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRouteTablesResult>("oci:Core/getRouteTables:getRouteTables", args ?? new GetRouteTablesInvokeArgs(), options.WithDefaults());
     }
 
 

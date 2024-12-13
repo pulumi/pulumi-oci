@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:DataScience/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Lists models in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModels = Oci.DataScience.GetModels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelCreatedBy,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         ModelVersionSetName = testModelVersionSet.Name,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:DataScience/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
     }
 
 

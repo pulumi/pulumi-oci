@@ -82,21 +82,11 @@ type GetCompliancePoliciesResult struct {
 }
 
 func GetCompliancePoliciesOutput(ctx *pulumi.Context, args GetCompliancePoliciesOutputArgs, opts ...pulumi.InvokeOption) GetCompliancePoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCompliancePoliciesResultOutput, error) {
 			args := v.(GetCompliancePoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCompliancePoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getCompliancePolicies:getCompliancePolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetCompliancePoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCompliancePoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCompliancePoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getCompliancePolicies:getCompliancePolicies", args, GetCompliancePoliciesResultOutput{}, options).(GetCompliancePoliciesResultOutput), nil
 		}).(GetCompliancePoliciesResultOutput)
 }
 

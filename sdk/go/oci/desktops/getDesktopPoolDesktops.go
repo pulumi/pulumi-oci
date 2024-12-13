@@ -87,21 +87,11 @@ type GetDesktopPoolDesktopsResult struct {
 }
 
 func GetDesktopPoolDesktopsOutput(ctx *pulumi.Context, args GetDesktopPoolDesktopsOutputArgs, opts ...pulumi.InvokeOption) GetDesktopPoolDesktopsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDesktopPoolDesktopsResultOutput, error) {
 			args := v.(GetDesktopPoolDesktopsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDesktopPoolDesktopsResult
-			secret, err := ctx.InvokePackageRaw("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", args, &rv, "", opts...)
-			if err != nil {
-				return GetDesktopPoolDesktopsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDesktopPoolDesktopsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDesktopPoolDesktopsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Desktops/getDesktopPoolDesktops:getDesktopPoolDesktops", args, GetDesktopPoolDesktopsResultOutput{}, options).(GetDesktopPoolDesktopsResultOutput), nil
 		}).(GetDesktopPoolDesktopsResultOutput)
 }
 

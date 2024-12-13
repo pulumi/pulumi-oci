@@ -91,21 +91,11 @@ type GetDomainsAccountRecoverySettingsResult struct {
 }
 
 func GetDomainsAccountRecoverySettingsOutput(ctx *pulumi.Context, args GetDomainsAccountRecoverySettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAccountRecoverySettingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsAccountRecoverySettingsResultOutput, error) {
 			args := v.(GetDomainsAccountRecoverySettingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsAccountRecoverySettingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsAccountRecoverySettingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsAccountRecoverySettingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsAccountRecoverySettingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args, GetDomainsAccountRecoverySettingsResultOutput{}, options).(GetDomainsAccountRecoverySettingsResultOutput), nil
 		}).(GetDomainsAccountRecoverySettingsResultOutput)
 }
 

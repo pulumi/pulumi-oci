@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ApmTraces
         /// </summary>
         public static Output<GetTraceResult> Invoke(GetTraceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
+        /// 
+        /// Gets the trace details identified by traceId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTrace = Oci.ApmTraces.GetTrace.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceTraceKey,
+        ///         TimeTraceStartedGreaterThanOrEqualTo = traceTimeTraceStartedGreaterThanOrEqualTo,
+        ///         TimeTraceStartedLessThan = traceTimeTraceStartedLessThan,
+        ///         TraceNamespace = traceTraceNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTraceResult> Invoke(GetTraceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceInvokeArgs(), options.WithDefaults());
     }
 
 

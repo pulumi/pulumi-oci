@@ -82,6 +82,42 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetObjectResult> Invoke(GetObjectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectResult>("oci:ObjectStorage/getObject:getObject", args ?? new GetObjectInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets the metadata and body of an object.  
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testObject = Oci.ObjectStorage.GetObject.Invoke(new()
+        ///     {
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Object = objectObject,
+        ///         HttpResponseCacheControl = objectHttpResponseCacheControl,
+        ///         HttpResponseContentDisposition = objectHttpResponseContentDisposition,
+        ///         HttpResponseContentEncoding = objectHttpResponseContentEncoding,
+        ///         HttpResponseContentLanguage = objectHttpResponseContentLanguage,
+        ///         HttpResponseContentType = objectHttpResponseContentType,
+        ///         HttpResponseExpires = objectHttpResponseExpires,
+        ///         VersionId = testVersion.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetObjectResult> Invoke(GetObjectInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectResult>("oci:ObjectStorage/getObject:getObject", args ?? new GetObjectInvokeArgs(), options.WithDefaults());
     }
 
 

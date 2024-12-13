@@ -82,21 +82,11 @@ type GetSummarizeResourceInventoryResult struct {
 }
 
 func GetSummarizeResourceInventoryOutput(ctx *pulumi.Context, args GetSummarizeResourceInventoryOutputArgs, opts ...pulumi.InvokeOption) GetSummarizeResourceInventoryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSummarizeResourceInventoryResultOutput, error) {
 			args := v.(GetSummarizeResourceInventoryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSummarizeResourceInventoryResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args, &rv, "", opts...)
-			if err != nil {
-				return GetSummarizeResourceInventoryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSummarizeResourceInventoryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSummarizeResourceInventoryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args, GetSummarizeResourceInventoryResultOutput{}, options).(GetSummarizeResourceInventoryResultOutput), nil
 		}).(GetSummarizeResourceInventoryResultOutput)
 }
 

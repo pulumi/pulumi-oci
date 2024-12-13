@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetOutboundConnectorResult> Invoke(GetOutboundConnectorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOutboundConnectorResult>("oci:FileStorage/getOutboundConnector:getOutboundConnector", args ?? new GetOutboundConnectorInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Gets the specified outbound connector's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOutboundConnector = Oci.FileStorage.GetOutboundConnector.Invoke(new()
+        ///     {
+        ///         OutboundConnectorId = testOutboundConnectorOciFileStorageOutboundConnector.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOutboundConnectorResult> Invoke(GetOutboundConnectorInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOutboundConnectorResult>("oci:FileStorage/getOutboundConnector:getOutboundConnector", args ?? new GetOutboundConnectorInvokeArgs(), options.WithDefaults());
     }
 
 

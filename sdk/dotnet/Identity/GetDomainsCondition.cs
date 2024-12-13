@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsConditionResult> Invoke(GetDomainsConditionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsConditionResult>("oci:Identity/getDomainsCondition:getDomainsCondition", args ?? new GetDomainsConditionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a condition.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCondition = Oci.Identity.GetDomainsCondition.Invoke(new()
+        ///     {
+        ///         ConditionId = testConditionOciIdentityDomainsCondition.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = conditionAuthorization,
+        ///         ResourceTypeSchemaVersion = conditionResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsConditionResult> Invoke(GetDomainsConditionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsConditionResult>("oci:Identity/getDomainsCondition:getDomainsCondition", args ?? new GetDomainsConditionInvokeArgs(), options.WithDefaults());
     }
 
 

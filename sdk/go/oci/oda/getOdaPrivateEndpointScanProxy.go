@@ -78,21 +78,11 @@ type LookupOdaPrivateEndpointScanProxyResult struct {
 }
 
 func LookupOdaPrivateEndpointScanProxyOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointScanProxyOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointScanProxyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupOdaPrivateEndpointScanProxyResultOutput, error) {
 			args := v.(LookupOdaPrivateEndpointScanProxyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupOdaPrivateEndpointScanProxyResult
-			secret, err := ctx.InvokePackageRaw("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupOdaPrivateEndpointScanProxyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupOdaPrivateEndpointScanProxyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupOdaPrivateEndpointScanProxyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args, LookupOdaPrivateEndpointScanProxyResultOutput{}, options).(LookupOdaPrivateEndpointScanProxyResultOutput), nil
 		}).(LookupOdaPrivateEndpointScanProxyResultOutput)
 }
 

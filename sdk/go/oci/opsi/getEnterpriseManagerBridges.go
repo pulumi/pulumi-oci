@@ -87,21 +87,11 @@ type GetEnterpriseManagerBridgesResult struct {
 }
 
 func GetEnterpriseManagerBridgesOutput(ctx *pulumi.Context, args GetEnterpriseManagerBridgesOutputArgs, opts ...pulumi.InvokeOption) GetEnterpriseManagerBridgesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetEnterpriseManagerBridgesResultOutput, error) {
 			args := v.(GetEnterpriseManagerBridgesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetEnterpriseManagerBridgesResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args, &rv, "", opts...)
-			if err != nil {
-				return GetEnterpriseManagerBridgesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetEnterpriseManagerBridgesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetEnterpriseManagerBridgesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges", args, GetEnterpriseManagerBridgesResultOutput{}, options).(GetEnterpriseManagerBridgesResultOutput), nil
 		}).(GetEnterpriseManagerBridgesResultOutput)
 }
 

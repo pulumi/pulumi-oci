@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaPrivateEndpointAttachmentResult> Invoke(GetOdaPrivateEndpointAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointAttachmentResult>("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", args ?? new GetOdaPrivateEndpointAttachmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Gets the specified ODA Private Endpoint Attachment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaPrivateEndpointAttachment = Oci.Oda.GetOdaPrivateEndpointAttachment.Invoke(new()
+        ///     {
+        ///         OdaPrivateEndpointAttachmentId = testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaPrivateEndpointAttachmentResult> Invoke(GetOdaPrivateEndpointAttachmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointAttachmentResult>("oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment", args ?? new GetOdaPrivateEndpointAttachmentInvokeArgs(), options.WithDefaults());
     }
 
 

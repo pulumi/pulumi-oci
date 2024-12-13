@@ -83,21 +83,11 @@ type GetLogAnalyticsObjectCollectionRulesResult struct {
 }
 
 func GetLogAnalyticsObjectCollectionRulesOutput(ctx *pulumi.Context, args GetLogAnalyticsObjectCollectionRulesOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsObjectCollectionRulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsObjectCollectionRulesResultOutput, error) {
 			args := v.(GetLogAnalyticsObjectCollectionRulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsObjectCollectionRulesResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsObjectCollectionRulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsObjectCollectionRulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsObjectCollectionRulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args, GetLogAnalyticsObjectCollectionRulesResultOutput{}, options).(GetLogAnalyticsObjectCollectionRulesResultOutput), nil
 		}).(GetLogAnalyticsObjectCollectionRulesResultOutput)
 }
 

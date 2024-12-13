@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetRemediationRunStagesResult> Invoke(GetRemediationRunStagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunStagesResult>("oci:Adm/getRemediationRunStages:getRemediationRunStages", args ?? new GetRemediationRunStagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
+        /// 
+        /// Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemediationRunStages = Oci.Adm.GetRemediationRunStages.Invoke(new()
+        ///     {
+        ///         RemediationRunId = testRemediationRun.Id,
+        ///         Status = remediationRunStageStatus,
+        ///         Type = remediationRunStageType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemediationRunStagesResult> Invoke(GetRemediationRunStagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunStagesResult>("oci:Adm/getRemediationRunStages:getRemediationRunStages", args ?? new GetRemediationRunStagesInvokeArgs(), options.WithDefaults());
     }
 
 

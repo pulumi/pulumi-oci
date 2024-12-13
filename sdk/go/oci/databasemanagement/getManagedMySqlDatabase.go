@@ -90,21 +90,11 @@ type GetManagedMySqlDatabaseResult struct {
 }
 
 func GetManagedMySqlDatabaseOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseResultOutput, error) {
 			args := v.(GetManagedMySqlDatabaseArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedMySqlDatabaseResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedMySqlDatabaseResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedMySqlDatabaseResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedMySqlDatabaseResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", args, GetManagedMySqlDatabaseResultOutput{}, options).(GetManagedMySqlDatabaseResultOutput), nil
 		}).(GetManagedMySqlDatabaseResultOutput)
 }
 

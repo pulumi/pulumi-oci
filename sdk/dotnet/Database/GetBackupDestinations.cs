@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetBackupDestinationsResult> Invoke(GetBackupDestinationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackupDestinationsResult>("oci:Database/getBackupDestinations:getBackupDestinations", args ?? new GetBackupDestinationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of backup destinations in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackupDestinations = Oci.Database.GetBackupDestinations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Type = backupDestinationType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackupDestinationsResult> Invoke(GetBackupDestinationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackupDestinationsResult>("oci:Database/getBackupDestinations:getBackupDestinations", args ?? new GetBackupDestinationsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -39,21 +39,11 @@ type GetPrivateEndpointSummariesResult struct {
 }
 
 func GetPrivateEndpointSummariesOutput(ctx *pulumi.Context, args GetPrivateEndpointSummariesOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointSummariesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPrivateEndpointSummariesResultOutput, error) {
 			args := v.(GetPrivateEndpointSummariesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPrivateEndpointSummariesResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args, &rv, "", opts...)
-			if err != nil {
-				return GetPrivateEndpointSummariesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPrivateEndpointSummariesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPrivateEndpointSummariesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args, GetPrivateEndpointSummariesResultOutput{}, options).(GetPrivateEndpointSummariesResultOutput), nil
 		}).(GetPrivateEndpointSummariesResultOutput)
 }
 

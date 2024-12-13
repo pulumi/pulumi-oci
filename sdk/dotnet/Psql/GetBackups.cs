@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetBackupsResult> Invoke(GetBackupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackupsResult>("oci:Psql/getBackups:getBackups", args ?? new GetBackupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Returns a list of backups.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackups = Oci.Psql.GetBackups.Invoke(new()
+        ///     {
+        ///         BackupId = testBackup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = backupDisplayName,
+        ///         Id = backupId,
+        ///         State = backupState,
+        ///         TimeEnded = backupTimeEnded,
+        ///         TimeStarted = backupTimeStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackupsResult> Invoke(GetBackupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackupsResult>("oci:Psql/getBackups:getBackups", args ?? new GetBackupsInvokeArgs(), options.WithDefaults());
     }
 
 

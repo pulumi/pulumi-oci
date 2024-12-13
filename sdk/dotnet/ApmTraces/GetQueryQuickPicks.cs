@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ApmTraces
         /// </summary>
         public static Output<GetQueryQuickPicksResult> Invoke(GetQueryQuickPicksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
+        /// 
+        /// Returns a list of predefined Quick Pick queries intended to assist the user
+        /// to choose a query to run.  There is no sorting applied on the results.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testQueryQuickPicks = Oci.ApmTraces.GetQueryQuickPicks.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetQueryQuickPicksResult> Invoke(GetQueryQuickPicksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksInvokeArgs(), options.WithDefaults());
     }
 
 

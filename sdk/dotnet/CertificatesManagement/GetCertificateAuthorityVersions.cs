@@ -68,6 +68,35 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetCertificateAuthorityVersionsResult> Invoke(GetCertificateAuthorityVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionsResult>("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", args ?? new GetCertificateAuthorityVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Certificate Authority Versions in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Lists all versions for the specified certificate authority (CA).
+        /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateAuthorityVersions = Oci.CertificatesManagement.GetCertificateAuthorityVersions.Invoke(new()
+        ///     {
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         VersionNumber = certificateAuthorityVersionVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCertificateAuthorityVersionsResult> Invoke(GetCertificateAuthorityVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionsResult>("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", args ?? new GetCertificateAuthorityVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetPublicationResult> Invoke(GetPublicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublicationResult>("oci:Marketplace/getPublication:getPublication", args ?? new GetPublicationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Publication resource in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Gets the details of the specified publication.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublication = Oci.Marketplace.GetPublication.Invoke(new()
+        ///     {
+        ///         PublicationId = testPublicationOciMarketplacePublication.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublicationResult> Invoke(GetPublicationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicationResult>("oci:Marketplace/getPublication:getPublication", args ?? new GetPublicationInvokeArgs(), options.WithDefaults());
     }
 
 

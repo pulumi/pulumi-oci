@@ -115,21 +115,11 @@ type LookupNodePoolResult struct {
 }
 
 func LookupNodePoolOutput(ctx *pulumi.Context, args LookupNodePoolOutputArgs, opts ...pulumi.InvokeOption) LookupNodePoolResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNodePoolResultOutput, error) {
 			args := v.(LookupNodePoolArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNodePoolResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getNodePool:getNodePool", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNodePoolResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNodePoolResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNodePoolResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getNodePool:getNodePool", args, LookupNodePoolResultOutput{}, options).(LookupNodePoolResultOutput), nil
 		}).(LookupNodePoolResultOutput)
 }
 

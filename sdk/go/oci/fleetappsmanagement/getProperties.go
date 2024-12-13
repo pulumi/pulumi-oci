@@ -87,21 +87,11 @@ type GetPropertiesResult struct {
 }
 
 func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetPropertiesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPropertiesResultOutput, error) {
 			args := v.(GetPropertiesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPropertiesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getProperties:getProperties", args, &rv, "", opts...)
-			if err != nil {
-				return GetPropertiesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPropertiesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPropertiesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getProperties:getProperties", args, GetPropertiesResultOutput{}, options).(GetPropertiesResultOutput), nil
 		}).(GetPropertiesResultOutput)
 }
 

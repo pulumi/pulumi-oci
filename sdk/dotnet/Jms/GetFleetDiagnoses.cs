@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetDiagnosesResult> Invoke(GetFleetDiagnosesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetDiagnosesResult>("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args ?? new GetFleetDiagnosesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetDiagnoses = Oci.Jms.GetFleetDiagnoses.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetDiagnosesResult> Invoke(GetFleetDiagnosesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetDiagnosesResult>("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args ?? new GetFleetDiagnosesInvokeArgs(), options.WithDefaults());
     }
 
 

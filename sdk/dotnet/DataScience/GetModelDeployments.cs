@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetModelDeploymentsResult> Invoke(GetModelDeploymentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentsResult>("oci:DataScience/getModelDeployments:getModelDeployments", args ?? new GetModelDeploymentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
+        /// 
+        /// Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModelDeployments = Oci.DataScience.GetModelDeployments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelDeploymentCreatedBy,
+        ///         DisplayName = modelDeploymentDisplayName,
+        ///         Id = modelDeploymentId,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelDeploymentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelDeploymentsResult> Invoke(GetModelDeploymentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentsResult>("oci:DataScience/getModelDeployments:getModelDeployments", args ?? new GetModelDeploymentsInvokeArgs(), options.WithDefaults());
     }
 
 

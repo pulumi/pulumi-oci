@@ -70,21 +70,11 @@ type GetAuthTokensResult struct {
 }
 
 func GetAuthTokensOutput(ctx *pulumi.Context, args GetAuthTokensOutputArgs, opts ...pulumi.InvokeOption) GetAuthTokensResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuthTokensResultOutput, error) {
 			args := v.(GetAuthTokensArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuthTokensResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getAuthTokens:getAuthTokens", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuthTokensResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuthTokensResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuthTokensResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getAuthTokens:getAuthTokens", args, GetAuthTokensResultOutput{}, options).(GetAuthTokensResultOutput), nil
 		}).(GetAuthTokensResultOutput)
 }
 

@@ -92,21 +92,11 @@ type GetProtectedDatabasesResult struct {
 }
 
 func GetProtectedDatabasesOutput(ctx *pulumi.Context, args GetProtectedDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetProtectedDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProtectedDatabasesResultOutput, error) {
 			args := v.(GetProtectedDatabasesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProtectedDatabasesResult
-			secret, err := ctx.InvokePackageRaw("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args, &rv, "", opts...)
-			if err != nil {
-				return GetProtectedDatabasesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProtectedDatabasesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProtectedDatabasesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args, GetProtectedDatabasesResultOutput{}, options).(GetProtectedDatabasesResultOutput), nil
 		}).(GetProtectedDatabasesResultOutput)
 }
 

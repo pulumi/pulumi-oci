@@ -62,6 +62,32 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetMetricExtensionResult> Invoke(GetMetricExtensionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricExtensionResult>("oci:StackMonitoring/getMetricExtension:getMetricExtension", args ?? new GetMetricExtensionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Gets a Metric Extension by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMetricExtension = Oci.StackMonitoring.GetMetricExtension.Invoke(new()
+        ///     {
+        ///         MetricExtensionId = testMetricExtensionOciStackMonitoringMetricExtension.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMetricExtensionResult> Invoke(GetMetricExtensionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetricExtensionResult>("oci:StackMonitoring/getMetricExtension:getMetricExtension", args ?? new GetMetricExtensionInvokeArgs(), options.WithDefaults());
     }
 
 

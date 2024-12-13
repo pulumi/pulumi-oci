@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         /// </summary>
         public static Output<GetClusterPlacementGroupResult> Invoke(GetClusterPlacementGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterPlacementGroupResult>("oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup", args ?? new GetClusterPlacementGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
+        /// 
+        /// Gets the specified cluster placement group.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testClusterPlacementGroup = Oci.ClusterPlacementGroups.GetClusterPlacementGroup.Invoke(new()
+        ///     {
+        ///         ClusterPlacementGroupId = testClusterPlacementGroupOciClusterPlacementGroupsClusterPlacementGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetClusterPlacementGroupResult> Invoke(GetClusterPlacementGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterPlacementGroupResult>("oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup", args ?? new GetClusterPlacementGroupInvokeArgs(), options.WithDefaults());
     }
 
 

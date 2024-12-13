@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public static Output<GetQuotaResult> Invoke(GetQuotaInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQuotaResult>("oci:Limits/getQuota:getQuota", args ?? new GetQuotaInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
+        /// 
+        /// Gets the quota for the OCID specified.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testQuota = Oci.Limits.GetQuota.Invoke(new()
+        ///     {
+        ///         QuotaId = testQuotaOciLimitsQuota.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetQuotaResult> Invoke(GetQuotaInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetQuotaResult>("oci:Limits/getQuota:getQuota", args ?? new GetQuotaInvokeArgs(), options.WithDefaults());
     }
 
 

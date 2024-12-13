@@ -109,21 +109,11 @@ type LookupDeploymentBackupResult struct {
 }
 
 func LookupDeploymentBackupOutput(ctx *pulumi.Context, args LookupDeploymentBackupOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentBackupResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDeploymentBackupResultOutput, error) {
 			args := v.(LookupDeploymentBackupArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDeploymentBackupResult
-			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDeploymentBackupResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDeploymentBackupResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDeploymentBackupResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args, LookupDeploymentBackupResultOutput{}, options).(LookupDeploymentBackupResultOutput), nil
 		}).(LookupDeploymentBackupResultOutput)
 }
 

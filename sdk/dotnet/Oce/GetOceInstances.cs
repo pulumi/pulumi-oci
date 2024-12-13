@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Oce
         /// </summary>
         public static Output<GetOceInstancesResult> Invoke(GetOceInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOceInstancesResult>("oci:Oce/getOceInstances:getOceInstances", args ?? new GetOceInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
+        /// 
+        /// Returns a list of OceInstances.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOceInstances = Oci.Oce.GetOceInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = oceInstanceDisplayName,
+        ///         State = oceInstanceState,
+        ///         TenancyId = testTenancy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOceInstancesResult> Invoke(GetOceInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOceInstancesResult>("oci:Oce/getOceInstances:getOceInstances", args ?? new GetOceInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

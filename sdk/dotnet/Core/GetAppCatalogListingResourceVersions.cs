@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetAppCatalogListingResourceVersionsResult> Invoke(GetAppCatalogListingResourceVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingResourceVersionsResult>("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args ?? new GetAppCatalogListingResourceVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets all resource versions for a particular listing.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAppCatalogListingResourceVersions = Oci.Core.GetAppCatalogListingResourceVersions.Invoke(new()
+        ///     {
+        ///         ListingId = testListing.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAppCatalogListingResourceVersionsResult> Invoke(GetAppCatalogListingResourceVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogListingResourceVersionsResult>("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args ?? new GetAppCatalogListingResourceVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

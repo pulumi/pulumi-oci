@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageServerResult> Invoke(GetExternalExadataStorageServerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerResult>("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", args ?? new GetExternalExadataStorageServerInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageServer = Oci.DatabaseManagement.GetExternalExadataStorageServer.Invoke(new()
+        ///     {
+        ///         ExternalExadataStorageServerId = testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageServerResult> Invoke(GetExternalExadataStorageServerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerResult>("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", args ?? new GetExternalExadataStorageServerInvokeArgs(), options.WithDefaults());
     }
 
 

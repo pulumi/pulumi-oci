@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetRemotePeeringConnectionsResult> Invoke(GetRemotePeeringConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the remote peering connections (RPCs) for the specified DRG and compartment
+        /// (the RPC's compartment).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemotePeeringConnections = Oci.Core.GetRemotePeeringConnections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DrgId = testDrg.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemotePeeringConnectionsResult> Invoke(GetRemotePeeringConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

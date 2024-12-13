@@ -66,21 +66,11 @@ type GetLogAnalyticsPreferenceResult struct {
 }
 
 func GetLogAnalyticsPreferenceOutput(ctx *pulumi.Context, args GetLogAnalyticsPreferenceOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsPreferenceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsPreferenceResultOutput, error) {
 			args := v.(GetLogAnalyticsPreferenceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsPreferenceResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsPreferenceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsPreferenceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsPreferenceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference", args, GetLogAnalyticsPreferenceResultOutput{}, options).(GetLogAnalyticsPreferenceResultOutput), nil
 		}).(GetLogAnalyticsPreferenceResultOutput)
 }
 

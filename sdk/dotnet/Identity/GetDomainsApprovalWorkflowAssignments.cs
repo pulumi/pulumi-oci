@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowAssignmentsResult> Invoke(GetDomainsApprovalWorkflowAssignmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowAssignmentsResult>("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", args ?? new GetDomainsApprovalWorkflowAssignmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Approval Workflow Assignments in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Approval Workflow Assignments
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApprovalWorkflowAssignments = Oci.Identity.GetDomainsApprovalWorkflowAssignments.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowAssignmentCount = approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+        ///         ApprovalWorkflowAssignmentFilter = approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = approvalWorkflowAssignmentAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowAssignmentStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApprovalWorkflowAssignmentsResult> Invoke(GetDomainsApprovalWorkflowAssignmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowAssignmentsResult>("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", args ?? new GetDomainsApprovalWorkflowAssignmentsInvokeArgs(), options.WithDefaults());
     }
 
 

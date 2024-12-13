@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Sch
         /// </summary>
         public static Output<GetConnectorPluginsResult> Invoke(GetConnectorPluginsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectorPluginsResult>("oci:Sch/getConnectorPlugins:getConnectorPlugins", args ?? new GetConnectorPluginsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
+        /// 
+        /// Lists connector plugins according to the specified filter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnectorPlugins = Oci.Sch.GetConnectorPlugins.Invoke(new()
+        ///     {
+        ///         DisplayName = connectorPluginDisplayName,
+        ///         Name = connectorPluginName,
+        ///         State = connectorPluginState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectorPluginsResult> Invoke(GetConnectorPluginsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectorPluginsResult>("oci:Sch/getConnectorPlugins:getConnectorPlugins", args ?? new GetConnectorPluginsInvokeArgs(), options.WithDefaults());
     }
 
 

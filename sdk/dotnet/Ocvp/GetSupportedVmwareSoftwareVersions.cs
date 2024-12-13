@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetSupportedVmwareSoftwareVersionsResult> Invoke(GetSupportedVmwareSoftwareVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists the versions of bundled VMware software supported by the Oracle Cloud
+        /// VMware Solution.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         HostShapeName = testShape.Name,
+        ///         Version = supportedVmwareSoftwareVersionVersion,
+        ///         VersionToUpgrade = supportedVmwareSoftwareVersionVersionToUpgrade,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSupportedVmwareSoftwareVersionsResult> Invoke(GetSupportedVmwareSoftwareVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetBlocklistsResult> Invoke(GetFleetBlocklistsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetBlocklistsResult>("oci:Jms/getFleetBlocklists:getFleetBlocklists", args ?? new GetFleetBlocklistsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns a list of blocklist entities contained by a fleet.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetBlocklists = Oci.Jms.GetFleetBlocklists.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         ManagedInstanceId = fleetBlocklistManagedInstanceId,
+        ///         Operation = fleetBlocklistOperation,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetBlocklistsResult> Invoke(GetFleetBlocklistsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetBlocklistsResult>("oci:Jms/getFleetBlocklists:getFleetBlocklists", args ?? new GetFleetBlocklistsInvokeArgs(), options.WithDefaults());
     }
 
 

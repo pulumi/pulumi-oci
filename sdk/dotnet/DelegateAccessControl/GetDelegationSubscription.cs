@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegationSubscriptionResult> Invoke(GetDelegationSubscriptionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegationSubscriptionResult>("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", args ?? new GetDelegationSubscriptionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Delegation Subscription resource in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Gets a DelegationSubscription by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegationSubscription = Oci.DelegateAccessControl.GetDelegationSubscription.Invoke(new()
+        ///     {
+        ///         DelegationSubscriptionId = testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegationSubscriptionResult> Invoke(GetDelegationSubscriptionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegationSubscriptionResult>("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", args ?? new GetDelegationSubscriptionInvokeArgs(), options.WithDefaults());
     }
 
 

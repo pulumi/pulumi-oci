@@ -96,21 +96,11 @@ type GetDomainsSocialIdentityProvidersResult struct {
 }
 
 func GetDomainsSocialIdentityProvidersOutput(ctx *pulumi.Context, args GetDomainsSocialIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSocialIdentityProvidersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsSocialIdentityProvidersResultOutput, error) {
 			args := v.(GetDomainsSocialIdentityProvidersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsSocialIdentityProvidersResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsSocialIdentityProvidersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsSocialIdentityProvidersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsSocialIdentityProvidersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args, GetDomainsSocialIdentityProvidersResultOutput{}, options).(GetDomainsSocialIdentityProvidersResultOutput), nil
 		}).(GetDomainsSocialIdentityProvidersResultOutput)
 }
 

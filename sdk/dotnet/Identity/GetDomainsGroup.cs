@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsGroupResult> Invoke(GetDomainsGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGroupResult>("oci:Identity/getDomainsGroup:getDomainsGroup", args ?? new GetDomainsGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a group. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGroup = Oci.Identity.GetDomainsGroup.Invoke(new()
+        ///     {
+        ///         GroupId = testGroupOciIdentityGroup.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = groupAuthorization,
+        ///         ResourceTypeSchemaVersion = groupResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsGroupResult> Invoke(GetDomainsGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGroupResult>("oci:Identity/getDomainsGroup:getDomainsGroup", args ?? new GetDomainsGroupInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> Invoke(GetSecurityAssessmentFindingsChangeAuditLogsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsChangeAuditLogsResult>("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", args ?? new GetSecurityAssessmentFindingsChangeAuditLogsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// List all changes made by user to risk level of findings of the specified assessment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAssessmentFindingsChangeAuditLogs = Oci.DataSafe.GetSecurityAssessmentFindingsChangeAuditLogs.Invoke(new()
+        ///     {
+        ///         SecurityAssessmentId = testSecurityAssessment.Id,
+        ///         FindingKey = securityAssessmentFindingsChangeAuditLogFindingKey,
+        ///         FindingTitle = securityAssessmentFindingsChangeAuditLogFindingTitle,
+        ///         IsRiskDeferred = securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+        ///         ModifiedBy = securityAssessmentFindingsChangeAuditLogModifiedBy,
+        ///         Severity = securityAssessmentFindingsChangeAuditLogSeverity,
+        ///         TimeUpdatedGreaterThanOrEqualTo = securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan,
+        ///         TimeValidUntilGreaterThanOrEqualTo = securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo,
+        ///         TimeValidUntilLessThan = securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> Invoke(GetSecurityAssessmentFindingsChangeAuditLogsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsChangeAuditLogsResult>("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", args ?? new GetSecurityAssessmentFindingsChangeAuditLogsInvokeArgs(), options.WithDefaults());
     }
 
 

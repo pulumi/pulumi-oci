@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Waa
         /// </summary>
         public static Output<GetAppAccelerationResult> Invoke(GetAppAccelerationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationResult>("oci:Waa/getAppAcceleration:getAppAcceleration", args ?? new GetAppAccelerationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
+        /// 
+        /// Gets a WebAppAcceleration by OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWebAppAcceleration = Oci.Waa.GetAppAcceleration.Invoke(new()
+        ///     {
+        ///         WebAppAccelerationId = testWebAppAccelerationOciWaaWebAppAcceleration.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAppAccelerationResult> Invoke(GetAppAccelerationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationResult>("oci:Waa/getAppAcceleration:getAppAcceleration", args ?? new GetAppAccelerationInvokeArgs(), options.WithDefaults());
     }
 
 

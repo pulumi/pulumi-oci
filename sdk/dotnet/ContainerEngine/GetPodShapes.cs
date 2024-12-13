@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetPodShapesResult> Invoke(GetPodShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPodShapesResult>("oci:ContainerEngine/getPodShapes:getPodShapes", args ?? new GetPodShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// List all the Pod Shapes in a compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPodShapes = Oci.ContainerEngine.GetPodShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = podShapeAvailabilityDomain,
+        ///         Name = podShapeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPodShapesResult> Invoke(GetPodShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPodShapesResult>("oci:ContainerEngine/getPodShapes:getPodShapes", args ?? new GetPodShapesInvokeArgs(), options.WithDefaults());
     }
 
 

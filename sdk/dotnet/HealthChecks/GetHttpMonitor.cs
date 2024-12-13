@@ -64,6 +64,33 @@ namespace Pulumi.Oci.HealthChecks
         /// </summary>
         public static Output<GetHttpMonitorResult> Invoke(GetHttpMonitorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHttpMonitorResult>("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args ?? new GetHttpMonitorInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+        /// 
+        /// Gets the configuration for the specified monitor.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHttpMonitor = Oci.HealthChecks.GetHttpMonitor.Invoke(new()
+        ///     {
+        ///         MonitorId = testMonitor.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHttpMonitorResult> Invoke(GetHttpMonitorInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHttpMonitorResult>("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args ?? new GetHttpMonitorInvokeArgs(), options.WithDefaults());
     }
 
 

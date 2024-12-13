@@ -84,6 +84,43 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetResourceActionsResult> Invoke(GetResourceActionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceActionsResult>("oci:Optimizer/getResourceActions:getResourceActions", args ?? new GetResourceActionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the Cloud Advisor resource actions that are supported.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResourceActions = Oci.Optimizer.GetResourceActions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = resourceActionCompartmentIdInSubtree,
+        ///         ChildTenancyIds = resourceActionChildTenancyIds,
+        ///         IncludeOrganization = resourceActionIncludeOrganization,
+        ///         IncludeResourceMetadata = resourceActionIncludeResourceMetadata,
+        ///         Name = resourceActionName,
+        ///         RecommendationId = testRecommendation.Id,
+        ///         RecommendationName = testRecommendation.Name,
+        ///         ResourceType = resourceActionResourceType,
+        ///         State = resourceActionState,
+        ///         Status = resourceActionStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResourceActionsResult> Invoke(GetResourceActionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceActionsResult>("oci:Optimizer/getResourceActions:getResourceActions", args ?? new GetResourceActionsInvokeArgs(), options.WithDefaults());
     }
 
 

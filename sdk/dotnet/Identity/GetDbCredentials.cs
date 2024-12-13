@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDbCredentialsResult> Invoke(GetDbCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbCredentialsResult>("oci:Identity/getDbCredentials:getDbCredentials", args ?? new GetDbCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the DB credentials for the specified user. The returned object contains the credential's OCID
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbCredentials = Oci.Identity.GetDbCredentials.Invoke(new()
+        ///     {
+        ///         UserId = testUser.Id,
+        ///         Name = dbCredentialName,
+        ///         State = dbCredentialState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbCredentialsResult> Invoke(GetDbCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbCredentialsResult>("oci:Identity/getDbCredentials:getDbCredentials", args ?? new GetDbCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

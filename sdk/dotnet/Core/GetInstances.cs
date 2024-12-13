@@ -84,6 +84,43 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstancesResult> Invoke(GetInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstancesResult>("oci:Core/getInstances:getInstances", args ?? new GetInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the instances in the specified compartment and the specified availability domain.
+        /// You can filter the results by specifying an instance name (the list will include all the identically-named
+        /// instances in the compartment).
+        /// 
+        /// **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+        /// operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstances = Oci.Core.GetInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = instanceAvailabilityDomain,
+        ///         CapacityReservationId = testCapacityReservation.Id,
+        ///         ComputeClusterId = testComputeCluster.Id,
+        ///         DisplayName = instanceDisplayName,
+        ///         State = instanceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstancesResult> Invoke(GetInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstancesResult>("oci:Core/getInstances:getInstances", args ?? new GetInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

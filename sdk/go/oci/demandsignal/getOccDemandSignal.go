@@ -87,21 +87,11 @@ type LookupOccDemandSignalResult struct {
 }
 
 func LookupOccDemandSignalOutput(ctx *pulumi.Context, args LookupOccDemandSignalOutputArgs, opts ...pulumi.InvokeOption) LookupOccDemandSignalResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupOccDemandSignalResultOutput, error) {
 			args := v.(LookupOccDemandSignalArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupOccDemandSignalResult
-			secret, err := ctx.InvokePackageRaw("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", args, &rv, "", opts...)
-			if err != nil {
-				return LookupOccDemandSignalResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupOccDemandSignalResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupOccDemandSignalResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DemandSignal/getOccDemandSignal:getOccDemandSignal", args, LookupOccDemandSignalResultOutput{}, options).(LookupOccDemandSignalResultOutput), nil
 		}).(LookupOccDemandSignalResultOutput)
 }
 

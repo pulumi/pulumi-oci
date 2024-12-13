@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetDiscoveryJobsResultsResult> Invoke(GetDiscoveryJobsResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultsResult>("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args ?? new GetDiscoveryJobsResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of discovery results based on the specified query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDiscoveryJobsResults = Oci.DataSafe.GetDiscoveryJobsResults.Invoke(new()
+        ///     {
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         ColumnNames = discoveryJobsResultColumnName,
+        ///         DiscoveryType = discoveryJobsResultDiscoveryType,
+        ///         IsResultApplied = discoveryJobsResultIsResultApplied,
+        ///         Objects = discoveryJobsResultObject,
+        ///         PlannedAction = discoveryJobsResultPlannedAction,
+        ///         SchemaNames = discoveryJobsResultSchemaName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDiscoveryJobsResultsResult> Invoke(GetDiscoveryJobsResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultsResult>("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args ?? new GetDiscoveryJobsResultsInvokeArgs(), options.WithDefaults());
     }
 
 

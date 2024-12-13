@@ -66,6 +66,34 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsCategoryResult> Invoke(GetLogAnalyticsCategoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoryResult>("oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory", args ?? new GetLogAnalyticsCategoryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Gets detailed information about the category with the specified name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsCategory = Oci.LogAnalytics.GetLogAnalyticsCategory.Invoke(new()
+        ///     {
+        ///         Name = logAnalyticsCategoryName,
+        ///         Namespace = logAnalyticsCategoryNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsCategoryResult> Invoke(GetLogAnalyticsCategoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoryResult>("oci:LogAnalytics/getLogAnalyticsCategory:getLogAnalyticsCategory", args ?? new GetLogAnalyticsCategoryInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlCollectionLogInsightsResult> Invoke(GetSqlCollectionLogInsightsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlCollectionLogInsightsResult>("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", args ?? new GetSqlCollectionLogInsightsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Retrieves a list of the SQL collection log analytics.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlCollectionLogInsights = Oci.DataSafe.GetSqlCollectionLogInsights.Invoke(new()
+        ///     {
+        ///         SqlCollectionId = testSqlCollection.Id,
+        ///         TimeEnded = sqlCollectionLogInsightTimeEnded,
+        ///         TimeStarted = sqlCollectionLogInsightTimeStarted,
+        ///         GroupBy = sqlCollectionLogInsightGroupBy,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlCollectionLogInsightsResult> Invoke(GetSqlCollectionLogInsightsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlCollectionLogInsightsResult>("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", args ?? new GetSqlCollectionLogInsightsInvokeArgs(), options.WithDefaults());
     }
 
 

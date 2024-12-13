@@ -93,21 +93,11 @@ type GetBudgetsResult struct {
 }
 
 func GetBudgetsOutput(ctx *pulumi.Context, args GetBudgetsOutputArgs, opts ...pulumi.InvokeOption) GetBudgetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBudgetsResultOutput, error) {
 			args := v.(GetBudgetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBudgetsResult
-			secret, err := ctx.InvokePackageRaw("oci:Budget/getBudgets:getBudgets", args, &rv, "", opts...)
-			if err != nil {
-				return GetBudgetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBudgetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBudgetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Budget/getBudgets:getBudgets", args, GetBudgetsResultOutput{}, options).(GetBudgetsResultOutput), nil
 		}).(GetBudgetsResultOutput)
 }
 

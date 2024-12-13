@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsUserDbCredentialResult> Invoke(GetDomainsUserDbCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserDbCredentialResult>("oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential", args ?? new GetDomainsUserDbCredentialInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user's database (DB) credentials.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserDbCredential = Oci.Identity.GetDomainsUserDbCredential.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserDbCredentialId = testDbCredential.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = userDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsUserDbCredentialResult> Invoke(GetDomainsUserDbCredentialInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserDbCredentialResult>("oci:Identity/getDomainsUserDbCredential:getDomainsUserDbCredential", args ?? new GetDomainsUserDbCredentialInvokeArgs(), options.WithDefaults());
     }
 
 

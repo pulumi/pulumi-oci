@@ -98,6 +98,50 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetScheduledJobsResult> Invoke(GetScheduledJobsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetScheduledJobsResult>("oci:OsManagementHub/getScheduledJobs:getScheduledJobs", args ?? new GetScheduledJobsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduled Jobs in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists scheduled jobs that match the specified compartment or scheduled job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testScheduledJobs = Oci.OsManagementHub.GetScheduledJobs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = scheduledJobCompartmentIdInSubtree,
+        ///         DisplayName = scheduledJobDisplayName,
+        ///         DisplayNameContains = scheduledJobDisplayNameContains,
+        ///         Id = scheduledJobId,
+        ///         IsManagedByAutonomousLinux = scheduledJobIsManagedByAutonomousLinux,
+        ///         IsRestricted = scheduledJobIsRestricted,
+        ///         LifecycleStageId = testLifecycleStage.Id,
+        ///         Locations = scheduledJobLocation,
+        ///         LocationNotEqualTos = scheduledJobLocationNotEqualTo,
+        ///         ManagedCompartmentId = testCompartment.Id,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         OperationType = scheduledJobOperationType,
+        ///         ScheduleType = scheduledJobScheduleType,
+        ///         State = scheduledJobState,
+        ///         TimeEnd = scheduledJobTimeEnd,
+        ///         TimeStart = scheduledJobTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetScheduledJobsResult> Invoke(GetScheduledJobsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetScheduledJobsResult>("oci:OsManagementHub/getScheduledJobs:getScheduledJobs", args ?? new GetScheduledJobsInvokeArgs(), options.WithDefaults());
     }
 
 

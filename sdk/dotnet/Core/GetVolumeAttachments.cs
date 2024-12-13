@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeAttachmentsResult> Invoke(GetVolumeAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeAttachmentsResult>("oci:Core/getVolumeAttachments:getVolumeAttachments", args ?? new GetVolumeAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the volume attachments in the specified compartment. You can filter the
+        /// list by specifying an instance OCID, volume OCID, or both.
+        /// 
+        /// Currently, the only supported volume attachment type are [IScsiVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IScsiVolumeAttachment/) and
+        /// [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeAttachments = Oci.Core.GetVolumeAttachments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = volumeAttachmentAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         VolumeId = testVolume.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeAttachmentsResult> Invoke(GetVolumeAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeAttachmentsResult>("oci:Core/getVolumeAttachments:getVolumeAttachments", args ?? new GetVolumeAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

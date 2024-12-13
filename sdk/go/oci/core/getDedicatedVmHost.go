@@ -90,21 +90,11 @@ type LookupDedicatedVmHostResult struct {
 }
 
 func LookupDedicatedVmHostOutput(ctx *pulumi.Context, args LookupDedicatedVmHostOutputArgs, opts ...pulumi.InvokeOption) LookupDedicatedVmHostResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDedicatedVmHostResultOutput, error) {
 			args := v.(LookupDedicatedVmHostArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDedicatedVmHostResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getDedicatedVmHost:getDedicatedVmHost", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDedicatedVmHostResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDedicatedVmHostResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDedicatedVmHostResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getDedicatedVmHost:getDedicatedVmHost", args, LookupDedicatedVmHostResultOutput{}, options).(LookupDedicatedVmHostResultOutput), nil
 		}).(LookupDedicatedVmHostResultOutput)
 }
 

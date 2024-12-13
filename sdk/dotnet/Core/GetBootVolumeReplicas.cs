@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetBootVolumeReplicasResult> Invoke(GetBootVolumeReplicasInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the boot volume replicas in the specified compartment and availability domain.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBootVolumeReplicas = Oci.Core.GetBootVolumeReplicas.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = bootVolumeReplicaAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = bootVolumeReplicaDisplayName,
+        ///         State = bootVolumeReplicaState,
+        ///         VolumeGroupReplicaId = testVolumeGroupReplica.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBootVolumeReplicasResult> Invoke(GetBootVolumeReplicasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,21 +66,11 @@ type GetAgentDataIngestionJobLogContentResult struct {
 }
 
 func GetAgentDataIngestionJobLogContentOutput(ctx *pulumi.Context, args GetAgentDataIngestionJobLogContentOutputArgs, opts ...pulumi.InvokeOption) GetAgentDataIngestionJobLogContentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAgentDataIngestionJobLogContentResultOutput, error) {
 			args := v.(GetAgentDataIngestionJobLogContentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAgentDataIngestionJobLogContentResult
-			secret, err := ctx.InvokePackageRaw("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", args, &rv, "", opts...)
-			if err != nil {
-				return GetAgentDataIngestionJobLogContentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAgentDataIngestionJobLogContentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAgentDataIngestionJobLogContentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GenerativeAi/getAgentDataIngestionJobLogContent:getAgentDataIngestionJobLogContent", args, GetAgentDataIngestionJobLogContentResultOutput{}, options).(GetAgentDataIngestionJobLogContentResultOutput), nil
 		}).(GetAgentDataIngestionJobLogContentResultOutput)
 }
 

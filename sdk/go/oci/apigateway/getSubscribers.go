@@ -79,21 +79,11 @@ type GetSubscribersResult struct {
 }
 
 func GetSubscribersOutput(ctx *pulumi.Context, args GetSubscribersOutputArgs, opts ...pulumi.InvokeOption) GetSubscribersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSubscribersResultOutput, error) {
 			args := v.(GetSubscribersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSubscribersResult
-			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getSubscribers:getSubscribers", args, &rv, "", opts...)
-			if err != nil {
-				return GetSubscribersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSubscribersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSubscribersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApiGateway/getSubscribers:getSubscribers", args, GetSubscribersResultOutput{}, options).(GetSubscribersResultOutput), nil
 		}).(GetSubscribersResultOutput)
 }
 

@@ -156,6 +156,8 @@ type AutonomousDatabase struct {
 	IsAutoScalingEnabled pulumi.BoolOutput `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolOutput `pulumi:"isAutoScalingForStorageEnabled"`
+	// (Updatable) True if the Autonomous Database is backup retention locked.
+	IsBackupRetentionLocked pulumi.BoolOutput `pulumi:"isBackupRetentionLocked"`
 	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolOutput `pulumi:"isDataGuardEnabled"`
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
@@ -560,6 +562,8 @@ type autonomousDatabaseState struct {
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled *bool `pulumi:"isAutoScalingForStorageEnabled"`
+	// (Updatable) True if the Autonomous Database is backup retention locked.
+	IsBackupRetentionLocked *bool `pulumi:"isBackupRetentionLocked"`
 	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
@@ -922,6 +926,8 @@ type AutonomousDatabaseState struct {
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolPtrInput
+	// (Updatable) True if the Autonomous Database is backup retention locked.
+	IsBackupRetentionLocked pulumi.BoolPtrInput
 	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolPtrInput
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
@@ -1258,6 +1264,8 @@ type autonomousDatabaseArgs struct {
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled *bool `pulumi:"isAutoScalingForStorageEnabled"`
+	// (Updatable) True if the Autonomous Database is backup retention locked.
+	IsBackupRetentionLocked *bool `pulumi:"isBackupRetentionLocked"`
 	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
@@ -1503,6 +1511,8 @@ type AutonomousDatabaseArgs struct {
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolPtrInput
+	// (Updatable) True if the Autonomous Database is backup retention locked.
+	IsBackupRetentionLocked pulumi.BoolPtrInput
 	// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolPtrInput
 	// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
@@ -2013,6 +2023,11 @@ func (o AutonomousDatabaseOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 // (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 func (o AutonomousDatabaseOutput) IsAutoScalingForStorageEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.IsAutoScalingForStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) True if the Autonomous Database is backup retention locked.
+func (o AutonomousDatabaseOutput) IsBackupRetentionLocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.IsBackupRetentionLocked }).(pulumi.BoolOutput)
 }
 
 // (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyApplicationGroupsResult> Invoke(GetNetworkFirewallPolicyApplicationGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationGroupsResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroups:getNetworkFirewallPolicyApplicationGroups", args ?? new GetNetworkFirewallPolicyApplicationGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Returns a list of ApplicationGroups for the policy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyApplicationGroups = Oci.NetworkFirewall.GetNetworkFirewallPolicyApplicationGroups.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicyApplicationGroupDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyApplicationGroupsResult> Invoke(GetNetworkFirewallPolicyApplicationGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationGroupsResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroups:getNetworkFirewallPolicyApplicationGroups", args ?? new GetNetworkFirewallPolicyApplicationGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

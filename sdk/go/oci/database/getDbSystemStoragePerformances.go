@@ -75,21 +75,11 @@ type GetDbSystemStoragePerformancesResult struct {
 }
 
 func GetDbSystemStoragePerformancesOutput(ctx *pulumi.Context, args GetDbSystemStoragePerformancesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemStoragePerformancesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDbSystemStoragePerformancesResultOutput, error) {
 			args := v.(GetDbSystemStoragePerformancesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDbSystemStoragePerformancesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args, &rv, "", opts...)
-			if err != nil {
-				return GetDbSystemStoragePerformancesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDbSystemStoragePerformancesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDbSystemStoragePerformancesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args, GetDbSystemStoragePerformancesResultOutput{}, options).(GetDbSystemStoragePerformancesResultOutput), nil
 		}).(GetDbSystemStoragePerformancesResultOutput)
 }
 

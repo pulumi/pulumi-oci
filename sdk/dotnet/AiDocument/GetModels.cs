@@ -72,6 +72,37 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:AiDocument/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.
+        /// 
+        /// Returns a list of models in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModels = Oci.AiDocument.GetModels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:AiDocument/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
     }
 
 

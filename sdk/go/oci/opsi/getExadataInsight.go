@@ -114,21 +114,11 @@ type LookupExadataInsightResult struct {
 }
 
 func LookupExadataInsightOutput(ctx *pulumi.Context, args LookupExadataInsightOutputArgs, opts ...pulumi.InvokeOption) LookupExadataInsightResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExadataInsightResultOutput, error) {
 			args := v.(LookupExadataInsightArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExadataInsightResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getExadataInsight:getExadataInsight", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExadataInsightResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExadataInsightResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExadataInsightResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getExadataInsight:getExadataInsight", args, LookupExadataInsightResultOutput{}, options).(LookupExadataInsightResultOutput), nil
 		}).(LookupExadataInsightResultOutput)
 }
 

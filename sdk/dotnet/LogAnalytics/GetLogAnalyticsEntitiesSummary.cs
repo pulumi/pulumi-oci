@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsEntitiesSummaryResult> Invoke(GetLogAnalyticsEntitiesSummaryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesSummaryResult>("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", args ?? new GetLogAnalyticsEntitiesSummaryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns log analytics entities count summary report.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsEntitiesSummary = Oci.LogAnalytics.GetLogAnalyticsEntitiesSummary.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = logAnalyticsEntitiesSummaryNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsEntitiesSummaryResult> Invoke(GetLogAnalyticsEntitiesSummaryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesSummaryResult>("oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary", args ?? new GetLogAnalyticsEntitiesSummaryInvokeArgs(), options.WithDefaults());
     }
 
 

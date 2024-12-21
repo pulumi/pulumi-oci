@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsOauthClientCertificateResult> Invoke(GetDomainsOauthClientCertificateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthClientCertificateResult>("oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate", args ?? new GetDomainsOauthClientCertificateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get OAuth Client Certificates
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOauthClientCertificate = Oci.Identity.GetDomainsOauthClientCertificate.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuthClientCertificateId = testCertificate.Id,
+        ///         Authorization = oauthClientCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthClientCertificateResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsOauthClientCertificateResult> Invoke(GetDomainsOauthClientCertificateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthClientCertificateResult>("oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate", args ?? new GetDomainsOauthClientCertificateInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -118,21 +118,11 @@ type LookupReportDefinitionResult struct {
 }
 
 func LookupReportDefinitionOutput(ctx *pulumi.Context, args LookupReportDefinitionOutputArgs, opts ...pulumi.InvokeOption) LookupReportDefinitionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupReportDefinitionResultOutput, error) {
 			args := v.(LookupReportDefinitionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupReportDefinitionResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getReportDefinition:getReportDefinition", args, &rv, "", opts...)
-			if err != nil {
-				return LookupReportDefinitionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupReportDefinitionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupReportDefinitionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getReportDefinition:getReportDefinition", args, LookupReportDefinitionResultOutput{}, options).(LookupReportDefinitionResultOutput), nil
 		}).(LookupReportDefinitionResultOutput)
 }
 

@@ -85,21 +85,11 @@ type LookupDbNodeConsoleConnectionResult struct {
 }
 
 func LookupDbNodeConsoleConnectionOutput(ctx *pulumi.Context, args LookupDbNodeConsoleConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupDbNodeConsoleConnectionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDbNodeConsoleConnectionResultOutput, error) {
 			args := v.(LookupDbNodeConsoleConnectionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDbNodeConsoleConnectionResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDbNodeConsoleConnectionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDbNodeConsoleConnectionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDbNodeConsoleConnectionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection", args, LookupDbNodeConsoleConnectionResultOutput{}, options).(LookupDbNodeConsoleConnectionResultOutput), nil
 		}).(LookupDbNodeConsoleConnectionResultOutput)
 }
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExascaleDbStorageVaultsResult> Invoke(GetExascaleDbStorageVaultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExascaleDbStorageVaultsResult>("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", args ?? new GetExascaleDbStorageVaultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = exascaleDbStorageVaultDisplayName,
+        ///         State = exascaleDbStorageVaultState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExascaleDbStorageVaultsResult> Invoke(GetExascaleDbStorageVaultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExascaleDbStorageVaultsResult>("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", args ?? new GetExascaleDbStorageVaultsInvokeArgs(), options.WithDefaults());
     }
 
 

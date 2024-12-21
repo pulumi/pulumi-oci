@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalAsmConfigurationResult> Invoke(GetExternalAsmConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmConfigurationResult>("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", args ?? new GetExternalAsmConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalAsmConfiguration = Oci.DatabaseManagement.GetExternalAsmConfiguration.Invoke(new()
+        ///     {
+        ///         ExternalAsmId = testExternalAsm.Id,
+        ///         OpcNamedCredentialId = externalAsmConfigurationOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalAsmConfigurationResult> Invoke(GetExternalAsmConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmConfigurationResult>("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", args ?? new GetExternalAsmConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

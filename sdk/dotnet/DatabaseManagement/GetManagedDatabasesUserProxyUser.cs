@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabasesUserProxyUserResult> Invoke(GetManagedDatabasesUserProxyUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Databases User Proxy User resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of proxy users for the current user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabasesUserProxyUser = Oci.DatabaseManagement.GetManagedDatabasesUserProxyUser.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabasesUserProxyUserName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabasesUserProxyUserResult> Invoke(GetManagedDatabasesUserProxyUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserInvokeArgs(), options.WithDefaults());
     }
 
 

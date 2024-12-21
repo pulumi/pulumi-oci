@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselineResult> Invoke(GetManagedDatabaseSqlPlanBaselineInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", args ?? new GetManagedDatabaseSqlPlanBaselineInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the SQL plan baseline details for the specified planName.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlPlanBaseline = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaseline.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         PlanName = managedDatabaseSqlPlanBaselinePlanName,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlPlanBaselineResult> Invoke(GetManagedDatabaseSqlPlanBaselineInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", args ?? new GetManagedDatabaseSqlPlanBaselineInvokeArgs(), options.WithDefaults());
     }
 
 

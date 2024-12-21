@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetDataAssetResult> Invoke(GetDataAssetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataAssetResult>("oci:DataCatalog/getDataAsset:getDataAsset", args ?? new GetDataAssetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Gets a specific data asset for the given key within a data catalog.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataAsset = Oci.DataCatalog.GetDataAsset.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         DataAssetKey = dataAssetDataAssetKey,
+        ///         Fields = dataAssetFields,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataAssetResult> Invoke(GetDataAssetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataAssetResult>("oci:DataCatalog/getDataAsset:getDataAsset", args ?? new GetDataAssetInvokeArgs(), options.WithDefaults());
     }
 
 

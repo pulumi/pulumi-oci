@@ -70,21 +70,11 @@ type GetPrivateEndpointReachableIpResult struct {
 }
 
 func GetPrivateEndpointReachableIpOutput(ctx *pulumi.Context, args GetPrivateEndpointReachableIpOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointReachableIpResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPrivateEndpointReachableIpResultOutput, error) {
 			args := v.(GetPrivateEndpointReachableIpArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPrivateEndpointReachableIpResult
-			secret, err := ctx.InvokePackageRaw("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args, &rv, "", opts...)
-			if err != nil {
-				return GetPrivateEndpointReachableIpResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPrivateEndpointReachableIpResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPrivateEndpointReachableIpResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args, GetPrivateEndpointReachableIpResultOutput{}, options).(GetPrivateEndpointReachableIpResultOutput), nil
 		}).(GetPrivateEndpointReachableIpResultOutput)
 }
 

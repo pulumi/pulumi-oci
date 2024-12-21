@@ -84,21 +84,11 @@ type GetOdaInstancesResult struct {
 }
 
 func GetOdaInstancesOutput(ctx *pulumi.Context, args GetOdaInstancesOutputArgs, opts ...pulumi.InvokeOption) GetOdaInstancesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOdaInstancesResultOutput, error) {
 			args := v.(GetOdaInstancesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOdaInstancesResult
-			secret, err := ctx.InvokePackageRaw("oci:Oda/getOdaInstances:getOdaInstances", args, &rv, "", opts...)
-			if err != nil {
-				return GetOdaInstancesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOdaInstancesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOdaInstancesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Oda/getOdaInstances:getOdaInstances", args, GetOdaInstancesResultOutput{}, options).(GetOdaInstancesResultOutput), nil
 		}).(GetOdaInstancesResultOutput)
 }
 

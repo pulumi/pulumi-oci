@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceImportRequestResult> Invoke(GetWorkspaceImportRequestInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceImportRequestResult>("oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest", args ?? new GetWorkspaceImportRequestInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// This endpoint can be used to get the summary/details of object being imported.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceImportRequest = Oci.DataIntegration.GetWorkspaceImportRequest.Invoke(new()
+        ///     {
+        ///         ImportRequestKey = workspaceImportRequestImportRequestKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceImportRequestResult> Invoke(GetWorkspaceImportRequestInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceImportRequestResult>("oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest", args ?? new GetWorkspaceImportRequestInvokeArgs(), options.WithDefaults());
     }
 
 

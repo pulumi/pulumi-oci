@@ -120,6 +120,61 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetUserAssessmentUserAnalyticsResult> Invoke(GetUserAssessmentUserAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUserAnalyticsResult>("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", args ?? new GetUserAssessmentUserAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state.
+        /// of database user security.  For example, the user details include how many users have the DBA role and how many users are in
+        /// the critical category. This data is especially useful content for dashboards or to support analytics.
+        /// 
+        /// When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+        /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+        /// compartmentId, then "Not Authorized" is returned.
+        /// 
+        /// The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
+        /// set to true, the entire hierarchy of compartments can be returned.
+        /// 
+        /// To use ListUserAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+        /// set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAssessmentUserAnalytics = Oci.DataSafe.GetUserAssessmentUserAnalytics.Invoke(new()
+        ///     {
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentUserAnalyticAccessLevel,
+        ///         AccountStatus = userAssessmentUserAnalyticAccountStatus,
+        ///         AuthenticationType = userAssessmentUserAnalyticAuthenticationType,
+        ///         CompartmentIdInSubtree = userAssessmentUserAnalyticCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
+        ///         TimeLastLoginLessThan = userAssessmentUserAnalyticTimeLastLoginLessThan,
+        ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
+        ///         TimePasswordLastChangedLessThan = userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
+        ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
+        ///         TimeUserCreatedLessThan = userAssessmentUserAnalyticTimeUserCreatedLessThan,
+        ///         UserCategory = userAssessmentUserAnalyticUserCategory,
+        ///         UserKey = userAssessmentUserAnalyticUserKey,
+        ///         UserName = testUser.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserAssessmentUserAnalyticsResult> Invoke(GetUserAssessmentUserAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUserAnalyticsResult>("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", args ?? new GetUserAssessmentUserAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

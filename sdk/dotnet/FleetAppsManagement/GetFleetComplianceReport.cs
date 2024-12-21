@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetFleetComplianceReportResult> Invoke(GetFleetComplianceReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetComplianceReportResult>("oci:FleetAppsManagement/getFleetComplianceReport:getFleetComplianceReport", args ?? new GetFleetComplianceReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Retrieve compliance report for a fleet.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetComplianceReport = Oci.FleetAppsManagement.GetFleetComplianceReport.Invoke(new()
+        ///     {
+        ///         ComplianceReportId = testReport.Id,
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetComplianceReportResult> Invoke(GetFleetComplianceReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetComplianceReportResult>("oci:FleetAppsManagement/getFleetComplianceReport:getFleetComplianceReport", args ?? new GetFleetComplianceReportInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -480,7 +480,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly sslCrl!: pulumi.Output<string>;
     /**
-     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      */
     public readonly sslKey!: pulumi.Output<string | undefined>;
     /**
@@ -1143,7 +1143,7 @@ export interface ConnectionState {
      */
     sslCrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      */
     sslKey?: pulumi.Input<string>;
     /**
@@ -1558,7 +1558,7 @@ export interface ConnectionArgs {
      */
     sslCrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      */
     sslKey?: pulumi.Input<string>;
     /**

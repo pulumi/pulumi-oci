@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaPrivateEndpointAttachmentsResult> Invoke(GetOdaPrivateEndpointAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointAttachmentsResult>("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", args ?? new GetOdaPrivateEndpointAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oda Private Endpoint Attachments in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Returns a page of ODA Instances attached to this ODA Private Endpoint.
+        /// 
+        /// If the `opc-next-page` header appears in the response, then
+        /// there are more items to retrieve. To get the next page in the subsequent
+        /// GET request, include the header's value as the `page` query parameter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaPrivateEndpointAttachments = Oci.Oda.GetOdaPrivateEndpointAttachments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         State = odaPrivateEndpointAttachmentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaPrivateEndpointAttachmentsResult> Invoke(GetOdaPrivateEndpointAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointAttachmentsResult>("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", args ?? new GetOdaPrivateEndpointAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

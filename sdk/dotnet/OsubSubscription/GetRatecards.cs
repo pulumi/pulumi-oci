@@ -76,6 +76,39 @@ namespace Pulumi.Oci.OsubSubscription
         /// </summary>
         public static Output<GetRatecardsResult> Invoke(GetRatecardsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRatecardsResult>("oci:OsubSubscription/getRatecards:getRatecards", args ?? new GetRatecardsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ratecards in Oracle Cloud Infrastructure Osub Subscription service.
+        /// 
+        /// List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
+        /// for a particular date range
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRatecards = Oci.OsubSubscription.GetRatecards.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         PartNumber = ratecardPartNumber,
+        ///         TimeFrom = ratecardTimeFrom,
+        ///         TimeTo = ratecardTimeTo,
+        ///         XOneOriginRegion = ratecardXOneOriginRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRatecardsResult> Invoke(GetRatecardsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRatecardsResult>("oci:OsubSubscription/getRatecards:getRatecards", args ?? new GetRatecardsInvokeArgs(), options.WithDefaults());
     }
 
 

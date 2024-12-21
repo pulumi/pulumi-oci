@@ -72,6 +72,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetFleetTargetsResult> Invoke(GetFleetTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetTargetsResult>("oci:FleetAppsManagement/getFleetTargets:getFleetTargets", args ?? new GetFleetTargetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns the list of all confirmed targets within a fleet.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetTargets = Oci.FleetAppsManagement.GetFleetTargets.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         DisplayName = fleetTargetDisplayName,
+        ///         Product = fleetTargetProduct,
+        ///         ResourceDisplayName = fleetTargetResourceDisplayName,
+        ///         ResourceId = testResource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetTargetsResult> Invoke(GetFleetTargetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetTargetsResult>("oci:FleetAppsManagement/getFleetTargets:getFleetTargets", args ?? new GetFleetTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -1656,7 +1656,7 @@ if not MYPY:
     class ModelCustomMetadataListArgsDict(TypedDict):
         category: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         description: NotRequired[pulumi.Input[str]]
         """
@@ -1670,7 +1670,7 @@ if not MYPY:
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         value: NotRequired[pulumi.Input[str]]
         """
@@ -1689,7 +1689,7 @@ class ModelCustomMetadataListArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param pulumi.Input[str] description: (Updatable) Description of model metadata
         :param pulumi.Input[str] key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -1697,7 +1697,7 @@ class ModelCustomMetadataListArgs:
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param pulumi.Input[str] value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -1715,7 +1715,7 @@ class ModelCustomMetadataListArgs:
     @pulumi.getter
     def category(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -1745,7 +1745,7 @@ class ModelCustomMetadataListArgs:
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -1772,7 +1772,7 @@ if not MYPY:
     class ModelDefinedMetadataListArgsDict(TypedDict):
         category: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         description: NotRequired[pulumi.Input[str]]
         """
@@ -1786,7 +1786,7 @@ if not MYPY:
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         value: NotRequired[pulumi.Input[str]]
         """
@@ -1805,7 +1805,7 @@ class ModelDefinedMetadataListArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param pulumi.Input[str] description: (Updatable) Description of model metadata
         :param pulumi.Input[str] key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -1813,7 +1813,7 @@ class ModelDefinedMetadataListArgs:
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param pulumi.Input[str] value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -1831,7 +1831,7 @@ class ModelDefinedMetadataListArgs:
     @pulumi.getter
     def category(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -1861,7 +1861,7 @@ class ModelDefinedMetadataListArgs:
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -2397,6 +2397,10 @@ if not MYPY:
         """
         (Updatable) Details for the model-deployment instance shape configuration.
         """
+        private_endpoint_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
         subnet_id: NotRequired[pulumi.Input[str]]
         """
         (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -2409,15 +2413,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_shape_name: pulumi.Input[str],
                  model_deployment_instance_shape_config_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']] = None,
+                 private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs'] model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
+        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param pulumi.Input[str] subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -2444,6 +2452,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @model_deployment_instance_shape_config_details.setter
     def model_deployment_instance_shape_config_details(self, value: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]):
         pulumi.set(self, "model_deployment_instance_shape_config_details", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_endpoint_id", value)
 
     @property
     @pulumi.getter(name="subnetId")

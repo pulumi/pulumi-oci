@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetDeployStageResult> Invoke(GetDeployStageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeployStageResult>("oci:DevOps/getDeployStage:getDeployStage", args ?? new GetDeployStageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a deployment stage by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeployStage = Oci.DevOps.GetDeployStage.Invoke(new()
+        ///     {
+        ///         DeployStageId = testDeployStageOciDevopsDeployStage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeployStageResult> Invoke(GetDeployStageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployStageResult>("oci:DevOps/getDeployStage:getDeployStage", args ?? new GetDeployStageInvokeArgs(), options.WithDefaults());
     }
 
 

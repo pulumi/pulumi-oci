@@ -78,6 +78,40 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentsResult> Invoke(GetDeploymentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:GoldenGate/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the Deployments in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeployments = Oci.GoldenGate.GetDeployments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AssignableConnectionId = testConnection.Id,
+        ///         AssignedConnectionId = testConnection.Id,
+        ///         DisplayName = deploymentDisplayName,
+        ///         Fqdn = deploymentFqdn,
+        ///         LifecycleSubState = deploymentLifecycleSubState,
+        ///         State = deploymentState,
+        ///         SupportedConnectionType = deploymentSupportedConnectionType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentsResult> Invoke(GetDeploymentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentsResult>("oci:GoldenGate/getDeployments:getDeployments", args ?? new GetDeploymentsInvokeArgs(), options.WithDefaults());
     }
 
 

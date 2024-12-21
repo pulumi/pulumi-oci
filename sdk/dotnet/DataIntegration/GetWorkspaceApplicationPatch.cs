@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceApplicationPatchResult> Invoke(GetWorkspaceApplicationPatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationPatchResult>("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", args ?? new GetWorkspaceApplicationPatchInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a patch in an application using the specified identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceApplicationPatch = Oci.DataIntegration.GetWorkspaceApplicationPatch.Invoke(new()
+        ///     {
+        ///         ApplicationKey = workspaceApplicationPatchApplicationKey,
+        ///         PatchKey = workspaceApplicationPatchPatchKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceApplicationPatchResult> Invoke(GetWorkspaceApplicationPatchInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationPatchResult>("oci:DataIntegration/getWorkspaceApplicationPatch:getWorkspaceApplicationPatch", args ?? new GetWorkspaceApplicationPatchInvokeArgs(), options.WithDefaults());
     }
 
 

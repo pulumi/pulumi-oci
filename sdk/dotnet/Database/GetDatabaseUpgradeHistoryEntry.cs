@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDatabaseUpgradeHistoryEntryResult> Invoke(GetDatabaseUpgradeHistoryEntryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// gets the upgrade history for a specified database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseUpgradeHistoryEntry = Oci.Database.GetDatabaseUpgradeHistoryEntry.Invoke(new()
+        ///     {
+        ///         DatabaseId = testDatabase.Id,
+        ///         UpgradeHistoryEntryId = testUpgradeHistoryEntry.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseUpgradeHistoryEntryResult> Invoke(GetDatabaseUpgradeHistoryEntryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryInvokeArgs(), options.WithDefaults());
     }
 
 

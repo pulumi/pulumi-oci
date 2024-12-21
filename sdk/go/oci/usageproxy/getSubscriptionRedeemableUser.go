@@ -70,21 +70,11 @@ type LookupSubscriptionRedeemableUserResult struct {
 }
 
 func LookupSubscriptionRedeemableUserOutput(ctx *pulumi.Context, args LookupSubscriptionRedeemableUserOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriptionRedeemableUserResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSubscriptionRedeemableUserResultOutput, error) {
 			args := v.(LookupSubscriptionRedeemableUserArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSubscriptionRedeemableUserResult
-			secret, err := ctx.InvokePackageRaw("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSubscriptionRedeemableUserResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSubscriptionRedeemableUserResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSubscriptionRedeemableUserResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args, LookupSubscriptionRedeemableUserResultOutput{}, options).(LookupSubscriptionRedeemableUserResultOutput), nil
 		}).(LookupSubscriptionRedeemableUserResultOutput)
 }
 

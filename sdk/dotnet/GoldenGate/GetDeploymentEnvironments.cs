@@ -64,6 +64,33 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentEnvironmentsResult> Invoke(GetDeploymentEnvironmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentEnvironmentsResult>("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", args ?? new GetDeploymentEnvironmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deployment Environments in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Returns an array of DeploymentEnvironmentDescriptor
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentEnvironments = Oci.GoldenGate.GetDeploymentEnvironments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentEnvironmentsResult> Invoke(GetDeploymentEnvironmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentEnvironmentsResult>("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", args ?? new GetDeploymentEnvironmentsInvokeArgs(), options.WithDefaults());
     }
 
 

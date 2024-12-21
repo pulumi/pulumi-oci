@@ -77,21 +77,11 @@ type GetAutonomousContainerPatchesResult struct {
 }
 
 func GetAutonomousContainerPatchesOutput(ctx *pulumi.Context, args GetAutonomousContainerPatchesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerPatchesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousContainerPatchesResultOutput, error) {
 			args := v.(GetAutonomousContainerPatchesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousContainerPatchesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousContainerPatchesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousContainerPatchesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousContainerPatchesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", args, GetAutonomousContainerPatchesResultOutput{}, options).(GetAutonomousContainerPatchesResultOutput), nil
 		}).(GetAutonomousContainerPatchesResultOutput)
 }
 

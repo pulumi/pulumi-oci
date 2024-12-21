@@ -121,21 +121,11 @@ type GetDatabaseSecurityConfigsResult struct {
 }
 
 func GetDatabaseSecurityConfigsOutput(ctx *pulumi.Context, args GetDatabaseSecurityConfigsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseSecurityConfigsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatabaseSecurityConfigsResultOutput, error) {
 			args := v.(GetDatabaseSecurityConfigsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatabaseSecurityConfigsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDatabaseSecurityConfigs:getDatabaseSecurityConfigs", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatabaseSecurityConfigsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatabaseSecurityConfigsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatabaseSecurityConfigsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getDatabaseSecurityConfigs:getDatabaseSecurityConfigs", args, GetDatabaseSecurityConfigsResultOutput{}, options).(GetDatabaseSecurityConfigsResultOutput), nil
 		}).(GetDatabaseSecurityConfigsResultOutput)
 }
 

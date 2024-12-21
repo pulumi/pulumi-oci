@@ -89,21 +89,11 @@ type GetNetworkSecurityGroupsResult struct {
 }
 
 func GetNetworkSecurityGroupsOutput(ctx *pulumi.Context, args GetNetworkSecurityGroupsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkSecurityGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNetworkSecurityGroupsResultOutput, error) {
 			args := v.(GetNetworkSecurityGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNetworkSecurityGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetNetworkSecurityGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNetworkSecurityGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNetworkSecurityGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args, GetNetworkSecurityGroupsResultOutput{}, options).(GetNetworkSecurityGroupsResultOutput), nil
 		}).(GetNetworkSecurityGroupsResultOutput)
 }
 

@@ -97,21 +97,11 @@ type LookupBackupDestinationResult struct {
 }
 
 func LookupBackupDestinationOutput(ctx *pulumi.Context, args LookupBackupDestinationOutputArgs, opts ...pulumi.InvokeOption) LookupBackupDestinationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBackupDestinationResultOutput, error) {
 			args := v.(LookupBackupDestinationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBackupDestinationResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getBackupDestination:getBackupDestination", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBackupDestinationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBackupDestinationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBackupDestinationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getBackupDestination:getBackupDestination", args, LookupBackupDestinationResultOutput{}, options).(LookupBackupDestinationResultOutput), nil
 		}).(LookupBackupDestinationResultOutput)
 }
 

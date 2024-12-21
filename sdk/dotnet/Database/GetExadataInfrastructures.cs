@@ -28,6 +28,15 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExadataInfrastructuresResult> Invoke(GetExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+        /// To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+        /// </summary>
+        public static Output<GetExadataInfrastructuresResult> Invoke(GetExadataInfrastructuresInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresInvokeArgs(), options.WithDefaults());
     }
 
 

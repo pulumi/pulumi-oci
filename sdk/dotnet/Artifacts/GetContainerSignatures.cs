@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public static Output<GetContainerSignaturesResult> Invoke(GetContainerSignaturesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
+        /// 
+        /// List container image signatures in an image.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testContainerImageSignatures = Oci.Artifacts.GetContainerSignatures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerImageSignatureCompartmentIdInSubtree,
+        ///         DisplayName = containerImageSignatureDisplayName,
+        ///         ImageDigest = containerImageSignatureImageDigest,
+        ///         ImageId = testImage.Id,
+        ///         KmsKeyId = testKey.Id,
+        ///         KmsKeyVersionId = testKeyVersion.Id,
+        ///         RepositoryId = testRepository.Id,
+        ///         RepositoryName = testRepository.Name,
+        ///         SigningAlgorithm = containerImageSignatureSigningAlgorithm,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetContainerSignaturesResult> Invoke(GetContainerSignaturesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesInvokeArgs(), options.WithDefaults());
     }
 
 

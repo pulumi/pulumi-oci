@@ -86,6 +86,44 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetMonitoredResourceTypesResult> Invoke(GetMonitoredResourceTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceTypesResult>("oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes", args ?? new GetMonitoredResourceTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Returns list of resource types accessible to the customer. 
+        /// There are two types of resource types - System resource types and User resource types. 
+        /// System resource types are available out of the box in the stack monitoring resource service 
+        /// and are accessible to all the tenant users. User resource types are created in the context 
+        /// of a tenancy and are visible only for the tenancy. By default, both System resource types 
+        /// and User resource types are returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMonitoredResourceTypes = Oci.StackMonitoring.GetMonitoredResourceTypes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ExcludeFields = monitoredResourceTypeExcludeFields,
+        ///         Fields = monitoredResourceTypeFields,
+        ///         IsExcludeSystemTypes = monitoredResourceTypeIsExcludeSystemTypes,
+        ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
+        ///         Name = monitoredResourceTypeName,
+        ///         Status = monitoredResourceTypeStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMonitoredResourceTypesResult> Invoke(GetMonitoredResourceTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceTypesResult>("oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes", args ?? new GetMonitoredResourceTypesInvokeArgs(), options.WithDefaults());
     }
 
 

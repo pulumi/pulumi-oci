@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceDevicesResult> Invoke(GetInstanceDevicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceDevicesResult>("oci:Core/getInstanceDevices:getInstanceDevices", args ?? new GetInstanceDevicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets a list of all the devices for given instance. You can optionally filter results by device availability.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceDevices = Oci.Core.GetInstanceDevices.Invoke(new()
+        ///     {
+        ///         InstanceId = testInstance.Id,
+        ///         IsAvailable = instanceDeviceIsAvailable,
+        ///         Name = instanceDeviceName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceDevicesResult> Invoke(GetInstanceDevicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceDevicesResult>("oci:Core/getInstanceDevices:getInstanceDevices", args ?? new GetInstanceDevicesInvokeArgs(), options.WithDefaults());
     }
 
 

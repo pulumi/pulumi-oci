@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetHttpRedirectsResult> Invoke(GetHttpRedirectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHttpRedirectsResult>("oci:Waas/getHttpRedirects:getHttpRedirects", args ?? new GetHttpRedirectsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Http Redirects in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Gets a list of HTTP Redirects.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHttpRedirects = Oci.Waas.GetHttpRedirects.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = httpRedirectDisplayNames,
+        ///         Ids = httpRedirectIds,
+        ///         States = httpRedirectStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = httpRedirectTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = httpRedirectTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHttpRedirectsResult> Invoke(GetHttpRedirectsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHttpRedirectsResult>("oci:Waas/getHttpRedirects:getHttpRedirects", args ?? new GetHttpRedirectsInvokeArgs(), options.WithDefaults());
     }
 
 

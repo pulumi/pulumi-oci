@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsClusterVersionSummary;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceComputeOnlyWorkerNode;
@@ -13,6 +14,7 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceKafkaBrokerNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNode;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceStartClusterShapeConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceUtilNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceWorkerNode;
 import java.lang.Boolean;
@@ -24,6 +26,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBdsInstanceResult {
+    /**
+     * @return Cluster version details including bds and odh version information.
+     * 
+     */
+    private List<GetBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries;
     private String bdsInstanceId;
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -90,6 +97,7 @@ public final class GetBdsInstanceResult {
      * 
      */
     private Boolean isCloudSqlConfigured;
+    private Boolean isForceRemoveEnabled;
     private Boolean isForceStopJobs;
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -135,6 +143,8 @@ public final class GetBdsInstanceResult {
      */
     private Integer numberOfNodesRequiringMaintenanceReboot;
     private String osPatchVersion;
+    private String removeNode;
+    private List<GetBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs;
     /**
      * @return The state of the cluster.
      * 
@@ -154,6 +164,13 @@ public final class GetBdsInstanceResult {
     private List<GetBdsInstanceWorkerNode> workerNodes;
 
     private GetBdsInstanceResult() {}
+    /**
+     * @return Cluster version details including bds and odh version information.
+     * 
+     */
+    public List<GetBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries() {
+        return this.bdsClusterVersionSummaries;
+    }
     public String bdsInstanceId() {
         return this.bdsInstanceId;
     }
@@ -256,6 +273,9 @@ public final class GetBdsInstanceResult {
     public Boolean isCloudSqlConfigured() {
         return this.isCloudSqlConfigured;
     }
+    public Boolean isForceRemoveEnabled() {
+        return this.isForceRemoveEnabled;
+    }
     public Boolean isForceStopJobs() {
         return this.isForceStopJobs;
     }
@@ -327,6 +347,12 @@ public final class GetBdsInstanceResult {
     public String osPatchVersion() {
         return this.osPatchVersion;
     }
+    public String removeNode() {
+        return this.removeNode;
+    }
+    public List<GetBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs() {
+        return this.startClusterShapeConfigs;
+    }
     /**
      * @return The state of the cluster.
      * 
@@ -364,6 +390,7 @@ public final class GetBdsInstanceResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries;
         private String bdsInstanceId;
         private String bootstrapScriptUrl;
         private List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
@@ -382,6 +409,7 @@ public final class GetBdsInstanceResult {
         private String id;
         private List<String> ignoreExistingNodesShapes;
         private Boolean isCloudSqlConfigured;
+        private Boolean isForceRemoveEnabled;
         private Boolean isForceStopJobs;
         private Boolean isHighAvailability;
         private Boolean isKafkaConfigured;
@@ -395,6 +423,8 @@ public final class GetBdsInstanceResult {
         private Integer numberOfNodes;
         private Integer numberOfNodesRequiringMaintenanceReboot;
         private String osPatchVersion;
+        private String removeNode;
+        private List<GetBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -403,6 +433,7 @@ public final class GetBdsInstanceResult {
         public Builder() {}
         public Builder(GetBdsInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bdsClusterVersionSummaries = defaults.bdsClusterVersionSummaries;
     	      this.bdsInstanceId = defaults.bdsInstanceId;
     	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
@@ -421,6 +452,7 @@ public final class GetBdsInstanceResult {
     	      this.id = defaults.id;
     	      this.ignoreExistingNodesShapes = defaults.ignoreExistingNodesShapes;
     	      this.isCloudSqlConfigured = defaults.isCloudSqlConfigured;
+    	      this.isForceRemoveEnabled = defaults.isForceRemoveEnabled;
     	      this.isForceStopJobs = defaults.isForceStopJobs;
     	      this.isHighAvailability = defaults.isHighAvailability;
     	      this.isKafkaConfigured = defaults.isKafkaConfigured;
@@ -434,6 +466,8 @@ public final class GetBdsInstanceResult {
     	      this.numberOfNodes = defaults.numberOfNodes;
     	      this.numberOfNodesRequiringMaintenanceReboot = defaults.numberOfNodesRequiringMaintenanceReboot;
     	      this.osPatchVersion = defaults.osPatchVersion;
+    	      this.removeNode = defaults.removeNode;
+    	      this.startClusterShapeConfigs = defaults.startClusterShapeConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -441,6 +475,17 @@ public final class GetBdsInstanceResult {
     	      this.workerNodes = defaults.workerNodes;
         }
 
+        @CustomType.Setter
+        public Builder bdsClusterVersionSummaries(List<GetBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries) {
+            if (bdsClusterVersionSummaries == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "bdsClusterVersionSummaries");
+            }
+            this.bdsClusterVersionSummaries = bdsClusterVersionSummaries;
+            return this;
+        }
+        public Builder bdsClusterVersionSummaries(GetBdsInstanceBdsClusterVersionSummary... bdsClusterVersionSummaries) {
+            return bdsClusterVersionSummaries(List.of(bdsClusterVersionSummaries));
+        }
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             if (bdsInstanceId == null) {
@@ -601,6 +646,14 @@ public final class GetBdsInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isForceRemoveEnabled(Boolean isForceRemoveEnabled) {
+            if (isForceRemoveEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "isForceRemoveEnabled");
+            }
+            this.isForceRemoveEnabled = isForceRemoveEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isForceStopJobs(Boolean isForceStopJobs) {
             if (isForceStopJobs == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceResult", "isForceStopJobs");
@@ -717,6 +770,25 @@ public final class GetBdsInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder removeNode(String removeNode) {
+            if (removeNode == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "removeNode");
+            }
+            this.removeNode = removeNode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder startClusterShapeConfigs(List<GetBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs) {
+            if (startClusterShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "startClusterShapeConfigs");
+            }
+            this.startClusterShapeConfigs = startClusterShapeConfigs;
+            return this;
+        }
+        public Builder startClusterShapeConfigs(GetBdsInstanceStartClusterShapeConfig... startClusterShapeConfigs) {
+            return startClusterShapeConfigs(List.of(startClusterShapeConfigs));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceResult", "state");
@@ -764,6 +836,7 @@ public final class GetBdsInstanceResult {
         }
         public GetBdsInstanceResult build() {
             final var _resultValue = new GetBdsInstanceResult();
+            _resultValue.bdsClusterVersionSummaries = bdsClusterVersionSummaries;
             _resultValue.bdsInstanceId = bdsInstanceId;
             _resultValue.bootstrapScriptUrl = bootstrapScriptUrl;
             _resultValue.cloudSqlDetails = cloudSqlDetails;
@@ -782,6 +855,7 @@ public final class GetBdsInstanceResult {
             _resultValue.id = id;
             _resultValue.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
             _resultValue.isCloudSqlConfigured = isCloudSqlConfigured;
+            _resultValue.isForceRemoveEnabled = isForceRemoveEnabled;
             _resultValue.isForceStopJobs = isForceStopJobs;
             _resultValue.isHighAvailability = isHighAvailability;
             _resultValue.isKafkaConfigured = isKafkaConfigured;
@@ -795,6 +869,8 @@ public final class GetBdsInstanceResult {
             _resultValue.numberOfNodes = numberOfNodes;
             _resultValue.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             _resultValue.osPatchVersion = osPatchVersion;
+            _resultValue.removeNode = removeNode;
+            _resultValue.startClusterShapeConfigs = startClusterShapeConfigs;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

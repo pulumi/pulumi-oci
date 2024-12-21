@@ -88,6 +88,45 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDrgAttachmentsResult> Invoke(GetDrgAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the `DrgAttachment` resource for the specified compartment. You can filter the
+        /// results by DRG, attached network, attachment type, DRG route table or
+        /// VCN route table.
+        /// 
+        /// The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
+        /// but you may request to list ALL attachments of ALL types.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrgAttachments = Oci.Core.GetDrgAttachments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AttachmentType = drgAttachmentAttachmentType,
+        ///         DisplayName = drgAttachmentDisplayName,
+        ///         DrgId = testDrg.Id,
+        ///         DrgRouteTableId = testDrgRouteTable.Id,
+        ///         NetworkId = testNetwork.Id,
+        ///         State = drgAttachmentState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrgAttachmentsResult> Invoke(GetDrgAttachmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgAttachmentsResult>("oci:Core/getDrgAttachments:getDrgAttachments", args ?? new GetDrgAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

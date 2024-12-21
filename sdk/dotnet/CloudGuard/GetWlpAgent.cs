@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetWlpAgentResult> Invoke(GetWlpAgentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWlpAgentResult>("oci:CloudGuard/getWlpAgent:getWlpAgent", args ?? new GetWlpAgentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWlpAgent = Oci.CloudGuard.GetWlpAgent.Invoke(new()
+        ///     {
+        ///         WlpAgentId = testWlpAgentOciCloudGuardWlpAgent.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWlpAgentResult> Invoke(GetWlpAgentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWlpAgentResult>("oci:CloudGuard/getWlpAgent:getWlpAgent", args ?? new GetWlpAgentInvokeArgs(), options.WithDefaults());
     }
 
 

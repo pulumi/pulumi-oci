@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDrgRouteTablesResult> Invoke(GetDrgRouteTablesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteTablesResult>("oci:Core/getDrgRouteTables:getDrgRouteTables", args ?? new GetDrgRouteTablesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the DRG route tables for the specified DRG.
+        /// 
+        /// Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrgRouteTables = Oci.Core.GetDrgRouteTables.Invoke(new()
+        ///     {
+        ///         DrgId = testDrg.Id,
+        ///         DisplayName = drgRouteTableDisplayName,
+        ///         ImportDrgRouteDistributionId = testDrgRouteDistribution.Id,
+        ///         State = drgRouteTableState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrgRouteTablesResult> Invoke(GetDrgRouteTablesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteTablesResult>("oci:Core/getDrgRouteTables:getDrgRouteTables", args ?? new GetDrgRouteTablesInvokeArgs(), options.WithDefaults());
     }
 
 

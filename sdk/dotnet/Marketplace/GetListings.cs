@@ -112,6 +112,57 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetListingsResult> Invoke(GetListingsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingsResult>("oci:Marketplace/getListings:getListings", args ?? new GetListingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
+        /// filtering according to listing attributes.
+        /// 
+        /// If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+        /// you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+        /// 
+        /// Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+        /// listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
+        /// The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
+        /// its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+        /// listing resource version, create a subscription by issuing a
+        /// [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
+        /// 
+        /// To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
+        /// Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListings = Oci.Marketplace.GetListings.Invoke(new()
+        ///     {
+        ///         Categories = listingCategory,
+        ///         CompartmentId = compartmentId,
+        ///         ImageId = testImage.Id,
+        ///         IsFeatured = listingIsFeatured,
+        ///         ListingId = testListing.Id,
+        ///         ListingTypes = listingListingTypes,
+        ///         Names = listingName,
+        ///         OperatingSystems = listingOperatingSystems,
+        ///         PackageType = listingPackageType,
+        ///         Pricings = listingPricing,
+        ///         PublisherId = testPublisher.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListingsResult> Invoke(GetListingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingsResult>("oci:Marketplace/getListings:getListings", args ?? new GetListingsInvokeArgs(), options.WithDefaults());
     }
 
 

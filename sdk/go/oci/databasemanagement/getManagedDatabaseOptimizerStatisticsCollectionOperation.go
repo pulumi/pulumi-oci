@@ -96,21 +96,11 @@ type GetManagedDatabaseOptimizerStatisticsCollectionOperationResult struct {
 }
 
 func GetManagedDatabaseOptimizerStatisticsCollectionOperationOutput(ctx *pulumi.Context, args GetManagedDatabaseOptimizerStatisticsCollectionOperationOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput, error) {
 			args := v.(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseOptimizerStatisticsCollectionOperationResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", args, GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput{}, options).(GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput), nil
 		}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput)
 }
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public static Output<GetEmailReturnPathsResult> Invoke(GetEmailReturnPathsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEmailReturnPathsResult>("oci:Email/getEmailReturnPaths:getEmailReturnPaths", args ?? new GetEmailReturnPathsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+        /// 
+        /// Lists email return paths in the specified compartment or emaildomain.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEmailReturnPaths = Oci.Email.GetEmailReturnPaths.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = emailReturnPathId,
+        ///         Name = emailReturnPathName,
+        ///         ParentResourceId = testResource.Id,
+        ///         State = emailReturnPathState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEmailReturnPathsResult> Invoke(GetEmailReturnPathsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEmailReturnPathsResult>("oci:Email/getEmailReturnPaths:getEmailReturnPaths", args ?? new GetEmailReturnPathsInvokeArgs(), options.WithDefaults());
     }
 
 

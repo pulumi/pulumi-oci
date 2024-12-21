@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpsecConnectionTunnelResult> Invoke(GetIpsecConnectionTunnelInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelResult>("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", args ?? new GetIpsecConnectionTunnelInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified IPSec connection's specified tunnel basic information.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpSecConnectionTunnel = Oci.Core.GetIpsecConnectionTunnel.Invoke(new()
+        ///     {
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpsecConnectionTunnelResult> Invoke(GetIpsecConnectionTunnelInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelResult>("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", args ?? new GetIpsecConnectionTunnelInvokeArgs(), options.WithDefaults());
     }
 
 

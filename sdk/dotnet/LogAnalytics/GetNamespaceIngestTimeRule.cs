@@ -66,6 +66,34 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceIngestTimeRuleResult> Invoke(GetNamespaceIngestTimeRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceIngestTimeRuleResult>("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", args ?? new GetNamespaceIngestTimeRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceIngestTimeRule = Oci.LogAnalytics.GetNamespaceIngestTimeRule.Invoke(new()
+        ///     {
+        ///         IngestTimeRuleId = testRule.Id,
+        ///         Namespace = namespaceIngestTimeRuleNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceIngestTimeRuleResult> Invoke(GetNamespaceIngestTimeRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceIngestTimeRuleResult>("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", args ?? new GetNamespaceIngestTimeRuleInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -96,21 +96,11 @@ type GetDomainsMyUserDbCredentialsResult struct {
 }
 
 func GetDomainsMyUserDbCredentialsOutput(ctx *pulumi.Context, args GetDomainsMyUserDbCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyUserDbCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsMyUserDbCredentialsResultOutput, error) {
 			args := v.(GetDomainsMyUserDbCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsMyUserDbCredentialsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsMyUserDbCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsMyUserDbCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsMyUserDbCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", args, GetDomainsMyUserDbCredentialsResultOutput{}, options).(GetDomainsMyUserDbCredentialsResultOutput), nil
 		}).(GetDomainsMyUserDbCredentialsResultOutput)
 }
 

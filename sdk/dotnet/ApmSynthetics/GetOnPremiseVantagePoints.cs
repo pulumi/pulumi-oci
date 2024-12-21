@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetOnPremiseVantagePointsResult> Invoke(GetOnPremiseVantagePointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointsResult>("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", args ?? new GetOnPremiseVantagePointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Returns a list of On-premise vantage points.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOnPremiseVantagePoints = Oci.ApmSynthetics.GetOnPremiseVantagePoints.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = onPremiseVantagePointDisplayName,
+        ///         Name = onPremiseVantagePointName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOnPremiseVantagePointsResult> Invoke(GetOnPremiseVantagePointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointsResult>("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", args ?? new GetOnPremiseVantagePointsInvokeArgs(), options.WithDefaults());
     }
 
 

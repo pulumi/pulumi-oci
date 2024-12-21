@@ -72,21 +72,11 @@ type GetJobAdvisorReportResult struct {
 }
 
 func GetJobAdvisorReportOutput(ctx *pulumi.Context, args GetJobAdvisorReportOutputArgs, opts ...pulumi.InvokeOption) GetJobAdvisorReportResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetJobAdvisorReportResultOutput, error) {
 			args := v.(GetJobAdvisorReportArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetJobAdvisorReportResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args, &rv, "", opts...)
-			if err != nil {
-				return GetJobAdvisorReportResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetJobAdvisorReportResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetJobAdvisorReportResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args, GetJobAdvisorReportResultOutput{}, options).(GetJobAdvisorReportResultOutput), nil
 		}).(GetJobAdvisorReportResultOutput)
 }
 

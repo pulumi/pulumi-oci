@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegationControlResult> Invoke(GetDelegationControlInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegationControlResult>("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", args ?? new GetDelegationControlInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Delegation Control resource in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Gets the Delegation Control associated with the specified Delegation Control ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegationControl = Oci.DelegateAccessControl.GetDelegationControl.Invoke(new()
+        ///     {
+        ///         DelegationControlId = testDelegationControlOciDelegateAccessControlDelegationControl.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegationControlResult> Invoke(GetDelegationControlInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegationControlResult>("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", args ?? new GetDelegationControlInvokeArgs(), options.WithDefaults());
     }
 
 

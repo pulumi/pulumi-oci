@@ -106,21 +106,11 @@ type LookupReplicaResult struct {
 }
 
 func LookupReplicaOutput(ctx *pulumi.Context, args LookupReplicaOutputArgs, opts ...pulumi.InvokeOption) LookupReplicaResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupReplicaResultOutput, error) {
 			args := v.(LookupReplicaArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupReplicaResult
-			secret, err := ctx.InvokePackageRaw("oci:Mysql/getReplica:getReplica", args, &rv, "", opts...)
-			if err != nil {
-				return LookupReplicaResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupReplicaResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupReplicaResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Mysql/getReplica:getReplica", args, LookupReplicaResultOutput{}, options).(LookupReplicaResultOutput), nil
 		}).(LookupReplicaResultOutput)
 }
 

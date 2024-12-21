@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCrossConnectPortSpeedShapeResult> Invoke(GetCrossConnectPortSpeedShapeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the available port speeds for cross-connects. You need this information
+        /// so you can specify your desired port speed (that is, shape) when you create a
+        /// cross-connect.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCrossConnectPortSpeedShapes = Oci.Core.GetCrossConnectPortSpeedShape.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCrossConnectPortSpeedShapeResult> Invoke(GetCrossConnectPortSpeedShapeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCrossConnectPortSpeedShapeResult>("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args ?? new GetCrossConnectPortSpeedShapeInvokeArgs(), options.WithDefaults());
     }
 
 

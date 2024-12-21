@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabasesAsmPropertiesResult> Invoke(GetManagedDatabasesAsmPropertiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Databases Asm Properties in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of ASM properties for the specified managedDatabaseId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabasesAsmProperties = Oci.DatabaseManagement.GetManagedDatabasesAsmProperties.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = managedDatabasesAsmPropertyName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabasesAsmPropertiesResult> Invoke(GetManagedDatabasesAsmPropertiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesInvokeArgs(), options.WithDefaults());
     }
 
 

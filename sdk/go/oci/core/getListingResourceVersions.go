@@ -37,21 +37,11 @@ type GetListingResourceVersionsResult struct {
 }
 
 func GetListingResourceVersionsOutput(ctx *pulumi.Context, args GetListingResourceVersionsOutputArgs, opts ...pulumi.InvokeOption) GetListingResourceVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetListingResourceVersionsResultOutput, error) {
 			args := v.(GetListingResourceVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetListingResourceVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getListingResourceVersions:getListingResourceVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetListingResourceVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetListingResourceVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetListingResourceVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getListingResourceVersions:getListingResourceVersions", args, GetListingResourceVersionsResultOutput{}, options).(GetListingResourceVersionsResultOutput), nil
 		}).(GetListingResourceVersionsResultOutput)
 }
 

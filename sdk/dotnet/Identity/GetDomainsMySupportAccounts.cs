@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMySupportAccountsResult> Invoke(GetDomainsMySupportAccountsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMySupportAccountsResult>("oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts", args ?? new GetDomainsMySupportAccountsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's own support account.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMySupportAccounts = Oci.Identity.GetDomainsMySupportAccounts.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySupportAccountCount = mySupportAccountMySupportAccountCount,
+        ///         MySupportAccountFilter = mySupportAccountMySupportAccountFilter,
+        ///         Authorization = mySupportAccountAuthorization,
+        ///         ResourceTypeSchemaVersion = mySupportAccountResourceTypeSchemaVersion,
+        ///         StartIndex = mySupportAccountStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMySupportAccountsResult> Invoke(GetDomainsMySupportAccountsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMySupportAccountsResult>("oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts", args ?? new GetDomainsMySupportAccountsInvokeArgs(), options.WithDefaults());
     }
 
 

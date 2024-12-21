@@ -64,7 +64,7 @@ type LookupBlockchainPlatformResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Blockchain Platform component details.
 	ComponentDetails []GetBlockchainPlatformComponentDetail `pulumi:"componentDetails"`
-	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 	ComputeShape string `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -115,21 +115,11 @@ type LookupBlockchainPlatformResult struct {
 }
 
 func LookupBlockchainPlatformOutput(ctx *pulumi.Context, args LookupBlockchainPlatformOutputArgs, opts ...pulumi.InvokeOption) LookupBlockchainPlatformResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBlockchainPlatformResultOutput, error) {
 			args := v.(LookupBlockchainPlatformArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBlockchainPlatformResult
-			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBlockchainPlatformResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBlockchainPlatformResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBlockchainPlatformResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args, LookupBlockchainPlatformResultOutput{}, options).(LookupBlockchainPlatformResultOutput), nil
 		}).(LookupBlockchainPlatformResultOutput)
 }
 
@@ -178,7 +168,7 @@ func (o LookupBlockchainPlatformResultOutput) ComponentDetails() GetBlockchainPl
 	}).(GetBlockchainPlatformComponentDetailArrayOutput)
 }
 
-// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 func (o LookupBlockchainPlatformResultOutput) ComputeShape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.ComputeShape }).(pulumi.StringOutput)
 }

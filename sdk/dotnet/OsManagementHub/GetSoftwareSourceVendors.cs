@@ -68,6 +68,35 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourceVendorsResult> Invoke(GetSoftwareSourceVendorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceVendorsResult>("oci:OsManagementHub/getSoftwareSourceVendors:getSoftwareSourceVendors", args ?? new GetSoftwareSourceVendorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists available software source vendors. Filter the list against a variety of criteria including but not limited
+        /// to its name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceVendors = Oci.OsManagementHub.GetSoftwareSourceVendors.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = softwareSourceVendorName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceVendorsResult> Invoke(GetSoftwareSourceVendorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceVendorsResult>("oci:OsManagementHub/getSoftwareSourceVendors:getSoftwareSourceVendors", args ?? new GetSoftwareSourceVendorsInvokeArgs(), options.WithDefaults());
     }
 
 

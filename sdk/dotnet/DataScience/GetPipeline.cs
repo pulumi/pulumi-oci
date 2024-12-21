@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetPipelineResult> Invoke(GetPipelineInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPipelineResult>("oci:DataScience/getPipeline:getPipeline", args ?? new GetPipelineInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Gets a Pipeline by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPipeline = Oci.DataScience.GetPipeline.Invoke(new()
+        ///     {
+        ///         PipelineId = testPipelineOciDatasciencePipeline.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPipelineResult> Invoke(GetPipelineInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPipelineResult>("oci:DataScience/getPipeline:getPipeline", args ?? new GetPipelineInvokeArgs(), options.WithDefaults());
     }
 
 

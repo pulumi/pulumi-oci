@@ -58,7 +58,9 @@ type LookupBdsInstanceArgs struct {
 
 // A collection of values returned by getBdsInstance.
 type LookupBdsInstanceResult struct {
-	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummaries []GetBdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummaries"`
+	BdsInstanceId              string                                   `pulumi:"bdsInstanceId"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -88,6 +90,7 @@ type LookupBdsInstanceResult struct {
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured bool `pulumi:"isCloudSqlConfigured"`
+	IsForceRemoveEnabled bool `pulumi:"isForceRemoveEnabled"`
 	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
@@ -107,8 +110,10 @@ type LookupBdsInstanceResult struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          string `pulumi:"osPatchVersion"`
+	NumberOfNodesRequiringMaintenanceReboot int                                     `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          string                                  `pulumi:"osPatchVersion"`
+	RemoveNode                              string                                  `pulumi:"removeNode"`
+	StartClusterShapeConfigs                []GetBdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -120,21 +125,11 @@ type LookupBdsInstanceResult struct {
 }
 
 func LookupBdsInstanceOutput(ctx *pulumi.Context, args LookupBdsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBdsInstanceResultOutput, error) {
 			args := v.(LookupBdsInstanceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBdsInstanceResult
-			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstance:getBdsInstance", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBdsInstanceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBdsInstanceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBdsInstanceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:BigDataService/getBdsInstance:getBdsInstance", args, LookupBdsInstanceResultOutput{}, options).(LookupBdsInstanceResultOutput), nil
 		}).(LookupBdsInstanceResultOutput)
 }
 
@@ -161,6 +156,13 @@ func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutput() LookupB
 
 func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutputWithContext(ctx context.Context) LookupBdsInstanceResultOutput {
 	return o
+}
+
+// Cluster version details including bds and odh version information.
+func (o LookupBdsInstanceResultOutput) BdsClusterVersionSummaries() GetBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceBdsClusterVersionSummary {
+		return v.BdsClusterVersionSummaries
+	}).(GetBdsInstanceBdsClusterVersionSummaryArrayOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) BdsInstanceId() pulumi.StringOutput {
@@ -247,6 +249,10 @@ func (o LookupBdsInstanceResultOutput) IsCloudSqlConfigured() pulumi.BoolOutput 
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
 }
 
+func (o LookupBdsInstanceResultOutput) IsForceRemoveEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsForceRemoveEnabled }).(pulumi.BoolOutput)
+}
+
 func (o LookupBdsInstanceResultOutput) IsForceStopJobs() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsForceStopJobs }).(pulumi.BoolOutput)
 }
@@ -305,6 +311,16 @@ func (o LookupBdsInstanceResultOutput) NumberOfNodesRequiringMaintenanceReboot()
 
 func (o LookupBdsInstanceResultOutput) OsPatchVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.OsPatchVersion }).(pulumi.StringOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) RemoveNode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.RemoveNode }).(pulumi.StringOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) StartClusterShapeConfigs() GetBdsInstanceStartClusterShapeConfigArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceStartClusterShapeConfig {
+		return v.StartClusterShapeConfigs
+	}).(GetBdsInstanceStartClusterShapeConfigArrayOutput)
 }
 
 // The state of the cluster.

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetProjectsResult> Invoke(GetProjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("oci:DataScience/getProjects:getProjects", args ?? new GetProjectsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Projects in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Lists projects in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProjects = Oci.DataScience.GetProjects.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = projectCreatedBy,
+        ///         DisplayName = projectDisplayName,
+        ///         Id = projectId,
+        ///         State = projectState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProjectsResult> Invoke(GetProjectsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("oci:DataScience/getProjects:getProjects", args ?? new GetProjectsInvokeArgs(), options.WithDefaults());
     }
 
 

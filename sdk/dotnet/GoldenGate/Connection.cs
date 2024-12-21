@@ -635,7 +635,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslCrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         /// </summary>
         [Output("sslKey")]
         public Output<string?> SslKey { get; private set; } = null!;
@@ -1482,7 +1482,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslKey;
 
         /// <summary>
-        /// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         /// </summary>
         public Input<string>? SslKey
         {
@@ -2311,7 +2311,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslKey;
 
         /// <summary>
-        /// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+        /// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         /// </summary>
         public Input<string>? SslKey
         {

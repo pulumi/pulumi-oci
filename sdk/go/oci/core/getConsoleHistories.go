@@ -84,21 +84,11 @@ type GetConsoleHistoriesResult struct {
 }
 
 func GetConsoleHistoriesOutput(ctx *pulumi.Context, args GetConsoleHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetConsoleHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetConsoleHistoriesResultOutput, error) {
 			args := v.(GetConsoleHistoriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetConsoleHistoriesResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getConsoleHistories:getConsoleHistories", args, &rv, "", opts...)
-			if err != nil {
-				return GetConsoleHistoriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetConsoleHistoriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetConsoleHistoriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getConsoleHistories:getConsoleHistories", args, GetConsoleHistoriesResultOutput{}, options).(GetConsoleHistoriesResultOutput), nil
 		}).(GetConsoleHistoriesResultOutput)
 }
 

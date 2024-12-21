@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetSubscribedServicesResult> Invoke(GetSubscribedServicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscribedServicesResult>("oci:OneSubsription/getSubscribedServices:getSubscribedServices", args ?? new GetSubscribedServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This list API returns all subscribed services for given Subscription ID
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscribedServices = Oci.OneSubsription.GetSubscribedServices.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         OrderLineId = testOrderLine.Id,
+        ///         Status = subscribedServiceStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscribedServicesResult> Invoke(GetSubscribedServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscribedServicesResult>("oci:OneSubsription/getSubscribedServices:getSubscribedServices", args ?? new GetSubscribedServicesInvokeArgs(), options.WithDefaults());
     }
 
 

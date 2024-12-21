@@ -68,6 +68,35 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// </summary>
         public static Output<GetDetectionProjectsResult> Invoke(GetDetectionProjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectionProjectsResult>("oci:AiAnomalyDetection/getDetectionProjects:getDetectionProjects", args ?? new GetDetectionProjectsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+        /// 
+        /// Returns a list of  Projects.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProjects = Oci.AiAnomalyDetection.GetDetectionProjects.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = projectDisplayName,
+        ///         State = projectState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDetectionProjectsResult> Invoke(GetDetectionProjectsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectionProjectsResult>("oci:AiAnomalyDetection/getDetectionProjects:getDetectionProjects", args ?? new GetDetectionProjectsInvokeArgs(), options.WithDefaults());
     }
 
 

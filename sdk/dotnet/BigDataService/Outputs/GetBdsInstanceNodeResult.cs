@@ -70,6 +70,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int Ocpus;
         /// <summary>
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        /// </summary>
+        public readonly string OdhVersion;
+        /// <summary>
         /// BDS-assigned Operating System version for the node.
         /// </summary>
         public readonly string OsVersion;
@@ -128,6 +132,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             int ocpus,
 
+            string odhVersion,
+
             string osVersion,
 
             string shape,
@@ -156,6 +162,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             NodeType = nodeType;
             Nvmes = nvmes;
             Ocpus = ocpus;
+            OdhVersion = odhVersion;
             OsVersion = osVersion;
             Shape = shape;
             SshFingerprint = sshFingerprint;

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetProjectRepositorySettingResult> Invoke(GetProjectRepositorySettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectRepositorySettingResult>("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", args ?? new GetProjectRepositorySettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a project's repository settings details.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProjectRepositorySetting = Oci.DevOps.GetProjectRepositorySetting.Invoke(new()
+        ///     {
+        ///         ProjectId = testProject.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProjectRepositorySettingResult> Invoke(GetProjectRepositorySettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProjectRepositorySettingResult>("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", args ?? new GetProjectRepositorySettingInvokeArgs(), options.WithDefaults());
     }
 
 

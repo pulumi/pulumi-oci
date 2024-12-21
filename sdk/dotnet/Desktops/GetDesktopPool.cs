@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public static Output<GetDesktopPoolResult> Invoke(GetDesktopPoolInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolResult>("oci:Desktops/getDesktopPool:getDesktopPool", args ?? new GetDesktopPoolInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
+        /// 
+        /// Returns information about the desktop pool including all configuration parameters and the current state.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDesktopPool = Oci.Desktops.GetDesktopPool.Invoke(new()
+        ///     {
+        ///         DesktopPoolId = testDesktopPoolOciDesktopsDesktopPool.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDesktopPoolResult> Invoke(GetDesktopPoolInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDesktopPoolResult>("oci:Desktops/getDesktopPool:getDesktopPool", args ?? new GetDesktopPoolInvokeArgs(), options.WithDefaults());
     }
 
 

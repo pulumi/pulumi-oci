@@ -79,21 +79,11 @@ type GetZprPoliciesResult struct {
 }
 
 func GetZprPoliciesOutput(ctx *pulumi.Context, args GetZprPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetZprPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetZprPoliciesResultOutput, error) {
 			args := v.(GetZprPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetZprPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:Zpr/getZprPolicies:getZprPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetZprPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetZprPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetZprPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Zpr/getZprPolicies:getZprPolicies", args, GetZprPoliciesResultOutput{}, options).(GetZprPoliciesResultOutput), nil
 		}).(GetZprPoliciesResultOutput)
 }
 

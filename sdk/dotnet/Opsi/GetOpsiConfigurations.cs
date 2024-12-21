@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOpsiConfigurationsResult> Invoke(GetOpsiConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpsiConfigurationsResult>("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", args ?? new GetOpsiConfigurationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of OPSI configuration resources based on the query parameters specified.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOpsiConfigurations = Oci.Opsi.GetOpsiConfigurations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opsiConfigurationDisplayName,
+        ///         OpsiConfigTypes = opsiConfigurationOpsiConfigType,
+        ///         States = opsiConfigurationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOpsiConfigurationsResult> Invoke(GetOpsiConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOpsiConfigurationsResult>("oci:Opsi/getOpsiConfigurations:getOpsiConfigurations", args ?? new GetOpsiConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

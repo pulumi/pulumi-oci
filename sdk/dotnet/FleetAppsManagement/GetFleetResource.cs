@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetFleetResourceResult> Invoke(GetFleetResourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetResourceResult>("oci:FleetAppsManagement/getFleetResource:getFleetResource", args ?? new GetFleetResourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a Fleet Resource by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetResource = Oci.FleetAppsManagement.GetFleetResource.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         FleetResourceId = testResource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetResourceResult> Invoke(GetFleetResourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetResourceResult>("oci:FleetAppsManagement/getFleetResource:getFleetResource", args ?? new GetFleetResourceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -92,6 +92,47 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetObjectVersionsResult> Invoke(GetObjectVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectVersionsResult>("oci:ObjectStorage/getObjectVersions:getObjectVersions", args ?? new GetObjectVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Lists the object versions in a bucket.
+        /// 
+        /// ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
+        /// more object versions, use the returned `opc-next-page` value with the `page` request parameter.
+        /// 
+        /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testObjectVersions = Oci.ObjectStorage.GetObjectVersions.Invoke(new()
+        ///     {
+        ///         Bucket = objectVersionBucket,
+        ///         Namespace = objectVersionNamespace,
+        ///         Delimiter = objectVersionDelimiter,
+        ///         End = objectVersionEnd,
+        ///         Fields = objectVersionFields,
+        ///         Prefix = objectVersionPrefix,
+        ///         Start = objectVersionStart,
+        ///         StartAfter = objectVersionStartAfter,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetObjectVersionsResult> Invoke(GetObjectVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectVersionsResult>("oci:ObjectStorage/getObjectVersions:getObjectVersions", args ?? new GetObjectVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

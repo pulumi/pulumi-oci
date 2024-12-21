@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCaptureFiltersResult> Invoke(GetCaptureFiltersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCaptureFiltersResult>("oci:Core/getCaptureFilters:getCaptureFilters", args ?? new GetCaptureFiltersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the capture filters in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCaptureFilters = Oci.Core.GetCaptureFilters.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = captureFilterDisplayName,
+        ///         FilterType = captureFilterFilterType,
+        ///         State = captureFilterState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCaptureFiltersResult> Invoke(GetCaptureFiltersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCaptureFiltersResult>("oci:Core/getCaptureFilters:getCaptureFilters", args ?? new GetCaptureFiltersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoriesResult> Invoke(GetRepositoriesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoriesResult>("oci:DevOps/getRepositories:getRepositories", args ?? new GetRepositoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of repositories given a compartment ID or a project ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositories = Oci.DevOps.GetRepositories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = repositoryName,
+        ///         ProjectId = testProject.Id,
+        ///         RepositoryId = testRepository.Id,
+        ///         State = repositoryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoriesResult> Invoke(GetRepositoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoriesResult>("oci:DevOps/getRepositories:getRepositories", args ?? new GetRepositoriesInvokeArgs(), options.WithDefaults());
     }
 
 

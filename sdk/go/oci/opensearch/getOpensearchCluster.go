@@ -151,21 +151,11 @@ type GetOpensearchClusterResult struct {
 }
 
 func GetOpensearchClusterOutput(ctx *pulumi.Context, args GetOpensearchClusterOutputArgs, opts ...pulumi.InvokeOption) GetOpensearchClusterResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOpensearchClusterResultOutput, error) {
 			args := v.(GetOpensearchClusterArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOpensearchClusterResult
-			secret, err := ctx.InvokePackageRaw("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args, &rv, "", opts...)
-			if err != nil {
-				return GetOpensearchClusterResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOpensearchClusterResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOpensearchClusterResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args, GetOpensearchClusterResultOutput{}, options).(GetOpensearchClusterResultOutput), nil
 		}).(GetOpensearchClusterResultOutput)
 }
 

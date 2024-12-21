@@ -92,21 +92,11 @@ type LookupApiResult struct {
 }
 
 func LookupApiOutput(ctx *pulumi.Context, args LookupApiOutputArgs, opts ...pulumi.InvokeOption) LookupApiResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupApiResultOutput, error) {
 			args := v.(LookupApiArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupApiResult
-			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getApi:getApi", args, &rv, "", opts...)
-			if err != nil {
-				return LookupApiResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupApiResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupApiResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApiGateway/getApi:getApi", args, LookupApiResultOutput{}, options).(LookupApiResultOutput), nil
 		}).(LookupApiResultOutput)
 }
 

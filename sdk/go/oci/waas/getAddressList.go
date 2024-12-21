@@ -80,21 +80,11 @@ type LookupAddressListResult struct {
 }
 
 func LookupAddressListOutput(ctx *pulumi.Context, args LookupAddressListOutputArgs, opts ...pulumi.InvokeOption) LookupAddressListResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAddressListResultOutput, error) {
 			args := v.(LookupAddressListArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAddressListResult
-			secret, err := ctx.InvokePackageRaw("oci:Waas/getAddressList:getAddressList", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAddressListResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAddressListResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAddressListResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waas/getAddressList:getAddressList", args, LookupAddressListResultOutput{}, options).(LookupAddressListResultOutput), nil
 		}).(LookupAddressListResultOutput)
 }
 

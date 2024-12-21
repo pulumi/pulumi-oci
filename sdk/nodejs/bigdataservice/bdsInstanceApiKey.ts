@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     passphrase: bdsInstanceApiKeyPassphrase,
  *     userId: testUser.id,
  *     defaultRegion: bdsInstanceApiKeyDefaultRegion,
+ *     domainOcid: bdsInstanceApiKeyDomainOcid,
  * });
  * ```
  *
@@ -62,6 +63,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
 
     /**
      * The OCID of the cluster.
+     * <<<<<<< ours
      */
     public readonly bdsInstanceId!: pulumi.Output<string>;
     /**
@@ -69,11 +71,16 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
      */
     public readonly defaultRegion!: pulumi.Output<string>;
     /**
+     * Identity domain OCID , where user is present. For default domain , this field will be optional.
+     */
+    public readonly domainOcid!: pulumi.Output<string>;
+    /**
      * The fingerprint that corresponds to the public API key requested.
      */
     public /*out*/ readonly fingerprint!: pulumi.Output<string>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * >>>>>>> theirs
      */
     public readonly keyAlias!: pulumi.Output<string>;
     /**
@@ -120,6 +127,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
             const state = argsOrState as BdsInstanceApiKeyState | undefined;
             resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
             resourceInputs["defaultRegion"] = state ? state.defaultRegion : undefined;
+            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
             resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
             resourceInputs["keyAlias"] = state ? state.keyAlias : undefined;
             resourceInputs["passphrase"] = state ? state.passphrase : undefined;
@@ -144,6 +152,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
             }
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
             resourceInputs["defaultRegion"] = args ? args.defaultRegion : undefined;
+            resourceInputs["domainOcid"] = args ? args.domainOcid : undefined;
             resourceInputs["keyAlias"] = args ? args.keyAlias : undefined;
             resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
             resourceInputs["userId"] = args ? args.userId : undefined;
@@ -166,6 +175,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
 export interface BdsInstanceApiKeyState {
     /**
      * The OCID of the cluster.
+     * <<<<<<< ours
      */
     bdsInstanceId?: pulumi.Input<string>;
     /**
@@ -173,11 +183,16 @@ export interface BdsInstanceApiKeyState {
      */
     defaultRegion?: pulumi.Input<string>;
     /**
+     * Identity domain OCID , where user is present. For default domain , this field will be optional.
+     */
+    domainOcid?: pulumi.Input<string>;
+    /**
      * The fingerprint that corresponds to the public API key requested.
      */
     fingerprint?: pulumi.Input<string>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * >>>>>>> theirs
      */
     keyAlias?: pulumi.Input<string>;
     /**
@@ -216,6 +231,7 @@ export interface BdsInstanceApiKeyState {
 export interface BdsInstanceApiKeyArgs {
     /**
      * The OCID of the cluster.
+     * <<<<<<< ours
      */
     bdsInstanceId: pulumi.Input<string>;
     /**
@@ -223,7 +239,12 @@ export interface BdsInstanceApiKeyArgs {
      */
     defaultRegion?: pulumi.Input<string>;
     /**
+     * Identity domain OCID , where user is present. For default domain , this field will be optional.
+     */
+    domainOcid?: pulumi.Input<string>;
+    /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * >>>>>>> theirs
      */
     keyAlias: pulumi.Input<string>;
     /**

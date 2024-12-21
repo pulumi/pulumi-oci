@@ -26,7 +26,7 @@ class GetBdsInstanceApiKeyResult:
     """
     A collection of values returned by getBdsInstanceApiKey.
     """
-    def __init__(__self__, api_key_id=None, bds_instance_id=None, default_region=None, fingerprint=None, id=None, key_alias=None, passphrase=None, pemfilepath=None, state=None, tenant_id=None, time_created=None, user_id=None):
+    def __init__(__self__, api_key_id=None, bds_instance_id=None, default_region=None, domain_ocid=None, fingerprint=None, id=None, key_alias=None, passphrase=None, pemfilepath=None, state=None, tenant_id=None, time_created=None, user_id=None):
         if api_key_id and not isinstance(api_key_id, str):
             raise TypeError("Expected argument 'api_key_id' to be a str")
         pulumi.set(__self__, "api_key_id", api_key_id)
@@ -36,6 +36,9 @@ class GetBdsInstanceApiKeyResult:
         if default_region and not isinstance(default_region, str):
             raise TypeError("Expected argument 'default_region' to be a str")
         pulumi.set(__self__, "default_region", default_region)
+        if domain_ocid and not isinstance(domain_ocid, str):
+            raise TypeError("Expected argument 'domain_ocid' to be a str")
+        pulumi.set(__self__, "domain_ocid", domain_ocid)
         if fingerprint and not isinstance(fingerprint, str):
             raise TypeError("Expected argument 'fingerprint' to be a str")
         pulumi.set(__self__, "fingerprint", fingerprint)
@@ -79,8 +82,18 @@ class GetBdsInstanceApiKeyResult:
     def default_region(self) -> str:
         """
         The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+        >>>>>>> theirs
         """
         return pulumi.get(self, "default_region")
+
+    @property
+    @pulumi.getter(name="domainOcid")
+    def domain_ocid(self) -> str:
+        """
+        Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+        =======
+        """
+        return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
@@ -161,6 +174,7 @@ class AwaitableGetBdsInstanceApiKeyResult(GetBdsInstanceApiKeyResult):
             api_key_id=self.api_key_id,
             bds_instance_id=self.bds_instance_id,
             default_region=self.default_region,
+            domain_ocid=self.domain_ocid,
             fingerprint=self.fingerprint,
             id=self.id,
             key_alias=self.key_alias,
@@ -204,6 +218,7 @@ def get_bds_instance_api_key(api_key_id: Optional[str] = None,
         api_key_id=pulumi.get(__ret__, 'api_key_id'),
         bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
         default_region=pulumi.get(__ret__, 'default_region'),
+        domain_ocid=pulumi.get(__ret__, 'domain_ocid'),
         fingerprint=pulumi.get(__ret__, 'fingerprint'),
         id=pulumi.get(__ret__, 'id'),
         key_alias=pulumi.get(__ret__, 'key_alias'),
@@ -244,6 +259,7 @@ def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[str]] = No
         api_key_id=pulumi.get(__response__, 'api_key_id'),
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
         default_region=pulumi.get(__response__, 'default_region'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
         fingerprint=pulumi.get(__response__, 'fingerprint'),
         id=pulumi.get(__response__, 'id'),
         key_alias=pulumi.get(__response__, 'key_alias'),

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetAwrHubAwrSnapshotsResult> Invoke(GetAwrHubAwrSnapshotsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubAwrSnapshotsResult>("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", args ?? new GetAwrHubAwrSnapshotsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Awr Hub Awr Snapshots in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+        /// The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAwrHubAwrSnapshots = Oci.Opsi.GetAwrHubAwrSnapshots.Invoke(new()
+        ///     {
+        ///         AwrHubId = testAwrHub.Id,
+        ///         AwrSourceDatabaseIdentifier = awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
+        ///         TimeGreaterThanOrEqualTo = awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = awrHubAwrSnapshotTimeLessThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAwrHubAwrSnapshotsResult> Invoke(GetAwrHubAwrSnapshotsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubAwrSnapshotsResult>("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", args ?? new GetAwrHubAwrSnapshotsInvokeArgs(), options.WithDefaults());
     }
 
 

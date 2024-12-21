@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalClusterResult> Invoke(GetExternalClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalClusterResult>("oci:DatabaseManagement/getExternalCluster:getExternalCluster", args ?? new GetExternalClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external cluster specified by `externalClusterId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalCluster = Oci.DatabaseManagement.GetExternalCluster.Invoke(new()
+        ///     {
+        ///         ExternalClusterId = testExternalClusterOciDatabaseManagementExternalCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalClusterResult> Invoke(GetExternalClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalClusterResult>("oci:DatabaseManagement/getExternalCluster:getExternalCluster", args ?? new GetExternalClusterInvokeArgs(), options.WithDefaults());
     }
 
 

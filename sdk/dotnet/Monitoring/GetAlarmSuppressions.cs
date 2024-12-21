@@ -94,6 +94,48 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public static Output<GetAlarmSuppressionsResult> Invoke(GetAlarmSuppressionsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlarmSuppressionsResult>("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args ?? new GetAlarmSuppressionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+        /// 
+        /// Lists alarm suppressions for the specified alarm. For more information, see
+        /// [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
+        /// 
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+        /// 
+        /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        /// or transactions, per second (TPS) for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlarmSuppressions = Oci.Monitoring.GetAlarmSuppressions.Invoke(new()
+        ///     {
+        ///         AlarmId = testAlarm.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmSuppressionCompartmentIdInSubtree,
+        ///         DisplayName = alarmSuppressionDisplayName,
+        ///         IsAllSuppressions = alarmSuppressionIsAllSuppressions,
+        ///         Level = alarmSuppressionLevel,
+        ///         State = alarmSuppressionState,
+        ///         TargetType = alarmSuppressionTargetType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlarmSuppressionsResult> Invoke(GetAlarmSuppressionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlarmSuppressionsResult>("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args ?? new GetAlarmSuppressionsInvokeArgs(), options.WithDefaults());
     }
 
 

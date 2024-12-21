@@ -1272,14 +1272,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sslCrl;
     }
     /**
-     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      * 
      */
     @Export(name="sslKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKey;
 
     /**
-     * @return (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+     * @return (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      * 
      */
     public Output<Optional<String>> sslKey() {

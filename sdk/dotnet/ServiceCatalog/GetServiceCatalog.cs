@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceCatalog
         /// </summary>
         public static Output<GetServiceCatalogResult> Invoke(GetServiceCatalogInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogResult>("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", args ?? new GetServiceCatalogInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
+        /// 
+        /// Gets detailed information about the service catalog including name, compartmentId
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceCatalog = Oci.ServiceCatalog.GetServiceCatalog.Invoke(new()
+        ///     {
+        ///         ServiceCatalogId = testServiceCatalogOciServiceCatalogServiceCatalog.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceCatalogResult> Invoke(GetServiceCatalogInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogResult>("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", args ?? new GetServiceCatalogInvokeArgs(), options.WithDefaults());
     }
 
 

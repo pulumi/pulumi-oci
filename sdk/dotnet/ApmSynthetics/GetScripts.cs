@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetScriptsResult> Invoke(GetScriptsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetScriptsResult>("oci:ApmSynthetics/getScripts:getScripts", args ?? new GetScriptsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Returns a list of scripts.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testScripts = Oci.ApmSynthetics.GetScripts.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ContentType = scriptContentType,
+        ///         DisplayName = scriptDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetScriptsResult> Invoke(GetScriptsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetScriptsResult>("oci:ApmSynthetics/getScripts:getScripts", args ?? new GetScriptsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("oci:Identity/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Gets the specified user's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUser = Oci.Identity.GetUser.Invoke(new()
+        ///     {
+        ///         UserId = testUserOciIdentityUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserResult> Invoke(GetUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("oci:Identity/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());
     }
 
 

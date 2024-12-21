@@ -5093,6 +5093,17 @@ export namespace BigDataService {
         value: pulumi.Input<number>;
     }
 
+    export interface BdsInstanceBdsClusterVersionSummary {
+        /**
+         * BDS version to be used for cluster creation
+         */
+        bdsVersion: pulumi.Input<string>;
+        /**
+         * ODH version to be used for cluster creation
+         */
+        odhVersion?: pulumi.Input<string>;
+    }
+
     export interface BdsInstanceCloudSqlDetail {
         /**
          * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -5272,6 +5283,82 @@ export namespace BigDataService {
         ocpus?: pulumi.Input<number>;
     }
 
+    export interface BdsInstanceIdentityConfigurationIamUserSyncConfiguration {
+        /**
+         * whether to append POSIX attributes to IAM users
+         */
+        isPosixAttributesAdditionRequired?: pulumi.Input<boolean>;
+        /**
+         * Lifecycle state of the UPST config
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails {
+        /**
+         * (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+         */
+        isPosixAttributesAdditionRequired?: pulumi.Input<boolean>;
+    }
+
+    export interface BdsInstanceIdentityConfigurationUpstConfiguration {
+        /**
+         * The kerberos keytab content used for creating identity propagation trust config, in base64 format
+         */
+        keytabContent?: pulumi.Input<string>;
+        /**
+         * Master Encryption key used for encrypting token exchange keytab.
+         */
+        masterEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * Secret ID for token exchange keytab
+         */
+        secretId?: pulumi.Input<string>;
+        /**
+         * Lifecycle state of the UPST config
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+         */
+        timeTokenExchangeKeytabLastRefreshed?: pulumi.Input<string>;
+        /**
+         * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * Token exchange kerberos Principal name in cluster
+         */
+        tokenExchangePrincipalName?: pulumi.Input<string>;
+        /**
+         * The instance OCID of the node, which is the resource from which the node backup was acquired.
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface BdsInstanceIdentityConfigurationUpstConfigurationDetails {
+        /**
+         * (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+         */
+        masterEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
     export interface BdsInstanceKafkaBrokerNode {
         /**
          * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -5347,11 +5434,11 @@ export namespace BigDataService {
 
     export interface BdsInstanceNetworkConfig {
         /**
-         * The CIDR IP address block of the VCN.
+         * (Updatable) The CIDR IP address block of the VCN.
          */
         cidrBlock?: pulumi.Input<string>;
         /**
-         * A boolean flag whether to configure a NAT gateway.
+         * (Updatable) A boolean flag whether to configure a NAT gateway.
          */
         isNatGatewayRequired?: pulumi.Input<boolean>;
     }
@@ -5413,6 +5500,10 @@ export namespace BigDataService {
          * The total number of OCPUs available to the node.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         */
+        odhVersion?: pulumi.Input<string>;
         /**
          * BDS-assigned Operating System version for the node.
          */
@@ -5506,6 +5597,14 @@ export namespace BigDataService {
          */
         patchingConfigStrategy: pulumi.Input<string>;
         /**
+         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         */
+        toleranceThresholdPerBatch?: pulumi.Input<number>;
+        /**
+         * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         */
+        toleranceThresholdPerDomain?: pulumi.Input<number>;
+        /**
          * The wait time between batches in seconds.
          */
         waitTimeBetweenBatchInSeconds?: pulumi.Input<number>;
@@ -5513,6 +5612,21 @@ export namespace BigDataService {
          * The wait time between AD/FD in seconds.
          */
         waitTimeBetweenDomainInSeconds?: pulumi.Input<number>;
+    }
+
+    export interface BdsInstanceStartClusterShapeConfig {
+        nodeTypeShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig>[]>;
+    }
+
+    export interface BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+        /**
+         * BDS instance node type
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * Shape of the node
+         */
+        shape?: pulumi.Input<string>;
     }
 
     export interface BdsInstanceUtilNode {
@@ -5600,6 +5714,18 @@ export namespace BigDataService {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetBdsClusterVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsClusterVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetBdsInstanceApiKeysFilter {
         name: string;
         regex?: boolean;
@@ -5619,6 +5745,18 @@ export namespace BigDataService {
     }
 
     export interface GetBdsInstanceGetOsPatchFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceIdentityConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceIdentityConfigurationsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -23136,7 +23274,7 @@ export namespace DataScience {
 
     export interface ModelCustomMetadataList {
         /**
-         * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+         * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
          */
         category?: pulumi.Input<string>;
         /**
@@ -23150,7 +23288,7 @@ export namespace DataScience {
          * * libraryVersion
          * * estimatorClass
          * * hyperParameters
-         * * testartifactresults
+         * * testArtifactresults
          */
         key?: pulumi.Input<string>;
         /**
@@ -23163,7 +23301,7 @@ export namespace DataScience {
 
     export interface ModelDefinedMetadataList {
         /**
-         * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+         * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
          */
         category?: pulumi.Input<string>;
         /**
@@ -23177,7 +23315,7 @@ export namespace DataScience {
          * * libraryVersion
          * * estimatorClass
          * * hyperParameters
-         * * testartifactresults
+         * * testArtifactresults
          */
         key?: pulumi.Input<string>;
         /**
@@ -23303,6 +23441,10 @@ export namespace DataScience {
          * (Updatable) Details for the model-deployment instance shape configuration.
          */
         modelDeploymentInstanceShapeConfigDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails>;
+        /**
+         * (Updatable) The OCID of a Data Science private endpoint.
+         */
+        privateEndpointId?: pulumi.Input<string>;
         /**
          * (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
          */
@@ -38942,6 +39084,78 @@ export namespace GoldenGate {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetPipelineRunningProcessesFilter {
+        /**
+         * An object's Display Name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPipelineRunningProcessesFilterArgs {
+        /**
+         * An object's Display Name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPipelineSchemaTablesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPipelineSchemaTablesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPipelineSchemasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPipelineSchemasFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPipelinesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPipelinesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRecipesFilter {
+        /**
+         * An object's Display Name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRecipesFilterArgs {
+        /**
+         * An object's Display Name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetTrailFilesFilter {
         name: string;
         regex?: boolean;
@@ -38966,6 +39180,90 @@ export namespace GoldenGate {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface PipelineLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface PipelineMappingRule {
+        /**
+         * Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+         */
+        mappingType?: pulumi.Input<string>;
+        /**
+         * The source schema/table combination for replication to target.
+         */
+        source?: pulumi.Input<string>;
+        /**
+         * The target schema/table combination for replication from the source.
+         */
+        target?: pulumi.Input<string>;
+    }
+
+    export interface PipelineProcessOptions {
+        /**
+         * (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+         */
+        initialDataLoad: pulumi.Input<inputs.GoldenGate.PipelineProcessOptionsInitialDataLoad>;
+        /**
+         * (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+         */
+        replicateSchemaChange: pulumi.Input<inputs.GoldenGate.PipelineProcessOptionsReplicateSchemaChange>;
+        /**
+         * (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+         */
+        shouldRestartOnFailure: pulumi.Input<string>;
+    }
+
+    export interface PipelineProcessOptionsInitialDataLoad {
+        /**
+         * (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+         */
+        actionOnExistingTable?: pulumi.Input<string>;
+        /**
+         * (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+         */
+        isInitialLoad: pulumi.Input<string>;
+    }
+
+    export interface PipelineProcessOptionsReplicateSchemaChange {
+        /**
+         * (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+         */
+        actionOnDdlError?: pulumi.Input<string>;
+        /**
+         * (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+         */
+        actionOnDmlError?: pulumi.Input<string>;
+        /**
+         * (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+         */
+        canReplicateSchemaChange: pulumi.Input<string>;
+    }
+
+    export interface PipelineSourceConnectionDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+         */
+        connectionId: pulumi.Input<string>;
+    }
+
+    export interface PipelineTargetConnectionDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        connectionId: pulumi.Input<string>;
+    }
 }
 
 export namespace HealthChecks {
@@ -80655,7 +80953,15 @@ export namespace StackMonitoring {
          */
         outParamDetails?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryPropertiesOutParamDetails>;
         /**
-         * (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+         * (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+         */
+        protocolType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of content response given by the http(s) URL
+         */
+        responseContentType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
          */
         scriptDetails?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryPropertiesScriptDetails>;
         /**
@@ -80670,6 +80976,10 @@ export namespace StackMonitoring {
          * (Updatable) String prefix used to identify metric output of the OS Command
          */
         startsWith?: pulumi.Input<string>;
+        /**
+         * (Updatable) Http(s) end point URL
+         */
+        url?: pulumi.Input<string>;
     }
 
     export interface MetricExtensionQueryPropertiesInParamDetail {
@@ -80685,18 +80995,22 @@ export namespace StackMonitoring {
 
     export interface MetricExtensionQueryPropertiesOutParamDetails {
         /**
-         * (Updatable) Position of PL/SQL procedure OUT parameter
+         * (Updatable) Name of the Out Parameter
+         */
+        outParamName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
          */
         outParamPosition: pulumi.Input<number>;
         /**
-         * (Updatable) SQL Type of PL/SQL procedure OUT parameter
+         * (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
          */
         outParamType: pulumi.Input<string>;
     }
 
     export interface MetricExtensionQueryPropertiesScriptDetails {
         /**
-         * (Updatable) Content of the script file as base64 encoded string
+         * (Updatable) Content of the script/JavaScript file as base64 encoded string
          */
         content: pulumi.Input<string>;
         /**

@@ -81,21 +81,11 @@ type GetManagementAgentCountResult struct {
 }
 
 func GetManagementAgentCountOutput(ctx *pulumi.Context, args GetManagementAgentCountOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentCountResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagementAgentCountResultOutput, error) {
 			args := v.(GetManagementAgentCountArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagementAgentCountResult
-			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagementAgentCountResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagementAgentCountResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagementAgentCountResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args, GetManagementAgentCountResultOutput{}, options).(GetManagementAgentCountResultOutput), nil
 		}).(GetManagementAgentCountResultOutput)
 }
 

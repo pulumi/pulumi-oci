@@ -4,7 +4,6 @@
 package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsFilter;
 import java.lang.String;
 import java.util.List;
@@ -21,15 +20,15 @@ public final class GetMetricExtensionsPlainArgs extends com.pulumi.resources.Inv
      * The ID of the compartment in which data is listed.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
      * @return The ID of the compartment in which data is listed.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -52,6 +51,21 @@ public final class GetMetricExtensionsPlainArgs extends com.pulumi.resources.Inv
 
     public Optional<List<GetMetricExtensionsFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * Identifier for the metric extension
+     * 
+     */
+    @Import(name="metricExtensionId")
+    private @Nullable String metricExtensionId;
+
+    /**
+     * @return Identifier for the metric extension
+     * 
+     */
+    public Optional<String> metricExtensionId() {
+        return Optional.ofNullable(this.metricExtensionId);
     }
 
     /**
@@ -120,6 +134,7 @@ public final class GetMetricExtensionsPlainArgs extends com.pulumi.resources.Inv
         this.compartmentId = $.compartmentId;
         this.enabledOnResourceId = $.enabledOnResourceId;
         this.filters = $.filters;
+        this.metricExtensionId = $.metricExtensionId;
         this.name = $.name;
         this.resourceType = $.resourceType;
         this.state = $.state;
@@ -150,7 +165,7 @@ public final class GetMetricExtensionsPlainArgs extends com.pulumi.resources.Inv
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -173,6 +188,17 @@ public final class GetMetricExtensionsPlainArgs extends com.pulumi.resources.Inv
 
         public Builder filters(GetMetricExtensionsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param metricExtensionId Identifier for the metric extension
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricExtensionId(@Nullable String metricExtensionId) {
+            $.metricExtensionId = metricExtensionId;
+            return this;
         }
 
         /**
@@ -220,9 +246,6 @@ public final class GetMetricExtensionsPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetMetricExtensionsPlainArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetMetricExtensionsPlainArgs", "compartmentId");
-            }
             return $;
         }
     }

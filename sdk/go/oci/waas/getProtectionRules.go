@@ -78,21 +78,11 @@ type GetProtectionRulesResult struct {
 }
 
 func GetProtectionRulesOutput(ctx *pulumi.Context, args GetProtectionRulesOutputArgs, opts ...pulumi.InvokeOption) GetProtectionRulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProtectionRulesResultOutput, error) {
 			args := v.(GetProtectionRulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProtectionRulesResult
-			secret, err := ctx.InvokePackageRaw("oci:Waas/getProtectionRules:getProtectionRules", args, &rv, "", opts...)
-			if err != nil {
-				return GetProtectionRulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProtectionRulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProtectionRulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waas/getProtectionRules:getProtectionRules", args, GetProtectionRulesResultOutput{}, options).(GetProtectionRulesResultOutput), nil
 		}).(GetProtectionRulesResultOutput)
 }
 

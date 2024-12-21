@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceApplicationSchedulesResult> Invoke(GetWorkspaceApplicationSchedulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationSchedulesResult>("oci:DataIntegration/getWorkspaceApplicationSchedules:getWorkspaceApplicationSchedules", args ?? new GetWorkspaceApplicationSchedulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspace Application Schedules in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Use this endpoint to list schedules.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceApplicationSchedules = Oci.DataIntegration.GetWorkspaceApplicationSchedules.Invoke(new()
+        ///     {
+        ///         ApplicationKey = workspaceApplicationScheduleApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Identifiers = workspaceApplicationScheduleIdentifier,
+        ///         Keys = workspaceApplicationScheduleKey,
+        ///         Name = workspaceApplicationScheduleName,
+        ///         Types = workspaceApplicationScheduleType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceApplicationSchedulesResult> Invoke(GetWorkspaceApplicationSchedulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationSchedulesResult>("oci:DataIntegration/getWorkspaceApplicationSchedules:getWorkspaceApplicationSchedules", args ?? new GetWorkspaceApplicationSchedulesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceErrataResult> Invoke(GetManagedInstanceErrataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceErrataResult>("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", args ?? new GetManagedInstanceErrataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Errata in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a list of applicable errata on the managed instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceErrata = Oci.OsManagementHub.GetManagedInstanceErrata.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ClassificationTypes = managedInstanceErrataClassificationType,
+        ///         CompartmentId = compartmentId,
+        ///         Names = managedInstanceErrataName,
+        ///         NameContains = managedInstanceErrataNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceErrataResult> Invoke(GetManagedInstanceErrataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceErrataResult>("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", args ?? new GetManagedInstanceErrataInvokeArgs(), options.WithDefaults());
     }
 
 

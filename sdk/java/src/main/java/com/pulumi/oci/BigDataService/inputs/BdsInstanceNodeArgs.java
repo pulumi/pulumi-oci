@@ -231,6 +231,21 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * 
+     */
+    @Import(name="odhVersion")
+    private @Nullable Output<String> odhVersion;
+
+    /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * 
+     */
+    public Optional<Output<String>> odhVersion() {
+        return Optional.ofNullable(this.odhVersion);
+    }
+
+    /**
      * BDS-assigned Operating System version for the node.
      * 
      */
@@ -352,6 +367,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         this.nodeType = $.nodeType;
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
+        this.odhVersion = $.odhVersion;
         this.osVersion = $.osVersion;
         this.shape = $.shape;
         this.sshFingerprint = $.sshFingerprint;
@@ -681,6 +697,27 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder ocpus(Integer ocpus) {
             return ocpus(Output.of(ocpus));
+        }
+
+        /**
+         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder odhVersion(@Nullable Output<String> odhVersion) {
+            $.odhVersion = odhVersion;
+            return this;
+        }
+
+        /**
+         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder odhVersion(String odhVersion) {
+            return odhVersion(Output.of(odhVersion));
         }
 
         /**

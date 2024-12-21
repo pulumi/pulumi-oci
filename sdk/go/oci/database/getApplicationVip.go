@@ -85,21 +85,11 @@ type LookupApplicationVipResult struct {
 }
 
 func LookupApplicationVipOutput(ctx *pulumi.Context, args LookupApplicationVipOutputArgs, opts ...pulumi.InvokeOption) LookupApplicationVipResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupApplicationVipResultOutput, error) {
 			args := v.(LookupApplicationVipArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupApplicationVipResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getApplicationVip:getApplicationVip", args, &rv, "", opts...)
-			if err != nil {
-				return LookupApplicationVipResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupApplicationVipResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupApplicationVipResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getApplicationVip:getApplicationVip", args, LookupApplicationVipResultOutput{}, options).(LookupApplicationVipResultOutput), nil
 		}).(LookupApplicationVipResultOutput)
 }
 

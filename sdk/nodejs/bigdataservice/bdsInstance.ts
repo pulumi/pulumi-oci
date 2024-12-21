@@ -48,6 +48,10 @@ export class BdsInstance extends pulumi.CustomResource {
     }
 
     /**
+     * Cluster version details including bds and odh version information.
+     */
+    public readonly bdsClusterVersionSummary!: pulumi.Output<outputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
+    /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
     public readonly bootstrapScriptUrl!: pulumi.Output<string>;
@@ -105,6 +109,7 @@ export class BdsInstance extends pulumi.CustomResource {
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     public readonly isCloudSqlConfigured!: pulumi.Output<boolean>;
+    public readonly isForceRemoveEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
@@ -138,7 +143,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly masterNode!: pulumi.Output<outputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * Additional configuration of the user's network.
+     * (Updatable) Additional configuration of the user's network.
      */
     public readonly networkConfig!: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
@@ -157,6 +162,11 @@ export class BdsInstance extends pulumi.CustomResource {
      * (Updatable) The version of the patch to be upated.
      */
     public readonly osPatchVersion!: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     */
+    public readonly removeNode!: pulumi.Output<string | undefined>;
+    public readonly startClusterShapeConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceStartClusterShapeConfig[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
@@ -188,6 +198,7 @@ export class BdsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceState | undefined;
+            resourceInputs["bdsClusterVersionSummary"] = state ? state.bdsClusterVersionSummary : undefined;
             resourceInputs["bootstrapScriptUrl"] = state ? state.bootstrapScriptUrl : undefined;
             resourceInputs["cloudSqlDetails"] = state ? state.cloudSqlDetails : undefined;
             resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
@@ -204,6 +215,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ignoreExistingNodesShapes"] = state ? state.ignoreExistingNodesShapes : undefined;
             resourceInputs["isCloudSqlConfigured"] = state ? state.isCloudSqlConfigured : undefined;
+            resourceInputs["isForceRemoveEnabled"] = state ? state.isForceRemoveEnabled : undefined;
             resourceInputs["isForceStopJobs"] = state ? state.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = state ? state.isHighAvailability : undefined;
             resourceInputs["isKafkaConfigured"] = state ? state.isKafkaConfigured : undefined;
@@ -217,6 +229,8 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["numberOfNodes"] = state ? state.numberOfNodes : undefined;
             resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = state ? state.numberOfNodesRequiringMaintenanceReboot : undefined;
             resourceInputs["osPatchVersion"] = state ? state.osPatchVersion : undefined;
+            resourceInputs["removeNode"] = state ? state.removeNode : undefined;
+            resourceInputs["startClusterShapeConfigs"] = state ? state.startClusterShapeConfigs : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -254,6 +268,7 @@ export class BdsInstance extends pulumi.CustomResource {
             if ((!args || args.workerNode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'workerNode'");
             }
+            resourceInputs["bdsClusterVersionSummary"] = args ? args.bdsClusterVersionSummary : undefined;
             resourceInputs["bootstrapScriptUrl"] = args ? args.bootstrapScriptUrl : undefined;
             resourceInputs["cloudSqlDetails"] = args ? args.cloudSqlDetails : undefined;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
@@ -268,6 +283,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ignoreExistingNodesShapes"] = args ? args.ignoreExistingNodesShapes : undefined;
             resourceInputs["isCloudSqlConfigured"] = args ? args.isCloudSqlConfigured : undefined;
+            resourceInputs["isForceRemoveEnabled"] = args ? args.isForceRemoveEnabled : undefined;
             resourceInputs["isForceStopJobs"] = args ? args.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = args ? args.isHighAvailability : undefined;
             resourceInputs["isKafkaConfigured"] = args ? args.isKafkaConfigured : undefined;
@@ -278,6 +294,8 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["masterNode"] = args ? args.masterNode : undefined;
             resourceInputs["networkConfig"] = args ? args.networkConfig : undefined;
             resourceInputs["osPatchVersion"] = args ? args.osPatchVersion : undefined;
+            resourceInputs["removeNode"] = args ? args.removeNode : undefined;
+            resourceInputs["startClusterShapeConfigs"] = args ? args.startClusterShapeConfigs : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["utilNode"] = args ? args.utilNode : undefined;
             resourceInputs["workerNode"] = args ? args.workerNode : undefined;
@@ -300,6 +318,10 @@ export class BdsInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BdsInstance resources.
  */
 export interface BdsInstanceState {
+    /**
+     * Cluster version details including bds and odh version information.
+     */
+    bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
@@ -358,6 +380,7 @@ export interface BdsInstanceState {
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     isCloudSqlConfigured?: pulumi.Input<boolean>;
+    isForceRemoveEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
@@ -391,7 +414,7 @@ export interface BdsInstanceState {
      */
     masterNode?: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * Additional configuration of the user's network.
+     * (Updatable) Additional configuration of the user's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
@@ -410,6 +433,11 @@ export interface BdsInstanceState {
      * (Updatable) The version of the patch to be upated.
      */
     osPatchVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     */
+    removeNode?: pulumi.Input<string>;
+    startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[]>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
@@ -433,6 +461,10 @@ export interface BdsInstanceState {
  * The set of arguments for constructing a BdsInstance resource.
  */
 export interface BdsInstanceArgs {
+    /**
+     * Cluster version details including bds and odh version information.
+     */
+    bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
@@ -483,6 +515,7 @@ export interface BdsInstanceArgs {
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     isCloudSqlConfigured?: pulumi.Input<boolean>;
+    isForceRemoveEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
@@ -516,13 +549,18 @@ export interface BdsInstanceArgs {
      */
     masterNode: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * Additional configuration of the user's network.
+     * (Updatable) Additional configuration of the user's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
      * (Updatable) The version of the patch to be upated.
      */
     osPatchVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     */
+    removeNode?: pulumi.Input<string>;
+    startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[]>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */

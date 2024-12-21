@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApiKeyResult> Invoke(GetDomainsApiKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApiKeyResult>("oci:Identity/getDomainsApiKey:getDomainsApiKey", args ?? new GetDomainsApiKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user's API key.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApiKey = Oci.Identity.GetDomainsApiKey.Invoke(new()
+        ///     {
+        ///         ApiKeyId = testApiKeyOciIdentityApiKey.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = apiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = apiKeyResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApiKeyResult> Invoke(GetDomainsApiKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApiKeyResult>("oci:Identity/getDomainsApiKey:getDomainsApiKey", args ?? new GetDomainsApiKeyInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -110,21 +110,11 @@ type LookupDiscoveryJobsResultResult struct {
 }
 
 func LookupDiscoveryJobsResultOutput(ctx *pulumi.Context, args LookupDiscoveryJobsResultOutputArgs, opts ...pulumi.InvokeOption) LookupDiscoveryJobsResultResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDiscoveryJobsResultResultOutput, error) {
 			args := v.(LookupDiscoveryJobsResultArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDiscoveryJobsResultResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDiscoveryJobsResultResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDiscoveryJobsResultResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDiscoveryJobsResultResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", args, LookupDiscoveryJobsResultResultOutput{}, options).(LookupDiscoveryJobsResultResultOutput), nil
 		}).(LookupDiscoveryJobsResultResultOutput)
 }
 

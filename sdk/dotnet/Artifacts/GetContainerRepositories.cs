@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public static Output<GetContainerRepositoriesResult> Invoke(GetContainerRepositoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerRepositoriesResult>("oci:Artifacts/getContainerRepositories:getContainerRepositories", args ?? new GetContainerRepositoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
+        /// 
+        /// List container repositories in a compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,
+        ///         DisplayName = containerRepositoryDisplayName,
+        ///         IsPublic = containerRepositoryIsPublic,
+        ///         RepositoryId = testRepository.Id,
+        ///         State = containerRepositoryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetContainerRepositoriesResult> Invoke(GetContainerRepositoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerRepositoriesResult>("oci:Artifacts/getContainerRepositories:getContainerRepositories", args ?? new GetContainerRepositoriesInvokeArgs(), options.WithDefaults());
     }
 
 

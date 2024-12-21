@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Ons
         /// </summary>
         public static Output<GetNotificationTopicResult> Invoke(GetNotificationTopicInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNotificationTopicResult>("oci:Ons/getNotificationTopic:getNotificationTopic", args ?? new GetNotificationTopicInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
+        /// 
+        /// Gets the specified topic's configuration information.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotificationTopic = Oci.Ons.GetNotificationTopic.Invoke(new()
+        ///     {
+        ///         TopicId = testNotificationTopicOciOnsNotificationTopic.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNotificationTopicResult> Invoke(GetNotificationTopicInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotificationTopicResult>("oci:Ons/getNotificationTopic:getNotificationTopic", args ?? new GetNotificationTopicInvokeArgs(), options.WithDefaults());
     }
 
 

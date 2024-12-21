@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseDataguardAssociationsResult> Invoke(GetAutonomousDatabaseDataguardAssociationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseDataguardAssociationsResult>("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", args ?? new GetAutonomousDatabaseDataguardAssociationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseDataguardAssociations = Oci.Database.GetAutonomousDatabaseDataguardAssociations.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseDataguardAssociationsResult> Invoke(GetAutonomousDatabaseDataguardAssociationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseDataguardAssociationsResult>("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", args ?? new GetAutonomousDatabaseDataguardAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

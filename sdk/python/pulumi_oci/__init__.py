@@ -774,6 +774,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceIdentityConfiguration",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration": "BdsInstanceIdentityConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsInstanceMetastoreConfig",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
@@ -3978,6 +3986,14 @@ _utilities.register(
   "fqn": "pulumi_oci.goldengate",
   "classes": {
    "oci:GoldenGate/deploymentCertificate:DeploymentCertificate": "DeploymentCertificate"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GoldenGate/pipeline",
+  "fqn": "pulumi_oci.goldengate",
+  "classes": {
+   "oci:GoldenGate/pipeline:Pipeline": "Pipeline"
   }
  },
  {

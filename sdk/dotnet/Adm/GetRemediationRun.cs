@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetRemediationRunResult> Invoke(GetRemediationRunInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunResult>("oci:Adm/getRemediationRun:getRemediationRun", args ?? new GetRemediationRunInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+        /// 
+        /// Returns the details of the specified remediation run.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemediationRun = Oci.Adm.GetRemediationRun.Invoke(new()
+        ///     {
+        ///         RemediationRunId = testRemediationRunOciAdmRemediationRun.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemediationRunResult> Invoke(GetRemediationRunInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunResult>("oci:Adm/getRemediationRun:getRemediationRun", args ?? new GetRemediationRunInvokeArgs(), options.WithDefaults());
     }
 
 

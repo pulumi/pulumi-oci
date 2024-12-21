@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public static Output<GetContainerConfigurationResult> Invoke(GetContainerConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContainerConfigurationResult>("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args ?? new GetContainerConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
+        /// 
+        /// Get container configuration.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testContainerConfiguration = Oci.Artifacts.GetContainerConfiguration.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetContainerConfigurationResult> Invoke(GetContainerConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerConfigurationResult>("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args ?? new GetContainerConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

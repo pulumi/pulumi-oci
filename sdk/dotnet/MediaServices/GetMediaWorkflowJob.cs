@@ -62,6 +62,32 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaWorkflowJobResult> Invoke(GetMediaWorkflowJobInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobResult>("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", args ?? new GetMediaWorkflowJobInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Gets the MediaWorkflowJob.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaWorkflowJob = Oci.MediaServices.GetMediaWorkflowJob.Invoke(new()
+        ///     {
+        ///         MediaWorkflowJobId = testMediaWorkflowJobOciMediaServicesMediaWorkflowJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMediaWorkflowJobResult> Invoke(GetMediaWorkflowJobInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowJobResult>("oci:MediaServices/getMediaWorkflowJob:getMediaWorkflowJob", args ?? new GetMediaWorkflowJobInvokeArgs(), options.WithDefaults());
     }
 
 

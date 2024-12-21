@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ResourceScheduler
         /// </summary>
         public static Output<GetScheduleResult> Invoke(GetScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetScheduleResult>("oci:ResourceScheduler/getSchedule:getSchedule", args ?? new GetScheduleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
+        /// 
+        /// This API gets information about a schedule.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedule = Oci.ResourceScheduler.GetSchedule.Invoke(new()
+        ///     {
+        ///         ScheduleId = testScheduleOciResourceSchedulerSchedule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetScheduleResult> Invoke(GetScheduleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetScheduleResult>("oci:ResourceScheduler/getSchedule:getSchedule", args ?? new GetScheduleInvokeArgs(), options.WithDefaults());
     }
 
 

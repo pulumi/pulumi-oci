@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetSchedulerJobCountsResult> Invoke(GetSchedulerJobCountsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerJobCountsResult>("oci:FleetAppsManagement/getSchedulerJobCounts:getSchedulerJobCounts", args ?? new GetSchedulerJobCountsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedulerJobCounts = Oci.FleetAppsManagement.GetSchedulerJobCounts.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSchedulerJobCountsResult> Invoke(GetSchedulerJobCountsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerJobCountsResult>("oci:FleetAppsManagement/getSchedulerJobCounts:getSchedulerJobCounts", args ?? new GetSchedulerJobCountsInvokeArgs(), options.WithDefaults());
     }
 
 

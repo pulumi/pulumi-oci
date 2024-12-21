@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceApiKeysResult {
+    /**
+     * @return The list of bds_api_keys.
+     * 
+     */
     private List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
     private String bdsInstanceId;
     private @Nullable String displayName;
@@ -36,6 +40,10 @@ public final class GetBdsInstanceApiKeysResult {
     private @Nullable String userId;
 
     private GetBdsInstanceApiKeysResult() {}
+    /**
+     * @return The list of bds_api_keys.
+     * 
+     */
     public List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys() {
         return this.bdsApiKeys;
     }

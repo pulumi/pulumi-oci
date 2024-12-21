@@ -88,21 +88,11 @@ type GetPingProbeResultsResult struct {
 }
 
 func GetPingProbeResultsOutput(ctx *pulumi.Context, args GetPingProbeResultsOutputArgs, opts ...pulumi.InvokeOption) GetPingProbeResultsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPingProbeResultsResultOutput, error) {
 			args := v.(GetPingProbeResultsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPingProbeResultsResult
-			secret, err := ctx.InvokePackageRaw("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args, &rv, "", opts...)
-			if err != nil {
-				return GetPingProbeResultsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPingProbeResultsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPingProbeResultsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args, GetPingProbeResultsResultOutput{}, options).(GetPingProbeResultsResultOutput), nil
 		}).(GetPingProbeResultsResultOutput)
 }
 

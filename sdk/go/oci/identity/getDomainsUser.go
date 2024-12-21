@@ -196,21 +196,11 @@ type LookupDomainsUserResult struct {
 }
 
 func LookupDomainsUserOutput(ctx *pulumi.Context, args LookupDomainsUserOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsUserResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsUserResultOutput, error) {
 			args := v.(LookupDomainsUserArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsUserResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsUser:getDomainsUser", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsUserResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsUserResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsUserResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsUser:getDomainsUser", args, LookupDomainsUserResultOutput{}, options).(LookupDomainsUserResultOutput), nil
 		}).(LookupDomainsUserResultOutput)
 }
 

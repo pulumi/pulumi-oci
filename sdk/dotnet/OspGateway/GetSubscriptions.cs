@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         public static Output<GetSubscriptionsResult> Invoke(GetSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:OspGateway/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.
+        /// 
+        /// Get the subscription data for the compartment
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriptions = Oci.OspGateway.GetSubscriptions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         OspHomeRegion = subscriptionOspHomeRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriptionsResult> Invoke(GetSubscriptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionsResult>("oci:OspGateway/getSubscriptions:getSubscriptions", args ?? new GetSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

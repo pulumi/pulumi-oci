@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScript.Invoke(new()
+        ///     {
+        ///         ExecutionName = managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         TaskName = managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptInvokeArgs(), options.WithDefaults());
     }
 
 

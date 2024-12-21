@@ -95,21 +95,11 @@ type GetAuditEventsResult struct {
 }
 
 func GetAuditEventsOutput(ctx *pulumi.Context, args GetAuditEventsOutputArgs, opts ...pulumi.InvokeOption) GetAuditEventsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuditEventsResultOutput, error) {
 			args := v.(GetAuditEventsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuditEventsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditEvents:getAuditEvents", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuditEventsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuditEventsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuditEventsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getAuditEvents:getAuditEvents", args, GetAuditEventsResultOutput{}, options).(GetAuditEventsResultOutput), nil
 		}).(GetAuditEventsResultOutput)
 }
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDedicatedVmHostsResult> Invoke(GetDedicatedVmHostsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostsResult>("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", args ?? new GetDedicatedVmHostsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dedicated Vm Hosts in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Returns the list of dedicated virtual machine hosts that match the specified criteria in the specified compartment.
+        /// 
+        /// You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
+        /// dedicated virtual machine hosts in the compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedVmHosts = Oci.Core.GetDedicatedVmHosts.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
+        ///         DisplayName = dedicatedVmHostDisplayName,
+        ///         InstanceShapeName = dedicatedVmHostInstanceShapeName,
+        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
+        ///         RemainingOcpusGreaterThanOrEqualTo = dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
+        ///         State = dedicatedVmHostState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedVmHostsResult> Invoke(GetDedicatedVmHostsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostsResult>("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", args ?? new GetDedicatedVmHostsInvokeArgs(), options.WithDefaults());
     }
 
 

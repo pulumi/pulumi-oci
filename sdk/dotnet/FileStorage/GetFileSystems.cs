@@ -80,6 +80,41 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetFileSystemsResult> Invoke(GetFileSystemsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFileSystemsResult>("oci:FileStorage/getFileSystems:getFileSystems", args ?? new GetFileSystemsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Lists the file system resources in the specified compartment, or by the specified compartment and
+        /// file system snapshot policy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFileSystems = Oci.FileStorage.GetFileSystems.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = fileSystemAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fileSystemDisplayName,
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicy.Id,
+        ///         Id = fileSystemId,
+        ///         ParentFileSystemId = testFileSystem.Id,
+        ///         SourceSnapshotId = testSnapshot.Id,
+        ///         State = fileSystemState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFileSystemsResult> Invoke(GetFileSystemsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFileSystemsResult>("oci:FileStorage/getFileSystems:getFileSystems", args ?? new GetFileSystemsInvokeArgs(), options.WithDefaults());
     }
 
 

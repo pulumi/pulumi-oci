@@ -110,21 +110,11 @@ type LookupSensitiveDataModelsSensitiveColumnResult struct {
 }
 
 func LookupSensitiveDataModelsSensitiveColumnOutput(ctx *pulumi.Context, args LookupSensitiveDataModelsSensitiveColumnOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveDataModelsSensitiveColumnResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSensitiveDataModelsSensitiveColumnResultOutput, error) {
 			args := v.(LookupSensitiveDataModelsSensitiveColumnArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSensitiveDataModelsSensitiveColumnResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSensitiveDataModelsSensitiveColumnResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSensitiveDataModelsSensitiveColumnResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSensitiveDataModelsSensitiveColumnResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args, LookupSensitiveDataModelsSensitiveColumnResultOutput{}, options).(LookupSensitiveDataModelsSensitiveColumnResultOutput), nil
 		}).(LookupSensitiveDataModelsSensitiveColumnResultOutput)
 }
 

@@ -101,21 +101,11 @@ type LookupSqlCollectionResult struct {
 }
 
 func LookupSqlCollectionOutput(ctx *pulumi.Context, args LookupSqlCollectionOutputArgs, opts ...pulumi.InvokeOption) LookupSqlCollectionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSqlCollectionResultOutput, error) {
 			args := v.(LookupSqlCollectionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSqlCollectionResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSqlCollection:getSqlCollection", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSqlCollectionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSqlCollectionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSqlCollectionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSqlCollection:getSqlCollection", args, LookupSqlCollectionResultOutput{}, options).(LookupSqlCollectionResultOutput), nil
 		}).(LookupSqlCollectionResultOutput)
 }
 

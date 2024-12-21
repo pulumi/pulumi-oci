@@ -70,6 +70,36 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetOccAvailabilityCatalogsResult> Invoke(GetOccAvailabilityCatalogsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccAvailabilityCatalogsResult>("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", args ?? new GetOccAvailabilityCatalogsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Occ Availability Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// Lists all availability catalogs.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccAvailabilityCatalogs = Oci.CapacityManagement.GetOccAvailabilityCatalogs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CatalogState = occAvailabilityCatalogCatalogState,
+        ///         DisplayName = occAvailabilityCatalogDisplayName,
+        ///         Id = occAvailabilityCatalogId,
+        ///         Namespace = occAvailabilityCatalogNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccAvailabilityCatalogsResult> Invoke(GetOccAvailabilityCatalogsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccAvailabilityCatalogsResult>("oci:CapacityManagement/getOccAvailabilityCatalogs:getOccAvailabilityCatalogs", args ?? new GetOccAvailabilityCatalogsInvokeArgs(), options.WithDefaults());
     }
 
 

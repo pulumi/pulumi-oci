@@ -76,6 +76,39 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetComplianceRecordsResult> Invoke(GetComplianceRecordsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComplianceRecordsResult>("oci:FleetAppsManagement/getComplianceRecords:getComplianceRecords", args ?? new GetComplianceRecordsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compliance Records in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a list of complianceDetails.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComplianceRecords = Oci.FleetAppsManagement.GetComplianceRecords.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ComplianceState = complianceRecordComplianceState,
+        ///         EntityId = testEntity.Id,
+        ///         ProductName = complianceRecordProductName,
+        ///         ProductStack = complianceRecordProductStack,
+        ///         ResourceId = testResource.Id,
+        ///         TargetName = testTarget.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComplianceRecordsResult> Invoke(GetComplianceRecordsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComplianceRecordsResult>("oci:FleetAppsManagement/getComplianceRecords:getComplianceRecords", args ?? new GetComplianceRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

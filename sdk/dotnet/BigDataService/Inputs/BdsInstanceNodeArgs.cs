@@ -103,6 +103,12 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<int>? Ocpus { get; set; }
 
         /// <summary>
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        /// </summary>
+        [Input("odhVersion")]
+        public Input<string>? OdhVersion { get; set; }
+
+        /// <summary>
         /// BDS-assigned Operating System version for the node.
         /// </summary>
         [Input("osVersion")]

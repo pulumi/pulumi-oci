@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagementStationResult> Invoke(GetManagementStationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementStationResult>("oci:OsManagementHub/getManagementStation:getManagementStation", args ?? new GetManagementStationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Gets information about the specified management station.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementStation = Oci.OsManagementHub.GetManagementStation.Invoke(new()
+        ///     {
+        ///         ManagementStationId = testManagementStationOciOsManagementHubManagementStation.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementStationResult> Invoke(GetManagementStationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementStationResult>("oci:OsManagementHub/getManagementStation:getManagementStation", args ?? new GetManagementStationInvokeArgs(), options.WithDefaults());
     }
 
 

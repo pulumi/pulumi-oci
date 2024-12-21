@@ -22,6 +22,14 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string PatchingConfigStrategy;
         /// <summary>
+        /// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        /// </summary>
+        public readonly int? ToleranceThresholdPerBatch;
+        /// <summary>
+        /// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        /// </summary>
+        public readonly int? ToleranceThresholdPerDomain;
+        /// <summary>
         /// The wait time between batches in seconds.
         /// </summary>
         public readonly int? WaitTimeBetweenBatchInSeconds;
@@ -36,12 +44,18 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string patchingConfigStrategy,
 
+            int? toleranceThresholdPerBatch,
+
+            int? toleranceThresholdPerDomain,
+
             int? waitTimeBetweenBatchInSeconds,
 
             int? waitTimeBetweenDomainInSeconds)
         {
             BatchSize = batchSize;
             PatchingConfigStrategy = patchingConfigStrategy;
+            ToleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            ToleranceThresholdPerDomain = toleranceThresholdPerDomain;
             WaitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
             WaitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
         }

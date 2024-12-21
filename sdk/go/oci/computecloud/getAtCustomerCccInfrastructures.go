@@ -95,21 +95,11 @@ type GetAtCustomerCccInfrastructuresResult struct {
 }
 
 func GetAtCustomerCccInfrastructuresOutput(ctx *pulumi.Context, args GetAtCustomerCccInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetAtCustomerCccInfrastructuresResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAtCustomerCccInfrastructuresResultOutput, error) {
 			args := v.(GetAtCustomerCccInfrastructuresArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAtCustomerCccInfrastructuresResult
-			secret, err := ctx.InvokePackageRaw("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args, &rv, "", opts...)
-			if err != nil {
-				return GetAtCustomerCccInfrastructuresResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAtCustomerCccInfrastructuresResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAtCustomerCccInfrastructuresResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args, GetAtCustomerCccInfrastructuresResultOutput{}, options).(GetAtCustomerCccInfrastructuresResultOutput), nil
 		}).(GetAtCustomerCccInfrastructuresResultOutput)
 }
 

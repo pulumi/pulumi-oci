@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetSystemVersionsResult> Invoke(GetSystemVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSystemVersionsResult>("oci:Database/getSystemVersions:getSystemVersions", args ?? new GetSystemVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported Exadata system versions for a given shape and GI version.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSystemVersions = Oci.Database.GetSystemVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         GiVersion = systemVersionGiVersion,
+        ///         Shape = systemVersionShape,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSystemVersionsResult> Invoke(GetSystemVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSystemVersionsResult>("oci:Database/getSystemVersions:getSystemVersions", args ?? new GetSystemVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

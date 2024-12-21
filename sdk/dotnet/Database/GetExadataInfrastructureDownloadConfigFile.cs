@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExadataInfrastructureDownloadConfigFileResult> Invoke(GetExadataInfrastructureDownloadConfigFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureDownloadConfigFileResult>("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args ?? new GetExadataInfrastructureDownloadConfigFileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInfrastructureDownloadConfigFile = Oci.Database.GetExadataInfrastructureDownloadConfigFile.Invoke(new()
+        ///     {
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         Base64EncodeContent = false,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExadataInfrastructureDownloadConfigFileResult> Invoke(GetExadataInfrastructureDownloadConfigFileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureDownloadConfigFileResult>("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args ?? new GetExadataInfrastructureDownloadConfigFileInvokeArgs(), options.WithDefaults());
     }
 
 

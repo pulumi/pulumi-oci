@@ -62,6 +62,32 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetEventResult> Invoke(GetEventInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventResult>("oci:OsManagementHub/getEvent:getEvent", args ?? new GetEventInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Event resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns information about the specified event.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEvent = Oci.OsManagementHub.GetEvent.Invoke(new()
+        ///     {
+        ///         EventId = testEventOciOsManagementHubEvent.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEventResult> Invoke(GetEventInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEventResult>("oci:OsManagementHub/getEvent:getEvent", args ?? new GetEventInvokeArgs(), options.WithDefaults());
     }
 
 

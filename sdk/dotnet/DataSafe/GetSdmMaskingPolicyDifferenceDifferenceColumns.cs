@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> Invoke(GetSdmMaskingPolicyDifferenceDifferenceColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sdm Masking Policy Difference Difference Columns in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of columns of a SDM masking policy difference resource based on the specified query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSdmMaskingPolicyDifferenceDifferenceColumns = Oci.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumns.Invoke(new()
+        ///     {
+        ///         SdmMaskingPolicyDifferenceId = testSdmMaskingPolicyDifference.Id,
+        ///         ColumnNames = sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
+        ///         DifferenceType = sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType,
+        ///         Objects = sdmMaskingPolicyDifferenceDifferenceColumnObject,
+        ///         PlannedAction = sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction,
+        ///         SchemaNames = sdmMaskingPolicyDifferenceDifferenceColumnSchemaName,
+        ///         SyncStatus = sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> Invoke(GetSdmMaskingPolicyDifferenceDifferenceColumnsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnsInvokeArgs(), options.WithDefaults());
     }
 
 

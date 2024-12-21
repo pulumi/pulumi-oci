@@ -58,6 +58,30 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetOnboardingPoliciesResult> Invoke(GetOnboardingPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnboardingPoliciesResult>("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", args ?? new GetOnboardingPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of onboarding policy information for Fleet Application Management.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOnboardingPoliciesResult> Invoke(GetOnboardingPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnboardingPoliciesResult>("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", args ?? new GetOnboardingPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

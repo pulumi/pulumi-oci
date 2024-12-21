@@ -70,6 +70,7 @@ import javax.annotation.Nullable;
  *                             .memoryInGbs(modelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsMemoryInGbs)
  *                             .ocpus(modelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOcpus)
  *                             .build())
+ *                         .privateEndpointId(testPrivateEndpoint.id())
  *                         .subnetId(testSubnet.id())
  *                         .build())
  *                     .modelId(testModel.id())

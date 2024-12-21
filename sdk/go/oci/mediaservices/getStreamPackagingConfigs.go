@@ -83,21 +83,11 @@ type GetStreamPackagingConfigsResult struct {
 }
 
 func GetStreamPackagingConfigsOutput(ctx *pulumi.Context, args GetStreamPackagingConfigsOutputArgs, opts ...pulumi.InvokeOption) GetStreamPackagingConfigsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetStreamPackagingConfigsResultOutput, error) {
 			args := v.(GetStreamPackagingConfigsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetStreamPackagingConfigsResult
-			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", args, &rv, "", opts...)
-			if err != nil {
-				return GetStreamPackagingConfigsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetStreamPackagingConfigsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetStreamPackagingConfigsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", args, GetStreamPackagingConfigsResultOutput{}, options).(GetStreamPackagingConfigsResultOutput), nil
 		}).(GetStreamPackagingConfigsResultOutput)
 }
 

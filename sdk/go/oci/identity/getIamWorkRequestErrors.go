@@ -72,21 +72,11 @@ type GetIamWorkRequestErrorsResult struct {
 }
 
 func GetIamWorkRequestErrorsOutput(ctx *pulumi.Context, args GetIamWorkRequestErrorsOutputArgs, opts ...pulumi.InvokeOption) GetIamWorkRequestErrorsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIamWorkRequestErrorsResultOutput, error) {
 			args := v.(GetIamWorkRequestErrorsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIamWorkRequestErrorsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args, &rv, "", opts...)
-			if err != nil {
-				return GetIamWorkRequestErrorsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIamWorkRequestErrorsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIamWorkRequestErrorsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args, GetIamWorkRequestErrorsResultOutput{}, options).(GetIamWorkRequestErrorsResultOutput), nil
 		}).(GetIamWorkRequestErrorsResultOutput)
 }
 

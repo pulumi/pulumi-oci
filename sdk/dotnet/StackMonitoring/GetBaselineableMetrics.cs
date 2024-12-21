@@ -74,6 +74,38 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetBaselineableMetricsResult> Invoke(GetBaselineableMetricsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricsResult>("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", args ?? new GetBaselineableMetricsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// List of summary of baseline-able metrics for a given resource group if specified.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBaselineableMetrics = Oci.StackMonitoring.GetBaselineableMetrics.Invoke(new()
+        ///     {
+        ///         BaselineableMetricId = testBaselineableMetric.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IsOutOfBox = baselineableMetricIsOutOfBox,
+        ///         MetricNamespace = baselineableMetricMetricNamespace,
+        ///         Name = baselineableMetricName,
+        ///         ResourceGroup = baselineableMetricResourceGroup,
+        ///         ResourceType = baselineableMetricResourceType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBaselineableMetricsResult> Invoke(GetBaselineableMetricsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricsResult>("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", args ?? new GetBaselineableMetricsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryCommitResult> Invoke(GetRepositoryCommitInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryCommitResult>("oci:DevOps/getRepositoryCommit:getRepositoryCommit", args ?? new GetRepositoryCommitInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a repository's commit by commit ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryCommit = Oci.DevOps.GetRepositoryCommit.Invoke(new()
+        ///     {
+        ///         CommitId = testCommit.Id,
+        ///         RepositoryId = testRepository.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryCommitResult> Invoke(GetRepositoryCommitInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryCommitResult>("oci:DevOps/getRepositoryCommit:getRepositoryCommit", args ?? new GetRepositoryCommitInvokeArgs(), options.WithDefaults());
     }
 
 

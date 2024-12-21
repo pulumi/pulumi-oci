@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetDbSystemPrimaryDbInstanceResult> Invoke(GetDbSystemPrimaryDbInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemPrimaryDbInstanceResult>("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args ?? new GetDbSystemPrimaryDbInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Gets the primary database instance node details.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemPrimaryDbInstance = Oci.Psql.GetDbSystemPrimaryDbInstance.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbSystemPrimaryDbInstanceResult> Invoke(GetDbSystemPrimaryDbInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemPrimaryDbInstanceResult>("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args ?? new GetDbSystemPrimaryDbInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

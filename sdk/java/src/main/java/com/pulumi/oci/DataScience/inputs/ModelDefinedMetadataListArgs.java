@@ -16,14 +16,14 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
     public static final ModelDefinedMetadataListArgs Empty = new ModelDefinedMetadataListArgs();
 
     /**
-     * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+     * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
      * 
      */
     @Import(name="category")
     private @Nullable Output<String> category;
 
     /**
-     * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+     * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
      * 
      */
     public Optional<Output<String>> category() {
@@ -52,7 +52,7 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
      * * libraryVersion
      * * estimatorClass
      * * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      * 
      */
     @Import(name="key")
@@ -65,7 +65,7 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
      * * libraryVersion
      * * estimatorClass
      * * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      * 
      */
     public Optional<Output<String>> key() {
@@ -119,7 +119,7 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param category (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+         * @param category (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param category (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+         * @param category (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
          * * libraryVersion
          * * estimatorClass
          * * hyperParameters
-         * * testartifactresults
+         * * testArtifactresults
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class ModelDefinedMetadataListArgs extends com.pulumi.resources.Res
          * * libraryVersion
          * * estimatorClass
          * * hyperParameters
-         * * testartifactresults
+         * * testArtifactresults
          * 
          * @return builder
          * 

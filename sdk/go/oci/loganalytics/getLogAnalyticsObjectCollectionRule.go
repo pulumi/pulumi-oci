@@ -122,21 +122,11 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 }
 
 func LookupLogAnalyticsObjectCollectionRuleOutput(ctx *pulumi.Context, args LookupLogAnalyticsObjectCollectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsObjectCollectionRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupLogAnalyticsObjectCollectionRuleResultOutput, error) {
 			args := v.(LookupLogAnalyticsObjectCollectionRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupLogAnalyticsObjectCollectionRuleResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args, &rv, "", opts...)
-			if err != nil {
-				return LookupLogAnalyticsObjectCollectionRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupLogAnalyticsObjectCollectionRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupLogAnalyticsObjectCollectionRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args, LookupLogAnalyticsObjectCollectionRuleResultOutput{}, options).(LookupLogAnalyticsObjectCollectionRuleResultOutput), nil
 		}).(LookupLogAnalyticsObjectCollectionRuleResultOutput)
 }
 

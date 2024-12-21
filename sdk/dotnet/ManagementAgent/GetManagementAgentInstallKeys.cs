@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentInstallKeysResult> Invoke(GetManagementAgentInstallKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentInstallKeysResult>("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args ?? new GetManagementAgentInstallKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Returns a list of Management Agent installed Keys.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentInstallKeys = Oci.ManagementAgent.GetManagementAgentInstallKeys.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = managementAgentInstallKeyAccessLevel,
+        ///         CompartmentIdInSubtree = managementAgentInstallKeyCompartmentIdInSubtree,
+        ///         DisplayName = managementAgentInstallKeyDisplayName,
+        ///         State = managementAgentInstallKeyState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentInstallKeysResult> Invoke(GetManagementAgentInstallKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentInstallKeysResult>("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args ?? new GetManagementAgentInstallKeysInvokeArgs(), options.WithDefaults());
     }
 
 

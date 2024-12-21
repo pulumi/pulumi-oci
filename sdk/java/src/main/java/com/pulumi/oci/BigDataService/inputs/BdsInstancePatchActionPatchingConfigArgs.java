@@ -48,6 +48,36 @@ public final class BdsInstancePatchActionPatchingConfigArgs extends com.pulumi.r
     }
 
     /**
+     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    @Import(name="toleranceThresholdPerBatch")
+    private @Nullable Output<Integer> toleranceThresholdPerBatch;
+
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    public Optional<Output<Integer>> toleranceThresholdPerBatch() {
+        return Optional.ofNullable(this.toleranceThresholdPerBatch);
+    }
+
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    @Import(name="toleranceThresholdPerDomain")
+    private @Nullable Output<Integer> toleranceThresholdPerDomain;
+
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    public Optional<Output<Integer>> toleranceThresholdPerDomain() {
+        return Optional.ofNullable(this.toleranceThresholdPerDomain);
+    }
+
+    /**
      * The wait time between batches in seconds.
      * 
      */
@@ -82,6 +112,8 @@ public final class BdsInstancePatchActionPatchingConfigArgs extends com.pulumi.r
     private BdsInstancePatchActionPatchingConfigArgs(BdsInstancePatchActionPatchingConfigArgs $) {
         this.batchSize = $.batchSize;
         this.patchingConfigStrategy = $.patchingConfigStrategy;
+        this.toleranceThresholdPerBatch = $.toleranceThresholdPerBatch;
+        this.toleranceThresholdPerDomain = $.toleranceThresholdPerDomain;
         this.waitTimeBetweenBatchInSeconds = $.waitTimeBetweenBatchInSeconds;
         this.waitTimeBetweenDomainInSeconds = $.waitTimeBetweenDomainInSeconds;
     }
@@ -144,6 +176,48 @@ public final class BdsInstancePatchActionPatchingConfigArgs extends com.pulumi.r
          */
         public Builder patchingConfigStrategy(String patchingConfigStrategy) {
             return patchingConfigStrategy(Output.of(patchingConfigStrategy));
+        }
+
+        /**
+         * @param toleranceThresholdPerBatch Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder toleranceThresholdPerBatch(@Nullable Output<Integer> toleranceThresholdPerBatch) {
+            $.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            return this;
+        }
+
+        /**
+         * @param toleranceThresholdPerBatch Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder toleranceThresholdPerBatch(Integer toleranceThresholdPerBatch) {
+            return toleranceThresholdPerBatch(Output.of(toleranceThresholdPerBatch));
+        }
+
+        /**
+         * @param toleranceThresholdPerDomain Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder toleranceThresholdPerDomain(@Nullable Output<Integer> toleranceThresholdPerDomain) {
+            $.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
+            return this;
+        }
+
+        /**
+         * @param toleranceThresholdPerDomain Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder toleranceThresholdPerDomain(Integer toleranceThresholdPerDomain) {
+            return toleranceThresholdPerDomain(Output.of(toleranceThresholdPerDomain));
         }
 
         /**

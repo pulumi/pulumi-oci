@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeGroupBackupsResult> Invoke(GetVolumeGroupBackupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupBackupsResult>("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args ?? new GetVolumeGroupBackupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volume Group Backups in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the volume group backups in the specified compartment. You can filter the results by volume group.
+        /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeGroupBackups = Oci.Core.GetVolumeGroupBackups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeGroupBackupDisplayName,
+        ///         VolumeGroupId = testVolumeGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeGroupBackupsResult> Invoke(GetVolumeGroupBackupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupBackupsResult>("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args ?? new GetVolumeGroupBackupsInvokeArgs(), options.WithDefaults());
     }
 
 

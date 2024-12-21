@@ -325,7 +325,7 @@ type Connection struct {
 	SslClientKeystoredbSecretId pulumi.StringPtrOutput `pulumi:"sslClientKeystoredbSecretId"`
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringOutput `pulumi:"sslCrl"`
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrOutput `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrOutput `pulumi:"sslKeyPassword"`
@@ -656,7 +656,7 @@ type connectionState struct {
 	SslClientKeystoredbSecretId *string `pulumi:"sslClientKeystoredbSecretId"`
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey *string `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
@@ -871,7 +871,7 @@ type ConnectionState struct {
 	SslClientKeystoredbSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrInput
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrInput
@@ -1086,7 +1086,7 @@ type connectionArgs struct {
 	SslClientKeystoredbSecretId *string `pulumi:"sslClientKeystoredbSecretId"`
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey *string `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
@@ -1290,7 +1290,7 @@ type ConnectionArgs struct {
 	SslClientKeystoredbSecretId pulumi.StringPtrInput
 	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
-	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrInput
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrInput
@@ -1817,7 +1817,7 @@ func (o ConnectionOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCrl }).(pulumi.StringOutput)
 }
 
-// (Updatable) Client Key – The base64 encoded content of a .pem or .crt filecontaining the client private key (for 2-way SSL).
+// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 func (o ConnectionOutput) SslKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKey }).(pulumi.StringPtrOutput)
 }

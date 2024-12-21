@@ -96,21 +96,11 @@ type GetDomainsMyCompletedApprovalsResult struct {
 }
 
 func GetDomainsMyCompletedApprovalsOutput(ctx *pulumi.Context, args GetDomainsMyCompletedApprovalsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyCompletedApprovalsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsMyCompletedApprovalsResultOutput, error) {
 			args := v.(GetDomainsMyCompletedApprovalsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsMyCompletedApprovalsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsMyCompletedApprovalsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsMyCompletedApprovalsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsMyCompletedApprovalsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", args, GetDomainsMyCompletedApprovalsResultOutput{}, options).(GetDomainsMyCompletedApprovalsResultOutput), nil
 		}).(GetDomainsMyCompletedApprovalsResultOutput)
 }
 

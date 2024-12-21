@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabasesClonesResult> Invoke(GetAutonomousDatabasesClonesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesClonesResult>("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args ?? new GetAutonomousDatabasesClonesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the Autonomous Database clones for the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabasesClones = Oci.Database.GetAutonomousDatabasesClones.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CloneType = autonomousDatabasesCloneCloneType,
+        ///         DisplayName = autonomousDatabasesCloneDisplayName,
+        ///         State = autonomousDatabasesCloneState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabasesClonesResult> Invoke(GetAutonomousDatabasesClonesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesClonesResult>("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", args ?? new GetAutonomousDatabasesClonesInvokeArgs(), options.WithDefaults());
     }
 
 

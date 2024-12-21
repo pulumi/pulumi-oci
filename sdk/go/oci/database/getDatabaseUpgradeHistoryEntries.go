@@ -77,21 +77,11 @@ type GetDatabaseUpgradeHistoryEntriesResult struct {
 }
 
 func GetDatabaseUpgradeHistoryEntriesOutput(ctx *pulumi.Context, args GetDatabaseUpgradeHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseUpgradeHistoryEntriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatabaseUpgradeHistoryEntriesResultOutput, error) {
 			args := v.(GetDatabaseUpgradeHistoryEntriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatabaseUpgradeHistoryEntriesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatabaseUpgradeHistoryEntriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatabaseUpgradeHistoryEntriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatabaseUpgradeHistoryEntriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries", args, GetDatabaseUpgradeHistoryEntriesResultOutput{}, options).(GetDatabaseUpgradeHistoryEntriesResultOutput), nil
 		}).(GetDatabaseUpgradeHistoryEntriesResultOutput)
 }
 

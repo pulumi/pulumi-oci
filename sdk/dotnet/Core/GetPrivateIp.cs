@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetPrivateIpResult> Invoke(GetPrivateIpInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateIpResult>("oci:Core/getPrivateIp:getPrivateIp", args ?? new GetPrivateIpInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified private IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// Alternatively, you can get the object by using
+        /// [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)
+        /// with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPrivateIp = Oci.Core.GetPrivateIp.Invoke(new()
+        ///     {
+        ///         PrivateIpId = testPrivateIpOciCorePrivateIp.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPrivateIpResult> Invoke(GetPrivateIpInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateIpResult>("oci:Core/getPrivateIp:getPrivateIp", args ?? new GetPrivateIpInvokeArgs(), options.WithDefaults());
     }
 
 

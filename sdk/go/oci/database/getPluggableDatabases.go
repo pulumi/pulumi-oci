@@ -83,21 +83,11 @@ type GetPluggableDatabasesResult struct {
 }
 
 func GetPluggableDatabasesOutput(ctx *pulumi.Context, args GetPluggableDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetPluggableDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPluggableDatabasesResultOutput, error) {
 			args := v.(GetPluggableDatabasesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPluggableDatabasesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getPluggableDatabases:getPluggableDatabases", args, &rv, "", opts...)
-			if err != nil {
-				return GetPluggableDatabasesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPluggableDatabasesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPluggableDatabasesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getPluggableDatabases:getPluggableDatabases", args, GetPluggableDatabasesResultOutput{}, options).(GetPluggableDatabasesResultOutput), nil
 		}).(GetPluggableDatabasesResultOutput)
 }
 

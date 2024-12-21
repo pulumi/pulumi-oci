@@ -26,6 +26,14 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyAddressListResult> Invoke(GetNetworkFirewallPolicyAddressListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyAddressListResult>("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", args ?? new GetNetworkFirewallPolicyAddressListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Get Address List by the given name in the context of network firewall policy.
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyAddressListResult> Invoke(GetNetworkFirewallPolicyAddressListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyAddressListResult>("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", args ?? new GetNetworkFirewallPolicyAddressListInvokeArgs(), options.WithDefaults());
     }
 
 

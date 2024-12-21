@@ -63,8 +63,8 @@ import javax.annotation.Nullable;
  *             .hostname(exadbVmClusterHostname)
  *             .shape(exadbVmClusterShape)
  *             .nodeConfig(ExadbVmClusterNodeConfigArgs.builder()
- *                 .enabledEcpuPerNode(exadbVmClusterEnabledEcpuPerNode)
- *                 .totalEcpuPerNode(exadbVmClusterTotalEcpuPerNode)
+ *                 .enabledEcpuCountPerNode(exadbVmClusterEnabledEcpuCountPerNode)
+ *                 .totalEcpuCountPerNode(exadbVmClusterTotalEcpuCountPerNode)
  *                 .vmFileSystemStorageSizeGbsPerNode(exadbVmClusterVmFileSystemStorageSizeInGbsPerNode)
  *                 .build())
  *             .nodeResources(            

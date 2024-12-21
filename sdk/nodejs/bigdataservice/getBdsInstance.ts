@@ -43,6 +43,10 @@ export interface GetBdsInstanceArgs {
  * A collection of values returned by getBdsInstance.
  */
 export interface GetBdsInstanceResult {
+    /**
+     * Cluster version details including bds and odh version information.
+     */
+    readonly bdsClusterVersionSummaries: outputs.BigDataService.GetBdsInstanceBdsClusterVersionSummary[];
     readonly bdsInstanceId: string;
     /**
      * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -97,6 +101,7 @@ export interface GetBdsInstanceResult {
      * Boolean flag specifying whether or not Cloud SQL should be configured.
      */
     readonly isCloudSqlConfigured: boolean;
+    readonly isForceRemoveEnabled: boolean;
     readonly isForceStopJobs: boolean;
     /**
      * Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -134,6 +139,8 @@ export interface GetBdsInstanceResult {
      */
     readonly numberOfNodesRequiringMaintenanceReboot: number;
     readonly osPatchVersion: string;
+    readonly removeNode: string;
+    readonly startClusterShapeConfigs: outputs.BigDataService.GetBdsInstanceStartClusterShapeConfig[];
     /**
      * The state of the cluster.
      */

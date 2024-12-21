@@ -92,21 +92,11 @@ type LookupExternalDatabaseConnectorResult struct {
 }
 
 func LookupExternalDatabaseConnectorOutput(ctx *pulumi.Context, args LookupExternalDatabaseConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDatabaseConnectorResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalDatabaseConnectorResultOutput, error) {
 			args := v.(LookupExternalDatabaseConnectorArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalDatabaseConnectorResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalDatabaseConnectorResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalDatabaseConnectorResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalDatabaseConnectorResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector", args, LookupExternalDatabaseConnectorResultOutput{}, options).(LookupExternalDatabaseConnectorResultOutput), nil
 		}).(LookupExternalDatabaseConnectorResultOutput)
 }
 

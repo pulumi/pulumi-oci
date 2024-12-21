@@ -84,6 +84,43 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetPatchesResult> Invoke(GetPatchesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPatchesResult>("oci:FleetAppsManagement/getPatches:getPatches", args ?? new GetPatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of Patches.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPatches = Oci.FleetAppsManagement.GetPatches.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = patchId,
+        ///         Name = patchName,
+        ///         PatchTypeId = testPatchType.Id,
+        ///         ProductId = testProduct.Id,
+        ///         ShouldCompliancePolicyRulesBeApplied = patchShouldCompliancePolicyRulesBeApplied,
+        ///         State = patchState,
+        ///         TimeReleasedGreaterThanOrEqualTo = patchTimeReleasedGreaterThanOrEqualTo,
+        ///         TimeReleasedLessThan = patchTimeReleasedLessThan,
+        ///         Type = patchType,
+        ///         Version = patchVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPatchesResult> Invoke(GetPatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPatchesResult>("oci:FleetAppsManagement/getPatches:getPatches", args ?? new GetPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

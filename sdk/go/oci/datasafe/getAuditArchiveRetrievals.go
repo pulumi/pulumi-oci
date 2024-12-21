@@ -101,21 +101,11 @@ type GetAuditArchiveRetrievalsResult struct {
 }
 
 func GetAuditArchiveRetrievalsOutput(ctx *pulumi.Context, args GetAuditArchiveRetrievalsOutputArgs, opts ...pulumi.InvokeOption) GetAuditArchiveRetrievalsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuditArchiveRetrievalsResultOutput, error) {
 			args := v.(GetAuditArchiveRetrievalsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuditArchiveRetrievalsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuditArchiveRetrievalsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuditArchiveRetrievalsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuditArchiveRetrievalsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args, GetAuditArchiveRetrievalsResultOutput{}, options).(GetAuditArchiveRetrievalsResultOutput), nil
 		}).(GetAuditArchiveRetrievalsResultOutput)
 }
 

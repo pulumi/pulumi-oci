@@ -87,21 +87,11 @@ type GetFastConnectProviderServiceResult struct {
 }
 
 func GetFastConnectProviderServiceOutput(ctx *pulumi.Context, args GetFastConnectProviderServiceOutputArgs, opts ...pulumi.InvokeOption) GetFastConnectProviderServiceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFastConnectProviderServiceResultOutput, error) {
 			args := v.(GetFastConnectProviderServiceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFastConnectProviderServiceResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getFastConnectProviderService:getFastConnectProviderService", args, &rv, "", opts...)
-			if err != nil {
-				return GetFastConnectProviderServiceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFastConnectProviderServiceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFastConnectProviderServiceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getFastConnectProviderService:getFastConnectProviderService", args, GetFastConnectProviderServiceResultOutput{}, options).(GetFastConnectProviderServiceResultOutput), nil
 		}).(GetFastConnectProviderServiceResultOutput)
 }
 

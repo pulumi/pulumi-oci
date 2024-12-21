@@ -60,6 +60,31 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:Core/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
+        /// service gateway in this region.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServices = Oci.Core.GetServices.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:Core/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
     }
 
 

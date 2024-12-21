@@ -111,21 +111,11 @@ type LookupMediaAssetResult struct {
 }
 
 func LookupMediaAssetOutput(ctx *pulumi.Context, args LookupMediaAssetOutputArgs, opts ...pulumi.InvokeOption) LookupMediaAssetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMediaAssetResultOutput, error) {
 			args := v.(LookupMediaAssetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMediaAssetResult
-			secret, err := ctx.InvokePackageRaw("oci:MediaServices/getMediaAsset:getMediaAsset", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMediaAssetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMediaAssetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMediaAssetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MediaServices/getMediaAsset:getMediaAsset", args, LookupMediaAssetResultOutput{}, options).(LookupMediaAssetResultOutput), nil
 		}).(LookupMediaAssetResultOutput)
 }
 

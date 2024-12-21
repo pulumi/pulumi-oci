@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> Invoke(GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineJobsResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", args ?? new GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlPlanBaselineJobs = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineJobs.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = managedDatabaseSqlPlanBaselineJobName,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> Invoke(GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselineJobsResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", args ?? new GetManagedDatabaseSqlPlanBaselineJobsInvokeArgs(), options.WithDefaults());
     }
 
 

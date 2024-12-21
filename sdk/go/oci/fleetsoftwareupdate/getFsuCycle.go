@@ -118,21 +118,11 @@ type LookupFsuCycleResult struct {
 }
 
 func LookupFsuCycleOutput(ctx *pulumi.Context, args LookupFsuCycleOutputArgs, opts ...pulumi.InvokeOption) LookupFsuCycleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupFsuCycleResultOutput, error) {
 			args := v.(LookupFsuCycleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupFsuCycleResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle", args, &rv, "", opts...)
-			if err != nil {
-				return LookupFsuCycleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupFsuCycleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupFsuCycleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle", args, LookupFsuCycleResultOutput{}, options).(LookupFsuCycleResultOutput), nil
 		}).(LookupFsuCycleResultOutput)
 }
 

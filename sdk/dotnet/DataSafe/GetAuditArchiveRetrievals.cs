@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditArchiveRetrievalsResult> Invoke(GetAuditArchiveRetrievalsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalsResult>("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args ?? new GetAuditArchiveRetrievalsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns the list of audit archive retrieval.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditArchiveRetrievals = Oci.DataSafe.GetAuditArchiveRetrievals.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditArchiveRetrievalAccessLevel,
+        ///         AuditArchiveRetrievalId = testAuditArchiveRetrieval.Id,
+        ///         CompartmentIdInSubtree = auditArchiveRetrievalCompartmentIdInSubtree,
+        ///         DisplayName = auditArchiveRetrievalDisplayName,
+        ///         State = auditArchiveRetrievalState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeOfExpiry = auditArchiveRetrievalTimeOfExpiry,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditArchiveRetrievalsResult> Invoke(GetAuditArchiveRetrievalsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditArchiveRetrievalsResult>("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", args ?? new GetAuditArchiveRetrievalsInvokeArgs(), options.WithDefaults());
     }
 
 

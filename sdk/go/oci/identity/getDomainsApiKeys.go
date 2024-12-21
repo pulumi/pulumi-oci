@@ -104,21 +104,11 @@ type GetDomainsApiKeysResult struct {
 }
 
 func GetDomainsApiKeysOutput(ctx *pulumi.Context, args GetDomainsApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetDomainsApiKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsApiKeysResultOutput, error) {
 			args := v.(GetDomainsApiKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsApiKeysResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsApiKeys:getDomainsApiKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsApiKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsApiKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsApiKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsApiKeys:getDomainsApiKeys", args, GetDomainsApiKeysResultOutput{}, options).(GetDomainsApiKeysResultOutput), nil
 		}).(GetDomainsApiKeysResultOutput)
 }
 

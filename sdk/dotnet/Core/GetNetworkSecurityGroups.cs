@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetNetworkSecurityGroupsResult> Invoke(GetNetworkSecurityGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupsResult>("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args ?? new GetNetworkSecurityGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
+        /// You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkSecurityGroups = Oci.Core.GetNetworkSecurityGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkSecurityGroupDisplayName,
+        ///         State = networkSecurityGroupState,
+        ///         VcnId = testVcn.Id,
+        ///         VlanId = testVlan.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkSecurityGroupsResult> Invoke(GetNetworkSecurityGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupsResult>("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args ?? new GetNetworkSecurityGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

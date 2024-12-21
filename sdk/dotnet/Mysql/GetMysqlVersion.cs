@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetMysqlVersionResult> Invoke(GetMysqlVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlVersionResult>("oci:Mysql/getMysqlVersion:getMysqlVersion", args ?? new GetMysqlVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Get a list of supported and available MySQL database major versions.
+        /// 
+        /// The list is sorted by version family.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMysqlVersions = Oci.Mysql.GetMysqlVersion.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMysqlVersionResult> Invoke(GetMysqlVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlVersionResult>("oci:Mysql/getMysqlVersion:getMysqlVersion", args ?? new GetMysqlVersionInvokeArgs(), options.WithDefaults());
     }
 
 

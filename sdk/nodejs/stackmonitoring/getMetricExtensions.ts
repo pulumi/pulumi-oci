@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
  *     compartmentId: compartmentId,
  *     enabledOnResourceId: testResource.id,
+ *     metricExtensionId: testMetricExtension.id,
  *     name: metricExtensionName,
  *     resourceType: metricExtensionResourceType,
  *     state: metricExtensionState,
@@ -27,12 +28,14 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getMetricExtensions(args: GetMetricExtensionsArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricExtensionsResult> {
+export function getMetricExtensions(args?: GetMetricExtensionsArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricExtensionsResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", {
         "compartmentId": args.compartmentId,
         "enabledOnResourceId": args.enabledOnResourceId,
         "filters": args.filters,
+        "metricExtensionId": args.metricExtensionId,
         "name": args.name,
         "resourceType": args.resourceType,
         "state": args.state,
@@ -47,12 +50,16 @@ export interface GetMetricExtensionsArgs {
     /**
      * The ID of the compartment in which data is listed.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * A filter to return metric extensions based on input resource Id on which metric extension is enabled
      */
     enabledOnResourceId?: string;
     filters?: inputs.StackMonitoring.GetMetricExtensionsFilter[];
+    /**
+     * Identifier for the metric extension
+     */
+    metricExtensionId?: string;
     /**
      * A filter to return resources based on name.
      */
@@ -78,7 +85,7 @@ export interface GetMetricExtensionsResult {
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly enabledOnResourceId?: string;
     readonly filters?: outputs.StackMonitoring.GetMetricExtensionsFilter[];
     /**
@@ -89,6 +96,7 @@ export interface GetMetricExtensionsResult {
      * The list of metric_extension_collection.
      */
     readonly metricExtensionCollections: outputs.StackMonitoring.GetMetricExtensionsMetricExtensionCollection[];
+    readonly metricExtensionId?: string;
     /**
      * Name of the script file
      */
@@ -120,6 +128,7 @@ export interface GetMetricExtensionsResult {
  * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
  *     compartmentId: compartmentId,
  *     enabledOnResourceId: testResource.id,
+ *     metricExtensionId: testMetricExtension.id,
  *     name: metricExtensionName,
  *     resourceType: metricExtensionResourceType,
  *     state: metricExtensionState,
@@ -127,12 +136,14 @@ export interface GetMetricExtensionsResult {
  * });
  * ```
  */
-export function getMetricExtensionsOutput(args: GetMetricExtensionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetricExtensionsResult> {
+export function getMetricExtensionsOutput(args?: GetMetricExtensionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetricExtensionsResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", {
         "compartmentId": args.compartmentId,
         "enabledOnResourceId": args.enabledOnResourceId,
         "filters": args.filters,
+        "metricExtensionId": args.metricExtensionId,
         "name": args.name,
         "resourceType": args.resourceType,
         "state": args.state,
@@ -147,12 +158,16 @@ export interface GetMetricExtensionsOutputArgs {
     /**
      * The ID of the compartment in which data is listed.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string>;
     /**
      * A filter to return metric extensions based on input resource Id on which metric extension is enabled
      */
     enabledOnResourceId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMetricExtensionsFilterArgs>[]>;
+    /**
+     * Identifier for the metric extension
+     */
+    metricExtensionId?: pulumi.Input<string>;
     /**
      * A filter to return resources based on name.
      */

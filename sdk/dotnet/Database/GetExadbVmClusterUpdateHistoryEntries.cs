@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExadbVmClusterUpdateHistoryEntriesResult> Invoke(GetExadbVmClusterUpdateHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadbVmClusterUpdateHistoryEntriesResult>("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", args ?? new GetExadbVmClusterUpdateHistoryEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadbVmClusterUpdateHistoryEntries = Oci.Database.GetExadbVmClusterUpdateHistoryEntries.Invoke(new()
+        ///     {
+        ///         ExadbVmClusterId = testExadbVmCluster.Id,
+        ///         UpdateType = exadbVmClusterUpdateHistoryEntryUpdateType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExadbVmClusterUpdateHistoryEntriesResult> Invoke(GetExadbVmClusterUpdateHistoryEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadbVmClusterUpdateHistoryEntriesResult>("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", args ?? new GetExadbVmClusterUpdateHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

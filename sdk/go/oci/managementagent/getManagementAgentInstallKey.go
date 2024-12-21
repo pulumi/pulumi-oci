@@ -88,21 +88,11 @@ type LookupManagementAgentInstallKeyResult struct {
 }
 
 func LookupManagementAgentInstallKeyOutput(ctx *pulumi.Context, args LookupManagementAgentInstallKeyOutputArgs, opts ...pulumi.InvokeOption) LookupManagementAgentInstallKeyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupManagementAgentInstallKeyResultOutput, error) {
 			args := v.(LookupManagementAgentInstallKeyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupManagementAgentInstallKeyResult
-			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args, &rv, "", opts...)
-			if err != nil {
-				return LookupManagementAgentInstallKeyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupManagementAgentInstallKeyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupManagementAgentInstallKeyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args, LookupManagementAgentInstallKeyResultOutput{}, options).(LookupManagementAgentInstallKeyResultOutput), nil
 		}).(LookupManagementAgentInstallKeyResultOutput)
 }
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsGroupsResult> Invoke(GetDomainsGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGroupsResult>("oci:Identity/getDomainsGroups:getDomainsGroups", args ?? new GetDomainsGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Groups in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for groups. &lt;b&gt;Important:&lt;/b&gt; The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGroups = Oci.Identity.GetDomainsGroups.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         GroupCount = groupGroupCount,
+        ///         GroupFilter = groupGroupFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = groupAuthorization,
+        ///         ResourceTypeSchemaVersion = groupResourceTypeSchemaVersion,
+        ///         StartIndex = groupStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsGroupsResult> Invoke(GetDomainsGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsGroupsResult>("oci:Identity/getDomainsGroups:getDomainsGroups", args ?? new GetDomainsGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

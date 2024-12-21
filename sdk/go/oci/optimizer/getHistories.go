@@ -110,21 +110,11 @@ type GetHistoriesResult struct {
 }
 
 func GetHistoriesOutput(ctx *pulumi.Context, args GetHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetHistoriesResultOutput, error) {
 			args := v.(GetHistoriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetHistoriesResult
-			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getHistories:getHistories", args, &rv, "", opts...)
-			if err != nil {
-				return GetHistoriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetHistoriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetHistoriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Optimizer/getHistories:getHistories", args, GetHistoriesResultOutput{}, options).(GetHistoriesResultOutput), nil
 		}).(GetHistoriesResultOutput)
 }
 

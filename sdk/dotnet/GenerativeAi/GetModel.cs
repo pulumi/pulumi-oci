@@ -62,6 +62,32 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:GenerativeAi/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
+        /// 
+        /// Gets information about a custom model.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModel = Oci.GenerativeAi.GetModel.Invoke(new()
+        ///     {
+        ///         ModelId = testModelOciGenerativeAiModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:GenerativeAi/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());
     }
 
 

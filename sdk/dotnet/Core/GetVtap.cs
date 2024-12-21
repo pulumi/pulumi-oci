@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVtapResult> Invoke(GetVtapInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVtapResult>("oci:Core/getVtap:getVtap", args ?? new GetVtapInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified `Vtap` resource.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVtap = Oci.Core.GetVtap.Invoke(new()
+        ///     {
+        ///         VtapId = testVtapOciCoreVtap.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVtapResult> Invoke(GetVtapInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVtapResult>("oci:Core/getVtap:getVtap", args ?? new GetVtapInvokeArgs(), options.WithDefaults());
     }
 
 

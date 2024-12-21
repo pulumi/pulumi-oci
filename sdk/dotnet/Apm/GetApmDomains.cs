@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Apm
         /// </summary>
         public static Output<GetApmDomainsResult> Invoke(GetApmDomainsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
+        /// 
+        /// Lists all APM domains for the specified tenant compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApmDomains = Oci.Apm.GetApmDomains.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = apmDomainDisplayName,
+        ///         State = apmDomainState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApmDomainsResult> Invoke(GetApmDomainsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainsResult>("oci:Apm/getApmDomains:getApmDomains", args ?? new GetApmDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

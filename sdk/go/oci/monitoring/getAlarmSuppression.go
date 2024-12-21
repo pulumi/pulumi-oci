@@ -100,21 +100,11 @@ type LookupAlarmSuppressionResult struct {
 }
 
 func LookupAlarmSuppressionOutput(ctx *pulumi.Context, args LookupAlarmSuppressionOutputArgs, opts ...pulumi.InvokeOption) LookupAlarmSuppressionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAlarmSuppressionResultOutput, error) {
 			args := v.(LookupAlarmSuppressionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAlarmSuppressionResult
-			secret, err := ctx.InvokePackageRaw("oci:Monitoring/getAlarmSuppression:getAlarmSuppression", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAlarmSuppressionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAlarmSuppressionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAlarmSuppressionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Monitoring/getAlarmSuppression:getAlarmSuppression", args, LookupAlarmSuppressionResultOutput{}, options).(LookupAlarmSuppressionResultOutput), nil
 		}).(LookupAlarmSuppressionResultOutput)
 }
 

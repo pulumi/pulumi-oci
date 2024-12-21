@@ -88,21 +88,11 @@ type GetPrivateEndpointsResult struct {
 }
 
 func GetPrivateEndpointsOutput(ctx *pulumi.Context, args GetPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPrivateEndpointsResultOutput, error) {
 			args := v.(GetPrivateEndpointsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPrivateEndpointsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args, &rv, "", opts...)
-			if err != nil {
-				return GetPrivateEndpointsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPrivateEndpointsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPrivateEndpointsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args, GetPrivateEndpointsResultOutput{}, options).(GetPrivateEndpointsResultOutput), nil
 		}).(GetPrivateEndpointsResultOutput)
 }
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceInstalledWindowsUpdatesResult> Invoke(GetManagedInstanceInstalledWindowsUpdatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceInstalledWindowsUpdatesResult>("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", args ?? new GetManagedInstanceInstalledWindowsUpdatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Installed Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a list of Windows updates that have been installed on the specified managed instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceInstalledWindowsUpdates = Oci.OsManagementHub.GetManagedInstanceInstalledWindowsUpdates.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = managedInstanceInstalledWindowsUpdateDisplayName,
+        ///         DisplayNameContains = managedInstanceInstalledWindowsUpdateDisplayNameContains,
+        ///         Names = managedInstanceInstalledWindowsUpdateName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceInstalledWindowsUpdatesResult> Invoke(GetManagedInstanceInstalledWindowsUpdatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceInstalledWindowsUpdatesResult>("oci:OsManagementHub/getManagedInstanceInstalledWindowsUpdates:getManagedInstanceInstalledWindowsUpdates", args ?? new GetManagedInstanceInstalledWindowsUpdatesInvokeArgs(), options.WithDefaults());
     }
 
 

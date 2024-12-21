@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAlertPolicyRuleResult> Invoke(GetAlertPolicyRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertPolicyRuleResult>("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", args ?? new GetAlertPolicyRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of a policy rule by its key.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlertPolicyRule = Oci.DataSafe.GetAlertPolicyRule.Invoke(new()
+        ///     {
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         RuleKey = alertPolicyRuleRuleKey,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertPolicyRuleResult> Invoke(GetAlertPolicyRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertPolicyRuleResult>("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", args ?? new GetAlertPolicyRuleInvokeArgs(), options.WithDefaults());
     }
 
 

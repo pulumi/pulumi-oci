@@ -93,21 +93,11 @@ type LookupModelDeploymentResult struct {
 }
 
 func LookupModelDeploymentOutput(ctx *pulumi.Context, args LookupModelDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupModelDeploymentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupModelDeploymentResultOutput, error) {
 			args := v.(LookupModelDeploymentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupModelDeploymentResult
-			secret, err := ctx.InvokePackageRaw("oci:DataScience/getModelDeployment:getModelDeployment", args, &rv, "", opts...)
-			if err != nil {
-				return LookupModelDeploymentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupModelDeploymentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupModelDeploymentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataScience/getModelDeployment:getModelDeployment", args, LookupModelDeploymentResultOutput{}, options).(LookupModelDeploymentResultOutput), nil
 		}).(LookupModelDeploymentResultOutput)
 }
 

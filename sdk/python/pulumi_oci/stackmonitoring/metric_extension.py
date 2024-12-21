@@ -564,9 +564,12 @@ class MetricExtension(pulumi.CustomResource):
                 "jmx_attributes": metric_extension_query_properties_jmx_attributes,
                 "managed_bean_query": metric_extension_query_properties_managed_bean_query,
                 "out_param_details": {
+                    "out_param_name": metric_extension_query_properties_out_param_details_out_param_name,
                     "out_param_position": metric_extension_query_properties_out_param_details_out_param_position,
                     "out_param_type": metric_extension_query_properties_out_param_details_out_param_type,
                 },
+                "protocol_type": metric_extension_query_properties_protocol_type,
+                "response_content_type": metric_extension_query_properties_response_content_type,
                 "script_details": {
                     "content": metric_extension_query_properties_script_details_content,
                     "name": metric_extension_query_properties_script_details_name,
@@ -577,6 +580,7 @@ class MetricExtension(pulumi.CustomResource):
                 },
                 "sql_type": metric_extension_query_properties_sql_type,
                 "starts_with": metric_extension_query_properties_starts_with,
+                "url": metric_extension_query_properties_url,
             },
             resource_type=metric_extension_resource_type,
             description=metric_extension_description)
@@ -653,9 +657,12 @@ class MetricExtension(pulumi.CustomResource):
                 "jmx_attributes": metric_extension_query_properties_jmx_attributes,
                 "managed_bean_query": metric_extension_query_properties_managed_bean_query,
                 "out_param_details": {
+                    "out_param_name": metric_extension_query_properties_out_param_details_out_param_name,
                     "out_param_position": metric_extension_query_properties_out_param_details_out_param_position,
                     "out_param_type": metric_extension_query_properties_out_param_details_out_param_type,
                 },
+                "protocol_type": metric_extension_query_properties_protocol_type,
+                "response_content_type": metric_extension_query_properties_response_content_type,
                 "script_details": {
                     "content": metric_extension_query_properties_script_details_content,
                     "name": metric_extension_query_properties_script_details_name,
@@ -666,6 +673,7 @@ class MetricExtension(pulumi.CustomResource):
                 },
                 "sql_type": metric_extension_query_properties_sql_type,
                 "starts_with": metric_extension_query_properties_starts_with,
+                "url": metric_extension_query_properties_url,
             },
             resource_type=metric_extension_resource_type,
             description=metric_extension_description)

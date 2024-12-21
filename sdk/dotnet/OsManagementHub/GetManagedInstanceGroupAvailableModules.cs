@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceGroupAvailableModulesResult> Invoke(GetManagedInstanceGroupAvailableModulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailableModulesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", args ?? new GetManagedInstanceGroupAvailableModulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroupAvailableModules = Oci.OsManagementHub.GetManagedInstanceGroupAvailableModules.Invoke(new()
+        ///     {
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = managedInstanceGroupAvailableModuleName,
+        ///         NameContains = managedInstanceGroupAvailableModuleNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupAvailableModulesResult> Invoke(GetManagedInstanceGroupAvailableModulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupAvailableModulesResult>("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", args ?? new GetManagedInstanceGroupAvailableModulesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalClusterInstanceResult> Invoke(GetExternalClusterInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalClusterInstanceResult>("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", args ?? new GetExternalClusterInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalClusterInstance = Oci.DatabaseManagement.GetExternalClusterInstance.Invoke(new()
+        ///     {
+        ///         ExternalClusterInstanceId = testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalClusterInstanceResult> Invoke(GetExternalClusterInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalClusterInstanceResult>("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", args ?? new GetExternalClusterInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

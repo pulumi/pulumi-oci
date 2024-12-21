@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterPatchResult> Invoke(GetVmClusterPatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchResult>("oci:Database/getVmClusterPatch:getVmClusterPatch", args ?? new GetVmClusterPatchInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about a specified patch package.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterPatch = Oci.Database.GetVmClusterPatch.Invoke(new()
+        ///     {
+        ///         PatchId = testPatch.Id,
+        ///         VmClusterId = testVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterPatchResult> Invoke(GetVmClusterPatchInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchResult>("oci:Database/getVmClusterPatch:getVmClusterPatch", args ?? new GetVmClusterPatchInvokeArgs(), options.WithDefaults());
     }
 
 

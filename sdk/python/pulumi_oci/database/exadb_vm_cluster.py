@@ -1160,6 +1160,58 @@ class ExadbVmCluster(pulumi.CustomResource):
 
         Creates an Exadata VM cluster on Exascale Infrastructure
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_exadb_vm_cluster = oci.database.ExadbVmCluster("test_exadb_vm_cluster",
+            availability_domain=exadb_vm_cluster_availability_domain,
+            backup_subnet_id=test_subnet["id"],
+            compartment_id=compartment_id,
+            display_name=exadb_vm_cluster_display_name,
+            exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
+            grid_image_id=test_image["id"],
+            hostname=exadb_vm_cluster_hostname,
+            shape=exadb_vm_cluster_shape,
+            node_config={
+                "enabled_ecpu_count_per_node": exadb_vm_cluster_enabled_ecpu_count_per_node,
+                "total_ecpu_count_per_node": exadb_vm_cluster_total_ecpu_count_per_node,
+                "vm_file_system_storage_size_gbs_per_node": exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node,
+            },
+            node_resources=[
+                {
+                    "node_name": "node1",
+                },
+                {
+                    "node_name": "node2",
+                },
+            ],
+            ssh_public_keys=exadb_vm_cluster_ssh_public_keys,
+            subnet_id=test_subnet["id"],
+            backup_network_nsg_ids=exadb_vm_cluster_backup_network_nsg_ids,
+            cluster_name=exadb_vm_cluster_cluster_name,
+            data_collection_options={
+                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled,
+            },
+            defined_tags=exadb_vm_cluster_defined_tags,
+            domain=exadb_vm_cluster_domain,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            license_model=exadb_vm_cluster_license_model,
+            nsg_ids=exadb_vm_cluster_nsg_ids,
+            private_zone_id=test_zone["id"],
+            scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
+            scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
+            security_attributes=exadb_vm_cluster_security_attributes,
+            system_version=exadb_vm_cluster_system_version,
+            time_zone=exadb_vm_cluster_time_zone)
+        ```
+
         ## Import
 
         ExadbVmClusters can be imported using the `id`, e.g.
@@ -1218,6 +1270,58 @@ class ExadbVmCluster(pulumi.CustomResource):
         This resource provides the Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
 
         Creates an Exadata VM cluster on Exascale Infrastructure
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_exadb_vm_cluster = oci.database.ExadbVmCluster("test_exadb_vm_cluster",
+            availability_domain=exadb_vm_cluster_availability_domain,
+            backup_subnet_id=test_subnet["id"],
+            compartment_id=compartment_id,
+            display_name=exadb_vm_cluster_display_name,
+            exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
+            grid_image_id=test_image["id"],
+            hostname=exadb_vm_cluster_hostname,
+            shape=exadb_vm_cluster_shape,
+            node_config={
+                "enabled_ecpu_count_per_node": exadb_vm_cluster_enabled_ecpu_count_per_node,
+                "total_ecpu_count_per_node": exadb_vm_cluster_total_ecpu_count_per_node,
+                "vm_file_system_storage_size_gbs_per_node": exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node,
+            },
+            node_resources=[
+                {
+                    "node_name": "node1",
+                },
+                {
+                    "node_name": "node2",
+                },
+            ],
+            ssh_public_keys=exadb_vm_cluster_ssh_public_keys,
+            subnet_id=test_subnet["id"],
+            backup_network_nsg_ids=exadb_vm_cluster_backup_network_nsg_ids,
+            cluster_name=exadb_vm_cluster_cluster_name,
+            data_collection_options={
+                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled,
+            },
+            defined_tags=exadb_vm_cluster_defined_tags,
+            domain=exadb_vm_cluster_domain,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            license_model=exadb_vm_cluster_license_model,
+            nsg_ids=exadb_vm_cluster_nsg_ids,
+            private_zone_id=test_zone["id"],
+            scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
+            scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
+            security_attributes=exadb_vm_cluster_security_attributes,
+            system_version=exadb_vm_cluster_system_version,
+            time_zone=exadb_vm_cluster_time_zone)
+        ```
 
         ## Import
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetDiscoveryJobsResult> Invoke(GetDiscoveryJobsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResult>("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", args ?? new GetDiscoveryJobsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// API to get the details of all Discovery Jobs.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDiscoveryJobs = Oci.StackMonitoring.GetDiscoveryJobs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = discoveryJobName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDiscoveryJobsResult> Invoke(GetDiscoveryJobsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResult>("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", args ?? new GetDiscoveryJobsInvokeArgs(), options.WithDefaults());
     }
 
 

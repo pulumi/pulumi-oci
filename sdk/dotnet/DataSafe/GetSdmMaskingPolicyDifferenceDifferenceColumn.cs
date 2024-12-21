@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> Invoke(GetSdmMaskingPolicyDifferenceDifferenceColumnInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceDifferenceColumnResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sdm Masking Policy Difference Difference Column resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified SDM Masking policy difference column.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSdmMaskingPolicyDifferenceDifferenceColumn = Oci.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumn.Invoke(new()
+        ///     {
+        ///         DifferenceColumnKey = sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey,
+        ///         SdmMaskingPolicyDifferenceId = testSdmMaskingPolicyDifference.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnResult> Invoke(GetSdmMaskingPolicyDifferenceDifferenceColumnInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceDifferenceColumnResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnInvokeArgs(), options.WithDefaults());
     }
 
 

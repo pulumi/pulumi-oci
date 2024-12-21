@@ -68,6 +68,35 @@ namespace Pulumi.Oci.AnnouncementsService
         /// </summary>
         public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:AnnouncementsService/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Services in Oracle Cloud Infrastructure.
+        /// 
+        /// List all OCI services
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServices = Oci.AnnouncementsService.GetServices.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CommsManagerName = serviceCommsManagerName,
+        ///         PlatformType = servicePlatformType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:AnnouncementsService/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
     }
 
 

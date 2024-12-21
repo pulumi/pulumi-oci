@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbHomeResult> Invoke(GetDbHomeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbHomeResult>("oci:Database/getDbHome:getDbHome", args ?? new GetDbHomeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified Database Home.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbHome = Oci.Database.GetDbHome.Invoke(new()
+        ///     {
+        ///         DbHomeId = dbHomeId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbHomeResult> Invoke(GetDbHomeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbHomeResult>("oci:Database/getDbHome:getDbHome", args ?? new GetDbHomeInvokeArgs(), options.WithDefaults());
     }
 
 

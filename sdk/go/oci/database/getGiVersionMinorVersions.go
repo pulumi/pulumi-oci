@@ -89,21 +89,11 @@ type GetGiVersionMinorVersionsResult struct {
 }
 
 func GetGiVersionMinorVersionsOutput(ctx *pulumi.Context, args GetGiVersionMinorVersionsOutputArgs, opts ...pulumi.InvokeOption) GetGiVersionMinorVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetGiVersionMinorVersionsResultOutput, error) {
 			args := v.(GetGiVersionMinorVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetGiVersionMinorVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetGiVersionMinorVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetGiVersionMinorVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetGiVersionMinorVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", args, GetGiVersionMinorVersionsResultOutput{}, options).(GetGiVersionMinorVersionsResultOutput), nil
 		}).(GetGiVersionMinorVersionsResultOutput)
 }
 

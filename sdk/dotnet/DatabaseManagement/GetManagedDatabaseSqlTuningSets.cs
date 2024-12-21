@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningSetsResult> Invoke(GetManagedDatabaseSqlTuningSetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningSetsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", args ?? new GetManagedDatabaseSqlTuningSetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the SQL tuning sets for the specified Managed Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlTuningSets = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         NameContains = managedDatabaseSqlTuningSetNameContains,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningSetOpcNamedCredentialId,
+        ///         Owner = managedDatabaseSqlTuningSetOwner,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlTuningSetsResult> Invoke(GetManagedDatabaseSqlTuningSetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningSetsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", args ?? new GetManagedDatabaseSqlTuningSetsInvokeArgs(), options.WithDefaults());
     }
 
 

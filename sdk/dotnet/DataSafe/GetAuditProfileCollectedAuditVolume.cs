@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditProfileCollectedAuditVolumeResult> Invoke(GetAuditProfileCollectedAuditVolumeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileCollectedAuditVolumeResult>("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", args ?? new GetAuditProfileCollectedAuditVolumeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Profile Collected Audit Volume resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of all collected audit volume data points.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditProfileCollectedAuditVolume = Oci.DataSafe.GetAuditProfileCollectedAuditVolume.Invoke(new()
+        ///     {
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         WorkRequestId = testWorkRequest.Id,
+        ///         MonthInConsiderationGreaterThan = auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,
+        ///         MonthInConsiderationLessThan = auditProfileCollectedAuditVolumeMonthInConsiderationLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditProfileCollectedAuditVolumeResult> Invoke(GetAuditProfileCollectedAuditVolumeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileCollectedAuditVolumeResult>("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", args ?? new GetAuditProfileCollectedAuditVolumeInvokeArgs(), options.WithDefaults());
     }
 
 

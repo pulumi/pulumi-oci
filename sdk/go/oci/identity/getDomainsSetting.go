@@ -206,21 +206,11 @@ type LookupDomainsSettingResult struct {
 }
 
 func LookupDomainsSettingOutput(ctx *pulumi.Context, args LookupDomainsSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsSettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsSettingResultOutput, error) {
 			args := v.(LookupDomainsSettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsSettingResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSetting:getDomainsSetting", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsSettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsSettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsSettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsSetting:getDomainsSetting", args, LookupDomainsSettingResultOutput{}, options).(LookupDomainsSettingResultOutput), nil
 		}).(LookupDomainsSettingResultOutput)
 }
 

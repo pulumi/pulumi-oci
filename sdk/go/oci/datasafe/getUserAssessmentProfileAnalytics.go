@@ -102,21 +102,11 @@ type GetUserAssessmentProfileAnalyticsResult struct {
 }
 
 func GetUserAssessmentProfileAnalyticsOutput(ctx *pulumi.Context, args GetUserAssessmentProfileAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetUserAssessmentProfileAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetUserAssessmentProfileAnalyticsResultOutput, error) {
 			args := v.(GetUserAssessmentProfileAnalyticsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetUserAssessmentProfileAnalyticsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", args, &rv, "", opts...)
-			if err != nil {
-				return GetUserAssessmentProfileAnalyticsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetUserAssessmentProfileAnalyticsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetUserAssessmentProfileAnalyticsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics", args, GetUserAssessmentProfileAnalyticsResultOutput{}, options).(GetUserAssessmentProfileAnalyticsResultOutput), nil
 		}).(GetUserAssessmentProfileAnalyticsResultOutput)
 }
 

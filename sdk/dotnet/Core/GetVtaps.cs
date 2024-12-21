@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVtapsResult> Invoke(GetVtapsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVtapsResult>("oci:Core/getVtaps:getVtaps", args ?? new GetVtapsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the virtual test access points (VTAPs) in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVtaps = Oci.Core.GetVtaps.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vtapDisplayName,
+        ///         IsVtapEnabled = vtapIsVtapEnabled,
+        ///         Source = vtapSource,
+        ///         State = vtapState,
+        ///         TargetId = testTarget.Id,
+        ///         TargetIp = vtapTargetIp,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVtapsResult> Invoke(GetVtapsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVtapsResult>("oci:Core/getVtaps:getVtaps", args ?? new GetVtapsInvokeArgs(), options.WithDefaults());
     }
 
 

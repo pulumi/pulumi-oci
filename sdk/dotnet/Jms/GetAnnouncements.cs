@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetAnnouncementsResult> Invoke(GetAnnouncementsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementsResult>("oci:Jms/getAnnouncements:getAnnouncements", args ?? new GetAnnouncementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Return a list of AnnouncementSummary items
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAnnouncements = Oci.Jms.GetAnnouncements.Invoke(new()
+        ///     {
+        ///         SummaryContains = announcementSummaryContains,
+        ///         TimeEnd = announcementTimeEnd,
+        ///         TimeStart = announcementTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAnnouncementsResult> Invoke(GetAnnouncementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementsResult>("oci:Jms/getAnnouncements:getAnnouncements", args ?? new GetAnnouncementsInvokeArgs(), options.WithDefaults());
     }
 
 

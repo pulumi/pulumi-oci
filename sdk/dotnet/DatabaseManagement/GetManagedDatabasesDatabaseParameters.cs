@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabasesDatabaseParametersResult> Invoke(GetManagedDatabasesDatabaseParametersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesDatabaseParametersResult>("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", args ?? new GetManagedDatabasesDatabaseParametersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabasesDatabaseParameters = Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         IsAllowedValuesIncluded = managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+        ///         Name = managedDatabasesDatabaseParameterName,
+        ///         OpcNamedCredentialId = managedDatabasesDatabaseParameterOpcNamedCredentialId,
+        ///         Source = managedDatabasesDatabaseParameterSource,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabasesDatabaseParametersResult> Invoke(GetManagedDatabasesDatabaseParametersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesDatabaseParametersResult>("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", args ?? new GetManagedDatabasesDatabaseParametersInvokeArgs(), options.WithDefaults());
     }
 
 

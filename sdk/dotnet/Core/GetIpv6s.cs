@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpv6sResult> Invoke(GetIpv6sInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpv6sResult>("oci:Core/getIpv6s:getIpv6s", args ?? new GetIpv6sInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
+        /// on one of these filters:
+        /// 
+        ///   * Subnet OCID.
+        ///   * VNIC OCID.
+        ///   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+        ///   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+        ///   [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpv6s = Oci.Core.GetIpv6s.Invoke(new()
+        ///     {
+        ///         IpAddress = ipv6IpAddress,
+        ///         SubnetId = testSubnet.Id,
+        ///         VnicId = testVnicAttachment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpv6sResult> Invoke(GetIpv6sInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpv6sResult>("oci:Core/getIpv6s:getIpv6s", args ?? new GetIpv6sInvokeArgs(), options.WithDefaults());
     }
 
 

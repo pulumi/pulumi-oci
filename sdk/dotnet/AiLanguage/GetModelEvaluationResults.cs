@@ -62,6 +62,32 @@ namespace Pulumi.Oci.AiLanguage
         /// </summary>
         public static Output<GetModelEvaluationResultsResult> Invoke(GetModelEvaluationResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelEvaluationResultsResult>("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args ?? new GetModelEvaluationResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
+        /// 
+        /// Get a (paginated) list of evaluation results for a given model.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModelEvaluationResults = Oci.AiLanguage.GetModelEvaluationResults.Invoke(new()
+        ///     {
+        ///         ModelId = testModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelEvaluationResultsResult> Invoke(GetModelEvaluationResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelEvaluationResultsResult>("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args ?? new GetModelEvaluationResultsInvokeArgs(), options.WithDefaults());
     }
 
 

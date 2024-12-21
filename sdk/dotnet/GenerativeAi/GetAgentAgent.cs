@@ -68,6 +68,35 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetAgentAgentResult> Invoke(GetAgentAgentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentAgentResult>("oci:GenerativeAi/getAgentAgent:getAgentAgent", args ?? new GetAgentAgentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        /// 
+        /// **GetAgent**
+        /// 
+        /// Gets information about an agent.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAgent = Oci.GenerativeAi.GetAgentAgent.Invoke(new()
+        ///     {
+        ///         AgentId = testAgentOciGenerativeAiAgentAgent.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentAgentResult> Invoke(GetAgentAgentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentAgentResult>("oci:GenerativeAi/getAgentAgent:getAgentAgent", args ?? new GetAgentAgentInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsCustomerSecretKeysResult> Invoke(GetDomainsCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCustomerSecretKeysResult>("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", args ?? new GetDomainsCustomerSecretKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's customer secret keys.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCustomerSecretKeys = Oci.Identity.GetDomainsCustomerSecretKeys.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CustomerSecretKeyCount = customerSecretKeyCustomerSecretKeyCount,
+        ///         CustomerSecretKeyFilter = customerSecretKeyCustomerSecretKeyFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = customerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = customerSecretKeyResourceTypeSchemaVersion,
+        ///         StartIndex = customerSecretKeyStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsCustomerSecretKeysResult> Invoke(GetDomainsCustomerSecretKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCustomerSecretKeysResult>("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", args ?? new GetDomainsCustomerSecretKeysInvokeArgs(), options.WithDefaults());
     }
 
 

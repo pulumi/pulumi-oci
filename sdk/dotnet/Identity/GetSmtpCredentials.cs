@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetSmtpCredentialsResult> Invoke(GetSmtpCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
+        /// the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSmtpCredentials = Oci.Identity.GetSmtpCredentials.Invoke(new()
+        ///     {
+        ///         UserId = testUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSmtpCredentialsResult> Invoke(GetSmtpCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSmtpCredentialsResult>("oci:Identity/getSmtpCredentials:getSmtpCredentials", args ?? new GetSmtpCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSocialIdentityProviderResult> Invoke(GetDomainsSocialIdentityProviderInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSocialIdentityProviderResult>("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", args ?? new GetDomainsSocialIdentityProviderInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Social Identity Provider
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSocialIdentityProvider = Oci.Identity.GetDomainsSocialIdentityProvider.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SocialIdentityProviderId = testIdentityProvider.Id,
+        ///         Authorization = socialIdentityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = socialIdentityProviderResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSocialIdentityProviderResult> Invoke(GetDomainsSocialIdentityProviderInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSocialIdentityProviderResult>("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", args ?? new GetDomainsSocialIdentityProviderInvokeArgs(), options.WithDefaults());
     }
 
 

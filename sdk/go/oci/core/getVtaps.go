@@ -107,21 +107,11 @@ type GetVtapsResult struct {
 }
 
 func GetVtapsOutput(ctx *pulumi.Context, args GetVtapsOutputArgs, opts ...pulumi.InvokeOption) GetVtapsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVtapsResultOutput, error) {
 			args := v.(GetVtapsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVtapsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getVtaps:getVtaps", args, &rv, "", opts...)
-			if err != nil {
-				return GetVtapsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVtapsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVtapsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getVtaps:getVtaps", args, GetVtapsResultOutput{}, options).(GetVtapsResultOutput), nil
 		}).(GetVtapsResultOutput)
 }
 

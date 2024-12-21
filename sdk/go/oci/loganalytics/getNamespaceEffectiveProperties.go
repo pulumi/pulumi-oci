@@ -93,21 +93,11 @@ type GetNamespaceEffectivePropertiesResult struct {
 }
 
 func GetNamespaceEffectivePropertiesOutput(ctx *pulumi.Context, args GetNamespaceEffectivePropertiesOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceEffectivePropertiesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNamespaceEffectivePropertiesResultOutput, error) {
 			args := v.(GetNamespaceEffectivePropertiesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNamespaceEffectivePropertiesResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", args, &rv, "", opts...)
-			if err != nil {
-				return GetNamespaceEffectivePropertiesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNamespaceEffectivePropertiesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNamespaceEffectivePropertiesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties", args, GetNamespaceEffectivePropertiesResultOutput{}, options).(GetNamespaceEffectivePropertiesResultOutput), nil
 		}).(GetNamespaceEffectivePropertiesResultOutput)
 }
 

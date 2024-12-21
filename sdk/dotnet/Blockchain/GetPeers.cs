@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Blockchain
         /// </summary>
         public static Output<GetPeersResult> Invoke(GetPeersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPeersResult>("oci:Blockchain/getPeers:getPeers", args ?? new GetPeersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
+        /// 
+        /// List Blockchain Platform Peers
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPeers = Oci.Blockchain.GetPeers.Invoke(new()
+        ///     {
+        ///         BlockchainPlatformId = testBlockchainPlatform.Id,
+        ///         DisplayName = peerDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPeersResult> Invoke(GetPeersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPeersResult>("oci:Blockchain/getPeers:getPeers", args ?? new GetPeersInvokeArgs(), options.WithDefaults());
     }
 
 

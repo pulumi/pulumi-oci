@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DataCatalog/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Gets a specific data asset connection by key.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnection = Oci.DataCatalog.GetConnection.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         ConnectionKey = connectionConnectionKey,
+        ///         DataAssetKey = connectionDataAssetKey,
+        ///         Fields = connectionFields,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DataCatalog/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
     }
 
 

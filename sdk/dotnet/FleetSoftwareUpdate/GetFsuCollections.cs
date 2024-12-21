@@ -70,6 +70,36 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public static Output<GetFsuCollectionsResult> Invoke(GetFsuCollectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFsuCollectionsResult>("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", args ?? new GetFsuCollectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fsu Collections in Oracle Cloud Infrastructure Fleet Software Update service.
+        /// 
+        /// Gets a list of all Exadata Fleet Update Collections in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFsuCollections = Oci.FleetSoftwareUpdate.GetFsuCollections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fsuCollectionDisplayName,
+        ///         State = fsuCollectionState,
+        ///         Type = fsuCollectionType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFsuCollectionsResult> Invoke(GetFsuCollectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFsuCollectionsResult>("oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections", args ?? new GetFsuCollectionsInvokeArgs(), options.WithDefaults());
     }
 
 

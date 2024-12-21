@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetHostInsightResult> Invoke(GetHostInsightInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostInsightResult>("oci:Opsi/getHostInsight:getHostInsight", args ?? new GetHostInsightInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets details of a host insight.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHostInsight = Oci.Opsi.GetHostInsight.Invoke(new()
+        ///     {
+        ///         HostInsightId = testHostInsightOciOpsiHostInsight.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHostInsightResult> Invoke(GetHostInsightInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostInsightResult>("oci:Opsi/getHostInsight:getHostInsight", args ?? new GetHostInsightInvokeArgs(), options.WithDefaults());
     }
 
 

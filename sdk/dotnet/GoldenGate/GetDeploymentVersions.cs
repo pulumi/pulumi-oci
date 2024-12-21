@@ -68,6 +68,35 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentVersionsResult> Invoke(GetDeploymentVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentVersionsResult>("oci:GoldenGate/getDeploymentVersions:getDeploymentVersions", args ?? new GetDeploymentVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Returns the list of available deployment versions.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentVersions = Oci.GoldenGate.GetDeploymentVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentId = testDeployment.Id,
+        ///         DeploymentType = deploymentVersionDeploymentType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentVersionsResult> Invoke(GetDeploymentVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentVersionsResult>("oci:GoldenGate/getDeploymentVersions:getDeploymentVersions", args ?? new GetDeploymentVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

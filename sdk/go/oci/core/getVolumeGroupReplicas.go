@@ -85,21 +85,11 @@ type GetVolumeGroupReplicasResult struct {
 }
 
 func GetVolumeGroupReplicasOutput(ctx *pulumi.Context, args GetVolumeGroupReplicasOutputArgs, opts ...pulumi.InvokeOption) GetVolumeGroupReplicasResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVolumeGroupReplicasResultOutput, error) {
 			args := v.(GetVolumeGroupReplicasArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVolumeGroupReplicasResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args, &rv, "", opts...)
-			if err != nil {
-				return GetVolumeGroupReplicasResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVolumeGroupReplicasResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVolumeGroupReplicasResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas", args, GetVolumeGroupReplicasResultOutput{}, options).(GetVolumeGroupReplicasResultOutput), nil
 		}).(GetVolumeGroupReplicasResultOutput)
 }
 

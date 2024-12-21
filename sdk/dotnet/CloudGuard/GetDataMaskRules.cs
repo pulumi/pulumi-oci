@@ -78,6 +78,40 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetDataMaskRulesResult> Invoke(GetDataMaskRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataMaskRulesResult>("oci:CloudGuard/getDataMaskRules:getDataMaskRules", args ?? new GetDataMaskRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataMaskRules = Oci.CloudGuard.GetDataMaskRules.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataMaskRuleAccessLevel,
+        ///         DataMaskRuleStatus = dataMaskRuleDataMaskRuleStatus,
+        ///         DisplayName = dataMaskRuleDisplayName,
+        ///         IamGroupId = testGroup.Id,
+        ///         State = dataMaskRuleState,
+        ///         TargetId = testTarget.Id,
+        ///         TargetType = dataMaskRuleTargetType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDataMaskRulesResult> Invoke(GetDataMaskRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataMaskRulesResult>("oci:CloudGuard/getDataMaskRules:getDataMaskRules", args ?? new GetDataMaskRulesInvokeArgs(), options.WithDefaults());
     }
 
 

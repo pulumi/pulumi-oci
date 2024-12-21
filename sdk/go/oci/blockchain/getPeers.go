@@ -72,21 +72,11 @@ type GetPeersResult struct {
 }
 
 func GetPeersOutput(ctx *pulumi.Context, args GetPeersOutputArgs, opts ...pulumi.InvokeOption) GetPeersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPeersResultOutput, error) {
 			args := v.(GetPeersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPeersResult
-			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getPeers:getPeers", args, &rv, "", opts...)
-			if err != nil {
-				return GetPeersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPeersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPeersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Blockchain/getPeers:getPeers", args, GetPeersResultOutput{}, options).(GetPeersResultOutput), nil
 		}).(GetPeersResultOutput)
 }
 

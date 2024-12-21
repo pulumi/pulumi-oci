@@ -79,21 +79,11 @@ type GetInstanceAvailablePluginResult struct {
 }
 
 func GetInstanceAvailablePluginOutput(ctx *pulumi.Context, args GetInstanceAvailablePluginOutputArgs, opts ...pulumi.InvokeOption) GetInstanceAvailablePluginResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInstanceAvailablePluginResultOutput, error) {
 			args := v.(GetInstanceAvailablePluginArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInstanceAvailablePluginResult
-			secret, err := ctx.InvokePackageRaw("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args, &rv, "", opts...)
-			if err != nil {
-				return GetInstanceAvailablePluginResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInstanceAvailablePluginResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInstanceAvailablePluginResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin", args, GetInstanceAvailablePluginResultOutput{}, options).(GetInstanceAvailablePluginResultOutput), nil
 		}).(GetInstanceAvailablePluginResultOutput)
 }
 

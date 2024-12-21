@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferenceResult> Invoke(GetSdmMaskingPolicyDifferenceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceResult>("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args ?? new GetSdmMaskingPolicyDifferenceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified SDM Masking policy difference.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSdmMaskingPolicyDifference = Oci.DataSafe.GetSdmMaskingPolicyDifference.Invoke(new()
+        ///     {
+        ///         SdmMaskingPolicyDifferenceId = testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSdmMaskingPolicyDifferenceResult> Invoke(GetSdmMaskingPolicyDifferenceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceResult>("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args ?? new GetSdmMaskingPolicyDifferenceInvokeArgs(), options.WithDefaults());
     }
 
 

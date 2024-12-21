@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetModelVersionSetsResult> Invoke(GetModelVersionSetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelVersionSetsResult>("oci:DataScience/getModelVersionSets:getModelVersionSets", args ?? new GetModelVersionSetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Model Version Sets in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Lists model version sets in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModelVersionSets = Oci.DataScience.GetModelVersionSets.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelVersionSetCreatedBy,
+        ///         Id = modelVersionSetId,
+        ///         Name = modelVersionSetName,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelVersionSetState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelVersionSetsResult> Invoke(GetModelVersionSetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelVersionSetsResult>("oci:DataScience/getModelVersionSets:getModelVersionSets", args ?? new GetModelVersionSetsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepoFileLineResult> Invoke(GetRepoFileLineInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepoFileLineResult>("oci:DevOps/getRepoFileLine:getRepoFileLine", args ?? new GetRepoFileLineInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieve lines of a specified file. Supports starting line number and limit.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepoFileLine = Oci.DevOps.GetRepoFileLine.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         Revision = repoFileLineRevision,
+        ///         FilePath = repoFileLineFilePath,
+        ///         StartLineNumber = repoFileLineStartLineNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepoFileLineResult> Invoke(GetRepoFileLineInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepoFileLineResult>("oci:DevOps/getRepoFileLine:getRepoFileLine", args ?? new GetRepoFileLineInvokeArgs(), options.WithDefaults());
     }
 
 

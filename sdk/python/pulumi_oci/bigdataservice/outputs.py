@@ -36,6 +36,7 @@ __all__ = [
     'AutoScalingConfigurationPolicyRule',
     'AutoScalingConfigurationPolicyRuleMetric',
     'AutoScalingConfigurationPolicyRuleMetricThreshold',
+    'BdsInstanceBdsClusterVersionSummary',
     'BdsInstanceCloudSqlDetail',
     'BdsInstanceCloudSqlDetailKerberosDetail',
     'BdsInstanceClusterDetail',
@@ -43,6 +44,10 @@ __all__ = [
     'BdsInstanceComputeOnlyWorkerNodeShapeConfig',
     'BdsInstanceEdgeNode',
     'BdsInstanceEdgeNodeShapeConfig',
+    'BdsInstanceIdentityConfigurationIamUserSyncConfiguration',
+    'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails',
+    'BdsInstanceIdentityConfigurationUpstConfiguration',
+    'BdsInstanceIdentityConfigurationUpstConfigurationDetails',
     'BdsInstanceKafkaBrokerNode',
     'BdsInstanceKafkaBrokerNodeShapeConfig',
     'BdsInstanceMasterNode',
@@ -53,6 +58,8 @@ __all__ = [
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetail',
     'BdsInstanceOsPatchActionPatchingConfig',
     'BdsInstancePatchActionPatchingConfig',
+    'BdsInstanceStartClusterShapeConfig',
+    'BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig',
     'BdsInstanceUtilNode',
     'BdsInstanceUtilNodeShapeConfig',
     'BdsInstanceWorkerNode',
@@ -99,8 +106,11 @@ __all__ = [
     'GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult',
     'GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult',
     'GetAutoScalingConfigurationsFilterResult',
+    'GetBdsClusterVersionsBdsClusterVersionResult',
+    'GetBdsClusterVersionsFilterResult',
     'GetBdsInstanceApiKeysBdsApiKeyResult',
     'GetBdsInstanceApiKeysFilterResult',
+    'GetBdsInstanceBdsClusterVersionSummaryResult',
     'GetBdsInstanceCloudSqlDetailResult',
     'GetBdsInstanceCloudSqlDetailKerberosDetailResult',
     'GetBdsInstanceClusterDetailResult',
@@ -110,6 +120,16 @@ __all__ = [
     'GetBdsInstanceEdgeNodeShapeConfigResult',
     'GetBdsInstanceGetOsPatchFilterResult',
     'GetBdsInstanceGetOsPatchTargetPackageResult',
+    'GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationResult',
+    'GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailResult',
+    'GetBdsInstanceIdentityConfigurationUpstConfigurationResult',
+    'GetBdsInstanceIdentityConfigurationUpstConfigurationDetailResult',
+    'GetBdsInstanceIdentityConfigurationsFilterResult',
+    'GetBdsInstanceIdentityConfigurationsIdentityConfigurationResult',
+    'GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationResult',
+    'GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailResult',
+    'GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationResult',
+    'GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailResult',
     'GetBdsInstanceKafkaBrokerNodeResult',
     'GetBdsInstanceKafkaBrokerNodeShapeConfigResult',
     'GetBdsInstanceListOsPatchesFilterResult',
@@ -127,11 +147,14 @@ __all__ = [
     'GetBdsInstancePatchesPatchResult',
     'GetBdsInstanceResourcePrincipalConfigurationsFilterResult',
     'GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationResult',
+    'GetBdsInstanceStartClusterShapeConfigResult',
+    'GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult',
     'GetBdsInstanceUtilNodeResult',
     'GetBdsInstanceUtilNodeShapeConfigResult',
     'GetBdsInstanceWorkerNodeResult',
     'GetBdsInstanceWorkerNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceResult',
+    'GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult',
     'GetBdsInstancesBdsInstanceCloudSqlDetailResult',
     'GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailResult',
     'GetBdsInstancesBdsInstanceClusterDetailResult',
@@ -146,6 +169,8 @@ __all__ = [
     'GetBdsInstancesBdsInstanceNetworkConfigResult',
     'GetBdsInstancesBdsInstanceNodeResult',
     'GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeResult',
+    'GetBdsInstancesBdsInstanceStartClusterShapeConfigResult',
+    'GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult',
     'GetBdsInstancesBdsInstanceUtilNodeResult',
     'GetBdsInstancesBdsInstanceUtilNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceWorkerNodeResult',
@@ -1413,6 +1438,55 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
 
 
 @pulumi.output_type
+class BdsInstanceBdsClusterVersionSummary(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bdsVersion":
+            suggest = "bds_version"
+        elif key == "odhVersion":
+            suggest = "odh_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceBdsClusterVersionSummary. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceBdsClusterVersionSummary.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceBdsClusterVersionSummary.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bds_version: str,
+                 odh_version: Optional[str] = None):
+        """
+        :param str bds_version: BDS version to be used for cluster creation
+        :param str odh_version: ODH version to be used for cluster creation
+        """
+        pulumi.set(__self__, "bds_version", bds_version)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
+
+    @property
+    @pulumi.getter(name="bdsVersion")
+    def bds_version(self) -> str:
+        """
+        BDS version to be used for cluster creation
+        """
+        return pulumi.get(self, "bds_version")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[str]:
+        """
+        ODH version to be used for cluster creation
+        """
+        return pulumi.get(self, "odh_version")
+
+
+@pulumi.output_type
 class BdsInstanceCloudSqlDetail(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2108,6 +2182,314 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
 
 
 @pulumi.output_type
+class BdsInstanceIdentityConfigurationIamUserSyncConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isPosixAttributesAdditionRequired":
+            suggest = "is_posix_attributes_addition_required"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceIdentityConfigurationIamUserSyncConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceIdentityConfigurationIamUserSyncConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceIdentityConfigurationIamUserSyncConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: Optional[bool] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        """
+        :param bool is_posix_attributes_addition_required: whether to append POSIX attributes to IAM users
+        :param str state: Lifecycle state of the UPST config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        if is_posix_attributes_addition_required is not None:
+            pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> Optional[bool]:
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        Lifecycle state of the UPST config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isPosixAttributesAdditionRequired":
+            suggest = "is_posix_attributes_addition_required"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: Optional[bool] = None):
+        """
+        :param bool is_posix_attributes_addition_required: (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+        """
+        if is_posix_attributes_addition_required is not None:
+            pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> Optional[bool]:
+        """
+        (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+
+@pulumi.output_type
+class BdsInstanceIdentityConfigurationUpstConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keytabContent":
+            suggest = "keytab_content"
+        elif key == "masterEncryptionKeyId":
+            suggest = "master_encryption_key_id"
+        elif key == "secretId":
+            suggest = "secret_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeTokenExchangeKeytabLastRefreshed":
+            suggest = "time_token_exchange_keytab_last_refreshed"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+        elif key == "tokenExchangePrincipalName":
+            suggest = "token_exchange_principal_name"
+        elif key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceIdentityConfigurationUpstConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceIdentityConfigurationUpstConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceIdentityConfigurationUpstConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 keytab_content: Optional[str] = None,
+                 master_encryption_key_id: Optional[str] = None,
+                 secret_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_token_exchange_keytab_last_refreshed: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 token_exchange_principal_name: Optional[str] = None,
+                 vault_id: Optional[str] = None):
+        """
+        :param str keytab_content: The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        :param str master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
+        :param str secret_id: Secret ID for token exchange keytab
+        :param str state: Lifecycle state of the UPST config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_token_exchange_keytab_last_refreshed: Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        :param str token_exchange_principal_name: Token exchange kerberos Principal name in cluster
+        :param str vault_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        if keytab_content is not None:
+            pulumi.set(__self__, "keytab_content", keytab_content)
+        if master_encryption_key_id is not None:
+            pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_token_exchange_keytab_last_refreshed is not None:
+            pulumi.set(__self__, "time_token_exchange_keytab_last_refreshed", time_token_exchange_keytab_last_refreshed)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if token_exchange_principal_name is not None:
+            pulumi.set(__self__, "token_exchange_principal_name", token_exchange_principal_name)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="keytabContent")
+    def keytab_content(self) -> Optional[str]:
+        """
+        The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        """
+        return pulumi.get(self, "keytab_content")
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> Optional[str]:
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[str]:
+        """
+        Secret ID for token exchange keytab
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        Lifecycle state of the UPST config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeTokenExchangeKeytabLastRefreshed")
+    def time_token_exchange_keytab_last_refreshed(self) -> Optional[str]:
+        """
+        Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_token_exchange_keytab_last_refreshed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="tokenExchangePrincipalName")
+    def token_exchange_principal_name(self) -> Optional[str]:
+        """
+        Token exchange kerberos Principal name in cluster
+        """
+        return pulumi.get(self, "token_exchange_principal_name")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[str]:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class BdsInstanceIdentityConfigurationUpstConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "masterEncryptionKeyId":
+            suggest = "master_encryption_key_id"
+        elif key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceIdentityConfigurationUpstConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceIdentityConfigurationUpstConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceIdentityConfigurationUpstConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 master_encryption_key_id: Optional[str] = None,
+                 vault_id: Optional[str] = None):
+        """
+        :param str master_encryption_key_id: (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+        :param str vault_id: (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+        """
+        if master_encryption_key_id is not None:
+            pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
 class BdsInstanceKafkaBrokerNode(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2422,8 +2804,8 @@ class BdsInstanceNetworkConfig(dict):
                  cidr_block: Optional[str] = None,
                  is_nat_gateway_required: Optional[bool] = None):
         """
-        :param str cidr_block: The CIDR IP address block of the VCN.
-        :param bool is_nat_gateway_required: A boolean flag whether to configure a NAT gateway.
+        :param str cidr_block: (Updatable) The CIDR IP address block of the VCN.
+        :param bool is_nat_gateway_required: (Updatable) A boolean flag whether to configure a NAT gateway.
         """
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
@@ -2434,7 +2816,7 @@ class BdsInstanceNetworkConfig(dict):
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[str]:
         """
-        The CIDR IP address block of the VCN.
+        (Updatable) The CIDR IP address block of the VCN.
         """
         return pulumi.get(self, "cidr_block")
 
@@ -2442,7 +2824,7 @@ class BdsInstanceNetworkConfig(dict):
     @pulumi.getter(name="isNatGatewayRequired")
     def is_nat_gateway_required(self) -> Optional[bool]:
         """
-        A boolean flag whether to configure a NAT gateway.
+        (Updatable) A boolean flag whether to configure a NAT gateway.
         """
         return pulumi.get(self, "is_nat_gateway_required")
 
@@ -2474,6 +2856,8 @@ class BdsInstanceNode(dict):
             suggest = "memory_in_gbs"
         elif key == "nodeType":
             suggest = "node_type"
+        elif key == "odhVersion":
+            suggest = "odh_version"
         elif key == "osVersion":
             suggest = "os_version"
         elif key == "sshFingerprint":
@@ -2511,6 +2895,7 @@ class BdsInstanceNode(dict):
                  node_type: Optional[str] = None,
                  nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None,
+                 odh_version: Optional[str] = None,
                  os_version: Optional[str] = None,
                  shape: Optional[str] = None,
                  ssh_fingerprint: Optional[str] = None,
@@ -2533,6 +2918,7 @@ class BdsInstanceNode(dict):
         :param str node_type: The Big Data Service cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: (Updatable) Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access
@@ -2569,6 +2955,8 @@ class BdsInstanceNode(dict):
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
         if os_version is not None:
             pulumi.set(__self__, "os_version", os_version)
         if shape is not None:
@@ -2695,6 +3083,14 @@ class BdsInstanceNode(dict):
         The total number of OCPUs available to the node.
         """
         return pulumi.get(self, "ocpus")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[str]:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
 
     @property
     @pulumi.getter(name="osVersion")
@@ -2979,6 +3375,10 @@ class BdsInstancePatchActionPatchingConfig(dict):
             suggest = "patching_config_strategy"
         elif key == "batchSize":
             suggest = "batch_size"
+        elif key == "toleranceThresholdPerBatch":
+            suggest = "tolerance_threshold_per_batch"
+        elif key == "toleranceThresholdPerDomain":
+            suggest = "tolerance_threshold_per_domain"
         elif key == "waitTimeBetweenBatchInSeconds":
             suggest = "wait_time_between_batch_in_seconds"
         elif key == "waitTimeBetweenDomainInSeconds":
@@ -2998,17 +3398,25 @@ class BdsInstancePatchActionPatchingConfig(dict):
     def __init__(__self__, *,
                  patching_config_strategy: str,
                  batch_size: Optional[int] = None,
+                 tolerance_threshold_per_batch: Optional[int] = None,
+                 tolerance_threshold_per_domain: Optional[int] = None,
                  wait_time_between_batch_in_seconds: Optional[int] = None,
                  wait_time_between_domain_in_seconds: Optional[int] = None):
         """
         :param str patching_config_strategy: Type of strategy used for detailed patching configuration
         :param int batch_size: How many nodes to be patched in each iteration.
+        :param int tolerance_threshold_per_batch: Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        :param int tolerance_threshold_per_domain: Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
         :param int wait_time_between_batch_in_seconds: The wait time between batches in seconds.
         :param int wait_time_between_domain_in_seconds: The wait time between AD/FD in seconds.
         """
         pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
         if batch_size is not None:
             pulumi.set(__self__, "batch_size", batch_size)
+        if tolerance_threshold_per_batch is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_batch", tolerance_threshold_per_batch)
+        if tolerance_threshold_per_domain is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_domain", tolerance_threshold_per_domain)
         if wait_time_between_batch_in_seconds is not None:
             pulumi.set(__self__, "wait_time_between_batch_in_seconds", wait_time_between_batch_in_seconds)
         if wait_time_between_domain_in_seconds is not None:
@@ -3031,6 +3439,22 @@ class BdsInstancePatchActionPatchingConfig(dict):
         return pulumi.get(self, "batch_size")
 
     @property
+    @pulumi.getter(name="toleranceThresholdPerBatch")
+    def tolerance_threshold_per_batch(self) -> Optional[int]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        """
+        return pulumi.get(self, "tolerance_threshold_per_batch")
+
+    @property
+    @pulumi.getter(name="toleranceThresholdPerDomain")
+    def tolerance_threshold_per_domain(self) -> Optional[int]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        """
+        return pulumi.get(self, "tolerance_threshold_per_domain")
+
+    @property
     @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
     def wait_time_between_batch_in_seconds(self) -> Optional[int]:
         """
@@ -3045,6 +3469,84 @@ class BdsInstancePatchActionPatchingConfig(dict):
         The wait time between AD/FD in seconds.
         """
         return pulumi.get(self, "wait_time_between_domain_in_seconds")
+
+
+@pulumi.output_type
+class BdsInstanceStartClusterShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeTypeShapeConfigs":
+            suggest = "node_type_shape_configs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceStartClusterShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceStartClusterShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceStartClusterShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_type_shape_configs: Optional[Sequence['outputs.BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig']] = None):
+        if node_type_shape_configs is not None:
+            pulumi.set(__self__, "node_type_shape_configs", node_type_shape_configs)
+
+    @property
+    @pulumi.getter(name="nodeTypeShapeConfigs")
+    def node_type_shape_configs(self) -> Optional[Sequence['outputs.BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig']]:
+        return pulumi.get(self, "node_type_shape_configs")
+
+
+@pulumi.output_type
+class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeType":
+            suggest = "node_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_type: Optional[str] = None,
+                 shape: Optional[str] = None):
+        """
+        :param str node_type: BDS instance node type
+        :param str shape: Shape of the node
+        """
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[str]:
+        """
+        BDS instance node type
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[str]:
+        """
+        Shape of the node
+        """
+        return pulumi.get(self, "shape")
 
 
 @pulumi.output_type
@@ -4821,10 +5323,67 @@ class GetAutoScalingConfigurationsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetBdsClusterVersionsBdsClusterVersionResult(dict):
+    def __init__(__self__, *,
+                 bds_version: str,
+                 odh_version: str):
+        """
+        :param str bds_version: BDS version to be used for cluster creation
+        :param str odh_version: ODH version to be used for cluster creation
+        """
+        pulumi.set(__self__, "bds_version", bds_version)
+        pulumi.set(__self__, "odh_version", odh_version)
+
+    @property
+    @pulumi.getter(name="bdsVersion")
+    def bds_version(self) -> str:
+        """
+        BDS version to be used for cluster creation
+        """
+        return pulumi.get(self, "bds_version")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        ODH version to be used for cluster creation
+        """
+        return pulumi.get(self, "odh_version")
+
+
+@pulumi.output_type
+class GetBdsClusterVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
     def __init__(__self__, *,
                  bds_instance_id: str,
                  default_region: str,
+                 domain_ocid: str,
                  fingerprint: str,
                  id: str,
                  key_alias: str,
@@ -4837,6 +5396,9 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
         """
         :param str bds_instance_id: The OCID of the cluster.
         :param str default_region: The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+               >>>>>>> theirs
+        :param str domain_ocid: Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+               =======
         :param str fingerprint: The fingerprint that corresponds to the public API key requested.
         :param str id: Identifier of the user's API key.
         :param str key_alias: User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
@@ -4848,6 +5410,7 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "default_region", default_region)
+        pulumi.set(__self__, "domain_ocid", domain_ocid)
         pulumi.set(__self__, "fingerprint", fingerprint)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "key_alias", key_alias)
@@ -4871,8 +5434,18 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
     def default_region(self) -> str:
         """
         The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+        >>>>>>> theirs
         """
         return pulumi.get(self, "default_region")
+
+    @property
+    @pulumi.getter(name="domainOcid")
+    def domain_ocid(self) -> str:
+        """
+        Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+        =======
+        """
+        return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
@@ -4969,6 +5542,35 @@ class GetBdsInstanceApiKeysFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsClusterVersionSummaryResult(dict):
+    def __init__(__self__, *,
+                 bds_version: str,
+                 odh_version: str):
+        """
+        :param str bds_version: Big Data Service version installed in the cluster.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        pulumi.set(__self__, "bds_version", bds_version)
+        pulumi.set(__self__, "odh_version", odh_version)
+
+    @property
+    @pulumi.getter(name="bdsVersion")
+    def bds_version(self) -> str:
+        """
+        Big Data Service version installed in the cluster.
+        """
+        return pulumi.get(self, "bds_version")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
 
 
 @pulumi.output_type
@@ -5542,6 +6144,607 @@ class GetBdsInstanceGetOsPatchTargetPackageResult(dict):
 
 
 @pulumi.output_type
+class GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: bool,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param bool is_posix_attributes_addition_required: whether to append POSIX attributes to IAM users
+        :param str state: Lifecycle state of the UPST config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> bool:
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Lifecycle state of the UPST config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: bool):
+        """
+        :param bool is_posix_attributes_addition_required: whether to append POSIX attributes to IAM users
+        """
+        pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> bool:
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationUpstConfigurationResult(dict):
+    def __init__(__self__, *,
+                 keytab_content: str,
+                 master_encryption_key_id: str,
+                 secret_id: str,
+                 state: str,
+                 time_created: str,
+                 time_token_exchange_keytab_last_refreshed: str,
+                 time_updated: str,
+                 token_exchange_principal_name: str,
+                 vault_id: str):
+        """
+        :param str keytab_content: The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        :param str master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
+        :param str secret_id: Secret ID for token exchange keytab
+        :param str state: Lifecycle state of the UPST config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_token_exchange_keytab_last_refreshed: Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        :param str token_exchange_principal_name: Token exchange kerberos Principal name in cluster
+        :param str vault_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        pulumi.set(__self__, "keytab_content", keytab_content)
+        pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_token_exchange_keytab_last_refreshed", time_token_exchange_keytab_last_refreshed)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "token_exchange_principal_name", token_exchange_principal_name)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="keytabContent")
+    def keytab_content(self) -> str:
+        """
+        The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        """
+        return pulumi.get(self, "keytab_content")
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> str:
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        Secret ID for token exchange keytab
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Lifecycle state of the UPST config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeTokenExchangeKeytabLastRefreshed")
+    def time_token_exchange_keytab_last_refreshed(self) -> str:
+        """
+        Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_token_exchange_keytab_last_refreshed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="tokenExchangePrincipalName")
+    def token_exchange_principal_name(self) -> str:
+        """
+        Token exchange kerberos Principal name in cluster
+        """
+        return pulumi.get(self, "token_exchange_principal_name")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationUpstConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 master_encryption_key_id: str,
+                 vault_id: str):
+        """
+        :param str master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
+        :param str vault_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> str:
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationsIdentityConfigurationResult(dict):
+    def __init__(__self__, *,
+                 activate_iam_user_sync_configuration_trigger: str,
+                 activate_upst_configuration_trigger: str,
+                 bds_instance_id: str,
+                 cluster_admin_password: str,
+                 confidential_application_id: str,
+                 display_name: str,
+                 iam_user_sync_configuration_details: Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailResult'],
+                 iam_user_sync_configurations: Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationResult'],
+                 id: str,
+                 identity_domain_id: str,
+                 refresh_confidential_application_trigger: str,
+                 refresh_upst_token_exchange_keytab_trigger: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 upst_configuration_details: Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailResult'],
+                 upst_configurations: Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationResult']):
+        """
+        :param str bds_instance_id: The OCID of the cluster.
+        :param str confidential_application_id: identity domain confidential application ID for the identity config
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Sequence['GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs'] iam_user_sync_configurations: Information about the IAM user sync configuration.
+        :param str id: The id of the identity config
+        :param str identity_domain_id: Identity domain to use for identity config
+        :param str state: The state of the identity config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        :param Sequence['GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs'] upst_configurations: Information about the UPST configuration.
+        """
+        pulumi.set(__self__, "activate_iam_user_sync_configuration_trigger", activate_iam_user_sync_configuration_trigger)
+        pulumi.set(__self__, "activate_upst_configuration_trigger", activate_upst_configuration_trigger)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        pulumi.set(__self__, "confidential_application_id", confidential_application_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "iam_user_sync_configuration_details", iam_user_sync_configuration_details)
+        pulumi.set(__self__, "iam_user_sync_configurations", iam_user_sync_configurations)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
+        pulumi.set(__self__, "refresh_confidential_application_trigger", refresh_confidential_application_trigger)
+        pulumi.set(__self__, "refresh_upst_token_exchange_keytab_trigger", refresh_upst_token_exchange_keytab_trigger)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "upst_configuration_details", upst_configuration_details)
+        pulumi.set(__self__, "upst_configurations", upst_configurations)
+
+    @property
+    @pulumi.getter(name="activateIamUserSyncConfigurationTrigger")
+    def activate_iam_user_sync_configuration_trigger(self) -> str:
+        return pulumi.get(self, "activate_iam_user_sync_configuration_trigger")
+
+    @property
+    @pulumi.getter(name="activateUpstConfigurationTrigger")
+    def activate_upst_configuration_trigger(self) -> str:
+        return pulumi.get(self, "activate_upst_configuration_trigger")
+
+    @property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> str:
+        return pulumi.get(self, "cluster_admin_password")
+
+    @property
+    @pulumi.getter(name="confidentialApplicationId")
+    def confidential_application_id(self) -> str:
+        """
+        identity domain confidential application ID for the identity config
+        """
+        return pulumi.get(self, "confidential_application_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="iamUserSyncConfigurationDetails")
+    def iam_user_sync_configuration_details(self) -> Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailResult']:
+        return pulumi.get(self, "iam_user_sync_configuration_details")
+
+    @property
+    @pulumi.getter(name="iamUserSyncConfigurations")
+    def iam_user_sync_configurations(self) -> Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationResult']:
+        """
+        Information about the IAM user sync configuration.
+        """
+        return pulumi.get(self, "iam_user_sync_configurations")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The id of the identity config
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="identityDomainId")
+    def identity_domain_id(self) -> str:
+        """
+        Identity domain to use for identity config
+        """
+        return pulumi.get(self, "identity_domain_id")
+
+    @property
+    @pulumi.getter(name="refreshConfidentialApplicationTrigger")
+    def refresh_confidential_application_trigger(self) -> str:
+        return pulumi.get(self, "refresh_confidential_application_trigger")
+
+    @property
+    @pulumi.getter(name="refreshUpstTokenExchangeKeytabTrigger")
+    def refresh_upst_token_exchange_keytab_trigger(self) -> str:
+        return pulumi.get(self, "refresh_upst_token_exchange_keytab_trigger")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the identity config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="upstConfigurationDetails")
+    def upst_configuration_details(self) -> Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailResult']:
+        return pulumi.get(self, "upst_configuration_details")
+
+    @property
+    @pulumi.getter(name="upstConfigurations")
+    def upst_configurations(self) -> Sequence['outputs.GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationResult']:
+        """
+        Information about the UPST configuration.
+        """
+        return pulumi.get(self, "upst_configurations")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: bool,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param bool is_posix_attributes_addition_required: whether to append POSIX attributes to IAM users
+        :param str state: The state of the identity config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> bool:
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the identity config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: bool):
+        """
+        :param bool is_posix_attributes_addition_required: whether to append POSIX attributes to IAM users
+        """
+        pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> bool:
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationResult(dict):
+    def __init__(__self__, *,
+                 keytab_content: str,
+                 master_encryption_key_id: str,
+                 secret_id: str,
+                 state: str,
+                 time_created: str,
+                 time_token_exchange_keytab_last_refreshed: str,
+                 time_updated: str,
+                 token_exchange_principal_name: str,
+                 vault_id: str):
+        """
+        :param str keytab_content: The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        :param str master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
+        :param str secret_id: Secret ID for token exchange keytab
+        :param str state: The state of the identity config
+        :param str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param str time_token_exchange_keytab_last_refreshed: Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        :param str time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        :param str token_exchange_principal_name: Token exchange kerberos Principal name in cluster
+        :param str vault_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        pulumi.set(__self__, "keytab_content", keytab_content)
+        pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_token_exchange_keytab_last_refreshed", time_token_exchange_keytab_last_refreshed)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "token_exchange_principal_name", token_exchange_principal_name)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="keytabContent")
+    def keytab_content(self) -> str:
+        """
+        The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        """
+        return pulumi.get(self, "keytab_content")
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> str:
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        Secret ID for token exchange keytab
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the identity config
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeTokenExchangeKeytabLastRefreshed")
+    def time_token_exchange_keytab_last_refreshed(self) -> str:
+        """
+        Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_token_exchange_keytab_last_refreshed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="tokenExchangePrincipalName")
+    def token_exchange_principal_name(self) -> str:
+        """
+        Token exchange kerberos Principal name in cluster
+        """
+        return pulumi.get(self, "token_exchange_principal_name")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 master_encryption_key_id: str,
+                 vault_id: str):
+        """
+        :param str master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
+        :param str vault_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> str:
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
 class GetBdsInstanceKafkaBrokerNodeResult(dict):
     def __init__(__self__, *,
                  block_volume_size_in_gbs: str,
@@ -6000,6 +7203,7 @@ class GetBdsInstanceNodeResult(dict):
                  node_type: str,
                  nvmes: int,
                  ocpus: int,
+                 odh_version: str,
                  os_version: str,
                  shape: str,
                  ssh_fingerprint: str,
@@ -6022,6 +7226,7 @@ class GetBdsInstanceNodeResult(dict):
         :param str node_type: Cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
@@ -6044,6 +7249,7 @@ class GetBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "node_type", node_type)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "odh_version", odh_version)
         pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
@@ -6163,6 +7369,14 @@ class GetBdsInstanceNodeResult(dict):
         The total number of OCPUs available to the node.
         """
         return pulumi.get(self, "ocpus")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
 
     @property
     @pulumi.getter(name="osVersion")
@@ -6532,6 +7746,47 @@ class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguratio
 
 
 @pulumi.output_type
+class GetBdsInstanceStartClusterShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 node_type_shape_configs: Sequence['outputs.GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult']):
+        pulumi.set(__self__, "node_type_shape_configs", node_type_shape_configs)
+
+    @property
+    @pulumi.getter(name="nodeTypeShapeConfigs")
+    def node_type_shape_configs(self) -> Sequence['outputs.GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult']:
+        return pulumi.get(self, "node_type_shape_configs")
+
+
+@pulumi.output_type
+class GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 node_type: str,
+                 shape: str):
+        """
+        :param str node_type: Cluster node type.
+        :param str shape: Shape of the node.
+        """
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "shape", shape)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> str:
+        """
+        Cluster node type.
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node.
+        """
+        return pulumi.get(self, "shape")
+
+
+@pulumi.output_type
 class GetBdsInstanceUtilNodeResult(dict):
     def __init__(__self__, *,
                  block_volume_size_in_gbs: str,
@@ -6730,6 +7985,7 @@ class GetBdsInstanceWorkerNodeShapeConfigResult(dict):
 @pulumi.output_type
 class GetBdsInstancesBdsInstanceResult(dict):
     def __init__(__self__, *,
+                 bds_cluster_version_summaries: Sequence['outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult'],
                  bootstrap_script_url: str,
                  cloud_sql_details: Sequence['outputs.GetBdsInstancesBdsInstanceCloudSqlDetailResult'],
                  cluster_admin_password: str,
@@ -6747,6 +8003,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  id: str,
                  ignore_existing_nodes_shapes: Sequence[str],
                  is_cloud_sql_configured: bool,
+                 is_force_remove_enabled: bool,
                  is_force_stop_jobs: bool,
                  is_high_availability: bool,
                  is_kafka_configured: bool,
@@ -6760,12 +8017,15 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  number_of_nodes: int,
                  number_of_nodes_requiring_maintenance_reboot: int,
                  os_patch_version: str,
+                 remove_node: str,
+                 start_cluster_shape_configs: Sequence['outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult'],
                  state: str,
                  time_created: str,
                  time_updated: str,
                  util_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceUtilNodeResult'],
                  worker_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceWorkerNodeResult']):
         """
+        :param Sequence['GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs'] bds_cluster_version_summaries: Cluster version details including bds and odh version information.
         :param str bootstrap_script_url: pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
         :param Sequence['GetBdsInstancesBdsInstanceCloudSqlDetailArgs'] cloud_sql_details: The information about added Cloud SQL capability
         :param Sequence['GetBdsInstancesBdsInstanceClusterDetailArgs'] cluster_details: Specific info about a Hadoop cluster
@@ -6790,6 +8050,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         """
+        pulumi.set(__self__, "bds_cluster_version_summaries", bds_cluster_version_summaries)
         pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -6807,6 +8068,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ignore_existing_nodes_shapes", ignore_existing_nodes_shapes)
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+        pulumi.set(__self__, "is_force_remove_enabled", is_force_remove_enabled)
         pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         pulumi.set(__self__, "is_high_availability", is_high_availability)
         pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
@@ -6820,11 +8082,21 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
         pulumi.set(__self__, "os_patch_version", os_patch_version)
+        pulumi.set(__self__, "remove_node", remove_node)
+        pulumi.set(__self__, "start_cluster_shape_configs", start_cluster_shape_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "util_nodes", util_nodes)
         pulumi.set(__self__, "worker_nodes", worker_nodes)
+
+    @property
+    @pulumi.getter(name="bdsClusterVersionSummaries")
+    def bds_cluster_version_summaries(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult']:
+        """
+        Cluster version details including bds and odh version information.
+        """
+        return pulumi.get(self, "bds_cluster_version_summaries")
 
     @property
     @pulumi.getter(name="bootstrapScriptUrl")
@@ -6948,6 +8220,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @property
+    @pulumi.getter(name="isForceRemoveEnabled")
+    def is_force_remove_enabled(self) -> bool:
+        return pulumi.get(self, "is_force_remove_enabled")
+
+    @property
     @pulumi.getter(name="isForceStopJobs")
     def is_force_stop_jobs(self) -> bool:
         return pulumi.get(self, "is_force_stop_jobs")
@@ -7037,6 +8314,16 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "os_patch_version")
 
     @property
+    @pulumi.getter(name="removeNode")
+    def remove_node(self) -> str:
+        return pulumi.get(self, "remove_node")
+
+    @property
+    @pulumi.getter(name="startClusterShapeConfigs")
+    def start_cluster_shape_configs(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult']:
+        return pulumi.get(self, "start_cluster_shape_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -7069,6 +8356,35 @@ class GetBdsInstancesBdsInstanceResult(dict):
     @pulumi.getter(name="workerNodes")
     def worker_nodes(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceWorkerNodeResult']:
         return pulumi.get(self, "worker_nodes")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult(dict):
+    def __init__(__self__, *,
+                 bds_version: str,
+                 odh_version: str):
+        """
+        :param str bds_version: Big Data Service version installed in the cluster.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        pulumi.set(__self__, "bds_version", bds_version)
+        pulumi.set(__self__, "odh_version", odh_version)
+
+    @property
+    @pulumi.getter(name="bdsVersion")
+    def bds_version(self) -> str:
+        """
+        Big Data Service version installed in the cluster.
+        """
+        return pulumi.get(self, "bds_version")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
 
 
 @pulumi.output_type
@@ -7801,6 +9117,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
                  node_type: str,
                  nvmes: int,
                  ocpus: int,
+                 odh_version: str,
                  os_version: str,
                  shape: str,
                  ssh_fingerprint: str,
@@ -7823,6 +9140,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         :param str node_type: Cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
@@ -7845,6 +9163,7 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "node_type", node_type)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "odh_version", odh_version)
         pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
@@ -7966,6 +9285,14 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         return pulumi.get(self, "ocpus")
 
     @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
+
+    @property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> str:
         """
@@ -8049,6 +9376,47 @@ class GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeResult(dict):
         The size of the volume in GBs.
         """
         return pulumi.get(self, "volume_size_in_gbs")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceStartClusterShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 node_type_shape_configs: Sequence['outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult']):
+        pulumi.set(__self__, "node_type_shape_configs", node_type_shape_configs)
+
+    @property
+    @pulumi.getter(name="nodeTypeShapeConfigs")
+    def node_type_shape_configs(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult']:
+        return pulumi.get(self, "node_type_shape_configs")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 node_type: str,
+                 shape: str):
+        """
+        :param str node_type: Cluster node type.
+        :param str shape: Shape of the node.
+        """
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "shape", shape)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> str:
+        """
+        Cluster node type.
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Shape of the node.
+        """
+        return pulumi.get(self, "shape")
 
 
 @pulumi.output_type

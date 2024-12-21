@@ -72,21 +72,11 @@ type GetSubscriptionRedeemableUsersResult struct {
 }
 
 func GetSubscriptionRedeemableUsersOutput(ctx *pulumi.Context, args GetSubscriptionRedeemableUsersOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionRedeemableUsersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSubscriptionRedeemableUsersResultOutput, error) {
 			args := v.(GetSubscriptionRedeemableUsersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSubscriptionRedeemableUsersResult
-			secret, err := ctx.InvokePackageRaw("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args, &rv, "", opts...)
-			if err != nil {
-				return GetSubscriptionRedeemableUsersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSubscriptionRedeemableUsersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSubscriptionRedeemableUsersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args, GetSubscriptionRedeemableUsersResultOutput{}, options).(GetSubscriptionRedeemableUsersResultOutput), nil
 		}).(GetSubscriptionRedeemableUsersResultOutput)
 }
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsResourceTypeSchemaAttributesResult> Invoke(GetDomainsResourceTypeSchemaAttributesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsResourceTypeSchemaAttributesResult>("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", args ?? new GetDomainsResourceTypeSchemaAttributesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Resource Type Schema Attributes
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResourceTypeSchemaAttributes = Oci.Identity.GetDomainsResourceTypeSchemaAttributes.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ResourceTypeSchemaAttributeCount = resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+        ///         ResourceTypeSchemaAttributeFilter = resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = resourceTypeSchemaAttributeAuthorization,
+        ///         ResourceTypeSchemaVersion = resourceTypeSchemaAttributeResourceTypeSchemaVersion,
+        ///         StartIndex = resourceTypeSchemaAttributeStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsResourceTypeSchemaAttributesResult> Invoke(GetDomainsResourceTypeSchemaAttributesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsResourceTypeSchemaAttributesResult>("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", args ?? new GetDomainsResourceTypeSchemaAttributesInvokeArgs(), options.WithDefaults());
     }
 
 

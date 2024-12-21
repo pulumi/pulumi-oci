@@ -64,6 +64,33 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetAverageCarbonEmissionResult> Invoke(GetAverageCarbonEmissionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAverageCarbonEmissionResult>("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", args ?? new GetAverageCarbonEmissionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Average Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Returns the average carbon emissions summary by SKU.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAverageCarbonEmission = Oci.MeteringComputation.GetAverageCarbonEmission.Invoke(new()
+        ///     {
+        ///         SkuPartNumber = averageCarbonEmissionSkuPartNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAverageCarbonEmissionResult> Invoke(GetAverageCarbonEmissionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAverageCarbonEmissionResult>("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", args ?? new GetAverageCarbonEmissionInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetReportsResult> Invoke(GetReportsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReportsResult>("oci:DataSafe/getReports:getReports", args ?? new GetReportsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of all the reports in the compartment. It contains information such as report generation time.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReports = Oci.DataSafe.GetReports.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = reportAccessLevel,
+        ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
+        ///         DisplayName = reportDisplayName,
+        ///         MimeType = reportMimeType,
+        ///         ReportDefinitionId = testReportDefinition.Id,
+        ///         State = reportState,
+        ///         TimeGeneratedGreaterThanOrEqualTo = reportTimeGeneratedGreaterThanOrEqualTo,
+        ///         TimeGeneratedLessThan = reportTimeGeneratedLessThan,
+        ///         Type = reportType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReportsResult> Invoke(GetReportsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportsResult>("oci:DataSafe/getReports:getReports", args ?? new GetReportsInvokeArgs(), options.WithDefaults());
     }
 
 

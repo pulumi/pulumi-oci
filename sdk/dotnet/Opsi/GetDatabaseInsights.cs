@@ -86,6 +86,44 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetDatabaseInsightsResult> Invoke(GetDatabaseInsightsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseInsightsResult>("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args ?? new GetDatabaseInsightsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+        /// When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseInsights = Oci.Opsi.GetDatabaseInsights.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = databaseInsightCompartmentIdInSubtree,
+        ///         DatabaseIds = testDatabase.Id,
+        ///         DatabaseTypes = databaseInsightDatabaseType,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataInsightId = testExadataInsight.Id,
+        ///         Fields = databaseInsightFields,
+        ///         Id = databaseInsightId,
+        ///         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+        ///         States = databaseInsightState,
+        ///         Statuses = databaseInsightStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseInsightsResult> Invoke(GetDatabaseInsightsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseInsightsResult>("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args ?? new GetDatabaseInsightsInvokeArgs(), options.WithDefaults());
     }
 
 

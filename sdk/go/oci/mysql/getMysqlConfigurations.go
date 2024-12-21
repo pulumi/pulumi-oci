@@ -100,21 +100,11 @@ type GetMysqlConfigurationsResult struct {
 }
 
 func GetMysqlConfigurationsOutput(ctx *pulumi.Context, args GetMysqlConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetMysqlConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMysqlConfigurationsResultOutput, error) {
 			args := v.(GetMysqlConfigurationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMysqlConfigurationsResult
-			secret, err := ctx.InvokePackageRaw("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args, &rv, "", opts...)
-			if err != nil {
-				return GetMysqlConfigurationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMysqlConfigurationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMysqlConfigurationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args, GetMysqlConfigurationsResultOutput{}, options).(GetMysqlConfigurationsResultOutput), nil
 		}).(GetMysqlConfigurationsResultOutput)
 }
 

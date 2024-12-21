@@ -72,6 +72,37 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetFleetProductsResult> Invoke(GetFleetProductsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetProductsResult>("oci:FleetAppsManagement/getFleetProducts:getFleetProducts", args ?? new GetFleetProductsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of products associated with the confirmed targets.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetProducts = Oci.FleetAppsManagement.GetFleetProducts.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fleetProductDisplayName,
+        ///         ResourceDisplayName = fleetProductResourceDisplayName,
+        ///         ResourceId = testResource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetProductsResult> Invoke(GetFleetProductsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetProductsResult>("oci:FleetAppsManagement/getFleetProducts:getFleetProducts", args ?? new GetFleetProductsInvokeArgs(), options.WithDefaults());
     }
 
 

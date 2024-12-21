@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetSecurityRecipeResult> Invoke(GetSecurityRecipeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityRecipeResult>("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", args ?? new GetSecurityRecipeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityRecipe = Oci.CloudGuard.GetSecurityRecipe.Invoke(new()
+        ///     {
+        ///         SecurityRecipeId = testSecurityRecipeOciCloudGuardSecurityRecipe.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityRecipeResult> Invoke(GetSecurityRecipeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityRecipeResult>("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", args ?? new GetSecurityRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

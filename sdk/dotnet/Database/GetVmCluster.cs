@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterResult> Invoke(GetVmClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterResult>("oci:Database/getVmCluster:getVmCluster", args ?? new GetVmClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmCluster = Oci.Database.GetVmCluster.Invoke(new()
+        ///     {
+        ///         VmClusterId = testVmClusterOciDatabaseVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterResult> Invoke(GetVmClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterResult>("oci:Database/getVmCluster:getVmCluster", args ?? new GetVmClusterInvokeArgs(), options.WithDefaults());
     }
 
 

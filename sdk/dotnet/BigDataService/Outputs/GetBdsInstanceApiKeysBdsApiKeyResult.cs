@@ -19,8 +19,14 @@ namespace Pulumi.Oci.BigDataService.Outputs
         public readonly string BdsInstanceId;
         /// <summary>
         /// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public readonly string DefaultRegion;
+        /// <summary>
+        /// Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+        /// =======
+        /// </summary>
+        public readonly string DomainOcid;
         /// <summary>
         /// The fingerprint that corresponds to the public API key requested.
         /// </summary>
@@ -61,6 +67,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string defaultRegion,
 
+            string domainOcid,
+
             string fingerprint,
 
             string id,
@@ -81,6 +89,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         {
             BdsInstanceId = bdsInstanceId;
             DefaultRegion = defaultRegion;
+            DomainOcid = domainOcid;
             Fingerprint = fingerprint;
             Id = id;
             KeyAlias = keyAlias;

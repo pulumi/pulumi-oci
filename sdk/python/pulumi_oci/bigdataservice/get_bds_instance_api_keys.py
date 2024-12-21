@@ -54,6 +54,9 @@ class GetBdsInstanceApiKeysResult:
     @property
     @pulumi.getter(name="bdsApiKeys")
     def bds_api_keys(self) -> Sequence['outputs.GetBdsInstanceApiKeysBdsApiKeyResult']:
+        """
+        The list of bds_api_keys.
+        """
         return pulumi.get(self, "bds_api_keys")
 
     @property

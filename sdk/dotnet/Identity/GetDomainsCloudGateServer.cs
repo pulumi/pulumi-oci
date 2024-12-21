@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsCloudGateServerResult> Invoke(GetDomainsCloudGateServerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateServerResult>("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", args ?? new GetDomainsCloudGateServerInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Cloud Gate server
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudGateServer = Oci.Identity.GetDomainsCloudGateServer.Invoke(new()
+        ///     {
+        ///         CloudGateServerId = testCloudGateServerOciIdentityDomainsCloudGateServer.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = cloudGateServerAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateServerResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsCloudGateServerResult> Invoke(GetDomainsCloudGateServerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateServerResult>("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", args ?? new GetDomainsCloudGateServerInvokeArgs(), options.WithDefaults());
     }
 
 

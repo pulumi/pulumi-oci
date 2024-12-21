@@ -74,7 +74,17 @@ public final class MetricExtensionQueryProperties {
      */
     private @Nullable MetricExtensionQueryPropertiesOutParamDetails outParamDetails;
     /**
-     * @return (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+     * @return (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+     * 
+     */
+    private @Nullable String protocolType;
+    /**
+     * @return (Updatable) Type of content response given by the http(s) URL
+     * 
+     */
+    private @Nullable String responseContentType;
+    /**
+     * @return (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its &#34;content&#34; property to an empty string. In that case, &#34;name&#34; property value is ignored.
      * 
      */
     private @Nullable MetricExtensionQueryPropertiesScriptDetails scriptDetails;
@@ -93,6 +103,11 @@ public final class MetricExtensionQueryProperties {
      * 
      */
     private @Nullable String startsWith;
+    /**
+     * @return (Updatable) Http(s) end point URL
+     * 
+     */
+    private @Nullable String url;
 
     private MetricExtensionQueryProperties() {}
     /**
@@ -173,7 +188,21 @@ public final class MetricExtensionQueryProperties {
         return Optional.ofNullable(this.outParamDetails);
     }
     /**
-     * @return (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+     * @return (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+     * 
+     */
+    public Optional<String> protocolType() {
+        return Optional.ofNullable(this.protocolType);
+    }
+    /**
+     * @return (Updatable) Type of content response given by the http(s) URL
+     * 
+     */
+    public Optional<String> responseContentType() {
+        return Optional.ofNullable(this.responseContentType);
+    }
+    /**
+     * @return (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its &#34;content&#34; property to an empty string. In that case, &#34;name&#34; property value is ignored.
      * 
      */
     public Optional<MetricExtensionQueryPropertiesScriptDetails> scriptDetails() {
@@ -200,6 +229,13 @@ public final class MetricExtensionQueryProperties {
     public Optional<String> startsWith() {
         return Optional.ofNullable(this.startsWith);
     }
+    /**
+     * @return (Updatable) Http(s) end point URL
+     * 
+     */
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -221,10 +257,13 @@ public final class MetricExtensionQueryProperties {
         private @Nullable String jmxAttributes;
         private @Nullable String managedBeanQuery;
         private @Nullable MetricExtensionQueryPropertiesOutParamDetails outParamDetails;
+        private @Nullable String protocolType;
+        private @Nullable String responseContentType;
         private @Nullable MetricExtensionQueryPropertiesScriptDetails scriptDetails;
         private @Nullable MetricExtensionQueryPropertiesSqlDetails sqlDetails;
         private @Nullable String sqlType;
         private @Nullable String startsWith;
+        private @Nullable String url;
         public Builder() {}
         public Builder(MetricExtensionQueryProperties defaults) {
     	      Objects.requireNonNull(defaults);
@@ -239,10 +278,13 @@ public final class MetricExtensionQueryProperties {
     	      this.jmxAttributes = defaults.jmxAttributes;
     	      this.managedBeanQuery = defaults.managedBeanQuery;
     	      this.outParamDetails = defaults.outParamDetails;
+    	      this.protocolType = defaults.protocolType;
+    	      this.responseContentType = defaults.responseContentType;
     	      this.scriptDetails = defaults.scriptDetails;
     	      this.sqlDetails = defaults.sqlDetails;
     	      this.sqlType = defaults.sqlType;
     	      this.startsWith = defaults.startsWith;
+    	      this.url = defaults.url;
         }
 
         @CustomType.Setter
@@ -317,6 +359,18 @@ public final class MetricExtensionQueryProperties {
             return this;
         }
         @CustomType.Setter
+        public Builder protocolType(@Nullable String protocolType) {
+
+            this.protocolType = protocolType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder responseContentType(@Nullable String responseContentType) {
+
+            this.responseContentType = responseContentType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scriptDetails(@Nullable MetricExtensionQueryPropertiesScriptDetails scriptDetails) {
 
             this.scriptDetails = scriptDetails;
@@ -340,6 +394,12 @@ public final class MetricExtensionQueryProperties {
             this.startsWith = startsWith;
             return this;
         }
+        @CustomType.Setter
+        public Builder url(@Nullable String url) {
+
+            this.url = url;
+            return this;
+        }
         public MetricExtensionQueryProperties build() {
             final var _resultValue = new MetricExtensionQueryProperties();
             _resultValue.arguments = arguments;
@@ -353,10 +413,13 @@ public final class MetricExtensionQueryProperties {
             _resultValue.jmxAttributes = jmxAttributes;
             _resultValue.managedBeanQuery = managedBeanQuery;
             _resultValue.outParamDetails = outParamDetails;
+            _resultValue.protocolType = protocolType;
+            _resultValue.responseContentType = responseContentType;
             _resultValue.scriptDetails = scriptDetails;
             _resultValue.sqlDetails = sqlDetails;
             _resultValue.sqlType = sqlType;
             _resultValue.startsWith = startsWith;
+            _resultValue.url = url;
             return _resultValue;
         }
     }

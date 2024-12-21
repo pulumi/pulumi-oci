@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public static Output<GetDesktopResult> Invoke(GetDesktopInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDesktopResult>("oci:Desktops/getDesktop:getDesktop", args ?? new GetDesktopInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Desktop resource in Oracle Cloud Infrastructure Desktops service.
+        /// 
+        /// Provides information about the desktop with the specified OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDesktop = Oci.Desktops.GetDesktop.Invoke(new()
+        ///     {
+        ///         DesktopId = testDesktopOciDesktopsDesktop.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDesktopResult> Invoke(GetDesktopInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDesktopResult>("oci:Desktops/getDesktop:getDesktop", args ?? new GetDesktopInvokeArgs(), options.WithDefaults());
     }
 
 

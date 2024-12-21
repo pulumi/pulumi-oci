@@ -59,7 +59,7 @@ type LookupJobRunArgs struct {
 // A collection of values returned by getJobRun.
 type LookupJobRunResult struct {
 	Asynchronous bool `pulumi:"asynchronous"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
 	CreatedBy string `pulumi:"createdBy"`
@@ -75,7 +75,7 @@ type LookupJobRunResult struct {
 	JobConfigurationOverrideDetails []GetJobRunJobConfigurationOverrideDetail `pulumi:"jobConfigurationOverrideDetails"`
 	// Environment configuration to capture job runtime dependencies.
 	JobEnvironmentConfigurationOverrideDetails []GetJobRunJobEnvironmentConfigurationOverrideDetail `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 	JobId string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails []GetJobRunJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
@@ -89,7 +89,7 @@ type LookupJobRunResult struct {
 	// Customer logging details for job run.
 	LogDetails      []GetJobRunLogDetail `pulumi:"logDetails"`
 	OpcParentRptUrl string               `pulumi:"opcParentRptUrl"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	ProjectId string `pulumi:"projectId"`
 	// The state of the job run.
 	State string `pulumi:"state"`
@@ -102,21 +102,11 @@ type LookupJobRunResult struct {
 }
 
 func LookupJobRunOutput(ctx *pulumi.Context, args LookupJobRunOutputArgs, opts ...pulumi.InvokeOption) LookupJobRunResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupJobRunResultOutput, error) {
 			args := v.(LookupJobRunArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupJobRunResult
-			secret, err := ctx.InvokePackageRaw("oci:DataScience/getJobRun:getJobRun", args, &rv, "", opts...)
-			if err != nil {
-				return LookupJobRunResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupJobRunResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupJobRunResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataScience/getJobRun:getJobRun", args, LookupJobRunResultOutput{}, options).(LookupJobRunResultOutput), nil
 		}).(LookupJobRunResultOutput)
 }
 
@@ -149,7 +139,7 @@ func (o LookupJobRunResultOutput) Asynchronous() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupJobRunResult) bool { return v.Asynchronous }).(pulumi.BoolOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
 func (o LookupJobRunResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -193,7 +183,7 @@ func (o LookupJobRunResultOutput) JobEnvironmentConfigurationOverrideDetails() G
 	}).(GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 func (o LookupJobRunResultOutput) JobId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.JobId }).(pulumi.StringOutput)
 }
@@ -237,7 +227,7 @@ func (o LookupJobRunResultOutput) OpcParentRptUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 func (o LookupJobRunResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.ProjectId }).(pulumi.StringOutput)
 }

@@ -54,6 +54,28 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         public static Output<GetStackTfStateResult> Invoke(GetStackTfStateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStackTfStateResult>("oci:ResourceManager/getStackTfState:getStackTfState", args ?? new GetStackTfStateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStackTfState = Oci.ResourceManager.GetStackTfState.Invoke(new()
+        ///     {
+        ///         StackId = testStack.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStackTfStateResult> Invoke(GetStackTfStateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStackTfStateResult>("oci:ResourceManager/getStackTfState:getStackTfState", args ?? new GetStackTfStateInvokeArgs(), options.WithDefaults());
     }
 
 

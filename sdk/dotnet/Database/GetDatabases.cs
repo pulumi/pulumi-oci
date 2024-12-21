@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDatabasesResult> Invoke(GetDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabasesResult>("oci:Database/getDatabases:getDatabases", args ?? new GetDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the databases in the specified Database Home.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabases = Oci.Database.GetDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DbHomeId = testDbHome.Id,
+        ///         DbName = databaseDbName,
+        ///         State = databaseState,
+        ///         SystemId = testSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabasesResult> Invoke(GetDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabasesResult>("oci:Database/getDatabases:getDatabases", args ?? new GetDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -30,6 +30,16 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+        /// 
+        /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Creates and downloads a wallet for the specified Autonomous Database.
+        /// </summary>
+        public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> Invoke(GetSecurityPolicyReportDatabaseViewAccessEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseViewAccessEntriesResult>("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", args ?? new GetSecurityPolicyReportDatabaseViewAccessEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Retrieves a list of all database view access entries in Data Safe.
+        /// 
+        /// The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyReportDatabaseViewAccessEntries = Oci.DataSafe.GetSecurityPolicyReportDatabaseViewAccessEntries.Invoke(new()
+        ///     {
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///         ScimQuery = securityPolicyReportDatabaseViewAccessEntryScimQuery,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyReportDatabaseViewAccessEntriesResult> Invoke(GetSecurityPolicyReportDatabaseViewAccessEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseViewAccessEntriesResult>("oci:DataSafe/getSecurityPolicyReportDatabaseViewAccessEntries:getSecurityPolicyReportDatabaseViewAccessEntries", args ?? new GetSecurityPolicyReportDatabaseViewAccessEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

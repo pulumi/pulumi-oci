@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbSystemComputePerformancesResult> Invoke(GetDbSystemComputePerformancesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemComputePerformances = Oci.Database.GetDbSystemComputePerformances.Invoke(new()
+        ///     {
+        ///         DbSystemShape = dbSystemComputePerformanceDbSystemShape,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbSystemComputePerformancesResult> Invoke(GetDbSystemComputePerformancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemComputePerformancesResult>("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args ?? new GetDbSystemComputePerformancesInvokeArgs(), options.WithDefaults());
     }
 
 

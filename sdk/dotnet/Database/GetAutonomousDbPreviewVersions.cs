@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDbPreviewVersionsResult> Invoke(GetAutonomousDbPreviewVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
+        /// Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDbPreviewVersions = Oci.Database.GetAutonomousDbPreviewVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDbPreviewVersionsResult> Invoke(GetAutonomousDbPreviewVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

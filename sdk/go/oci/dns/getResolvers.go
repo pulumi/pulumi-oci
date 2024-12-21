@@ -91,21 +91,11 @@ type GetResolversResult struct {
 }
 
 func GetResolversOutput(ctx *pulumi.Context, args GetResolversOutputArgs, opts ...pulumi.InvokeOption) GetResolversResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetResolversResultOutput, error) {
 			args := v.(GetResolversArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetResolversResult
-			secret, err := ctx.InvokePackageRaw("oci:Dns/getResolvers:getResolvers", args, &rv, "", opts...)
-			if err != nil {
-				return GetResolversResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetResolversResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetResolversResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Dns/getResolvers:getResolvers", args, GetResolversResultOutput{}, options).(GetResolversResultOutput), nil
 		}).(GetResolversResultOutput)
 }
 

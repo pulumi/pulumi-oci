@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetHttpRedirectResult> Invoke(GetHttpRedirectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHttpRedirectResult>("oci:Waas/getHttpRedirect:getHttpRedirect", args ?? new GetHttpRedirectInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Gets the details of a HTTP Redirect.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHttpRedirect = Oci.Waas.GetHttpRedirect.Invoke(new()
+        ///     {
+        ///         HttpRedirectId = testHttpRedirectOciWaasHttpRedirect.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHttpRedirectResult> Invoke(GetHttpRedirectInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHttpRedirectResult>("oci:Waas/getHttpRedirect:getHttpRedirect", args ?? new GetHttpRedirectInvokeArgs(), options.WithDefaults());
     }
 
 

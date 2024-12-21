@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetConsoleHistoryDataResult> Invoke(GetConsoleHistoryDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConsoleHistoryDataResult>("oci:Core/getConsoleHistoryData:getConsoleHistoryData", args ?? new GetConsoleHistoryDataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the actual console history data (not the metadata).
+        /// See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
+        /// for details about using the console history operations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConsoleHistoryData = Oci.Core.GetConsoleHistoryData.Invoke(new()
+        ///     {
+        ///         ConsoleHistoryId = testConsoleHistory.Id,
+        ///         Length = consoleHistoryContentLength,
+        ///         Offset = consoleHistoryContentOffset,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConsoleHistoryDataResult> Invoke(GetConsoleHistoryDataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConsoleHistoryDataResult>("oci:Core/getConsoleHistoryData:getConsoleHistoryData", args ?? new GetConsoleHistoryDataInvokeArgs(), options.WithDefaults());
     }
 
 

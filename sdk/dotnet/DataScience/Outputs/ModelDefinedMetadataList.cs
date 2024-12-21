@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class ModelDefinedMetadataList
     {
         /// <summary>
-        /// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        /// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         /// </summary>
         public readonly string? Category;
         /// <summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// * libraryVersion
         /// * estimatorClass
         /// * hyperParameters
-        /// * testartifactresults
+        /// * testArtifactresults
         /// </summary>
         public readonly string? Key;
         /// <summary>

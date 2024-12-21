@@ -88,21 +88,11 @@ type LookupCompartmentResult struct {
 }
 
 func LookupCompartmentOutput(ctx *pulumi.Context, args LookupCompartmentOutputArgs, opts ...pulumi.InvokeOption) LookupCompartmentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCompartmentResultOutput, error) {
 			args := v.(LookupCompartmentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCompartmentResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getCompartment:getCompartment", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCompartmentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCompartmentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCompartmentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getCompartment:getCompartment", args, LookupCompartmentResultOutput{}, options).(LookupCompartmentResultOutput), nil
 		}).(LookupCompartmentResultOutput)
 }
 

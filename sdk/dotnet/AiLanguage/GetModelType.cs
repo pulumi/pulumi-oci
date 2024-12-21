@@ -62,6 +62,32 @@ namespace Pulumi.Oci.AiLanguage
         /// </summary>
         public static Output<GetModelTypeResult> Invoke(GetModelTypeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelTypeResult>("oci:AiLanguage/getModelType:getModelType", args ?? new GetModelTypeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
+        /// 
+        /// Gets model capabilities
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModelType = Oci.AiLanguage.GetModelType.Invoke(new()
+        ///     {
+        ///         ModelType = modelTypeModelType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelTypeResult> Invoke(GetModelTypeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelTypeResult>("oci:AiLanguage/getModelType:getModelType", args ?? new GetModelTypeInvokeArgs(), options.WithDefaults());
     }
 
 

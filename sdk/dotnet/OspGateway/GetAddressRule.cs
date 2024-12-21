@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         public static Output<GetAddressRuleResult> Invoke(GetAddressRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressRuleResult>("oci:OspGateway/getAddressRule:getAddressRule", args ?? new GetAddressRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
+        /// 
+        /// Get the address rule for the compartment based on the country code
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddressRule = Oci.OspGateway.GetAddressRule.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CountryCode = addressRuleCountryCode,
+        ///         OspHomeRegion = addressRuleOspHomeRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddressRuleResult> Invoke(GetAddressRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressRuleResult>("oci:OspGateway/getAddressRule:getAddressRule", args ?? new GetAddressRuleInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -112,6 +112,57 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceGroupModulesResult> Invoke(GetManagedInstanceGroupModulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupModulesResult>("oci:OsManagementHub/getManagedInstanceGroupModules:getManagedInstanceGroupModules", args ?? new GetManagedInstanceGroupModulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Group Modules in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Retrieve a list of module streams, along with a summary of their
+        /// status, from a managed instance group.  Filters may be applied to select
+        /// a subset of module streams based on the filter criteria.
+        /// 
+        /// The 'moduleName' attribute filters against the name of a module.
+        /// It accepts strings of the format "&lt;module&gt;".  If this attribute
+        /// is defined, only streams that belong to the specified module are
+        /// included in the result set.  If it is not defined, the request is
+        /// not subject to this filter.
+        /// 
+        /// The "status" attribute filters against the state of a module stream.
+        /// Valid values are "ENABLED", "DISABLED", and "ACTIVE".  If the
+        /// attribute is set to "ENABLED", only module streams that are enabled
+        /// are included in the result set.  If the attribute is set to "DISABLED",
+        /// only module streams that are not enabled are included in the result
+        /// set.  If the attribute is set to "ACTIVE", only module streams that
+        /// are active are included in the result set.  If the attribute is not
+        /// defined, the request is not subject to this filter.
+        /// 
+        /// When sorting by the display name, the result set is sorted first
+        /// by the module name and then by the stream name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroupModules = Oci.OsManagementHub.GetManagedInstanceGroupModules.Invoke(new()
+        ///     {
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = managedInstanceGroupModuleName,
+        ///         NameContains = managedInstanceGroupModuleNameContains,
+        ///         StreamName = testStream.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupModulesResult> Invoke(GetManagedInstanceGroupModulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupModulesResult>("oci:OsManagementHub/getManagedInstanceGroupModules:getManagedInstanceGroupModules", args ?? new GetManagedInstanceGroupModulesInvokeArgs(), options.WithDefaults());
     }
 
 

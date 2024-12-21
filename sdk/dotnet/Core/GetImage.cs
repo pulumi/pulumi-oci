@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetImageResult> Invoke(GetImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageResult>("oci:Core/getImage:getImage", args ?? new GetImageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified image.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImage = Oci.Core.GetImage.Invoke(new()
+        ///     {
+        ///         ImageId = testImageOciCoreImage.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetImageResult> Invoke(GetImageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetImageResult>("oci:Core/getImage:getImage", args ?? new GetImageInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -74,21 +74,11 @@ type GetIpInventorySubnetResult struct {
 }
 
 func GetIpInventorySubnetOutput(ctx *pulumi.Context, args GetIpInventorySubnetOutputArgs, opts ...pulumi.InvokeOption) GetIpInventorySubnetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIpInventorySubnetResultOutput, error) {
 			args := v.(GetIpInventorySubnetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIpInventorySubnetResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getIpInventorySubnet:getIpInventorySubnet", args, &rv, "", opts...)
-			if err != nil {
-				return GetIpInventorySubnetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIpInventorySubnetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIpInventorySubnetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getIpInventorySubnet:getIpInventorySubnet", args, GetIpInventorySubnetResultOutput{}, options).(GetIpInventorySubnetResultOutput), nil
 		}).(GetIpInventorySubnetResultOutput)
 }
 

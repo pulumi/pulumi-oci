@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetGiVersionMinorVersionsResult> Invoke(GetGiVersionMinorVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGiVersionMinorVersionsResult>("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", args ?? new GetGiVersionMinorVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGiVersionMinorVersions = Oci.Database.GetGiVersionMinorVersions.Invoke(new()
+        ///     {
+        ///         Version = giVersionMinorVersionVersion,
+        ///         AvailabilityDomain = giVersionMinorVersionAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         IsGiVersionForProvisioning = giVersionMinorVersionIsGiVersionForProvisioning,
+        ///         Shape = giVersionMinorVersionShape,
+        ///         ShapeFamily = giVersionMinorVersionShapeFamily,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGiVersionMinorVersionsResult> Invoke(GetGiVersionMinorVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGiVersionMinorVersionsResult>("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", args ?? new GetGiVersionMinorVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

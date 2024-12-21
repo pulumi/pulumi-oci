@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudVmClustersResult> Invoke(GetCloudVmClustersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClustersResult>("oci:Database/getCloudVmClusters:getCloudVmClusters", args ?? new GetCloudVmClustersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudVmClusters = Oci.Database.GetCloudVmClusters.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
+        ///         DisplayName = cloudVmClusterDisplayName,
+        ///         State = cloudVmClusterState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudVmClustersResult> Invoke(GetCloudVmClustersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClustersResult>("oci:Database/getCloudVmClusters:getCloudVmClusters", args ?? new GetCloudVmClustersInvokeArgs(), options.WithDefaults());
     }
 
 

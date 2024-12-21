@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseUserResult> Invoke(GetOperationsInsightsWarehouseUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUserResult>("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", args ?? new GetOperationsInsightsWarehouseUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets details of an Operations Insights Warehouse User.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperationsInsightsWarehouseUser = Oci.Opsi.GetOperationsInsightsWarehouseUser.Invoke(new()
+        ///     {
+        ///         OperationsInsightsWarehouseUserId = testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOperationsInsightsWarehouseUserResult> Invoke(GetOperationsInsightsWarehouseUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUserResult>("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", args ?? new GetOperationsInsightsWarehouseUserInvokeArgs(), options.WithDefaults());
     }
 
 

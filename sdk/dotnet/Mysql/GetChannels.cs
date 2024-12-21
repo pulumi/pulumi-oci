@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetChannelsResult> Invoke(GetChannelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetChannelsResult>("oci:Mysql/getChannels:getChannels", args ?? new GetChannelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Lists all the Channels that match the specified filters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testChannels = Oci.Mysql.GetChannels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ChannelId = testChannel.Id,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = channelDisplayName,
+        ///         IsEnabled = channelIsEnabled,
+        ///         State = channelState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetChannelsResult> Invoke(GetChannelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetChannelsResult>("oci:Mysql/getChannels:getChannels", args ?? new GetChannelsInvokeArgs(), options.WithDefaults());
     }
 
 

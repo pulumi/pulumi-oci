@@ -64,6 +64,33 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> Invoke(GetNetworkFirewallPolicyTunnelInspectionRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyTunnelInspectionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", args ?? new GetNetworkFirewallPolicyTunnelInspectionRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Get tunnel inspection rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyTunnelInspectionRule = Oci.NetworkFirewall.GetNetworkFirewallPolicyTunnelInspectionRule.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         TunnelInspectionRuleName = testRule.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> Invoke(GetNetworkFirewallPolicyTunnelInspectionRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyTunnelInspectionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", args ?? new GetNetworkFirewallPolicyTunnelInspectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 

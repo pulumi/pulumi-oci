@@ -70,6 +70,36 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentTypesResult> Invoke(GetDeploymentTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentTypesResult>("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", args ?? new GetDeploymentTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Returns an array of DeploymentTypeDescriptor
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentTypes = Oci.GoldenGate.GetDeploymentTypes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentType = deploymentTypeDeploymentType,
+        ///         DisplayName = deploymentTypeDisplayName,
+        ///         OggVersion = deploymentTypeOggVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentTypesResult> Invoke(GetDeploymentTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentTypesResult>("oci:GoldenGate/getDeploymentTypes:getDeploymentTypes", args ?? new GetDeploymentTypesInvokeArgs(), options.WithDefaults());
     }
 
 

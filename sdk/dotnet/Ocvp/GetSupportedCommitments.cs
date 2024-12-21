@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetSupportedCommitmentsResult> Invoke(GetSupportedCommitmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSupportedCommitmentsResult>("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", args ?? new GetSupportedCommitmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists supported Commitments.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSupportedCommitments = Oci.Ocvp.GetSupportedCommitments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         HostShapeName = testShape.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSupportedCommitmentsResult> Invoke(GetSupportedCommitmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSupportedCommitmentsResult>("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", args ?? new GetSupportedCommitmentsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDhcpOptionsResult> Invoke(GetDhcpOptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDhcpOptionsResult>("oci:Core/getDhcpOptions:getDhcpOptions", args ?? new GetDhcpOptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the sets of DHCP options in the specified VCN and specified compartment.
+        /// If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
+        /// The response includes the default set of options that automatically comes with each VCN,
+        /// plus any other sets you've created.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDhcpOptions = Oci.Core.GetDhcpOptions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dhcpOptionsDisplayName,
+        ///         State = dhcpOptionsState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDhcpOptionsResult> Invoke(GetDhcpOptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDhcpOptionsResult>("oci:Core/getDhcpOptions:getDhcpOptions", args ?? new GetDhcpOptionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -77,21 +77,11 @@ type GetPodShapesResult struct {
 }
 
 func GetPodShapesOutput(ctx *pulumi.Context, args GetPodShapesOutputArgs, opts ...pulumi.InvokeOption) GetPodShapesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPodShapesResultOutput, error) {
 			args := v.(GetPodShapesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPodShapesResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getPodShapes:getPodShapes", args, &rv, "", opts...)
-			if err != nil {
-				return GetPodShapesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPodShapesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPodShapesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getPodShapes:getPodShapes", args, GetPodShapesResultOutput{}, options).(GetPodShapesResultOutput), nil
 		}).(GetPodShapesResultOutput)
 }
 

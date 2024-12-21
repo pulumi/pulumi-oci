@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> Invoke(GetComputeCapacityTopologyComputeNetworkBlocksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeNetworkBlocksResult>("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args ?? new GetComputeCapacityTopologyComputeNetworkBlocksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists compute network blocks in the specified compute capacity topology.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityTopologyComputeNetworkBlocks = Oci.Core.GetComputeCapacityTopologyComputeNetworkBlocks.Invoke(new()
+        ///     {
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeHpcIslandId = testComputeHpcIsland.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> Invoke(GetComputeCapacityTopologyComputeNetworkBlocksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeNetworkBlocksResult>("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args ?? new GetComputeCapacityTopologyComputeNetworkBlocksInvokeArgs(), options.WithDefaults());
     }
 
 

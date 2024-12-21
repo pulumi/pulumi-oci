@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryMirrorRecordsResult> Invoke(GetRepositoryMirrorRecordsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryMirrorRecordsResult>("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", args ?? new GetRepositoryMirrorRecordsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of mirror entry in history within 30 days.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryMirrorRecords = Oci.DevOps.GetRepositoryMirrorRecords.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryMirrorRecordsResult> Invoke(GetRepositoryMirrorRecordsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryMirrorRecordsResult>("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", args ?? new GetRepositoryMirrorRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

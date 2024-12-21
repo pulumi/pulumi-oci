@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetCertificateAuthorityResult> Invoke(GetCertificateAuthorityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityResult>("oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority", args ?? new GetCertificateAuthorityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Gets details about the specified certificate authority (CA).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateAuthority = Oci.CertificatesManagement.GetCertificateAuthority.Invoke(new()
+        ///     {
+        ///         CertificateAuthorityId = testCertificateAuthorityOciCertificatesManagementCertificateAuthority.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCertificateAuthorityResult> Invoke(GetCertificateAuthorityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityResult>("oci:CertificatesManagement/getCertificateAuthority:getCertificateAuthority", args ?? new GetCertificateAuthorityInvokeArgs(), options.WithDefaults());
     }
 
 

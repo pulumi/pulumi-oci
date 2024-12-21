@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetObjectHeadResult> Invoke(GetObjectHeadInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets the metadata of an object.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testObjectHead = Oci.ObjectStorage.GetObjectHead.Invoke(new()
+        ///     {
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Object = objectObject,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetObjectHeadResult> Invoke(GetObjectHeadInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectHeadResult>("oci:ObjectStorage/getObjectHead:getObjectHead", args ?? new GetObjectHeadInvokeArgs(), options.WithDefaults());
     }
 
 

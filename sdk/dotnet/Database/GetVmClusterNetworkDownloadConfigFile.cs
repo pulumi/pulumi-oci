@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterNetworkDownloadConfigFileResult> Invoke(GetVmClusterNetworkDownloadConfigFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterNetworkDownloadConfigFile = Oci.Database.GetVmClusterNetworkDownloadConfigFile.Invoke(new()
+        ///     {
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         VmClusterNetworkId = testVmClusterNetwork.Id,
+        ///         Base64EncodeContent = false,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterNetworkDownloadConfigFileResult> Invoke(GetVmClusterNetworkDownloadConfigFileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileInvokeArgs(), options.WithDefaults());
     }
 
 

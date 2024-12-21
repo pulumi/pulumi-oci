@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> Invoke(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult>("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates", args ?? new GetSecurityPolicyDeploymentSecurityPolicyEntryStatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Retrieves a list of all security policy entry states in Data Safe.
+        /// 
+        /// The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyDeploymentSecurityPolicyEntryStates = Oci.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStates.Invoke(new()
+        ///     {
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
+        ///         DeploymentStatus = securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
+        ///         SecurityPolicyEntryId = testSecurityPolicyEntry.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult> Invoke(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult>("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryStates:getSecurityPolicyDeploymentSecurityPolicyEntryStates", args ?? new GetSecurityPolicyDeploymentSecurityPolicyEntryStatesInvokeArgs(), options.WithDefaults());
     }
 
 

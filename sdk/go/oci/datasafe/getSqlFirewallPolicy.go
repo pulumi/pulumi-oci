@@ -104,21 +104,11 @@ type LookupSqlFirewallPolicyResult struct {
 }
 
 func LookupSqlFirewallPolicyOutput(ctx *pulumi.Context, args LookupSqlFirewallPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupSqlFirewallPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSqlFirewallPolicyResultOutput, error) {
 			args := v.(LookupSqlFirewallPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSqlFirewallPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSqlFirewallPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSqlFirewallPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSqlFirewallPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy", args, LookupSqlFirewallPolicyResultOutput{}, options).(LookupSqlFirewallPolicyResultOutput), nil
 		}).(LookupSqlFirewallPolicyResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public static Output<GetBudgetResult> Invoke(GetBudgetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBudgetResult>("oci:Budget/getBudget:getBudget", args ?? new GetBudgetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
+        /// 
+        /// Gets a budget by the identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBudget = Oci.Budget.GetBudget.Invoke(new()
+        ///     {
+        ///         BudgetId = testBudgetOciBudgetBudget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBudgetResult> Invoke(GetBudgetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBudgetResult>("oci:Budget/getBudget:getBudget", args ?? new GetBudgetInvokeArgs(), options.WithDefaults());
     }
 
 

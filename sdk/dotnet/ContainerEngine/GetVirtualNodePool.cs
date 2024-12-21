@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetVirtualNodePoolResult> Invoke(GetVirtualNodePoolInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolResult>("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", args ?? new GetVirtualNodePoolInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Get the details of a virtual node pool.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualNodePool = Oci.ContainerEngine.GetVirtualNodePool.Invoke(new()
+        ///     {
+        ///         VirtualNodePoolId = testVirtualNodePoolOciContainerengineVirtualNodePool.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualNodePoolResult> Invoke(GetVirtualNodePoolInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolResult>("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", args ?? new GetVirtualNodePoolInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -80,21 +80,11 @@ type GetJavaFamiliesResult struct {
 }
 
 func GetJavaFamiliesOutput(ctx *pulumi.Context, args GetJavaFamiliesOutputArgs, opts ...pulumi.InvokeOption) GetJavaFamiliesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetJavaFamiliesResultOutput, error) {
 			args := v.(GetJavaFamiliesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetJavaFamiliesResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaFamilies:getJavaFamilies", args, &rv, "", opts...)
-			if err != nil {
-				return GetJavaFamiliesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetJavaFamiliesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetJavaFamiliesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getJavaFamilies:getJavaFamilies", args, GetJavaFamiliesResultOutput{}, options).(GetJavaFamiliesResultOutput), nil
 		}).(GetJavaFamiliesResultOutput)
 }
 

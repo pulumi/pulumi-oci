@@ -45,7 +45,7 @@ export interface GetJobRunArgs {
 export interface GetJobRunResult {
     readonly asynchronous: boolean;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
      */
     readonly compartmentId: string;
     /**
@@ -77,7 +77,7 @@ export interface GetJobRunResult {
      */
     readonly jobEnvironmentConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobEnvironmentConfigurationOverrideDetail[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      */
     readonly jobId: string;
     /**
@@ -103,7 +103,7 @@ export interface GetJobRunResult {
     readonly logDetails: outputs.DataScience.GetJobRunLogDetail[];
     readonly opcParentRptUrl: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      */
     readonly projectId: string;
     /**

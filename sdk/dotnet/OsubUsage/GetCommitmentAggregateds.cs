@@ -26,6 +26,14 @@ namespace Pulumi.Oci.OsubUsage
         /// </summary>
         public static Output<GetCommitmentAggregatedsResult> Invoke(GetCommitmentAggregatedsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentAggregatedsResult>("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", args ?? new GetCommitmentAggregatedsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
+        /// 
+        /// This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+        /// </summary>
+        public static Output<GetCommitmentAggregatedsResult> Invoke(GetCommitmentAggregatedsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentAggregatedsResult>("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", args ?? new GetCommitmentAggregatedsInvokeArgs(), options.WithDefaults());
     }
 
 

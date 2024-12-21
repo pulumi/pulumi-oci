@@ -103,21 +103,11 @@ type GetJavaDownloadsJavaDownloadRecordsResult struct {
 }
 
 func GetJavaDownloadsJavaDownloadRecordsOutput(ctx *pulumi.Context, args GetJavaDownloadsJavaDownloadRecordsOutputArgs, opts ...pulumi.InvokeOption) GetJavaDownloadsJavaDownloadRecordsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetJavaDownloadsJavaDownloadRecordsResultOutput, error) {
 			args := v.(GetJavaDownloadsJavaDownloadRecordsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetJavaDownloadsJavaDownloadRecordsResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", args, &rv, "", opts...)
-			if err != nil {
-				return GetJavaDownloadsJavaDownloadRecordsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetJavaDownloadsJavaDownloadRecordsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetJavaDownloadsJavaDownloadRecordsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", args, GetJavaDownloadsJavaDownloadRecordsResultOutput{}, options).(GetJavaDownloadsJavaDownloadRecordsResultOutput), nil
 		}).(GetJavaDownloadsJavaDownloadRecordsResultOutput)
 }
 

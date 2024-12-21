@@ -267,6 +267,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isAutoScalingForStorageEnabled;
     /**
+     * @return Indicates if the Autonomous Database is backup retention locked.
+     * 
+     */
+    private Boolean isBackupRetentionLocked;
+    /**
      * @return A filter to return only resources that have Data Guard enabled.
      * 
      */
@@ -1023,6 +1028,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
+     * @return Indicates if the Autonomous Database is backup retention locked.
+     * 
+     */
+    public Boolean isBackupRetentionLocked() {
+        return this.isBackupRetentionLocked;
+    }
+    /**
      * @return A filter to return only resources that have Data Guard enabled.
      * 
      */
@@ -1684,6 +1696,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Boolean isAccessControlEnabled;
         private Boolean isAutoScalingEnabled;
         private Boolean isAutoScalingForStorageEnabled;
+        private Boolean isBackupRetentionLocked;
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isDevTier;
@@ -1830,6 +1843,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.isAccessControlEnabled = defaults.isAccessControlEnabled;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
     	      this.isAutoScalingForStorageEnabled = defaults.isAutoScalingForStorageEnabled;
+    	      this.isBackupRetentionLocked = defaults.isBackupRetentionLocked;
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isDevTier = defaults.isDevTier;
@@ -2357,6 +2371,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isAutoScalingForStorageEnabled");
             }
             this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            if (isBackupRetentionLocked == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isBackupRetentionLocked");
+            }
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
             return this;
         }
         @CustomType.Setter
@@ -3190,6 +3212,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.isAccessControlEnabled = isAccessControlEnabled;
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
             _resultValue.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            _resultValue.isBackupRetentionLocked = isBackupRetentionLocked;
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
             _resultValue.isDevTier = isDevTier;

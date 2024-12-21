@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSelfRegistrationProfilesResult> Invoke(GetDomainsSelfRegistrationProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSelfRegistrationProfilesResult>("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args ?? new GetDomainsSelfRegistrationProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Self Registration Profiles in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for self-registration profiles.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSelfRegistrationProfiles = Oci.Identity.GetDomainsSelfRegistrationProfiles.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SelfRegistrationProfileCount = selfRegistrationProfileSelfRegistrationProfileCount,
+        ///         SelfRegistrationProfileFilter = selfRegistrationProfileSelfRegistrationProfileFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = selfRegistrationProfileAuthorization,
+        ///         ResourceTypeSchemaVersion = selfRegistrationProfileResourceTypeSchemaVersion,
+        ///         StartIndex = selfRegistrationProfileStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSelfRegistrationProfilesResult> Invoke(GetDomainsSelfRegistrationProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSelfRegistrationProfilesResult>("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args ?? new GetDomainsSelfRegistrationProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

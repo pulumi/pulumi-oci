@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetDiscoveryAnalyticsResult> Invoke(GetDiscoveryAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets consolidated discovery analytics data based on the specified query parameters.
+        /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+        /// is equivalent to accessLevel "ACCESSIBLE" by default.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDiscoveryAnalytics = Oci.DataSafe.GetDiscoveryAnalytics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = discoveryAnalyticCompartmentIdInSubtree,
+        ///         GroupBy = discoveryAnalyticGroupBy,
+        ///         IsCommon = discoveryAnalyticIsCommon,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDiscoveryAnalyticsResult> Invoke(GetDiscoveryAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticsResult>("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args ?? new GetDiscoveryAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

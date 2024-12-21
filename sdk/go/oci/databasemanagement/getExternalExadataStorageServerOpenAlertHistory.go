@@ -66,21 +66,11 @@ type GetExternalExadataStorageServerOpenAlertHistoryResult struct {
 }
 
 func GetExternalExadataStorageServerOpenAlertHistoryOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerOpenAlertHistoryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalExadataStorageServerOpenAlertHistoryResultOutput, error) {
 			args := v.(GetExternalExadataStorageServerOpenAlertHistoryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalExadataStorageServerOpenAlertHistoryResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalExadataStorageServerOpenAlertHistoryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args, GetExternalExadataStorageServerOpenAlertHistoryResultOutput{}, options).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput), nil
 		}).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput)
 }
 

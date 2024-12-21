@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public static Output<GetLimitDefinitionsResult> Invoke(GetLimitDefinitionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLimitDefinitionsResult>("oci:Limits/getLimitDefinitions:getLimitDefinitions", args ?? new GetLimitDefinitionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
+        /// 
+        /// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
+        /// If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
+        /// compartment level.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLimitDefinitions = Oci.Limits.GetLimitDefinitions.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = limitDefinitionName,
+        ///         ServiceName = testService.Name,
+        ///         SubscriptionId = subscriptionOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLimitDefinitionsResult> Invoke(GetLimitDefinitionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLimitDefinitionsResult>("oci:Limits/getLimitDefinitions:getLimitDefinitions", args ?? new GetLimitDefinitionsInvokeArgs(), options.WithDefaults());
     }
 
 

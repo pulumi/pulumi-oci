@@ -86,21 +86,11 @@ type GetSoftwareSourceModuleStreamProfileResult struct {
 }
 
 func GetSoftwareSourceModuleStreamProfileOutput(ctx *pulumi.Context, args GetSoftwareSourceModuleStreamProfileOutputArgs, opts ...pulumi.InvokeOption) GetSoftwareSourceModuleStreamProfileResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSoftwareSourceModuleStreamProfileResultOutput, error) {
 			args := v.(GetSoftwareSourceModuleStreamProfileArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSoftwareSourceModuleStreamProfileResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", args, &rv, "", opts...)
-			if err != nil {
-				return GetSoftwareSourceModuleStreamProfileResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSoftwareSourceModuleStreamProfileResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSoftwareSourceModuleStreamProfileResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", args, GetSoftwareSourceModuleStreamProfileResultOutput{}, options).(GetSoftwareSourceModuleStreamProfileResultOutput), nil
 		}).(GetSoftwareSourceModuleStreamProfileResultOutput)
 }
 

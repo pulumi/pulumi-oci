@@ -96,6 +96,49 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveDataModelsSensitiveColumnsResult> Invoke(GetSensitiveDataModelsSensitiveColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsSensitiveColumnsResult>("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", args ?? new GetSensitiveDataModelsSensitiveColumnsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelsSensitiveColumns = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.Invoke(new()
+        ///     {
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         ColumnGroup = sensitiveDataModelsSensitiveColumnColumnGroup,
+        ///         ColumnNames = sensitiveDataModelsSensitiveColumnColumnName,
+        ///         DataTypes = sensitiveDataModelsSensitiveColumnDataType,
+        ///         IsCaseInSensitive = sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
+        ///         Objects = sensitiveDataModelsSensitiveColumnObject,
+        ///         ObjectTypes = sensitiveDataModelsSensitiveColumnObjectType,
+        ///         ParentColumnKeys = sensitiveDataModelsSensitiveColumnParentColumnKey,
+        ///         RelationTypes = sensitiveDataModelsSensitiveColumnRelationType,
+        ///         SchemaNames = sensitiveDataModelsSensitiveColumnSchemaName,
+        ///         SensitiveColumnLifecycleState = sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState,
+        ///         SensitiveTypeIds = testSensitiveType.Id,
+        ///         Statuses = sensitiveDataModelsSensitiveColumnStatus,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveDataModelsSensitiveColumnTimeCreatedLessThan,
+        ///         TimeUpdatedGreaterThanOrEqualTo = sensitiveDataModelsSensitiveColumnTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = sensitiveDataModelsSensitiveColumnTimeUpdatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveDataModelsSensitiveColumnsResult> Invoke(GetSensitiveDataModelsSensitiveColumnsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsSensitiveColumnsResult>("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", args ?? new GetSensitiveDataModelsSensitiveColumnsInvokeArgs(), options.WithDefaults());
     }
 
 

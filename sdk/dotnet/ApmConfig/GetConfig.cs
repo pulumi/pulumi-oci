@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         public static Output<GetConfigResult> Invoke(GetConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConfigResult>("oci:ApmConfig/getConfig:getConfig", args ?? new GetConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
+        /// 
+        /// Gets the configuration item identified by the OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConfig = Oci.ApmConfig.GetConfig.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ConfigId = testConfigOciApmConfigConfig.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConfigResult> Invoke(GetConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigResult>("oci:ApmConfig/getConfig:getConfig", args ?? new GetConfigInvokeArgs(), options.WithDefaults());
     }
 
 

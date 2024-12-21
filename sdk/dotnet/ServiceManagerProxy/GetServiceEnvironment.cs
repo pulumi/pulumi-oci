@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// </summary>
         public static Output<GetServiceEnvironmentResult> Invoke(GetServiceEnvironmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentResult>("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args ?? new GetServiceEnvironmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
+        /// 
+        /// Get the detailed information for a specific service environment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceEnvironment = Oci.ServiceManagerProxy.GetServiceEnvironment.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ServiceEnvironmentId = testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceEnvironmentResult> Invoke(GetServiceEnvironmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentResult>("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args ?? new GetServiceEnvironmentInvokeArgs(), options.WithDefaults());
     }
 
 

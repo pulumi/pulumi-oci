@@ -62,6 +62,32 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetLoadBalancerRoutingPoliciesResult> Invoke(GetLoadBalancerRoutingPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all routing policies associated with the specified load balancer.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLoadBalancerRoutingPolicies = Oci.LoadBalancer.GetLoadBalancerRoutingPolicies.Invoke(new()
+        ///     {
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLoadBalancerRoutingPoliciesResult> Invoke(GetLoadBalancerRoutingPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadTokensResult> Invoke(GetJavaDownloadsJavaDownloadTokensInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadTokensResult>("oci:Jms/getJavaDownloadsJavaDownloadTokens:getJavaDownloadsJavaDownloadTokens", args ?? new GetJavaDownloadsJavaDownloadTokensInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Returns a list of JavaDownloadTokens.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaDownloadTokens = Oci.Jms.GetJavaDownloadsJavaDownloadTokens.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = javaDownloadTokenDisplayName,
+        ///         FamilyVersion = javaDownloadTokenFamilyVersion,
+        ///         Id = javaDownloadTokenId,
+        ///         SearchByUser = javaDownloadTokenSearchByUser,
+        ///         State = javaDownloadTokenState,
+        ///         Value = javaDownloadTokenValue,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaDownloadTokensResult> Invoke(GetJavaDownloadsJavaDownloadTokensInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadTokensResult>("oci:Jms/getJavaDownloadsJavaDownloadTokens:getJavaDownloadsJavaDownloadTokens", args ?? new GetJavaDownloadsJavaDownloadTokensInvokeArgs(), options.WithDefaults());
     }
 
 

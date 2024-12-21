@@ -64,6 +64,33 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetMessagesResult> Invoke(GetMessagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMessagesResult>("oci:GoldenGate/getMessages:getMessages", args ?? new GetMessagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Messages in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMessages = Oci.GoldenGate.GetMessages.Invoke(new()
+        ///     {
+        ///         DeploymentId = testDeployment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMessagesResult> Invoke(GetMessagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMessagesResult>("oci:GoldenGate/getMessages:getMessages", args ?? new GetMessagesInvokeArgs(), options.WithDefaults());
     }
 
 

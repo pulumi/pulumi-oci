@@ -97,21 +97,11 @@ type LookupTargetDatabaseResult struct {
 }
 
 func LookupTargetDatabaseOutput(ctx *pulumi.Context, args LookupTargetDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupTargetDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupTargetDatabaseResultOutput, error) {
 			args := v.(LookupTargetDatabaseArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupTargetDatabaseResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetDatabase:getTargetDatabase", args, &rv, "", opts...)
-			if err != nil {
-				return LookupTargetDatabaseResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupTargetDatabaseResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupTargetDatabaseResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabase:getTargetDatabase", args, LookupTargetDatabaseResultOutput{}, options).(LookupTargetDatabaseResultOutput), nil
 		}).(LookupTargetDatabaseResultOutput)
 }
 

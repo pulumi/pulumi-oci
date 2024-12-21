@@ -100,21 +100,11 @@ type LookupDataAssetResult struct {
 }
 
 func LookupDataAssetOutput(ctx *pulumi.Context, args LookupDataAssetOutputArgs, opts ...pulumi.InvokeOption) LookupDataAssetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDataAssetResultOutput, error) {
 			args := v.(LookupDataAssetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDataAssetResult
-			secret, err := ctx.InvokePackageRaw("oci:DataCatalog/getDataAsset:getDataAsset", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDataAssetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDataAssetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDataAssetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataCatalog/getDataAsset:getDataAsset", args, LookupDataAssetResultOutput{}, options).(LookupDataAssetResultOutput), nil
 		}).(LookupDataAssetResultOutput)
 }
 

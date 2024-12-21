@@ -74,21 +74,11 @@ type LookupCloudVmClusterIormConfigResult struct {
 }
 
 func LookupCloudVmClusterIormConfigOutput(ctx *pulumi.Context, args LookupCloudVmClusterIormConfigOutputArgs, opts ...pulumi.InvokeOption) LookupCloudVmClusterIormConfigResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCloudVmClusterIormConfigResultOutput, error) {
 			args := v.(LookupCloudVmClusterIormConfigArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCloudVmClusterIormConfigResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCloudVmClusterIormConfigResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCloudVmClusterIormConfigResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCloudVmClusterIormConfigResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args, LookupCloudVmClusterIormConfigResultOutput{}, options).(LookupCloudVmClusterIormConfigResultOutput), nil
 		}).(LookupCloudVmClusterIormConfigResultOutput)
 }
 

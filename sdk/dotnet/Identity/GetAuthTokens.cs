@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetAuthTokensResult> Invoke(GetAuthTokensInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
+        /// the token itself. The actual token is returned only upon creation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuthTokens = Oci.Identity.GetAuthTokens.Invoke(new()
+        ///     {
+        ///         UserId = testUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuthTokensResult> Invoke(GetAuthTokensInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuthTokensResult>("oci:Identity/getAuthTokens:getAuthTokens", args ?? new GetAuthTokensInvokeArgs(), options.WithDefaults());
     }
 
 

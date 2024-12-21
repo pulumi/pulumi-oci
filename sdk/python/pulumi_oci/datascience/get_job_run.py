@@ -104,7 +104,7 @@ class GetJobRunResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -168,7 +168,7 @@ class GetJobRunResult:
     @pulumi.getter(name="jobId")
     def job_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
         """
         return pulumi.get(self, "job_id")
 
@@ -226,7 +226,7 @@ class GetJobRunResult:
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         """
         return pulumi.get(self, "project_id")
 

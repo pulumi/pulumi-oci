@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabasesUserSystemPrivilegeResult> Invoke(GetManagedDatabasesUserSystemPrivilegeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegeResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args ?? new GetManagedDatabasesUserSystemPrivilegeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Databases User System Privilege resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of system privileges granted to a specific user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabasesUserSystemPrivilege = Oci.DatabaseManagement.GetManagedDatabasesUserSystemPrivilege.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabasesUserSystemPrivilegeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabasesUserSystemPrivilegeResult> Invoke(GetManagedDatabasesUserSystemPrivilegeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegeResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args ?? new GetManagedDatabasesUserSystemPrivilegeInvokeArgs(), options.WithDefaults());
     }
 
 

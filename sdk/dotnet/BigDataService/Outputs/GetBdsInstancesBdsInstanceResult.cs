@@ -14,6 +14,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class GetBdsInstancesBdsInstanceResult
     {
         /// <summary>
+        /// Cluster version details including bds and odh version information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult> BdsClusterVersionSummaries;
+        /// <summary>
         /// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
         /// </summary>
         public readonly string BootstrapScriptUrl;
@@ -66,6 +70,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// Boolean flag specifying whether or not Cloud SQL should be configured.
         /// </summary>
         public readonly bool IsCloudSqlConfigured;
+        public readonly bool IsForceRemoveEnabled;
         public readonly bool IsForceStopJobs;
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -103,6 +108,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int NumberOfNodesRequiringMaintenanceReboot;
         public readonly string OsPatchVersion;
+        public readonly string RemoveNode;
+        public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult> StartClusterShapeConfigs;
         /// <summary>
         /// The state of the cluster.
         /// </summary>
@@ -120,6 +127,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceResult(
+            ImmutableArray<Outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult> bdsClusterVersionSummaries,
+
             string bootstrapScriptUrl,
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceCloudSqlDetailResult> cloudSqlDetails,
@@ -154,6 +163,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             bool isCloudSqlConfigured,
 
+            bool isForceRemoveEnabled,
+
             bool isForceStopJobs,
 
             bool isHighAvailability,
@@ -180,6 +191,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string osPatchVersion,
 
+            string removeNode,
+
+            ImmutableArray<Outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult> startClusterShapeConfigs,
+
             string state,
 
             string timeCreated,
@@ -190,6 +205,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceWorkerNodeResult> workerNodes)
         {
+            BdsClusterVersionSummaries = bdsClusterVersionSummaries;
             BootstrapScriptUrl = bootstrapScriptUrl;
             CloudSqlDetails = cloudSqlDetails;
             ClusterAdminPassword = clusterAdminPassword;
@@ -207,6 +223,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             Id = id;
             IgnoreExistingNodesShapes = ignoreExistingNodesShapes;
             IsCloudSqlConfigured = isCloudSqlConfigured;
+            IsForceRemoveEnabled = isForceRemoveEnabled;
             IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;
             IsKafkaConfigured = isKafkaConfigured;
@@ -220,6 +237,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
             NumberOfNodes = numberOfNodes;
             NumberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             OsPatchVersion = osPatchVersion;
+            RemoveNode = removeNode;
+            StartClusterShapeConfigs = startClusterShapeConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

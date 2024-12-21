@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditProfileAvailableAuditVolumesResult> Invoke(GetAuditProfileAvailableAuditVolumesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Audit Profile Available Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditProfileAvailableAuditVolumes = Oci.DataSafe.GetAuditProfileAvailableAuditVolumes.Invoke(new()
+        ///     {
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         WorkRequestId = testWorkRequest.Id,
+        ///         MonthInConsiderationGreaterThan = auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan,
+        ///         MonthInConsiderationLessThan = auditProfileAvailableAuditVolumeMonthInConsiderationLessThan,
+        ///         TrailLocation = auditProfileAvailableAuditVolumeTrailLocation,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditProfileAvailableAuditVolumesResult> Invoke(GetAuditProfileAvailableAuditVolumesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesInvokeArgs(), options.WithDefaults());
     }
 
 

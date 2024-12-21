@@ -73,21 +73,11 @@ type GetNetworkSecurityGroupSecurityRulesResult struct {
 }
 
 func GetNetworkSecurityGroupSecurityRulesOutput(ctx *pulumi.Context, args GetNetworkSecurityGroupSecurityRulesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkSecurityGroupSecurityRulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNetworkSecurityGroupSecurityRulesResultOutput, error) {
 			args := v.(GetNetworkSecurityGroupSecurityRulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNetworkSecurityGroupSecurityRulesResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args, &rv, "", opts...)
-			if err != nil {
-				return GetNetworkSecurityGroupSecurityRulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNetworkSecurityGroupSecurityRulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNetworkSecurityGroupSecurityRulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args, GetNetworkSecurityGroupSecurityRulesResultOutput{}, options).(GetNetworkSecurityGroupSecurityRulesResultOutput), nil
 		}).(GetNetworkSecurityGroupSecurityRulesResultOutput)
 }
 

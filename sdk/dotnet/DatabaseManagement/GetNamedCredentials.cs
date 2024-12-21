@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetNamedCredentialsResult> Invoke(GetNamedCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamedCredentialsResult>("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", args ?? new GetNamedCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamedCredentials = Oci.DatabaseManagement.GetNamedCredentials.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AssociatedResource = namedCredentialAssociatedResource,
+        ///         Name = namedCredentialName,
+        ///         Scope = namedCredentialScope,
+        ///         Type = namedCredentialType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamedCredentialsResult> Invoke(GetNamedCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamedCredentialsResult>("oci:DatabaseManagement/getNamedCredentials:getNamedCredentials", args ?? new GetNamedCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -69,21 +69,11 @@ type GetEkmsPrivateEndpointsResult struct {
 }
 
 func GetEkmsPrivateEndpointsOutput(ctx *pulumi.Context, args GetEkmsPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetEkmsPrivateEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetEkmsPrivateEndpointsResultOutput, error) {
 			args := v.(GetEkmsPrivateEndpointsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetEkmsPrivateEndpointsResult
-			secret, err := ctx.InvokePackageRaw("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", args, &rv, "", opts...)
-			if err != nil {
-				return GetEkmsPrivateEndpointsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetEkmsPrivateEndpointsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetEkmsPrivateEndpointsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", args, GetEkmsPrivateEndpointsResultOutput{}, options).(GetEkmsPrivateEndpointsResultOutput), nil
 		}).(GetEkmsPrivateEndpointsResultOutput)
 }
 

@@ -74,6 +74,38 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         /// </summary>
         public static Output<GetClusterPlacementGroupsResult> Invoke(GetClusterPlacementGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterPlacementGroupsResult>("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", args ?? new GetClusterPlacementGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cluster Placement Groups in Oracle Cloud Infrastructure Cluster Placement Groups service.
+        /// 
+        /// Gets a list of all cluster placement groups in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testClusterPlacementGroups = Oci.ClusterPlacementGroups.GetClusterPlacementGroups.Invoke(new()
+        ///     {
+        ///         Ad = clusterPlacementGroupAd,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = clusterPlacementGroupCompartmentIdInSubtree,
+        ///         Id = clusterPlacementGroupId,
+        ///         Name = clusterPlacementGroupName,
+        ///         State = clusterPlacementGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetClusterPlacementGroupsResult> Invoke(GetClusterPlacementGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterPlacementGroupsResult>("oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups", args ?? new GetClusterPlacementGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

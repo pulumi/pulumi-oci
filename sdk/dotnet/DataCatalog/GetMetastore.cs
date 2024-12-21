@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetMetastoreResult> Invoke(GetMetastoreInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetastoreResult>("oci:DataCatalog/getMetastore:getMetastore", args ?? new GetMetastoreInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Gets a metastore by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMetastore = Oci.DataCatalog.GetMetastore.Invoke(new()
+        ///     {
+        ///         MetastoreId = testMetastoreOciDatacatalogMetastore.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMetastoreResult> Invoke(GetMetastoreInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetastoreResult>("oci:DataCatalog/getMetastore:getMetastore", args ?? new GetMetastoreInvokeArgs(), options.WithDefaults());
     }
 
 

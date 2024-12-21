@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+        /// Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+        /// If the date-time range is not specified, then the executions in the last seven days are listed.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> Invoke(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult>("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args ?? new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs(), options.WithDefaults());
     }
 
 

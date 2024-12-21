@@ -39,6 +39,20 @@ __all__ = [
     'DeploymentOggDataArgsDict',
     'DeploymentOggDataGroupToRolesMappingArgs',
     'DeploymentOggDataGroupToRolesMappingArgsDict',
+    'PipelineLockArgs',
+    'PipelineLockArgsDict',
+    'PipelineMappingRuleArgs',
+    'PipelineMappingRuleArgsDict',
+    'PipelineProcessOptionsArgs',
+    'PipelineProcessOptionsArgsDict',
+    'PipelineProcessOptionsInitialDataLoadArgs',
+    'PipelineProcessOptionsInitialDataLoadArgsDict',
+    'PipelineProcessOptionsReplicateSchemaChangeArgs',
+    'PipelineProcessOptionsReplicateSchemaChangeArgsDict',
+    'PipelineSourceConnectionDetailsArgs',
+    'PipelineSourceConnectionDetailsArgsDict',
+    'PipelineTargetConnectionDetailsArgs',
+    'PipelineTargetConnectionDetailsArgsDict',
     'GetConnectionAssignmentsFilterArgs',
     'GetConnectionAssignmentsFilterArgsDict',
     'GetConnectionsFilterArgs',
@@ -61,6 +75,16 @@ __all__ = [
     'GetDeploymentsFilterArgsDict',
     'GetMessagesFilterArgs',
     'GetMessagesFilterArgsDict',
+    'GetPipelineRunningProcessesFilterArgs',
+    'GetPipelineRunningProcessesFilterArgsDict',
+    'GetPipelineSchemaTablesFilterArgs',
+    'GetPipelineSchemaTablesFilterArgsDict',
+    'GetPipelineSchemasFilterArgs',
+    'GetPipelineSchemasFilterArgsDict',
+    'GetPipelinesFilterArgs',
+    'GetPipelinesFilterArgsDict',
+    'GetRecipesFilterArgs',
+    'GetRecipesFilterArgsDict',
     'GetTrailFilesFilterArgs',
     'GetTrailFilesFilterArgsDict',
     'GetTrailSequencesFilterArgs',
@@ -1133,6 +1157,394 @@ class DeploymentOggDataGroupToRolesMappingArgs:
 
 
 if not MYPY:
+    class PipelineLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+elif False:
+    PipelineLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+
+if not MYPY:
+    class PipelineMappingRuleArgsDict(TypedDict):
+        mapping_type: NotRequired[pulumi.Input[str]]
+        """
+        Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        """
+        source: NotRequired[pulumi.Input[str]]
+        """
+        The source schema/table combination for replication to target.
+        """
+        target: NotRequired[pulumi.Input[str]]
+        """
+        The target schema/table combination for replication from the source.
+        """
+elif False:
+    PipelineMappingRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineMappingRuleArgs:
+    def __init__(__self__, *,
+                 mapping_type: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None,
+                 target: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] mapping_type: Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        :param pulumi.Input[str] source: The source schema/table combination for replication to target.
+        :param pulumi.Input[str] target: The target schema/table combination for replication from the source.
+        """
+        if mapping_type is not None:
+            pulumi.set(__self__, "mapping_type", mapping_type)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="mappingType")
+    def mapping_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        """
+        return pulumi.get(self, "mapping_type")
+
+    @mapping_type.setter
+    def mapping_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mapping_type", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        """
+        The source schema/table combination for replication to target.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[str]]:
+        """
+        The target schema/table combination for replication from the source.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target", value)
+
+
+if not MYPY:
+    class PipelineProcessOptionsArgsDict(TypedDict):
+        initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgsDict']
+        """
+        (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        replicate_schema_change: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgsDict']
+        """
+        (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        should_restart_on_failure: pulumi.Input[str]
+        """
+        (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+elif False:
+    PipelineProcessOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineProcessOptionsArgs:
+    def __init__(__self__, *,
+                 initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'],
+                 replicate_schema_change: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'],
+                 should_restart_on_failure: pulumi.Input[str]):
+        """
+        :param pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'] initial_data_load: (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'] replicate_schema_change: (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param pulumi.Input[str] should_restart_on_failure: (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        pulumi.set(__self__, "initial_data_load", initial_data_load)
+        pulumi.set(__self__, "replicate_schema_change", replicate_schema_change)
+        pulumi.set(__self__, "should_restart_on_failure", should_restart_on_failure)
+
+    @property
+    @pulumi.getter(name="initialDataLoad")
+    def initial_data_load(self) -> pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs']:
+        """
+        (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "initial_data_load")
+
+    @initial_data_load.setter
+    def initial_data_load(self, value: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs']):
+        pulumi.set(self, "initial_data_load", value)
+
+    @property
+    @pulumi.getter(name="replicateSchemaChange")
+    def replicate_schema_change(self) -> pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs']:
+        """
+        (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "replicate_schema_change")
+
+    @replicate_schema_change.setter
+    def replicate_schema_change(self, value: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs']):
+        pulumi.set(self, "replicate_schema_change", value)
+
+    @property
+    @pulumi.getter(name="shouldRestartOnFailure")
+    def should_restart_on_failure(self) -> pulumi.Input[str]:
+        """
+        (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        return pulumi.get(self, "should_restart_on_failure")
+
+    @should_restart_on_failure.setter
+    def should_restart_on_failure(self, value: pulumi.Input[str]):
+        pulumi.set(self, "should_restart_on_failure", value)
+
+
+if not MYPY:
+    class PipelineProcessOptionsInitialDataLoadArgsDict(TypedDict):
+        is_initial_load: pulumi.Input[str]
+        """
+        (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        action_on_existing_table: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+elif False:
+    PipelineProcessOptionsInitialDataLoadArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineProcessOptionsInitialDataLoadArgs:
+    def __init__(__self__, *,
+                 is_initial_load: pulumi.Input[str],
+                 action_on_existing_table: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] is_initial_load: (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        :param pulumi.Input[str] action_on_existing_table: (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+        pulumi.set(__self__, "is_initial_load", is_initial_load)
+        if action_on_existing_table is not None:
+            pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+
+    @property
+    @pulumi.getter(name="isInitialLoad")
+    def is_initial_load(self) -> pulumi.Input[str]:
+        """
+        (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "is_initial_load")
+
+    @is_initial_load.setter
+    def is_initial_load(self, value: pulumi.Input[str]):
+        pulumi.set(self, "is_initial_load", value)
+
+    @property
+    @pulumi.getter(name="actionOnExistingTable")
+    def action_on_existing_table(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+        return pulumi.get(self, "action_on_existing_table")
+
+    @action_on_existing_table.setter
+    def action_on_existing_table(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_on_existing_table", value)
+
+
+if not MYPY:
+    class PipelineProcessOptionsReplicateSchemaChangeArgsDict(TypedDict):
+        can_replicate_schema_change: pulumi.Input[str]
+        """
+        (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        action_on_ddl_error: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        action_on_dml_error: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+elif False:
+    PipelineProcessOptionsReplicateSchemaChangeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineProcessOptionsReplicateSchemaChangeArgs:
+    def __init__(__self__, *,
+                 can_replicate_schema_change: pulumi.Input[str],
+                 action_on_ddl_error: Optional[pulumi.Input[str]] = None,
+                 action_on_dml_error: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] can_replicate_schema_change: (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        :param pulumi.Input[str] action_on_ddl_error: (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        :param pulumi.Input[str] action_on_dml_error: (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        pulumi.set(__self__, "can_replicate_schema_change", can_replicate_schema_change)
+        if action_on_ddl_error is not None:
+            pulumi.set(__self__, "action_on_ddl_error", action_on_ddl_error)
+        if action_on_dml_error is not None:
+            pulumi.set(__self__, "action_on_dml_error", action_on_dml_error)
+
+    @property
+    @pulumi.getter(name="canReplicateSchemaChange")
+    def can_replicate_schema_change(self) -> pulumi.Input[str]:
+        """
+        (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "can_replicate_schema_change")
+
+    @can_replicate_schema_change.setter
+    def can_replicate_schema_change(self, value: pulumi.Input[str]):
+        pulumi.set(self, "can_replicate_schema_change", value)
+
+    @property
+    @pulumi.getter(name="actionOnDdlError")
+    def action_on_ddl_error(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_ddl_error")
+
+    @action_on_ddl_error.setter
+    def action_on_ddl_error(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_on_ddl_error", value)
+
+    @property
+    @pulumi.getter(name="actionOnDmlError")
+    def action_on_dml_error(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_dml_error")
+
+    @action_on_dml_error.setter
+    def action_on_dml_error(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_on_dml_error", value)
+
+
+if not MYPY:
+    class PipelineSourceConnectionDetailsArgsDict(TypedDict):
+        connection_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+elif False:
+    PipelineSourceConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineSourceConnectionDetailsArgs:
+    def __init__(__self__, *,
+                 connection_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @connection_id.setter
+    def connection_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "connection_id", value)
+
+
+if not MYPY:
+    class PipelineTargetConnectionDetailsArgsDict(TypedDict):
+        connection_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    PipelineTargetConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineTargetConnectionDetailsArgs:
+    def __init__(__self__, *,
+                 connection_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "connection_id")
+
+    @connection_id.setter
+    def connection_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "connection_id", value)
+
+
+if not MYPY:
     class GetConnectionAssignmentsFilterArgsDict(TypedDict):
         name: str
         """
@@ -1642,6 +2054,259 @@ class GetMessagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPipelineRunningProcessesFilterArgsDict(TypedDict):
+        name: str
+        """
+        An object's Display Name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPipelineRunningProcessesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPipelineRunningProcessesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: An object's Display Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPipelineSchemaTablesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPipelineSchemaTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPipelineSchemaTablesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPipelineSchemasFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPipelineSchemasFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPipelineSchemasFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPipelinesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPipelinesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetRecipesFilterArgsDict(TypedDict):
+        name: str
+        """
+        An object's Display Name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRecipesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetRecipesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: An object's Display Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An object's Display Name.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

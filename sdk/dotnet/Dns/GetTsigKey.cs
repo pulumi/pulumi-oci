@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetTsigKeyResult> Invoke(GetTsigKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTsigKeyResult>("oci:Dns/getTsigKey:getTsigKey", args ?? new GetTsigKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets information about the specified TSIG key.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTsigKey = Oci.Dns.GetTsigKey.Invoke(new()
+        ///     {
+        ///         TsigKeyId = testTsigKeyOciDnsTsigKey.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTsigKeyResult> Invoke(GetTsigKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTsigKeyResult>("oci:Dns/getTsigKey:getTsigKey", args ?? new GetTsigKeyInvokeArgs(), options.WithDefaults());
     }
 
 

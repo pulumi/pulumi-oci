@@ -14,20 +14,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MetricExtensionQueryPropertiesOutParamDetails
     {
         /// <summary>
-        /// (Updatable) Position of PL/SQL procedure OUT parameter
+        /// (Updatable) Name of the Out Parameter
+        /// </summary>
+        public readonly string? OutParamName;
+        /// <summary>
+        /// (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
         /// </summary>
         public readonly int OutParamPosition;
         /// <summary>
-        /// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        /// (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         /// </summary>
         public readonly string OutParamType;
 
         [OutputConstructor]
         private MetricExtensionQueryPropertiesOutParamDetails(
+            string? outParamName,
+
             int outParamPosition,
 
             string outParamType)
         {
+            OutParamName = outParamName;
             OutParamPosition = outParamPosition;
             OutParamType = outParamType;
         }

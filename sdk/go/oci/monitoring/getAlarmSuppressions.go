@@ -119,21 +119,11 @@ type GetAlarmSuppressionsResult struct {
 }
 
 func GetAlarmSuppressionsOutput(ctx *pulumi.Context, args GetAlarmSuppressionsOutputArgs, opts ...pulumi.InvokeOption) GetAlarmSuppressionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAlarmSuppressionsResultOutput, error) {
 			args := v.(GetAlarmSuppressionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAlarmSuppressionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args, &rv, "", opts...)
-			if err != nil {
-				return GetAlarmSuppressionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAlarmSuppressionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAlarmSuppressionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args, GetAlarmSuppressionsResultOutput{}, options).(GetAlarmSuppressionsResultOutput), nil
 		}).(GetAlarmSuppressionsResultOutput)
 }
 

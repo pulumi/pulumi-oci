@@ -73,21 +73,11 @@ type GetUsageStatementEmailRecipientsGroupsResult struct {
 }
 
 func GetUsageStatementEmailRecipientsGroupsOutput(ctx *pulumi.Context, args GetUsageStatementEmailRecipientsGroupsOutputArgs, opts ...pulumi.InvokeOption) GetUsageStatementEmailRecipientsGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetUsageStatementEmailRecipientsGroupsResultOutput, error) {
 			args := v.(GetUsageStatementEmailRecipientsGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetUsageStatementEmailRecipientsGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetUsageStatementEmailRecipientsGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetUsageStatementEmailRecipientsGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetUsageStatementEmailRecipientsGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", args, GetUsageStatementEmailRecipientsGroupsResultOutput{}, options).(GetUsageStatementEmailRecipientsGroupsResultOutput), nil
 		}).(GetUsageStatementEmailRecipientsGroupsResultOutput)
 }
 

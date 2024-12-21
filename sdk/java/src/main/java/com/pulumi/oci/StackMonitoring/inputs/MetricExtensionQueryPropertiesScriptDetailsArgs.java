@@ -15,14 +15,14 @@ public final class MetricExtensionQueryPropertiesScriptDetailsArgs extends com.p
     public static final MetricExtensionQueryPropertiesScriptDetailsArgs Empty = new MetricExtensionQueryPropertiesScriptDetailsArgs();
 
     /**
-     * (Updatable) Content of the script file as base64 encoded string
+     * (Updatable) Content of the script/JavaScript file as base64 encoded string
      * 
      */
     @Import(name="content", required=true)
     private Output<String> content;
 
     /**
-     * @return (Updatable) Content of the script file as base64 encoded string
+     * @return (Updatable) Content of the script/JavaScript file as base64 encoded string
      * 
      */
     public Output<String> content() {
@@ -70,7 +70,7 @@ public final class MetricExtensionQueryPropertiesScriptDetailsArgs extends com.p
         }
 
         /**
-         * @param content (Updatable) Content of the script file as base64 encoded string
+         * @param content (Updatable) Content of the script/JavaScript file as base64 encoded string
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class MetricExtensionQueryPropertiesScriptDetailsArgs extends com.p
         }
 
         /**
-         * @param content (Updatable) Content of the script file as base64 encoded string
+         * @param content (Updatable) Content of the script/JavaScript file as base64 encoded string
          * 
          * @return builder
          * 

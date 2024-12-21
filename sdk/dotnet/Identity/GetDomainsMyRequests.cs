@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyRequestsResult> Invoke(GetDomainsMyRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyRequestsResult>("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", args ?? new GetDomainsMyRequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Requests in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search My Requests
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyRequests = Oci.Identity.GetDomainsMyRequests.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyRequestCount = myRequestMyRequestCount,
+        ///         MyRequestFilter = myRequestMyRequestFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = myRequestAuthorization,
+        ///         ResourceTypeSchemaVersion = myRequestResourceTypeSchemaVersion,
+        ///         StartIndex = myRequestStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyRequestsResult> Invoke(GetDomainsMyRequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyRequestsResult>("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", args ?? new GetDomainsMyRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsOauthPartnerCertificatesResult> Invoke(GetDomainsOauthPartnerCertificatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthPartnerCertificatesResult>("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", args ?? new GetDomainsOauthPartnerCertificatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of O Auth Partner Certificates in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search OAuth Partner Certificates
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOauthPartnerCertificates = Oci.Identity.GetDomainsOauthPartnerCertificates.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OauthPartnerCertificateCount = oauthPartnerCertificateOauthPartnerCertificateCount,
+        ///         OauthPartnerCertificateFilter = oauthPartnerCertificateOauthPartnerCertificateFilter,
+        ///         Authorization = oauthPartnerCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthPartnerCertificateResourceTypeSchemaVersion,
+        ///         StartIndex = oauthPartnerCertificateStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsOauthPartnerCertificatesResult> Invoke(GetDomainsOauthPartnerCertificatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthPartnerCertificatesResult>("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", args ?? new GetDomainsOauthPartnerCertificatesInvokeArgs(), options.WithDefaults());
     }
 
 

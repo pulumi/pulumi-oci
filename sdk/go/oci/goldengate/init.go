@@ -33,6 +33,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DeploymentBackup{}
 	case "oci:GoldenGate/deploymentCertificate:DeploymentCertificate":
 		r = &DeploymentCertificate{}
+	case "oci:GoldenGate/pipeline:Pipeline":
+		r = &Pipeline{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -74,6 +76,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GoldenGate/deploymentCertificate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GoldenGate/pipeline",
 		&module{version},
 	)
 }

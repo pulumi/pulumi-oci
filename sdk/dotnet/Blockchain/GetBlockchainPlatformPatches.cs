@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Blockchain
         /// </summary>
         public static Output<GetBlockchainPlatformPatchesResult> Invoke(GetBlockchainPlatformPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBlockchainPlatformPatchesResult>("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", args ?? new GetBlockchainPlatformPatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
+        /// 
+        /// List Blockchain Platform Patches
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBlockchainPlatformPatches = Oci.Blockchain.GetBlockchainPlatformPatches.Invoke(new()
+        ///     {
+        ///         BlockchainPlatformId = testBlockchainPlatform.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBlockchainPlatformPatchesResult> Invoke(GetBlockchainPlatformPatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBlockchainPlatformPatchesResult>("oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches", args ?? new GetBlockchainPlatformPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

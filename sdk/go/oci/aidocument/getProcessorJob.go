@@ -86,21 +86,11 @@ type LookupProcessorJobResult struct {
 }
 
 func LookupProcessorJobOutput(ctx *pulumi.Context, args LookupProcessorJobOutputArgs, opts ...pulumi.InvokeOption) LookupProcessorJobResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupProcessorJobResultOutput, error) {
 			args := v.(LookupProcessorJobArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupProcessorJobResult
-			secret, err := ctx.InvokePackageRaw("oci:AiDocument/getProcessorJob:getProcessorJob", args, &rv, "", opts...)
-			if err != nil {
-				return LookupProcessorJobResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupProcessorJobResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupProcessorJobResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:AiDocument/getProcessorJob:getProcessorJob", args, LookupProcessorJobResultOutput{}, options).(LookupProcessorJobResultOutput), nil
 		}).(LookupProcessorJobResultOutput)
 }
 

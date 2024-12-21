@@ -97,21 +97,11 @@ type GetBaselineableMetricsResult struct {
 }
 
 func GetBaselineableMetricsOutput(ctx *pulumi.Context, args GetBaselineableMetricsOutputArgs, opts ...pulumi.InvokeOption) GetBaselineableMetricsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBaselineableMetricsResultOutput, error) {
 			args := v.(GetBaselineableMetricsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBaselineableMetricsResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", args, &rv, "", opts...)
-			if err != nil {
-				return GetBaselineableMetricsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBaselineableMetricsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBaselineableMetricsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", args, GetBaselineableMetricsResultOutput{}, options).(GetBaselineableMetricsResultOutput), nil
 		}).(GetBaselineableMetricsResultOutput)
 }
 

@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetPbfListingVersionsResult> Invoke(GetPbfListingVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingVersionsResult>("oci:Functions/getPbfListingVersions:getPbfListingVersions", args ?? new GetPbfListingVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
+        /// 
+        /// Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection 
+        /// containing an array of PbfListingVersionSummary response models.
+        /// 
+        /// Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall 
+        /// be thrown.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPbfListingVersions = Oci.Functions.GetPbfListingVersions.Invoke(new()
+        ///     {
+        ///         PbfListingId = testPbfListing.Id,
+        ///         IsCurrentVersion = pbfListingVersionIsCurrentVersion,
+        ///         Name = pbfListingVersionName,
+        ///         PbfListingVersionId = testPbfListingVersion.Id,
+        ///         State = pbfListingVersionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPbfListingVersionsResult> Invoke(GetPbfListingVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingVersionsResult>("oci:Functions/getPbfListingVersions:getPbfListingVersions", args ?? new GetPbfListingVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

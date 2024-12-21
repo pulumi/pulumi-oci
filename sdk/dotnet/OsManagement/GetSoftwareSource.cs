@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OsManagement
         /// </summary>
         public static Output<GetSoftwareSourceResult> Invoke(GetSoftwareSourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
+        /// 
+        /// Returns a specific Software Source.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSource = Oci.OsManagement.GetSoftwareSource.Invoke(new()
+        ///     {
+        ///         SoftwareSourceId = testSoftwareSourceOciOsmanagementSoftwareSource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceResult> Invoke(GetSoftwareSourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetDatabasesColumnsResult> Invoke(GetTargetDatabasesColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns a list of column metadata objects.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetDatabasesColumns = Oci.DataSafe.GetTargetDatabasesColumns.Invoke(new()
+        ///     {
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         ColumnNames = targetDatabasesColumnColumnName,
+        ///         ColumnNameContains = targetDatabasesColumnColumnNameContains,
+        ///         Datatypes = targetDatabasesColumnDatatype,
+        ///         SchemaNames = targetDatabasesColumnSchemaName,
+        ///         SchemaNameContains = targetDatabasesColumnSchemaNameContains,
+        ///         TableNames = testTable.Name,
+        ///         TableNameContains = targetDatabasesColumnTableNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetDatabasesColumnsResult> Invoke(GetTargetDatabasesColumnsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesColumnsResult>("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args ?? new GetTargetDatabasesColumnsInvokeArgs(), options.WithDefaults());
     }
 
 

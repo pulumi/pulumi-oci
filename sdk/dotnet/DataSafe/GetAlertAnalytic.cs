@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAlertAnalyticResult> Invoke(GetAlertAnalyticInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertAnalyticResult>("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", args ?? new GetAlertAnalyticInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns aggregation details of alerts.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlertAnalytic = Oci.DataSafe.GetAlertAnalytic.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = alertAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = alertAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = alertAnalyticGroupBy,
+        ///         QueryTimeZone = alertAnalyticQueryTimeZone,
+        ///         ScimQuery = alertAnalyticScimQuery,
+        ///         SummaryFields = alertAnalyticSummaryField,
+        ///         TimeEnded = alertAnalyticTimeEnded,
+        ///         TimeStarted = alertAnalyticTimeStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertAnalyticResult> Invoke(GetAlertAnalyticInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertAnalyticResult>("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", args ?? new GetAlertAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -98,21 +98,11 @@ type LookupMaskingPolicyResult struct {
 }
 
 func LookupMaskingPolicyOutput(ctx *pulumi.Context, args LookupMaskingPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupMaskingPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMaskingPolicyResultOutput, error) {
 			args := v.(LookupMaskingPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMaskingPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMaskingPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMaskingPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMaskingPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args, LookupMaskingPolicyResultOutput{}, options).(LookupMaskingPolicyResultOutput), nil
 		}).(LookupMaskingPolicyResultOutput)
 }
 

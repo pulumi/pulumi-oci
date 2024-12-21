@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetJobRunsResult> Invoke(GetJobRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobRunsResult>("oci:DataScience/getJobRuns:getJobRuns", args ?? new GetJobRunsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// List out job runs.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJobRuns = Oci.DataScience.GetJobRuns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = jobRunCreatedBy,
+        ///         DisplayName = jobRunDisplayName,
+        ///         Id = jobRunId,
+        ///         JobId = testJob.Id,
+        ///         State = jobRunState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJobRunsResult> Invoke(GetJobRunsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobRunsResult>("oci:DataScience/getJobRuns:getJobRuns", args ?? new GetJobRunsInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -184,7 +215,7 @@ namespace Pulumi.Oci.DataScience
     public sealed class GetJobRunsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -201,7 +232,7 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
         /// </summary>
         public readonly string? JobId;
         /// <summary>

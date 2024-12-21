@@ -82,21 +82,11 @@ type GetDbSystemsResult struct {
 }
 
 func GetDbSystemsOutput(ctx *pulumi.Context, args GetDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDbSystemsResultOutput, error) {
 			args := v.(GetDbSystemsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDbSystemsResult
-			secret, err := ctx.InvokePackageRaw("oci:Psql/getDbSystems:getDbSystems", args, &rv, "", opts...)
-			if err != nil {
-				return GetDbSystemsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDbSystemsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDbSystemsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Psql/getDbSystems:getDbSystems", args, GetDbSystemsResultOutput{}, options).(GetDbSystemsResultOutput), nil
 		}).(GetDbSystemsResultOutput)
 }
 

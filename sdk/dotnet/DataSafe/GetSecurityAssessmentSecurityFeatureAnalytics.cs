@@ -84,6 +84,43 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> Invoke(GetSecurityAssessmentSecurityFeatureAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeatureAnalyticsResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", args ?? new GetSecurityAssessmentSecurityFeatureAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Assessment Security Feature Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of Database security feature usage aggregated details in the specified compartment. This provides information about the
+        /// overall security controls, by returning the counting number of the target databases using the security features.
+        /// 
+        /// When you perform the ListSecurityFeatureAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+        /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+        /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+        /// compartmentId, then "Not Authorized" is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAssessmentSecurityFeatureAnalytics = Oci.DataSafe.GetSecurityAssessmentSecurityFeatureAnalytics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentSecurityFeatureAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAssessmentSecurityFeatureAnalyticsResult> Invoke(GetSecurityAssessmentSecurityFeatureAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeatureAnalyticsResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatureAnalytics:getSecurityAssessmentSecurityFeatureAnalytics", args ?? new GetSecurityAssessmentSecurityFeatureAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

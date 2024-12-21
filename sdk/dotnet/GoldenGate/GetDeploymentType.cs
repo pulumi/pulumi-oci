@@ -66,6 +66,34 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentTypeResult> Invoke(GetDeploymentTypeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentTypeResult>("oci:GoldenGate/getDeploymentType:getDeploymentType", args ?? new GetDeploymentTypeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Returns an array of DeploymentTypeDescriptor
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentType = Oci.GoldenGate.GetDeploymentType.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deploymentTypeDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentTypeResult> Invoke(GetDeploymentTypeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentTypeResult>("oci:GoldenGate/getDeploymentType:getDeploymentType", args ?? new GetDeploymentTypeInvokeArgs(), options.WithDefaults());
     }
 
 

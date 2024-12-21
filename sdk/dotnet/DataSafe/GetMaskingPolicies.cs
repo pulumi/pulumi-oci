@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingPoliciesResult> Invoke(GetMaskingPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesResult>("oci:DataSafe/getMaskingPolicies:getMaskingPolicies", args ?? new GetMaskingPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Masking Policies in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of masking policies based on the specified query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingPolicies = Oci.DataSafe.GetMaskingPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = maskingPolicyAccessLevel,
+        ///         CompartmentIdInSubtree = maskingPolicyCompartmentIdInSubtree,
+        ///         DisplayName = maskingPolicyDisplayName,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = maskingPolicyState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = maskingPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = maskingPolicyTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingPoliciesResult> Invoke(GetMaskingPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPoliciesResult>("oci:DataSafe/getMaskingPolicies:getMaskingPolicies", args ?? new GetMaskingPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

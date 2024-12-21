@@ -87,6 +87,11 @@ public final class BdsInstanceNode {
      */
     private @Nullable Integer ocpus;
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * 
+     */
+    private @Nullable String odhVersion;
+    /**
      * @return BDS-assigned Operating System version for the node.
      * 
      */
@@ -222,6 +227,13 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.ocpus);
     }
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * 
+     */
+    public Optional<String> odhVersion() {
+        return Optional.ofNullable(this.odhVersion);
+    }
+    /**
      * @return BDS-assigned Operating System version for the node.
      * 
      */
@@ -294,6 +306,7 @@ public final class BdsInstanceNode {
         private @Nullable String nodeType;
         private @Nullable Integer nvmes;
         private @Nullable Integer ocpus;
+        private @Nullable String odhVersion;
         private @Nullable String osVersion;
         private @Nullable String shape;
         private @Nullable String sshFingerprint;
@@ -318,6 +331,7 @@ public final class BdsInstanceNode {
     	      this.nodeType = defaults.nodeType;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
+    	      this.odhVersion = defaults.odhVersion;
     	      this.osVersion = defaults.osVersion;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
@@ -415,6 +429,12 @@ public final class BdsInstanceNode {
             return this;
         }
         @CustomType.Setter
+        public Builder odhVersion(@Nullable String odhVersion) {
+
+            this.odhVersion = odhVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osVersion(@Nullable String osVersion) {
 
             this.osVersion = osVersion;
@@ -472,6 +492,7 @@ public final class BdsInstanceNode {
             _resultValue.nodeType = nodeType;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
+            _resultValue.odhVersion = odhVersion;
             _resultValue.osVersion = osVersion;
             _resultValue.shape = shape;
             _resultValue.sshFingerprint = sshFingerprint;

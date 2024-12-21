@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LicenseManager
         /// </summary>
         public static Output<GetLicenseMetricResult> Invoke(GetLicenseMetricInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLicenseMetricResult>("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args ?? new GetLicenseMetricInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
+        /// 
+        /// Retrieves the license metrics for a given compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLicenseMetric = Oci.LicenseManager.GetLicenseMetric.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = licenseMetricIsCompartmentIdInSubtree,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLicenseMetricResult> Invoke(GetLicenseMetricInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLicenseMetricResult>("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args ?? new GetLicenseMetricInvokeArgs(), options.WithDefaults());
     }
 
 

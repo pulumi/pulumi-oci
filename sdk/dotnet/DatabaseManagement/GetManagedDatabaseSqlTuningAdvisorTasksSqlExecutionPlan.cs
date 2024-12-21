@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Retrieves a SQL execution plan for the SQL being tuned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.Invoke(new()
+        ///     {
+        ///         Attribute = managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlObjectId = testObject.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs(), options.WithDefaults());
     }
 
 

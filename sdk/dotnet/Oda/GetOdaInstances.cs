@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaInstancesResult> Invoke(GetOdaInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Returns a page of Digital Assistant instances that belong to the specified
+        /// compartment.
+        /// 
+        /// If the `opc-next-page` header appears in the response, then
+        /// there are more items to retrieve. To get the next page in the subsequent
+        /// GET request, include the header's value as the `page` query parameter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaInstances = Oci.Oda.GetOdaInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = odaInstanceDisplayName,
+        ///         State = odaInstanceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaInstancesResult> Invoke(GetOdaInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

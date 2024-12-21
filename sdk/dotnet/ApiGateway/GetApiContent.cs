@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         public static Output<GetApiContentResult> Invoke(GetApiContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
+        /// 
+        /// Get the raw API content.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApiContent = Oci.ApiGateway.GetApiContent.Invoke(new()
+        ///     {
+        ///         ApiId = testApi.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApiContentResult> Invoke(GetApiContentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiContentResult>("oci:ApiGateway/getApiContent:getApiContent", args ?? new GetApiContentInvokeArgs(), options.WithDefaults());
     }
 
 

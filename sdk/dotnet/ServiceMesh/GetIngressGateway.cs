@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetIngressGatewayResult> Invoke(GetIngressGatewayInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIngressGatewayResult>("oci:ServiceMesh/getIngressGateway:getIngressGateway", args ?? new GetIngressGatewayInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Gets an IngressGateway by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIngressGateway = Oci.ServiceMesh.GetIngressGateway.Invoke(new()
+        ///     {
+        ///         IngressGatewayId = testIngressGatewayOciServiceMeshIngressGateway.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIngressGatewayResult> Invoke(GetIngressGatewayInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIngressGatewayResult>("oci:ServiceMesh/getIngressGateway:getIngressGateway", args ?? new GetIngressGatewayInvokeArgs(), options.WithDefaults());
     }
 
 

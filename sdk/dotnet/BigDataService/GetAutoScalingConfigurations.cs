@@ -16,6 +16,9 @@ namespace Pulumi.Oci.BigDataService
 
         public static Output<GetAutoScalingConfigurationsResult> Invoke(GetAutoScalingConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAutoScalingConfigurationsResult> Invoke(GetAutoScalingConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

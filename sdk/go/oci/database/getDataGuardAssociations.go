@@ -69,21 +69,11 @@ type GetDataGuardAssociationsResult struct {
 }
 
 func GetDataGuardAssociationsOutput(ctx *pulumi.Context, args GetDataGuardAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetDataGuardAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDataGuardAssociationsResultOutput, error) {
 			args := v.(GetDataGuardAssociationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDataGuardAssociationsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args, &rv, "", opts...)
-			if err != nil {
-				return GetDataGuardAssociationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDataGuardAssociationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDataGuardAssociationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args, GetDataGuardAssociationsResultOutput{}, options).(GetDataGuardAssociationsResultOutput), nil
 		}).(GetDataGuardAssociationsResultOutput)
 }
 

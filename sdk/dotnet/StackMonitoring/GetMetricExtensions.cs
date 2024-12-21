@@ -30,6 +30,7 @@ namespace Pulumi.Oci.StackMonitoring
         ///     {
         ///         CompartmentId = compartmentId,
         ///         EnabledOnResourceId = testResource.Id,
+        ///         MetricExtensionId = testMetricExtension.Id,
         ///         Name = metricExtensionName,
         ///         ResourceType = metricExtensionResourceType,
         ///         State = metricExtensionState,
@@ -39,7 +40,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// });
         /// ```
         /// </summary>
-        public static Task<GetMetricExtensionsResult> InvokeAsync(GetMetricExtensionsArgs args, InvokeOptions? options = null)
+        public static Task<GetMetricExtensionsResult> InvokeAsync(GetMetricExtensionsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetricExtensionsResult>("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", args ?? new GetMetricExtensionsArgs(), options.WithDefaults());
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.StackMonitoring
         ///     {
         ///         CompartmentId = compartmentId,
         ///         EnabledOnResourceId = testResource.Id,
+        ///         MetricExtensionId = testMetricExtension.Id,
         ///         Name = metricExtensionName,
         ///         ResourceType = metricExtensionResourceType,
         ///         State = metricExtensionState,
@@ -70,7 +72,39 @@ namespace Pulumi.Oci.StackMonitoring
         /// });
         /// ```
         /// </summary>
-        public static Output<GetMetricExtensionsResult> Invoke(GetMetricExtensionsInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetMetricExtensionsResult> Invoke(GetMetricExtensionsInvokeArgs? args = null, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetricExtensionsResult>("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", args ?? new GetMetricExtensionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Returns a list of metric extensions
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMetricExtensions = Oci.StackMonitoring.GetMetricExtensions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         EnabledOnResourceId = testResource.Id,
+        ///         MetricExtensionId = testMetricExtension.Id,
+        ///         Name = metricExtensionName,
+        ///         ResourceType = metricExtensionResourceType,
+        ///         State = metricExtensionState,
+        ///         Status = metricExtensionStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMetricExtensionsResult> Invoke(GetMetricExtensionsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricExtensionsResult>("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", args ?? new GetMetricExtensionsInvokeArgs(), options.WithDefaults());
     }
 
@@ -80,8 +114,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The ID of the compartment in which data is listed.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return metric extensions based on input resource Id on which metric extension is enabled
@@ -96,6 +130,12 @@ namespace Pulumi.Oci.StackMonitoring
             get => _filters ?? (_filters = new List<Inputs.GetMetricExtensionsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Identifier for the metric extension
+        /// </summary>
+        [Input("metricExtensionId")]
+        public string? MetricExtensionId { get; set; }
 
         /// <summary>
         /// A filter to return resources based on name.
@@ -132,8 +172,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The ID of the compartment in which data is listed.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return metric extensions based on input resource Id on which metric extension is enabled
@@ -148,6 +188,12 @@ namespace Pulumi.Oci.StackMonitoring
             get => _filters ?? (_filters = new InputList<Inputs.GetMetricExtensionsFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Identifier for the metric extension
+        /// </summary>
+        [Input("metricExtensionId")]
+        public Input<string>? MetricExtensionId { get; set; }
 
         /// <summary>
         /// A filter to return resources based on name.
@@ -186,7 +232,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string? EnabledOnResourceId;
         public readonly ImmutableArray<Outputs.GetMetricExtensionsFilterResult> Filters;
         /// <summary>
@@ -197,6 +243,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// The list of metric_extension_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionResult> MetricExtensionCollections;
+        public readonly string? MetricExtensionId;
         /// <summary>
         /// Name of the script file
         /// </summary>
@@ -216,7 +263,7 @@ namespace Pulumi.Oci.StackMonitoring
 
         [OutputConstructor]
         private GetMetricExtensionsResult(
-            string compartmentId,
+            string? compartmentId,
 
             string? enabledOnResourceId,
 
@@ -225,6 +272,8 @@ namespace Pulumi.Oci.StackMonitoring
             string id,
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionResult> metricExtensionCollections,
+
+            string? metricExtensionId,
 
             string? name,
 
@@ -239,6 +288,7 @@ namespace Pulumi.Oci.StackMonitoring
             Filters = filters;
             Id = id;
             MetricExtensionCollections = metricExtensionCollections;
+            MetricExtensionId = metricExtensionId;
             Name = name;
             ResourceType = resourceType;
             State = state;

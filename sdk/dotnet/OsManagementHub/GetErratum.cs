@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetErratumResult> Invoke(GetErratumInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetErratumResult>("oci:OsManagementHub/getErratum:getErratum", args ?? new GetErratumInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Erratum resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns information about the specified erratum based on its advisory name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testErratum = Oci.OsManagementHub.GetErratum.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = erratumName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetErratumResult> Invoke(GetErratumInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetErratumResult>("oci:OsManagementHub/getErratum:getErratum", args ?? new GetErratumInvokeArgs(), options.WithDefaults());
     }
 
 

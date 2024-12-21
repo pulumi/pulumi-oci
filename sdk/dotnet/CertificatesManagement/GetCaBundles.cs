@@ -72,6 +72,37 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetCaBundlesResult> Invoke(GetCaBundlesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCaBundlesResult>("oci:CertificatesManagement/getCaBundles:getCaBundles", args ?? new GetCaBundlesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Lists all CA bundles that match the query parameters.
+        /// Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCaBundles = Oci.CertificatesManagement.GetCaBundles.Invoke(new()
+        ///     {
+        ///         CaBundleId = testCaBundle.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = caBundleName,
+        ///         State = caBundleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCaBundlesResult> Invoke(GetCaBundlesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCaBundlesResult>("oci:CertificatesManagement/getCaBundles:getCaBundles", args ?? new GetCaBundlesInvokeArgs(), options.WithDefaults());
     }
 
 

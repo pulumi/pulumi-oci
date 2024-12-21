@@ -76,6 +76,39 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceGroupInstalledPackagesResult> Invoke(GetManagedInstanceGroupInstalledPackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupInstalledPackagesResult>("oci:OsManagementHub/getManagedInstanceGroupInstalledPackages:getManagedInstanceGroupInstalledPackages", args ?? new GetManagedInstanceGroupInstalledPackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Group Installed Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists installed packages on the specified managed instances group. Filter the list against a variety 
+        /// of criteria including but not limited to the package name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroupInstalledPackages = Oci.OsManagementHub.GetManagedInstanceGroupInstalledPackages.Invoke(new()
+        ///     {
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupInstalledPackageDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupInstalledPackageDisplayNameContains,
+        ///         TimeInstallDateEnd = managedInstanceGroupInstalledPackageTimeInstallDateEnd,
+        ///         TimeInstallDateStart = managedInstanceGroupInstalledPackageTimeInstallDateStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupInstalledPackagesResult> Invoke(GetManagedInstanceGroupInstalledPackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupInstalledPackagesResult>("oci:OsManagementHub/getManagedInstanceGroupInstalledPackages:getManagedInstanceGroupInstalledPackages", args ?? new GetManagedInstanceGroupInstalledPackagesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetAvailabilityDomainResult> Invoke(GetAvailabilityDomainInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAvailabilityDomainResult>("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args ?? new GetAvailabilityDomainInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCompartment = Oci.Identity.GetAvailabilityDomain.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Id = id,
+        ///         AdNumber = adNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAvailabilityDomainResult> Invoke(GetAvailabilityDomainInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAvailabilityDomainResult>("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args ?? new GetAvailabilityDomainInvokeArgs(), options.WithDefaults());
     }
 
 

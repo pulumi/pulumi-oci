@@ -124,21 +124,11 @@ type LookupDomainsKmsiSettingResult struct {
 }
 
 func LookupDomainsKmsiSettingOutput(ctx *pulumi.Context, args LookupDomainsKmsiSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsKmsiSettingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsKmsiSettingResultOutput, error) {
 			args := v.(LookupDomainsKmsiSettingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsKmsiSettingResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsKmsiSettingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsKmsiSettingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsKmsiSettingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", args, LookupDomainsKmsiSettingResultOutput{}, options).(LookupDomainsKmsiSettingResultOutput), nil
 		}).(LookupDomainsKmsiSettingResultOutput)
 }
 

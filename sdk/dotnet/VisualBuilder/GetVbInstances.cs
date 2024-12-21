@@ -68,6 +68,35 @@ namespace Pulumi.Oci.VisualBuilder
         /// </summary>
         public static Output<GetVbInstancesResult> Invoke(GetVbInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVbInstancesResult>("oci:VisualBuilder/getVbInstances:getVbInstances", args ?? new GetVbInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
+        /// 
+        /// Returns a list of Vb Instances.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVbInstances = Oci.VisualBuilder.GetVbInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vbInstanceDisplayName,
+        ///         State = vbInstanceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVbInstancesResult> Invoke(GetVbInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVbInstancesResult>("oci:VisualBuilder/getVbInstances:getVbInstances", args ?? new GetVbInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

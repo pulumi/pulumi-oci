@@ -91,21 +91,11 @@ type GetTaskRecordsResult struct {
 }
 
 func GetTaskRecordsOutput(ctx *pulumi.Context, args GetTaskRecordsOutputArgs, opts ...pulumi.InvokeOption) GetTaskRecordsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetTaskRecordsResultOutput, error) {
 			args := v.(GetTaskRecordsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetTaskRecordsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getTaskRecords:getTaskRecords", args, &rv, "", opts...)
-			if err != nil {
-				return GetTaskRecordsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetTaskRecordsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetTaskRecordsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getTaskRecords:getTaskRecords", args, GetTaskRecordsResultOutput{}, options).(GetTaskRecordsResultOutput), nil
 		}).(GetTaskRecordsResultOutput)
 }
 

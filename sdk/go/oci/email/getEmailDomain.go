@@ -88,21 +88,11 @@ type LookupEmailDomainResult struct {
 }
 
 func LookupEmailDomainOutput(ctx *pulumi.Context, args LookupEmailDomainOutputArgs, opts ...pulumi.InvokeOption) LookupEmailDomainResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupEmailDomainResultOutput, error) {
 			args := v.(LookupEmailDomainArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupEmailDomainResult
-			secret, err := ctx.InvokePackageRaw("oci:Email/getEmailDomain:getEmailDomain", args, &rv, "", opts...)
-			if err != nil {
-				return LookupEmailDomainResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupEmailDomainResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupEmailDomainResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Email/getEmailDomain:getEmailDomain", args, LookupEmailDomainResultOutput{}, options).(LookupEmailDomainResultOutput), nil
 		}).(LookupEmailDomainResultOutput)
 }
 

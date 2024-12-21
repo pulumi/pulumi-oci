@@ -26,6 +26,12 @@ namespace Pulumi.Oci.BigDataService
     public partial class BdsInstance : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Cluster version details including bds and odh version information.
+        /// </summary>
+        [Output("bdsClusterVersionSummary")]
+        public Output<Outputs.BdsInstanceBdsClusterVersionSummary> BdsClusterVersionSummary { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
         [Output("bootstrapScriptUrl")]
@@ -115,6 +121,9 @@ namespace Pulumi.Oci.BigDataService
         [Output("isCloudSqlConfigured")]
         public Output<bool> IsCloudSqlConfigured { get; private set; } = null!;
 
+        [Output("isForceRemoveEnabled")]
+        public Output<bool?> IsForceRemoveEnabled { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         /// </summary>
@@ -164,7 +173,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<Outputs.BdsInstanceMasterNode> MasterNode { get; private set; } = null!;
 
         /// <summary>
-        /// Additional configuration of the user's network.
+        /// (Updatable) Additional configuration of the user's network.
         /// </summary>
         [Output("networkConfig")]
         public Output<Outputs.BdsInstanceNetworkConfig> NetworkConfig { get; private set; } = null!;
@@ -192,6 +201,15 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("osPatchVersion")]
         public Output<string?> OsPatchVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        /// </summary>
+        [Output("removeNode")]
+        public Output<string?> RemoveNode { get; private set; } = null!;
+
+        [Output("startClusterShapeConfigs")]
+        public Output<ImmutableArray<Outputs.BdsInstanceStartClusterShapeConfig>> StartClusterShapeConfigs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -270,6 +288,12 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Cluster version details including bds and odh version information.
+        /// </summary>
+        [Input("bdsClusterVersionSummary")]
+        public Input<Inputs.BdsInstanceBdsClusterVersionSummaryArgs>? BdsClusterVersionSummary { get; set; }
+
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
@@ -382,6 +406,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("isCloudSqlConfigured")]
         public Input<bool>? IsCloudSqlConfigured { get; set; }
 
+        [Input("isForceRemoveEnabled")]
+        public Input<bool>? IsForceRemoveEnabled { get; set; }
+
         /// <summary>
         /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         /// </summary>
@@ -431,7 +458,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceMasterNodeArgs> MasterNode { get; set; } = null!;
 
         /// <summary>
-        /// Additional configuration of the user's network.
+        /// (Updatable) Additional configuration of the user's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigArgs>? NetworkConfig { get; set; }
@@ -441,6 +468,20 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        /// </summary>
+        [Input("removeNode")]
+        public Input<string>? RemoveNode { get; set; }
+
+        [Input("startClusterShapeConfigs")]
+        private InputList<Inputs.BdsInstanceStartClusterShapeConfigArgs>? _startClusterShapeConfigs;
+        public InputList<Inputs.BdsInstanceStartClusterShapeConfigArgs> StartClusterShapeConfigs
+        {
+            get => _startClusterShapeConfigs ?? (_startClusterShapeConfigs = new InputList<Inputs.BdsInstanceStartClusterShapeConfigArgs>());
+            set => _startClusterShapeConfigs = value;
+        }
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -465,6 +506,12 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Cluster version details including bds and odh version information.
+        /// </summary>
+        [Input("bdsClusterVersionSummary")]
+        public Input<Inputs.BdsInstanceBdsClusterVersionSummaryGetArgs>? BdsClusterVersionSummary { get; set; }
+
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
@@ -595,6 +642,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("isCloudSqlConfigured")]
         public Input<bool>? IsCloudSqlConfigured { get; set; }
 
+        [Input("isForceRemoveEnabled")]
+        public Input<bool>? IsForceRemoveEnabled { get; set; }
+
         /// <summary>
         /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         /// </summary>
@@ -644,7 +694,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceMasterNodeGetArgs>? MasterNode { get; set; }
 
         /// <summary>
-        /// Additional configuration of the user's network.
+        /// (Updatable) Additional configuration of the user's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigGetArgs>? NetworkConfig { get; set; }
@@ -678,6 +728,20 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        /// </summary>
+        [Input("removeNode")]
+        public Input<string>? RemoveNode { get; set; }
+
+        [Input("startClusterShapeConfigs")]
+        private InputList<Inputs.BdsInstanceStartClusterShapeConfigGetArgs>? _startClusterShapeConfigs;
+        public InputList<Inputs.BdsInstanceStartClusterShapeConfigGetArgs> StartClusterShapeConfigs
+        {
+            get => _startClusterShapeConfigs ?? (_startClusterShapeConfigs = new InputList<Inputs.BdsInstanceStartClusterShapeConfigGetArgs>());
+            set => _startClusterShapeConfigs = value;
+        }
 
         /// <summary>
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

@@ -92,6 +92,47 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentSecurityFeaturesResult> Invoke(GetSecurityAssessmentSecurityFeaturesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeaturesResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args ?? new GetSecurityAssessmentSecurityFeaturesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Lists the usage of Database security features for a given compartment or a target level, based on the filters provided.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAssessmentSecurityFeatures = Oci.DataSafe.GetSecurityAssessmentSecurityFeatures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentSecurityFeatureAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///         TargetsWithColumnEncryption = securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
+        ///         TargetsWithDatabaseVault = securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
+        ///         TargetsWithExternalAuthentication = securityAssessmentSecurityFeatureTargetsWithExternalAuthentication,
+        ///         TargetsWithFineGrainedAudit = securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit,
+        ///         TargetsWithGlobalAuthentication = securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication,
+        ///         TargetsWithNetworkEncryption = securityAssessmentSecurityFeatureTargetsWithNetworkEncryption,
+        ///         TargetsWithPasswordAuthentication = securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication,
+        ///         TargetsWithPrivilegeAnalysis = securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis,
+        ///         TargetsWithTablespaceEncryption = securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption,
+        ///         TargetsWithTraditionalAudit = securityAssessmentSecurityFeatureTargetsWithTraditionalAudit,
+        ///         TargetsWithUnifiedAudit = securityAssessmentSecurityFeatureTargetsWithUnifiedAudit,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAssessmentSecurityFeaturesResult> Invoke(GetSecurityAssessmentSecurityFeaturesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeaturesResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args ?? new GetSecurityAssessmentSecurityFeaturesInvokeArgs(), options.WithDefaults());
     }
 
 

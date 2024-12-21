@@ -1819,6 +1819,1021 @@ func (o DeploymentOggDataGroupToRolesMappingPtrOutput) UserGroupId() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
+type PipelineLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// PipelineLockInput is an input type that accepts PipelineLockArgs and PipelineLockOutput values.
+// You can construct a concrete instance of `PipelineLockInput` via:
+//
+//	PipelineLockArgs{...}
+type PipelineLockInput interface {
+	pulumi.Input
+
+	ToPipelineLockOutput() PipelineLockOutput
+	ToPipelineLockOutputWithContext(context.Context) PipelineLockOutput
+}
+
+type PipelineLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (PipelineLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineLock)(nil)).Elem()
+}
+
+func (i PipelineLockArgs) ToPipelineLockOutput() PipelineLockOutput {
+	return i.ToPipelineLockOutputWithContext(context.Background())
+}
+
+func (i PipelineLockArgs) ToPipelineLockOutputWithContext(ctx context.Context) PipelineLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineLockOutput)
+}
+
+// PipelineLockArrayInput is an input type that accepts PipelineLockArray and PipelineLockArrayOutput values.
+// You can construct a concrete instance of `PipelineLockArrayInput` via:
+//
+//	PipelineLockArray{ PipelineLockArgs{...} }
+type PipelineLockArrayInput interface {
+	pulumi.Input
+
+	ToPipelineLockArrayOutput() PipelineLockArrayOutput
+	ToPipelineLockArrayOutputWithContext(context.Context) PipelineLockArrayOutput
+}
+
+type PipelineLockArray []PipelineLockInput
+
+func (PipelineLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineLock)(nil)).Elem()
+}
+
+func (i PipelineLockArray) ToPipelineLockArrayOutput() PipelineLockArrayOutput {
+	return i.ToPipelineLockArrayOutputWithContext(context.Background())
+}
+
+func (i PipelineLockArray) ToPipelineLockArrayOutputWithContext(ctx context.Context) PipelineLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineLockArrayOutput)
+}
+
+type PipelineLockOutput struct{ *pulumi.OutputState }
+
+func (PipelineLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineLock)(nil)).Elem()
+}
+
+func (o PipelineLockOutput) ToPipelineLockOutput() PipelineLockOutput {
+	return o
+}
+
+func (o PipelineLockOutput) ToPipelineLockOutputWithContext(ctx context.Context) PipelineLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o PipelineLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o PipelineLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type PipelineLockArrayOutput struct{ *pulumi.OutputState }
+
+func (PipelineLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineLock)(nil)).Elem()
+}
+
+func (o PipelineLockArrayOutput) ToPipelineLockArrayOutput() PipelineLockArrayOutput {
+	return o
+}
+
+func (o PipelineLockArrayOutput) ToPipelineLockArrayOutputWithContext(ctx context.Context) PipelineLockArrayOutput {
+	return o
+}
+
+func (o PipelineLockArrayOutput) Index(i pulumi.IntInput) PipelineLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelineLock {
+		return vs[0].([]PipelineLock)[vs[1].(int)]
+	}).(PipelineLockOutput)
+}
+
+type PipelineMappingRule struct {
+	// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+	MappingType *string `pulumi:"mappingType"`
+	// The source schema/table combination for replication to target.
+	Source *string `pulumi:"source"`
+	// The target schema/table combination for replication from the source.
+	Target *string `pulumi:"target"`
+}
+
+// PipelineMappingRuleInput is an input type that accepts PipelineMappingRuleArgs and PipelineMappingRuleOutput values.
+// You can construct a concrete instance of `PipelineMappingRuleInput` via:
+//
+//	PipelineMappingRuleArgs{...}
+type PipelineMappingRuleInput interface {
+	pulumi.Input
+
+	ToPipelineMappingRuleOutput() PipelineMappingRuleOutput
+	ToPipelineMappingRuleOutputWithContext(context.Context) PipelineMappingRuleOutput
+}
+
+type PipelineMappingRuleArgs struct {
+	// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+	MappingType pulumi.StringPtrInput `pulumi:"mappingType"`
+	// The source schema/table combination for replication to target.
+	Source pulumi.StringPtrInput `pulumi:"source"`
+	// The target schema/table combination for replication from the source.
+	Target pulumi.StringPtrInput `pulumi:"target"`
+}
+
+func (PipelineMappingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineMappingRule)(nil)).Elem()
+}
+
+func (i PipelineMappingRuleArgs) ToPipelineMappingRuleOutput() PipelineMappingRuleOutput {
+	return i.ToPipelineMappingRuleOutputWithContext(context.Background())
+}
+
+func (i PipelineMappingRuleArgs) ToPipelineMappingRuleOutputWithContext(ctx context.Context) PipelineMappingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineMappingRuleOutput)
+}
+
+// PipelineMappingRuleArrayInput is an input type that accepts PipelineMappingRuleArray and PipelineMappingRuleArrayOutput values.
+// You can construct a concrete instance of `PipelineMappingRuleArrayInput` via:
+//
+//	PipelineMappingRuleArray{ PipelineMappingRuleArgs{...} }
+type PipelineMappingRuleArrayInput interface {
+	pulumi.Input
+
+	ToPipelineMappingRuleArrayOutput() PipelineMappingRuleArrayOutput
+	ToPipelineMappingRuleArrayOutputWithContext(context.Context) PipelineMappingRuleArrayOutput
+}
+
+type PipelineMappingRuleArray []PipelineMappingRuleInput
+
+func (PipelineMappingRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineMappingRule)(nil)).Elem()
+}
+
+func (i PipelineMappingRuleArray) ToPipelineMappingRuleArrayOutput() PipelineMappingRuleArrayOutput {
+	return i.ToPipelineMappingRuleArrayOutputWithContext(context.Background())
+}
+
+func (i PipelineMappingRuleArray) ToPipelineMappingRuleArrayOutputWithContext(ctx context.Context) PipelineMappingRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineMappingRuleArrayOutput)
+}
+
+type PipelineMappingRuleOutput struct{ *pulumi.OutputState }
+
+func (PipelineMappingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineMappingRule)(nil)).Elem()
+}
+
+func (o PipelineMappingRuleOutput) ToPipelineMappingRuleOutput() PipelineMappingRuleOutput {
+	return o
+}
+
+func (o PipelineMappingRuleOutput) ToPipelineMappingRuleOutputWithContext(ctx context.Context) PipelineMappingRuleOutput {
+	return o
+}
+
+// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+func (o PipelineMappingRuleOutput) MappingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineMappingRule) *string { return v.MappingType }).(pulumi.StringPtrOutput)
+}
+
+// The source schema/table combination for replication to target.
+func (o PipelineMappingRuleOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineMappingRule) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// The target schema/table combination for replication from the source.
+func (o PipelineMappingRuleOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineMappingRule) *string { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+type PipelineMappingRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (PipelineMappingRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineMappingRule)(nil)).Elem()
+}
+
+func (o PipelineMappingRuleArrayOutput) ToPipelineMappingRuleArrayOutput() PipelineMappingRuleArrayOutput {
+	return o
+}
+
+func (o PipelineMappingRuleArrayOutput) ToPipelineMappingRuleArrayOutputWithContext(ctx context.Context) PipelineMappingRuleArrayOutput {
+	return o
+}
+
+func (o PipelineMappingRuleArrayOutput) Index(i pulumi.IntInput) PipelineMappingRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelineMappingRule {
+		return vs[0].([]PipelineMappingRule)[vs[1].(int)]
+	}).(PipelineMappingRuleOutput)
+}
+
+type PipelineProcessOptions struct {
+	// (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	InitialDataLoad PipelineProcessOptionsInitialDataLoad `pulumi:"initialDataLoad"`
+	// (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	ReplicateSchemaChange PipelineProcessOptionsReplicateSchemaChange `pulumi:"replicateSchemaChange"`
+	// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
+}
+
+// PipelineProcessOptionsInput is an input type that accepts PipelineProcessOptionsArgs and PipelineProcessOptionsOutput values.
+// You can construct a concrete instance of `PipelineProcessOptionsInput` via:
+//
+//	PipelineProcessOptionsArgs{...}
+type PipelineProcessOptionsInput interface {
+	pulumi.Input
+
+	ToPipelineProcessOptionsOutput() PipelineProcessOptionsOutput
+	ToPipelineProcessOptionsOutputWithContext(context.Context) PipelineProcessOptionsOutput
+}
+
+type PipelineProcessOptionsArgs struct {
+	// (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	InitialDataLoad PipelineProcessOptionsInitialDataLoadInput `pulumi:"initialDataLoad"`
+	// (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	ReplicateSchemaChange PipelineProcessOptionsReplicateSchemaChangeInput `pulumi:"replicateSchemaChange"`
+	// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
+}
+
+func (PipelineProcessOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineProcessOptions)(nil)).Elem()
+}
+
+func (i PipelineProcessOptionsArgs) ToPipelineProcessOptionsOutput() PipelineProcessOptionsOutput {
+	return i.ToPipelineProcessOptionsOutputWithContext(context.Background())
+}
+
+func (i PipelineProcessOptionsArgs) ToPipelineProcessOptionsOutputWithContext(ctx context.Context) PipelineProcessOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsOutput)
+}
+
+func (i PipelineProcessOptionsArgs) ToPipelineProcessOptionsPtrOutput() PipelineProcessOptionsPtrOutput {
+	return i.ToPipelineProcessOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineProcessOptionsArgs) ToPipelineProcessOptionsPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsOutput).ToPipelineProcessOptionsPtrOutputWithContext(ctx)
+}
+
+// PipelineProcessOptionsPtrInput is an input type that accepts PipelineProcessOptionsArgs, PipelineProcessOptionsPtr and PipelineProcessOptionsPtrOutput values.
+// You can construct a concrete instance of `PipelineProcessOptionsPtrInput` via:
+//
+//	        PipelineProcessOptionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineProcessOptionsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineProcessOptionsPtrOutput() PipelineProcessOptionsPtrOutput
+	ToPipelineProcessOptionsPtrOutputWithContext(context.Context) PipelineProcessOptionsPtrOutput
+}
+
+type pipelineProcessOptionsPtrType PipelineProcessOptionsArgs
+
+func PipelineProcessOptionsPtr(v *PipelineProcessOptionsArgs) PipelineProcessOptionsPtrInput {
+	return (*pipelineProcessOptionsPtrType)(v)
+}
+
+func (*pipelineProcessOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineProcessOptions)(nil)).Elem()
+}
+
+func (i *pipelineProcessOptionsPtrType) ToPipelineProcessOptionsPtrOutput() PipelineProcessOptionsPtrOutput {
+	return i.ToPipelineProcessOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineProcessOptionsPtrType) ToPipelineProcessOptionsPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsPtrOutput)
+}
+
+type PipelineProcessOptionsOutput struct{ *pulumi.OutputState }
+
+func (PipelineProcessOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineProcessOptions)(nil)).Elem()
+}
+
+func (o PipelineProcessOptionsOutput) ToPipelineProcessOptionsOutput() PipelineProcessOptionsOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsOutput) ToPipelineProcessOptionsOutputWithContext(ctx context.Context) PipelineProcessOptionsOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsOutput) ToPipelineProcessOptionsPtrOutput() PipelineProcessOptionsPtrOutput {
+	return o.ToPipelineProcessOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineProcessOptionsOutput) ToPipelineProcessOptionsPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineProcessOptions) *PipelineProcessOptions {
+		return &v
+	}).(PipelineProcessOptionsPtrOutput)
+}
+
+// (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o PipelineProcessOptionsOutput) InitialDataLoad() PipelineProcessOptionsInitialDataLoadOutput {
+	return o.ApplyT(func(v PipelineProcessOptions) PipelineProcessOptionsInitialDataLoad { return v.InitialDataLoad }).(PipelineProcessOptionsInitialDataLoadOutput)
+}
+
+// (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o PipelineProcessOptionsOutput) ReplicateSchemaChange() PipelineProcessOptionsReplicateSchemaChangeOutput {
+	return o.ApplyT(func(v PipelineProcessOptions) PipelineProcessOptionsReplicateSchemaChange {
+		return v.ReplicateSchemaChange
+	}).(PipelineProcessOptionsReplicateSchemaChangeOutput)
+}
+
+// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+func (o PipelineProcessOptionsOutput) ShouldRestartOnFailure() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineProcessOptions) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
+}
+
+type PipelineProcessOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineProcessOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineProcessOptions)(nil)).Elem()
+}
+
+func (o PipelineProcessOptionsPtrOutput) ToPipelineProcessOptionsPtrOutput() PipelineProcessOptionsPtrOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsPtrOutput) ToPipelineProcessOptionsPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsPtrOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsPtrOutput) Elem() PipelineProcessOptionsOutput {
+	return o.ApplyT(func(v *PipelineProcessOptions) PipelineProcessOptions {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineProcessOptions
+		return ret
+	}).(PipelineProcessOptionsOutput)
+}
+
+// (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o PipelineProcessOptionsPtrOutput) InitialDataLoad() PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptions) *PipelineProcessOptionsInitialDataLoad {
+		if v == nil {
+			return nil
+		}
+		return &v.InitialDataLoad
+	}).(PipelineProcessOptionsInitialDataLoadPtrOutput)
+}
+
+// (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o PipelineProcessOptionsPtrOutput) ReplicateSchemaChange() PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptions) *PipelineProcessOptionsReplicateSchemaChange {
+		if v == nil {
+			return nil
+		}
+		return &v.ReplicateSchemaChange
+	}).(PipelineProcessOptionsReplicateSchemaChangePtrOutput)
+}
+
+// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+func (o PipelineProcessOptionsPtrOutput) ShouldRestartOnFailure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptions) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ShouldRestartOnFailure
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineProcessOptionsInitialDataLoad struct {
+	// (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+	ActionOnExistingTable *string `pulumi:"actionOnExistingTable"`
+	// (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+	IsInitialLoad string `pulumi:"isInitialLoad"`
+}
+
+// PipelineProcessOptionsInitialDataLoadInput is an input type that accepts PipelineProcessOptionsInitialDataLoadArgs and PipelineProcessOptionsInitialDataLoadOutput values.
+// You can construct a concrete instance of `PipelineProcessOptionsInitialDataLoadInput` via:
+//
+//	PipelineProcessOptionsInitialDataLoadArgs{...}
+type PipelineProcessOptionsInitialDataLoadInput interface {
+	pulumi.Input
+
+	ToPipelineProcessOptionsInitialDataLoadOutput() PipelineProcessOptionsInitialDataLoadOutput
+	ToPipelineProcessOptionsInitialDataLoadOutputWithContext(context.Context) PipelineProcessOptionsInitialDataLoadOutput
+}
+
+type PipelineProcessOptionsInitialDataLoadArgs struct {
+	// (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+	ActionOnExistingTable pulumi.StringPtrInput `pulumi:"actionOnExistingTable"`
+	// (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+	IsInitialLoad pulumi.StringInput `pulumi:"isInitialLoad"`
+}
+
+func (PipelineProcessOptionsInitialDataLoadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineProcessOptionsInitialDataLoad)(nil)).Elem()
+}
+
+func (i PipelineProcessOptionsInitialDataLoadArgs) ToPipelineProcessOptionsInitialDataLoadOutput() PipelineProcessOptionsInitialDataLoadOutput {
+	return i.ToPipelineProcessOptionsInitialDataLoadOutputWithContext(context.Background())
+}
+
+func (i PipelineProcessOptionsInitialDataLoadArgs) ToPipelineProcessOptionsInitialDataLoadOutputWithContext(ctx context.Context) PipelineProcessOptionsInitialDataLoadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsInitialDataLoadOutput)
+}
+
+func (i PipelineProcessOptionsInitialDataLoadArgs) ToPipelineProcessOptionsInitialDataLoadPtrOutput() PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return i.ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineProcessOptionsInitialDataLoadArgs) ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsInitialDataLoadOutput).ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(ctx)
+}
+
+// PipelineProcessOptionsInitialDataLoadPtrInput is an input type that accepts PipelineProcessOptionsInitialDataLoadArgs, PipelineProcessOptionsInitialDataLoadPtr and PipelineProcessOptionsInitialDataLoadPtrOutput values.
+// You can construct a concrete instance of `PipelineProcessOptionsInitialDataLoadPtrInput` via:
+//
+//	        PipelineProcessOptionsInitialDataLoadArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineProcessOptionsInitialDataLoadPtrInput interface {
+	pulumi.Input
+
+	ToPipelineProcessOptionsInitialDataLoadPtrOutput() PipelineProcessOptionsInitialDataLoadPtrOutput
+	ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(context.Context) PipelineProcessOptionsInitialDataLoadPtrOutput
+}
+
+type pipelineProcessOptionsInitialDataLoadPtrType PipelineProcessOptionsInitialDataLoadArgs
+
+func PipelineProcessOptionsInitialDataLoadPtr(v *PipelineProcessOptionsInitialDataLoadArgs) PipelineProcessOptionsInitialDataLoadPtrInput {
+	return (*pipelineProcessOptionsInitialDataLoadPtrType)(v)
+}
+
+func (*pipelineProcessOptionsInitialDataLoadPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineProcessOptionsInitialDataLoad)(nil)).Elem()
+}
+
+func (i *pipelineProcessOptionsInitialDataLoadPtrType) ToPipelineProcessOptionsInitialDataLoadPtrOutput() PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return i.ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineProcessOptionsInitialDataLoadPtrType) ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsInitialDataLoadPtrOutput)
+}
+
+type PipelineProcessOptionsInitialDataLoadOutput struct{ *pulumi.OutputState }
+
+func (PipelineProcessOptionsInitialDataLoadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineProcessOptionsInitialDataLoad)(nil)).Elem()
+}
+
+func (o PipelineProcessOptionsInitialDataLoadOutput) ToPipelineProcessOptionsInitialDataLoadOutput() PipelineProcessOptionsInitialDataLoadOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsInitialDataLoadOutput) ToPipelineProcessOptionsInitialDataLoadOutputWithContext(ctx context.Context) PipelineProcessOptionsInitialDataLoadOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsInitialDataLoadOutput) ToPipelineProcessOptionsInitialDataLoadPtrOutput() PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return o.ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineProcessOptionsInitialDataLoadOutput) ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineProcessOptionsInitialDataLoad) *PipelineProcessOptionsInitialDataLoad {
+		return &v
+	}).(PipelineProcessOptionsInitialDataLoadPtrOutput)
+}
+
+// (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+func (o PipelineProcessOptionsInitialDataLoadOutput) ActionOnExistingTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.ActionOnExistingTable }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+func (o PipelineProcessOptionsInitialDataLoadOutput) IsInitialLoad() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) string { return v.IsInitialLoad }).(pulumi.StringOutput)
+}
+
+type PipelineProcessOptionsInitialDataLoadPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineProcessOptionsInitialDataLoadPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineProcessOptionsInitialDataLoad)(nil)).Elem()
+}
+
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) ToPipelineProcessOptionsInitialDataLoadPtrOutput() PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) ToPipelineProcessOptionsInitialDataLoadPtrOutputWithContext(ctx context.Context) PipelineProcessOptionsInitialDataLoadPtrOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) Elem() PipelineProcessOptionsInitialDataLoadOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) PipelineProcessOptionsInitialDataLoad {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineProcessOptionsInitialDataLoad
+		return ret
+	}).(PipelineProcessOptionsInitialDataLoadOutput)
+}
+
+// (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) ActionOnExistingTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActionOnExistingTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) IsInitialLoad() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IsInitialLoad
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineProcessOptionsReplicateSchemaChange struct {
+	// (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDdlError *string `pulumi:"actionOnDdlError"`
+	// (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDmlError *string `pulumi:"actionOnDmlError"`
+	// (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+	CanReplicateSchemaChange string `pulumi:"canReplicateSchemaChange"`
+}
+
+// PipelineProcessOptionsReplicateSchemaChangeInput is an input type that accepts PipelineProcessOptionsReplicateSchemaChangeArgs and PipelineProcessOptionsReplicateSchemaChangeOutput values.
+// You can construct a concrete instance of `PipelineProcessOptionsReplicateSchemaChangeInput` via:
+//
+//	PipelineProcessOptionsReplicateSchemaChangeArgs{...}
+type PipelineProcessOptionsReplicateSchemaChangeInput interface {
+	pulumi.Input
+
+	ToPipelineProcessOptionsReplicateSchemaChangeOutput() PipelineProcessOptionsReplicateSchemaChangeOutput
+	ToPipelineProcessOptionsReplicateSchemaChangeOutputWithContext(context.Context) PipelineProcessOptionsReplicateSchemaChangeOutput
+}
+
+type PipelineProcessOptionsReplicateSchemaChangeArgs struct {
+	// (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDdlError pulumi.StringPtrInput `pulumi:"actionOnDdlError"`
+	// (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDmlError pulumi.StringPtrInput `pulumi:"actionOnDmlError"`
+	// (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+	CanReplicateSchemaChange pulumi.StringInput `pulumi:"canReplicateSchemaChange"`
+}
+
+func (PipelineProcessOptionsReplicateSchemaChangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineProcessOptionsReplicateSchemaChange)(nil)).Elem()
+}
+
+func (i PipelineProcessOptionsReplicateSchemaChangeArgs) ToPipelineProcessOptionsReplicateSchemaChangeOutput() PipelineProcessOptionsReplicateSchemaChangeOutput {
+	return i.ToPipelineProcessOptionsReplicateSchemaChangeOutputWithContext(context.Background())
+}
+
+func (i PipelineProcessOptionsReplicateSchemaChangeArgs) ToPipelineProcessOptionsReplicateSchemaChangeOutputWithContext(ctx context.Context) PipelineProcessOptionsReplicateSchemaChangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsReplicateSchemaChangeOutput)
+}
+
+func (i PipelineProcessOptionsReplicateSchemaChangeArgs) ToPipelineProcessOptionsReplicateSchemaChangePtrOutput() PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return i.ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(context.Background())
+}
+
+func (i PipelineProcessOptionsReplicateSchemaChangeArgs) ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(ctx context.Context) PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsReplicateSchemaChangeOutput).ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(ctx)
+}
+
+// PipelineProcessOptionsReplicateSchemaChangePtrInput is an input type that accepts PipelineProcessOptionsReplicateSchemaChangeArgs, PipelineProcessOptionsReplicateSchemaChangePtr and PipelineProcessOptionsReplicateSchemaChangePtrOutput values.
+// You can construct a concrete instance of `PipelineProcessOptionsReplicateSchemaChangePtrInput` via:
+//
+//	        PipelineProcessOptionsReplicateSchemaChangeArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineProcessOptionsReplicateSchemaChangePtrInput interface {
+	pulumi.Input
+
+	ToPipelineProcessOptionsReplicateSchemaChangePtrOutput() PipelineProcessOptionsReplicateSchemaChangePtrOutput
+	ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(context.Context) PipelineProcessOptionsReplicateSchemaChangePtrOutput
+}
+
+type pipelineProcessOptionsReplicateSchemaChangePtrType PipelineProcessOptionsReplicateSchemaChangeArgs
+
+func PipelineProcessOptionsReplicateSchemaChangePtr(v *PipelineProcessOptionsReplicateSchemaChangeArgs) PipelineProcessOptionsReplicateSchemaChangePtrInput {
+	return (*pipelineProcessOptionsReplicateSchemaChangePtrType)(v)
+}
+
+func (*pipelineProcessOptionsReplicateSchemaChangePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineProcessOptionsReplicateSchemaChange)(nil)).Elem()
+}
+
+func (i *pipelineProcessOptionsReplicateSchemaChangePtrType) ToPipelineProcessOptionsReplicateSchemaChangePtrOutput() PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return i.ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineProcessOptionsReplicateSchemaChangePtrType) ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(ctx context.Context) PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineProcessOptionsReplicateSchemaChangePtrOutput)
+}
+
+type PipelineProcessOptionsReplicateSchemaChangeOutput struct{ *pulumi.OutputState }
+
+func (PipelineProcessOptionsReplicateSchemaChangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineProcessOptionsReplicateSchemaChange)(nil)).Elem()
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) ToPipelineProcessOptionsReplicateSchemaChangeOutput() PipelineProcessOptionsReplicateSchemaChangeOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) ToPipelineProcessOptionsReplicateSchemaChangeOutputWithContext(ctx context.Context) PipelineProcessOptionsReplicateSchemaChangeOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) ToPipelineProcessOptionsReplicateSchemaChangePtrOutput() PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return o.ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(context.Background())
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(ctx context.Context) PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineProcessOptionsReplicateSchemaChange) *PipelineProcessOptionsReplicateSchemaChange {
+		return &v
+	}).(PipelineProcessOptionsReplicateSchemaChangePtrOutput)
+}
+
+// (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) ActionOnDdlError() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsReplicateSchemaChange) *string { return v.ActionOnDdlError }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) ActionOnDmlError() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsReplicateSchemaChange) *string { return v.ActionOnDmlError }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+func (o PipelineProcessOptionsReplicateSchemaChangeOutput) CanReplicateSchemaChange() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsReplicateSchemaChange) string { return v.CanReplicateSchemaChange }).(pulumi.StringOutput)
+}
+
+type PipelineProcessOptionsReplicateSchemaChangePtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineProcessOptionsReplicateSchemaChangePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineProcessOptionsReplicateSchemaChange)(nil)).Elem()
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangePtrOutput) ToPipelineProcessOptionsReplicateSchemaChangePtrOutput() PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangePtrOutput) ToPipelineProcessOptionsReplicateSchemaChangePtrOutputWithContext(ctx context.Context) PipelineProcessOptionsReplicateSchemaChangePtrOutput {
+	return o
+}
+
+func (o PipelineProcessOptionsReplicateSchemaChangePtrOutput) Elem() PipelineProcessOptionsReplicateSchemaChangeOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsReplicateSchemaChange) PipelineProcessOptionsReplicateSchemaChange {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineProcessOptionsReplicateSchemaChange
+		return ret
+	}).(PipelineProcessOptionsReplicateSchemaChangeOutput)
+}
+
+// (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o PipelineProcessOptionsReplicateSchemaChangePtrOutput) ActionOnDdlError() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsReplicateSchemaChange) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActionOnDdlError
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o PipelineProcessOptionsReplicateSchemaChangePtrOutput) ActionOnDmlError() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsReplicateSchemaChange) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActionOnDmlError
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+func (o PipelineProcessOptionsReplicateSchemaChangePtrOutput) CanReplicateSchemaChange() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsReplicateSchemaChange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CanReplicateSchemaChange
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineSourceConnectionDetails struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId string `pulumi:"connectionId"`
+}
+
+// PipelineSourceConnectionDetailsInput is an input type that accepts PipelineSourceConnectionDetailsArgs and PipelineSourceConnectionDetailsOutput values.
+// You can construct a concrete instance of `PipelineSourceConnectionDetailsInput` via:
+//
+//	PipelineSourceConnectionDetailsArgs{...}
+type PipelineSourceConnectionDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineSourceConnectionDetailsOutput() PipelineSourceConnectionDetailsOutput
+	ToPipelineSourceConnectionDetailsOutputWithContext(context.Context) PipelineSourceConnectionDetailsOutput
+}
+
+type PipelineSourceConnectionDetailsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+}
+
+func (PipelineSourceConnectionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineSourceConnectionDetails)(nil)).Elem()
+}
+
+func (i PipelineSourceConnectionDetailsArgs) ToPipelineSourceConnectionDetailsOutput() PipelineSourceConnectionDetailsOutput {
+	return i.ToPipelineSourceConnectionDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineSourceConnectionDetailsArgs) ToPipelineSourceConnectionDetailsOutputWithContext(ctx context.Context) PipelineSourceConnectionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineSourceConnectionDetailsOutput)
+}
+
+func (i PipelineSourceConnectionDetailsArgs) ToPipelineSourceConnectionDetailsPtrOutput() PipelineSourceConnectionDetailsPtrOutput {
+	return i.ToPipelineSourceConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineSourceConnectionDetailsArgs) ToPipelineSourceConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineSourceConnectionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineSourceConnectionDetailsOutput).ToPipelineSourceConnectionDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineSourceConnectionDetailsPtrInput is an input type that accepts PipelineSourceConnectionDetailsArgs, PipelineSourceConnectionDetailsPtr and PipelineSourceConnectionDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineSourceConnectionDetailsPtrInput` via:
+//
+//	        PipelineSourceConnectionDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineSourceConnectionDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineSourceConnectionDetailsPtrOutput() PipelineSourceConnectionDetailsPtrOutput
+	ToPipelineSourceConnectionDetailsPtrOutputWithContext(context.Context) PipelineSourceConnectionDetailsPtrOutput
+}
+
+type pipelineSourceConnectionDetailsPtrType PipelineSourceConnectionDetailsArgs
+
+func PipelineSourceConnectionDetailsPtr(v *PipelineSourceConnectionDetailsArgs) PipelineSourceConnectionDetailsPtrInput {
+	return (*pipelineSourceConnectionDetailsPtrType)(v)
+}
+
+func (*pipelineSourceConnectionDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineSourceConnectionDetails)(nil)).Elem()
+}
+
+func (i *pipelineSourceConnectionDetailsPtrType) ToPipelineSourceConnectionDetailsPtrOutput() PipelineSourceConnectionDetailsPtrOutput {
+	return i.ToPipelineSourceConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineSourceConnectionDetailsPtrType) ToPipelineSourceConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineSourceConnectionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineSourceConnectionDetailsPtrOutput)
+}
+
+type PipelineSourceConnectionDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineSourceConnectionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineSourceConnectionDetails)(nil)).Elem()
+}
+
+func (o PipelineSourceConnectionDetailsOutput) ToPipelineSourceConnectionDetailsOutput() PipelineSourceConnectionDetailsOutput {
+	return o
+}
+
+func (o PipelineSourceConnectionDetailsOutput) ToPipelineSourceConnectionDetailsOutputWithContext(ctx context.Context) PipelineSourceConnectionDetailsOutput {
+	return o
+}
+
+func (o PipelineSourceConnectionDetailsOutput) ToPipelineSourceConnectionDetailsPtrOutput() PipelineSourceConnectionDetailsPtrOutput {
+	return o.ToPipelineSourceConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineSourceConnectionDetailsOutput) ToPipelineSourceConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineSourceConnectionDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineSourceConnectionDetails) *PipelineSourceConnectionDetails {
+		return &v
+	}).(PipelineSourceConnectionDetailsPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o PipelineSourceConnectionDetailsOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineSourceConnectionDetails) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+type PipelineSourceConnectionDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineSourceConnectionDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineSourceConnectionDetails)(nil)).Elem()
+}
+
+func (o PipelineSourceConnectionDetailsPtrOutput) ToPipelineSourceConnectionDetailsPtrOutput() PipelineSourceConnectionDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineSourceConnectionDetailsPtrOutput) ToPipelineSourceConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineSourceConnectionDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineSourceConnectionDetailsPtrOutput) Elem() PipelineSourceConnectionDetailsOutput {
+	return o.ApplyT(func(v *PipelineSourceConnectionDetails) PipelineSourceConnectionDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineSourceConnectionDetails
+		return ret
+	}).(PipelineSourceConnectionDetailsOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o PipelineSourceConnectionDetailsPtrOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineSourceConnectionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionId
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineTargetConnectionDetails struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConnectionId string `pulumi:"connectionId"`
+}
+
+// PipelineTargetConnectionDetailsInput is an input type that accepts PipelineTargetConnectionDetailsArgs and PipelineTargetConnectionDetailsOutput values.
+// You can construct a concrete instance of `PipelineTargetConnectionDetailsInput` via:
+//
+//	PipelineTargetConnectionDetailsArgs{...}
+type PipelineTargetConnectionDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineTargetConnectionDetailsOutput() PipelineTargetConnectionDetailsOutput
+	ToPipelineTargetConnectionDetailsOutputWithContext(context.Context) PipelineTargetConnectionDetailsOutput
+}
+
+type PipelineTargetConnectionDetailsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+}
+
+func (PipelineTargetConnectionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineTargetConnectionDetails)(nil)).Elem()
+}
+
+func (i PipelineTargetConnectionDetailsArgs) ToPipelineTargetConnectionDetailsOutput() PipelineTargetConnectionDetailsOutput {
+	return i.ToPipelineTargetConnectionDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineTargetConnectionDetailsArgs) ToPipelineTargetConnectionDetailsOutputWithContext(ctx context.Context) PipelineTargetConnectionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineTargetConnectionDetailsOutput)
+}
+
+func (i PipelineTargetConnectionDetailsArgs) ToPipelineTargetConnectionDetailsPtrOutput() PipelineTargetConnectionDetailsPtrOutput {
+	return i.ToPipelineTargetConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineTargetConnectionDetailsArgs) ToPipelineTargetConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineTargetConnectionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineTargetConnectionDetailsOutput).ToPipelineTargetConnectionDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineTargetConnectionDetailsPtrInput is an input type that accepts PipelineTargetConnectionDetailsArgs, PipelineTargetConnectionDetailsPtr and PipelineTargetConnectionDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineTargetConnectionDetailsPtrInput` via:
+//
+//	        PipelineTargetConnectionDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineTargetConnectionDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineTargetConnectionDetailsPtrOutput() PipelineTargetConnectionDetailsPtrOutput
+	ToPipelineTargetConnectionDetailsPtrOutputWithContext(context.Context) PipelineTargetConnectionDetailsPtrOutput
+}
+
+type pipelineTargetConnectionDetailsPtrType PipelineTargetConnectionDetailsArgs
+
+func PipelineTargetConnectionDetailsPtr(v *PipelineTargetConnectionDetailsArgs) PipelineTargetConnectionDetailsPtrInput {
+	return (*pipelineTargetConnectionDetailsPtrType)(v)
+}
+
+func (*pipelineTargetConnectionDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineTargetConnectionDetails)(nil)).Elem()
+}
+
+func (i *pipelineTargetConnectionDetailsPtrType) ToPipelineTargetConnectionDetailsPtrOutput() PipelineTargetConnectionDetailsPtrOutput {
+	return i.ToPipelineTargetConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineTargetConnectionDetailsPtrType) ToPipelineTargetConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineTargetConnectionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineTargetConnectionDetailsPtrOutput)
+}
+
+type PipelineTargetConnectionDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineTargetConnectionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineTargetConnectionDetails)(nil)).Elem()
+}
+
+func (o PipelineTargetConnectionDetailsOutput) ToPipelineTargetConnectionDetailsOutput() PipelineTargetConnectionDetailsOutput {
+	return o
+}
+
+func (o PipelineTargetConnectionDetailsOutput) ToPipelineTargetConnectionDetailsOutputWithContext(ctx context.Context) PipelineTargetConnectionDetailsOutput {
+	return o
+}
+
+func (o PipelineTargetConnectionDetailsOutput) ToPipelineTargetConnectionDetailsPtrOutput() PipelineTargetConnectionDetailsPtrOutput {
+	return o.ToPipelineTargetConnectionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineTargetConnectionDetailsOutput) ToPipelineTargetConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineTargetConnectionDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineTargetConnectionDetails) *PipelineTargetConnectionDetails {
+		return &v
+	}).(PipelineTargetConnectionDetailsPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o PipelineTargetConnectionDetailsOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineTargetConnectionDetails) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+type PipelineTargetConnectionDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineTargetConnectionDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineTargetConnectionDetails)(nil)).Elem()
+}
+
+func (o PipelineTargetConnectionDetailsPtrOutput) ToPipelineTargetConnectionDetailsPtrOutput() PipelineTargetConnectionDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineTargetConnectionDetailsPtrOutput) ToPipelineTargetConnectionDetailsPtrOutputWithContext(ctx context.Context) PipelineTargetConnectionDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineTargetConnectionDetailsPtrOutput) Elem() PipelineTargetConnectionDetailsOutput {
+	return o.ApplyT(func(v *PipelineTargetConnectionDetails) PipelineTargetConnectionDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineTargetConnectionDetails
+		return ret
+	}).(PipelineTargetConnectionDetailsOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o PipelineTargetConnectionDetailsPtrOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineTargetConnectionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionId
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetConnectionAdditionalAttribute struct {
 	// The name of the property entry.
 	Name string `pulumi:"name"`
@@ -10802,6 +11817,3349 @@ func (o GetMessagesFilterArrayOutput) Index(i pulumi.IntInput) GetMessagesFilter
 	}).(GetMessagesFilterOutput)
 }
 
+type GetPipelineLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetPipelineLockInput is an input type that accepts GetPipelineLockArgs and GetPipelineLockOutput values.
+// You can construct a concrete instance of `GetPipelineLockInput` via:
+//
+//	GetPipelineLockArgs{...}
+type GetPipelineLockInput interface {
+	pulumi.Input
+
+	ToGetPipelineLockOutput() GetPipelineLockOutput
+	ToGetPipelineLockOutputWithContext(context.Context) GetPipelineLockOutput
+}
+
+type GetPipelineLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetPipelineLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineLock)(nil)).Elem()
+}
+
+func (i GetPipelineLockArgs) ToGetPipelineLockOutput() GetPipelineLockOutput {
+	return i.ToGetPipelineLockOutputWithContext(context.Background())
+}
+
+func (i GetPipelineLockArgs) ToGetPipelineLockOutputWithContext(ctx context.Context) GetPipelineLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineLockOutput)
+}
+
+// GetPipelineLockArrayInput is an input type that accepts GetPipelineLockArray and GetPipelineLockArrayOutput values.
+// You can construct a concrete instance of `GetPipelineLockArrayInput` via:
+//
+//	GetPipelineLockArray{ GetPipelineLockArgs{...} }
+type GetPipelineLockArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineLockArrayOutput() GetPipelineLockArrayOutput
+	ToGetPipelineLockArrayOutputWithContext(context.Context) GetPipelineLockArrayOutput
+}
+
+type GetPipelineLockArray []GetPipelineLockInput
+
+func (GetPipelineLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineLock)(nil)).Elem()
+}
+
+func (i GetPipelineLockArray) ToGetPipelineLockArrayOutput() GetPipelineLockArrayOutput {
+	return i.ToGetPipelineLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineLockArray) ToGetPipelineLockArrayOutputWithContext(ctx context.Context) GetPipelineLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineLockArrayOutput)
+}
+
+type GetPipelineLockOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineLock)(nil)).Elem()
+}
+
+func (o GetPipelineLockOutput) ToGetPipelineLockOutput() GetPipelineLockOutput {
+	return o
+}
+
+func (o GetPipelineLockOutput) ToGetPipelineLockOutputWithContext(ctx context.Context) GetPipelineLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetPipelineLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetPipelineLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetPipelineLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineLock)(nil)).Elem()
+}
+
+func (o GetPipelineLockArrayOutput) ToGetPipelineLockArrayOutput() GetPipelineLockArrayOutput {
+	return o
+}
+
+func (o GetPipelineLockArrayOutput) ToGetPipelineLockArrayOutputWithContext(ctx context.Context) GetPipelineLockArrayOutput {
+	return o
+}
+
+func (o GetPipelineLockArrayOutput) Index(i pulumi.IntInput) GetPipelineLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineLock {
+		return vs[0].([]GetPipelineLock)[vs[1].(int)]
+	}).(GetPipelineLockOutput)
+}
+
+type GetPipelineMappingRule struct {
+	// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+	MappingType string `pulumi:"mappingType"`
+	// The source schema/table combination for replication to target.
+	Source string `pulumi:"source"`
+	// The target schema/table combination for replication from the source.
+	Target string `pulumi:"target"`
+}
+
+// GetPipelineMappingRuleInput is an input type that accepts GetPipelineMappingRuleArgs and GetPipelineMappingRuleOutput values.
+// You can construct a concrete instance of `GetPipelineMappingRuleInput` via:
+//
+//	GetPipelineMappingRuleArgs{...}
+type GetPipelineMappingRuleInput interface {
+	pulumi.Input
+
+	ToGetPipelineMappingRuleOutput() GetPipelineMappingRuleOutput
+	ToGetPipelineMappingRuleOutputWithContext(context.Context) GetPipelineMappingRuleOutput
+}
+
+type GetPipelineMappingRuleArgs struct {
+	// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+	MappingType pulumi.StringInput `pulumi:"mappingType"`
+	// The source schema/table combination for replication to target.
+	Source pulumi.StringInput `pulumi:"source"`
+	// The target schema/table combination for replication from the source.
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (GetPipelineMappingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineMappingRule)(nil)).Elem()
+}
+
+func (i GetPipelineMappingRuleArgs) ToGetPipelineMappingRuleOutput() GetPipelineMappingRuleOutput {
+	return i.ToGetPipelineMappingRuleOutputWithContext(context.Background())
+}
+
+func (i GetPipelineMappingRuleArgs) ToGetPipelineMappingRuleOutputWithContext(ctx context.Context) GetPipelineMappingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineMappingRuleOutput)
+}
+
+// GetPipelineMappingRuleArrayInput is an input type that accepts GetPipelineMappingRuleArray and GetPipelineMappingRuleArrayOutput values.
+// You can construct a concrete instance of `GetPipelineMappingRuleArrayInput` via:
+//
+//	GetPipelineMappingRuleArray{ GetPipelineMappingRuleArgs{...} }
+type GetPipelineMappingRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineMappingRuleArrayOutput() GetPipelineMappingRuleArrayOutput
+	ToGetPipelineMappingRuleArrayOutputWithContext(context.Context) GetPipelineMappingRuleArrayOutput
+}
+
+type GetPipelineMappingRuleArray []GetPipelineMappingRuleInput
+
+func (GetPipelineMappingRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineMappingRule)(nil)).Elem()
+}
+
+func (i GetPipelineMappingRuleArray) ToGetPipelineMappingRuleArrayOutput() GetPipelineMappingRuleArrayOutput {
+	return i.ToGetPipelineMappingRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineMappingRuleArray) ToGetPipelineMappingRuleArrayOutputWithContext(ctx context.Context) GetPipelineMappingRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineMappingRuleArrayOutput)
+}
+
+type GetPipelineMappingRuleOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineMappingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineMappingRule)(nil)).Elem()
+}
+
+func (o GetPipelineMappingRuleOutput) ToGetPipelineMappingRuleOutput() GetPipelineMappingRuleOutput {
+	return o
+}
+
+func (o GetPipelineMappingRuleOutput) ToGetPipelineMappingRuleOutputWithContext(ctx context.Context) GetPipelineMappingRuleOutput {
+	return o
+}
+
+// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+func (o GetPipelineMappingRuleOutput) MappingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineMappingRule) string { return v.MappingType }).(pulumi.StringOutput)
+}
+
+// The source schema/table combination for replication to target.
+func (o GetPipelineMappingRuleOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineMappingRule) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The target schema/table combination for replication from the source.
+func (o GetPipelineMappingRuleOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineMappingRule) string { return v.Target }).(pulumi.StringOutput)
+}
+
+type GetPipelineMappingRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineMappingRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineMappingRule)(nil)).Elem()
+}
+
+func (o GetPipelineMappingRuleArrayOutput) ToGetPipelineMappingRuleArrayOutput() GetPipelineMappingRuleArrayOutput {
+	return o
+}
+
+func (o GetPipelineMappingRuleArrayOutput) ToGetPipelineMappingRuleArrayOutputWithContext(ctx context.Context) GetPipelineMappingRuleArrayOutput {
+	return o
+}
+
+func (o GetPipelineMappingRuleArrayOutput) Index(i pulumi.IntInput) GetPipelineMappingRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineMappingRule {
+		return vs[0].([]GetPipelineMappingRule)[vs[1].(int)]
+	}).(GetPipelineMappingRuleOutput)
+}
+
+type GetPipelineProcessOption struct {
+	// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	InitialDataLoads []GetPipelineProcessOptionInitialDataLoad `pulumi:"initialDataLoads"`
+	// Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	ReplicateSchemaChanges []GetPipelineProcessOptionReplicateSchemaChange `pulumi:"replicateSchemaChanges"`
+	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
+}
+
+// GetPipelineProcessOptionInput is an input type that accepts GetPipelineProcessOptionArgs and GetPipelineProcessOptionOutput values.
+// You can construct a concrete instance of `GetPipelineProcessOptionInput` via:
+//
+//	GetPipelineProcessOptionArgs{...}
+type GetPipelineProcessOptionInput interface {
+	pulumi.Input
+
+	ToGetPipelineProcessOptionOutput() GetPipelineProcessOptionOutput
+	ToGetPipelineProcessOptionOutputWithContext(context.Context) GetPipelineProcessOptionOutput
+}
+
+type GetPipelineProcessOptionArgs struct {
+	// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	InitialDataLoads GetPipelineProcessOptionInitialDataLoadArrayInput `pulumi:"initialDataLoads"`
+	// Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	ReplicateSchemaChanges GetPipelineProcessOptionReplicateSchemaChangeArrayInput `pulumi:"replicateSchemaChanges"`
+	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
+}
+
+func (GetPipelineProcessOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineProcessOption)(nil)).Elem()
+}
+
+func (i GetPipelineProcessOptionArgs) ToGetPipelineProcessOptionOutput() GetPipelineProcessOptionOutput {
+	return i.ToGetPipelineProcessOptionOutputWithContext(context.Background())
+}
+
+func (i GetPipelineProcessOptionArgs) ToGetPipelineProcessOptionOutputWithContext(ctx context.Context) GetPipelineProcessOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineProcessOptionOutput)
+}
+
+// GetPipelineProcessOptionArrayInput is an input type that accepts GetPipelineProcessOptionArray and GetPipelineProcessOptionArrayOutput values.
+// You can construct a concrete instance of `GetPipelineProcessOptionArrayInput` via:
+//
+//	GetPipelineProcessOptionArray{ GetPipelineProcessOptionArgs{...} }
+type GetPipelineProcessOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineProcessOptionArrayOutput() GetPipelineProcessOptionArrayOutput
+	ToGetPipelineProcessOptionArrayOutputWithContext(context.Context) GetPipelineProcessOptionArrayOutput
+}
+
+type GetPipelineProcessOptionArray []GetPipelineProcessOptionInput
+
+func (GetPipelineProcessOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineProcessOption)(nil)).Elem()
+}
+
+func (i GetPipelineProcessOptionArray) ToGetPipelineProcessOptionArrayOutput() GetPipelineProcessOptionArrayOutput {
+	return i.ToGetPipelineProcessOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineProcessOptionArray) ToGetPipelineProcessOptionArrayOutputWithContext(ctx context.Context) GetPipelineProcessOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineProcessOptionArrayOutput)
+}
+
+type GetPipelineProcessOptionOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineProcessOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineProcessOption)(nil)).Elem()
+}
+
+func (o GetPipelineProcessOptionOutput) ToGetPipelineProcessOptionOutput() GetPipelineProcessOptionOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionOutput) ToGetPipelineProcessOptionOutputWithContext(ctx context.Context) GetPipelineProcessOptionOutput {
+	return o
+}
+
+// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o GetPipelineProcessOptionOutput) InitialDataLoads() GetPipelineProcessOptionInitialDataLoadArrayOutput {
+	return o.ApplyT(func(v GetPipelineProcessOption) []GetPipelineProcessOptionInitialDataLoad { return v.InitialDataLoads }).(GetPipelineProcessOptionInitialDataLoadArrayOutput)
+}
+
+// Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o GetPipelineProcessOptionOutput) ReplicateSchemaChanges() GetPipelineProcessOptionReplicateSchemaChangeArrayOutput {
+	return o.ApplyT(func(v GetPipelineProcessOption) []GetPipelineProcessOptionReplicateSchemaChange {
+		return v.ReplicateSchemaChanges
+	}).(GetPipelineProcessOptionReplicateSchemaChangeArrayOutput)
+}
+
+// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+func (o GetPipelineProcessOptionOutput) ShouldRestartOnFailure() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOption) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
+}
+
+type GetPipelineProcessOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineProcessOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineProcessOption)(nil)).Elem()
+}
+
+func (o GetPipelineProcessOptionArrayOutput) ToGetPipelineProcessOptionArrayOutput() GetPipelineProcessOptionArrayOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionArrayOutput) ToGetPipelineProcessOptionArrayOutputWithContext(ctx context.Context) GetPipelineProcessOptionArrayOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionArrayOutput) Index(i pulumi.IntInput) GetPipelineProcessOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineProcessOption {
+		return vs[0].([]GetPipelineProcessOption)[vs[1].(int)]
+	}).(GetPipelineProcessOptionOutput)
+}
+
+type GetPipelineProcessOptionInitialDataLoad struct {
+	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+	ActionOnExistingTable string `pulumi:"actionOnExistingTable"`
+	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+	IsInitialLoad string `pulumi:"isInitialLoad"`
+}
+
+// GetPipelineProcessOptionInitialDataLoadInput is an input type that accepts GetPipelineProcessOptionInitialDataLoadArgs and GetPipelineProcessOptionInitialDataLoadOutput values.
+// You can construct a concrete instance of `GetPipelineProcessOptionInitialDataLoadInput` via:
+//
+//	GetPipelineProcessOptionInitialDataLoadArgs{...}
+type GetPipelineProcessOptionInitialDataLoadInput interface {
+	pulumi.Input
+
+	ToGetPipelineProcessOptionInitialDataLoadOutput() GetPipelineProcessOptionInitialDataLoadOutput
+	ToGetPipelineProcessOptionInitialDataLoadOutputWithContext(context.Context) GetPipelineProcessOptionInitialDataLoadOutput
+}
+
+type GetPipelineProcessOptionInitialDataLoadArgs struct {
+	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+	ActionOnExistingTable pulumi.StringInput `pulumi:"actionOnExistingTable"`
+	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+	IsInitialLoad pulumi.StringInput `pulumi:"isInitialLoad"`
+}
+
+func (GetPipelineProcessOptionInitialDataLoadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (i GetPipelineProcessOptionInitialDataLoadArgs) ToGetPipelineProcessOptionInitialDataLoadOutput() GetPipelineProcessOptionInitialDataLoadOutput {
+	return i.ToGetPipelineProcessOptionInitialDataLoadOutputWithContext(context.Background())
+}
+
+func (i GetPipelineProcessOptionInitialDataLoadArgs) ToGetPipelineProcessOptionInitialDataLoadOutputWithContext(ctx context.Context) GetPipelineProcessOptionInitialDataLoadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineProcessOptionInitialDataLoadOutput)
+}
+
+// GetPipelineProcessOptionInitialDataLoadArrayInput is an input type that accepts GetPipelineProcessOptionInitialDataLoadArray and GetPipelineProcessOptionInitialDataLoadArrayOutput values.
+// You can construct a concrete instance of `GetPipelineProcessOptionInitialDataLoadArrayInput` via:
+//
+//	GetPipelineProcessOptionInitialDataLoadArray{ GetPipelineProcessOptionInitialDataLoadArgs{...} }
+type GetPipelineProcessOptionInitialDataLoadArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineProcessOptionInitialDataLoadArrayOutput() GetPipelineProcessOptionInitialDataLoadArrayOutput
+	ToGetPipelineProcessOptionInitialDataLoadArrayOutputWithContext(context.Context) GetPipelineProcessOptionInitialDataLoadArrayOutput
+}
+
+type GetPipelineProcessOptionInitialDataLoadArray []GetPipelineProcessOptionInitialDataLoadInput
+
+func (GetPipelineProcessOptionInitialDataLoadArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (i GetPipelineProcessOptionInitialDataLoadArray) ToGetPipelineProcessOptionInitialDataLoadArrayOutput() GetPipelineProcessOptionInitialDataLoadArrayOutput {
+	return i.ToGetPipelineProcessOptionInitialDataLoadArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineProcessOptionInitialDataLoadArray) ToGetPipelineProcessOptionInitialDataLoadArrayOutputWithContext(ctx context.Context) GetPipelineProcessOptionInitialDataLoadArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineProcessOptionInitialDataLoadArrayOutput)
+}
+
+type GetPipelineProcessOptionInitialDataLoadOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineProcessOptionInitialDataLoadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (o GetPipelineProcessOptionInitialDataLoadOutput) ToGetPipelineProcessOptionInitialDataLoadOutput() GetPipelineProcessOptionInitialDataLoadOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionInitialDataLoadOutput) ToGetPipelineProcessOptionInitialDataLoadOutputWithContext(ctx context.Context) GetPipelineProcessOptionInitialDataLoadOutput {
+	return o
+}
+
+// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) ActionOnExistingTable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.ActionOnExistingTable }).(pulumi.StringOutput)
+}
+
+// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) IsInitialLoad() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.IsInitialLoad }).(pulumi.StringOutput)
+}
+
+type GetPipelineProcessOptionInitialDataLoadArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineProcessOptionInitialDataLoadArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (o GetPipelineProcessOptionInitialDataLoadArrayOutput) ToGetPipelineProcessOptionInitialDataLoadArrayOutput() GetPipelineProcessOptionInitialDataLoadArrayOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionInitialDataLoadArrayOutput) ToGetPipelineProcessOptionInitialDataLoadArrayOutputWithContext(ctx context.Context) GetPipelineProcessOptionInitialDataLoadArrayOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionInitialDataLoadArrayOutput) Index(i pulumi.IntInput) GetPipelineProcessOptionInitialDataLoadOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineProcessOptionInitialDataLoad {
+		return vs[0].([]GetPipelineProcessOptionInitialDataLoad)[vs[1].(int)]
+	}).(GetPipelineProcessOptionInitialDataLoadOutput)
+}
+
+type GetPipelineProcessOptionReplicateSchemaChange struct {
+	// Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDdlError string `pulumi:"actionOnDdlError"`
+	// Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDmlError string `pulumi:"actionOnDmlError"`
+	// If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+	CanReplicateSchemaChange string `pulumi:"canReplicateSchemaChange"`
+}
+
+// GetPipelineProcessOptionReplicateSchemaChangeInput is an input type that accepts GetPipelineProcessOptionReplicateSchemaChangeArgs and GetPipelineProcessOptionReplicateSchemaChangeOutput values.
+// You can construct a concrete instance of `GetPipelineProcessOptionReplicateSchemaChangeInput` via:
+//
+//	GetPipelineProcessOptionReplicateSchemaChangeArgs{...}
+type GetPipelineProcessOptionReplicateSchemaChangeInput interface {
+	pulumi.Input
+
+	ToGetPipelineProcessOptionReplicateSchemaChangeOutput() GetPipelineProcessOptionReplicateSchemaChangeOutput
+	ToGetPipelineProcessOptionReplicateSchemaChangeOutputWithContext(context.Context) GetPipelineProcessOptionReplicateSchemaChangeOutput
+}
+
+type GetPipelineProcessOptionReplicateSchemaChangeArgs struct {
+	// Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDdlError pulumi.StringInput `pulumi:"actionOnDdlError"`
+	// Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDmlError pulumi.StringInput `pulumi:"actionOnDmlError"`
+	// If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+	CanReplicateSchemaChange pulumi.StringInput `pulumi:"canReplicateSchemaChange"`
+}
+
+func (GetPipelineProcessOptionReplicateSchemaChangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (i GetPipelineProcessOptionReplicateSchemaChangeArgs) ToGetPipelineProcessOptionReplicateSchemaChangeOutput() GetPipelineProcessOptionReplicateSchemaChangeOutput {
+	return i.ToGetPipelineProcessOptionReplicateSchemaChangeOutputWithContext(context.Background())
+}
+
+func (i GetPipelineProcessOptionReplicateSchemaChangeArgs) ToGetPipelineProcessOptionReplicateSchemaChangeOutputWithContext(ctx context.Context) GetPipelineProcessOptionReplicateSchemaChangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineProcessOptionReplicateSchemaChangeOutput)
+}
+
+// GetPipelineProcessOptionReplicateSchemaChangeArrayInput is an input type that accepts GetPipelineProcessOptionReplicateSchemaChangeArray and GetPipelineProcessOptionReplicateSchemaChangeArrayOutput values.
+// You can construct a concrete instance of `GetPipelineProcessOptionReplicateSchemaChangeArrayInput` via:
+//
+//	GetPipelineProcessOptionReplicateSchemaChangeArray{ GetPipelineProcessOptionReplicateSchemaChangeArgs{...} }
+type GetPipelineProcessOptionReplicateSchemaChangeArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutput() GetPipelineProcessOptionReplicateSchemaChangeArrayOutput
+	ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutputWithContext(context.Context) GetPipelineProcessOptionReplicateSchemaChangeArrayOutput
+}
+
+type GetPipelineProcessOptionReplicateSchemaChangeArray []GetPipelineProcessOptionReplicateSchemaChangeInput
+
+func (GetPipelineProcessOptionReplicateSchemaChangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (i GetPipelineProcessOptionReplicateSchemaChangeArray) ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutput() GetPipelineProcessOptionReplicateSchemaChangeArrayOutput {
+	return i.ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineProcessOptionReplicateSchemaChangeArray) ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutputWithContext(ctx context.Context) GetPipelineProcessOptionReplicateSchemaChangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineProcessOptionReplicateSchemaChangeArrayOutput)
+}
+
+type GetPipelineProcessOptionReplicateSchemaChangeOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineProcessOptionReplicateSchemaChangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (o GetPipelineProcessOptionReplicateSchemaChangeOutput) ToGetPipelineProcessOptionReplicateSchemaChangeOutput() GetPipelineProcessOptionReplicateSchemaChangeOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionReplicateSchemaChangeOutput) ToGetPipelineProcessOptionReplicateSchemaChangeOutputWithContext(ctx context.Context) GetPipelineProcessOptionReplicateSchemaChangeOutput {
+	return o
+}
+
+// Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o GetPipelineProcessOptionReplicateSchemaChangeOutput) ActionOnDdlError() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionReplicateSchemaChange) string { return v.ActionOnDdlError }).(pulumi.StringOutput)
+}
+
+// Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o GetPipelineProcessOptionReplicateSchemaChangeOutput) ActionOnDmlError() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionReplicateSchemaChange) string { return v.ActionOnDmlError }).(pulumi.StringOutput)
+}
+
+// If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+func (o GetPipelineProcessOptionReplicateSchemaChangeOutput) CanReplicateSchemaChange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionReplicateSchemaChange) string { return v.CanReplicateSchemaChange }).(pulumi.StringOutput)
+}
+
+type GetPipelineProcessOptionReplicateSchemaChangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineProcessOptionReplicateSchemaChangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (o GetPipelineProcessOptionReplicateSchemaChangeArrayOutput) ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutput() GetPipelineProcessOptionReplicateSchemaChangeArrayOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionReplicateSchemaChangeArrayOutput) ToGetPipelineProcessOptionReplicateSchemaChangeArrayOutputWithContext(ctx context.Context) GetPipelineProcessOptionReplicateSchemaChangeArrayOutput {
+	return o
+}
+
+func (o GetPipelineProcessOptionReplicateSchemaChangeArrayOutput) Index(i pulumi.IntInput) GetPipelineProcessOptionReplicateSchemaChangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineProcessOptionReplicateSchemaChange {
+		return vs[0].([]GetPipelineProcessOptionReplicateSchemaChange)[vs[1].(int)]
+	}).(GetPipelineProcessOptionReplicateSchemaChangeOutput)
+}
+
+type GetPipelineRunningProcessesFilter struct {
+	// An object's Display Name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPipelineRunningProcessesFilterInput is an input type that accepts GetPipelineRunningProcessesFilterArgs and GetPipelineRunningProcessesFilterOutput values.
+// You can construct a concrete instance of `GetPipelineRunningProcessesFilterInput` via:
+//
+//	GetPipelineRunningProcessesFilterArgs{...}
+type GetPipelineRunningProcessesFilterInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunningProcessesFilterOutput() GetPipelineRunningProcessesFilterOutput
+	ToGetPipelineRunningProcessesFilterOutputWithContext(context.Context) GetPipelineRunningProcessesFilterOutput
+}
+
+type GetPipelineRunningProcessesFilterArgs struct {
+	// An object's Display Name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPipelineRunningProcessesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunningProcessesFilter)(nil)).Elem()
+}
+
+func (i GetPipelineRunningProcessesFilterArgs) ToGetPipelineRunningProcessesFilterOutput() GetPipelineRunningProcessesFilterOutput {
+	return i.ToGetPipelineRunningProcessesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunningProcessesFilterArgs) ToGetPipelineRunningProcessesFilterOutputWithContext(ctx context.Context) GetPipelineRunningProcessesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunningProcessesFilterOutput)
+}
+
+// GetPipelineRunningProcessesFilterArrayInput is an input type that accepts GetPipelineRunningProcessesFilterArray and GetPipelineRunningProcessesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunningProcessesFilterArrayInput` via:
+//
+//	GetPipelineRunningProcessesFilterArray{ GetPipelineRunningProcessesFilterArgs{...} }
+type GetPipelineRunningProcessesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunningProcessesFilterArrayOutput() GetPipelineRunningProcessesFilterArrayOutput
+	ToGetPipelineRunningProcessesFilterArrayOutputWithContext(context.Context) GetPipelineRunningProcessesFilterArrayOutput
+}
+
+type GetPipelineRunningProcessesFilterArray []GetPipelineRunningProcessesFilterInput
+
+func (GetPipelineRunningProcessesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunningProcessesFilter)(nil)).Elem()
+}
+
+func (i GetPipelineRunningProcessesFilterArray) ToGetPipelineRunningProcessesFilterArrayOutput() GetPipelineRunningProcessesFilterArrayOutput {
+	return i.ToGetPipelineRunningProcessesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunningProcessesFilterArray) ToGetPipelineRunningProcessesFilterArrayOutputWithContext(ctx context.Context) GetPipelineRunningProcessesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunningProcessesFilterArrayOutput)
+}
+
+type GetPipelineRunningProcessesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunningProcessesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunningProcessesFilter)(nil)).Elem()
+}
+
+func (o GetPipelineRunningProcessesFilterOutput) ToGetPipelineRunningProcessesFilterOutput() GetPipelineRunningProcessesFilterOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesFilterOutput) ToGetPipelineRunningProcessesFilterOutputWithContext(ctx context.Context) GetPipelineRunningProcessesFilterOutput {
+	return o
+}
+
+// An object's Display Name.
+func (o GetPipelineRunningProcessesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPipelineRunningProcessesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPipelineRunningProcessesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPipelineRunningProcessesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunningProcessesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunningProcessesFilter)(nil)).Elem()
+}
+
+func (o GetPipelineRunningProcessesFilterArrayOutput) ToGetPipelineRunningProcessesFilterArrayOutput() GetPipelineRunningProcessesFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesFilterArrayOutput) ToGetPipelineRunningProcessesFilterArrayOutputWithContext(ctx context.Context) GetPipelineRunningProcessesFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesFilterArrayOutput) Index(i pulumi.IntInput) GetPipelineRunningProcessesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunningProcessesFilter {
+		return vs[0].([]GetPipelineRunningProcessesFilter)[vs[1].(int)]
+	}).(GetPipelineRunningProcessesFilterOutput)
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollection struct {
+	// The list of replication processes and their details.
+	Items []GetPipelineRunningProcessesPipelineRunningProcessCollectionItem `pulumi:"items"`
+}
+
+// GetPipelineRunningProcessesPipelineRunningProcessCollectionInput is an input type that accepts GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs and GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput values.
+// You can construct a concrete instance of `GetPipelineRunningProcessesPipelineRunningProcessCollectionInput` via:
+//
+//	GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs{...}
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutputWithContext(context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs struct {
+	// The list of replication processes and their details.
+	Items GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollection)(nil)).Elem()
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput {
+	return i.ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput)
+}
+
+// GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayInput is an input type that accepts GetPipelineRunningProcessesPipelineRunningProcessCollectionArray and GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayInput` via:
+//
+//	GetPipelineRunningProcessesPipelineRunningProcessCollectionArray{ GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs{...} }
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutputWithContext(context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionArray []GetPipelineRunningProcessesPipelineRunningProcessCollectionInput
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunningProcessesPipelineRunningProcessCollection)(nil)).Elem()
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionArray) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput {
+	return i.ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionArray) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput)
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollection)(nil)).Elem()
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput {
+	return o
+}
+
+// The list of replication processes and their details.
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput) Items() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesPipelineRunningProcessCollection) []GetPipelineRunningProcessesPipelineRunningProcessCollectionItem {
+		return v.Items
+	}).(GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput)
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunningProcessesPipelineRunningProcessCollection)(nil)).Elem()
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput) Index(i pulumi.IntInput) GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunningProcessesPipelineRunningProcessCollection {
+		return vs[0].([]GetPipelineRunningProcessesPipelineRunningProcessCollection)[vs[1].(int)]
+	}).(GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput)
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItem struct {
+	// The latency, in seconds, of a process running in a replication. This option applies when retrieving running processes.
+	LastRecordLagInSeconds float64 `pulumi:"lastRecordLagInSeconds"`
+	// An object's Display Name.
+	Name string `pulumi:"name"`
+	// The type of process running in a replication. For example, Extract or Replicat. This option applies when retrieving running processes.
+	ProcessType string `pulumi:"processType"`
+	// The status of the Extract or Replicat process. This option applies when retrieving running processes.
+	Status string `pulumi:"status"`
+	// The date and time the last record was processed by an Extract or Replicat. This option applies when retrieving running processes. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastProcessed string `pulumi:"timeLastProcessed"`
+}
+
+// GetPipelineRunningProcessesPipelineRunningProcessCollectionItemInput is an input type that accepts GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs and GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput values.
+// You can construct a concrete instance of `GetPipelineRunningProcessesPipelineRunningProcessCollectionItemInput` via:
+//
+//	GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs{...}
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutputWithContext(context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs struct {
+	// The latency, in seconds, of a process running in a replication. This option applies when retrieving running processes.
+	LastRecordLagInSeconds pulumi.Float64Input `pulumi:"lastRecordLagInSeconds"`
+	// An object's Display Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of process running in a replication. For example, Extract or Replicat. This option applies when retrieving running processes.
+	ProcessType pulumi.StringInput `pulumi:"processType"`
+	// The status of the Extract or Replicat process. This option applies when retrieving running processes.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The date and time the last record was processed by an Extract or Replicat. This option applies when retrieving running processes. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastProcessed pulumi.StringInput `pulumi:"timeLastProcessed"`
+}
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput {
+	return i.ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput)
+}
+
+// GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayInput is an input type that accepts GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray and GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayInput` via:
+//
+//	GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray{ GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs{...} }
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput
+	ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutputWithContext(context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray []GetPipelineRunningProcessesPipelineRunningProcessCollectionItemInput
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunningProcessesPipelineRunningProcessCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput {
+	return i.ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput)
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput {
+	return o
+}
+
+// The latency, in seconds, of a process running in a replication. This option applies when retrieving running processes.
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) LastRecordLagInSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunningProcessesPipelineRunningProcessCollectionItem) float64 {
+		return v.LastRecordLagInSeconds
+	}).(pulumi.Float64Output)
+}
+
+// An object's Display Name.
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesPipelineRunningProcessCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of process running in a replication. For example, Extract or Replicat. This option applies when retrieving running processes.
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) ProcessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesPipelineRunningProcessCollectionItem) string { return v.ProcessType }).(pulumi.StringOutput)
+}
+
+// The status of the Extract or Replicat process. This option applies when retrieving running processes.
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesPipelineRunningProcessCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The date and time the last record was processed by an Extract or Replicat. This option applies when retrieving running processes. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput) TimeLastProcessed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunningProcessesPipelineRunningProcessCollectionItem) string {
+		return v.TimeLastProcessed
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunningProcessesPipelineRunningProcessCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput() GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput) ToGetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunningProcessesPipelineRunningProcessCollectionItem {
+		return vs[0].([]GetPipelineRunningProcessesPipelineRunningProcessCollectionItem)[vs[1].(int)]
+	}).(GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput)
+}
+
+type GetPipelineSchemaTablesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPipelineSchemaTablesFilterInput is an input type that accepts GetPipelineSchemaTablesFilterArgs and GetPipelineSchemaTablesFilterOutput values.
+// You can construct a concrete instance of `GetPipelineSchemaTablesFilterInput` via:
+//
+//	GetPipelineSchemaTablesFilterArgs{...}
+type GetPipelineSchemaTablesFilterInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemaTablesFilterOutput() GetPipelineSchemaTablesFilterOutput
+	ToGetPipelineSchemaTablesFilterOutputWithContext(context.Context) GetPipelineSchemaTablesFilterOutput
+}
+
+type GetPipelineSchemaTablesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPipelineSchemaTablesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemaTablesFilter)(nil)).Elem()
+}
+
+func (i GetPipelineSchemaTablesFilterArgs) ToGetPipelineSchemaTablesFilterOutput() GetPipelineSchemaTablesFilterOutput {
+	return i.ToGetPipelineSchemaTablesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemaTablesFilterArgs) ToGetPipelineSchemaTablesFilterOutputWithContext(ctx context.Context) GetPipelineSchemaTablesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemaTablesFilterOutput)
+}
+
+// GetPipelineSchemaTablesFilterArrayInput is an input type that accepts GetPipelineSchemaTablesFilterArray and GetPipelineSchemaTablesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSchemaTablesFilterArrayInput` via:
+//
+//	GetPipelineSchemaTablesFilterArray{ GetPipelineSchemaTablesFilterArgs{...} }
+type GetPipelineSchemaTablesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemaTablesFilterArrayOutput() GetPipelineSchemaTablesFilterArrayOutput
+	ToGetPipelineSchemaTablesFilterArrayOutputWithContext(context.Context) GetPipelineSchemaTablesFilterArrayOutput
+}
+
+type GetPipelineSchemaTablesFilterArray []GetPipelineSchemaTablesFilterInput
+
+func (GetPipelineSchemaTablesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemaTablesFilter)(nil)).Elem()
+}
+
+func (i GetPipelineSchemaTablesFilterArray) ToGetPipelineSchemaTablesFilterArrayOutput() GetPipelineSchemaTablesFilterArrayOutput {
+	return i.ToGetPipelineSchemaTablesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemaTablesFilterArray) ToGetPipelineSchemaTablesFilterArrayOutputWithContext(ctx context.Context) GetPipelineSchemaTablesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemaTablesFilterArrayOutput)
+}
+
+type GetPipelineSchemaTablesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemaTablesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemaTablesFilter)(nil)).Elem()
+}
+
+func (o GetPipelineSchemaTablesFilterOutput) ToGetPipelineSchemaTablesFilterOutput() GetPipelineSchemaTablesFilterOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesFilterOutput) ToGetPipelineSchemaTablesFilterOutputWithContext(ctx context.Context) GetPipelineSchemaTablesFilterOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPipelineSchemaTablesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPipelineSchemaTablesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPipelineSchemaTablesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemaTablesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemaTablesFilter)(nil)).Elem()
+}
+
+func (o GetPipelineSchemaTablesFilterArrayOutput) ToGetPipelineSchemaTablesFilterArrayOutput() GetPipelineSchemaTablesFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesFilterArrayOutput) ToGetPipelineSchemaTablesFilterArrayOutputWithContext(ctx context.Context) GetPipelineSchemaTablesFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesFilterArrayOutput) Index(i pulumi.IntInput) GetPipelineSchemaTablesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSchemaTablesFilter {
+		return vs[0].([]GetPipelineSchemaTablesFilter)[vs[1].(int)]
+	}).(GetPipelineSchemaTablesFilterOutput)
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollection struct {
+	// Array of source or target schema tables of a pipeline's assigned connection.
+	Items []GetPipelineSchemaTablesPipelineSchemaTableCollectionItem `pulumi:"items"`
+	// Name of the source schema obtained from get schema endpoint of the created pipeline.
+	SourceSchemaName string `pulumi:"sourceSchemaName"`
+	// Name of the target schema obtained from get schema endpoint of the created pipeline.
+	TargetSchemaName string `pulumi:"targetSchemaName"`
+}
+
+// GetPipelineSchemaTablesPipelineSchemaTableCollectionInput is an input type that accepts GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs and GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput values.
+// You can construct a concrete instance of `GetPipelineSchemaTablesPipelineSchemaTableCollectionInput` via:
+//
+//	GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs{...}
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutputWithContext(context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs struct {
+	// Array of source or target schema tables of a pipeline's assigned connection.
+	Items GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayInput `pulumi:"items"`
+	// Name of the source schema obtained from get schema endpoint of the created pipeline.
+	SourceSchemaName pulumi.StringInput `pulumi:"sourceSchemaName"`
+	// Name of the target schema obtained from get schema endpoint of the created pipeline.
+	TargetSchemaName pulumi.StringInput `pulumi:"targetSchemaName"`
+}
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollection)(nil)).Elem()
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput {
+	return i.ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput)
+}
+
+// GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayInput is an input type that accepts GetPipelineSchemaTablesPipelineSchemaTableCollectionArray and GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayInput` via:
+//
+//	GetPipelineSchemaTablesPipelineSchemaTableCollectionArray{ GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs{...} }
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutputWithContext(context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionArray []GetPipelineSchemaTablesPipelineSchemaTableCollectionInput
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemaTablesPipelineSchemaTableCollection)(nil)).Elem()
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionArray) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput {
+	return i.ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionArray) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput)
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollection)(nil)).Elem()
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput {
+	return o
+}
+
+// Array of source or target schema tables of a pipeline's assigned connection.
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput) Items() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesPipelineSchemaTableCollection) []GetPipelineSchemaTablesPipelineSchemaTableCollectionItem {
+		return v.Items
+	}).(GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput)
+}
+
+// Name of the source schema obtained from get schema endpoint of the created pipeline.
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput) SourceSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesPipelineSchemaTableCollection) string { return v.SourceSchemaName }).(pulumi.StringOutput)
+}
+
+// Name of the target schema obtained from get schema endpoint of the created pipeline.
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput) TargetSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesPipelineSchemaTableCollection) string { return v.TargetSchemaName }).(pulumi.StringOutput)
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemaTablesPipelineSchemaTableCollection)(nil)).Elem()
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput) Index(i pulumi.IntInput) GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSchemaTablesPipelineSchemaTableCollection {
+		return vs[0].([]GetPipelineSchemaTablesPipelineSchemaTableCollection)[vs[1].(int)]
+	}).(GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput)
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItem struct {
+	// The table name from the schema of database connection.
+	SourceTableName string `pulumi:"sourceTableName"`
+	// The table name from the schema of database connection.
+	TargetTableName string `pulumi:"targetTableName"`
+}
+
+// GetPipelineSchemaTablesPipelineSchemaTableCollectionItemInput is an input type that accepts GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs and GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput values.
+// You can construct a concrete instance of `GetPipelineSchemaTablesPipelineSchemaTableCollectionItemInput` via:
+//
+//	GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs{...}
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutputWithContext(context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs struct {
+	// The table name from the schema of database connection.
+	SourceTableName pulumi.StringInput `pulumi:"sourceTableName"`
+	// The table name from the schema of database connection.
+	TargetTableName pulumi.StringInput `pulumi:"targetTableName"`
+}
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput {
+	return i.ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput)
+}
+
+// GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayInput is an input type that accepts GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray and GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayInput` via:
+//
+//	GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray{ GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs{...} }
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput
+	ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutputWithContext(context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray []GetPipelineSchemaTablesPipelineSchemaTableCollectionItemInput
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemaTablesPipelineSchemaTableCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput {
+	return i.ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput)
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput {
+	return o
+}
+
+// The table name from the schema of database connection.
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput) SourceTableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesPipelineSchemaTableCollectionItem) string { return v.SourceTableName }).(pulumi.StringOutput)
+}
+
+// The table name from the schema of database connection.
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput) TargetTableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemaTablesPipelineSchemaTableCollectionItem) string { return v.TargetTableName }).(pulumi.StringOutput)
+}
+
+type GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemaTablesPipelineSchemaTableCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput() GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput) ToGetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSchemaTablesPipelineSchemaTableCollectionItem {
+		return vs[0].([]GetPipelineSchemaTablesPipelineSchemaTableCollectionItem)[vs[1].(int)]
+	}).(GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput)
+}
+
+type GetPipelineSchemasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPipelineSchemasFilterInput is an input type that accepts GetPipelineSchemasFilterArgs and GetPipelineSchemasFilterOutput values.
+// You can construct a concrete instance of `GetPipelineSchemasFilterInput` via:
+//
+//	GetPipelineSchemasFilterArgs{...}
+type GetPipelineSchemasFilterInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemasFilterOutput() GetPipelineSchemasFilterOutput
+	ToGetPipelineSchemasFilterOutputWithContext(context.Context) GetPipelineSchemasFilterOutput
+}
+
+type GetPipelineSchemasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPipelineSchemasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemasFilter)(nil)).Elem()
+}
+
+func (i GetPipelineSchemasFilterArgs) ToGetPipelineSchemasFilterOutput() GetPipelineSchemasFilterOutput {
+	return i.ToGetPipelineSchemasFilterOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemasFilterArgs) ToGetPipelineSchemasFilterOutputWithContext(ctx context.Context) GetPipelineSchemasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemasFilterOutput)
+}
+
+// GetPipelineSchemasFilterArrayInput is an input type that accepts GetPipelineSchemasFilterArray and GetPipelineSchemasFilterArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSchemasFilterArrayInput` via:
+//
+//	GetPipelineSchemasFilterArray{ GetPipelineSchemasFilterArgs{...} }
+type GetPipelineSchemasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemasFilterArrayOutput() GetPipelineSchemasFilterArrayOutput
+	ToGetPipelineSchemasFilterArrayOutputWithContext(context.Context) GetPipelineSchemasFilterArrayOutput
+}
+
+type GetPipelineSchemasFilterArray []GetPipelineSchemasFilterInput
+
+func (GetPipelineSchemasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemasFilter)(nil)).Elem()
+}
+
+func (i GetPipelineSchemasFilterArray) ToGetPipelineSchemasFilterArrayOutput() GetPipelineSchemasFilterArrayOutput {
+	return i.ToGetPipelineSchemasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemasFilterArray) ToGetPipelineSchemasFilterArrayOutputWithContext(ctx context.Context) GetPipelineSchemasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemasFilterArrayOutput)
+}
+
+type GetPipelineSchemasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemasFilter)(nil)).Elem()
+}
+
+func (o GetPipelineSchemasFilterOutput) ToGetPipelineSchemasFilterOutput() GetPipelineSchemasFilterOutput {
+	return o
+}
+
+func (o GetPipelineSchemasFilterOutput) ToGetPipelineSchemasFilterOutputWithContext(ctx context.Context) GetPipelineSchemasFilterOutput {
+	return o
+}
+
+func (o GetPipelineSchemasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPipelineSchemasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPipelineSchemasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPipelineSchemasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineSchemasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPipelineSchemasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemasFilter)(nil)).Elem()
+}
+
+func (o GetPipelineSchemasFilterArrayOutput) ToGetPipelineSchemasFilterArrayOutput() GetPipelineSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemasFilterArrayOutput) ToGetPipelineSchemasFilterArrayOutputWithContext(ctx context.Context) GetPipelineSchemasFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetPipelineSchemasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSchemasFilter {
+		return vs[0].([]GetPipelineSchemasFilter)[vs[1].(int)]
+	}).(GetPipelineSchemasFilterOutput)
+}
+
+type GetPipelineSchemasPipelineSchemaCollection struct {
+	// Array of pipeline schemas
+	Items []GetPipelineSchemasPipelineSchemaCollectionItem `pulumi:"items"`
+}
+
+// GetPipelineSchemasPipelineSchemaCollectionInput is an input type that accepts GetPipelineSchemasPipelineSchemaCollectionArgs and GetPipelineSchemasPipelineSchemaCollectionOutput values.
+// You can construct a concrete instance of `GetPipelineSchemasPipelineSchemaCollectionInput` via:
+//
+//	GetPipelineSchemasPipelineSchemaCollectionArgs{...}
+type GetPipelineSchemasPipelineSchemaCollectionInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemasPipelineSchemaCollectionOutput() GetPipelineSchemasPipelineSchemaCollectionOutput
+	ToGetPipelineSchemasPipelineSchemaCollectionOutputWithContext(context.Context) GetPipelineSchemasPipelineSchemaCollectionOutput
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionArgs struct {
+	// Array of pipeline schemas
+	Items GetPipelineSchemasPipelineSchemaCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPipelineSchemasPipelineSchemaCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollection)(nil)).Elem()
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionArgs) ToGetPipelineSchemasPipelineSchemaCollectionOutput() GetPipelineSchemasPipelineSchemaCollectionOutput {
+	return i.ToGetPipelineSchemasPipelineSchemaCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionArgs) ToGetPipelineSchemasPipelineSchemaCollectionOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemasPipelineSchemaCollectionOutput)
+}
+
+// GetPipelineSchemasPipelineSchemaCollectionArrayInput is an input type that accepts GetPipelineSchemasPipelineSchemaCollectionArray and GetPipelineSchemasPipelineSchemaCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSchemasPipelineSchemaCollectionArrayInput` via:
+//
+//	GetPipelineSchemasPipelineSchemaCollectionArray{ GetPipelineSchemasPipelineSchemaCollectionArgs{...} }
+type GetPipelineSchemasPipelineSchemaCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemasPipelineSchemaCollectionArrayOutput() GetPipelineSchemasPipelineSchemaCollectionArrayOutput
+	ToGetPipelineSchemasPipelineSchemaCollectionArrayOutputWithContext(context.Context) GetPipelineSchemasPipelineSchemaCollectionArrayOutput
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionArray []GetPipelineSchemasPipelineSchemaCollectionInput
+
+func (GetPipelineSchemasPipelineSchemaCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemasPipelineSchemaCollection)(nil)).Elem()
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionArray) ToGetPipelineSchemasPipelineSchemaCollectionArrayOutput() GetPipelineSchemasPipelineSchemaCollectionArrayOutput {
+	return i.ToGetPipelineSchemasPipelineSchemaCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionArray) ToGetPipelineSchemasPipelineSchemaCollectionArrayOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemasPipelineSchemaCollectionArrayOutput)
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemasPipelineSchemaCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollection)(nil)).Elem()
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionOutput) ToGetPipelineSchemasPipelineSchemaCollectionOutput() GetPipelineSchemasPipelineSchemaCollectionOutput {
+	return o
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionOutput) ToGetPipelineSchemasPipelineSchemaCollectionOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionOutput {
+	return o
+}
+
+// Array of pipeline schemas
+func (o GetPipelineSchemasPipelineSchemaCollectionOutput) Items() GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPipelineSchemasPipelineSchemaCollection) []GetPipelineSchemasPipelineSchemaCollectionItem {
+		return v.Items
+	}).(GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput)
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemasPipelineSchemaCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemasPipelineSchemaCollection)(nil)).Elem()
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionArrayOutput) ToGetPipelineSchemasPipelineSchemaCollectionArrayOutput() GetPipelineSchemasPipelineSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionArrayOutput) ToGetPipelineSchemasPipelineSchemaCollectionArrayOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionArrayOutput) Index(i pulumi.IntInput) GetPipelineSchemasPipelineSchemaCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSchemasPipelineSchemaCollection {
+		return vs[0].([]GetPipelineSchemasPipelineSchemaCollection)[vs[1].(int)]
+	}).(GetPipelineSchemasPipelineSchemaCollectionOutput)
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionItem struct {
+	// The schema name from the database connection.
+	SourceSchemaName string `pulumi:"sourceSchemaName"`
+	// The schema name from the database connection.
+	TargetSchemaName string `pulumi:"targetSchemaName"`
+}
+
+// GetPipelineSchemasPipelineSchemaCollectionItemInput is an input type that accepts GetPipelineSchemasPipelineSchemaCollectionItemArgs and GetPipelineSchemasPipelineSchemaCollectionItemOutput values.
+// You can construct a concrete instance of `GetPipelineSchemasPipelineSchemaCollectionItemInput` via:
+//
+//	GetPipelineSchemasPipelineSchemaCollectionItemArgs{...}
+type GetPipelineSchemasPipelineSchemaCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemasPipelineSchemaCollectionItemOutput() GetPipelineSchemasPipelineSchemaCollectionItemOutput
+	ToGetPipelineSchemasPipelineSchemaCollectionItemOutputWithContext(context.Context) GetPipelineSchemasPipelineSchemaCollectionItemOutput
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionItemArgs struct {
+	// The schema name from the database connection.
+	SourceSchemaName pulumi.StringInput `pulumi:"sourceSchemaName"`
+	// The schema name from the database connection.
+	TargetSchemaName pulumi.StringInput `pulumi:"targetSchemaName"`
+}
+
+func (GetPipelineSchemasPipelineSchemaCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionItemArgs) ToGetPipelineSchemasPipelineSchemaCollectionItemOutput() GetPipelineSchemasPipelineSchemaCollectionItemOutput {
+	return i.ToGetPipelineSchemasPipelineSchemaCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionItemArgs) ToGetPipelineSchemasPipelineSchemaCollectionItemOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemasPipelineSchemaCollectionItemOutput)
+}
+
+// GetPipelineSchemasPipelineSchemaCollectionItemArrayInput is an input type that accepts GetPipelineSchemasPipelineSchemaCollectionItemArray and GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSchemasPipelineSchemaCollectionItemArrayInput` via:
+//
+//	GetPipelineSchemasPipelineSchemaCollectionItemArray{ GetPipelineSchemasPipelineSchemaCollectionItemArgs{...} }
+type GetPipelineSchemasPipelineSchemaCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutput() GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput
+	ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutputWithContext(context.Context) GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionItemArray []GetPipelineSchemasPipelineSchemaCollectionItemInput
+
+func (GetPipelineSchemasPipelineSchemaCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemasPipelineSchemaCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionItemArray) ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutput() GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput {
+	return i.ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSchemasPipelineSchemaCollectionItemArray) ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput)
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemasPipelineSchemaCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionItemOutput) ToGetPipelineSchemasPipelineSchemaCollectionItemOutput() GetPipelineSchemasPipelineSchemaCollectionItemOutput {
+	return o
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionItemOutput) ToGetPipelineSchemasPipelineSchemaCollectionItemOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionItemOutput {
+	return o
+}
+
+// The schema name from the database connection.
+func (o GetPipelineSchemasPipelineSchemaCollectionItemOutput) SourceSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemasPipelineSchemaCollectionItem) string { return v.SourceSchemaName }).(pulumi.StringOutput)
+}
+
+// The schema name from the database connection.
+func (o GetPipelineSchemasPipelineSchemaCollectionItemOutput) TargetSchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSchemasPipelineSchemaCollectionItem) string { return v.TargetSchemaName }).(pulumi.StringOutput)
+}
+
+type GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSchemasPipelineSchemaCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput) ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutput() GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput) ToGetPipelineSchemasPipelineSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPipelineSchemasPipelineSchemaCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSchemasPipelineSchemaCollectionItem {
+		return vs[0].([]GetPipelineSchemasPipelineSchemaCollectionItem)[vs[1].(int)]
+	}).(GetPipelineSchemasPipelineSchemaCollectionItemOutput)
+}
+
+type GetPipelineSourceConnectionDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId string `pulumi:"connectionId"`
+}
+
+// GetPipelineSourceConnectionDetailInput is an input type that accepts GetPipelineSourceConnectionDetailArgs and GetPipelineSourceConnectionDetailOutput values.
+// You can construct a concrete instance of `GetPipelineSourceConnectionDetailInput` via:
+//
+//	GetPipelineSourceConnectionDetailArgs{...}
+type GetPipelineSourceConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineSourceConnectionDetailOutput() GetPipelineSourceConnectionDetailOutput
+	ToGetPipelineSourceConnectionDetailOutputWithContext(context.Context) GetPipelineSourceConnectionDetailOutput
+}
+
+type GetPipelineSourceConnectionDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+}
+
+func (GetPipelineSourceConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSourceConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelineSourceConnectionDetailArgs) ToGetPipelineSourceConnectionDetailOutput() GetPipelineSourceConnectionDetailOutput {
+	return i.ToGetPipelineSourceConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSourceConnectionDetailArgs) ToGetPipelineSourceConnectionDetailOutputWithContext(ctx context.Context) GetPipelineSourceConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSourceConnectionDetailOutput)
+}
+
+// GetPipelineSourceConnectionDetailArrayInput is an input type that accepts GetPipelineSourceConnectionDetailArray and GetPipelineSourceConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineSourceConnectionDetailArrayInput` via:
+//
+//	GetPipelineSourceConnectionDetailArray{ GetPipelineSourceConnectionDetailArgs{...} }
+type GetPipelineSourceConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineSourceConnectionDetailArrayOutput() GetPipelineSourceConnectionDetailArrayOutput
+	ToGetPipelineSourceConnectionDetailArrayOutputWithContext(context.Context) GetPipelineSourceConnectionDetailArrayOutput
+}
+
+type GetPipelineSourceConnectionDetailArray []GetPipelineSourceConnectionDetailInput
+
+func (GetPipelineSourceConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSourceConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelineSourceConnectionDetailArray) ToGetPipelineSourceConnectionDetailArrayOutput() GetPipelineSourceConnectionDetailArrayOutput {
+	return i.ToGetPipelineSourceConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineSourceConnectionDetailArray) ToGetPipelineSourceConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelineSourceConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineSourceConnectionDetailArrayOutput)
+}
+
+type GetPipelineSourceConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSourceConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineSourceConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelineSourceConnectionDetailOutput) ToGetPipelineSourceConnectionDetailOutput() GetPipelineSourceConnectionDetailOutput {
+	return o
+}
+
+func (o GetPipelineSourceConnectionDetailOutput) ToGetPipelineSourceConnectionDetailOutputWithContext(ctx context.Context) GetPipelineSourceConnectionDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o GetPipelineSourceConnectionDetailOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineSourceConnectionDetail) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+type GetPipelineSourceConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineSourceConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineSourceConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelineSourceConnectionDetailArrayOutput) ToGetPipelineSourceConnectionDetailArrayOutput() GetPipelineSourceConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineSourceConnectionDetailArrayOutput) ToGetPipelineSourceConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelineSourceConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineSourceConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineSourceConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineSourceConnectionDetail {
+		return vs[0].([]GetPipelineSourceConnectionDetail)[vs[1].(int)]
+	}).(GetPipelineSourceConnectionDetailOutput)
+}
+
+type GetPipelineTargetConnectionDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId string `pulumi:"connectionId"`
+}
+
+// GetPipelineTargetConnectionDetailInput is an input type that accepts GetPipelineTargetConnectionDetailArgs and GetPipelineTargetConnectionDetailOutput values.
+// You can construct a concrete instance of `GetPipelineTargetConnectionDetailInput` via:
+//
+//	GetPipelineTargetConnectionDetailArgs{...}
+type GetPipelineTargetConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineTargetConnectionDetailOutput() GetPipelineTargetConnectionDetailOutput
+	ToGetPipelineTargetConnectionDetailOutputWithContext(context.Context) GetPipelineTargetConnectionDetailOutput
+}
+
+type GetPipelineTargetConnectionDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+}
+
+func (GetPipelineTargetConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineTargetConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelineTargetConnectionDetailArgs) ToGetPipelineTargetConnectionDetailOutput() GetPipelineTargetConnectionDetailOutput {
+	return i.ToGetPipelineTargetConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineTargetConnectionDetailArgs) ToGetPipelineTargetConnectionDetailOutputWithContext(ctx context.Context) GetPipelineTargetConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineTargetConnectionDetailOutput)
+}
+
+// GetPipelineTargetConnectionDetailArrayInput is an input type that accepts GetPipelineTargetConnectionDetailArray and GetPipelineTargetConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineTargetConnectionDetailArrayInput` via:
+//
+//	GetPipelineTargetConnectionDetailArray{ GetPipelineTargetConnectionDetailArgs{...} }
+type GetPipelineTargetConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineTargetConnectionDetailArrayOutput() GetPipelineTargetConnectionDetailArrayOutput
+	ToGetPipelineTargetConnectionDetailArrayOutputWithContext(context.Context) GetPipelineTargetConnectionDetailArrayOutput
+}
+
+type GetPipelineTargetConnectionDetailArray []GetPipelineTargetConnectionDetailInput
+
+func (GetPipelineTargetConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineTargetConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelineTargetConnectionDetailArray) ToGetPipelineTargetConnectionDetailArrayOutput() GetPipelineTargetConnectionDetailArrayOutput {
+	return i.ToGetPipelineTargetConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineTargetConnectionDetailArray) ToGetPipelineTargetConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelineTargetConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineTargetConnectionDetailArrayOutput)
+}
+
+type GetPipelineTargetConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineTargetConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineTargetConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelineTargetConnectionDetailOutput) ToGetPipelineTargetConnectionDetailOutput() GetPipelineTargetConnectionDetailOutput {
+	return o
+}
+
+func (o GetPipelineTargetConnectionDetailOutput) ToGetPipelineTargetConnectionDetailOutputWithContext(ctx context.Context) GetPipelineTargetConnectionDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o GetPipelineTargetConnectionDetailOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineTargetConnectionDetail) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+type GetPipelineTargetConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineTargetConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineTargetConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelineTargetConnectionDetailArrayOutput) ToGetPipelineTargetConnectionDetailArrayOutput() GetPipelineTargetConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineTargetConnectionDetailArrayOutput) ToGetPipelineTargetConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelineTargetConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineTargetConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineTargetConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineTargetConnectionDetail {
+		return vs[0].([]GetPipelineTargetConnectionDetail)[vs[1].(int)]
+	}).(GetPipelineTargetConnectionDetailOutput)
+}
+
+type GetPipelinesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPipelinesFilterInput is an input type that accepts GetPipelinesFilterArgs and GetPipelinesFilterOutput values.
+// You can construct a concrete instance of `GetPipelinesFilterInput` via:
+//
+//	GetPipelinesFilterArgs{...}
+type GetPipelinesFilterInput interface {
+	pulumi.Input
+
+	ToGetPipelinesFilterOutput() GetPipelinesFilterOutput
+	ToGetPipelinesFilterOutputWithContext(context.Context) GetPipelinesFilterOutput
+}
+
+type GetPipelinesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPipelinesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesFilter)(nil)).Elem()
+}
+
+func (i GetPipelinesFilterArgs) ToGetPipelinesFilterOutput() GetPipelinesFilterOutput {
+	return i.ToGetPipelinesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesFilterArgs) ToGetPipelinesFilterOutputWithContext(ctx context.Context) GetPipelinesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesFilterOutput)
+}
+
+// GetPipelinesFilterArrayInput is an input type that accepts GetPipelinesFilterArray and GetPipelinesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesFilterArrayInput` via:
+//
+//	GetPipelinesFilterArray{ GetPipelinesFilterArgs{...} }
+type GetPipelinesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesFilterArrayOutput() GetPipelinesFilterArrayOutput
+	ToGetPipelinesFilterArrayOutputWithContext(context.Context) GetPipelinesFilterArrayOutput
+}
+
+type GetPipelinesFilterArray []GetPipelinesFilterInput
+
+func (GetPipelinesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesFilter)(nil)).Elem()
+}
+
+func (i GetPipelinesFilterArray) ToGetPipelinesFilterArrayOutput() GetPipelinesFilterArrayOutput {
+	return i.ToGetPipelinesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesFilterArray) ToGetPipelinesFilterArrayOutputWithContext(ctx context.Context) GetPipelinesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesFilterArrayOutput)
+}
+
+type GetPipelinesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesFilter)(nil)).Elem()
+}
+
+func (o GetPipelinesFilterOutput) ToGetPipelinesFilterOutput() GetPipelinesFilterOutput {
+	return o
+}
+
+func (o GetPipelinesFilterOutput) ToGetPipelinesFilterOutputWithContext(ctx context.Context) GetPipelinesFilterOutput {
+	return o
+}
+
+func (o GetPipelinesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPipelinesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPipelinesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPipelinesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelinesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPipelinesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesFilter)(nil)).Elem()
+}
+
+func (o GetPipelinesFilterArrayOutput) ToGetPipelinesFilterArrayOutput() GetPipelinesFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelinesFilterArrayOutput) ToGetPipelinesFilterArrayOutputWithContext(ctx context.Context) GetPipelinesFilterArrayOutput {
+	return o
+}
+
+func (o GetPipelinesFilterArrayOutput) Index(i pulumi.IntInput) GetPipelinesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesFilter {
+		return vs[0].([]GetPipelinesFilter)[vs[1].(int)]
+	}).(GetPipelinesFilterOutput)
+}
+
+type GetPipelinesPipelineCollection struct {
+	Items []GetPipelinesPipelineCollectionItem `pulumi:"items"`
+}
+
+// GetPipelinesPipelineCollectionInput is an input type that accepts GetPipelinesPipelineCollectionArgs and GetPipelinesPipelineCollectionOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionInput` via:
+//
+//	GetPipelinesPipelineCollectionArgs{...}
+type GetPipelinesPipelineCollectionInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionOutput() GetPipelinesPipelineCollectionOutput
+	ToGetPipelinesPipelineCollectionOutputWithContext(context.Context) GetPipelinesPipelineCollectionOutput
+}
+
+type GetPipelinesPipelineCollectionArgs struct {
+	Items GetPipelinesPipelineCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPipelinesPipelineCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollection)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionArgs) ToGetPipelinesPipelineCollectionOutput() GetPipelinesPipelineCollectionOutput {
+	return i.ToGetPipelinesPipelineCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionArgs) ToGetPipelinesPipelineCollectionOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionOutput)
+}
+
+// GetPipelinesPipelineCollectionArrayInput is an input type that accepts GetPipelinesPipelineCollectionArray and GetPipelinesPipelineCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionArray{ GetPipelinesPipelineCollectionArgs{...} }
+type GetPipelinesPipelineCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionArrayOutput() GetPipelinesPipelineCollectionArrayOutput
+	ToGetPipelinesPipelineCollectionArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionArrayOutput
+}
+
+type GetPipelinesPipelineCollectionArray []GetPipelinesPipelineCollectionInput
+
+func (GetPipelinesPipelineCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollection)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionArray) ToGetPipelinesPipelineCollectionArrayOutput() GetPipelinesPipelineCollectionArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionArray) ToGetPipelinesPipelineCollectionArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollection)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionOutput) ToGetPipelinesPipelineCollectionOutput() GetPipelinesPipelineCollectionOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionOutput) ToGetPipelinesPipelineCollectionOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionOutput) Items() GetPipelinesPipelineCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollection) []GetPipelinesPipelineCollectionItem { return v.Items }).(GetPipelinesPipelineCollectionItemArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollection)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionArrayOutput) ToGetPipelinesPipelineCollectionArrayOutput() GetPipelinesPipelineCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionArrayOutput) ToGetPipelinesPipelineCollectionArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollection {
+		return vs[0].([]GetPipelinesPipelineCollection)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionOutput)
+}
+
+type GetPipelinesPipelineCollectionItem struct {
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The Minimum number of OCPUs to be made available for this Deployment.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+	Id string `pulumi:"id"`
+	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
+	// The Oracle license model that applies to a Deployment.
+	LicenseModel string `pulumi:"licenseModel"`
+	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filtered list of pipelines to return for a given lifecycleSubState.
+	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// Locks associated with this resource.
+	Locks []GetPipelinesPipelineCollectionItemLock `pulumi:"locks"`
+	// Mapping for source/target schema/tables for the pipeline data replication.
+	MappingRules []GetPipelinesPipelineCollectionItemMappingRule `pulumi:"mappingRules"`
+	// Required pipeline options to configure the replication process (Extract or Replicat).
+	ProcessOptions []GetPipelinesPipelineCollectionItemProcessOption `pulumi:"processOptions"`
+	// The type of the recipe
+	RecipeType string `pulumi:"recipeType"`
+	// The source connection details for creating a pipeline.
+	SourceConnectionDetails []GetPipelinesPipelineCollectionItemSourceConnectionDetail `pulumi:"sourceConnectionDetails"`
+	// A filtered list of pipelines to return for a given lifecycleState.
+	State string `pulumi:"state"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target connection details for creating a pipeline.
+	TargetConnectionDetails []GetPipelinesPipelineCollectionItemTargetConnectionDetail `pulumi:"targetConnectionDetails"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastRecorded string `pulumi:"timeLastRecorded"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetPipelinesPipelineCollectionItemInput is an input type that accepts GetPipelinesPipelineCollectionItemArgs and GetPipelinesPipelineCollectionItemOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemInput` via:
+//
+//	GetPipelinesPipelineCollectionItemArgs{...}
+type GetPipelinesPipelineCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemOutput() GetPipelinesPipelineCollectionItemOutput
+	ToGetPipelinesPipelineCollectionItemOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemOutput
+}
+
+type GetPipelinesPipelineCollectionItemArgs struct {
+	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The Minimum number of OCPUs to be made available for this Deployment.
+	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
+	// The Oracle license model that applies to a Deployment.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filtered list of pipelines to return for a given lifecycleSubState.
+	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	// Locks associated with this resource.
+	Locks GetPipelinesPipelineCollectionItemLockArrayInput `pulumi:"locks"`
+	// Mapping for source/target schema/tables for the pipeline data replication.
+	MappingRules GetPipelinesPipelineCollectionItemMappingRuleArrayInput `pulumi:"mappingRules"`
+	// Required pipeline options to configure the replication process (Extract or Replicat).
+	ProcessOptions GetPipelinesPipelineCollectionItemProcessOptionArrayInput `pulumi:"processOptions"`
+	// The type of the recipe
+	RecipeType pulumi.StringInput `pulumi:"recipeType"`
+	// The source connection details for creating a pipeline.
+	SourceConnectionDetails GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayInput `pulumi:"sourceConnectionDetails"`
+	// A filtered list of pipelines to return for a given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The target connection details for creating a pipeline.
+	TargetConnectionDetails GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayInput `pulumi:"targetConnectionDetails"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastRecorded pulumi.StringInput `pulumi:"timeLastRecorded"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetPipelinesPipelineCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemArgs) ToGetPipelinesPipelineCollectionItemOutput() GetPipelinesPipelineCollectionItemOutput {
+	return i.ToGetPipelinesPipelineCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemArgs) ToGetPipelinesPipelineCollectionItemOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemOutput)
+}
+
+// GetPipelinesPipelineCollectionItemArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemArray and GetPipelinesPipelineCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemArray{ GetPipelinesPipelineCollectionItemArgs{...} }
+type GetPipelinesPipelineCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemArrayOutput() GetPipelinesPipelineCollectionItemArrayOutput
+	ToGetPipelinesPipelineCollectionItemArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemArray []GetPipelinesPipelineCollectionItemInput
+
+func (GetPipelinesPipelineCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItem)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemArray) ToGetPipelinesPipelineCollectionItemArrayOutput() GetPipelinesPipelineCollectionItemArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemArray) ToGetPipelinesPipelineCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemOutput) ToGetPipelinesPipelineCollectionItemOutput() GetPipelinesPipelineCollectionItemOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemOutput) ToGetPipelinesPipelineCollectionItemOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+func (o GetPipelinesPipelineCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The Minimum number of OCPUs to be made available for this Deployment.
+func (o GetPipelinesPipelineCollectionItemOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetPipelinesPipelineCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Metadata about this specific object.
+func (o GetPipelinesPipelineCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetPipelinesPipelineCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+func (o GetPipelinesPipelineCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+func (o GetPipelinesPipelineCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+func (o GetPipelinesPipelineCollectionItemOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
+}
+
+// The Oracle license model that applies to a Deployment.
+func (o GetPipelinesPipelineCollectionItemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+func (o GetPipelinesPipelineCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filtered list of pipelines to return for a given lifecycleSubState.
+func (o GetPipelinesPipelineCollectionItemOutput) LifecycleSubState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetPipelinesPipelineCollectionItemOutput) Locks() GetPipelinesPipelineCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemLock { return v.Locks }).(GetPipelinesPipelineCollectionItemLockArrayOutput)
+}
+
+// Mapping for source/target schema/tables for the pipeline data replication.
+func (o GetPipelinesPipelineCollectionItemOutput) MappingRules() GetPipelinesPipelineCollectionItemMappingRuleArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemMappingRule {
+		return v.MappingRules
+	}).(GetPipelinesPipelineCollectionItemMappingRuleArrayOutput)
+}
+
+// Required pipeline options to configure the replication process (Extract or Replicat).
+func (o GetPipelinesPipelineCollectionItemOutput) ProcessOptions() GetPipelinesPipelineCollectionItemProcessOptionArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemProcessOption {
+		return v.ProcessOptions
+	}).(GetPipelinesPipelineCollectionItemProcessOptionArrayOutput)
+}
+
+// The type of the recipe
+func (o GetPipelinesPipelineCollectionItemOutput) RecipeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.RecipeType }).(pulumi.StringOutput)
+}
+
+// The source connection details for creating a pipeline.
+func (o GetPipelinesPipelineCollectionItemOutput) SourceConnectionDetails() GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemSourceConnectionDetail {
+		return v.SourceConnectionDetails
+	}).(GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput)
+}
+
+// A filtered list of pipelines to return for a given lifecycleState.
+func (o GetPipelinesPipelineCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetPipelinesPipelineCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The target connection details for creating a pipeline.
+func (o GetPipelinesPipelineCollectionItemOutput) TargetConnectionDetails() GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemTargetConnectionDetail {
+		return v.TargetConnectionDetails
+	}).(GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetPipelinesPipelineCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+func (o GetPipelinesPipelineCollectionItemOutput) TimeLastRecorded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.TimeLastRecorded }).(pulumi.StringOutput)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetPipelinesPipelineCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItem)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemArrayOutput) ToGetPipelinesPipelineCollectionItemArrayOutput() GetPipelinesPipelineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemArrayOutput) ToGetPipelinesPipelineCollectionItemArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItem {
+		return vs[0].([]GetPipelinesPipelineCollectionItem)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemOutput)
+}
+
+type GetPipelinesPipelineCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetPipelinesPipelineCollectionItemLockInput is an input type that accepts GetPipelinesPipelineCollectionItemLockArgs and GetPipelinesPipelineCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemLockInput` via:
+//
+//	GetPipelinesPipelineCollectionItemLockArgs{...}
+type GetPipelinesPipelineCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemLockOutput() GetPipelinesPipelineCollectionItemLockOutput
+	ToGetPipelinesPipelineCollectionItemLockOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemLockOutput
+}
+
+type GetPipelinesPipelineCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetPipelinesPipelineCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemLockArgs) ToGetPipelinesPipelineCollectionItemLockOutput() GetPipelinesPipelineCollectionItemLockOutput {
+	return i.ToGetPipelinesPipelineCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemLockArgs) ToGetPipelinesPipelineCollectionItemLockOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemLockOutput)
+}
+
+// GetPipelinesPipelineCollectionItemLockArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemLockArray and GetPipelinesPipelineCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemLockArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemLockArray{ GetPipelinesPipelineCollectionItemLockArgs{...} }
+type GetPipelinesPipelineCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemLockArrayOutput() GetPipelinesPipelineCollectionItemLockArrayOutput
+	ToGetPipelinesPipelineCollectionItemLockArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemLockArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemLockArray []GetPipelinesPipelineCollectionItemLockInput
+
+func (GetPipelinesPipelineCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemLockArray) ToGetPipelinesPipelineCollectionItemLockArrayOutput() GetPipelinesPipelineCollectionItemLockArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemLockArray) ToGetPipelinesPipelineCollectionItemLockArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemLockArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemLockOutput) ToGetPipelinesPipelineCollectionItemLockOutput() GetPipelinesPipelineCollectionItemLockOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemLockOutput) ToGetPipelinesPipelineCollectionItemLockOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetPipelinesPipelineCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetPipelinesPipelineCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemLockArrayOutput) ToGetPipelinesPipelineCollectionItemLockArrayOutput() GetPipelinesPipelineCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemLockArrayOutput) ToGetPipelinesPipelineCollectionItemLockArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemLock {
+		return vs[0].([]GetPipelinesPipelineCollectionItemLock)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemLockOutput)
+}
+
+type GetPipelinesPipelineCollectionItemMappingRule struct {
+	// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+	MappingType string `pulumi:"mappingType"`
+	// The source schema/table combination for replication to target.
+	Source string `pulumi:"source"`
+	// The target schema/table combination for replication from the source.
+	Target string `pulumi:"target"`
+}
+
+// GetPipelinesPipelineCollectionItemMappingRuleInput is an input type that accepts GetPipelinesPipelineCollectionItemMappingRuleArgs and GetPipelinesPipelineCollectionItemMappingRuleOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemMappingRuleInput` via:
+//
+//	GetPipelinesPipelineCollectionItemMappingRuleArgs{...}
+type GetPipelinesPipelineCollectionItemMappingRuleInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemMappingRuleOutput() GetPipelinesPipelineCollectionItemMappingRuleOutput
+	ToGetPipelinesPipelineCollectionItemMappingRuleOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemMappingRuleOutput
+}
+
+type GetPipelinesPipelineCollectionItemMappingRuleArgs struct {
+	// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+	MappingType pulumi.StringInput `pulumi:"mappingType"`
+	// The source schema/table combination for replication to target.
+	Source pulumi.StringInput `pulumi:"source"`
+	// The target schema/table combination for replication from the source.
+	Target pulumi.StringInput `pulumi:"target"`
+}
+
+func (GetPipelinesPipelineCollectionItemMappingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRule)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemMappingRuleArgs) ToGetPipelinesPipelineCollectionItemMappingRuleOutput() GetPipelinesPipelineCollectionItemMappingRuleOutput {
+	return i.ToGetPipelinesPipelineCollectionItemMappingRuleOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemMappingRuleArgs) ToGetPipelinesPipelineCollectionItemMappingRuleOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemMappingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemMappingRuleOutput)
+}
+
+// GetPipelinesPipelineCollectionItemMappingRuleArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemMappingRuleArray and GetPipelinesPipelineCollectionItemMappingRuleArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemMappingRuleArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemMappingRuleArray{ GetPipelinesPipelineCollectionItemMappingRuleArgs{...} }
+type GetPipelinesPipelineCollectionItemMappingRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutput() GetPipelinesPipelineCollectionItemMappingRuleArrayOutput
+	ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemMappingRuleArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemMappingRuleArray []GetPipelinesPipelineCollectionItemMappingRuleInput
+
+func (GetPipelinesPipelineCollectionItemMappingRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemMappingRule)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemMappingRuleArray) ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutput() GetPipelinesPipelineCollectionItemMappingRuleArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemMappingRuleArray) ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemMappingRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemMappingRuleArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemMappingRuleOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemMappingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRule)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemMappingRuleOutput) ToGetPipelinesPipelineCollectionItemMappingRuleOutput() GetPipelinesPipelineCollectionItemMappingRuleOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemMappingRuleOutput) ToGetPipelinesPipelineCollectionItemMappingRuleOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemMappingRuleOutput {
+	return o
+}
+
+// Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+func (o GetPipelinesPipelineCollectionItemMappingRuleOutput) MappingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemMappingRule) string { return v.MappingType }).(pulumi.StringOutput)
+}
+
+// The source schema/table combination for replication to target.
+func (o GetPipelinesPipelineCollectionItemMappingRuleOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemMappingRule) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The target schema/table combination for replication from the source.
+func (o GetPipelinesPipelineCollectionItemMappingRuleOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemMappingRule) string { return v.Target }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemMappingRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemMappingRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemMappingRule)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemMappingRuleArrayOutput) ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutput() GetPipelinesPipelineCollectionItemMappingRuleArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemMappingRuleArrayOutput) ToGetPipelinesPipelineCollectionItemMappingRuleArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemMappingRuleArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemMappingRuleArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemMappingRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemMappingRule {
+		return vs[0].([]GetPipelinesPipelineCollectionItemMappingRule)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemMappingRuleOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOption struct {
+	// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	InitialDataLoads []GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad `pulumi:"initialDataLoads"`
+	// Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	ReplicateSchemaChanges []GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange `pulumi:"replicateSchemaChanges"`
+	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
+}
+
+// GetPipelinesPipelineCollectionItemProcessOptionInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionArgs and GetPipelinesPipelineCollectionItemProcessOptionOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemProcessOptionInput` via:
+//
+//	GetPipelinesPipelineCollectionItemProcessOptionArgs{...}
+type GetPipelinesPipelineCollectionItemProcessOptionInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemProcessOptionOutput() GetPipelinesPipelineCollectionItemProcessOptionOutput
+	ToGetPipelinesPipelineCollectionItemProcessOptionOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemProcessOptionOutput
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionArgs struct {
+	// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	InitialDataLoads GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayInput `pulumi:"initialDataLoads"`
+	// Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+	ReplicateSchemaChanges GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput `pulumi:"replicateSchemaChanges"`
+	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
+}
+
+func (GetPipelinesPipelineCollectionItemProcessOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOption)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionArgs) ToGetPipelinesPipelineCollectionItemProcessOptionOutput() GetPipelinesPipelineCollectionItemProcessOptionOutput {
+	return i.ToGetPipelinesPipelineCollectionItemProcessOptionOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionArgs) ToGetPipelinesPipelineCollectionItemProcessOptionOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemProcessOptionOutput)
+}
+
+// GetPipelinesPipelineCollectionItemProcessOptionArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionArray and GetPipelinesPipelineCollectionItemProcessOptionArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemProcessOptionArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemProcessOptionArray{ GetPipelinesPipelineCollectionItemProcessOptionArgs{...} }
+type GetPipelinesPipelineCollectionItemProcessOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionArrayOutput
+	ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemProcessOptionArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionArray []GetPipelinesPipelineCollectionItemProcessOptionInput
+
+func (GetPipelinesPipelineCollectionItemProcessOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemProcessOption)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionArray) ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionArray) ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemProcessOptionArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemProcessOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOption)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ToGetPipelinesPipelineCollectionItemProcessOptionOutput() GetPipelinesPipelineCollectionItemProcessOptionOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ToGetPipelinesPipelineCollectionItemProcessOptionOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionOutput {
+	return o
+}
+
+// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) InitialDataLoads() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) []GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad {
+		return v.InitialDataLoads
+	}).(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput)
+}
+
+// Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ReplicateSchemaChanges() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) []GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange {
+		return v.ReplicateSchemaChanges
+	}).(GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput)
+}
+
+// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ShouldRestartOnFailure() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemProcessOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemProcessOption)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionArrayOutput) ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionArrayOutput) ToGetPipelinesPipelineCollectionItemProcessOptionArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemProcessOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemProcessOption {
+		return vs[0].([]GetPipelinesPipelineCollectionItemProcessOption)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemProcessOptionOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad struct {
+	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+	ActionOnExistingTable string `pulumi:"actionOnExistingTable"`
+	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+	IsInitialLoad string `pulumi:"isInitialLoad"`
+}
+
+// GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs and GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput` via:
+//
+//	GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs{...}
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput
+	ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs struct {
+	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+	ActionOnExistingTable pulumi.StringInput `pulumi:"actionOnExistingTable"`
+	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+	IsInitialLoad pulumi.StringInput `pulumi:"isInitialLoad"`
+}
+
+func (GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput {
+	return i.ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput)
+}
+
+// GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray and GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray{ GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs{...} }
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput
+	ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray []GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput
+
+func (GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput {
+	return o
+}
+
+// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) ActionOnExistingTable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string {
+		return v.ActionOnExistingTable
+	}).(pulumi.StringOutput)
+}
+
+// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) IsInitialLoad() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string { return v.IsInitialLoad }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput) ToGetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad {
+		return vs[0].([]GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange struct {
+	// Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDdlError string `pulumi:"actionOnDdlError"`
+	// Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDmlError string `pulumi:"actionOnDmlError"`
+	// If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+	CanReplicateSchemaChange string `pulumi:"canReplicateSchemaChange"`
+}
+
+// GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs and GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeInput` via:
+//
+//	GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs{...}
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput
+	ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs struct {
+	// Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDdlError pulumi.StringInput `pulumi:"actionOnDdlError"`
+	// Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+	ActionOnDmlError pulumi.StringInput `pulumi:"actionOnDmlError"`
+	// If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+	CanReplicateSchemaChange pulumi.StringInput `pulumi:"canReplicateSchemaChange"`
+}
+
+func (GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput {
+	return i.ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput)
+}
+
+// GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray and GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray{ GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs{...} }
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput
+	ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray []GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeInput
+
+func (GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput {
+	return o
+}
+
+// Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput) ActionOnDdlError() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange) string {
+		return v.ActionOnDdlError
+	}).(pulumi.StringOutput)
+}
+
+// Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput) ActionOnDmlError() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange) string {
+		return v.ActionOnDmlError
+	}).(pulumi.StringOutput)
+}
+
+// If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput) CanReplicateSchemaChange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange) string {
+		return v.CanReplicateSchemaChange
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput() GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput) ToGetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange {
+		return vs[0].([]GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput)
+}
+
+type GetPipelinesPipelineCollectionItemSourceConnectionDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId string `pulumi:"connectionId"`
+}
+
+// GetPipelinesPipelineCollectionItemSourceConnectionDetailInput is an input type that accepts GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs and GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemSourceConnectionDetailInput` via:
+//
+//	GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs{...}
+type GetPipelinesPipelineCollectionItemSourceConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutput() GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput
+	ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput
+}
+
+type GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+}
+
+func (GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemSourceConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutput() GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput {
+	return i.ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput)
+}
+
+// GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemSourceConnectionDetailArray and GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemSourceConnectionDetailArray{ GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs{...} }
+type GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput() GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput
+	ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemSourceConnectionDetailArray []GetPipelinesPipelineCollectionItemSourceConnectionDetailInput
+
+func (GetPipelinesPipelineCollectionItemSourceConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemSourceConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemSourceConnectionDetailArray) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput() GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemSourceConnectionDetailArray) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemSourceConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutput() GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemSourceConnectionDetail) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemSourceConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput() GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput) ToGetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemSourceConnectionDetail {
+		return vs[0].([]GetPipelinesPipelineCollectionItemSourceConnectionDetail)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput)
+}
+
+type GetPipelinesPipelineCollectionItemTargetConnectionDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId string `pulumi:"connectionId"`
+}
+
+// GetPipelinesPipelineCollectionItemTargetConnectionDetailInput is an input type that accepts GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs and GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemTargetConnectionDetailInput` via:
+//
+//	GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs{...}
+type GetPipelinesPipelineCollectionItemTargetConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutput() GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput
+	ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput
+}
+
+type GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+}
+
+func (GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemTargetConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutput() GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput {
+	return i.ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput)
+}
+
+// GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemTargetConnectionDetailArray and GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemTargetConnectionDetailArray{ GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs{...} }
+type GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput() GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput
+	ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemTargetConnectionDetailArray []GetPipelinesPipelineCollectionItemTargetConnectionDetailInput
+
+func (GetPipelinesPipelineCollectionItemTargetConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemTargetConnectionDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemTargetConnectionDetailArray) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput() GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemTargetConnectionDetailArray) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemTargetConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutput() GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemTargetConnectionDetail) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemTargetConnectionDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput() GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput) ToGetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemTargetConnectionDetail {
+		return vs[0].([]GetPipelinesPipelineCollectionItemTargetConnectionDetail)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput)
+}
+
+type GetRecipesFilter struct {
+	// An object's Display Name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRecipesFilterInput is an input type that accepts GetRecipesFilterArgs and GetRecipesFilterOutput values.
+// You can construct a concrete instance of `GetRecipesFilterInput` via:
+//
+//	GetRecipesFilterArgs{...}
+type GetRecipesFilterInput interface {
+	pulumi.Input
+
+	ToGetRecipesFilterOutput() GetRecipesFilterOutput
+	ToGetRecipesFilterOutputWithContext(context.Context) GetRecipesFilterOutput
+}
+
+type GetRecipesFilterArgs struct {
+	// An object's Display Name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRecipesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecipesFilter)(nil)).Elem()
+}
+
+func (i GetRecipesFilterArgs) ToGetRecipesFilterOutput() GetRecipesFilterOutput {
+	return i.ToGetRecipesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRecipesFilterArgs) ToGetRecipesFilterOutputWithContext(ctx context.Context) GetRecipesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecipesFilterOutput)
+}
+
+// GetRecipesFilterArrayInput is an input type that accepts GetRecipesFilterArray and GetRecipesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRecipesFilterArrayInput` via:
+//
+//	GetRecipesFilterArray{ GetRecipesFilterArgs{...} }
+type GetRecipesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRecipesFilterArrayOutput() GetRecipesFilterArrayOutput
+	ToGetRecipesFilterArrayOutputWithContext(context.Context) GetRecipesFilterArrayOutput
+}
+
+type GetRecipesFilterArray []GetRecipesFilterInput
+
+func (GetRecipesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecipesFilter)(nil)).Elem()
+}
+
+func (i GetRecipesFilterArray) ToGetRecipesFilterArrayOutput() GetRecipesFilterArrayOutput {
+	return i.ToGetRecipesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecipesFilterArray) ToGetRecipesFilterArrayOutputWithContext(ctx context.Context) GetRecipesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecipesFilterArrayOutput)
+}
+
+type GetRecipesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRecipesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecipesFilter)(nil)).Elem()
+}
+
+func (o GetRecipesFilterOutput) ToGetRecipesFilterOutput() GetRecipesFilterOutput {
+	return o
+}
+
+func (o GetRecipesFilterOutput) ToGetRecipesFilterOutputWithContext(ctx context.Context) GetRecipesFilterOutput {
+	return o
+}
+
+// An object's Display Name.
+func (o GetRecipesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecipesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRecipesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecipesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRecipesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecipesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRecipesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecipesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecipesFilter)(nil)).Elem()
+}
+
+func (o GetRecipesFilterArrayOutput) ToGetRecipesFilterArrayOutput() GetRecipesFilterArrayOutput {
+	return o
+}
+
+func (o GetRecipesFilterArrayOutput) ToGetRecipesFilterArrayOutputWithContext(ctx context.Context) GetRecipesFilterArrayOutput {
+	return o
+}
+
+func (o GetRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetRecipesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecipesFilter {
+		return vs[0].([]GetRecipesFilter)[vs[1].(int)]
+	}).(GetRecipesFilterOutput)
+}
+
+type GetRecipesRecipeSummaryCollection struct {
+	// Array of Recipe Summary
+	Items []GetRecipesRecipeSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetRecipesRecipeSummaryCollectionInput is an input type that accepts GetRecipesRecipeSummaryCollectionArgs and GetRecipesRecipeSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetRecipesRecipeSummaryCollectionInput` via:
+//
+//	GetRecipesRecipeSummaryCollectionArgs{...}
+type GetRecipesRecipeSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetRecipesRecipeSummaryCollectionOutput() GetRecipesRecipeSummaryCollectionOutput
+	ToGetRecipesRecipeSummaryCollectionOutputWithContext(context.Context) GetRecipesRecipeSummaryCollectionOutput
+}
+
+type GetRecipesRecipeSummaryCollectionArgs struct {
+	// Array of Recipe Summary
+	Items GetRecipesRecipeSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRecipesRecipeSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecipesRecipeSummaryCollection)(nil)).Elem()
+}
+
+func (i GetRecipesRecipeSummaryCollectionArgs) ToGetRecipesRecipeSummaryCollectionOutput() GetRecipesRecipeSummaryCollectionOutput {
+	return i.ToGetRecipesRecipeSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRecipesRecipeSummaryCollectionArgs) ToGetRecipesRecipeSummaryCollectionOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecipesRecipeSummaryCollectionOutput)
+}
+
+// GetRecipesRecipeSummaryCollectionArrayInput is an input type that accepts GetRecipesRecipeSummaryCollectionArray and GetRecipesRecipeSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRecipesRecipeSummaryCollectionArrayInput` via:
+//
+//	GetRecipesRecipeSummaryCollectionArray{ GetRecipesRecipeSummaryCollectionArgs{...} }
+type GetRecipesRecipeSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRecipesRecipeSummaryCollectionArrayOutput() GetRecipesRecipeSummaryCollectionArrayOutput
+	ToGetRecipesRecipeSummaryCollectionArrayOutputWithContext(context.Context) GetRecipesRecipeSummaryCollectionArrayOutput
+}
+
+type GetRecipesRecipeSummaryCollectionArray []GetRecipesRecipeSummaryCollectionInput
+
+func (GetRecipesRecipeSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecipesRecipeSummaryCollection)(nil)).Elem()
+}
+
+func (i GetRecipesRecipeSummaryCollectionArray) ToGetRecipesRecipeSummaryCollectionArrayOutput() GetRecipesRecipeSummaryCollectionArrayOutput {
+	return i.ToGetRecipesRecipeSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecipesRecipeSummaryCollectionArray) ToGetRecipesRecipeSummaryCollectionArrayOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecipesRecipeSummaryCollectionArrayOutput)
+}
+
+type GetRecipesRecipeSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRecipesRecipeSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecipesRecipeSummaryCollection)(nil)).Elem()
+}
+
+func (o GetRecipesRecipeSummaryCollectionOutput) ToGetRecipesRecipeSummaryCollectionOutput() GetRecipesRecipeSummaryCollectionOutput {
+	return o
+}
+
+func (o GetRecipesRecipeSummaryCollectionOutput) ToGetRecipesRecipeSummaryCollectionOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionOutput {
+	return o
+}
+
+// Array of Recipe Summary
+func (o GetRecipesRecipeSummaryCollectionOutput) Items() GetRecipesRecipeSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollection) []GetRecipesRecipeSummaryCollectionItem { return v.Items }).(GetRecipesRecipeSummaryCollectionItemArrayOutput)
+}
+
+type GetRecipesRecipeSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecipesRecipeSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecipesRecipeSummaryCollection)(nil)).Elem()
+}
+
+func (o GetRecipesRecipeSummaryCollectionArrayOutput) ToGetRecipesRecipeSummaryCollectionArrayOutput() GetRecipesRecipeSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetRecipesRecipeSummaryCollectionArrayOutput) ToGetRecipesRecipeSummaryCollectionArrayOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetRecipesRecipeSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetRecipesRecipeSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecipesRecipeSummaryCollection {
+		return vs[0].([]GetRecipesRecipeSummaryCollection)[vs[1].(int)]
+	}).(GetRecipesRecipeSummaryCollectionOutput)
+}
+
+type GetRecipesRecipeSummaryCollectionItem struct {
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// An object's Display Name.
+	Name string `pulumi:"name"`
+	// The pipeline's recipe type. The default value is ZERO_ETL.
+	RecipeType string `pulumi:"recipeType"`
+	// Array of supported technology types for this recipe.
+	SupportedSourceTechnologyTypes []string `pulumi:"supportedSourceTechnologyTypes"`
+	// Array of supported technology types for this recipe.
+	SupportedTargetTechnologyTypes []string `pulumi:"supportedTargetTechnologyTypes"`
+}
+
+// GetRecipesRecipeSummaryCollectionItemInput is an input type that accepts GetRecipesRecipeSummaryCollectionItemArgs and GetRecipesRecipeSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetRecipesRecipeSummaryCollectionItemInput` via:
+//
+//	GetRecipesRecipeSummaryCollectionItemArgs{...}
+type GetRecipesRecipeSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRecipesRecipeSummaryCollectionItemOutput() GetRecipesRecipeSummaryCollectionItemOutput
+	ToGetRecipesRecipeSummaryCollectionItemOutputWithContext(context.Context) GetRecipesRecipeSummaryCollectionItemOutput
+}
+
+type GetRecipesRecipeSummaryCollectionItemArgs struct {
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// An object's Display Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The pipeline's recipe type. The default value is ZERO_ETL.
+	RecipeType pulumi.StringInput `pulumi:"recipeType"`
+	// Array of supported technology types for this recipe.
+	SupportedSourceTechnologyTypes pulumi.StringArrayInput `pulumi:"supportedSourceTechnologyTypes"`
+	// Array of supported technology types for this recipe.
+	SupportedTargetTechnologyTypes pulumi.StringArrayInput `pulumi:"supportedTargetTechnologyTypes"`
+}
+
+func (GetRecipesRecipeSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecipesRecipeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetRecipesRecipeSummaryCollectionItemArgs) ToGetRecipesRecipeSummaryCollectionItemOutput() GetRecipesRecipeSummaryCollectionItemOutput {
+	return i.ToGetRecipesRecipeSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRecipesRecipeSummaryCollectionItemArgs) ToGetRecipesRecipeSummaryCollectionItemOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecipesRecipeSummaryCollectionItemOutput)
+}
+
+// GetRecipesRecipeSummaryCollectionItemArrayInput is an input type that accepts GetRecipesRecipeSummaryCollectionItemArray and GetRecipesRecipeSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRecipesRecipeSummaryCollectionItemArrayInput` via:
+//
+//	GetRecipesRecipeSummaryCollectionItemArray{ GetRecipesRecipeSummaryCollectionItemArgs{...} }
+type GetRecipesRecipeSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRecipesRecipeSummaryCollectionItemArrayOutput() GetRecipesRecipeSummaryCollectionItemArrayOutput
+	ToGetRecipesRecipeSummaryCollectionItemArrayOutputWithContext(context.Context) GetRecipesRecipeSummaryCollectionItemArrayOutput
+}
+
+type GetRecipesRecipeSummaryCollectionItemArray []GetRecipesRecipeSummaryCollectionItemInput
+
+func (GetRecipesRecipeSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecipesRecipeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetRecipesRecipeSummaryCollectionItemArray) ToGetRecipesRecipeSummaryCollectionItemArrayOutput() GetRecipesRecipeSummaryCollectionItemArrayOutput {
+	return i.ToGetRecipesRecipeSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecipesRecipeSummaryCollectionItemArray) ToGetRecipesRecipeSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecipesRecipeSummaryCollectionItemArrayOutput)
+}
+
+type GetRecipesRecipeSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRecipesRecipeSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecipesRecipeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetRecipesRecipeSummaryCollectionItemOutput) ToGetRecipesRecipeSummaryCollectionItemOutput() GetRecipesRecipeSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetRecipesRecipeSummaryCollectionItemOutput) ToGetRecipesRecipeSummaryCollectionItemOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionItemOutput {
+	return o
+}
+
+// Metadata about this specific object.
+func (o GetRecipesRecipeSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetRecipesRecipeSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// An object's Display Name.
+func (o GetRecipesRecipeSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The pipeline's recipe type. The default value is ZERO_ETL.
+func (o GetRecipesRecipeSummaryCollectionItemOutput) RecipeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollectionItem) string { return v.RecipeType }).(pulumi.StringOutput)
+}
+
+// Array of supported technology types for this recipe.
+func (o GetRecipesRecipeSummaryCollectionItemOutput) SupportedSourceTechnologyTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollectionItem) []string { return v.SupportedSourceTechnologyTypes }).(pulumi.StringArrayOutput)
+}
+
+// Array of supported technology types for this recipe.
+func (o GetRecipesRecipeSummaryCollectionItemOutput) SupportedTargetTechnologyTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecipesRecipeSummaryCollectionItem) []string { return v.SupportedTargetTechnologyTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetRecipesRecipeSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecipesRecipeSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecipesRecipeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetRecipesRecipeSummaryCollectionItemArrayOutput) ToGetRecipesRecipeSummaryCollectionItemArrayOutput() GetRecipesRecipeSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRecipesRecipeSummaryCollectionItemArrayOutput) ToGetRecipesRecipeSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetRecipesRecipeSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRecipesRecipeSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecipesRecipeSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecipesRecipeSummaryCollectionItem {
+		return vs[0].([]GetRecipesRecipeSummaryCollectionItem)[vs[1].(int)]
+	}).(GetRecipesRecipeSummaryCollectionItemOutput)
+}
+
 type GetTrailFileItem struct {
 	// array of consumer process names
 	Consumers []string `pulumi:"consumers"`
@@ -11839,6 +16197,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataPtrInput)(nil)).Elem(), DeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingPtrInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockInput)(nil)).Elem(), PipelineLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockArrayInput)(nil)).Elem(), PipelineLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineMappingRuleInput)(nil)).Elem(), PipelineMappingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineMappingRuleArrayInput)(nil)).Elem(), PipelineMappingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsInput)(nil)).Elem(), PipelineProcessOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsPtrInput)(nil)).Elem(), PipelineProcessOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsInitialDataLoadInput)(nil)).Elem(), PipelineProcessOptionsInitialDataLoadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsInitialDataLoadPtrInput)(nil)).Elem(), PipelineProcessOptionsInitialDataLoadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsReplicateSchemaChangeInput)(nil)).Elem(), PipelineProcessOptionsReplicateSchemaChangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsReplicateSchemaChangePtrInput)(nil)).Elem(), PipelineProcessOptionsReplicateSchemaChangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineSourceConnectionDetailsInput)(nil)).Elem(), PipelineSourceConnectionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineSourceConnectionDetailsPtrInput)(nil)).Elem(), PipelineSourceConnectionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineTargetConnectionDetailsInput)(nil)).Elem(), PipelineTargetConnectionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineTargetConnectionDetailsPtrInput)(nil)).Elem(), PipelineTargetConnectionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionAdditionalAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionArgs{})
@@ -11957,6 +16329,64 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionItemArrayInput)(nil)).Elem(), GetMessagesDeploymentMessagesCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesFilterInput)(nil)).Elem(), GetMessagesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesFilterArrayInput)(nil)).Elem(), GetMessagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLockInput)(nil)).Elem(), GetPipelineLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLockArrayInput)(nil)).Elem(), GetPipelineLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineMappingRuleInput)(nil)).Elem(), GetPipelineMappingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineMappingRuleArrayInput)(nil)).Elem(), GetPipelineMappingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionInput)(nil)).Elem(), GetPipelineProcessOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionArrayInput)(nil)).Elem(), GetPipelineProcessOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionInitialDataLoadInput)(nil)).Elem(), GetPipelineProcessOptionInitialDataLoadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionInitialDataLoadArrayInput)(nil)).Elem(), GetPipelineProcessOptionInitialDataLoadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionReplicateSchemaChangeInput)(nil)).Elem(), GetPipelineProcessOptionReplicateSchemaChangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionReplicateSchemaChangeArrayInput)(nil)).Elem(), GetPipelineProcessOptionReplicateSchemaChangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunningProcessesFilterInput)(nil)).Elem(), GetPipelineRunningProcessesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunningProcessesFilterArrayInput)(nil)).Elem(), GetPipelineRunningProcessesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollectionInput)(nil)).Elem(), GetPipelineRunningProcessesPipelineRunningProcessCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayInput)(nil)).Elem(), GetPipelineRunningProcessesPipelineRunningProcessCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollectionItemInput)(nil)).Elem(), GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayInput)(nil)).Elem(), GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemaTablesFilterInput)(nil)).Elem(), GetPipelineSchemaTablesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemaTablesFilterArrayInput)(nil)).Elem(), GetPipelineSchemaTablesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollectionInput)(nil)).Elem(), GetPipelineSchemaTablesPipelineSchemaTableCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayInput)(nil)).Elem(), GetPipelineSchemaTablesPipelineSchemaTableCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollectionItemInput)(nil)).Elem(), GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayInput)(nil)).Elem(), GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemasFilterInput)(nil)).Elem(), GetPipelineSchemasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemasFilterArrayInput)(nil)).Elem(), GetPipelineSchemasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollectionInput)(nil)).Elem(), GetPipelineSchemasPipelineSchemaCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollectionArrayInput)(nil)).Elem(), GetPipelineSchemasPipelineSchemaCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollectionItemInput)(nil)).Elem(), GetPipelineSchemasPipelineSchemaCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSchemasPipelineSchemaCollectionItemArrayInput)(nil)).Elem(), GetPipelineSchemasPipelineSchemaCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSourceConnectionDetailInput)(nil)).Elem(), GetPipelineSourceConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineSourceConnectionDetailArrayInput)(nil)).Elem(), GetPipelineSourceConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineTargetConnectionDetailInput)(nil)).Elem(), GetPipelineTargetConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineTargetConnectionDetailArrayInput)(nil)).Elem(), GetPipelineTargetConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesFilterInput)(nil)).Elem(), GetPipelinesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesFilterArrayInput)(nil)).Elem(), GetPipelinesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionInput)(nil)).Elem(), GetPipelinesPipelineCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemLockInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemLockArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRuleInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemMappingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRuleArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemMappingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemSourceConnectionDetailInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemSourceConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemTargetConnectionDetailInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemTargetConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipesFilterInput)(nil)).Elem(), GetRecipesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipesFilterArrayInput)(nil)).Elem(), GetRecipesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipesRecipeSummaryCollectionInput)(nil)).Elem(), GetRecipesRecipeSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipesRecipeSummaryCollectionArrayInput)(nil)).Elem(), GetRecipesRecipeSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipesRecipeSummaryCollectionItemInput)(nil)).Elem(), GetRecipesRecipeSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipesRecipeSummaryCollectionItemArrayInput)(nil)).Elem(), GetRecipesRecipeSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFileItemInput)(nil)).Elem(), GetTrailFileItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFileItemArrayInput)(nil)).Elem(), GetTrailFileItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesFilterInput)(nil)).Elem(), GetTrailFilesFilterArgs{})
@@ -11997,6 +16427,20 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentOggDataPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingPtrOutput{})
+	pulumi.RegisterOutputType(PipelineLockOutput{})
+	pulumi.RegisterOutputType(PipelineLockArrayOutput{})
+	pulumi.RegisterOutputType(PipelineMappingRuleOutput{})
+	pulumi.RegisterOutputType(PipelineMappingRuleArrayOutput{})
+	pulumi.RegisterOutputType(PipelineProcessOptionsOutput{})
+	pulumi.RegisterOutputType(PipelineProcessOptionsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineProcessOptionsInitialDataLoadOutput{})
+	pulumi.RegisterOutputType(PipelineProcessOptionsInitialDataLoadPtrOutput{})
+	pulumi.RegisterOutputType(PipelineProcessOptionsReplicateSchemaChangeOutput{})
+	pulumi.RegisterOutputType(PipelineProcessOptionsReplicateSchemaChangePtrOutput{})
+	pulumi.RegisterOutputType(PipelineSourceConnectionDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineSourceConnectionDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineTargetConnectionDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineTargetConnectionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionOutput{})
@@ -12115,6 +16559,64 @@ func init() {
 	pulumi.RegisterOutputType(GetMessagesDeploymentMessagesCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMessagesFilterOutput{})
 	pulumi.RegisterOutputType(GetMessagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineLockOutput{})
+	pulumi.RegisterOutputType(GetPipelineLockArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineMappingRuleOutput{})
+	pulumi.RegisterOutputType(GetPipelineMappingRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineProcessOptionOutput{})
+	pulumi.RegisterOutputType(GetPipelineProcessOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineProcessOptionInitialDataLoadOutput{})
+	pulumi.RegisterOutputType(GetPipelineProcessOptionInitialDataLoadArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineProcessOptionReplicateSchemaChangeOutput{})
+	pulumi.RegisterOutputType(GetPipelineProcessOptionReplicateSchemaChangeArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunningProcessesFilterOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunningProcessesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunningProcessesPipelineRunningProcessCollectionOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunningProcessesPipelineRunningProcessCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunningProcessesPipelineRunningProcessCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemaTablesFilterOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemaTablesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemaTablesPipelineSchemaTableCollectionOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemaTablesPipelineSchemaTableCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemaTablesPipelineSchemaTableCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemasFilterOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemasPipelineSchemaCollectionOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemasPipelineSchemaCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemasPipelineSchemaCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPipelineSchemasPipelineSchemaCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineSourceConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineSourceConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineTargetConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineTargetConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesFilterOutput{})
+	pulumi.RegisterOutputType(GetPipelinesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemMappingRuleOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemMappingRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemSourceConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemTargetConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemTargetConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetRecipesFilterOutput{})
+	pulumi.RegisterOutputType(GetRecipesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRecipesRecipeSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetRecipesRecipeSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRecipesRecipeSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRecipesRecipeSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetTrailFileItemOutput{})
 	pulumi.RegisterOutputType(GetTrailFileItemArrayOutput{})
 	pulumi.RegisterOutputType(GetTrailFilesFilterOutput{})

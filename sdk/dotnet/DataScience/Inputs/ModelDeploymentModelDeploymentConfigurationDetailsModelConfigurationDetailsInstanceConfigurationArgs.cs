@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs>? ModelDeploymentInstanceShapeConfigDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of a Data Science private endpoint.
+        /// </summary>
+        [Input("privateEndpointId")]
+        public Input<string>? PrivateEndpointId { get; set; }
+
+        /// <summary>
         /// (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         /// </summary>
         [Input("subnetId")]

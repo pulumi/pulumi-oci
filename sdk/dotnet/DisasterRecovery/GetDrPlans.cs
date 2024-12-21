@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public static Output<GetDrPlansResult> Invoke(GetDrPlansInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrPlansResult>("oci:DisasterRecovery/getDrPlans:getDrPlans", args ?? new GetDrPlansInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
+        /// 
+        /// Get a summary list of all DR plans for a DR protection group.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrPlans = Oci.DisasterRecovery.GetDrPlans.Invoke(new()
+        ///     {
+        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+        ///         DisplayName = drPlanDisplayName,
+        ///         DrPlanId = testDrPlan.Id,
+        ///         DrPlanType = drPlanDrPlanType,
+        ///         LifecycleSubState = drPlanLifecycleSubState,
+        ///         State = drPlanState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrPlansResult> Invoke(GetDrPlansInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrPlansResult>("oci:DisasterRecovery/getDrPlans:getDrPlans", args ?? new GetDrPlansInvokeArgs(), options.WithDefaults());
     }
 
 

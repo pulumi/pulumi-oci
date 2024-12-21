@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetHostInsightsResult> Invoke(GetHostInsightsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostInsightsResult>("oci:Opsi/getHostInsights:getHostInsights", args ?? new GetHostInsightsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Host Insights in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+        /// When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHostInsights = Oci.Opsi.GetHostInsights.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = hostInsightCompartmentIdInSubtree,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataInsightId = testExadataInsight.Id,
+        ///         HostTypes = hostInsightHostType,
+        ///         Id = hostInsightId,
+        ///         States = hostInsightState,
+        ///         Statuses = hostInsightStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHostInsightsResult> Invoke(GetHostInsightsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostInsightsResult>("oci:Opsi/getHostInsights:getHostInsights", args ?? new GetHostInsightsInvokeArgs(), options.WithDefaults());
     }
 
 

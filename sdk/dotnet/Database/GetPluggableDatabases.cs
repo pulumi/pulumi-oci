@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetPluggableDatabasesResult> Invoke(GetPluggableDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPluggableDatabases = Oci.Database.GetPluggableDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DatabaseId = testDatabase.Id,
+        ///         PdbName = pluggableDatabasePdbName,
+        ///         State = pluggableDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPluggableDatabasesResult> Invoke(GetPluggableDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

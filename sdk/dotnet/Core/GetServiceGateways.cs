@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetServiceGatewaysResult> Invoke(GetServiceGatewaysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceGatewaysResult>("oci:Core/getServiceGateways:getServiceGateways", args ?? new GetServiceGatewaysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
+        /// to filter the results by VCN.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceGateways = Oci.Core.GetServiceGateways.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         State = serviceGatewayState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceGatewaysResult> Invoke(GetServiceGatewaysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceGatewaysResult>("oci:Core/getServiceGateways:getServiceGateways", args ?? new GetServiceGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -102,21 +102,11 @@ type LookupSensitiveTypeResult struct {
 }
 
 func LookupSensitiveTypeOutput(ctx *pulumi.Context, args LookupSensitiveTypeOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveTypeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSensitiveTypeResultOutput, error) {
 			args := v.(LookupSensitiveTypeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSensitiveTypeResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSensitiveType:getSensitiveType", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSensitiveTypeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSensitiveTypeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSensitiveTypeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSensitiveType:getSensitiveType", args, LookupSensitiveTypeResultOutput{}, options).(LookupSensitiveTypeResultOutput), nil
 		}).(LookupSensitiveTypeResultOutput)
 }
 

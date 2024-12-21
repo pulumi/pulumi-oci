@@ -68,6 +68,35 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyTunnelInspectionRulesResult> Invoke(GetNetworkFirewallPolicyTunnelInspectionRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyTunnelInspectionRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRules:getNetworkFirewallPolicyTunnelInspectionRules", args ?? new GetNetworkFirewallPolicyTunnelInspectionRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Returns a list of tunnel inspection rules for the network firewall policy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyTunnelInspectionRules = Oci.NetworkFirewall.GetNetworkFirewallPolicyTunnelInspectionRules.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicyTunnelInspectionRuleDisplayName,
+        ///         TunnelInspectionRulePriorityOrder = networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyTunnelInspectionRulesResult> Invoke(GetNetworkFirewallPolicyTunnelInspectionRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyTunnelInspectionRulesResult>("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRules:getNetworkFirewallPolicyTunnelInspectionRules", args ?? new GetNetworkFirewallPolicyTunnelInspectionRulesInvokeArgs(), options.WithDefaults());
     }
 
 

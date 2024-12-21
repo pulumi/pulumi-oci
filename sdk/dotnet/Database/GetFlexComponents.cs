@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetFlexComponentsResult> Invoke(GetFlexComponentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFlexComponentsResult>("oci:Database/getFlexComponents:getFlexComponents", args ?? new GetFlexComponentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFlexComponents = Oci.Database.GetFlexComponents.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = flexComponentName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFlexComponentsResult> Invoke(GetFlexComponentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFlexComponentsResult>("oci:Database/getFlexComponents:getFlexComponents", args ?? new GetFlexComponentsInvokeArgs(), options.WithDefaults());
     }
 
 

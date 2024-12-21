@@ -87,21 +87,11 @@ type GetSoftwareSourcePackageGroupsResult struct {
 }
 
 func GetSoftwareSourcePackageGroupsOutput(ctx *pulumi.Context, args GetSoftwareSourcePackageGroupsOutputArgs, opts ...pulumi.InvokeOption) GetSoftwareSourcePackageGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSoftwareSourcePackageGroupsResultOutput, error) {
 			args := v.(GetSoftwareSourcePackageGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSoftwareSourcePackageGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetSoftwareSourcePackageGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSoftwareSourcePackageGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSoftwareSourcePackageGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourcePackageGroups:getSoftwareSourcePackageGroups", args, GetSoftwareSourcePackageGroupsResultOutput{}, options).(GetSoftwareSourcePackageGroupsResultOutput), nil
 		}).(GetSoftwareSourcePackageGroupsResultOutput)
 }
 

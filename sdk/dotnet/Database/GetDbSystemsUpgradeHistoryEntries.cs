@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbSystemsUpgradeHistoryEntriesResult> Invoke(GetDbSystemsUpgradeHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemsUpgradeHistoryEntriesResult>("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", args ?? new GetDbSystemsUpgradeHistoryEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the history of the upgrade actions performed on the specified DB system.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemsUpgradeHistoryEntries = Oci.Database.GetDbSystemsUpgradeHistoryEntries.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystem.Id,
+        ///         State = dbSystemsUpgradeHistoryEntryState,
+        ///         UpgradeAction = dbSystemsUpgradeHistoryEntryUpgradeAction,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbSystemsUpgradeHistoryEntriesResult> Invoke(GetDbSystemsUpgradeHistoryEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemsUpgradeHistoryEntriesResult>("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", args ?? new GetDbSystemsUpgradeHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

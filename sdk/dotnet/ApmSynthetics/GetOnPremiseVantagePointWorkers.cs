@@ -74,6 +74,38 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetOnPremiseVantagePointWorkersResult> Invoke(GetOnPremiseVantagePointWorkersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointWorkersResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", args ?? new GetOnPremiseVantagePointWorkersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Returns a list of workers.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOnPremiseVantagePointWorkers = Oci.ApmSynthetics.GetOnPremiseVantagePointWorkers.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         OnPremiseVantagePointId = testOnPremiseVantagePoint.Id,
+        ///         Capability = onPremiseVantagePointWorkerCapability,
+        ///         DisplayName = onPremiseVantagePointWorkerDisplayName,
+        ///         Name = onPremiseVantagePointWorkerName,
+        ///         Status = onPremiseVantagePointWorkerStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOnPremiseVantagePointWorkersResult> Invoke(GetOnPremiseVantagePointWorkersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointWorkersResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", args ?? new GetOnPremiseVantagePointWorkersInvokeArgs(), options.WithDefaults());
     }
 
 

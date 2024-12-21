@@ -70,6 +70,36 @@ namespace Pulumi.Oci.SecurityAttribute
         /// </summary>
         public static Output<GetSecurityAttributeNamespacesResult> Invoke(GetSecurityAttributeNamespacesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAttributeNamespacesResult>("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", args ?? new GetSecurityAttributeNamespacesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Attribute Namespaces in Oracle Cloud Infrastructure Security Attribute service.
+        /// 
+        /// Lists the security attribute namespaces in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAttributeNamespaces = Oci.SecurityAttribute.GetSecurityAttributeNamespaces.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = securityAttributeNamespaceCompartmentIdInSubtree,
+        ///         Name = securityAttributeNamespaceName,
+        ///         State = securityAttributeNamespaceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAttributeNamespacesResult> Invoke(GetSecurityAttributeNamespacesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAttributeNamespacesResult>("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", args ?? new GetSecurityAttributeNamespacesInvokeArgs(), options.WithDefaults());
     }
 
 

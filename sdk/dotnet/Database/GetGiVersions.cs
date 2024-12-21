@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetGiVersionsResult> Invoke(GetGiVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGiVersionsResult>("oci:Database/getGiVersions:getGiVersions", args ?? new GetGiVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported GI versions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = giVersionAvailabilityDomain,
+        ///         Shape = giVersionShape,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGiVersionsResult> Invoke(GetGiVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGiVersionsResult>("oci:Database/getGiVersions:getGiVersions", args ?? new GetGiVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

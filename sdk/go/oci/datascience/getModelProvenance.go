@@ -75,21 +75,11 @@ type LookupModelProvenanceResult struct {
 }
 
 func LookupModelProvenanceOutput(ctx *pulumi.Context, args LookupModelProvenanceOutputArgs, opts ...pulumi.InvokeOption) LookupModelProvenanceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupModelProvenanceResultOutput, error) {
 			args := v.(LookupModelProvenanceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupModelProvenanceResult
-			secret, err := ctx.InvokePackageRaw("oci:DataScience/getModelProvenance:getModelProvenance", args, &rv, "", opts...)
-			if err != nil {
-				return LookupModelProvenanceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupModelProvenanceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupModelProvenanceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataScience/getModelProvenance:getModelProvenance", args, LookupModelProvenanceResultOutput{}, options).(LookupModelProvenanceResultOutput), nil
 		}).(LookupModelProvenanceResultOutput)
 }
 

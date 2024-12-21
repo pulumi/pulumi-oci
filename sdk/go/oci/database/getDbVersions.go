@@ -91,21 +91,11 @@ type GetDbVersionsResult struct {
 }
 
 func GetDbVersionsOutput(ctx *pulumi.Context, args GetDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetDbVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDbVersionsResultOutput, error) {
 			args := v.(GetDbVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDbVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDbVersions:getDbVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetDbVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDbVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDbVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDbVersions:getDbVersions", args, GetDbVersionsResultOutput{}, options).(GetDbVersionsResultOutput), nil
 		}).(GetDbVersionsResultOutput)
 }
 

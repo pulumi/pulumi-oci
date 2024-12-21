@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetNetworkSecurityGroupSecurityRulesResult> Invoke(GetNetworkSecurityGroupSecurityRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupSecurityRulesResult>("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args ?? new GetNetworkSecurityGroupSecurityRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the security rules in the specified network security group.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkSecurityGroupSecurityRules = Oci.Core.GetNetworkSecurityGroupSecurityRules.Invoke(new()
+        ///     {
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroup.Id,
+        ///         Direction = networkSecurityGroupSecurityRuleDirection,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkSecurityGroupSecurityRulesResult> Invoke(GetNetworkSecurityGroupSecurityRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupSecurityRulesResult>("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args ?? new GetNetworkSecurityGroupSecurityRulesInvokeArgs(), options.WithDefaults());
     }
 
 

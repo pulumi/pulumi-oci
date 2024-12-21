@@ -68,21 +68,11 @@ type GetVirtualCircuitAssociatedTunnelsResult struct {
 }
 
 func GetVirtualCircuitAssociatedTunnelsOutput(ctx *pulumi.Context, args GetVirtualCircuitAssociatedTunnelsOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitAssociatedTunnelsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVirtualCircuitAssociatedTunnelsResultOutput, error) {
 			args := v.(GetVirtualCircuitAssociatedTunnelsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVirtualCircuitAssociatedTunnelsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args, &rv, "", opts...)
-			if err != nil {
-				return GetVirtualCircuitAssociatedTunnelsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVirtualCircuitAssociatedTunnelsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVirtualCircuitAssociatedTunnelsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args, GetVirtualCircuitAssociatedTunnelsResultOutput{}, options).(GetVirtualCircuitAssociatedTunnelsResultOutput), nil
 		}).(GetVirtualCircuitAssociatedTunnelsResultOutput)
 }
 

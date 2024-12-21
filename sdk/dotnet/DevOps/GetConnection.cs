@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DevOps/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a connection by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnection = Oci.DevOps.GetConnection.Invoke(new()
+        ///     {
+        ///         ConnectionId = testConnectionOciDevopsConnection.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DevOps/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.ServiceCatalog
         /// </summary>
         public static Output<GetServiceCatalogAssociationsResult> Invoke(GetServiceCatalogAssociationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogAssociationsResult>("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", args ?? new GetServiceCatalogAssociationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
+        /// 
+        /// Lists all the resource associations for a specific service catalog.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceCatalogAssociations = Oci.ServiceCatalog.GetServiceCatalogAssociations.Invoke(new()
+        ///     {
+        ///         EntityId = testEntity.Id,
+        ///         EntityType = serviceCatalogAssociationEntityType,
+        ///         ServiceCatalogAssociationId = testServiceCatalogAssociation.Id,
+        ///         ServiceCatalogId = testServiceCatalog.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceCatalogAssociationsResult> Invoke(GetServiceCatalogAssociationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogAssociationsResult>("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", args ?? new GetServiceCatalogAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

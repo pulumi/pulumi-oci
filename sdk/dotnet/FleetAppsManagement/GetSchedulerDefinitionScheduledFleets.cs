@@ -68,6 +68,35 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetSchedulerDefinitionScheduledFleetsResult> Invoke(GetSchedulerDefinitionScheduledFleetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerDefinitionScheduledFleetsResult>("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", args ?? new GetSchedulerDefinitionScheduledFleetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Scheduler Definition Scheduled Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of ScheduledFleets.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSchedulerDefinitionScheduledFleets = Oci.FleetAppsManagement.GetSchedulerDefinitionScheduledFleets.Invoke(new()
+        ///     {
+        ///         SchedulerDefinitionId = testSchedulerDefinition.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = schedulerDefinitionScheduledFleetDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSchedulerDefinitionScheduledFleetsResult> Invoke(GetSchedulerDefinitionScheduledFleetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulerDefinitionScheduledFleetsResult>("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", args ?? new GetSchedulerDefinitionScheduledFleetsInvokeArgs(), options.WithDefaults());
     }
 
 

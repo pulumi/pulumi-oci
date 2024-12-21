@@ -28,6 +28,13 @@ __all__ = [
     'DeploymentMaintenanceWindow',
     'DeploymentOggData',
     'DeploymentOggDataGroupToRolesMapping',
+    'PipelineLock',
+    'PipelineMappingRule',
+    'PipelineProcessOptions',
+    'PipelineProcessOptionsInitialDataLoad',
+    'PipelineProcessOptionsReplicateSchemaChange',
+    'PipelineSourceConnectionDetails',
+    'PipelineTargetConnectionDetails',
     'GetConnectionAdditionalAttributeResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionItemResult',
@@ -87,6 +94,35 @@ __all__ = [
     'GetMessagesDeploymentMessagesCollectionResult',
     'GetMessagesDeploymentMessagesCollectionItemResult',
     'GetMessagesFilterResult',
+    'GetPipelineLockResult',
+    'GetPipelineMappingRuleResult',
+    'GetPipelineProcessOptionResult',
+    'GetPipelineProcessOptionInitialDataLoadResult',
+    'GetPipelineProcessOptionReplicateSchemaChangeResult',
+    'GetPipelineRunningProcessesFilterResult',
+    'GetPipelineRunningProcessesPipelineRunningProcessCollectionResult',
+    'GetPipelineRunningProcessesPipelineRunningProcessCollectionItemResult',
+    'GetPipelineSchemaTablesFilterResult',
+    'GetPipelineSchemaTablesPipelineSchemaTableCollectionResult',
+    'GetPipelineSchemaTablesPipelineSchemaTableCollectionItemResult',
+    'GetPipelineSchemasFilterResult',
+    'GetPipelineSchemasPipelineSchemaCollectionResult',
+    'GetPipelineSchemasPipelineSchemaCollectionItemResult',
+    'GetPipelineSourceConnectionDetailResult',
+    'GetPipelineTargetConnectionDetailResult',
+    'GetPipelinesFilterResult',
+    'GetPipelinesPipelineCollectionResult',
+    'GetPipelinesPipelineCollectionItemResult',
+    'GetPipelinesPipelineCollectionItemLockResult',
+    'GetPipelinesPipelineCollectionItemMappingRuleResult',
+    'GetPipelinesPipelineCollectionItemProcessOptionResult',
+    'GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadResult',
+    'GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeResult',
+    'GetPipelinesPipelineCollectionItemSourceConnectionDetailResult',
+    'GetPipelinesPipelineCollectionItemTargetConnectionDetailResult',
+    'GetRecipesFilterResult',
+    'GetRecipesRecipeSummaryCollectionResult',
+    'GetRecipesRecipeSummaryCollectionItemResult',
     'GetTrailFileItemResult',
     'GetTrailFilesFilterResult',
     'GetTrailFilesTrailFileCollectionResult',
@@ -953,6 +989,347 @@ class DeploymentOggDataGroupToRolesMapping(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
         """
         return pulumi.get(self, "user_group_id")
+
+
+@pulumi.output_type
+class PipelineLock(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+
+@pulumi.output_type
+class PipelineMappingRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "mappingType":
+            suggest = "mapping_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineMappingRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineMappingRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineMappingRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 mapping_type: Optional[str] = None,
+                 source: Optional[str] = None,
+                 target: Optional[str] = None):
+        """
+        :param str mapping_type: Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        :param str source: The source schema/table combination for replication to target.
+        :param str target: The target schema/table combination for replication from the source.
+        """
+        if mapping_type is not None:
+            pulumi.set(__self__, "mapping_type", mapping_type)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="mappingType")
+    def mapping_type(self) -> Optional[str]:
+        """
+        Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        """
+        return pulumi.get(self, "mapping_type")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        """
+        The source schema/table combination for replication to target.
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[str]:
+        """
+        The target schema/table combination for replication from the source.
+        """
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class PipelineProcessOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "initialDataLoad":
+            suggest = "initial_data_load"
+        elif key == "replicateSchemaChange":
+            suggest = "replicate_schema_change"
+        elif key == "shouldRestartOnFailure":
+            suggest = "should_restart_on_failure"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineProcessOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineProcessOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineProcessOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 initial_data_load: 'outputs.PipelineProcessOptionsInitialDataLoad',
+                 replicate_schema_change: 'outputs.PipelineProcessOptionsReplicateSchemaChange',
+                 should_restart_on_failure: str):
+        """
+        :param 'PipelineProcessOptionsInitialDataLoadArgs' initial_data_load: (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param 'PipelineProcessOptionsReplicateSchemaChangeArgs' replicate_schema_change: (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param str should_restart_on_failure: (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        pulumi.set(__self__, "initial_data_load", initial_data_load)
+        pulumi.set(__self__, "replicate_schema_change", replicate_schema_change)
+        pulumi.set(__self__, "should_restart_on_failure", should_restart_on_failure)
+
+    @property
+    @pulumi.getter(name="initialDataLoad")
+    def initial_data_load(self) -> 'outputs.PipelineProcessOptionsInitialDataLoad':
+        """
+        (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "initial_data_load")
+
+    @property
+    @pulumi.getter(name="replicateSchemaChange")
+    def replicate_schema_change(self) -> 'outputs.PipelineProcessOptionsReplicateSchemaChange':
+        """
+        (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "replicate_schema_change")
+
+    @property
+    @pulumi.getter(name="shouldRestartOnFailure")
+    def should_restart_on_failure(self) -> str:
+        """
+        (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        return pulumi.get(self, "should_restart_on_failure")
+
+
+@pulumi.output_type
+class PipelineProcessOptionsInitialDataLoad(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isInitialLoad":
+            suggest = "is_initial_load"
+        elif key == "actionOnExistingTable":
+            suggest = "action_on_existing_table"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineProcessOptionsInitialDataLoad. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineProcessOptionsInitialDataLoad.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineProcessOptionsInitialDataLoad.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_initial_load: str,
+                 action_on_existing_table: Optional[str] = None):
+        """
+        :param str is_initial_load: (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        :param str action_on_existing_table: (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+        pulumi.set(__self__, "is_initial_load", is_initial_load)
+        if action_on_existing_table is not None:
+            pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+
+    @property
+    @pulumi.getter(name="isInitialLoad")
+    def is_initial_load(self) -> str:
+        """
+        (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "is_initial_load")
+
+    @property
+    @pulumi.getter(name="actionOnExistingTable")
+    def action_on_existing_table(self) -> Optional[str]:
+        """
+        (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+        return pulumi.get(self, "action_on_existing_table")
+
+
+@pulumi.output_type
+class PipelineProcessOptionsReplicateSchemaChange(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canReplicateSchemaChange":
+            suggest = "can_replicate_schema_change"
+        elif key == "actionOnDdlError":
+            suggest = "action_on_ddl_error"
+        elif key == "actionOnDmlError":
+            suggest = "action_on_dml_error"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineProcessOptionsReplicateSchemaChange. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineProcessOptionsReplicateSchemaChange.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineProcessOptionsReplicateSchemaChange.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 can_replicate_schema_change: str,
+                 action_on_ddl_error: Optional[str] = None,
+                 action_on_dml_error: Optional[str] = None):
+        """
+        :param str can_replicate_schema_change: (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        :param str action_on_ddl_error: (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        :param str action_on_dml_error: (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        pulumi.set(__self__, "can_replicate_schema_change", can_replicate_schema_change)
+        if action_on_ddl_error is not None:
+            pulumi.set(__self__, "action_on_ddl_error", action_on_ddl_error)
+        if action_on_dml_error is not None:
+            pulumi.set(__self__, "action_on_dml_error", action_on_dml_error)
+
+    @property
+    @pulumi.getter(name="canReplicateSchemaChange")
+    def can_replicate_schema_change(self) -> str:
+        """
+        (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "can_replicate_schema_change")
+
+    @property
+    @pulumi.getter(name="actionOnDdlError")
+    def action_on_ddl_error(self) -> Optional[str]:
+        """
+        (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_ddl_error")
+
+    @property
+    @pulumi.getter(name="actionOnDmlError")
+    def action_on_dml_error(self) -> Optional[str]:
+        """
+        (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_dml_error")
+
+
+@pulumi.output_type
+class PipelineSourceConnectionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionId":
+            suggest = "connection_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineSourceConnectionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineSourceConnectionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineSourceConnectionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_id: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "connection_id")
+
+
+@pulumi.output_type
+class PipelineTargetConnectionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionId":
+            suggest = "connection_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineTargetConnectionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineTargetConnectionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineTargetConnectionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_id: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "connection_id")
 
 
 @pulumi.output_type
@@ -5821,6 +6198,1129 @@ class GetMessagesFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelineLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelineMappingRuleResult(dict):
+    def __init__(__self__, *,
+                 mapping_type: str,
+                 source: str,
+                 target: str):
+        """
+        :param str mapping_type: Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        :param str source: The source schema/table combination for replication to target.
+        :param str target: The target schema/table combination for replication from the source.
+        """
+        pulumi.set(__self__, "mapping_type", mapping_type)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="mappingType")
+    def mapping_type(self) -> str:
+        """
+        Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        """
+        return pulumi.get(self, "mapping_type")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source schema/table combination for replication to target.
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        The target schema/table combination for replication from the source.
+        """
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetPipelineProcessOptionResult(dict):
+    def __init__(__self__, *,
+                 initial_data_loads: Sequence['outputs.GetPipelineProcessOptionInitialDataLoadResult'],
+                 replicate_schema_changes: Sequence['outputs.GetPipelineProcessOptionReplicateSchemaChangeResult'],
+                 should_restart_on_failure: str):
+        """
+        :param Sequence['GetPipelineProcessOptionInitialDataLoadArgs'] initial_data_loads: Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param Sequence['GetPipelineProcessOptionReplicateSchemaChangeArgs'] replicate_schema_changes: Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param str should_restart_on_failure: If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        pulumi.set(__self__, "initial_data_loads", initial_data_loads)
+        pulumi.set(__self__, "replicate_schema_changes", replicate_schema_changes)
+        pulumi.set(__self__, "should_restart_on_failure", should_restart_on_failure)
+
+    @property
+    @pulumi.getter(name="initialDataLoads")
+    def initial_data_loads(self) -> Sequence['outputs.GetPipelineProcessOptionInitialDataLoadResult']:
+        """
+        Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "initial_data_loads")
+
+    @property
+    @pulumi.getter(name="replicateSchemaChanges")
+    def replicate_schema_changes(self) -> Sequence['outputs.GetPipelineProcessOptionReplicateSchemaChangeResult']:
+        """
+        Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "replicate_schema_changes")
+
+    @property
+    @pulumi.getter(name="shouldRestartOnFailure")
+    def should_restart_on_failure(self) -> str:
+        """
+        If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        return pulumi.get(self, "should_restart_on_failure")
+
+
+@pulumi.output_type
+class GetPipelineProcessOptionInitialDataLoadResult(dict):
+    def __init__(__self__, *,
+                 action_on_existing_table: str,
+                 is_initial_load: str):
+        """
+        :param str action_on_existing_table: Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        :param str is_initial_load: If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+        pulumi.set(__self__, "is_initial_load", is_initial_load)
+
+    @property
+    @pulumi.getter(name="actionOnExistingTable")
+    def action_on_existing_table(self) -> str:
+        """
+        Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+        return pulumi.get(self, "action_on_existing_table")
+
+    @property
+    @pulumi.getter(name="isInitialLoad")
+    def is_initial_load(self) -> str:
+        """
+        If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "is_initial_load")
+
+
+@pulumi.output_type
+class GetPipelineProcessOptionReplicateSchemaChangeResult(dict):
+    def __init__(__self__, *,
+                 action_on_ddl_error: str,
+                 action_on_dml_error: str,
+                 can_replicate_schema_change: str):
+        """
+        :param str action_on_ddl_error: Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        :param str action_on_dml_error: Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        :param str can_replicate_schema_change: If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        pulumi.set(__self__, "action_on_ddl_error", action_on_ddl_error)
+        pulumi.set(__self__, "action_on_dml_error", action_on_dml_error)
+        pulumi.set(__self__, "can_replicate_schema_change", can_replicate_schema_change)
+
+    @property
+    @pulumi.getter(name="actionOnDdlError")
+    def action_on_ddl_error(self) -> str:
+        """
+        Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_ddl_error")
+
+    @property
+    @pulumi.getter(name="actionOnDmlError")
+    def action_on_dml_error(self) -> str:
+        """
+        Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_dml_error")
+
+    @property
+    @pulumi.getter(name="canReplicateSchemaChange")
+    def can_replicate_schema_change(self) -> str:
+        """
+        If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "can_replicate_schema_change")
+
+
+@pulumi.output_type
+class GetPipelineRunningProcessesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: An object's Display Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelineRunningProcessesPipelineRunningProcessCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPipelineRunningProcessesPipelineRunningProcessCollectionItemResult']):
+        """
+        :param Sequence['GetPipelineRunningProcessesPipelineRunningProcessCollectionItemArgs'] items: The list of replication processes and their details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPipelineRunningProcessesPipelineRunningProcessCollectionItemResult']:
+        """
+        The list of replication processes and their details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPipelineRunningProcessesPipelineRunningProcessCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 last_record_lag_in_seconds: float,
+                 name: str,
+                 process_type: str,
+                 status: str,
+                 time_last_processed: str):
+        """
+        :param float last_record_lag_in_seconds: The latency, in seconds, of a process running in a replication. This option applies when retrieving running processes.
+        :param str name: An object's Display Name.
+        :param str process_type: The type of process running in a replication. For example, Extract or Replicat. This option applies when retrieving running processes.
+        :param str status: The status of the Extract or Replicat process. This option applies when retrieving running processes.
+        :param str time_last_processed: The date and time the last record was processed by an Extract or Replicat. This option applies when retrieving running processes. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "last_record_lag_in_seconds", last_record_lag_in_seconds)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "process_type", process_type)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_processed", time_last_processed)
+
+    @property
+    @pulumi.getter(name="lastRecordLagInSeconds")
+    def last_record_lag_in_seconds(self) -> float:
+        """
+        The latency, in seconds, of a process running in a replication. This option applies when retrieving running processes.
+        """
+        return pulumi.get(self, "last_record_lag_in_seconds")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="processType")
+    def process_type(self) -> str:
+        """
+        The type of process running in a replication. For example, Extract or Replicat. This option applies when retrieving running processes.
+        """
+        return pulumi.get(self, "process_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Extract or Replicat process. This option applies when retrieving running processes.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeLastProcessed")
+    def time_last_processed(self) -> str:
+        """
+        The date and time the last record was processed by an Extract or Replicat. This option applies when retrieving running processes. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_processed")
+
+
+@pulumi.output_type
+class GetPipelineSchemaTablesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelineSchemaTablesPipelineSchemaTableCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPipelineSchemaTablesPipelineSchemaTableCollectionItemResult'],
+                 source_schema_name: str,
+                 target_schema_name: str):
+        """
+        :param Sequence['GetPipelineSchemaTablesPipelineSchemaTableCollectionItemArgs'] items: Array of source or target schema tables of a pipeline's assigned connection.
+        :param str source_schema_name: Name of the source schema obtained from get schema endpoint of the created pipeline.
+        :param str target_schema_name: Name of the target schema obtained from get schema endpoint of the created pipeline.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "source_schema_name", source_schema_name)
+        pulumi.set(__self__, "target_schema_name", target_schema_name)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPipelineSchemaTablesPipelineSchemaTableCollectionItemResult']:
+        """
+        Array of source or target schema tables of a pipeline's assigned connection.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="sourceSchemaName")
+    def source_schema_name(self) -> str:
+        """
+        Name of the source schema obtained from get schema endpoint of the created pipeline.
+        """
+        return pulumi.get(self, "source_schema_name")
+
+    @property
+    @pulumi.getter(name="targetSchemaName")
+    def target_schema_name(self) -> str:
+        """
+        Name of the target schema obtained from get schema endpoint of the created pipeline.
+        """
+        return pulumi.get(self, "target_schema_name")
+
+
+@pulumi.output_type
+class GetPipelineSchemaTablesPipelineSchemaTableCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 source_table_name: str,
+                 target_table_name: str):
+        """
+        :param str source_table_name: The table name from the schema of database connection.
+        :param str target_table_name: The table name from the schema of database connection.
+        """
+        pulumi.set(__self__, "source_table_name", source_table_name)
+        pulumi.set(__self__, "target_table_name", target_table_name)
+
+    @property
+    @pulumi.getter(name="sourceTableName")
+    def source_table_name(self) -> str:
+        """
+        The table name from the schema of database connection.
+        """
+        return pulumi.get(self, "source_table_name")
+
+    @property
+    @pulumi.getter(name="targetTableName")
+    def target_table_name(self) -> str:
+        """
+        The table name from the schema of database connection.
+        """
+        return pulumi.get(self, "target_table_name")
+
+
+@pulumi.output_type
+class GetPipelineSchemasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelineSchemasPipelineSchemaCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPipelineSchemasPipelineSchemaCollectionItemResult']):
+        """
+        :param Sequence['GetPipelineSchemasPipelineSchemaCollectionItemArgs'] items: Array of pipeline schemas
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPipelineSchemasPipelineSchemaCollectionItemResult']:
+        """
+        Array of pipeline schemas
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPipelineSchemasPipelineSchemaCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 source_schema_name: str,
+                 target_schema_name: str):
+        """
+        :param str source_schema_name: The schema name from the database connection.
+        :param str target_schema_name: The schema name from the database connection.
+        """
+        pulumi.set(__self__, "source_schema_name", source_schema_name)
+        pulumi.set(__self__, "target_schema_name", target_schema_name)
+
+    @property
+    @pulumi.getter(name="sourceSchemaName")
+    def source_schema_name(self) -> str:
+        """
+        The schema name from the database connection.
+        """
+        return pulumi.get(self, "source_schema_name")
+
+    @property
+    @pulumi.getter(name="targetSchemaName")
+    def target_schema_name(self) -> str:
+        """
+        The schema name from the database connection.
+        """
+        return pulumi.get(self, "target_schema_name")
+
+
+@pulumi.output_type
+class GetPipelineSourceConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 connection_id: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "connection_id")
+
+
+@pulumi.output_type
+class GetPipelineTargetConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 connection_id: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "connection_id")
+
+
+@pulumi.output_type
+class GetPipelinesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPipelinesPipelineCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 cpu_core_count: int,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_auto_scaling_enabled: bool,
+                 license_model: str,
+                 lifecycle_details: str,
+                 lifecycle_sub_state: str,
+                 locks: Sequence['outputs.GetPipelinesPipelineCollectionItemLockResult'],
+                 mapping_rules: Sequence['outputs.GetPipelinesPipelineCollectionItemMappingRuleResult'],
+                 process_options: Sequence['outputs.GetPipelinesPipelineCollectionItemProcessOptionResult'],
+                 recipe_type: str,
+                 source_connection_details: Sequence['outputs.GetPipelinesPipelineCollectionItemSourceConnectionDetailResult'],
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 target_connection_details: Sequence['outputs.GetPipelinesPipelineCollectionItemTargetConnectionDetailResult'],
+                 time_created: str,
+                 time_last_recorded: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        :param int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
+        :param Mapping[str, str] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: Metadata about this specific object.
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+        :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param str license_model: The Oracle license model that applies to a Deployment.
+        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param str lifecycle_sub_state: A filtered list of pipelines to return for a given lifecycleSubState.
+        :param Sequence['GetPipelinesPipelineCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param Sequence['GetPipelinesPipelineCollectionItemMappingRuleArgs'] mapping_rules: Mapping for source/target schema/tables for the pipeline data replication.
+        :param Sequence['GetPipelinesPipelineCollectionItemProcessOptionArgs'] process_options: Required pipeline options to configure the replication process (Extract or Replicat).
+        :param str recipe_type: The type of the recipe
+        :param Sequence['GetPipelinesPipelineCollectionItemSourceConnectionDetailArgs'] source_connection_details: The source connection details for creating a pipeline.
+        :param str state: A filtered list of pipelines to return for a given lifecycleState.
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Sequence['GetPipelinesPipelineCollectionItemTargetConnectionDetailArgs'] target_connection_details: The target connection details for creating a pipeline.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_last_recorded: When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "mapping_rules", mapping_rules)
+        pulumi.set(__self__, "process_options", process_options)
+        pulumi.set(__self__, "recipe_type", recipe_type)
+        pulumi.set(__self__, "source_connection_details", source_connection_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_connection_details", target_connection_details)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_recorded", time_last_recorded)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> int:
+        """
+        The Minimum number of OCPUs to be made available for this Deployment.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Metadata about this specific object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoScalingEnabled")
+    def is_auto_scaling_enabled(self) -> bool:
+        """
+        Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        """
+        return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        """
+        The Oracle license model that applies to a Deployment.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> str:
+        """
+        A filtered list of pipelines to return for a given lifecycleSubState.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
+    @pulumi.getter(name="mappingRules")
+    def mapping_rules(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemMappingRuleResult']:
+        """
+        Mapping for source/target schema/tables for the pipeline data replication.
+        """
+        return pulumi.get(self, "mapping_rules")
+
+    @property
+    @pulumi.getter(name="processOptions")
+    def process_options(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemProcessOptionResult']:
+        """
+        Required pipeline options to configure the replication process (Extract or Replicat).
+        """
+        return pulumi.get(self, "process_options")
+
+    @property
+    @pulumi.getter(name="recipeType")
+    def recipe_type(self) -> str:
+        """
+        The type of the recipe
+        """
+        return pulumi.get(self, "recipe_type")
+
+    @property
+    @pulumi.getter(name="sourceConnectionDetails")
+    def source_connection_details(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemSourceConnectionDetailResult']:
+        """
+        The source connection details for creating a pipeline.
+        """
+        return pulumi.get(self, "source_connection_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filtered list of pipelines to return for a given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetConnectionDetails")
+    def target_connection_details(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemTargetConnectionDetailResult']:
+        """
+        The target connection details for creating a pipeline.
+        """
+        return pulumi.get(self, "target_connection_details")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastRecorded")
+    def time_last_recorded(self) -> str:
+        """
+        When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_recorded")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemMappingRuleResult(dict):
+    def __init__(__self__, *,
+                 mapping_type: str,
+                 source: str,
+                 target: str):
+        """
+        :param str mapping_type: Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        :param str source: The source schema/table combination for replication to target.
+        :param str target: The target schema/table combination for replication from the source.
+        """
+        pulumi.set(__self__, "mapping_type", mapping_type)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="mappingType")
+    def mapping_type(self) -> str:
+        """
+        Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+        """
+        return pulumi.get(self, "mapping_type")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source schema/table combination for replication to target.
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        The target schema/table combination for replication from the source.
+        """
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemProcessOptionResult(dict):
+    def __init__(__self__, *,
+                 initial_data_loads: Sequence['outputs.GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadResult'],
+                 replicate_schema_changes: Sequence['outputs.GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeResult'],
+                 should_restart_on_failure: str):
+        """
+        :param Sequence['GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs'] initial_data_loads: Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param Sequence['GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs'] replicate_schema_changes: Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        :param str should_restart_on_failure: If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        pulumi.set(__self__, "initial_data_loads", initial_data_loads)
+        pulumi.set(__self__, "replicate_schema_changes", replicate_schema_changes)
+        pulumi.set(__self__, "should_restart_on_failure", should_restart_on_failure)
+
+    @property
+    @pulumi.getter(name="initialDataLoads")
+    def initial_data_loads(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadResult']:
+        """
+        Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "initial_data_loads")
+
+    @property
+    @pulumi.getter(name="replicateSchemaChanges")
+    def replicate_schema_changes(self) -> Sequence['outputs.GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeResult']:
+        """
+        Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+        """
+        return pulumi.get(self, "replicate_schema_changes")
+
+    @property
+    @pulumi.getter(name="shouldRestartOnFailure")
+    def should_restart_on_failure(self) -> str:
+        """
+        If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        """
+        return pulumi.get(self, "should_restart_on_failure")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadResult(dict):
+    def __init__(__self__, *,
+                 action_on_existing_table: str,
+                 is_initial_load: str):
+        """
+        :param str action_on_existing_table: Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        :param str is_initial_load: If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+        pulumi.set(__self__, "is_initial_load", is_initial_load)
+
+    @property
+    @pulumi.getter(name="actionOnExistingTable")
+    def action_on_existing_table(self) -> str:
+        """
+        Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        """
+        return pulumi.get(self, "action_on_existing_table")
+
+    @property
+    @pulumi.getter(name="isInitialLoad")
+    def is_initial_load(self) -> str:
+        """
+        If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "is_initial_load")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeResult(dict):
+    def __init__(__self__, *,
+                 action_on_ddl_error: str,
+                 action_on_dml_error: str,
+                 can_replicate_schema_change: str):
+        """
+        :param str action_on_ddl_error: Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        :param str action_on_dml_error: Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        :param str can_replicate_schema_change: If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        pulumi.set(__self__, "action_on_ddl_error", action_on_ddl_error)
+        pulumi.set(__self__, "action_on_dml_error", action_on_dml_error)
+        pulumi.set(__self__, "can_replicate_schema_change", can_replicate_schema_change)
+
+    @property
+    @pulumi.getter(name="actionOnDdlError")
+    def action_on_ddl_error(self) -> str:
+        """
+        Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_ddl_error")
+
+    @property
+    @pulumi.getter(name="actionOnDmlError")
+    def action_on_dml_error(self) -> str:
+        """
+        Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+        """
+        return pulumi.get(self, "action_on_dml_error")
+
+    @property
+    @pulumi.getter(name="canReplicateSchemaChange")
+    def can_replicate_schema_change(self) -> str:
+        """
+        If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+        """
+        return pulumi.get(self, "can_replicate_schema_change")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemSourceConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 connection_id: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "connection_id")
+
+
+@pulumi.output_type
+class GetPipelinesPipelineCollectionItemTargetConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 connection_id: str):
+        """
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "connection_id")
+
+
+@pulumi.output_type
+class GetRecipesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: An object's Display Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRecipesRecipeSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRecipesRecipeSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetRecipesRecipeSummaryCollectionItemArgs'] items: Array of Recipe Summary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRecipesRecipeSummaryCollectionItemResult']:
+        """
+        Array of Recipe Summary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRecipesRecipeSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 display_name: str,
+                 name: str,
+                 recipe_type: str,
+                 supported_source_technology_types: Sequence[str],
+                 supported_target_technology_types: Sequence[str]):
+        """
+        :param str description: Metadata about this specific object.
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str name: An object's Display Name.
+        :param str recipe_type: The pipeline's recipe type. The default value is ZERO_ETL.
+        :param Sequence[str] supported_source_technology_types: Array of supported technology types for this recipe.
+        :param Sequence[str] supported_target_technology_types: Array of supported technology types for this recipe.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "recipe_type", recipe_type)
+        pulumi.set(__self__, "supported_source_technology_types", supported_source_technology_types)
+        pulumi.set(__self__, "supported_target_technology_types", supported_target_technology_types)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Metadata about this specific object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="recipeType")
+    def recipe_type(self) -> str:
+        """
+        The pipeline's recipe type. The default value is ZERO_ETL.
+        """
+        return pulumi.get(self, "recipe_type")
+
+    @property
+    @pulumi.getter(name="supportedSourceTechnologyTypes")
+    def supported_source_technology_types(self) -> Sequence[str]:
+        """
+        Array of supported technology types for this recipe.
+        """
+        return pulumi.get(self, "supported_source_technology_types")
+
+    @property
+    @pulumi.getter(name="supportedTargetTechnologyTypes")
+    def supported_target_technology_types(self) -> Sequence[str]:
+        """
+        Array of supported technology types for this recipe.
+        """
+        return pulumi.get(self, "supported_target_technology_types")
 
 
 @pulumi.output_type

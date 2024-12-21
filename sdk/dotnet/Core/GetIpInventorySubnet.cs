@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpInventorySubnetResult> Invoke(GetIpInventorySubnetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpInventorySubnetResult>("oci:Core/getIpInventorySubnet:getIpInventorySubnet", args ?? new GetIpInventorySubnetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpInventorySubnet = Oci.Core.GetIpInventorySubnet.Invoke(new()
+        ///     {
+        ///         SubnetId = testSubnet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpInventorySubnetResult> Invoke(GetIpInventorySubnetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpInventorySubnetResult>("oci:Core/getIpInventorySubnet:getIpInventorySubnet", args ?? new GetIpInventorySubnetInvokeArgs(), options.WithDefaults());
     }
 
 

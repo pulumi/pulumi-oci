@@ -90,6 +90,46 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditEventAnalyticResult> Invoke(GetAuditEventAnalyticInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// By default ListAuditEventAnalytics operation will return all of the summary columns. To filter desired summary columns, specify
+        /// it in the `summaryOf` query parameter.
+        /// 
+        /// **Example:** /ListAuditEventAnalytics?summaryField=targetName&amp;summaryField=userName&amp;summaryField=clientHostName&amp;summaryField
+        ///              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
+        ///              &amp;summaryField=eventcount&amp;q=(operationTime ge '2021-06-13T23:49:14')&amp;groupBy=targetName
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditEventAnalytic = Oci.DataSafe.GetAuditEventAnalytic.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditEventAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = auditEventAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = auditEventAnalyticGroupBy,
+        ///         QueryTimeZone = auditEventAnalyticQueryTimeZone,
+        ///         ScimQuery = auditEventAnalyticScimQuery,
+        ///         SummaryFields = auditEventAnalyticSummaryField,
+        ///         TimeEnded = auditEventAnalyticTimeEnded,
+        ///         TimeStarted = auditEventAnalyticTimeStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditEventAnalyticResult> Invoke(GetAuditEventAnalyticInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditEventAnalyticResult>("oci:DataSafe/getAuditEventAnalytic:getAuditEventAnalytic", args ?? new GetAuditEventAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -79,21 +79,11 @@ type GetAlertRulesResult struct {
 }
 
 func GetAlertRulesOutput(ctx *pulumi.Context, args GetAlertRulesOutputArgs, opts ...pulumi.InvokeOption) GetAlertRulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAlertRulesResultOutput, error) {
 			args := v.(GetAlertRulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAlertRulesResult
-			secret, err := ctx.InvokePackageRaw("oci:Budget/getAlertRules:getAlertRules", args, &rv, "", opts...)
-			if err != nil {
-				return GetAlertRulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAlertRulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAlertRulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Budget/getAlertRules:getAlertRules", args, GetAlertRulesResultOutput{}, options).(GetAlertRulesResultOutput), nil
 		}).(GetAlertRulesResultOutput)
 }
 

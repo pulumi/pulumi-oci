@@ -76,6 +76,39 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetAssociationsResult> Invoke(GetAssociationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssociationsResult>("oci:CertificatesManagement/getAssociations:getAssociations", args ?? new GetAssociationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Associations in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Lists all associations that match the query parameters.
+        /// Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAssociations = Oci.CertificatesManagement.GetAssociations.Invoke(new()
+        ///     {
+        ///         AssociatedResourceId = testAssociatedResource.Id,
+        ///         AssociationId = testAssociation.Id,
+        ///         AssociationType = associationAssociationType,
+        ///         CertificatesResourceId = testCertificatesResource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = associationName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAssociationsResult> Invoke(GetAssociationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAssociationsResult>("oci:CertificatesManagement/getAssociations:getAssociations", args ?? new GetAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

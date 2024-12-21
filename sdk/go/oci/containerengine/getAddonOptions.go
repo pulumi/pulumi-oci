@@ -72,21 +72,11 @@ type GetAddonOptionsResult struct {
 }
 
 func GetAddonOptionsOutput(ctx *pulumi.Context, args GetAddonOptionsOutputArgs, opts ...pulumi.InvokeOption) GetAddonOptionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAddonOptionsResultOutput, error) {
 			args := v.(GetAddonOptionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAddonOptionsResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getAddonOptions:getAddonOptions", args, &rv, "", opts...)
-			if err != nil {
-				return GetAddonOptionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAddonOptionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAddonOptionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getAddonOptions:getAddonOptions", args, GetAddonOptionsResultOutput{}, options).(GetAddonOptionsResultOutput), nil
 		}).(GetAddonOptionsResultOutput)
 }
 

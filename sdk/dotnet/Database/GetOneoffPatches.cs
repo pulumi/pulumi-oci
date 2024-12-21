@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetOneoffPatchesResult> Invoke(GetOneoffPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOneoffPatchesResult>("oci:Database/getOneoffPatches:getOneoffPatches", args ?? new GetOneoffPatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists one-off patches in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOneoffPatches = Oci.Database.GetOneoffPatches.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = oneoffPatchDisplayName,
+        ///         State = oneoffPatchState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOneoffPatchesResult> Invoke(GetOneoffPatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOneoffPatchesResult>("oci:Database/getOneoffPatches:getOneoffPatches", args ?? new GetOneoffPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -87,21 +87,11 @@ type GetAppAccelerationsResult struct {
 }
 
 func GetAppAccelerationsOutput(ctx *pulumi.Context, args GetAppAccelerationsOutputArgs, opts ...pulumi.InvokeOption) GetAppAccelerationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppAccelerationsResultOutput, error) {
 			args := v.(GetAppAccelerationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppAccelerationsResult
-			secret, err := ctx.InvokePackageRaw("oci:Waa/getAppAccelerations:getAppAccelerations", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppAccelerationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppAccelerationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppAccelerationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waa/getAppAccelerations:getAppAccelerations", args, GetAppAccelerationsResultOutput{}, options).(GetAppAccelerationsResultOutput), nil
 		}).(GetAppAccelerationsResultOutput)
 }
 

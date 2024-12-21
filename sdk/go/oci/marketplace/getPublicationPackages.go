@@ -77,21 +77,11 @@ type GetPublicationPackagesResult struct {
 }
 
 func GetPublicationPackagesOutput(ctx *pulumi.Context, args GetPublicationPackagesOutputArgs, opts ...pulumi.InvokeOption) GetPublicationPackagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPublicationPackagesResultOutput, error) {
 			args := v.(GetPublicationPackagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPublicationPackagesResult
-			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getPublicationPackages:getPublicationPackages", args, &rv, "", opts...)
-			if err != nil {
-				return GetPublicationPackagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPublicationPackagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPublicationPackagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Marketplace/getPublicationPackages:getPublicationPackages", args, GetPublicationPackagesResultOutput{}, options).(GetPublicationPackagesResultOutput), nil
 		}).(GetPublicationPackagesResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFunctionResult> Invoke(GetFunctionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFunctionResult>("oci:Functions/getFunction:getFunction", args ?? new GetFunctionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
+        /// 
+        /// Retrieves a function.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFunction = Oci.Functions.GetFunction.Invoke(new()
+        ///     {
+        ///         FunctionId = testFunctionOciFunctionsFunction.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFunctionResult> Invoke(GetFunctionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFunctionResult>("oci:Functions/getFunction:getFunction", args ?? new GetFunctionInvokeArgs(), options.WithDefaults());
     }
 
 

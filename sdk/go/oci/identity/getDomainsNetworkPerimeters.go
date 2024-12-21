@@ -106,21 +106,11 @@ type GetDomainsNetworkPerimetersResult struct {
 }
 
 func GetDomainsNetworkPerimetersOutput(ctx *pulumi.Context, args GetDomainsNetworkPerimetersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsNetworkPerimetersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsNetworkPerimetersResultOutput, error) {
 			args := v.(GetDomainsNetworkPerimetersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsNetworkPerimetersResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsNetworkPerimetersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsNetworkPerimetersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsNetworkPerimetersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", args, GetDomainsNetworkPerimetersResultOutput{}, options).(GetDomainsNetworkPerimetersResultOutput), nil
 		}).(GetDomainsNetworkPerimetersResultOutput)
 }
 

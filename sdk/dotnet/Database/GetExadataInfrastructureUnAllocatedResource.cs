@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExadataInfrastructureUnAllocatedResourceResult> Invoke(GetExadataInfrastructureUnAllocatedResourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureUnAllocatedResourceResult>("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", args ?? new GetExadataInfrastructureUnAllocatedResourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInfrastructureUnAllocatedResource = Oci.Database.GetExadataInfrastructureUnAllocatedResource.Invoke(new()
+        ///     {
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         DbServers = exadataInfrastructureUnAllocatedResourceDbServers,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExadataInfrastructureUnAllocatedResourceResult> Invoke(GetExadataInfrastructureUnAllocatedResourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureUnAllocatedResourceResult>("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", args ?? new GetExadataInfrastructureUnAllocatedResourceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetDrsFileResult> Invoke(GetFleetDrsFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetDrsFileResult>("oci:Jms/getFleetDrsFile:getFleetDrsFile", args ?? new GetFleetDrsFileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Drs File resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Get the detail about the created DRS file in the Fleet.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetDrsFile = Oci.Jms.GetFleetDrsFile.Invoke(new()
+        ///     {
+        ///         DrsFileKey = fleetDrsFileDrsFileKey,
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetDrsFileResult> Invoke(GetFleetDrsFileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetDrsFileResult>("oci:Jms/getFleetDrsFile:getFleetDrsFile", args ?? new GetFleetDrsFileInvokeArgs(), options.WithDefaults());
     }
 
 

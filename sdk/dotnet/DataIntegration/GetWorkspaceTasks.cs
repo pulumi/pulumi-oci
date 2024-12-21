@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceTasksResult> Invoke(GetWorkspaceTasksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceTasksResult>("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", args ?? new GetWorkspaceTasksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a list of all tasks in a specified project or folder.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceTasks = Oci.DataIntegration.GetWorkspaceTasks.Invoke(new()
+        ///     {
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceTaskFields,
+        ///         FolderId = testFolder.Id,
+        ///         Identifiers = workspaceTaskIdentifier,
+        ///         Keys = workspaceTaskKey,
+        ///         Name = workspaceTaskName,
+        ///         Types = workspaceTaskType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceTasksResult> Invoke(GetWorkspaceTasksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceTasksResult>("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", args ?? new GetWorkspaceTasksInvokeArgs(), options.WithDefaults());
     }
 
 

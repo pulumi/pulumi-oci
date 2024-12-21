@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetPbfListingTriggersResult> Invoke(GetPbfListingTriggersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingTriggersResult>("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args ?? new GetPbfListingTriggersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
+        /// 
+        /// Returns a list of Triggers.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPbfListingTriggers = Oci.Functions.GetPbfListingTriggers.Invoke(new()
+        ///     {
+        ///         Name = pbfListingTriggerName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPbfListingTriggersResult> Invoke(GetPbfListingTriggersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingTriggersResult>("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args ?? new GetPbfListingTriggersInvokeArgs(), options.WithDefaults());
     }
 
 

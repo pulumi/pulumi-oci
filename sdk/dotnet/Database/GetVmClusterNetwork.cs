@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterNetworkResult> Invoke(GetVmClusterNetworkInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkResult>("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args ?? new GetVmClusterNetworkInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+        /// To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterNetwork = Oci.Database.GetVmClusterNetwork.Invoke(new()
+        ///     {
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         VmClusterNetworkId = testVmClusterNetworkOciDatabaseVmClusterNetwork.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterNetworkResult> Invoke(GetVmClusterNetworkInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkResult>("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args ?? new GetVmClusterNetworkInvokeArgs(), options.WithDefaults());
     }
 
 

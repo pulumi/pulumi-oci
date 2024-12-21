@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalAsmUsersResult> Invoke(GetExternalAsmUsersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmUsersResult>("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", args ?? new GetExternalAsmUsersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists ASM users for the external ASM specified by `externalAsmId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalAsmUsers = Oci.DatabaseManagement.GetExternalAsmUsers.Invoke(new()
+        ///     {
+        ///         ExternalAsmId = testExternalAsm.Id,
+        ///         OpcNamedCredentialId = externalAsmUserOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalAsmUsersResult> Invoke(GetExternalAsmUsersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmUsersResult>("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", args ?? new GetExternalAsmUsersInvokeArgs(), options.WithDefaults());
     }
 
 

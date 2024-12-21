@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataLabellingService
         /// </summary>
         public static Output<GetDatasetsResult> Invoke(GetDatasetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatasetsResult>("oci:DataLabellingService/getDatasets:getDatasets", args ?? new GetDatasetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
+        /// 
+        /// Returns a list of Datasets.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatasets = Oci.DataLabellingService.GetDatasets.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AnnotationFormat = datasetAnnotationFormat,
+        ///         DisplayName = datasetDisplayName,
+        ///         Id = datasetId,
+        ///         State = datasetState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatasetsResult> Invoke(GetDatasetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatasetsResult>("oci:DataLabellingService/getDatasets:getDatasets", args ?? new GetDatasetsInvokeArgs(), options.WithDefaults());
     }
 
 

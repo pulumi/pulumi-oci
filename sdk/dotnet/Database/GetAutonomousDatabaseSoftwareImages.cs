@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseSoftwareImagesResult> Invoke(GetAutonomousDatabaseSoftwareImagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseSoftwareImagesResult>("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", args ?? new GetAutonomousDatabaseSoftwareImagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the Autonomous Database Software Images in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseSoftwareImages = Oci.Database.GetAutonomousDatabaseSoftwareImages.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ImageShapeFamily = autonomousDatabaseSoftwareImageImageShapeFamily,
+        ///         DisplayName = autonomousDatabaseSoftwareImageDisplayName,
+        ///         State = autonomousDatabaseSoftwareImageState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseSoftwareImagesResult> Invoke(GetAutonomousDatabaseSoftwareImagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseSoftwareImagesResult>("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", args ?? new GetAutonomousDatabaseSoftwareImagesInvokeArgs(), options.WithDefaults());
     }
 
 

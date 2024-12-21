@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         public static Output<GetRedisClusterResult> Invoke(GetRedisClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRedisClusterResult>("oci:Redis/getRedisCluster:getRedisCluster", args ?? new GetRedisClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
+        /// 
+        /// Retrieves the specified Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRedisCluster = Oci.Redis.GetRedisCluster.Invoke(new()
+        ///     {
+        ///         RedisClusterId = testRedisClusterOciRedisRedisCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRedisClusterResult> Invoke(GetRedisClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRedisClusterResult>("oci:Redis/getRedisCluster:getRedisCluster", args ?? new GetRedisClusterInvokeArgs(), options.WithDefaults());
     }
 
 

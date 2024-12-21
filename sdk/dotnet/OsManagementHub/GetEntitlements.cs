@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetEntitlementsResult> Invoke(GetEntitlementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEntitlementsResult>("oci:OsManagementHub/getEntitlements:getEntitlements", args ?? new GetEntitlementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Entitlements in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but 
+        /// not limited to its Customer Support Identifier (CSI), and vendor name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEntitlements = Oci.OsManagementHub.GetEntitlements.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Csi = entitlementCsi,
+        ///         VendorName = entitlementVendorName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEntitlementsResult> Invoke(GetEntitlementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEntitlementsResult>("oci:OsManagementHub/getEntitlements:getEntitlements", args ?? new GetEntitlementsInvokeArgs(), options.WithDefaults());
     }
 
 

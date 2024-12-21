@@ -96,6 +96,49 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentFindingAnalyticsResult> Invoke(GetSecurityAssessmentFindingAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingAnalyticsResult>("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", args ?? new GetSecurityAssessmentFindingAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Assessment Finding Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of findings aggregated details in the specified compartment. This provides information about the overall state
+        /// of security assessment findings. You can use groupBy to get the count of findings under a certain risk level and with a certain findingKey, 
+        /// and as well as get the list of the targets that match the condition.
+        /// This data is especially useful content for the statistic chart or to support analytics.
+        /// 
+        /// When you perform the ListFindingAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+        /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+        /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+        /// compartmentId, then "Not Authorized" is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityAssessmentFindingAnalytics = Oci.DataSafe.GetSecurityAssessmentFindingAnalytics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentFindingAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+        ///         FindingKey = securityAssessmentFindingAnalyticFindingKey,
+        ///         GroupBy = securityAssessmentFindingAnalyticGroupBy,
+        ///         IsTopFinding = securityAssessmentFindingAnalyticIsTopFinding,
+        ///         Severity = securityAssessmentFindingAnalyticSeverity,
+        ///         TopFindingStatus = securityAssessmentFindingAnalyticTopFindingStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityAssessmentFindingAnalyticsResult> Invoke(GetSecurityAssessmentFindingAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingAnalyticsResult>("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", args ?? new GetSecurityAssessmentFindingAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

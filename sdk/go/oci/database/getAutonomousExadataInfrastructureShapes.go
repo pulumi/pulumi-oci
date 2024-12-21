@@ -72,21 +72,11 @@ type GetAutonomousExadataInfrastructureShapesResult struct {
 }
 
 func GetAutonomousExadataInfrastructureShapesOutput(ctx *pulumi.Context, args GetAutonomousExadataInfrastructureShapesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousExadataInfrastructureShapesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousExadataInfrastructureShapesResultOutput, error) {
 			args := v.(GetAutonomousExadataInfrastructureShapesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousExadataInfrastructureShapesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousExadataInfrastructureShapesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousExadataInfrastructureShapesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousExadataInfrastructureShapesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args, GetAutonomousExadataInfrastructureShapesResultOutput{}, options).(GetAutonomousExadataInfrastructureShapesResultOutput), nil
 		}).(GetAutonomousExadataInfrastructureShapesResultOutput)
 }
 

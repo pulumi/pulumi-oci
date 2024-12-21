@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalListenerResult> Invoke(GetExternalListenerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalListenerResult>("oci:DatabaseManagement/getExternalListener:getExternalListener", args ?? new GetExternalListenerInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external listener specified by `externalListenerId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalListener = Oci.DatabaseManagement.GetExternalListener.Invoke(new()
+        ///     {
+        ///         ExternalListenerId = testExternalListenerOciDatabaseManagementExternalListener.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalListenerResult> Invoke(GetExternalListenerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalListenerResult>("oci:DatabaseManagement/getExternalListener:getExternalListener", args ?? new GetExternalListenerInvokeArgs(), options.WithDefaults());
     }
 
 

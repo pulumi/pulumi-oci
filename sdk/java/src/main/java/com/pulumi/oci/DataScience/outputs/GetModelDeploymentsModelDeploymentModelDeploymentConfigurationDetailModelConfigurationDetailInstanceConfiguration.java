@@ -23,6 +23,11 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
     /**
+     * @return The OCID of a Data Science private endpoint.
+     * 
+     */
+    private String privateEndpointId;
+    /**
      * @return A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
      * 
      */
@@ -44,6 +49,13 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         return this.modelDeploymentInstanceShapeConfigDetails;
     }
     /**
+     * @return The OCID of a Data Science private endpoint.
+     * 
+     */
+    public String privateEndpointId() {
+        return this.privateEndpointId;
+    }
+    /**
      * @return A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
      * 
      */
@@ -62,12 +74,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public static final class Builder {
         private String instanceShapeName;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
+        private String privateEndpointId;
         private String subnetId;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
+    	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -91,6 +105,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return modelDeploymentInstanceShapeConfigDetails(List.of(modelDeploymentInstanceShapeConfigDetails));
         }
         @CustomType.Setter
+        public Builder privateEndpointId(String privateEndpointId) {
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "subnetId");
@@ -102,6 +124,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration();
             _resultValue.instanceShapeName = instanceShapeName;
             _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.subnetId = subnetId;
             return _resultValue;
         }

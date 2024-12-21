@@ -73,21 +73,11 @@ type GetLogAnalyticsUnprocessedDataBucketResult struct {
 }
 
 func GetLogAnalyticsUnprocessedDataBucketOutput(ctx *pulumi.Context, args GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsUnprocessedDataBucketResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsUnprocessedDataBucketResultOutput, error) {
 			args := v.(GetLogAnalyticsUnprocessedDataBucketArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsUnprocessedDataBucketResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsUnprocessedDataBucketResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsUnprocessedDataBucketResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsUnprocessedDataBucketResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args, GetLogAnalyticsUnprocessedDataBucketResultOutput{}, options).(GetLogAnalyticsUnprocessedDataBucketResultOutput), nil
 		}).(GetLogAnalyticsUnprocessedDataBucketResultOutput)
 }
 

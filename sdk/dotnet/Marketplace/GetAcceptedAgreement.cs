@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetAcceptedAgreementResult> Invoke(GetAcceptedAgreementInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementResult>("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args ?? new GetAcceptedAgreementInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Gets the details of a specific, previously accepted terms of use agreement.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAcceptedAgreement = Oci.Marketplace.GetAcceptedAgreement.Invoke(new()
+        ///     {
+        ///         AcceptedAgreementId = testAcceptedAgreementOciMarketplaceAcceptedAgreement.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAcceptedAgreementResult> Invoke(GetAcceptedAgreementInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementResult>("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args ?? new GetAcceptedAgreementInvokeArgs(), options.WithDefaults());
     }
 
 

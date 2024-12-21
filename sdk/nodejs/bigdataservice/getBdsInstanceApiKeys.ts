@@ -58,6 +58,9 @@ export interface GetBdsInstanceApiKeysArgs {
  * A collection of values returned by getBdsInstanceApiKeys.
  */
 export interface GetBdsInstanceApiKeysResult {
+    /**
+     * The list of bds_api_keys.
+     */
     readonly bdsApiKeys: outputs.BigDataService.GetBdsInstanceApiKeysBdsApiKey[];
     readonly bdsInstanceId: string;
     readonly displayName?: string;

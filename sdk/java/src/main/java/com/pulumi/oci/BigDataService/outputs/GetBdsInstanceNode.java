@@ -86,6 +86,11 @@ public final class GetBdsInstanceNode {
      */
     private Integer ocpus;
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * 
+     */
+    private String odhVersion;
+    /**
      * @return BDS-assigned Operating System version for the node.
      * 
      */
@@ -221,6 +226,13 @@ public final class GetBdsInstanceNode {
         return this.ocpus;
     }
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * 
+     */
+    public String odhVersion() {
+        return this.odhVersion;
+    }
+    /**
      * @return BDS-assigned Operating System version for the node.
      * 
      */
@@ -293,6 +305,7 @@ public final class GetBdsInstanceNode {
         private String nodeType;
         private Integer nvmes;
         private Integer ocpus;
+        private String odhVersion;
         private String osVersion;
         private String shape;
         private String sshFingerprint;
@@ -317,6 +330,7 @@ public final class GetBdsInstanceNode {
     	      this.nodeType = defaults.nodeType;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
+    	      this.odhVersion = defaults.odhVersion;
     	      this.osVersion = defaults.osVersion;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
@@ -442,6 +456,14 @@ public final class GetBdsInstanceNode {
             return this;
         }
         @CustomType.Setter
+        public Builder odhVersion(String odhVersion) {
+            if (odhVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "odhVersion");
+            }
+            this.odhVersion = odhVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osVersion(String osVersion) {
             if (osVersion == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceNode", "osVersion");
@@ -513,6 +535,7 @@ public final class GetBdsInstanceNode {
             _resultValue.nodeType = nodeType;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
+            _resultValue.odhVersion = odhVersion;
             _resultValue.osVersion = osVersion;
             _resultValue.shape = shape;
             _resultValue.sshFingerprint = sshFingerprint;

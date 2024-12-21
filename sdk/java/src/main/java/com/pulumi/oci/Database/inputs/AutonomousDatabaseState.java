@@ -837,6 +837,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) True if the Autonomous Database is backup retention locked.
+     * 
+     */
+    @Import(name="isBackupRetentionLocked")
+    private @Nullable Output<Boolean> isBackupRetentionLocked;
+
+    /**
+     * @return (Updatable) True if the Autonomous Database is backup retention locked.
+     * 
+     */
+    public Optional<Output<Boolean>> isBackupRetentionLocked() {
+        return Optional.ofNullable(this.isBackupRetentionLocked);
+    }
+
+    /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
@@ -2349,6 +2364,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.isAccessControlEnabled = $.isAccessControlEnabled;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.isAutoScalingForStorageEnabled = $.isAutoScalingForStorageEnabled;
+        this.isBackupRetentionLocked = $.isBackupRetentionLocked;
         this.isDataGuardEnabled = $.isDataGuardEnabled;
         this.isDedicated = $.isDedicated;
         this.isDevTier = $.isDevTier;
@@ -3637,6 +3653,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
             return isAutoScalingForStorageEnabled(Output.of(isAutoScalingForStorageEnabled));
+        }
+
+        /**
+         * @param isBackupRetentionLocked (Updatable) True if the Autonomous Database is backup retention locked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBackupRetentionLocked(@Nullable Output<Boolean> isBackupRetentionLocked) {
+            $.isBackupRetentionLocked = isBackupRetentionLocked;
+            return this;
+        }
+
+        /**
+         * @param isBackupRetentionLocked (Updatable) True if the Autonomous Database is backup retention locked.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            return isBackupRetentionLocked(Output.of(isBackupRetentionLocked));
         }
 
         /**

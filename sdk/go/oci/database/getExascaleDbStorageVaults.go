@@ -79,21 +79,11 @@ type GetExascaleDbStorageVaultsResult struct {
 }
 
 func GetExascaleDbStorageVaultsOutput(ctx *pulumi.Context, args GetExascaleDbStorageVaultsOutputArgs, opts ...pulumi.InvokeOption) GetExascaleDbStorageVaultsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExascaleDbStorageVaultsResultOutput, error) {
 			args := v.(GetExascaleDbStorageVaultsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExascaleDbStorageVaultsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", args, &rv, "", opts...)
-			if err != nil {
-				return GetExascaleDbStorageVaultsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExascaleDbStorageVaultsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExascaleDbStorageVaultsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", args, GetExascaleDbStorageVaultsResultOutput{}, options).(GetExascaleDbStorageVaultsResultOutput), nil
 		}).(GetExascaleDbStorageVaultsResultOutput)
 }
 

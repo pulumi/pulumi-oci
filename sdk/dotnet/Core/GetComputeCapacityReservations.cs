@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityReservationsResult> Invoke(GetComputeCapacityReservationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the compute capacity reservations that match the specified criteria and compartment.
+        /// 
+        /// You can limit the list by specifying a compute capacity reservation display name 
+        /// (the list will include all the identically-named compute capacity reservations in the compartment).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityReservations = Oci.Core.GetComputeCapacityReservations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityReservationAvailabilityDomain,
+        ///         DisplayName = computeCapacityReservationDisplayName,
+        ///         State = computeCapacityReservationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityReservationsResult> Invoke(GetComputeCapacityReservationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetUsageCarbonEmissionsConfigResult> Invoke(GetUsageCarbonEmissionsConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsageCarbonEmissionsConfigResult>("oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig", args ?? new GetUsageCarbonEmissionsConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Returns the configuration list for the UI drop-down list of carbon emission console.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUsageCarbonEmissionsConfig = Oci.MeteringComputation.GetUsageCarbonEmissionsConfig.Invoke(new()
+        ///     {
+        ///         TenantId = testTenant.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUsageCarbonEmissionsConfigResult> Invoke(GetUsageCarbonEmissionsConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsageCarbonEmissionsConfigResult>("oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig", args ?? new GetUsageCarbonEmissionsConfigInvokeArgs(), options.WithDefaults());
     }
 
 

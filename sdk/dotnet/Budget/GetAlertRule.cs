@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public static Output<GetAlertRuleResult> Invoke(GetAlertRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertRuleResult>("oci:Budget/getAlertRule:getAlertRule", args ?? new GetAlertRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
+        /// 
+        /// Gets an Alert Rule for a specified budget.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlertRule = Oci.Budget.GetAlertRule.Invoke(new()
+        ///     {
+        ///         AlertRuleId = testAlertRuleOciBudgetAlertRule.Id,
+        ///         BudgetId = testBudget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertRuleResult> Invoke(GetAlertRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertRuleResult>("oci:Budget/getAlertRule:getAlertRule", args ?? new GetAlertRuleInvokeArgs(), options.WithDefaults());
     }
 
 

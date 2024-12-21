@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadReportResult> Invoke(GetJavaDownloadsJavaDownloadReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadReportResult>("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", args ?? new GetJavaDownloadsJavaDownloadReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Gets a JavaDownloadReport by the specified identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaDownloadReport = Oci.Jms.GetJavaDownloadsJavaDownloadReport.Invoke(new()
+        ///     {
+        ///         JavaDownloadReportId = testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaDownloadReportResult> Invoke(GetJavaDownloadsJavaDownloadReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadReportResult>("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", args ?? new GetJavaDownloadsJavaDownloadReportInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Blockchain
         /// </summary>
         public static Output<GetOsnsResult> Invoke(GetOsnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOsnsResult>("oci:Blockchain/getOsns:getOsns", args ?? new GetOsnsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
+        /// 
+        /// List Blockchain Platform OSNs
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOsns = Oci.Blockchain.GetOsns.Invoke(new()
+        ///     {
+        ///         BlockchainPlatformId = testBlockchainPlatform.Id,
+        ///         DisplayName = osnDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOsnsResult> Invoke(GetOsnsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOsnsResult>("oci:Blockchain/getOsns:getOsns", args ?? new GetOsnsInvokeArgs(), options.WithDefaults());
     }
 
 

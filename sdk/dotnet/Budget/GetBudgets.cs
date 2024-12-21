@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public static Output<GetBudgetsResult> Invoke(GetBudgetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBudgetsResult>("oci:Budget/getBudgets:getBudgets", args ?? new GetBudgetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
+        /// 
+        /// Gets a list of budgets in a compartment.
+        /// 
+        /// By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
+        /// 
+        /// To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
+        /// 
+        /// Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBudgets = Oci.Budget.GetBudgets.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = budgetDisplayName,
+        ///         State = budgetState,
+        ///         TargetType = budgetTargetType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBudgetsResult> Invoke(GetBudgetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBudgetsResult>("oci:Budget/getBudgets:getBudgets", args ?? new GetBudgetsInvokeArgs(), options.WithDefaults());
     }
 
 

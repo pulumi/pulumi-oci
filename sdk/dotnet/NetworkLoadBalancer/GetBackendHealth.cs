@@ -66,6 +66,34 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public static Output<GetBackendHealthResult> Invoke(GetBackendHealthInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
+        /// 
+        /// Retrieves the current health status of the specified backend server.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackendHealth = Oci.NetworkLoadBalancer.GetBackendHealth.Invoke(new()
+        ///     {
+        ///         BackendName = testBackend.Name,
+        ///         BackendSetName = testBackendSet.Name,
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackendHealthResult> Invoke(GetBackendHealthInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendHealthResult>("oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth", args ?? new GetBackendHealthInvokeArgs(), options.WithDefaults());
     }
 
 

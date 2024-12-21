@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         public static Output<GetSecretsResult> Invoke(GetSecretsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecretsResult>("oci:Vault/getSecrets:getSecrets", args ?? new GetSecretsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
+        /// 
+        /// Lists all secrets in the specified vault and compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecrets = Oci.Vault.GetSecrets.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = secretName,
+        ///         State = secretState,
+        ///         VaultId = testVault.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecretsResult> Invoke(GetSecretsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretsResult>("oci:Vault/getSecrets:getSecrets", args ?? new GetSecretsInvokeArgs(), options.WithDefaults());
     }
 
 

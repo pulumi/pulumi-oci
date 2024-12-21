@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsCloudGateServersResult> Invoke(GetDomainsCloudGateServersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateServersResult>("oci:Identity/getDomainsCloudGateServers:getDomainsCloudGateServers", args ?? new GetDomainsCloudGateServersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cloud Gate Servers in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Cloud Gate servers
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudGateServers = Oci.Identity.GetDomainsCloudGateServers.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateServerCount = cloudGateServerCloudGateServerCount,
+        ///         CloudGateServerFilter = cloudGateServerCloudGateServerFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = cloudGateServerAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateServerResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateServerStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsCloudGateServersResult> Invoke(GetDomainsCloudGateServersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateServersResult>("oci:Identity/getDomainsCloudGateServers:getDomainsCloudGateServers", args ?? new GetDomainsCloudGateServersInvokeArgs(), options.WithDefaults());
     }
 
 

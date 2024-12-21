@@ -74,6 +74,38 @@ namespace Pulumi.Oci.AnnouncementsService
         /// </summary>
         public static Output<GetAnnouncementSubscriptionsResult> Invoke(GetAnnouncementSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
+        /// 
+        /// Gets a list of all announcement subscriptions in the specified compartment.
+        /// 
+        /// This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAnnouncementSubscriptions = Oci.AnnouncementsService.GetAnnouncementSubscriptions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = announcementSubscriptionDisplayName,
+        ///         Id = announcementSubscriptionId,
+        ///         State = announcementSubscriptionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAnnouncementSubscriptionsResult> Invoke(GetAnnouncementSubscriptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

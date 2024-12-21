@@ -37,6 +37,8 @@ import (
 //				PatchingConfig: &bigdataservice.BdsInstancePatchActionPatchingConfigArgs{
 //					PatchingConfigStrategy:         pulumi.Any(bdsInstancePatchActionPatchingConfigPatchingConfigStrategy),
 //					BatchSize:                      pulumi.Any(bdsInstancePatchActionPatchingConfigBatchSize),
+//					ToleranceThresholdPerBatch:     pulumi.Any(bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch),
+//					ToleranceThresholdPerDomain:    pulumi.Any(bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain),
 //					WaitTimeBetweenBatchInSeconds:  pulumi.Any(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
 //					WaitTimeBetweenDomainInSeconds: pulumi.Any(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
 //				},

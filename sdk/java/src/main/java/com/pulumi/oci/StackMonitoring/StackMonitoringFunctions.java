@@ -2755,6 +2755,107 @@ public final class StackMonitoringFunctions {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMetricExtensionsResult> getMetricExtensions() {
+        return getMetricExtensions(GetMetricExtensionsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMetricExtensionsResult> getMetricExtensionsPlain() {
+        return getMetricExtensionsPlain(GetMetricExtensionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
      *             .name(metricExtensionName)
      *             .resourceType(metricExtensionResourceType)
      *             .state(metricExtensionState)
@@ -2804,6 +2905,7 @@ public final class StackMonitoringFunctions {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
      *             .name(metricExtensionName)
      *             .resourceType(metricExtensionResourceType)
      *             .state(metricExtensionState)
@@ -2853,6 +2955,7 @@ public final class StackMonitoringFunctions {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
      *             .name(metricExtensionName)
      *             .resourceType(metricExtensionResourceType)
      *             .state(metricExtensionState)
@@ -2902,6 +3005,7 @@ public final class StackMonitoringFunctions {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
      *             .name(metricExtensionName)
      *             .resourceType(metricExtensionResourceType)
      *             .state(metricExtensionState)
@@ -2951,6 +3055,7 @@ public final class StackMonitoringFunctions {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .enabledOnResourceId(testResource.id())
+     *             .metricExtensionId(testMetricExtension.id())
      *             .name(metricExtensionName)
      *             .resourceType(metricExtensionResourceType)
      *             .state(metricExtensionState)

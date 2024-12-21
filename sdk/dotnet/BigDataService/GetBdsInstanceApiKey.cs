@@ -64,6 +64,33 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstanceApiKeyResult> Invoke(GetBdsInstanceApiKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns the user's API key information for the given ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstanceApiKey = Oci.BigDataService.GetBdsInstanceApiKey.Invoke(new()
+        ///     {
+        ///         ApiKeyId = testApiKey.Id,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstanceApiKeyResult> Invoke(GetBdsInstanceApiKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -115,8 +142,14 @@ namespace Pulumi.Oci.BigDataService
         public readonly string BdsInstanceId;
         /// <summary>
         /// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public readonly string DefaultRegion;
+        /// <summary>
+        /// Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+        /// =======
+        /// </summary>
+        public readonly string DomainOcid;
         /// <summary>
         /// The fingerprint that corresponds to the public API key requested.
         /// </summary>
@@ -159,6 +192,8 @@ namespace Pulumi.Oci.BigDataService
 
             string defaultRegion,
 
+            string domainOcid,
+
             string fingerprint,
 
             string id,
@@ -180,6 +215,7 @@ namespace Pulumi.Oci.BigDataService
             ApiKeyId = apiKeyId;
             BdsInstanceId = bdsInstanceId;
             DefaultRegion = defaultRegion;
+            DomainOcid = domainOcid;
             Fingerprint = fingerprint;
             Id = id;
             KeyAlias = keyAlias;

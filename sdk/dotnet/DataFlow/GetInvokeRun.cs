@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetInvokeRunResult> Invoke(GetInvokeRunInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunResult>("oci:DataFlow/getInvokeRun:getInvokeRun", args ?? new GetInvokeRunInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Retrieves the run for the specified `runId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInvokeRun = Oci.DataFlow.GetInvokeRun.Invoke(new()
+        ///     {
+        ///         RunId = testRun.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInvokeRunResult> Invoke(GetInvokeRunInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunResult>("oci:DataFlow/getInvokeRun:getInvokeRun", args ?? new GetInvokeRunInvokeArgs(), options.WithDefaults());
     }
 
 

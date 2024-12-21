@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public static Output<GetDrPlanResult> Invoke(GetDrPlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanResult>("oci:DisasterRecovery/getDrPlan:getDrPlan", args ?? new GetDrPlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
+        /// 
+        /// Get details for the DR plan identified by *drPlanId*.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrPlan = Oci.DisasterRecovery.GetDrPlan.Invoke(new()
+        ///     {
+        ///         DrPlanId = testDrPlanOciDisasterRecoveryDrPlan.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrPlanResult> Invoke(GetDrPlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanResult>("oci:DisasterRecovery/getDrPlan:getDrPlan", args ?? new GetDrPlanInvokeArgs(), options.WithDefaults());
     }
 
 

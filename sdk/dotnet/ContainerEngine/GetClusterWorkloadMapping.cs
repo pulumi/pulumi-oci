@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetClusterWorkloadMappingResult> Invoke(GetClusterWorkloadMappingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterWorkloadMappingResult>("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", args ?? new GetClusterWorkloadMappingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Get the specified workloadMapping for a cluster.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testClusterWorkloadMapping = Oci.ContainerEngine.GetClusterWorkloadMapping.Invoke(new()
+        ///     {
+        ///         ClusterId = testCluster.Id,
+        ///         WorkloadMappingId = testWorkloadMapping.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetClusterWorkloadMappingResult> Invoke(GetClusterWorkloadMappingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterWorkloadMappingResult>("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", args ?? new GetClusterWorkloadMappingInvokeArgs(), options.WithDefaults());
     }
 
 

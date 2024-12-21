@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeBackupPoliciesResult> Invoke(GetVolumeBackupPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPoliciesResult>("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", args ?? new GetVolumeBackupPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists all the volume backup policies available in the specified compartment.
+        /// 
+        /// For more information about Oracle defined backup policies and user defined backup policies,
+        /// see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeBackupPolicies = Oci.Core.GetVolumeBackupPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeBackupPoliciesResult> Invoke(GetVolumeBackupPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPoliciesResult>("oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies", args ?? new GetVolumeBackupPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

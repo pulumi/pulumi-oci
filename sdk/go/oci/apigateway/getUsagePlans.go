@@ -79,21 +79,11 @@ type GetUsagePlansResult struct {
 }
 
 func GetUsagePlansOutput(ctx *pulumi.Context, args GetUsagePlansOutputArgs, opts ...pulumi.InvokeOption) GetUsagePlansResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetUsagePlansResultOutput, error) {
 			args := v.(GetUsagePlansArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetUsagePlansResult
-			secret, err := ctx.InvokePackageRaw("oci:ApiGateway/getUsagePlans:getUsagePlans", args, &rv, "", opts...)
-			if err != nil {
-				return GetUsagePlansResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetUsagePlansResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetUsagePlansResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApiGateway/getUsagePlans:getUsagePlans", args, GetUsagePlansResultOutput{}, options).(GetUsagePlansResultOutput), nil
 		}).(GetUsagePlansResultOutput)
 }
 

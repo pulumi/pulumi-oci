@@ -84,21 +84,11 @@ type GetProfileLevelsResult struct {
 }
 
 func GetProfileLevelsOutput(ctx *pulumi.Context, args GetProfileLevelsOutputArgs, opts ...pulumi.InvokeOption) GetProfileLevelsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProfileLevelsResultOutput, error) {
 			args := v.(GetProfileLevelsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProfileLevelsResult
-			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getProfileLevels:getProfileLevels", args, &rv, "", opts...)
-			if err != nil {
-				return GetProfileLevelsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProfileLevelsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProfileLevelsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Optimizer/getProfileLevels:getProfileLevels", args, GetProfileLevelsResultOutput{}, options).(GetProfileLevelsResultOutput), nil
 		}).(GetProfileLevelsResultOutput)
 }
 

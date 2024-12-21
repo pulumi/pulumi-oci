@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public static Output<GetDkimsResult> Invoke(GetDkimsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDkimsResult>("oci:Email/getDkims:getDkims", args ?? new GetDkimsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
+        /// 
+        /// Lists DKIMs for an email domain.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDkims = Oci.Email.GetDkims.Invoke(new()
+        ///     {
+        ///         EmailDomainId = testEmailDomain.Id,
+        ///         Id = dkimId,
+        ///         Name = dkimName,
+        ///         State = dkimState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDkimsResult> Invoke(GetDkimsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDkimsResult>("oci:Email/getDkims:getDkims", args ?? new GetDkimsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         public static Output<GetSubscriberResult> Invoke(GetSubscriberInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriberResult>("oci:ApiGateway/getSubscriber:getSubscriber", args ?? new GetSubscriberInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+        /// 
+        /// Gets a subscriber by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscriber = Oci.ApiGateway.GetSubscriber.Invoke(new()
+        ///     {
+        ///         SubscriberId = testSubscriberOciApigatewaySubscriber.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscriberResult> Invoke(GetSubscriberInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriberResult>("oci:ApiGateway/getSubscriber:getSubscriber", args ?? new GetSubscriberInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetModelProvenanceResult> Invoke(GetModelProvenanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelProvenanceResult>("oci:DataScience/getModelProvenance:getModelProvenance", args ?? new GetModelProvenanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Gets provenance information for specified model.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModelProvenance = Oci.DataScience.GetModelProvenance.Invoke(new()
+        ///     {
+        ///         ModelId = testModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelProvenanceResult> Invoke(GetModelProvenanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelProvenanceResult>("oci:DataScience/getModelProvenance:getModelProvenance", args ?? new GetModelProvenanceInvokeArgs(), options.WithDefaults());
     }
 
 

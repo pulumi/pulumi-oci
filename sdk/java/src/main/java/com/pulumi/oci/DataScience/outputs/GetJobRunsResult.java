@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetJobRunsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
      * 
      */
     private String compartmentId;
@@ -37,7 +37,7 @@ public final class GetJobRunsResult {
      */
     private @Nullable String id;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * 
      */
     private @Nullable String jobId;
@@ -54,7 +54,7 @@ public final class GetJobRunsResult {
 
     private GetJobRunsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
      * 
      */
     public String compartmentId() {
@@ -85,7 +85,7 @@ public final class GetJobRunsResult {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * 
      */
     public Optional<String> jobId() {

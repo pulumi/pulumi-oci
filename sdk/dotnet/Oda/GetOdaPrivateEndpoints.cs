@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaPrivateEndpointsResult> Invoke(GetOdaPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointsResult>("oci:Oda/getOdaPrivateEndpoints:getOdaPrivateEndpoints", args ?? new GetOdaPrivateEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Returns a page of ODA Private Endpoints that belong to the specified
+        /// compartment.
+        /// 
+        /// If the `opc-next-page` header appears in the response, then
+        /// there are more items to retrieve. To get the next page in the subsequent
+        /// GET request, include the header's value as the `page` query parameter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaPrivateEndpoints = Oci.Oda.GetOdaPrivateEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = odaPrivateEndpointDisplayName,
+        ///         State = odaPrivateEndpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaPrivateEndpointsResult> Invoke(GetOdaPrivateEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointsResult>("oci:Oda/getOdaPrivateEndpoints:getOdaPrivateEndpoints", args ?? new GetOdaPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

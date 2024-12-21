@@ -64,6 +64,33 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetUsageCarbonEmissionsQueryResult> Invoke(GetUsageCarbonEmissionsQueryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsageCarbonEmissionsQueryResult>("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", args ?? new GetUsageCarbonEmissionsQueryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Returns the usage carbon emissions saved query.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUsageCarbonEmissionsQuery = Oci.MeteringComputation.GetUsageCarbonEmissionsQuery.Invoke(new()
+        ///     {
+        ///         UsageCarbonEmissionsQueryId = testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUsageCarbonEmissionsQueryResult> Invoke(GetUsageCarbonEmissionsQueryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsageCarbonEmissionsQueryResult>("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", args ?? new GetUsageCarbonEmissionsQueryInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -41,21 +41,11 @@ type GetBackendSetHealthResult struct {
 }
 
 func GetBackendSetHealthOutput(ctx *pulumi.Context, args GetBackendSetHealthOutputArgs, opts ...pulumi.InvokeOption) GetBackendSetHealthResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBackendSetHealthResultOutput, error) {
 			args := v.(GetBackendSetHealthArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBackendSetHealthResult
-			secret, err := ctx.InvokePackageRaw("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args, &rv, "", opts...)
-			if err != nil {
-				return GetBackendSetHealthResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBackendSetHealthResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBackendSetHealthResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args, GetBackendSetHealthResultOutput{}, options).(GetBackendSetHealthResultOutput), nil
 		}).(GetBackendSetHealthResultOutput)
 }
 

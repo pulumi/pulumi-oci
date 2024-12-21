@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVirtualCircuitBandwidthShapesResult> Invoke(GetVirtualCircuitBandwidthShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the list of available virtual circuit bandwidth levels for a provider.
+        /// You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
+        /// 
+        /// For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualCircuitBandwidthShapes = Oci.Core.GetVirtualCircuitBandwidthShapes.Invoke(new()
+        ///     {
+        ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualCircuitBandwidthShapesResult> Invoke(GetVirtualCircuitBandwidthShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesInvokeArgs(), options.WithDefaults());
     }
 
 

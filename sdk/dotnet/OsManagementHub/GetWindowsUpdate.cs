@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetWindowsUpdateResult> Invoke(GetWindowsUpdateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWindowsUpdateResult>("oci:OsManagementHub/getWindowsUpdate:getWindowsUpdate", args ?? new GetWindowsUpdateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Windows Update resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a Windows Update object.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWindowsUpdate = Oci.OsManagementHub.GetWindowsUpdate.Invoke(new()
+        ///     {
+        ///         WindowsUpdateId = testWindowsUpdateOciOsManagementHubWindowsUpdate.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWindowsUpdateResult> Invoke(GetWindowsUpdateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWindowsUpdateResult>("oci:OsManagementHub/getWindowsUpdate:getWindowsUpdate", args ?? new GetWindowsUpdateInvokeArgs(), options.WithDefaults());
     }
 
 

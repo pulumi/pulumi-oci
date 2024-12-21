@@ -48,6 +48,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     }
 
     /**
+     * (Updatable) The OCID of a Data Science private endpoint.
+     * 
+     */
+    @Import(name="privateEndpointId")
+    private @Nullable Output<String> privateEndpointId;
+
+    /**
+     * @return (Updatable) The OCID of a Data Science private endpoint.
+     * 
+     */
+    public Optional<Output<String>> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
+    }
+
+    /**
      * (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
      * 
      */
@@ -67,6 +82,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs $) {
         this.instanceShapeName = $.instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = $.modelDeploymentInstanceShapeConfigDetails;
+        this.privateEndpointId = $.privateEndpointId;
         this.subnetId = $.subnetId;
     }
 
@@ -128,6 +144,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          */
         public Builder modelDeploymentInstanceShapeConfigDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs modelDeploymentInstanceShapeConfigDetails) {
             return modelDeploymentInstanceShapeConfigDetails(Output.of(modelDeploymentInstanceShapeConfigDetails));
+        }
+
+        /**
+         * @param privateEndpointId (Updatable) The OCID of a Data Science private endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(@Nullable Output<String> privateEndpointId) {
+            $.privateEndpointId = privateEndpointId;
+            return this;
+        }
+
+        /**
+         * @param privateEndpointId (Updatable) The OCID of a Data Science private endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(String privateEndpointId) {
+            return privateEndpointId(Output.of(privateEndpointId));
         }
 
         /**

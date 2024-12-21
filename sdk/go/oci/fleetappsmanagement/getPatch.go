@@ -99,21 +99,11 @@ type LookupPatchResult struct {
 }
 
 func LookupPatchOutput(ctx *pulumi.Context, args LookupPatchOutputArgs, opts ...pulumi.InvokeOption) LookupPatchResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupPatchResultOutput, error) {
 			args := v.(LookupPatchArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupPatchResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getPatch:getPatch", args, &rv, "", opts...)
-			if err != nil {
-				return LookupPatchResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupPatchResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupPatchResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getPatch:getPatch", args, LookupPatchResultOutput{}, options).(LookupPatchResultOutput), nil
 		}).(LookupPatchResultOutput)
 }
 

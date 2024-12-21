@@ -8,30 +8,44 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class MetricExtensionQueryPropertiesOutParamDetails {
     /**
-     * @return (Updatable) Position of PL/SQL procedure OUT parameter
+     * @return (Updatable) Name of the Out Parameter
+     * 
+     */
+    private @Nullable String outParamName;
+    /**
+     * @return (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
      * 
      */
     private Integer outParamPosition;
     /**
-     * @return (Updatable) SQL Type of PL/SQL procedure OUT parameter
+     * @return (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
      * 
      */
     private String outParamType;
 
     private MetricExtensionQueryPropertiesOutParamDetails() {}
     /**
-     * @return (Updatable) Position of PL/SQL procedure OUT parameter
+     * @return (Updatable) Name of the Out Parameter
+     * 
+     */
+    public Optional<String> outParamName() {
+        return Optional.ofNullable(this.outParamName);
+    }
+    /**
+     * @return (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
      * 
      */
     public Integer outParamPosition() {
         return this.outParamPosition;
     }
     /**
-     * @return (Updatable) SQL Type of PL/SQL procedure OUT parameter
+     * @return (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
      * 
      */
     public String outParamType() {
@@ -47,15 +61,23 @@ public final class MetricExtensionQueryPropertiesOutParamDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String outParamName;
         private Integer outParamPosition;
         private String outParamType;
         public Builder() {}
         public Builder(MetricExtensionQueryPropertiesOutParamDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.outParamName = defaults.outParamName;
     	      this.outParamPosition = defaults.outParamPosition;
     	      this.outParamType = defaults.outParamType;
         }
 
+        @CustomType.Setter
+        public Builder outParamName(@Nullable String outParamName) {
+
+            this.outParamName = outParamName;
+            return this;
+        }
         @CustomType.Setter
         public Builder outParamPosition(Integer outParamPosition) {
             if (outParamPosition == null) {
@@ -74,6 +96,7 @@ public final class MetricExtensionQueryPropertiesOutParamDetails {
         }
         public MetricExtensionQueryPropertiesOutParamDetails build() {
             final var _resultValue = new MetricExtensionQueryPropertiesOutParamDetails();
+            _resultValue.outParamName = outParamName;
             _resultValue.outParamPosition = outParamPosition;
             _resultValue.outParamType = outParamType;
             return _resultValue;

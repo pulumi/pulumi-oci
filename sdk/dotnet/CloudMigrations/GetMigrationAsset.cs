@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public static Output<GetMigrationAssetResult> Invoke(GetMigrationAssetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationAssetResult>("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args ?? new GetMigrationAssetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        /// 
+        /// Gets a migration asset by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrationAsset = Oci.CloudMigrations.GetMigrationAsset.Invoke(new()
+        ///     {
+        ///         MigrationAssetId = testMigrationAssetOciCloudMigrationsMigrationAsset.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMigrationAssetResult> Invoke(GetMigrationAssetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationAssetResult>("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args ?? new GetMigrationAssetInvokeArgs(), options.WithDefaults());
     }
 
 

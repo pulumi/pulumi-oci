@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetVirtualDeploymentResult> Invoke(GetVirtualDeploymentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualDeploymentResult>("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", args ?? new GetVirtualDeploymentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Gets a VirtualDeployment by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualDeployment = Oci.ServiceMesh.GetVirtualDeployment.Invoke(new()
+        ///     {
+        ///         VirtualDeploymentId = testVirtualDeploymentOciServiceMeshVirtualDeployment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualDeploymentResult> Invoke(GetVirtualDeploymentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualDeploymentResult>("oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment", args ?? new GetVirtualDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -71,21 +71,11 @@ type LookupAutonomousDatabaseInstanceWalletManagementResult struct {
 }
 
 func LookupAutonomousDatabaseInstanceWalletManagementOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseInstanceWalletManagementOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseInstanceWalletManagementResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAutonomousDatabaseInstanceWalletManagementResultOutput, error) {
 			args := v.(LookupAutonomousDatabaseInstanceWalletManagementArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAutonomousDatabaseInstanceWalletManagementResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAutonomousDatabaseInstanceWalletManagementResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAutonomousDatabaseInstanceWalletManagementResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAutonomousDatabaseInstanceWalletManagementResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", args, LookupAutonomousDatabaseInstanceWalletManagementResultOutput{}, options).(LookupAutonomousDatabaseInstanceWalletManagementResultOutput), nil
 		}).(LookupAutonomousDatabaseInstanceWalletManagementResultOutput)
 }
 

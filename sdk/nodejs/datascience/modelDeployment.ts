@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *                     memoryInGbs: modelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsMemoryInGbs,
  *                     ocpus: modelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOcpus,
  *                 },
+ *                 privateEndpointId: testPrivateEndpoint.id,
  *                 subnetId: testSubnet.id,
  *             },
  *             modelId: testModel.id,

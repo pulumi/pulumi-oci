@@ -77,21 +77,11 @@ type GetComputeCapacityTopologyComputeHpcIslandsResult struct {
 }
 
 func GetComputeCapacityTopologyComputeHpcIslandsOutput(ctx *pulumi.Context, args GetComputeCapacityTopologyComputeHpcIslandsOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityTopologyComputeHpcIslandsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeHpcIslandsResultOutput, error) {
 			args := v.(GetComputeCapacityTopologyComputeHpcIslandsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetComputeCapacityTopologyComputeHpcIslandsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args, &rv, "", opts...)
-			if err != nil {
-				return GetComputeCapacityTopologyComputeHpcIslandsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args, GetComputeCapacityTopologyComputeHpcIslandsResultOutput{}, options).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput), nil
 		}).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput)
 }
 

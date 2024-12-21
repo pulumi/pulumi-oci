@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingPolicyHealthReportsResult> Invoke(GetMaskingPolicyHealthReportsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyHealthReportsResult>("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", args ?? new GetMaskingPolicyHealthReportsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Masking Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of masking policy health reports based on the specified query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingPolicyHealthReports = Oci.DataSafe.GetMaskingPolicyHealthReports.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = maskingPolicyHealthReportAccessLevel,
+        ///         CompartmentIdInSubtree = maskingPolicyHealthReportCompartmentIdInSubtree,
+        ///         DisplayName = maskingPolicyHealthReportDisplayName,
+        ///         MaskingPolicyHealthReportId = testMaskingPolicyHealthReport.Id,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         State = maskingPolicyHealthReportState,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingPolicyHealthReportsResult> Invoke(GetMaskingPolicyHealthReportsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyHealthReportsResult>("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", args ?? new GetMaskingPolicyHealthReportsInvokeArgs(), options.WithDefaults());
     }
 
 

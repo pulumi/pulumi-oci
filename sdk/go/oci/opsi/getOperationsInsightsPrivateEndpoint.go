@@ -94,21 +94,11 @@ type LookupOperationsInsightsPrivateEndpointResult struct {
 }
 
 func LookupOperationsInsightsPrivateEndpointOutput(ctx *pulumi.Context, args LookupOperationsInsightsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupOperationsInsightsPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupOperationsInsightsPrivateEndpointResultOutput, error) {
 			args := v.(LookupOperationsInsightsPrivateEndpointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupOperationsInsightsPrivateEndpointResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args, &rv, "", opts...)
-			if err != nil {
-				return LookupOperationsInsightsPrivateEndpointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupOperationsInsightsPrivateEndpointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupOperationsInsightsPrivateEndpointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args, LookupOperationsInsightsPrivateEndpointResultOutput{}, options).(LookupOperationsInsightsPrivateEndpointResultOutput), nil
 		}).(LookupOperationsInsightsPrivateEndpointResultOutput)
 }
 

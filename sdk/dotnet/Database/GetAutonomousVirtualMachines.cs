@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousVirtualMachinesResult> Invoke(GetAutonomousVirtualMachinesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVirtualMachinesResult>("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args ?? new GetAutonomousVirtualMachinesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousVirtualMachines = Oci.Database.GetAutonomousVirtualMachines.Invoke(new()
+        ///     {
+        ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         State = autonomousVirtualMachineState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousVirtualMachinesResult> Invoke(GetAutonomousVirtualMachinesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVirtualMachinesResult>("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args ?? new GetAutonomousVirtualMachinesInvokeArgs(), options.WithDefaults());
     }
 
 

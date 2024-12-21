@@ -110,6 +110,56 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAuditProfilesResult> Invoke(GetAuditProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfilesResult>("oci:DataSafe/getAuditProfiles:getAuditProfiles", args ?? new GetAuditProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of all audit profiles.
+        /// 
+        /// The ListAuditProfiles operation returns only the audit profiles in the specified `compartmentId`.
+        /// The list does not include any subcompartments of the compartmentId passed.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListAuditProfiles on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuditProfiles = Oci.DataSafe.GetAuditProfiles.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditProfileAccessLevel,
+        ///         AuditCollectedVolumeGreaterThanOrEqualTo = auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         CompartmentIdInSubtree = auditProfileCompartmentIdInSubtree,
+        ///         DisplayName = auditProfileDisplayName,
+        ///         IsOverrideGlobalRetentionSetting = auditProfileIsOverrideGlobalRetentionSetting,
+        ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
+        ///         State = auditProfileState,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuditProfilesResult> Invoke(GetAuditProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfilesResult>("oci:DataSafe/getAuditProfiles:getAuditProfiles", args ?? new GetAuditProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

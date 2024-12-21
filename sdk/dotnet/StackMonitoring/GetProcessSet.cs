@@ -62,6 +62,32 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetProcessSetResult> Invoke(GetProcessSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessSetResult>("oci:StackMonitoring/getProcessSet:getProcessSet", args ?? new GetProcessSetInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// API to get the details of a Process Set by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProcessSet = Oci.StackMonitoring.GetProcessSet.Invoke(new()
+        ///     {
+        ///         ProcessSetId = testProcessSetOciStackMonitoringProcessSet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProcessSetResult> Invoke(GetProcessSetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProcessSetResult>("oci:StackMonitoring/getProcessSet:getProcessSet", args ?? new GetProcessSetInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         public static Output<GetSecretVersionResult> Invoke(GetSecretVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecretVersionResult>("oci:Vault/getSecretVersion:getSecretVersion", args ?? new GetSecretVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
+        /// 
+        /// Gets information about the specified version of a secret.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecretVersion = Oci.Vault.GetSecretVersion.Invoke(new()
+        ///     {
+        ///         SecretId = testSecret.Id,
+        ///         SecretVersionNumber = secretVersionSecretVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecretVersionResult> Invoke(GetSecretVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretVersionResult>("oci:Vault/getSecretVersion:getSecretVersion", args ?? new GetSecretVersionInvokeArgs(), options.WithDefaults());
     }
 
 

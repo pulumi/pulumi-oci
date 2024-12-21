@@ -70,6 +70,36 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public static Output<GetTargetAssetsResult> Invoke(GetTargetAssetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetAssetsResult>("oci:CloudMigrations/getTargetAssets:getTargetAssets", args ?? new GetTargetAssetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Assets in Oracle Cloud Infrastructure Cloud Migrations service.
+        /// 
+        /// Returns a list of target assets.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetAssets = Oci.CloudMigrations.GetTargetAssets.Invoke(new()
+        ///     {
+        ///         DisplayName = targetAssetDisplayName,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         State = targetAssetState,
+        ///         TargetAssetId = testTargetAsset.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetAssetsResult> Invoke(GetTargetAssetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetAssetsResult>("oci:CloudMigrations/getTargetAssets:getTargetAssets", args ?? new GetTargetAssetsInvokeArgs(), options.WithDefaults());
     }
 
 

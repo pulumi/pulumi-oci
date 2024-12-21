@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousVmClustersResult> Invoke(GetAutonomousVmClustersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClustersResult>("oci:Database/getAutonomousVmClusters:getAutonomousVmClusters", args ?? new GetAutonomousVmClustersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousVmClusters = Oci.Database.GetAutonomousVmClusters.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = autonomousVmClusterDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         State = autonomousVmClusterState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousVmClustersResult> Invoke(GetAutonomousVmClustersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClustersResult>("oci:Database/getAutonomousVmClusters:getAutonomousVmClusters", args ?? new GetAutonomousVmClustersInvokeArgs(), options.WithDefaults());
     }
 
 

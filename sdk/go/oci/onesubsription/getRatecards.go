@@ -86,21 +86,11 @@ type GetRatecardsResult struct {
 }
 
 func GetRatecardsOutput(ctx *pulumi.Context, args GetRatecardsOutputArgs, opts ...pulumi.InvokeOption) GetRatecardsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRatecardsResultOutput, error) {
 			args := v.(GetRatecardsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRatecardsResult
-			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getRatecards:getRatecards", args, &rv, "", opts...)
-			if err != nil {
-				return GetRatecardsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRatecardsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRatecardsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OneSubsription/getRatecards:getRatecards", args, GetRatecardsResultOutput{}, options).(GetRatecardsResultOutput), nil
 		}).(GetRatecardsResultOutput)
 }
 

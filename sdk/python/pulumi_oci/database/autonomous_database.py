@@ -56,6 +56,7 @@ class AutonomousDatabaseArgs:
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_backup_retention_locked: Optional[pulumi.Input[bool]] = None,
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
@@ -168,6 +169,7 @@ class AutonomousDatabaseArgs:
                This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param pulumi.Input[bool] is_auto_scaling_for_storage_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        :param pulumi.Input[bool] is_backup_retention_locked: (Updatable) True if the Autonomous Database is backup retention locked.
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
@@ -332,6 +334,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_auto_scaling_for_storage_enabled is not None:
             pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
+        if is_backup_retention_locked is not None:
+            pulumi.set(__self__, "is_backup_retention_locked", is_backup_retention_locked)
         if is_data_guard_enabled is not None:
             pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         if is_dedicated is not None:
@@ -875,6 +879,18 @@ class AutonomousDatabaseArgs:
     @is_auto_scaling_for_storage_enabled.setter
     def is_auto_scaling_for_storage_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_auto_scaling_for_storage_enabled", value)
+
+    @property
+    @pulumi.getter(name="isBackupRetentionLocked")
+    def is_backup_retention_locked(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) True if the Autonomous Database is backup retention locked.
+        """
+        return pulumi.get(self, "is_backup_retention_locked")
+
+    @is_backup_retention_locked.setter
+    def is_backup_retention_locked(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_backup_retention_locked", value)
 
     @property
     @pulumi.getter(name="isDataGuardEnabled")
@@ -1541,6 +1557,7 @@ class _AutonomousDatabaseState:
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_backup_retention_locked: Optional[pulumi.Input[bool]] = None,
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
@@ -1713,6 +1730,7 @@ class _AutonomousDatabaseState:
                This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param pulumi.Input[bool] is_auto_scaling_for_storage_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        :param pulumi.Input[bool] is_backup_retention_locked: (Updatable) True if the Autonomous Database is backup retention locked.
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
@@ -1952,6 +1970,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_auto_scaling_for_storage_enabled is not None:
             pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
+        if is_backup_retention_locked is not None:
+            pulumi.set(__self__, "is_backup_retention_locked", is_backup_retention_locked)
         if is_data_guard_enabled is not None:
             pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         if is_dedicated is not None:
@@ -2765,6 +2785,18 @@ class _AutonomousDatabaseState:
     @is_auto_scaling_for_storage_enabled.setter
     def is_auto_scaling_for_storage_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_auto_scaling_for_storage_enabled", value)
+
+    @property
+    @pulumi.getter(name="isBackupRetentionLocked")
+    def is_backup_retention_locked(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) True if the Autonomous Database is backup retention locked.
+        """
+        return pulumi.get(self, "is_backup_retention_locked")
+
+    @is_backup_retention_locked.setter
+    def is_backup_retention_locked(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_backup_retention_locked", value)
 
     @property
     @pulumi.getter(name="isDataGuardEnabled")
@@ -3952,6 +3984,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_backup_retention_locked: Optional[pulumi.Input[bool]] = None,
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
@@ -4080,6 +4113,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param pulumi.Input[bool] is_auto_scaling_for_storage_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        :param pulumi.Input[bool] is_backup_retention_locked: (Updatable) True if the Autonomous Database is backup retention locked.
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
@@ -4247,6 +4281,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_backup_retention_locked: Optional[pulumi.Input[bool]] = None,
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
@@ -4342,6 +4377,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_access_control_enabled"] = is_access_control_enabled
             __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
             __props__.__dict__["is_auto_scaling_for_storage_enabled"] = is_auto_scaling_for_storage_enabled
+            __props__.__dict__["is_backup_retention_locked"] = is_backup_retention_locked
             __props__.__dict__["is_data_guard_enabled"] = is_data_guard_enabled
             __props__.__dict__["is_dedicated"] = is_dedicated
             __props__.__dict__["is_dev_tier"] = is_dev_tier
@@ -4511,6 +4547,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
             is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+            is_backup_retention_locked: Optional[pulumi.Input[bool]] = None,
             is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
             is_dedicated: Optional[pulumi.Input[bool]] = None,
             is_dev_tier: Optional[pulumi.Input[bool]] = None,
@@ -4688,6 +4725,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param pulumi.Input[bool] is_auto_scaling_for_storage_enabled: (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        :param pulumi.Input[bool] is_backup_retention_locked: (Updatable) True if the Autonomous Database is backup retention locked.
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
@@ -4881,6 +4919,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["is_access_control_enabled"] = is_access_control_enabled
         __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
         __props__.__dict__["is_auto_scaling_for_storage_enabled"] = is_auto_scaling_for_storage_enabled
+        __props__.__dict__["is_backup_retention_locked"] = is_backup_retention_locked
         __props__.__dict__["is_data_guard_enabled"] = is_data_guard_enabled
         __props__.__dict__["is_dedicated"] = is_dedicated
         __props__.__dict__["is_dev_tier"] = is_dev_tier
@@ -5400,6 +5439,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
+
+    @property
+    @pulumi.getter(name="isBackupRetentionLocked")
+    def is_backup_retention_locked(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) True if the Autonomous Database is backup retention locked.
+        """
+        return pulumi.get(self, "is_backup_retention_locked")
 
     @property
     @pulumi.getter(name="isDataGuardEnabled")

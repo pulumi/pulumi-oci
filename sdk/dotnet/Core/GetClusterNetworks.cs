@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetClusterNetworksResult> Invoke(GetClusterNetworksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterNetworksResult>("oci:Core/getClusterNetworks:getClusterNetworks", args ?? new GetClusterNetworksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the [cluster networks with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
+        /// in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testClusterNetworks = Oci.Core.GetClusterNetworks.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterNetworkDisplayName,
+        ///         State = clusterNetworkState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetClusterNetworksResult> Invoke(GetClusterNetworksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterNetworksResult>("oci:Core/getClusterNetworks:getClusterNetworks", args ?? new GetClusterNetworksInvokeArgs(), options.WithDefaults());
     }
 
 

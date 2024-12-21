@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetAccessPoliciesResult> Invoke(GetAccessPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Access Policies in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Returns a list of AccessPolicy objects.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessPolicies = Oci.ServiceMesh.GetAccessPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = accessPolicyId,
+        ///         MeshId = testMesh.Id,
+        ///         Name = accessPolicyName,
+        ///         State = accessPolicyState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAccessPoliciesResult> Invoke(GetAccessPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessPoliciesResult>("oci:ServiceMesh/getAccessPolicies:getAccessPolicies", args ?? new GetAccessPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

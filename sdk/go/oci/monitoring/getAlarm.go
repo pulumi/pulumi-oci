@@ -131,21 +131,11 @@ type LookupAlarmResult struct {
 }
 
 func LookupAlarmOutput(ctx *pulumi.Context, args LookupAlarmOutputArgs, opts ...pulumi.InvokeOption) LookupAlarmResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAlarmResultOutput, error) {
 			args := v.(LookupAlarmArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAlarmResult
-			secret, err := ctx.InvokePackageRaw("oci:Monitoring/getAlarm:getAlarm", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAlarmResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAlarmResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAlarmResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Monitoring/getAlarm:getAlarm", args, LookupAlarmResultOutput{}, options).(LookupAlarmResultOutput), nil
 		}).(LookupAlarmResultOutput)
 }
 

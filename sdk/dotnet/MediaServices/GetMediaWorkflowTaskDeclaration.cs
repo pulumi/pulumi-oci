@@ -70,6 +70,36 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetMediaWorkflowTaskDeclarationResult> Invoke(GetMediaWorkflowTaskDeclarationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowTaskDeclarationResult>("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", args ?? new GetMediaWorkflowTaskDeclarationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Returns a list of MediaWorkflowTaskDeclarations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaWorkflowTaskDeclaration = Oci.MediaServices.GetMediaWorkflowTaskDeclaration.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         IsCurrent = mediaWorkflowTaskDeclarationIsCurrent,
+        ///         Name = mediaWorkflowTaskDeclarationName,
+        ///         Version = mediaWorkflowTaskDeclarationVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMediaWorkflowTaskDeclarationResult> Invoke(GetMediaWorkflowTaskDeclarationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMediaWorkflowTaskDeclarationResult>("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", args ?? new GetMediaWorkflowTaskDeclarationInvokeArgs(), options.WithDefaults());
     }
 
 

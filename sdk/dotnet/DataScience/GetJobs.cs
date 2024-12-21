@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetJobsResult> Invoke(GetJobsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobsResult>("oci:DataScience/getJobs:getJobs", args ?? new GetJobsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Jobs in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// List jobs in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJobs = Oci.DataScience.GetJobs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = jobCreatedBy,
+        ///         DisplayName = jobDisplayName,
+        ///         Id = jobId,
+        ///         ProjectId = testProject.Id,
+        ///         State = jobState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJobsResult> Invoke(GetJobsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobsResult>("oci:DataScience/getJobs:getJobs", args ?? new GetJobsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaInstanceResult> Invoke(GetOdaInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaInstanceResult>("oci:Oda/getOdaInstance:getOdaInstance", args ?? new GetOdaInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Gets the specified Digital Assistant instance.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaInstance = Oci.Oda.GetOdaInstance.Invoke(new()
+        ///     {
+        ///         OdaInstanceId = testOdaInstanceOciOdaOdaInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaInstanceResult> Invoke(GetOdaInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaInstanceResult>("oci:Oda/getOdaInstance:getOdaInstance", args ?? new GetOdaInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

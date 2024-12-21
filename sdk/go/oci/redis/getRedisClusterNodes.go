@@ -74,21 +74,11 @@ type GetRedisClusterNodesResult struct {
 }
 
 func GetRedisClusterNodesOutput(ctx *pulumi.Context, args GetRedisClusterNodesOutputArgs, opts ...pulumi.InvokeOption) GetRedisClusterNodesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRedisClusterNodesResultOutput, error) {
 			args := v.(GetRedisClusterNodesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRedisClusterNodesResult
-			secret, err := ctx.InvokePackageRaw("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", args, &rv, "", opts...)
-			if err != nil {
-				return GetRedisClusterNodesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRedisClusterNodesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRedisClusterNodesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", args, GetRedisClusterNodesResultOutput{}, options).(GetRedisClusterNodesResultOutput), nil
 		}).(GetRedisClusterNodesResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         public static Output<GetApiResult> Invoke(GetApiInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiResult>("oci:ApiGateway/getApi:getApi", args ?? new GetApiInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
+        /// 
+        /// Gets an API by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApi = Oci.ApiGateway.GetApi.Invoke(new()
+        ///     {
+        ///         ApiId = testApiOciApigatewayApi.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApiResult> Invoke(GetApiInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiResult>("oci:ApiGateway/getApi:getApi", args ?? new GetApiInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetOnPremiseVantagePointWorkerResult> Invoke(GetOnPremiseVantagePointWorkerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointWorkerResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args ?? new GetOnPremiseVantagePointWorkerInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Gets the details of the worker identified by the OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOnPremiseVantagePointWorker = Oci.ApmSynthetics.GetOnPremiseVantagePointWorker.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         OnPremiseVantagePointId = testOnPremiseVantagePoint.Id,
+        ///         WorkerId = testWorker.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOnPremiseVantagePointWorkerResult> Invoke(GetOnPremiseVantagePointWorkerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointWorkerResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args ?? new GetOnPremiseVantagePointWorkerInvokeArgs(), options.WithDefaults());
     }
 
 

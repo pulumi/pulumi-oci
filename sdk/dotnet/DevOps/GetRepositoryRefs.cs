@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryRefsResult> Invoke(GetRepositoryRefsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryRefsResult>("oci:DevOps/getRepositoryRefs:getRepositoryRefs", args ?? new GetRepositoryRefsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of references.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryRefs = Oci.DevOps.GetRepositoryRefs.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         CommitId = testCommit.Id,
+        ///         RefName = repositoryRefRefName,
+        ///         RefType = repositoryRefRefType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryRefsResult> Invoke(GetRepositoryRefsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryRefsResult>("oci:DevOps/getRepositoryRefs:getRepositoryRefs", args ?? new GetRepositoryRefsInvokeArgs(), options.WithDefaults());
     }
 
 

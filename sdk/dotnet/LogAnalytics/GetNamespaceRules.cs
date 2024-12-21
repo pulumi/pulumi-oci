@@ -74,6 +74,38 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceRulesResult> Invoke(GetNamespaceRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceRulesResult>("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", args ?? new GetNamespaceRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceRules = Oci.LogAnalytics.GetNamespaceRules.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceRuleNamespace,
+        ///         DisplayName = namespaceRuleDisplayName,
+        ///         Kind = namespaceRuleKind,
+        ///         State = namespaceRuleState,
+        ///         TargetService = namespaceRuleTargetService,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceRulesResult> Invoke(GetNamespaceRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceRulesResult>("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", args ?? new GetNamespaceRulesInvokeArgs(), options.WithDefaults());
     }
 
 

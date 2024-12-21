@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsDynamicResourceGroupsResult> Invoke(GetDomainsDynamicResourceGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsDynamicResourceGroupsResult>("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", args ?? new GetDomainsDynamicResourceGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dynamic Resource Groups in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for Dynamic Resource Groups.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDynamicResourceGroups = Oci.Identity.GetDomainsDynamicResourceGroups.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         DynamicResourceGroupCount = dynamicResourceGroupDynamicResourceGroupCount,
+        ///         DynamicResourceGroupFilter = dynamicResourceGroupDynamicResourceGroupFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = dynamicResourceGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = dynamicResourceGroupResourceTypeSchemaVersion,
+        ///         StartIndex = dynamicResourceGroupStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsDynamicResourceGroupsResult> Invoke(GetDomainsDynamicResourceGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsDynamicResourceGroupsResult>("oci:Identity/getDomainsDynamicResourceGroups:getDomainsDynamicResourceGroups", args ?? new GetDomainsDynamicResourceGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

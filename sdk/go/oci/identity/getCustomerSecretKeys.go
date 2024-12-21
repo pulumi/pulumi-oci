@@ -70,21 +70,11 @@ type GetCustomerSecretKeysResult struct {
 }
 
 func GetCustomerSecretKeysOutput(ctx *pulumi.Context, args GetCustomerSecretKeysOutputArgs, opts ...pulumi.InvokeOption) GetCustomerSecretKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCustomerSecretKeysResultOutput, error) {
 			args := v.(GetCustomerSecretKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCustomerSecretKeysResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetCustomerSecretKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCustomerSecretKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCustomerSecretKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args, GetCustomerSecretKeysResultOutput{}, options).(GetCustomerSecretKeysResultOutput), nil
 		}).(GetCustomerSecretKeysResultOutput)
 }
 

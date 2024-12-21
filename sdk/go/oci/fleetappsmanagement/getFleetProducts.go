@@ -88,21 +88,11 @@ type GetFleetProductsResult struct {
 }
 
 func GetFleetProductsOutput(ctx *pulumi.Context, args GetFleetProductsOutputArgs, opts ...pulumi.InvokeOption) GetFleetProductsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetProductsResultOutput, error) {
 			args := v.(GetFleetProductsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetProductsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getFleetProducts:getFleetProducts", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetProductsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetProductsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetProductsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetProducts:getFleetProducts", args, GetFleetProductsResultOutput{}, options).(GetFleetProductsResultOutput), nil
 		}).(GetFleetProductsResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveDataModelResult> Invoke(GetSensitiveDataModelInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelResult>("oci:DataSafe/getSensitiveDataModel:getSensitiveDataModel", args ?? new GetSensitiveDataModelInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified sensitive data model.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModel = Oci.DataSafe.GetSensitiveDataModel.Invoke(new()
+        ///     {
+        ///         SensitiveDataModelId = testSensitiveDataModelOciDataSafeSensitiveDataModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveDataModelResult> Invoke(GetSensitiveDataModelInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelResult>("oci:DataSafe/getSensitiveDataModel:getSensitiveDataModel", args ?? new GetSensitiveDataModelInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetLoadBalancersResult> Invoke(GetLoadBalancersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLoadBalancersResult>("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", args ?? new GetLoadBalancersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all load balancers in the specified compartment.
+        /// 
+        /// ## Supported Aliases
+        /// 
+        /// * `oci_load_balancers`
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLoadBalancers = Oci.LoadBalancer.GetLoadBalancers.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Detail = loadBalancerDetail,
+        ///         DisplayName = loadBalancerDisplayName,
+        ///         State = loadBalancerState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLoadBalancersResult> Invoke(GetLoadBalancersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLoadBalancersResult>("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", args ?? new GetLoadBalancersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetNamespaceResult> Invoke(GetNamespaceInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceResult>("oci:ObjectStorage/getNamespace:getNamespace", args ?? new GetNamespaceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
+        /// is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
+        /// the tenancy name in all lower-case letters. You cannot edit a namespace.
+        /// 
+        /// GetNamespace returns the name of the Object Storage namespace for the user making the request.
+        /// If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
+        /// tenancy, provided the user has access to it.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespace = Oci.ObjectStorage.GetNamespace.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceResult> Invoke(GetNamespaceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceResult>("oci:ObjectStorage/getNamespace:getNamespace", args ?? new GetNamespaceInvokeArgs(), options.WithDefaults());
     }
 
 

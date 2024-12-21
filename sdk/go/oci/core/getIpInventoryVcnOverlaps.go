@@ -82,21 +82,11 @@ type GetIpInventoryVcnOverlapsResult struct {
 }
 
 func GetIpInventoryVcnOverlapsOutput(ctx *pulumi.Context, args GetIpInventoryVcnOverlapsOutputArgs, opts ...pulumi.InvokeOption) GetIpInventoryVcnOverlapsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIpInventoryVcnOverlapsResultOutput, error) {
 			args := v.(GetIpInventoryVcnOverlapsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIpInventoryVcnOverlapsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", args, &rv, "", opts...)
-			if err != nil {
-				return GetIpInventoryVcnOverlapsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIpInventoryVcnOverlapsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIpInventoryVcnOverlapsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", args, GetIpInventoryVcnOverlapsResultOutput{}, options).(GetIpInventoryVcnOverlapsResultOutput), nil
 		}).(GetIpInventoryVcnOverlapsResultOutput)
 }
 

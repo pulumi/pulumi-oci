@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegatedResourceAccessRequestResult> Invoke(GetDelegatedResourceAccessRequestInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", args ?? new GetDelegatedResourceAccessRequestInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Delegated Resource Access Request resource in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Gets details of a Delegated Resource Access Request.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegatedResourceAccessRequest = Oci.DelegateAccessControl.GetDelegatedResourceAccessRequest.Invoke(new()
+        ///     {
+        ///         DelegatedResourceAccessRequestId = testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegatedResourceAccessRequestResult> Invoke(GetDelegatedResourceAccessRequestInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", args ?? new GetDelegatedResourceAccessRequestInvokeArgs(), options.WithDefaults());
     }
 
 

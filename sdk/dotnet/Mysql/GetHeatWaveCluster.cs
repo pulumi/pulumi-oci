@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetHeatWaveClusterResult> Invoke(GetHeatWaveClusterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHeatWaveClusterResult>("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args ?? new GetHeatWaveClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Gets information about the HeatWave cluster.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testHeatWaveCluster = Oci.Mysql.GetHeatWaveCluster.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetHeatWaveClusterResult> Invoke(GetHeatWaveClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHeatWaveClusterResult>("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args ?? new GetHeatWaveClusterInvokeArgs(), options.WithDefaults());
     }
 
 

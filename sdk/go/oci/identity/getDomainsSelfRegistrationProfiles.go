@@ -106,21 +106,11 @@ type GetDomainsSelfRegistrationProfilesResult struct {
 }
 
 func GetDomainsSelfRegistrationProfilesOutput(ctx *pulumi.Context, args GetDomainsSelfRegistrationProfilesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSelfRegistrationProfilesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsSelfRegistrationProfilesResultOutput, error) {
 			args := v.(GetDomainsSelfRegistrationProfilesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsSelfRegistrationProfilesResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsSelfRegistrationProfilesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsSelfRegistrationProfilesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsSelfRegistrationProfilesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args, GetDomainsSelfRegistrationProfilesResultOutput{}, options).(GetDomainsSelfRegistrationProfilesResultOutput), nil
 		}).(GetDomainsSelfRegistrationProfilesResultOutput)
 }
 

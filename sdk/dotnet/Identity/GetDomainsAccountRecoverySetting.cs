@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAccountRecoverySettingResult> Invoke(GetDomainsAccountRecoverySettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountRecoverySettingResult>("oci:Identity/getDomainsAccountRecoverySetting:getDomainsAccountRecoverySetting", args ?? new GetDomainsAccountRecoverySettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get an account recovery setting.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccountRecoverySetting = Oci.Identity.GetDomainsAccountRecoverySetting.Invoke(new()
+        ///     {
+        ///         AccountRecoverySettingId = testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = accountRecoverySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = accountRecoverySettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAccountRecoverySettingResult> Invoke(GetDomainsAccountRecoverySettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountRecoverySettingResult>("oci:Identity/getDomainsAccountRecoverySetting:getDomainsAccountRecoverySetting", args ?? new GetDomainsAccountRecoverySettingInvokeArgs(), options.WithDefaults());
     }
 
 

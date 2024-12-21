@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbVersionsResult> Invoke(GetDbVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbVersionsResult>("oci:Database/getDbVersions:getDbVersions", args ?? new GetDbVersionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported Oracle Database versions.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbVersions = Oci.Database.GetDbVersions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DbSystemShape = dbVersionDbSystemShape,
+        ///         IsDatabaseSoftwareImageSupported = dbVersionIsDatabaseSoftwareImageSupported,
+        ///         IsUpgradeSupported = dbVersionIsUpgradeSupported,
+        ///         StorageManagement = dbVersionStorageManagement,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbVersionsResult> Invoke(GetDbVersionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbVersionsResult>("oci:Database/getDbVersions:getDbVersions", args ?? new GetDbVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,21 +72,11 @@ type GetNetworkFirewallPolicyApplicationGroupsResult struct {
 }
 
 func GetNetworkFirewallPolicyApplicationGroupsOutput(ctx *pulumi.Context, args GetNetworkFirewallPolicyApplicationGroupsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallPolicyApplicationGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNetworkFirewallPolicyApplicationGroupsResultOutput, error) {
 			args := v.(GetNetworkFirewallPolicyApplicationGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNetworkFirewallPolicyApplicationGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroups:getNetworkFirewallPolicyApplicationGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetNetworkFirewallPolicyApplicationGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNetworkFirewallPolicyApplicationGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNetworkFirewallPolicyApplicationGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroups:getNetworkFirewallPolicyApplicationGroups", args, GetNetworkFirewallPolicyApplicationGroupsResultOutput{}, options).(GetNetworkFirewallPolicyApplicationGroupsResultOutput), nil
 		}).(GetNetworkFirewallPolicyApplicationGroupsResultOutput)
 }
 

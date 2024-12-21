@@ -82,21 +82,11 @@ type LookupProtectionRuleResult struct {
 }
 
 func LookupProtectionRuleOutput(ctx *pulumi.Context, args LookupProtectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupProtectionRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupProtectionRuleResultOutput, error) {
 			args := v.(LookupProtectionRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupProtectionRuleResult
-			secret, err := ctx.InvokePackageRaw("oci:Waas/getProtectionRule:getProtectionRule", args, &rv, "", opts...)
-			if err != nil {
-				return LookupProtectionRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupProtectionRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupProtectionRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waas/getProtectionRule:getProtectionRule", args, LookupProtectionRuleResultOutput{}, options).(LookupProtectionRuleResultOutput), nil
 		}).(LookupProtectionRuleResultOutput)
 }
 

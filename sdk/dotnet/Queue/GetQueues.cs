@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Queue
         /// </summary>
         public static Output<GetQueuesResult> Invoke(GetQueuesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQueuesResult>("oci:Queue/getQueues:getQueues", args ?? new GetQueuesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
+        /// 
+        /// Returns a list of queues.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testQueues = Oci.Queue.GetQueues.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = queueDisplayName,
+        ///         Id = queueId,
+        ///         State = queueState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetQueuesResult> Invoke(GetQueuesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetQueuesResult>("oci:Queue/getQueues:getQueues", args ?? new GetQueuesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -93,21 +93,11 @@ type LookupPrivateIpResult struct {
 }
 
 func LookupPrivateIpOutput(ctx *pulumi.Context, args LookupPrivateIpOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateIpResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupPrivateIpResultOutput, error) {
 			args := v.(LookupPrivateIpArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupPrivateIpResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getPrivateIp:getPrivateIp", args, &rv, "", opts...)
-			if err != nil {
-				return LookupPrivateIpResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupPrivateIpResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupPrivateIpResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getPrivateIp:getPrivateIp", args, LookupPrivateIpResultOutput{}, options).(LookupPrivateIpResultOutput), nil
 		}).(LookupPrivateIpResultOutput)
 }
 

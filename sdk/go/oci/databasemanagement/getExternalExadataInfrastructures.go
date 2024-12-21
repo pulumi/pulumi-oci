@@ -74,21 +74,11 @@ type GetExternalExadataInfrastructuresResult struct {
 }
 
 func GetExternalExadataInfrastructuresOutput(ctx *pulumi.Context, args GetExternalExadataInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataInfrastructuresResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalExadataInfrastructuresResultOutput, error) {
 			args := v.(GetExternalExadataInfrastructuresArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalExadataInfrastructuresResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalExadataInfrastructuresResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalExadataInfrastructuresResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalExadataInfrastructuresResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args, GetExternalExadataInfrastructuresResultOutput{}, options).(GetExternalExadataInfrastructuresResultOutput), nil
 		}).(GetExternalExadataInfrastructuresResultOutput)
 }
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpsecConnectionTunnelRoutesResult> Invoke(GetIpsecConnectionTunnelRoutesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelRoutesResult>("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", args ?? new GetIpsecConnectionTunnelRoutesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// The routes advertised to the on-premises network and the routes received from the on-premises network.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpsecConnectionTunnelRoutes = Oci.Core.GetIpsecConnectionTunnelRoutes.Invoke(new()
+        ///     {
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
+        ///         Advertiser = ipsecConnectionTunnelRouteAdvertiser,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpsecConnectionTunnelRoutesResult> Invoke(GetIpsecConnectionTunnelRoutesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelRoutesResult>("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", args ?? new GetIpsecConnectionTunnelRoutesInvokeArgs(), options.WithDefaults());
     }
 
 

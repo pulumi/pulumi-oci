@@ -64,21 +64,11 @@ type GetGenericArtifactsContentResult struct {
 }
 
 func GetGenericArtifactsContentOutput(ctx *pulumi.Context, args GetGenericArtifactsContentOutputArgs, opts ...pulumi.InvokeOption) GetGenericArtifactsContentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetGenericArtifactsContentResultOutput, error) {
 			args := v.(GetGenericArtifactsContentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetGenericArtifactsContentResult
-			secret, err := ctx.InvokePackageRaw("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", args, &rv, "", opts...)
-			if err != nil {
-				return GetGenericArtifactsContentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetGenericArtifactsContentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetGenericArtifactsContentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", args, GetGenericArtifactsContentResultOutput{}, options).(GetGenericArtifactsContentResultOutput), nil
 		}).(GetGenericArtifactsContentResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetAwrHubSourceResult> Invoke(GetAwrHubSourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubSourceResult>("oci:Opsi/getAwrHubSource:getAwrHubSource", args ?? new GetAwrHubSourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets the Awr Hub source object.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAwrHubSource = Oci.Opsi.GetAwrHubSource.Invoke(new()
+        ///     {
+        ///         AwrHubSourceId = testAwrHubSourceOciOpsiAwrHubSource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAwrHubSourceResult> Invoke(GetAwrHubSourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubSourceResult>("oci:Opsi/getAwrHubSource:getAwrHubSource", args ?? new GetAwrHubSourceInvokeArgs(), options.WithDefaults());
     }
 
 

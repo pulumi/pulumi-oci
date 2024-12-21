@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetIamWorkRequestsResult> Invoke(GetIamWorkRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestsResult>("oci:Identity/getIamWorkRequests:getIamWorkRequests", args ?? new GetIamWorkRequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// List the IAM work requests in compartment
+        /// 
+        /// - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
+        /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIamWorkRequests = Oci.Identity.GetIamWorkRequests.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ResourceIdentifier = iamWorkRequestResourceIdentifier,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIamWorkRequestsResult> Invoke(GetIamWorkRequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestsResult>("oci:Identity/getIamWorkRequests:getIamWorkRequests", args ?? new GetIamWorkRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

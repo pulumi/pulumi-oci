@@ -116,21 +116,11 @@ type GetDatabaseInsightsResult struct {
 }
 
 func GetDatabaseInsightsOutput(ctx *pulumi.Context, args GetDatabaseInsightsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseInsightsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatabaseInsightsResultOutput, error) {
 			args := v.(GetDatabaseInsightsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatabaseInsightsResult
-			secret, err := ctx.InvokePackageRaw("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatabaseInsightsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatabaseInsightsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatabaseInsightsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args, GetDatabaseInsightsResultOutput{}, options).(GetDatabaseInsightsResultOutput), nil
 		}).(GetDatabaseInsightsResultOutput)
 }
 

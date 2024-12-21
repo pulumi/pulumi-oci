@@ -88,6 +88,45 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetMysqlConfigurationsResult> Invoke(GetMysqlConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlConfigurationsResult>("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args ?? new GetMysqlConfigurationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Lists the Configurations available when creating a DB System.
+        /// 
+        /// This may include DEFAULT configurations per Shape and CUSTOM configurations.
+        /// 
+        /// The default sort order is a multi-part sort by:
+        ///   - shapeName, ascending
+        ///   - DEFAULT-before-CUSTOM
+        ///   - displayName ascending
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMysqlConfigurations = Oci.Mysql.GetMysqlConfigurations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = mysqlConfigurationId,
+        ///         DisplayName = mysqlConfigurationDisplayName,
+        ///         ShapeName = mysqlShapeName,
+        ///         State = mysqlConfigurationState,
+        ///         Types = mysqlConfigurationType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMysqlConfigurationsResult> Invoke(GetMysqlConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlConfigurationsResult>("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args ?? new GetMysqlConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

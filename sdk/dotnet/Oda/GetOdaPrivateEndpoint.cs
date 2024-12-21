@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaPrivateEndpointResult> Invoke(GetOdaPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointResult>("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", args ?? new GetOdaPrivateEndpointInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Gets the specified ODA Private Endpoint.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaPrivateEndpoint = Oci.Oda.GetOdaPrivateEndpoint.Invoke(new()
+        ///     {
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaPrivateEndpointResult> Invoke(GetOdaPrivateEndpointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointResult>("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", args ?? new GetOdaPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

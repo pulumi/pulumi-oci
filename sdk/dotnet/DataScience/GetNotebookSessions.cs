@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetNotebookSessionsResult> Invoke(GetNotebookSessionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionsResult>("oci:DataScience/getNotebookSessions:getNotebookSessions", args ?? new GetNotebookSessionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Notebook Sessions in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Lists the notebook sessions in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotebookSessions = Oci.DataScience.GetNotebookSessions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = notebookSessionCreatedBy,
+        ///         DisplayName = notebookSessionDisplayName,
+        ///         Id = notebookSessionId,
+        ///         ProjectId = testProject.Id,
+        ///         State = notebookSessionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNotebookSessionsResult> Invoke(GetNotebookSessionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNotebookSessionsResult>("oci:DataScience/getNotebookSessions:getNotebookSessions", args ?? new GetNotebookSessionsInvokeArgs(), options.WithDefaults());
     }
 
 

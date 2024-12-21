@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetEkmsPrivateEndpointsResult> Invoke(GetEkmsPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEkmsPrivateEndpointsResult>("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", args ?? new GetEkmsPrivateEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// Returns a list of all the EKMS private endpoints in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEkmsPrivateEndpoints = Oci.Kms.GetEkmsPrivateEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEkmsPrivateEndpointsResult> Invoke(GetEkmsPrivateEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEkmsPrivateEndpointsResult>("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", args ?? new GetEkmsPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

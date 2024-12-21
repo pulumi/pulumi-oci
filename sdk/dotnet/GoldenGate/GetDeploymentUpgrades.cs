@@ -70,6 +70,36 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentUpgradesResult> Invoke(GetDeploymentUpgradesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentUpgradesResult>("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", args ?? new GetDeploymentUpgradesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the Deployment Upgrades in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentUpgrades = Oci.GoldenGate.GetDeploymentUpgrades.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentId = testDeployment.Id,
+        ///         DisplayName = deploymentUpgradeDisplayName,
+        ///         State = deploymentUpgradeState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentUpgradesResult> Invoke(GetDeploymentUpgradesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentUpgradesResult>("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", args ?? new GetDeploymentUpgradesInvokeArgs(), options.WithDefaults());
     }
 
 

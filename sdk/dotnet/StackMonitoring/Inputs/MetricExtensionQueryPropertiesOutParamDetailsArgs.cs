@@ -13,13 +13,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MetricExtensionQueryPropertiesOutParamDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Position of PL/SQL procedure OUT parameter
+        /// (Updatable) Name of the Out Parameter
+        /// </summary>
+        [Input("outParamName")]
+        public Input<string>? OutParamName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
         /// </summary>
         [Input("outParamPosition", required: true)]
         public Input<int> OutParamPosition { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        /// (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         /// </summary>
         [Input("outParamType", required: true)]
         public Input<string> OutParamType { get; set; } = null!;

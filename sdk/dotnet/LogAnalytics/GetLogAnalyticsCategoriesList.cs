@@ -70,6 +70,36 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetLogAnalyticsCategoriesListResult> Invoke(GetLogAnalyticsCategoriesListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLogAnalyticsCategoriesList = Oci.LogAnalytics.GetLogAnalyticsCategoriesList.Invoke(new()
+        ///     {
+        ///         Namespace = logAnalyticsCategoriesListNamespace,
+        ///         CategoryDisplayText = logAnalyticsCategoriesListCategoryDisplayText,
+        ///         CategoryType = logAnalyticsCategoriesListCategoryType,
+        ///         Name = logAnalyticsCategoriesListName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLogAnalyticsCategoriesListResult> Invoke(GetLogAnalyticsCategoriesListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListInvokeArgs(), options.WithDefaults());
     }
 
 

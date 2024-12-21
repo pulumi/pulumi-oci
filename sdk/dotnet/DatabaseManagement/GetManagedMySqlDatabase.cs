@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedMySqlDatabaseResult> Invoke(GetManagedMySqlDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseResult>("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", args ?? new GetManagedMySqlDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Retrieves General Information for given MySQL Instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedMySqlDatabase = Oci.DatabaseManagement.GetManagedMySqlDatabase.Invoke(new()
+        ///     {
+        ///         ManagedMySqlDatabaseId = testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedMySqlDatabaseResult> Invoke(GetManagedMySqlDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabaseResult>("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", args ?? new GetManagedMySqlDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.GloballyDistributedDatabase
         /// </summary>
         public static Output<GetShardedDatabasesResult> Invoke(GetShardedDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShardedDatabasesResult>("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", args ?? new GetShardedDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sharded Databases in Oracle Cloud Infrastructure Globally Distributed Database service.
+        /// 
+        /// List of Sharded databases.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testShardedDatabases = Oci.GloballyDistributedDatabase.GetShardedDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = shardedDatabaseDisplayName,
+        ///         State = shardedDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetShardedDatabasesResult> Invoke(GetShardedDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetShardedDatabasesResult>("oci:GloballyDistributedDatabase/getShardedDatabases:getShardedDatabases", args ?? new GetShardedDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

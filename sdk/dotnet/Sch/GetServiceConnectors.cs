@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Sch
         /// </summary>
         public static Output<GetServiceConnectorsResult> Invoke(GetServiceConnectorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceConnectorsResult>("oci:Sch/getServiceConnectors:getServiceConnectors", args ?? new GetServiceConnectorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
+        /// 
+        /// Lists connectors in the specified compartment.
+        /// For more information, see
+        /// [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testServiceConnectors = Oci.Sch.GetServiceConnectors.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = serviceConnectorDisplayName,
+        ///         State = serviceConnectorState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetServiceConnectorsResult> Invoke(GetServiceConnectorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceConnectorsResult>("oci:Sch/getServiceConnectors:getServiceConnectors", args ?? new GetServiceConnectorsInvokeArgs(), options.WithDefaults());
     }
 
 

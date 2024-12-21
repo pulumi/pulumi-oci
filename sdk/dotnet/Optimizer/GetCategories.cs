@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetCategoriesResult> Invoke(GetCategoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Optimizer/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the supported Cloud Advisor categories.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCategories = Oci.Optimizer.GetCategories.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = categoryCompartmentIdInSubtree,
+        ///         ChildTenancyIds = categoryChildTenancyIds,
+        ///         IncludeOrganization = categoryIncludeOrganization,
+        ///         Name = categoryName,
+        ///         State = categoryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCategoriesResult> Invoke(GetCategoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Optimizer/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
     }
 
 

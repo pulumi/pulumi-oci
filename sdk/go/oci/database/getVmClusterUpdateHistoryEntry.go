@@ -82,21 +82,11 @@ type GetVmClusterUpdateHistoryEntryResult struct {
 }
 
 func GetVmClusterUpdateHistoryEntryOutput(ctx *pulumi.Context, args GetVmClusterUpdateHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterUpdateHistoryEntryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVmClusterUpdateHistoryEntryResultOutput, error) {
 			args := v.(GetVmClusterUpdateHistoryEntryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVmClusterUpdateHistoryEntryResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", args, &rv, "", opts...)
-			if err != nil {
-				return GetVmClusterUpdateHistoryEntryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVmClusterUpdateHistoryEntryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVmClusterUpdateHistoryEntryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry", args, GetVmClusterUpdateHistoryEntryResultOutput{}, options).(GetVmClusterUpdateHistoryEntryResultOutput), nil
 		}).(GetVmClusterUpdateHistoryEntryResultOutput)
 }
 

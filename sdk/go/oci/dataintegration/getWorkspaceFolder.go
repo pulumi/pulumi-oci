@@ -92,21 +92,11 @@ type LookupWorkspaceFolderResult struct {
 }
 
 func LookupWorkspaceFolderOutput(ctx *pulumi.Context, args LookupWorkspaceFolderOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceFolderResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupWorkspaceFolderResultOutput, error) {
 			args := v.(LookupWorkspaceFolderArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupWorkspaceFolderResult
-			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args, &rv, "", opts...)
-			if err != nil {
-				return LookupWorkspaceFolderResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupWorkspaceFolderResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupWorkspaceFolderResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args, LookupWorkspaceFolderResultOutput{}, options).(LookupWorkspaceFolderResultOutput), nil
 		}).(LookupWorkspaceFolderResultOutput)
 }
 

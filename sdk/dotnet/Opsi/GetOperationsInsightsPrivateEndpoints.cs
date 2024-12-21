@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOperationsInsightsPrivateEndpointsResult> Invoke(GetOperationsInsightsPrivateEndpointsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsPrivateEndpointsResult>("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", args ?? new GetOperationsInsightsPrivateEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of Operation Insights private endpoints.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperationsInsightsPrivateEndpoints = Oci.Opsi.GetOperationsInsightsPrivateEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+        ///         DisplayName = operationsInsightsPrivateEndpointDisplayName,
+        ///         IsUsedForRacDbs = operationsInsightsPrivateEndpointIsUsedForRacDbs,
+        ///         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+        ///         States = operationsInsightsPrivateEndpointState,
+        ///         VcnId = testVcn.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOperationsInsightsPrivateEndpointsResult> Invoke(GetOperationsInsightsPrivateEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsPrivateEndpointsResult>("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", args ?? new GetOperationsInsightsPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

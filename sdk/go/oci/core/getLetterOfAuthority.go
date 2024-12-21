@@ -77,21 +77,11 @@ type GetLetterOfAuthorityResult struct {
 }
 
 func GetLetterOfAuthorityOutput(ctx *pulumi.Context, args GetLetterOfAuthorityOutputArgs, opts ...pulumi.InvokeOption) GetLetterOfAuthorityResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLetterOfAuthorityResultOutput, error) {
 			args := v.(GetLetterOfAuthorityArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLetterOfAuthorityResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args, &rv, "", opts...)
-			if err != nil {
-				return GetLetterOfAuthorityResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLetterOfAuthorityResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLetterOfAuthorityResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args, GetLetterOfAuthorityResultOutput{}, options).(GetLetterOfAuthorityResultOutput), nil
 		}).(GetLetterOfAuthorityResultOutput)
 }
 

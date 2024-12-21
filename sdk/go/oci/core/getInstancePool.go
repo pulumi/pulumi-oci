@@ -90,21 +90,11 @@ type LookupInstancePoolResult struct {
 }
 
 func LookupInstancePoolOutput(ctx *pulumi.Context, args LookupInstancePoolOutputArgs, opts ...pulumi.InvokeOption) LookupInstancePoolResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupInstancePoolResultOutput, error) {
 			args := v.(LookupInstancePoolArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupInstancePoolResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getInstancePool:getInstancePool", args, &rv, "", opts...)
-			if err != nil {
-				return LookupInstancePoolResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupInstancePoolResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupInstancePoolResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getInstancePool:getInstancePool", args, LookupInstancePoolResultOutput{}, options).(LookupInstancePoolResultOutput), nil
 		}).(LookupInstancePoolResultOutput)
 }
 

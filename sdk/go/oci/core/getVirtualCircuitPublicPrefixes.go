@@ -76,21 +76,11 @@ type GetVirtualCircuitPublicPrefixesResult struct {
 }
 
 func GetVirtualCircuitPublicPrefixesOutput(ctx *pulumi.Context, args GetVirtualCircuitPublicPrefixesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitPublicPrefixesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVirtualCircuitPublicPrefixesResultOutput, error) {
 			args := v.(GetVirtualCircuitPublicPrefixesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVirtualCircuitPublicPrefixesResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args, &rv, "", opts...)
-			if err != nil {
-				return GetVirtualCircuitPublicPrefixesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVirtualCircuitPublicPrefixesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVirtualCircuitPublicPrefixesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args, GetVirtualCircuitPublicPrefixesResultOutput{}, options).(GetVirtualCircuitPublicPrefixesResultOutput), nil
 		}).(GetVirtualCircuitPublicPrefixesResultOutput)
 }
 

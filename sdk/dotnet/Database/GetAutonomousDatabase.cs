@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseResult> Invoke(GetAutonomousDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseResult>("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args ?? new GetAutonomousDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the details of the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabase = Oci.Database.GetAutonomousDatabase.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabaseOciDatabaseAutonomousDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseResult> Invoke(GetAutonomousDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseResult>("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args ?? new GetAutonomousDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -292,6 +319,10 @@ namespace Pulumi.Oci.Database
         /// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         /// </summary>
         public readonly bool IsAutoScalingForStorageEnabled;
+        /// <summary>
+        /// Indicates if the Autonomous Database is backup retention locked.
+        /// </summary>
+        public readonly bool IsBackupRetentionLocked;
         /// <summary>
         /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
@@ -731,6 +762,8 @@ namespace Pulumi.Oci.Database
 
             bool isAutoScalingForStorageEnabled,
 
+            bool isBackupRetentionLocked,
+
             bool isDataGuardEnabled,
 
             bool isDedicated,
@@ -966,6 +999,7 @@ namespace Pulumi.Oci.Database
             IsAccessControlEnabled = isAccessControlEnabled;
             IsAutoScalingEnabled = isAutoScalingEnabled;
             IsAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            IsBackupRetentionLocked = isBackupRetentionLocked;
             IsDataGuardEnabled = isDataGuardEnabled;
             IsDedicated = isDedicated;
             IsDevTier = isDevTier;

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabasesUserSystemPrivilegesResult> Invoke(GetManagedDatabasesUserSystemPrivilegesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegesResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", args ?? new GetManagedDatabasesUserSystemPrivilegesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of system privileges granted to a specific user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabasesUserSystemPrivileges = Oci.DatabaseManagement.GetManagedDatabasesUserSystemPrivileges.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabasesUserSystemPrivilegeName,
+        ///         OpcNamedCredentialId = managedDatabasesUserSystemPrivilegeOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabasesUserSystemPrivilegesResult> Invoke(GetManagedDatabasesUserSystemPrivilegesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegesResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", args ?? new GetManagedDatabasesUserSystemPrivilegesInvokeArgs(), options.WithDefaults());
     }
 
 

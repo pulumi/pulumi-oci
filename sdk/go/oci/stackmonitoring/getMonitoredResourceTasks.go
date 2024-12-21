@@ -73,21 +73,11 @@ type GetMonitoredResourceTasksResult struct {
 }
 
 func GetMonitoredResourceTasksOutput(ctx *pulumi.Context, args GetMonitoredResourceTasksOutputArgs, opts ...pulumi.InvokeOption) GetMonitoredResourceTasksResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMonitoredResourceTasksResultOutput, error) {
 			args := v.(GetMonitoredResourceTasksArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMonitoredResourceTasksResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", args, &rv, "", opts...)
-			if err != nil {
-				return GetMonitoredResourceTasksResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMonitoredResourceTasksResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMonitoredResourceTasksResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", args, GetMonitoredResourceTasksResultOutput{}, options).(GetMonitoredResourceTasksResultOutput), nil
 		}).(GetMonitoredResourceTasksResultOutput)
 }
 

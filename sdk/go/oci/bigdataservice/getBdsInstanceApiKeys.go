@@ -65,6 +65,7 @@ type GetBdsInstanceApiKeysArgs struct {
 
 // A collection of values returned by getBdsInstanceApiKeys.
 type GetBdsInstanceApiKeysResult struct {
+	// The list of bds_api_keys.
 	BdsApiKeys    []GetBdsInstanceApiKeysBdsApiKey `pulumi:"bdsApiKeys"`
 	BdsInstanceId string                           `pulumi:"bdsInstanceId"`
 	DisplayName   *string                          `pulumi:"displayName"`
@@ -78,21 +79,11 @@ type GetBdsInstanceApiKeysResult struct {
 }
 
 func GetBdsInstanceApiKeysOutput(ctx *pulumi.Context, args GetBdsInstanceApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceApiKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBdsInstanceApiKeysResultOutput, error) {
 			args := v.(GetBdsInstanceApiKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBdsInstanceApiKeysResult
-			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetBdsInstanceApiKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBdsInstanceApiKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBdsInstanceApiKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", args, GetBdsInstanceApiKeysResultOutput{}, options).(GetBdsInstanceApiKeysResultOutput), nil
 		}).(GetBdsInstanceApiKeysResultOutput)
 }
 
@@ -127,6 +118,7 @@ func (o GetBdsInstanceApiKeysResultOutput) ToGetBdsInstanceApiKeysResultOutputWi
 	return o
 }
 
+// The list of bds_api_keys.
 func (o GetBdsInstanceApiKeysResultOutput) BdsApiKeys() GetBdsInstanceApiKeysBdsApiKeyArrayOutput {
 	return o.ApplyT(func(v GetBdsInstanceApiKeysResult) []GetBdsInstanceApiKeysBdsApiKey { return v.BdsApiKeys }).(GetBdsInstanceApiKeysBdsApiKeyArrayOutput)
 }

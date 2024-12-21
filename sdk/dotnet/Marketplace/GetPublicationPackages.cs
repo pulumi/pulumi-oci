@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetPublicationPackagesResult> Invoke(GetPublicationPackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublicationPackagesResult>("oci:Marketplace/getPublicationPackages:getPublicationPackages", args ?? new GetPublicationPackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Lists the packages in the specified publication.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublicationPackages = Oci.Marketplace.GetPublicationPackages.Invoke(new()
+        ///     {
+        ///         PublicationId = testPublication.Id,
+        ///         PackageType = publicationPackagePackageType,
+        ///         PackageVersion = publicationPackagePackageVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublicationPackagesResult> Invoke(GetPublicationPackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicationPackagesResult>("oci:Marketplace/getPublicationPackages:getPublicationPackages", args ?? new GetPublicationPackagesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterPatchHistoryEntriesResult> Invoke(GetVmClusterPatchHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntriesResult>("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", args ?? new GetVmClusterPatchHistoryEntriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterPatchHistoryEntries = Oci.Database.GetVmClusterPatchHistoryEntries.Invoke(new()
+        ///     {
+        ///         VmClusterId = testVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterPatchHistoryEntriesResult> Invoke(GetVmClusterPatchHistoryEntriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntriesResult>("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", args ?? new GetVmClusterPatchHistoryEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseUsersResult> Invoke(GetOperationsInsightsWarehouseUsersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUsersResult>("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args ?? new GetOperationsInsightsWarehouseUsersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperationsInsightsWarehouseUsers = Oci.Opsi.GetOperationsInsightsWarehouseUsers.Invoke(new()
+        ///     {
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = operationsInsightsWarehouseUserDisplayName,
+        ///         Id = operationsInsightsWarehouseUserId,
+        ///         States = operationsInsightsWarehouseUserState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOperationsInsightsWarehouseUsersResult> Invoke(GetOperationsInsightsWarehouseUsersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUsersResult>("oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers", args ?? new GetOperationsInsightsWarehouseUsersInvokeArgs(), options.WithDefaults());
     }
 
 

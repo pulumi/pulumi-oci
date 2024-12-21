@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetPrivateEndpointsResult> Invoke(GetPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointsResult>("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
+        /// 
+        /// Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn't include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataSciencePrivateEndpoints = Oci.DataScience.GetPrivateEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = dataSciencePrivateEndpointCreatedBy,
+        ///         DataScienceResourceType = dataSciencePrivateEndpointDataScienceResourceType,
+        ///         DisplayName = dataSciencePrivateEndpointDisplayName,
+        ///         State = dataSciencePrivateEndpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPrivateEndpointsResult> Invoke(GetPrivateEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointsResult>("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

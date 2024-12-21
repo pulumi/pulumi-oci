@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceModulesResult> Invoke(GetManagedInstanceModulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModulesResult>("oci:OsManagementHub/getManagedInstanceModules:getManagedInstanceModules", args ?? new GetManagedInstanceModulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Modules in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Retrieves a list of modules, along with streams of the modules, from a managed instance. Filters may be applied to select a subset of modules based on the filter criteria.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceModules = Oci.OsManagementHub.GetManagedInstanceModules.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = managedInstanceModuleName,
+        ///         NameContains = managedInstanceModuleNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceModulesResult> Invoke(GetManagedInstanceModulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModulesResult>("oci:OsManagementHub/getManagedInstanceModules:getManagedInstanceModules", args ?? new GetManagedInstanceModulesInvokeArgs(), options.WithDefaults());
     }
 
 

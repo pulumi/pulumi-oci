@@ -66,6 +66,34 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetCloudGuardConfigurationResult> Invoke(GetCloudGuardConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudGuardConfigurationResult>("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", args ?? new GetCloudGuardConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns the configuration details for a Cloud Guard tenancy,
+        /// identified by root compartment OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudGuardConfiguration = Oci.CloudGuard.GetCloudGuardConfiguration.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudGuardConfigurationResult> Invoke(GetCloudGuardConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudGuardConfigurationResult>("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", args ?? new GetCloudGuardConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

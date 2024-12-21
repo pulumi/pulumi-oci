@@ -74,6 +74,38 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetOccHandoverResourceBlocksResult> Invoke(GetOccHandoverResourceBlocksInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccHandoverResourceBlocksResult>("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", args ?? new GetOccHandoverResourceBlocksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// List Occ Handover Resource blocks.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccHandoverResourceBlocks = Oci.CapacityManagement.GetOccHandoverResourceBlocks.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         HandoverDateGreaterThanOrEqualTo = occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo,
+        ///         HandoverDateLessThanOrEqualTo = occHandoverResourceBlockHandoverDateLessThanOrEqualTo,
+        ///         HandoverResourceName = testResource.Name,
+        ///         Namespace = occHandoverResourceBlockNamespace,
+        ///         OccHandoverResourceBlockId = testOccHandoverResourceBlock.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccHandoverResourceBlocksResult> Invoke(GetOccHandoverResourceBlocksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccHandoverResourceBlocksResult>("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", args ?? new GetOccHandoverResourceBlocksInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Nosql
         /// </summary>
         public static Output<GetTableResult> Invoke(GetTableInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTableResult>("oci:Nosql/getTable:getTable", args ?? new GetTableInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
+        /// 
+        /// Get table info by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTable = Oci.Nosql.GetTable.Invoke(new()
+        ///     {
+        ///         TableNameOrId = testTableNameOr.Id,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTableResult> Invoke(GetTableInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTableResult>("oci:Nosql/getTable:getTable", args ?? new GetTableInvokeArgs(), options.WithDefaults());
     }
 
 

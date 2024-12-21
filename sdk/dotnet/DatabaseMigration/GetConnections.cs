@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DatabaseMigration/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnections = Oci.DatabaseMigration.GetConnections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionTypes = connectionConnectionType,
+        ///         DisplayName = connectionDisplayName,
+        ///         SourceConnectionId = testConnection.Id,
+        ///         State = connectionState,
+        ///         TechnologyTypes = connectionTechnologyType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DatabaseMigration/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

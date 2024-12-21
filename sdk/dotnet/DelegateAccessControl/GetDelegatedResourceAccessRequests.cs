@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegatedResourceAccessRequestsResult> Invoke(GetDelegatedResourceAccessRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestsResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", args ?? new GetDelegatedResourceAccessRequestsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Delegated Resource Access Requests in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Lists all Delegated Resource Access Requests in the compartment. Note that only one of lifecycleState or requestStatus query parameter can be used.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegatedResourceAccessRequests = Oci.DelegateAccessControl.GetDelegatedResourceAccessRequests.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DelegationControlId = testDelegationControl.Id,
+        ///         RequestStatus = delegatedResourceAccessRequestRequestStatus,
+        ///         ResourceId = testResource.Id,
+        ///         State = delegatedResourceAccessRequestState,
+        ///         TimeEnd = delegatedResourceAccessRequestTimeEnd,
+        ///         TimeStart = delegatedResourceAccessRequestTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegatedResourceAccessRequestsResult> Invoke(GetDelegatedResourceAccessRequestsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestsResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests", args ?? new GetDelegatedResourceAccessRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

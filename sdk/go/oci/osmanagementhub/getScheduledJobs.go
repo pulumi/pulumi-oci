@@ -142,21 +142,11 @@ type GetScheduledJobsResult struct {
 }
 
 func GetScheduledJobsOutput(ctx *pulumi.Context, args GetScheduledJobsOutputArgs, opts ...pulumi.InvokeOption) GetScheduledJobsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetScheduledJobsResultOutput, error) {
 			args := v.(GetScheduledJobsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetScheduledJobsResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getScheduledJobs:getScheduledJobs", args, &rv, "", opts...)
-			if err != nil {
-				return GetScheduledJobsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetScheduledJobsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetScheduledJobsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getScheduledJobs:getScheduledJobs", args, GetScheduledJobsResultOutput{}, options).(GetScheduledJobsResultOutput), nil
 		}).(GetScheduledJobsResultOutput)
 }
 

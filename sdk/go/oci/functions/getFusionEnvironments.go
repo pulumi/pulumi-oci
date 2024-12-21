@@ -84,21 +84,11 @@ type GetFusionEnvironmentsResult struct {
 }
 
 func GetFusionEnvironmentsOutput(ctx *pulumi.Context, args GetFusionEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFusionEnvironmentsResultOutput, error) {
 			args := v.(GetFusionEnvironmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFusionEnvironmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironments:getFusionEnvironments", args, &rv, "", opts...)
-			if err != nil {
-				return GetFusionEnvironmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFusionEnvironmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFusionEnvironmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getFusionEnvironments:getFusionEnvironments", args, GetFusionEnvironmentsResultOutput{}, options).(GetFusionEnvironmentsResultOutput), nil
 		}).(GetFusionEnvironmentsResultOutput)
 }
 

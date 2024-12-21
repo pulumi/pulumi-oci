@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetScriptResult> Invoke(GetScriptInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetScriptResult>("oci:ApmSynthetics/getScript:getScript", args ?? new GetScriptInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Gets the configuration of the script identified by the OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testScript = Oci.ApmSynthetics.GetScript.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ScriptId = testScriptOciApmSyntheticsScript.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetScriptResult> Invoke(GetScriptInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetScriptResult>("oci:ApmSynthetics/getScript:getScript", args ?? new GetScriptInvokeArgs(), options.WithDefaults());
     }
 
 

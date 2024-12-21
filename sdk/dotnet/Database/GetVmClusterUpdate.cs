@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterUpdateResult> Invoke(GetVmClusterUpdateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdateResult>("oci:Database/getVmClusterUpdate:getVmClusterUpdate", args ?? new GetVmClusterUpdateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterUpdate = Oci.Database.GetVmClusterUpdate.Invoke(new()
+        ///     {
+        ///         UpdateId = testUpdate.Id,
+        ///         VmClusterId = testVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterUpdateResult> Invoke(GetVmClusterUpdateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdateResult>("oci:Database/getVmClusterUpdate:getVmClusterUpdate", args ?? new GetVmClusterUpdateInvokeArgs(), options.WithDefaults());
     }
 
 

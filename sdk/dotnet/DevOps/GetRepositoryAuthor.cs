@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryAuthorResult> Invoke(GetRepositoryAuthorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryAuthorResult>("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args ?? new GetRepositoryAuthorInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieve a list of all the authors.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryAuthor = Oci.DevOps.GetRepositoryAuthor.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         RefName = repositoryAuthorRefName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryAuthorResult> Invoke(GetRepositoryAuthorInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryAuthorResult>("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args ?? new GetRepositoryAuthorInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -271,6 +271,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private Boolean isAutoScalingForStorageEnabled;
     /**
+     * @return Indicates if the Autonomous Database is backup retention locked.
+     * 
+     */
+    private Boolean isBackupRetentionLocked;
+    /**
      * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
@@ -1034,6 +1039,13 @@ public final class GetAutonomousDatabaseResult {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
+     * @return Indicates if the Autonomous Database is backup retention locked.
+     * 
+     */
+    public Boolean isBackupRetentionLocked() {
+        return this.isBackupRetentionLocked;
+    }
+    /**
      * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
@@ -1698,6 +1710,7 @@ public final class GetAutonomousDatabaseResult {
         private Boolean isAccessControlEnabled;
         private Boolean isAutoScalingEnabled;
         private Boolean isAutoScalingForStorageEnabled;
+        private Boolean isBackupRetentionLocked;
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isDevTier;
@@ -1844,6 +1857,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.isAccessControlEnabled = defaults.isAccessControlEnabled;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
     	      this.isAutoScalingForStorageEnabled = defaults.isAutoScalingForStorageEnabled;
+    	      this.isBackupRetentionLocked = defaults.isBackupRetentionLocked;
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isDevTier = defaults.isDevTier;
@@ -2371,6 +2385,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isAutoScalingForStorageEnabled");
             }
             this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            if (isBackupRetentionLocked == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isBackupRetentionLocked");
+            }
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
             return this;
         }
         @CustomType.Setter
@@ -3204,6 +3226,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.isAccessControlEnabled = isAccessControlEnabled;
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
             _resultValue.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            _resultValue.isBackupRetentionLocked = isBackupRetentionLocked;
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
             _resultValue.isDevTier = isDevTier;

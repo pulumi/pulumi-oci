@@ -56,6 +56,29 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetRegionsResult> Invoke(GetRegionsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRegionsResult>("oci:Identity/getRegions:getRegions", args ?? new GetRegionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists all the regions offered by Oracle Cloud Infrastructure.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRegions = Oci.Identity.GetRegions.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRegionsResult> Invoke(GetRegionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegionsResult>("oci:Identity/getRegions:getRegions", args ?? new GetRegionsInvokeArgs(), options.WithDefaults());
     }
 
 

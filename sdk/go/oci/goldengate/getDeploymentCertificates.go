@@ -74,21 +74,11 @@ type GetDeploymentCertificatesResult struct {
 }
 
 func GetDeploymentCertificatesOutput(ctx *pulumi.Context, args GetDeploymentCertificatesOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentCertificatesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDeploymentCertificatesResultOutput, error) {
 			args := v.(GetDeploymentCertificatesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDeploymentCertificatesResult
-			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", args, &rv, "", opts...)
-			if err != nil {
-				return GetDeploymentCertificatesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDeploymentCertificatesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDeploymentCertificatesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", args, GetDeploymentCertificatesResultOutput{}, options).(GetDeploymentCertificatesResultOutput), nil
 		}).(GetDeploymentCertificatesResultOutput)
 }
 

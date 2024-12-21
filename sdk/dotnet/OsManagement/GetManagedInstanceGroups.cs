@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagement
         /// </summary>
         public static Output<GetManagedInstanceGroupsResult> Invoke(GetManagedInstanceGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupsResult>("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure OS Management service.
+        /// 
+        /// Returns a list of all Managed Instance Groups.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceGroups = Oci.OsManagement.GetManagedInstanceGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = managedInstanceGroupDisplayName,
+        ///         OsFamily = managedInstanceGroupOsFamily,
+        ///         State = managedInstanceGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceGroupsResult> Invoke(GetManagedInstanceGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupsResult>("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

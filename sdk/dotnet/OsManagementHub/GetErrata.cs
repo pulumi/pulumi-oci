@@ -82,6 +82,42 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetErrataResult> Invoke(GetErrataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetErrataResult>("oci:OsManagementHub/getErrata:getErrata", args ?? new GetErrataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
+        /// limited to its name, classification type, advisory severity, and OS family.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testErrata = Oci.OsManagementHub.GetErrata.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AdvisorySeverities = erratumAdvisorySeverity,
+        ///         AdvisoryTypes = erratumAdvisoryType,
+        ///         ClassificationTypes = erratumClassificationType,
+        ///         Names = erratumName,
+        ///         NameContains = erratumNameContains,
+        ///         OsFamily = erratumOsFamily,
+        ///         TimeIssueDateEnd = erratumTimeIssueDateEnd,
+        ///         TimeIssueDateStart = erratumTimeIssueDateStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetErrataResult> Invoke(GetErrataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetErrataResult>("oci:OsManagementHub/getErrata:getErrata", args ?? new GetErrataInvokeArgs(), options.WithDefaults());
     }
 
 

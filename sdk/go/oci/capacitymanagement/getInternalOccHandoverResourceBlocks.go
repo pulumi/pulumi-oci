@@ -96,21 +96,11 @@ type GetInternalOccHandoverResourceBlocksResult struct {
 }
 
 func GetInternalOccHandoverResourceBlocksOutput(ctx *pulumi.Context, args GetInternalOccHandoverResourceBlocksOutputArgs, opts ...pulumi.InvokeOption) GetInternalOccHandoverResourceBlocksResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInternalOccHandoverResourceBlocksResultOutput, error) {
 			args := v.(GetInternalOccHandoverResourceBlocksArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInternalOccHandoverResourceBlocksResult
-			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", args, &rv, "", opts...)
-			if err != nil {
-				return GetInternalOccHandoverResourceBlocksResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInternalOccHandoverResourceBlocksResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInternalOccHandoverResourceBlocksResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", args, GetInternalOccHandoverResourceBlocksResultOutput{}, options).(GetInternalOccHandoverResourceBlocksResultOutput), nil
 		}).(GetInternalOccHandoverResourceBlocksResultOutput)
 }
 

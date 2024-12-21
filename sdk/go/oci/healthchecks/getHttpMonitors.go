@@ -79,21 +79,11 @@ type GetHttpMonitorsResult struct {
 }
 
 func GetHttpMonitorsOutput(ctx *pulumi.Context, args GetHttpMonitorsOutputArgs, opts ...pulumi.InvokeOption) GetHttpMonitorsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetHttpMonitorsResultOutput, error) {
 			args := v.(GetHttpMonitorsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetHttpMonitorsResult
-			secret, err := ctx.InvokePackageRaw("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args, &rv, "", opts...)
-			if err != nil {
-				return GetHttpMonitorsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetHttpMonitorsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetHttpMonitorsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args, GetHttpMonitorsResultOutput{}, options).(GetHttpMonitorsResultOutput), nil
 		}).(GetHttpMonitorsResultOutput)
 }
 

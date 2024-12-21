@@ -64,6 +64,33 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public static Output<GetAccessRequestAuditLogReportResult> Invoke(GetAccessRequestAuditLogReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestAuditLogReportResult>("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args ?? new GetAccessRequestAuditLogReportInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Access Request Audit Log Report resource in Oracle Cloud Infrastructure Operator Access Control service.
+        /// 
+        /// Gets the Audit Log Report for the given access requestId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAccessRequestAuditLogReport = Oci.OperatorAccessControl.GetAccessRequestAuditLogReport.Invoke(new()
+        ///     {
+        ///         AccessRequestId = testAccessRequest.Id,
+        ///         EnableProcessTree = accessRequestAuditLogReportEnableProcessTree,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAccessRequestAuditLogReportResult> Invoke(GetAccessRequestAuditLogReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestAuditLogReportResult>("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args ?? new GetAccessRequestAuditLogReportInvokeArgs(), options.WithDefaults());
     }
 
 

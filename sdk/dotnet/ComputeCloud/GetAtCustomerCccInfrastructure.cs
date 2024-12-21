@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ComputeCloud
         /// </summary>
         public static Output<GetAtCustomerCccInfrastructureResult> Invoke(GetAtCustomerCccInfrastructureInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccInfrastructureResult>("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", args ?? new GetAtCustomerCccInfrastructureInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+        /// 
+        /// Gets a Compute Cloud@Customer infrastructure using the infrastructure
+        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCccInfrastructure = Oci.ComputeCloud.GetAtCustomerCccInfrastructure.Invoke(new()
+        ///     {
+        ///         CccInfrastructureId = testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAtCustomerCccInfrastructureResult> Invoke(GetAtCustomerCccInfrastructureInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccInfrastructureResult>("oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure", args ?? new GetAtCustomerCccInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 

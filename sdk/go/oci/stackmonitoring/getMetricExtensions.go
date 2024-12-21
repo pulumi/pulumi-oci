@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetMetricExtensions(ctx, &stackmonitoring.GetMetricExtensionsArgs{
-//				CompartmentId:       compartmentId,
+//				CompartmentId:       pulumi.StringRef(compartmentId),
 //				EnabledOnResourceId: pulumi.StringRef(testResource.Id),
+//				MetricExtensionId:   pulumi.StringRef(testMetricExtension.Id),
 //				Name:                pulumi.StringRef(metricExtensionName),
 //				ResourceType:        pulumi.StringRef(metricExtensionResourceType),
 //				State:               pulumi.StringRef(metricExtensionState),
@@ -58,10 +59,12 @@ func GetMetricExtensions(ctx *pulumi.Context, args *GetMetricExtensionsArgs, opt
 // A collection of arguments for invoking getMetricExtensions.
 type GetMetricExtensionsArgs struct {
 	// The ID of the compartment in which data is listed.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return metric extensions based on input resource Id on which metric extension is enabled
 	EnabledOnResourceId *string                     `pulumi:"enabledOnResourceId"`
 	Filters             []GetMetricExtensionsFilter `pulumi:"filters"`
+	// Identifier for the metric extension
+	MetricExtensionId *string `pulumi:"metricExtensionId"`
 	// A filter to return resources based on name.
 	Name *string `pulumi:"name"`
 	// A filter to return resources based on resource type.
@@ -75,13 +78,14 @@ type GetMetricExtensionsArgs struct {
 // A collection of values returned by getMetricExtensions.
 type GetMetricExtensionsResult struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	CompartmentId       string                      `pulumi:"compartmentId"`
+	CompartmentId       *string                     `pulumi:"compartmentId"`
 	EnabledOnResourceId *string                     `pulumi:"enabledOnResourceId"`
 	Filters             []GetMetricExtensionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of metric_extension_collection.
 	MetricExtensionCollections []GetMetricExtensionsMetricExtensionCollection `pulumi:"metricExtensionCollections"`
+	MetricExtensionId          *string                                        `pulumi:"metricExtensionId"`
 	// Name of the script file
 	Name *string `pulumi:"name"`
 	// Resource type to which Metric Extension applies
@@ -93,31 +97,23 @@ type GetMetricExtensionsResult struct {
 }
 
 func GetMetricExtensionsOutput(ctx *pulumi.Context, args GetMetricExtensionsOutputArgs, opts ...pulumi.InvokeOption) GetMetricExtensionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMetricExtensionsResultOutput, error) {
 			args := v.(GetMetricExtensionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMetricExtensionsResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", args, &rv, "", opts...)
-			if err != nil {
-				return GetMetricExtensionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMetricExtensionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMetricExtensionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", args, GetMetricExtensionsResultOutput{}, options).(GetMetricExtensionsResultOutput), nil
 		}).(GetMetricExtensionsResultOutput)
 }
 
 // A collection of arguments for invoking getMetricExtensions.
 type GetMetricExtensionsOutputArgs struct {
 	// The ID of the compartment in which data is listed.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return metric extensions based on input resource Id on which metric extension is enabled
 	EnabledOnResourceId pulumi.StringPtrInput               `pulumi:"enabledOnResourceId"`
 	Filters             GetMetricExtensionsFilterArrayInput `pulumi:"filters"`
+	// Identifier for the metric extension
+	MetricExtensionId pulumi.StringPtrInput `pulumi:"metricExtensionId"`
 	// A filter to return resources based on name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return resources based on resource type.
@@ -148,8 +144,8 @@ func (o GetMetricExtensionsResultOutput) ToGetMetricExtensionsResultOutputWithCo
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o GetMetricExtensionsResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricExtensionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMetricExtensionsResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricExtensionsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMetricExtensionsResultOutput) EnabledOnResourceId() pulumi.StringPtrOutput {
@@ -170,6 +166,10 @@ func (o GetMetricExtensionsResultOutput) MetricExtensionCollections() GetMetricE
 	return o.ApplyT(func(v GetMetricExtensionsResult) []GetMetricExtensionsMetricExtensionCollection {
 		return v.MetricExtensionCollections
 	}).(GetMetricExtensionsMetricExtensionCollectionArrayOutput)
+}
+
+func (o GetMetricExtensionsResultOutput) MetricExtensionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricExtensionsResult) *string { return v.MetricExtensionId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the script file

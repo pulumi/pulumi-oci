@@ -36,6 +36,7 @@ import (
 //				Passphrase:    pulumi.Any(bdsInstanceApiKeyPassphrase),
 //				UserId:        pulumi.Any(testUser.Id),
 //				DefaultRegion: pulumi.Any(bdsInstanceApiKeyDefaultRegion),
+//				DomainOcid:    pulumi.Any(bdsInstanceApiKeyDomainOcid),
 //			})
 //			if err != nil {
 //				return err
@@ -57,12 +58,16 @@ type BdsInstanceApiKey struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the cluster.
+	// <<<<<<< ours
 	BdsInstanceId pulumi.StringOutput `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
 	DefaultRegion pulumi.StringOutput `pulumi:"defaultRegion"`
+	// Identity domain OCID , where user is present. For default domain , this field will be optional.
+	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+	// > > > > > > > theirs
 	KeyAlias pulumi.StringOutput `pulumi:"keyAlias"`
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase pulumi.StringOutput `pulumi:"passphrase"`
@@ -131,12 +136,16 @@ func GetBdsInstanceApiKey(ctx *pulumi.Context,
 // Input properties used for looking up and filtering BdsInstanceApiKey resources.
 type bdsInstanceApiKeyState struct {
 	// The OCID of the cluster.
+	// <<<<<<< ours
 	BdsInstanceId *string `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
 	DefaultRegion *string `pulumi:"defaultRegion"`
+	// Identity domain OCID , where user is present. For default domain , this field will be optional.
+	DomainOcid *string `pulumi:"domainOcid"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint *string `pulumi:"fingerprint"`
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+	// > > > > > > > theirs
 	KeyAlias *string `pulumi:"keyAlias"`
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase *string `pulumi:"passphrase"`
@@ -157,12 +166,16 @@ type bdsInstanceApiKeyState struct {
 
 type BdsInstanceApiKeyState struct {
 	// The OCID of the cluster.
+	// <<<<<<< ours
 	BdsInstanceId pulumi.StringPtrInput
 	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
 	DefaultRegion pulumi.StringPtrInput
+	// Identity domain OCID , where user is present. For default domain , this field will be optional.
+	DomainOcid pulumi.StringPtrInput
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint pulumi.StringPtrInput
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+	// > > > > > > > theirs
 	KeyAlias pulumi.StringPtrInput
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase pulumi.StringPtrInput
@@ -187,10 +200,14 @@ func (BdsInstanceApiKeyState) ElementType() reflect.Type {
 
 type bdsInstanceApiKeyArgs struct {
 	// The OCID of the cluster.
+	// <<<<<<< ours
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
 	DefaultRegion *string `pulumi:"defaultRegion"`
+	// Identity domain OCID , where user is present. For default domain , this field will be optional.
+	DomainOcid *string `pulumi:"domainOcid"`
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+	// > > > > > > > theirs
 	KeyAlias string `pulumi:"keyAlias"`
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase string `pulumi:"passphrase"`
@@ -204,10 +221,14 @@ type bdsInstanceApiKeyArgs struct {
 // The set of arguments for constructing a BdsInstanceApiKey resource.
 type BdsInstanceApiKeyArgs struct {
 	// The OCID of the cluster.
+	// <<<<<<< ours
 	BdsInstanceId pulumi.StringInput
 	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
 	DefaultRegion pulumi.StringPtrInput
+	// Identity domain OCID , where user is present. For default domain , this field will be optional.
+	DomainOcid pulumi.StringPtrInput
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+	// > > > > > > > theirs
 	KeyAlias pulumi.StringInput
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase pulumi.StringInput
@@ -306,6 +327,7 @@ func (o BdsInstanceApiKeyOutput) ToBdsInstanceApiKeyOutputWithContext(ctx contex
 }
 
 // The OCID of the cluster.
+// <<<<<<< ours
 func (o BdsInstanceApiKeyOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
@@ -315,12 +337,18 @@ func (o BdsInstanceApiKeyOutput) DefaultRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.DefaultRegion }).(pulumi.StringOutput)
 }
 
+// Identity domain OCID , where user is present. For default domain , this field will be optional.
+func (o BdsInstanceApiKeyOutput) DomainOcid() pulumi.StringOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+}
+
 // The fingerprint that corresponds to the public API key requested.
 func (o BdsInstanceApiKeyOutput) Fingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
 }
 
 // User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+// > > > > > > > theirs
 func (o BdsInstanceApiKeyOutput) KeyAlias() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.KeyAlias }).(pulumi.StringOutput)
 }

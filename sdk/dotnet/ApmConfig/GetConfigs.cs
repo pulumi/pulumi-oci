@@ -76,6 +76,39 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         public static Output<GetConfigsResult> Invoke(GetConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConfigsResult>("oci:ApmConfig/getConfigs:getConfigs", args ?? new GetConfigsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
+        /// 
+        /// Returns all configuration items, which can optionally be filtered by configuration type.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConfigs = Oci.ApmConfig.GetConfigs.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ConfigType = configConfigType,
+        ///         DefinedTagEquals = configDefinedTagEquals,
+        ///         DefinedTagExists = configDefinedTagExists,
+        ///         DisplayName = configDisplayName,
+        ///         FreeformTagEquals = configFreeformTagEquals,
+        ///         FreeformTagExists = configFreeformTagExists,
+        ///         OptionsGroup = configOptionsGroup,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConfigsResult> Invoke(GetConfigsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigsResult>("oci:ApmConfig/getConfigs:getConfigs", args ?? new GetConfigsInvokeArgs(), options.WithDefaults());
     }
 
 

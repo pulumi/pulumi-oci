@@ -120,7 +120,8 @@ def get_trail_sequences(deployment_id: Optional[str] = None,
     """
     This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
 
-    Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+    Lists the Trail Sequences for a TrailFile in a given deployment.
+    Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
 
     ## Example Usage
 
@@ -166,7 +167,8 @@ def get_trail_sequences_output(deployment_id: Optional[pulumi.Input[str]] = None
     """
     This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
 
-    Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+    Lists the Trail Sequences for a TrailFile in a given deployment.
+    Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
 
     ## Example Usage
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetEnterpriseManagerBridgeResult> Invoke(GetEnterpriseManagerBridgeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgeResult>("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args ?? new GetEnterpriseManagerBridgeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets details of an Operations Insights Enterprise Manager bridge.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEnterpriseManagerBridge = Oci.Opsi.GetEnterpriseManagerBridge.Invoke(new()
+        ///     {
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEnterpriseManagerBridgeResult> Invoke(GetEnterpriseManagerBridgeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgeResult>("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args ?? new GetEnterpriseManagerBridgeInvokeArgs(), options.WithDefaults());
     }
 
 

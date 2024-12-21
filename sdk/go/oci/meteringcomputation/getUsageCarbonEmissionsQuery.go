@@ -68,21 +68,11 @@ type LookupUsageCarbonEmissionsQueryResult struct {
 }
 
 func LookupUsageCarbonEmissionsQueryOutput(ctx *pulumi.Context, args LookupUsageCarbonEmissionsQueryOutputArgs, opts ...pulumi.InvokeOption) LookupUsageCarbonEmissionsQueryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupUsageCarbonEmissionsQueryResultOutput, error) {
 			args := v.(LookupUsageCarbonEmissionsQueryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupUsageCarbonEmissionsQueryResult
-			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", args, &rv, "", opts...)
-			if err != nil {
-				return LookupUsageCarbonEmissionsQueryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupUsageCarbonEmissionsQueryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupUsageCarbonEmissionsQueryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", args, LookupUsageCarbonEmissionsQueryResultOutput{}, options).(LookupUsageCarbonEmissionsQueryResultOutput), nil
 		}).(LookupUsageCarbonEmissionsQueryResultOutput)
 }
 

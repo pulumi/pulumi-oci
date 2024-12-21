@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDynamicGroupsResult> Invoke(GetDynamicGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDynamicGroupsResult>("oci:Identity/getDynamicGroups:getDynamicGroups", args ?? new GetDynamicGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dynamic Groups in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
+        /// the compartment ID (remember that the tenancy is simply the root compartment).
+        /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDynamicGroups = Oci.Identity.GetDynamicGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = dynamicGroupName,
+        ///         State = dynamicGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDynamicGroupsResult> Invoke(GetDynamicGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDynamicGroupsResult>("oci:Identity/getDynamicGroups:getDynamicGroups", args ?? new GetDynamicGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

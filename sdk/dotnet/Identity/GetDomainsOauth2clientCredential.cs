@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsOauth2clientCredentialResult> Invoke(GetDomainsOauth2clientCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauth2clientCredentialResult>("oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential", args ?? new GetDomainsOauth2clientCredentialInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user's OAuth2 client credentials.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOauth2clientCredential = Oci.Identity.GetDomainsOauth2clientCredential.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuth2clientCredentialId = testOAuth2clientCredential.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = oauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = oauth2clientCredentialResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsOauth2clientCredentialResult> Invoke(GetDomainsOauth2clientCredentialInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauth2clientCredentialResult>("oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential", args ?? new GetDomainsOauth2clientCredentialInvokeArgs(), options.WithDefaults());
     }
 
 

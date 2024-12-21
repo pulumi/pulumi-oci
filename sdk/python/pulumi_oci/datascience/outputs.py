@@ -1444,7 +1444,7 @@ class ModelCustomMetadataList(dict):
                  key: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param str description: (Updatable) Description of model metadata
         :param str key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -1452,7 +1452,7 @@ class ModelCustomMetadataList(dict):
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param str value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -1470,7 +1470,7 @@ class ModelCustomMetadataList(dict):
     @pulumi.getter
     def category(self) -> Optional[str]:
         """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -1492,7 +1492,7 @@ class ModelCustomMetadataList(dict):
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -1515,7 +1515,7 @@ class ModelDefinedMetadataList(dict):
                  key: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param str description: (Updatable) Description of model metadata
         :param str key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -1523,7 +1523,7 @@ class ModelDefinedMetadataList(dict):
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param str value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
@@ -1541,7 +1541,7 @@ class ModelDefinedMetadataList(dict):
     @pulumi.getter
     def category(self) -> Optional[str]:
         """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -1563,7 +1563,7 @@ class ModelDefinedMetadataList(dict):
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -1993,6 +1993,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             suggest = "instance_shape_name"
         elif key == "modelDeploymentInstanceShapeConfigDetails":
             suggest = "model_deployment_instance_shape_config_details"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
         elif key == "subnetId":
             suggest = "subnet_id"
 
@@ -2010,15 +2012,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_shape_name: str,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
+                 private_endpoint_id: Optional[str] = None,
                  subnet_id: Optional[str] = None):
         """
         :param str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
+        :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param str subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -2037,6 +2043,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -5648,7 +5662,7 @@ class GetJobRunsJobRunResult(dict):
         :param Sequence['GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param str lifecycle_details: Details of the state of the job run.
         :param Sequence['GetJobRunsJobRunLogDetailArgs'] log_details: Customer logging details for job run.
-        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_accepted: The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_finished: The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -5802,7 +5816,7 @@ class GetJobRunsJobRunResult(dict):
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         """
         return pulumi.get(self, "project_id")
 
@@ -7021,7 +7035,7 @@ class GetModelCustomMetadataListResult(dict):
                  key: str,
                  value: str):
         """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param str description: A short description of the model.
         :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -7029,7 +7043,7 @@ class GetModelCustomMetadataListResult(dict):
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
         pulumi.set(__self__, "category", category)
@@ -7041,7 +7055,7 @@ class GetModelCustomMetadataListResult(dict):
     @pulumi.getter
     def category(self) -> str:
         """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -7063,7 +7077,7 @@ class GetModelCustomMetadataListResult(dict):
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -7084,7 +7098,7 @@ class GetModelDefinedMetadataListResult(dict):
                  key: str,
                  value: str):
         """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param str description: A short description of the model.
         :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -7092,7 +7106,7 @@ class GetModelDefinedMetadataListResult(dict):
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
         pulumi.set(__self__, "category", category)
@@ -7104,7 +7118,7 @@ class GetModelDefinedMetadataListResult(dict):
     @pulumi.getter
     def category(self) -> str:
         """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -7126,7 +7140,7 @@ class GetModelDefinedMetadataListResult(dict):
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -7428,14 +7442,17 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     def __init__(__self__, *,
                  instance_shape_name: str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 private_endpoint_id: str,
                  subnet_id: str):
         """
         :param str instance_shape_name: The shape used to launch the model deployment instances.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
@@ -7453,6 +7470,14 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -8410,14 +8435,17 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     def __init__(__self__, *,
                  instance_shape_name: str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 private_endpoint_id: str,
                  subnet_id: str):
         """
         :param str instance_shape_name: The shape used to launch the model deployment instances.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
@@ -8435,6 +8463,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -9500,7 +9536,7 @@ class GetModelsModelCustomMetadataListResult(dict):
                  key: str,
                  value: str):
         """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param str description: A short description of the model.
         :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -9508,7 +9544,7 @@ class GetModelsModelCustomMetadataListResult(dict):
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
         pulumi.set(__self__, "category", category)
@@ -9520,7 +9556,7 @@ class GetModelsModelCustomMetadataListResult(dict):
     @pulumi.getter
     def category(self) -> str:
         """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -9542,7 +9578,7 @@ class GetModelsModelCustomMetadataListResult(dict):
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 
@@ -9563,7 +9599,7 @@ class GetModelsModelDefinedMetadataListResult(dict):
                  key: str,
                  value: str):
         """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         :param str description: A short description of the model.
         :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
@@ -9571,7 +9607,7 @@ class GetModelsModelDefinedMetadataListResult(dict):
                * libraryVersion
                * estimatorClass
                * hyperParameters
-               * testartifactresults
+               * testArtifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
         pulumi.set(__self__, "category", category)
@@ -9583,7 +9619,7 @@ class GetModelsModelDefinedMetadataListResult(dict):
     @pulumi.getter
     def category(self) -> str:
         """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
         """
         return pulumi.get(self, "category")
 
@@ -9605,7 +9641,7 @@ class GetModelsModelDefinedMetadataListResult(dict):
         * libraryVersion
         * estimatorClass
         * hyperParameters
-        * testartifactresults
+        * testArtifactresults
         """
         return pulumi.get(self, "key")
 

@@ -72,21 +72,11 @@ type GetWorkRequestLogEntriesResult struct {
 }
 
 func GetWorkRequestLogEntriesOutput(ctx *pulumi.Context, args GetWorkRequestLogEntriesOutputArgs, opts ...pulumi.InvokeOption) GetWorkRequestLogEntriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetWorkRequestLogEntriesResultOutput, error) {
 			args := v.(GetWorkRequestLogEntriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetWorkRequestLogEntriesResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args, &rv, "", opts...)
-			if err != nil {
-				return GetWorkRequestLogEntriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetWorkRequestLogEntriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetWorkRequestLogEntriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args, GetWorkRequestLogEntriesResultOutput{}, options).(GetWorkRequestLogEntriesResultOutput), nil
 		}).(GetWorkRequestLogEntriesResultOutput)
 }
 

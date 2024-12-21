@@ -989,7 +989,7 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs'] component_details: Blockchain Platform component details.
-        :param str compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+        :param str compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Platform Instance Description
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
@@ -1067,7 +1067,7 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
     @pulumi.getter(name="computeShape")
     def compute_shape(self) -> str:
         """
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
         """
         return pulumi.get(self, "compute_shape")
 

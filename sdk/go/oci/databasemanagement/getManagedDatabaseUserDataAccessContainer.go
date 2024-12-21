@@ -75,21 +75,11 @@ type GetManagedDatabaseUserDataAccessContainerResult struct {
 }
 
 func GetManagedDatabaseUserDataAccessContainerOutput(ctx *pulumi.Context, args GetManagedDatabaseUserDataAccessContainerOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserDataAccessContainerResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseUserDataAccessContainerResultOutput, error) {
 			args := v.(GetManagedDatabaseUserDataAccessContainerArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseUserDataAccessContainerResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseUserDataAccessContainerResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseUserDataAccessContainerResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseUserDataAccessContainerResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args, GetManagedDatabaseUserDataAccessContainerResultOutput{}, options).(GetManagedDatabaseUserDataAccessContainerResultOutput), nil
 		}).(GetManagedDatabaseUserDataAccessContainerResultOutput)
 }
 

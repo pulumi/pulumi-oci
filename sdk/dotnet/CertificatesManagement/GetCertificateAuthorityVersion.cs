@@ -28,6 +28,15 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Lists all versions for the specified certificate authority (CA).
+        /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+        /// </summary>
+        public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
     }
 
 

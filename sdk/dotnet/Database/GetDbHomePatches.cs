@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbHomePatchesResult> Invoke(GetDbHomePatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbHomePatchesResult>("oci:Database/getDbHomePatches:getDbHomePatches", args ?? new GetDbHomePatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists patches applicable to the requested Database Home.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbHomePatches = Oci.Database.GetDbHomePatches.Invoke(new()
+        ///     {
+        ///         DbHomeId = testDbHome.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbHomePatchesResult> Invoke(GetDbHomePatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbHomePatchesResult>("oci:Database/getDbHomePatches:getDbHomePatches", args ?? new GetDbHomePatchesInvokeArgs(), options.WithDefaults());
     }
 
 

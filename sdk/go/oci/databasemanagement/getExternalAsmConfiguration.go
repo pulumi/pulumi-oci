@@ -70,21 +70,11 @@ type GetExternalAsmConfigurationResult struct {
 }
 
 func GetExternalAsmConfigurationOutput(ctx *pulumi.Context, args GetExternalAsmConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalAsmConfigurationResultOutput, error) {
 			args := v.(GetExternalAsmConfigurationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalAsmConfigurationResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalAsmConfigurationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalAsmConfigurationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalAsmConfigurationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration", args, GetExternalAsmConfigurationResultOutput{}, options).(GetExternalAsmConfigurationResultOutput), nil
 		}).(GetExternalAsmConfigurationResultOutput)
 }
 

@@ -110,6 +110,56 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetBaselineableMetricsEvaluateResult> Invoke(GetBaselineableMetricsEvaluateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricsEvaluateResult>("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", args ?? new GetBaselineableMetricsEvaluateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Evaluates metric for anomalies for the given data points
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBaselineableMetricsEvaluate = Oci.StackMonitoring.GetBaselineableMetricsEvaluate.Invoke(new()
+        ///     {
+        ///         BaselineableMetricId = testBaselineableMetric.Id,
+        ///         Items = new[]
+        ///         {
+        ///             new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemInputArgs
+        ///             {
+        ///                 EvaluationDataPoints = new[]
+        ///                 {
+        ///                     new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointInputArgs
+        ///                     {
+        ///                         Timestamp = baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp,
+        ///                         Value = baselineableMetricsEvaluateItemsEvaluationDataPointsValue,
+        ///                     },
+        ///                 },
+        ///                 TrainingDataPoints = new[]
+        ///                 {
+        ///                     new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointInputArgs
+        ///                     {
+        ///                         Timestamp = baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp,
+        ///                         Value = baselineableMetricsEvaluateItemsTrainingDataPointsValue,
+        ///                     },
+        ///                 },
+        ///                 Dimensions = baselineableMetricsEvaluateItemsDimensions,
+        ///             },
+        ///         },
+        ///         ResourceId = testResource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBaselineableMetricsEvaluateResult> Invoke(GetBaselineableMetricsEvaluateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBaselineableMetricsEvaluateResult>("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", args ?? new GetBaselineableMetricsEvaluateInvokeArgs(), options.WithDefaults());
     }
 
 

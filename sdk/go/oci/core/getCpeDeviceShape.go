@@ -82,21 +82,11 @@ type GetCpeDeviceShapeResult struct {
 }
 
 func GetCpeDeviceShapeOutput(ctx *pulumi.Context, args GetCpeDeviceShapeOutputArgs, opts ...pulumi.InvokeOption) GetCpeDeviceShapeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCpeDeviceShapeResultOutput, error) {
 			args := v.(GetCpeDeviceShapeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCpeDeviceShapeResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getCpeDeviceShape:getCpeDeviceShape", args, &rv, "", opts...)
-			if err != nil {
-				return GetCpeDeviceShapeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCpeDeviceShapeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCpeDeviceShapeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getCpeDeviceShape:getCpeDeviceShape", args, GetCpeDeviceShapeResultOutput{}, options).(GetCpeDeviceShapeResultOutput), nil
 		}).(GetCpeDeviceShapeResultOutput)
 }
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentImagesResult> Invoke(GetManagementAgentImagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Get supported agent image information
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentImages = Oci.ManagementAgent.GetManagementAgentImages.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         InstallType = managementAgentImageInstallType,
+        ///         Name = managementAgentImageName,
+        ///         State = managementAgentImageState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentImagesResult> Invoke(GetManagementAgentImagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesInvokeArgs(), options.WithDefaults());
     }
 
 

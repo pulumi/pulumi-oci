@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetTunnelSecurityAssociationsResult> Invoke(GetTunnelSecurityAssociationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTunnelSecurityAssociationsResult>("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args ?? new GetTunnelSecurityAssociationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the tunnel security associations information for the specified IPSec tunnel ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTunnelSecurityAssociations = Oci.Core.GetTunnelSecurityAssociations.Invoke(new()
+        ///     {
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTunnelSecurityAssociationsResult> Invoke(GetTunnelSecurityAssociationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTunnelSecurityAssociationsResult>("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args ?? new GetTunnelSecurityAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

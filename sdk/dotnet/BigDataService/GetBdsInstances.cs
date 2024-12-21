@@ -68,6 +68,35 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstancesResult> Invoke(GetBdsInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancesResult>("oci:BigDataService/getBdsInstances:getBdsInstances", args ?? new GetBdsInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns a list of all Big Data Service clusters in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstances = Oci.BigDataService.GetBdsInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = bdsInstanceDisplayName,
+        ///         State = bdsInstanceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstancesResult> Invoke(GetBdsInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancesResult>("oci:BigDataService/getBdsInstances:getBdsInstances", args ?? new GetBdsInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

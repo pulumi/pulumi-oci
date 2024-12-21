@@ -93,21 +93,11 @@ type GetByoipRangeResult struct {
 }
 
 func GetByoipRangeOutput(ctx *pulumi.Context, args GetByoipRangeOutputArgs, opts ...pulumi.InvokeOption) GetByoipRangeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetByoipRangeResultOutput, error) {
 			args := v.(GetByoipRangeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetByoipRangeResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getByoipRange:getByoipRange", args, &rv, "", opts...)
-			if err != nil {
-				return GetByoipRangeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetByoipRangeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetByoipRangeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getByoipRange:getByoipRange", args, GetByoipRangeResultOutput{}, options).(GetByoipRangeResultOutput), nil
 		}).(GetByoipRangeResultOutput)
 }
 

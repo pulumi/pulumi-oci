@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public static Output<GetModelDeploymentResult> Invoke(GetModelDeploymentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentResult>("oci:DataScience/getModelDeployment:getModelDeployment", args ?? new GetModelDeploymentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
+        /// 
+        /// Retrieves the model deployment for the specified `modelDeploymentId`.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModelDeployment = Oci.DataScience.GetModelDeployment.Invoke(new()
+        ///     {
+        ///         ModelDeploymentId = testModelDeploymentOciDatascienceModelDeployment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelDeploymentResult> Invoke(GetModelDeploymentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentResult>("oci:DataScience/getModelDeployment:getModelDeployment", args ?? new GetModelDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 

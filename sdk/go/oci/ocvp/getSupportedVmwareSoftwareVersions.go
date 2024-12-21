@@ -82,21 +82,11 @@ type GetSupportedVmwareSoftwareVersionsResult struct {
 }
 
 func GetSupportedVmwareSoftwareVersionsOutput(ctx *pulumi.Context, args GetSupportedVmwareSoftwareVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedVmwareSoftwareVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSupportedVmwareSoftwareVersionsResultOutput, error) {
 			args := v.(GetSupportedVmwareSoftwareVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSupportedVmwareSoftwareVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetSupportedVmwareSoftwareVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSupportedVmwareSoftwareVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSupportedVmwareSoftwareVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args, GetSupportedVmwareSoftwareVersionsResultOutput{}, options).(GetSupportedVmwareSoftwareVersionsResultOutput), nil
 		}).(GetSupportedVmwareSoftwareVersionsResultOutput)
 }
 

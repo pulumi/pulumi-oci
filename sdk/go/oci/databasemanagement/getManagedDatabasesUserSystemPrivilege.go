@@ -75,21 +75,11 @@ type GetManagedDatabasesUserSystemPrivilegeResult struct {
 }
 
 func GetManagedDatabasesUserSystemPrivilegeOutput(ctx *pulumi.Context, args GetManagedDatabasesUserSystemPrivilegeOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabasesUserSystemPrivilegeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabasesUserSystemPrivilegeResultOutput, error) {
 			args := v.(GetManagedDatabasesUserSystemPrivilegeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabasesUserSystemPrivilegeResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabasesUserSystemPrivilegeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabasesUserSystemPrivilegeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabasesUserSystemPrivilegeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args, GetManagedDatabasesUserSystemPrivilegeResultOutput{}, options).(GetManagedDatabasesUserSystemPrivilegeResultOutput), nil
 		}).(GetManagedDatabasesUserSystemPrivilegeResultOutput)
 }
 

@@ -79,21 +79,11 @@ type GetLogAnalyticsEntityTopologyResult struct {
 }
 
 func GetLogAnalyticsEntityTopologyOutput(ctx *pulumi.Context, args GetLogAnalyticsEntityTopologyOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsEntityTopologyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsEntityTopologyResultOutput, error) {
 			args := v.(GetLogAnalyticsEntityTopologyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsEntityTopologyResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsEntityTopologyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsEntityTopologyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsEntityTopologyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args, GetLogAnalyticsEntityTopologyResultOutput{}, options).(GetLogAnalyticsEntityTopologyResultOutput), nil
 		}).(GetLogAnalyticsEntityTopologyResultOutput)
 }
 

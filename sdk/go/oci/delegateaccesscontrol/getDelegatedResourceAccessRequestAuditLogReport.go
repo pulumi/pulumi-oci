@@ -76,21 +76,11 @@ type GetDelegatedResourceAccessRequestAuditLogReportResult struct {
 }
 
 func GetDelegatedResourceAccessRequestAuditLogReportOutput(ctx *pulumi.Context, args GetDelegatedResourceAccessRequestAuditLogReportOutputArgs, opts ...pulumi.InvokeOption) GetDelegatedResourceAccessRequestAuditLogReportResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDelegatedResourceAccessRequestAuditLogReportResultOutput, error) {
 			args := v.(GetDelegatedResourceAccessRequestAuditLogReportArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDelegatedResourceAccessRequestAuditLogReportResult
-			secret, err := ctx.InvokePackageRaw("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", args, &rv, "", opts...)
-			if err != nil {
-				return GetDelegatedResourceAccessRequestAuditLogReportResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDelegatedResourceAccessRequestAuditLogReportResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDelegatedResourceAccessRequestAuditLogReportResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequestAuditLogReport:getDelegatedResourceAccessRequestAuditLogReport", args, GetDelegatedResourceAccessRequestAuditLogReportResultOutput{}, options).(GetDelegatedResourceAccessRequestAuditLogReportResultOutput), nil
 		}).(GetDelegatedResourceAccessRequestAuditLogReportResultOutput)
 }
 

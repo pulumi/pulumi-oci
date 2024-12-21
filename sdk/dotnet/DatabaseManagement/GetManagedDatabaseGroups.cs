@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseGroupsResult> Invoke(GetManagedDatabaseGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseGroupsResult>("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", args ?? new GetManagedDatabaseGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in
+        /// a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
+        /// Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
+        /// all the Managed Database Groups in the compartment are listed.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseGroups = Oci.DatabaseManagement.GetManagedDatabaseGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = managedDatabaseGroupId,
+        ///         Name = managedDatabaseGroupName,
+        ///         State = managedDatabaseGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseGroupsResult> Invoke(GetManagedDatabaseGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseGroupsResult>("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", args ?? new GetManagedDatabaseGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

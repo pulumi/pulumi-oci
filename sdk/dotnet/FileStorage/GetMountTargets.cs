@@ -74,6 +74,38 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetMountTargetsResult> Invoke(GetMountTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMountTargetsResult>("oci:FileStorage/getMountTargets:getMountTargets", args ?? new GetMountTargetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Lists the mount target resources in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMountTargets = Oci.FileStorage.GetMountTargets.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = mountTargetAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mountTargetDisplayName,
+        ///         ExportSetId = testExportSet.Id,
+        ///         Id = mountTargetId,
+        ///         State = mountTargetState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMountTargetsResult> Invoke(GetMountTargetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMountTargetsResult>("oci:FileStorage/getMountTargets:getMountTargets", args ?? new GetMountTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -85,7 +85,19 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<Inputs.MetricExtensionQueryPropertiesOutParamDetailsGetArgs>? OutParamDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        /// (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        /// </summary>
+        [Input("protocolType")]
+        public Input<string>? ProtocolType { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of content response given by the http(s) URL
+        /// </summary>
+        [Input("responseContentType")]
+        public Input<string>? ResponseContentType { get; set; }
+
+        /// <summary>
+        /// (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         /// </summary>
         [Input("scriptDetails")]
         public Input<Inputs.MetricExtensionQueryPropertiesScriptDetailsGetArgs>? ScriptDetails { get; set; }
@@ -107,6 +119,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// </summary>
         [Input("startsWith")]
         public Input<string>? StartsWith { get; set; }
+
+        /// <summary>
+        /// (Updatable) Http(s) end point URL
+        /// </summary>
+        [Input("url")]
+        public Input<string>? Url { get; set; }
 
         public MetricExtensionQueryPropertiesGetArgs()
         {

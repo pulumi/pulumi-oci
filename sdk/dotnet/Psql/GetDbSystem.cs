@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetDbSystemResult> Invoke(GetDbSystemInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemResult>("oci:Psql/getDbSystem:getDbSystem", args ?? new GetDbSystemInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Gets a database system by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystem = Oci.Psql.GetDbSystem.Invoke(new()
+        ///     {
+        ///         DbSystemId = testDbSystemOciPsqlDbSystem.Id,
+        ///         ExcludedFields = dbSystemExcludedFields,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDbSystemResult> Invoke(GetDbSystemInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemResult>("oci:Psql/getDbSystem:getDbSystem", args ?? new GetDbSystemInvokeArgs(), options.WithDefaults());
     }
 
 

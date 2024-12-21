@@ -14,9 +14,16 @@ public final class GetBdsInstanceApiKeyResult {
     private String bdsInstanceId;
     /**
      * @return The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     private String defaultRegion;
+    /**
+     * @return Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+     * ===
+     * 
+     */
+    private String domainOcid;
     /**
      * @return The fingerprint that corresponds to the public API key requested.
      * 
@@ -68,10 +75,19 @@ public final class GetBdsInstanceApiKeyResult {
     }
     /**
      * @return The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public String defaultRegion() {
         return this.defaultRegion;
+    }
+    /**
+     * @return Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+     * ===
+     * 
+     */
+    public String domainOcid() {
+        return this.domainOcid;
     }
     /**
      * @return The fingerprint that corresponds to the public API key requested.
@@ -145,6 +161,7 @@ public final class GetBdsInstanceApiKeyResult {
         private String apiKeyId;
         private String bdsInstanceId;
         private String defaultRegion;
+        private String domainOcid;
         private String fingerprint;
         private String id;
         private String keyAlias;
@@ -160,6 +177,7 @@ public final class GetBdsInstanceApiKeyResult {
     	      this.apiKeyId = defaults.apiKeyId;
     	      this.bdsInstanceId = defaults.bdsInstanceId;
     	      this.defaultRegion = defaults.defaultRegion;
+    	      this.domainOcid = defaults.domainOcid;
     	      this.fingerprint = defaults.fingerprint;
     	      this.id = defaults.id;
     	      this.keyAlias = defaults.keyAlias;
@@ -193,6 +211,14 @@ public final class GetBdsInstanceApiKeyResult {
               throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "defaultRegion");
             }
             this.defaultRegion = defaultRegion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainOcid(String domainOcid) {
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
@@ -272,6 +298,7 @@ public final class GetBdsInstanceApiKeyResult {
             _resultValue.apiKeyId = apiKeyId;
             _resultValue.bdsInstanceId = bdsInstanceId;
             _resultValue.defaultRegion = defaultRegion;
+            _resultValue.domainOcid = domainOcid;
             _resultValue.fingerprint = fingerprint;
             _resultValue.id = id;
             _resultValue.keyAlias = keyAlias;

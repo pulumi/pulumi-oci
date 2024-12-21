@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetBlockVolumeReplicaResult> Invoke(GetBlockVolumeReplicaInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBlockVolumeReplicaResult>("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args ?? new GetBlockVolumeReplicaInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information for the specified block volume replica.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBlockVolumeReplica = Oci.Core.GetBlockVolumeReplica.Invoke(new()
+        ///     {
+        ///         BlockVolumeReplicaId = testBlockVolumeReplicaOciCoreBlockVolumeReplica.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBlockVolumeReplicaResult> Invoke(GetBlockVolumeReplicaInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBlockVolumeReplicaResult>("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args ?? new GetBlockVolumeReplicaInvokeArgs(), options.WithDefaults());
     }
 
 

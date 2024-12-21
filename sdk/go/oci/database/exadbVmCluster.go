@@ -16,6 +16,74 @@ import (
 //
 // # Creates an Exadata VM cluster on Exascale Infrastructure
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExadbVmCluster(ctx, "test_exadb_vm_cluster", &Database.ExadbVmClusterArgs{
+//				AvailabilityDomain:       pulumi.Any(exadbVmClusterAvailabilityDomain),
+//				BackupSubnetId:           pulumi.Any(testSubnet.Id),
+//				CompartmentId:            pulumi.Any(compartmentId),
+//				DisplayName:              pulumi.Any(exadbVmClusterDisplayName),
+//				ExascaleDbStorageVaultId: pulumi.Any(testExascaleDbStorageVault.Id),
+//				GridImageId:              pulumi.Any(testImage.Id),
+//				Hostname:                 pulumi.Any(exadbVmClusterHostname),
+//				Shape:                    pulumi.Any(exadbVmClusterShape),
+//				NodeConfig: &database.ExadbVmClusterNodeConfigArgs{
+//					EnabledEcpuCountPerNode:           pulumi.Any(exadbVmClusterEnabledEcpuCountPerNode),
+//					TotalEcpuCountPerNode:             pulumi.Any(exadbVmClusterTotalEcpuCountPerNode),
+//					VmFileSystemStorageSizeGbsPerNode: pulumi.Any(exadbVmClusterVmFileSystemStorageSizeInGbsPerNode),
+//				},
+//				NodeResources: database.ExadbVmClusterNodeResourceArray{
+//					&database.ExadbVmClusterNodeResourceArgs{
+//						NodeName: pulumi.String("node1"),
+//					},
+//					&database.ExadbVmClusterNodeResourceArgs{
+//						NodeName: pulumi.String("node2"),
+//					},
+//				},
+//				SshPublicKeys:       pulumi.Any(exadbVmClusterSshPublicKeys),
+//				SubnetId:            pulumi.Any(testSubnet.Id),
+//				BackupNetworkNsgIds: pulumi.Any(exadbVmClusterBackupNetworkNsgIds),
+//				ClusterName:         pulumi.Any(exadbVmClusterClusterName),
+//				DataCollectionOptions: &database.ExadbVmClusterDataCollectionOptionsArgs{
+//					IsDiagnosticsEventsEnabled: pulumi.Any(exadbVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled),
+//					IsHealthMonitoringEnabled:  pulumi.Any(exadbVmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
+//					IsIncidentLogsEnabled:      pulumi.Any(exadbVmClusterDataCollectionOptionsIsIncidentLogsEnabled),
+//				},
+//				DefinedTags: pulumi.Any(exadbVmClusterDefinedTags),
+//				Domain:      pulumi.Any(exadbVmClusterDomain),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				LicenseModel:           pulumi.Any(exadbVmClusterLicenseModel),
+//				NsgIds:                 pulumi.Any(exadbVmClusterNsgIds),
+//				PrivateZoneId:          pulumi.Any(testZone.Id),
+//				ScanListenerPortTcp:    pulumi.Any(exadbVmClusterScanListenerPortTcp),
+//				ScanListenerPortTcpSsl: pulumi.Any(exadbVmClusterScanListenerPortTcpSsl),
+//				SecurityAttributes:     pulumi.Any(exadbVmClusterSecurityAttributes),
+//				SystemVersion:          pulumi.Any(exadbVmClusterSystemVersion),
+//				TimeZone:               pulumi.Any(exadbVmClusterTimeZone),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ExadbVmClusters can be imported using the `id`, e.g.

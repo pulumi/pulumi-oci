@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveDataModelSensitiveSchemasResult> Invoke(GetSensitiveDataModelSensitiveSchemasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveSchemasResult>("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", args ?? new GetSensitiveDataModelSensitiveSchemasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sensitive Data Model Sensitive Schemas in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelSensitiveSchemas = Oci.DataSafe.GetSensitiveDataModelSensitiveSchemas.Invoke(new()
+        ///     {
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SchemaNames = sensitiveDataModelSensitiveSchemaSchemaName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveDataModelSensitiveSchemasResult> Invoke(GetSensitiveDataModelSensitiveSchemasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveSchemasResult>("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", args ?? new GetSensitiveDataModelSensitiveSchemasInvokeArgs(), options.WithDefaults());
     }
 
 

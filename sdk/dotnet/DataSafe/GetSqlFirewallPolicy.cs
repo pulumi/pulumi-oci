@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlFirewallPolicyResult> Invoke(GetSqlFirewallPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallPolicyResult>("oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy", args ?? new GetSqlFirewallPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a SQL Firewall policy by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlFirewallPolicy = Oci.DataSafe.GetSqlFirewallPolicy.Invoke(new()
+        ///     {
+        ///         SqlFirewallPolicyId = testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlFirewallPolicyResult> Invoke(GetSqlFirewallPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallPolicyResult>("oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy", args ?? new GetSqlFirewallPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

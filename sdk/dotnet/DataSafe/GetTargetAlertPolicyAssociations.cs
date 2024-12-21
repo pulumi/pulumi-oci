@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetAlertPolicyAssociationsResult> Invoke(GetTargetAlertPolicyAssociationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of all target-alert policy associations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetAlertPolicyAssociations = Oci.DataSafe.GetTargetAlertPolicyAssociations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAlertPolicyAssociationAccessLevel,
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         CompartmentIdInSubtree = targetAlertPolicyAssociationCompartmentIdInSubtree,
+        ///         State = targetAlertPolicyAssociationState,
+        ///         TargetAlertPolicyAssociationId = testTargetAlertPolicyAssociation.Id,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = targetAlertPolicyAssociationTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetAlertPolicyAssociationsResult> Invoke(GetTargetAlertPolicyAssociationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

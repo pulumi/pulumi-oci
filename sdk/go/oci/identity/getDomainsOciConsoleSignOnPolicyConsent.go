@@ -126,21 +126,11 @@ type GetDomainsOciConsoleSignOnPolicyConsentResult struct {
 }
 
 func GetDomainsOciConsoleSignOnPolicyConsentOutput(ctx *pulumi.Context, args GetDomainsOciConsoleSignOnPolicyConsentOutputArgs, opts ...pulumi.InvokeOption) GetDomainsOciConsoleSignOnPolicyConsentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsOciConsoleSignOnPolicyConsentResultOutput, error) {
 			args := v.(GetDomainsOciConsoleSignOnPolicyConsentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsOciConsoleSignOnPolicyConsentResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsOciConsoleSignOnPolicyConsent:getDomainsOciConsoleSignOnPolicyConsent", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsOciConsoleSignOnPolicyConsentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsOciConsoleSignOnPolicyConsentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsOciConsoleSignOnPolicyConsentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsOciConsoleSignOnPolicyConsent:getDomainsOciConsoleSignOnPolicyConsent", args, GetDomainsOciConsoleSignOnPolicyConsentResultOutput{}, options).(GetDomainsOciConsoleSignOnPolicyConsentResultOutput), nil
 		}).(GetDomainsOciConsoleSignOnPolicyConsentResultOutput)
 }
 

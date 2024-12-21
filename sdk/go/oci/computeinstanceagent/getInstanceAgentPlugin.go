@@ -78,21 +78,11 @@ type GetInstanceAgentPluginResult struct {
 }
 
 func GetInstanceAgentPluginOutput(ctx *pulumi.Context, args GetInstanceAgentPluginOutputArgs, opts ...pulumi.InvokeOption) GetInstanceAgentPluginResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInstanceAgentPluginResultOutput, error) {
 			args := v.(GetInstanceAgentPluginArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInstanceAgentPluginResult
-			secret, err := ctx.InvokePackageRaw("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", args, &rv, "", opts...)
-			if err != nil {
-				return GetInstanceAgentPluginResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInstanceAgentPluginResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInstanceAgentPluginResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", args, GetInstanceAgentPluginResultOutput{}, options).(GetInstanceAgentPluginResultOutput), nil
 		}).(GetInstanceAgentPluginResultOutput)
 }
 

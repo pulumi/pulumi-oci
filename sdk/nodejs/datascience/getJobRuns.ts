@@ -76,7 +76,7 @@ export interface GetJobRunsArgs {
  */
 export interface GetJobRunsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
      */
     readonly compartmentId: string;
     /**
@@ -93,7 +93,7 @@ export interface GetJobRunsResult {
      */
     readonly id?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      */
     readonly jobId?: string;
     /**

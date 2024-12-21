@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetFusionEnvironmentFamilyResult> Invoke(GetFusionEnvironmentFamilyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyResult>("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", args ?? new GetFusionEnvironmentFamilyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
+        /// 
+        /// Retrieves a fusion environment family identified by its OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFusionEnvironmentFamily = Oci.Functions.GetFusionEnvironmentFamily.Invoke(new()
+        ///     {
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFusionEnvironmentFamilyResult> Invoke(GetFusionEnvironmentFamilyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamilyResult>("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", args ?? new GetFusionEnvironmentFamilyInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -91,21 +91,11 @@ type GetPbfListingVersionsResult struct {
 }
 
 func GetPbfListingVersionsOutput(ctx *pulumi.Context, args GetPbfListingVersionsOutputArgs, opts ...pulumi.InvokeOption) GetPbfListingVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPbfListingVersionsResultOutput, error) {
 			args := v.(GetPbfListingVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPbfListingVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getPbfListingVersions:getPbfListingVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetPbfListingVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPbfListingVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPbfListingVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getPbfListingVersions:getPbfListingVersions", args, GetPbfListingVersionsResultOutput{}, options).(GetPbfListingVersionsResultOutput), nil
 		}).(GetPbfListingVersionsResultOutput)
 }
 

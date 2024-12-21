@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummary;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceComputeOnlyWorkerNode;
@@ -13,6 +14,7 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceKafkaBrok
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceNode;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceUtilNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceWorkerNode;
 import java.lang.Boolean;
@@ -24,6 +26,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBdsInstancesBdsInstance {
+    /**
+     * @return Cluster version details including bds and odh version information.
+     * 
+     */
+    private List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries;
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
@@ -89,6 +96,7 @@ public final class GetBdsInstancesBdsInstance {
      * 
      */
     private Boolean isCloudSqlConfigured;
+    private Boolean isForceRemoveEnabled;
     private Boolean isForceStopJobs;
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -134,6 +142,8 @@ public final class GetBdsInstancesBdsInstance {
      */
     private Integer numberOfNodesRequiringMaintenanceReboot;
     private String osPatchVersion;
+    private String removeNode;
+    private List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs;
     /**
      * @return The state of the cluster.
      * 
@@ -153,6 +163,13 @@ public final class GetBdsInstancesBdsInstance {
     private List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes;
 
     private GetBdsInstancesBdsInstance() {}
+    /**
+     * @return Cluster version details including bds and odh version information.
+     * 
+     */
+    public List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries() {
+        return this.bdsClusterVersionSummaries;
+    }
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
@@ -252,6 +269,9 @@ public final class GetBdsInstancesBdsInstance {
     public Boolean isCloudSqlConfigured() {
         return this.isCloudSqlConfigured;
     }
+    public Boolean isForceRemoveEnabled() {
+        return this.isForceRemoveEnabled;
+    }
     public Boolean isForceStopJobs() {
         return this.isForceStopJobs;
     }
@@ -323,6 +343,12 @@ public final class GetBdsInstancesBdsInstance {
     public String osPatchVersion() {
         return this.osPatchVersion;
     }
+    public String removeNode() {
+        return this.removeNode;
+    }
+    public List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs() {
+        return this.startClusterShapeConfigs;
+    }
     /**
      * @return The state of the cluster.
      * 
@@ -360,6 +386,7 @@ public final class GetBdsInstancesBdsInstance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries;
         private String bootstrapScriptUrl;
         private List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails;
         private String clusterAdminPassword;
@@ -377,6 +404,7 @@ public final class GetBdsInstancesBdsInstance {
         private String id;
         private List<String> ignoreExistingNodesShapes;
         private Boolean isCloudSqlConfigured;
+        private Boolean isForceRemoveEnabled;
         private Boolean isForceStopJobs;
         private Boolean isHighAvailability;
         private Boolean isKafkaConfigured;
@@ -390,6 +418,8 @@ public final class GetBdsInstancesBdsInstance {
         private Integer numberOfNodes;
         private Integer numberOfNodesRequiringMaintenanceReboot;
         private String osPatchVersion;
+        private String removeNode;
+        private List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -398,6 +428,7 @@ public final class GetBdsInstancesBdsInstance {
         public Builder() {}
         public Builder(GetBdsInstancesBdsInstance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bdsClusterVersionSummaries = defaults.bdsClusterVersionSummaries;
     	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
     	      this.clusterAdminPassword = defaults.clusterAdminPassword;
@@ -415,6 +446,7 @@ public final class GetBdsInstancesBdsInstance {
     	      this.id = defaults.id;
     	      this.ignoreExistingNodesShapes = defaults.ignoreExistingNodesShapes;
     	      this.isCloudSqlConfigured = defaults.isCloudSqlConfigured;
+    	      this.isForceRemoveEnabled = defaults.isForceRemoveEnabled;
     	      this.isForceStopJobs = defaults.isForceStopJobs;
     	      this.isHighAvailability = defaults.isHighAvailability;
     	      this.isKafkaConfigured = defaults.isKafkaConfigured;
@@ -428,6 +460,8 @@ public final class GetBdsInstancesBdsInstance {
     	      this.numberOfNodes = defaults.numberOfNodes;
     	      this.numberOfNodesRequiringMaintenanceReboot = defaults.numberOfNodesRequiringMaintenanceReboot;
     	      this.osPatchVersion = defaults.osPatchVersion;
+    	      this.removeNode = defaults.removeNode;
+    	      this.startClusterShapeConfigs = defaults.startClusterShapeConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -435,6 +469,17 @@ public final class GetBdsInstancesBdsInstance {
     	      this.workerNodes = defaults.workerNodes;
         }
 
+        @CustomType.Setter
+        public Builder bdsClusterVersionSummaries(List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries) {
+            if (bdsClusterVersionSummaries == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "bdsClusterVersionSummaries");
+            }
+            this.bdsClusterVersionSummaries = bdsClusterVersionSummaries;
+            return this;
+        }
+        public Builder bdsClusterVersionSummaries(GetBdsInstancesBdsInstanceBdsClusterVersionSummary... bdsClusterVersionSummaries) {
+            return bdsClusterVersionSummaries(List.of(bdsClusterVersionSummaries));
+        }
         @CustomType.Setter
         public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
             if (bootstrapScriptUrl == null) {
@@ -587,6 +632,14 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder isForceRemoveEnabled(Boolean isForceRemoveEnabled) {
+            if (isForceRemoveEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isForceRemoveEnabled");
+            }
+            this.isForceRemoveEnabled = isForceRemoveEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isForceStopJobs(Boolean isForceStopJobs) {
             if (isForceStopJobs == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isForceStopJobs");
@@ -703,6 +756,25 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder removeNode(String removeNode) {
+            if (removeNode == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "removeNode");
+            }
+            this.removeNode = removeNode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder startClusterShapeConfigs(List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs) {
+            if (startClusterShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "startClusterShapeConfigs");
+            }
+            this.startClusterShapeConfigs = startClusterShapeConfigs;
+            return this;
+        }
+        public Builder startClusterShapeConfigs(GetBdsInstancesBdsInstanceStartClusterShapeConfig... startClusterShapeConfigs) {
+            return startClusterShapeConfigs(List.of(startClusterShapeConfigs));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "state");
@@ -750,6 +822,7 @@ public final class GetBdsInstancesBdsInstance {
         }
         public GetBdsInstancesBdsInstance build() {
             final var _resultValue = new GetBdsInstancesBdsInstance();
+            _resultValue.bdsClusterVersionSummaries = bdsClusterVersionSummaries;
             _resultValue.bootstrapScriptUrl = bootstrapScriptUrl;
             _resultValue.cloudSqlDetails = cloudSqlDetails;
             _resultValue.clusterAdminPassword = clusterAdminPassword;
@@ -767,6 +840,7 @@ public final class GetBdsInstancesBdsInstance {
             _resultValue.id = id;
             _resultValue.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
             _resultValue.isCloudSqlConfigured = isCloudSqlConfigured;
+            _resultValue.isForceRemoveEnabled = isForceRemoveEnabled;
             _resultValue.isForceStopJobs = isForceStopJobs;
             _resultValue.isHighAvailability = isHighAvailability;
             _resultValue.isKafkaConfigured = isKafkaConfigured;
@@ -780,6 +854,8 @@ public final class GetBdsInstancesBdsInstance {
             _resultValue.numberOfNodes = numberOfNodes;
             _resultValue.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             _resultValue.osPatchVersion = osPatchVersion;
+            _resultValue.removeNode = removeNode;
+            _resultValue.startClusterShapeConfigs = startClusterShapeConfigs;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

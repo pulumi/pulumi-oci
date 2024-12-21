@@ -70,6 +70,36 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetConfigsResult> Invoke(GetConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConfigsResult>("oci:StackMonitoring/getConfigs:getConfigs", args ?? new GetConfigsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Get a list of configurations in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConfigs = Oci.StackMonitoring.GetConfigs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = configDisplayName,
+        ///         State = configState,
+        ///         Type = configType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConfigsResult> Invoke(GetConfigsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConfigsResult>("oci:StackMonitoring/getConfigs:getConfigs", args ?? new GetConfigsInvokeArgs(), options.WithDefaults());
     }
 
 

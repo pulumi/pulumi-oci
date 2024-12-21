@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetIdentityProvidersResult> Invoke(GetIdentityProvidersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIdentityProvidersResult>("oci:Identity/getIdentityProviders:getIdentityProviders", args ?? new GetIdentityProvidersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+        /// 
+        /// Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
+        /// identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
+        /// compartment ID (remember that the tenancy is simply the root compartment).
+        /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIdentityProviders = Oci.Identity.GetIdentityProviders.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Protocol = identityProviderProtocol,
+        ///         Name = identityProviderName,
+        ///         State = identityProviderState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIdentityProvidersResult> Invoke(GetIdentityProvidersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIdentityProvidersResult>("oci:Identity/getIdentityProviders:getIdentityProviders", args ?? new GetIdentityProvidersInvokeArgs(), options.WithDefaults());
     }
 
 

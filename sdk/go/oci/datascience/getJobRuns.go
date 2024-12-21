@@ -74,7 +74,7 @@ type GetJobRunsArgs struct {
 
 // A collection of values returned by getJobRuns.
 type GetJobRunsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
 	CreatedBy *string `pulumi:"createdBy"`
@@ -83,7 +83,7 @@ type GetJobRunsResult struct {
 	Filters     []GetJobRunsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
 	Id *string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 	JobId *string `pulumi:"jobId"`
 	// The list of job_runs.
 	JobRuns []GetJobRunsJobRun `pulumi:"jobRuns"`
@@ -92,21 +92,11 @@ type GetJobRunsResult struct {
 }
 
 func GetJobRunsOutput(ctx *pulumi.Context, args GetJobRunsOutputArgs, opts ...pulumi.InvokeOption) GetJobRunsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetJobRunsResultOutput, error) {
 			args := v.(GetJobRunsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetJobRunsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataScience/getJobRuns:getJobRuns", args, &rv, "", opts...)
-			if err != nil {
-				return GetJobRunsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetJobRunsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetJobRunsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataScience/getJobRuns:getJobRuns", args, GetJobRunsResultOutput{}, options).(GetJobRunsResultOutput), nil
 		}).(GetJobRunsResultOutput)
 }
 
@@ -146,7 +136,7 @@ func (o GetJobRunsResultOutput) ToGetJobRunsResultOutputWithContext(ctx context.
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
 func (o GetJobRunsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -170,7 +160,7 @@ func (o GetJobRunsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetJobRunsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 func (o GetJobRunsResultOutput) JobId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetJobRunsResult) *string { return v.JobId }).(pulumi.StringPtrOutput)
 }

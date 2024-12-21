@@ -73,21 +73,11 @@ type GetReplicationStatusResult struct {
 }
 
 func GetReplicationStatusOutput(ctx *pulumi.Context, args GetReplicationStatusOutputArgs, opts ...pulumi.InvokeOption) GetReplicationStatusResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetReplicationStatusResultOutput, error) {
 			args := v.(GetReplicationStatusArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetReplicationStatusResult
-			secret, err := ctx.InvokePackageRaw("oci:Kms/getReplicationStatus:getReplicationStatus", args, &rv, "", opts...)
-			if err != nil {
-				return GetReplicationStatusResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetReplicationStatusResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetReplicationStatusResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Kms/getReplicationStatus:getReplicationStatus", args, GetReplicationStatusResultOutput{}, options).(GetReplicationStatusResultOutput), nil
 		}).(GetReplicationStatusResultOutput)
 }
 

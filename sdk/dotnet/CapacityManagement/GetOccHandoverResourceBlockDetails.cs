@@ -66,6 +66,34 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetOccHandoverResourceBlockDetailsResult> Invoke(GetOccHandoverResourceBlockDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccHandoverResourceBlockDetailsResult>("oci:CapacityManagement/getOccHandoverResourceBlockDetails:getOccHandoverResourceBlockDetails", args ?? new GetOccHandoverResourceBlockDetailsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Occ Handover Resource Block Details in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// List details about a given occHandoverResourceBlock.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccHandoverResourceBlockDetails = Oci.CapacityManagement.GetOccHandoverResourceBlockDetails.Invoke(new()
+        ///     {
+        ///         OccHandoverResourceBlockId = testOccHandoverResourceBlock.Id,
+        ///         HostId = testHost.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccHandoverResourceBlockDetailsResult> Invoke(GetOccHandoverResourceBlockDetailsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccHandoverResourceBlockDetailsResult>("oci:CapacityManagement/getOccHandoverResourceBlockDetails:getOccHandoverResourceBlockDetails", args ?? new GetOccHandoverResourceBlockDetailsInvokeArgs(), options.WithDefaults());
     }
 
 

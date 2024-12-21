@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetDeployArtifactsResult> Invoke(GetDeployArtifactsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeployArtifactsResult>("oci:DevOps/getDeployArtifacts:getDeployArtifacts", args ?? new GetDeployArtifactsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Deploy Artifacts in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of deployment artifacts.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeployArtifacts = Oci.DevOps.GetDeployArtifacts.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deployArtifactDisplayName,
+        ///         Id = deployArtifactId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deployArtifactState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeployArtifactsResult> Invoke(GetDeployArtifactsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployArtifactsResult>("oci:DevOps/getDeployArtifacts:getDeployArtifacts", args ?? new GetDeployArtifactsInvokeArgs(), options.WithDefaults());
     }
 
 

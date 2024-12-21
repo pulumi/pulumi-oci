@@ -70,6 +70,36 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetResourceQuotasResult> Invoke(GetResourceQuotasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceQuotasResult>("oci:UsageProxy/getResourceQuotas:getResourceQuotas", args ?? new GetResourceQuotasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Returns the resource quota details under a tenancy
+        /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResourceQuotas = Oci.UsageProxy.GetResourceQuotas.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ServiceName = testService.Name,
+        ///         ServiceEntitlement = resourceQuotaServiceEntitlement,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResourceQuotasResult> Invoke(GetResourceQuotasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceQuotasResult>("oci:UsageProxy/getResourceQuotas:getResourceQuotas", args ?? new GetResourceQuotasInvokeArgs(), options.WithDefaults());
     }
 
 

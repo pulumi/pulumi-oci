@@ -82,6 +82,42 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetLifecycleEnvironmentsResult> Invoke(GetLifecycleEnvironmentsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleEnvironmentsResult>("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", args ?? new GetLifecycleEnvironmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Lifecycle Environments in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists lifecycle environments that match the specified compartment or lifecycle environment OCID. Filter the list
+        /// against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLifecycleEnvironments = Oci.OsManagementHub.GetLifecycleEnvironments.Invoke(new()
+        ///     {
+        ///         ArchType = lifecycleEnvironmentArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = lifecycleEnvironmentDisplayName,
+        ///         DisplayNameContains = lifecycleEnvironmentDisplayNameContains,
+        ///         LifecycleEnvironmentId = testLifecycleEnvironment.Id,
+        ///         Locations = lifecycleEnvironmentLocation,
+        ///         LocationNotEqualTos = lifecycleEnvironmentLocationNotEqualTo,
+        ///         OsFamily = lifecycleEnvironmentOsFamily,
+        ///         State = lifecycleEnvironmentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetLifecycleEnvironmentsResult> Invoke(GetLifecycleEnvironmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleEnvironmentsResult>("oci:OsManagementHub/getLifecycleEnvironments:getLifecycleEnvironments", args ?? new GetLifecycleEnvironmentsInvokeArgs(), options.WithDefaults());
     }
 
 

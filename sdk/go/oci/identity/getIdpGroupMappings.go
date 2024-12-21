@@ -71,21 +71,11 @@ type GetIdpGroupMappingsResult struct {
 }
 
 func GetIdpGroupMappingsOutput(ctx *pulumi.Context, args GetIdpGroupMappingsOutputArgs, opts ...pulumi.InvokeOption) GetIdpGroupMappingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIdpGroupMappingsResultOutput, error) {
 			args := v.(GetIdpGroupMappingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIdpGroupMappingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args, &rv, "", opts...)
-			if err != nil {
-				return GetIdpGroupMappingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIdpGroupMappingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIdpGroupMappingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args, GetIdpGroupMappingsResultOutput{}, options).(GetIdpGroupMappingsResultOutput), nil
 		}).(GetIdpGroupMappingsResultOutput)
 }
 

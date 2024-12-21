@@ -97,21 +97,11 @@ type GetReplicasResult struct {
 }
 
 func GetReplicasOutput(ctx *pulumi.Context, args GetReplicasOutputArgs, opts ...pulumi.InvokeOption) GetReplicasResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetReplicasResultOutput, error) {
 			args := v.(GetReplicasArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetReplicasResult
-			secret, err := ctx.InvokePackageRaw("oci:Mysql/getReplicas:getReplicas", args, &rv, "", opts...)
-			if err != nil {
-				return GetReplicasResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetReplicasResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetReplicasResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Mysql/getReplicas:getReplicas", args, GetReplicasResultOutput{}, options).(GetReplicasResultOutput), nil
 		}).(GetReplicasResultOutput)
 }
 

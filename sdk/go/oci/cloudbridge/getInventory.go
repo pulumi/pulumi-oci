@@ -82,21 +82,11 @@ type LookupInventoryResult struct {
 }
 
 func LookupInventoryOutput(ctx *pulumi.Context, args LookupInventoryOutputArgs, opts ...pulumi.InvokeOption) LookupInventoryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupInventoryResultOutput, error) {
 			args := v.(LookupInventoryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupInventoryResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getInventory:getInventory", args, &rv, "", opts...)
-			if err != nil {
-				return LookupInventoryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupInventoryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupInventoryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudBridge/getInventory:getInventory", args, LookupInventoryResultOutput{}, options).(LookupInventoryResultOutput), nil
 		}).(LookupInventoryResultOutput)
 }
 

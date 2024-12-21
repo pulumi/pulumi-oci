@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetIpsecStatusResult> Invoke(GetIpsecStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecStatusResult>("oci:Core/getIpsecStatus:getIpsecStatus", args ?? new GetIpsecStatusInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ip Sec Connection Device Status resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Deprecated. To get the tunnel status, instead use
+        /// [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpSecConnectionDeviceStatus = Oci.Core.GetIpsecStatus.Invoke(new()
+        ///     {
+        ///         IpsecId = testIpsec.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIpsecStatusResult> Invoke(GetIpsecStatusInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecStatusResult>("oci:Core/getIpsecStatus:getIpsecStatus", args ?? new GetIpsecStatusInvokeArgs(), options.WithDefaults());
     }
 
 

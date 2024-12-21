@@ -74,21 +74,11 @@ type GetSecurityAttributesResult struct {
 }
 
 func GetSecurityAttributesOutput(ctx *pulumi.Context, args GetSecurityAttributesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAttributesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSecurityAttributesResultOutput, error) {
 			args := v.(GetSecurityAttributesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSecurityAttributesResult
-			secret, err := ctx.InvokePackageRaw("oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes", args, &rv, "", opts...)
-			if err != nil {
-				return GetSecurityAttributesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSecurityAttributesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSecurityAttributesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes", args, GetSecurityAttributesResultOutput{}, options).(GetSecurityAttributesResultOutput), nil
 		}).(GetSecurityAttributesResultOutput)
 }
 

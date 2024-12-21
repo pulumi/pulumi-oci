@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetPatchResult> Invoke(GetPatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPatchResult>("oci:FleetAppsManagement/getPatch:getPatch", args ?? new GetPatchInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Patch resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a Patch by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPatch = Oci.FleetAppsManagement.GetPatch.Invoke(new()
+        ///     {
+        ///         PatchId = testPatchOciFleetAppsManagementPatch.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPatchResult> Invoke(GetPatchInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPatchResult>("oci:FleetAppsManagement/getPatch:getPatch", args ?? new GetPatchInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsUserAttributesSettingResult> Invoke(GetDomainsUserAttributesSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingResult>("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args ?? new GetDomainsUserAttributesSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific User Attributes Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get User Schema Attribute Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAttributesSetting = Oci.Identity.GetDomainsUserAttributesSetting.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserAttributesSettingId = testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = userAttributesSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = userAttributesSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsUserAttributesSettingResult> Invoke(GetDomainsUserAttributesSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingResult>("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args ?? new GetDomainsUserAttributesSettingInvokeArgs(), options.WithDefaults());
     }
 
 

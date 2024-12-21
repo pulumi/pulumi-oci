@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         public static Output<GetInvoiceResult> Invoke(GetInvoiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
+        /// 
+        /// Returns an invoice by invoice id
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInvoice = Oci.OspGateway.GetInvoice.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         InternalInvoiceId = testInvoiceOciOspGatewayInvoice.Id,
+        ///         OspHomeRegion = invoiceOspHomeRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInvoiceResult> Invoke(GetInvoiceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceInvokeArgs(), options.WithDefaults());
     }
 
 

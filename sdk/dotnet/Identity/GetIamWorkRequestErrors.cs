@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetIamWorkRequestErrorsResult> Invoke(GetIamWorkRequestErrorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestErrorsResult>("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args ?? new GetIamWorkRequestErrorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Gets error details for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+        /// iam work request id that can be provided in this API to track the current status of the operation.
+        /// 
+        /// - If workrequest exists, returns 202 ACCEPTED
+        /// - If workrequest does not exist, returns 404 NOT FOUND
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIamWorkRequestErrors = Oci.Identity.GetIamWorkRequestErrors.Invoke(new()
+        ///     {
+        ///         IamWorkRequestId = testIamWorkRequest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIamWorkRequestErrorsResult> Invoke(GetIamWorkRequestErrorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestErrorsResult>("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args ?? new GetIamWorkRequestErrorsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -72,21 +72,11 @@ type GetPublishersResult struct {
 }
 
 func GetPublishersOutput(ctx *pulumi.Context, args GetPublishersOutputArgs, opts ...pulumi.InvokeOption) GetPublishersResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPublishersResultOutput, error) {
 			args := v.(GetPublishersArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPublishersResult
-			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getPublishers:getPublishers", args, &rv, "", opts...)
-			if err != nil {
-				return GetPublishersResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPublishersResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPublishersResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Marketplace/getPublishers:getPublishers", args, GetPublishersResultOutput{}, options).(GetPublishersResultOutput), nil
 		}).(GetPublishersResultOutput)
 }
 

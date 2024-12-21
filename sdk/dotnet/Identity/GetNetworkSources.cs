@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetNetworkSourcesResult> Invoke(GetNetworkSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSourcesResult>("oci:Identity/getNetworkSources:getNetworkSources", args ?? new GetNetworkSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
+        /// the compartment ID (remember that the tenancy is simply the root compartment).
+        /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkSources = Oci.Identity.GetNetworkSources.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = networkSourceName,
+        ///         State = networkSourceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkSourcesResult> Invoke(GetNetworkSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSourcesResult>("oci:Identity/getNetworkSources:getNetworkSources", args ?? new GetNetworkSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

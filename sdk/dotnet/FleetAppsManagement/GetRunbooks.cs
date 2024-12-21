@@ -78,6 +78,40 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetRunbooksResult> Invoke(GetRunbooksInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRunbooksResult>("oci:FleetAppsManagement/getRunbooks:getRunbooks", args ?? new GetRunbooksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Runbooks in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// List runbooks in Fleet Application Management.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRunbooks = Oci.FleetAppsManagement.GetRunbooks.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = runbookDisplayName,
+        ///         Id = runbookId,
+        ///         Operation = runbookOperation,
+        ///         Platform = runbookPlatform,
+        ///         RunbookRelevance = runbookRunbookRelevance,
+        ///         State = runbookState,
+        ///         Type = runbookType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRunbooksResult> Invoke(GetRunbooksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRunbooksResult>("oci:FleetAppsManagement/getRunbooks:getRunbooks", args ?? new GetRunbooksInvokeArgs(), options.WithDefaults());
     }
 
 

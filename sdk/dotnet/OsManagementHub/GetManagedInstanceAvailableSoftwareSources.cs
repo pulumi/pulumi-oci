@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceAvailableSoftwareSourcesResult> Invoke(GetManagedInstanceAvailableSoftwareSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceAvailableSoftwareSourcesResult>("oci:OsManagementHub/getManagedInstanceAvailableSoftwareSources:getManagedInstanceAvailableSoftwareSources", args ?? new GetManagedInstanceAvailableSoftwareSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a list of software sources that can be attached to the specified managed instance. Any software sources already attached to the instance are not included in the list.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceAvailableSoftwareSources = Oci.OsManagementHub.GetManagedInstanceAvailableSoftwareSources.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceAvailableSoftwareSourceDisplayName,
+        ///         DisplayNameContains = managedInstanceAvailableSoftwareSourceDisplayNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceAvailableSoftwareSourcesResult> Invoke(GetManagedInstanceAvailableSoftwareSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceAvailableSoftwareSourcesResult>("oci:OsManagementHub/getManagedInstanceAvailableSoftwareSources:getManagedInstanceAvailableSoftwareSources", args ?? new GetManagedInstanceAvailableSoftwareSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

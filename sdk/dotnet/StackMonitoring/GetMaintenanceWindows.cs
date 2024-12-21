@@ -68,6 +68,35 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetMaintenanceWindowsResult> Invoke(GetMaintenanceWindowsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceWindowsResult>("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", args ?? new GetMaintenanceWindowsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Returns a list of maintenance windows.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaintenanceWindows = Oci.StackMonitoring.GetMaintenanceWindows.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         LifecycleDetails = maintenanceWindowLifecycleDetails,
+        ///         Name = maintenanceWindowName,
+        ///         Status = maintenanceWindowStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaintenanceWindowsResult> Invoke(GetMaintenanceWindowsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceWindowsResult>("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", args ?? new GetMaintenanceWindowsInvokeArgs(), options.WithDefaults());
     }
 
 

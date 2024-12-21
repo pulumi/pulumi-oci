@@ -58,7 +58,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailResult> OutParamDetails;
         /// <summary>
-        /// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        /// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        /// </summary>
+        public readonly string ProtocolType;
+        /// <summary>
+        /// Type of content response given by the http(s) URL
+        /// </summary>
+        public readonly string ResponseContentType;
+        /// <summary>
+        /// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailResult> ScriptDetails;
         /// <summary>
@@ -73,6 +81,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// String prefix used to identify metric output of the OS Command
         /// </summary>
         public readonly string StartsWith;
+        /// <summary>
+        /// Http(s) end point URL
+        /// </summary>
+        public readonly string Url;
 
         [OutputConstructor]
         private GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult(
@@ -98,13 +110,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailResult> outParamDetails,
 
+            string protocolType,
+
+            string responseContentType,
+
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailResult> scriptDetails,
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailResult> sqlDetails,
 
             string sqlType,
 
-            string startsWith)
+            string startsWith,
+
+            string url)
         {
             Arguments = arguments;
             AutoRowPrefix = autoRowPrefix;
@@ -117,10 +135,13 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             JmxAttributes = jmxAttributes;
             ManagedBeanQuery = managedBeanQuery;
             OutParamDetails = outParamDetails;
+            ProtocolType = protocolType;
+            ResponseContentType = responseContentType;
             ScriptDetails = scriptDetails;
             SqlDetails = sqlDetails;
             SqlType = sqlType;
             StartsWith = startsWith;
+            Url = url;
         }
     }
 }

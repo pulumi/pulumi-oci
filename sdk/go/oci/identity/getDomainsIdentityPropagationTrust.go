@@ -146,21 +146,11 @@ type LookupDomainsIdentityPropagationTrustResult struct {
 }
 
 func LookupDomainsIdentityPropagationTrustOutput(ctx *pulumi.Context, args LookupDomainsIdentityPropagationTrustOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentityPropagationTrustResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsIdentityPropagationTrustResultOutput, error) {
 			args := v.(LookupDomainsIdentityPropagationTrustArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsIdentityPropagationTrustResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsIdentityPropagationTrustResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsIdentityPropagationTrustResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsIdentityPropagationTrustResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", args, LookupDomainsIdentityPropagationTrustResultOutput{}, options).(LookupDomainsIdentityPropagationTrustResultOutput), nil
 		}).(LookupDomainsIdentityPropagationTrustResultOutput)
 }
 

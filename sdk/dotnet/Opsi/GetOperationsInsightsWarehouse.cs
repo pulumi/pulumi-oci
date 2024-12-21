@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseResult> Invoke(GetOperationsInsightsWarehouseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResult>("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", args ?? new GetOperationsInsightsWarehouseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets details of an Ops Insights Warehouse.
+        /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperationsInsightsWarehouse = Oci.Opsi.GetOperationsInsightsWarehouse.Invoke(new()
+        ///     {
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOperationsInsightsWarehouseResult> Invoke(GetOperationsInsightsWarehouseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseResult>("oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse", args ?? new GetOperationsInsightsWarehouseInvokeArgs(), options.WithDefaults());
     }
 
 

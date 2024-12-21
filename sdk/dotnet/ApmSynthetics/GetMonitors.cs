@@ -78,6 +78,40 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public static Output<GetMonitorsResult> Invoke(GetMonitorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// 
+        /// Returns a list of monitors.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMonitors = Oci.ApmSynthetics.GetMonitors.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = monitorDisplayName,
+        ///         IsMaintenanceWindowActive = monitorIsMaintenanceWindowActive,
+        ///         IsMaintenanceWindowSet = monitorIsMaintenanceWindowSet,
+        ///         MonitorType = monitorMonitorType,
+        ///         ScriptId = testScript.Id,
+        ///         Status = monitorStatus,
+        ///         VantagePoint = monitorVantagePoint,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMonitorsResult> Invoke(GetMonitorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsInvokeArgs(), options.WithDefaults());
     }
 
 

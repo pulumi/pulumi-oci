@@ -71,21 +71,11 @@ type GetFleetExportStatusResult struct {
 }
 
 func GetFleetExportStatusOutput(ctx *pulumi.Context, args GetFleetExportStatusOutputArgs, opts ...pulumi.InvokeOption) GetFleetExportStatusResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetExportStatusResultOutput, error) {
 			args := v.(GetFleetExportStatusArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetExportStatusResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetExportStatus:getFleetExportStatus", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetExportStatusResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetExportStatusResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetExportStatusResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getFleetExportStatus:getFleetExportStatus", args, GetFleetExportStatusResultOutput{}, options).(GetFleetExportStatusResultOutput), nil
 		}).(GetFleetExportStatusResultOutput)
 }
 

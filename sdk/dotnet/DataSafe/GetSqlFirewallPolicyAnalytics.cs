@@ -100,6 +100,51 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlFirewallPolicyAnalyticsResult> Invoke(GetSqlFirewallPolicyAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallPolicyAnalyticsResult>("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", args ?? new GetSqlFirewallPolicyAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of aggregated SQL Firewall policy details.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
+        /// `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlFirewallPolicyAnalytics = Oci.DataSafe.GetSqlFirewallPolicyAnalytics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sqlFirewallPolicyAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = sqlFirewallPolicyAnalyticGroupBy,
+        ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         State = sqlFirewallPolicyAnalyticState,
+        ///         TimeEnded = sqlFirewallPolicyAnalyticTimeEnded,
+        ///         TimeStarted = sqlFirewallPolicyAnalyticTimeStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlFirewallPolicyAnalyticsResult> Invoke(GetSqlFirewallPolicyAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallPolicyAnalyticsResult>("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", args ?? new GetSqlFirewallPolicyAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -101,21 +101,11 @@ type GetSchedulerDefinitionsResult struct {
 }
 
 func GetSchedulerDefinitionsOutput(ctx *pulumi.Context, args GetSchedulerDefinitionsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerDefinitionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSchedulerDefinitionsResultOutput, error) {
 			args := v.(GetSchedulerDefinitionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSchedulerDefinitionsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getSchedulerDefinitions:getSchedulerDefinitions", args, &rv, "", opts...)
-			if err != nil {
-				return GetSchedulerDefinitionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSchedulerDefinitionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSchedulerDefinitionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerDefinitions:getSchedulerDefinitions", args, GetSchedulerDefinitionsResultOutput{}, options).(GetSchedulerDefinitionsResultOutput), nil
 		}).(GetSchedulerDefinitionsResultOutput)
 }
 

@@ -68,21 +68,11 @@ type GetRegionSubscriptionsResult struct {
 }
 
 func GetRegionSubscriptionsOutput(ctx *pulumi.Context, args GetRegionSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetRegionSubscriptionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRegionSubscriptionsResultOutput, error) {
 			args := v.(GetRegionSubscriptionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRegionSubscriptionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args, &rv, "", opts...)
-			if err != nil {
-				return GetRegionSubscriptionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRegionSubscriptionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRegionSubscriptionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args, GetRegionSubscriptionsResultOutput{}, options).(GetRegionSubscriptionsResultOutput), nil
 		}).(GetRegionSubscriptionsResultOutput)
 }
 

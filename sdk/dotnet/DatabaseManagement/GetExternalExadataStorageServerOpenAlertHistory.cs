@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> Invoke(GetExternalExadataStorageServerOpenAlertHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerOpenAlertHistoryResult>("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args ?? new GetExternalExadataStorageServerOpenAlertHistoryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the open alerts from the specified Exadata storage server.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageServerOpenAlertHistory = Oci.DatabaseManagement.GetExternalExadataStorageServerOpenAlertHistory.Invoke(new()
+        ///     {
+        ///         ExternalExadataStorageServerId = testExternalExadataStorageServer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> Invoke(GetExternalExadataStorageServerOpenAlertHistoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerOpenAlertHistoryResult>("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args ?? new GetExternalExadataStorageServerOpenAlertHistoryInvokeArgs(), options.WithDefaults());
     }
 
 

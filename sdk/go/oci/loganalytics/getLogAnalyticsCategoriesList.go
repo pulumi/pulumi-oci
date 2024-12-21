@@ -79,21 +79,11 @@ type GetLogAnalyticsCategoriesListResult struct {
 }
 
 func GetLogAnalyticsCategoriesListOutput(ctx *pulumi.Context, args GetLogAnalyticsCategoriesListOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsCategoriesListResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogAnalyticsCategoriesListResultOutput, error) {
 			args := v.(GetLogAnalyticsCategoriesListArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogAnalyticsCategoriesListResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogAnalyticsCategoriesListResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogAnalyticsCategoriesListResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogAnalyticsCategoriesListResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args, GetLogAnalyticsCategoriesListResultOutput{}, options).(GetLogAnalyticsCategoriesListResultOutput), nil
 		}).(GetLogAnalyticsCategoriesListResultOutput)
 }
 

@@ -87,21 +87,11 @@ type GetDatasetsResult struct {
 }
 
 func GetDatasetsOutput(ctx *pulumi.Context, args GetDatasetsOutputArgs, opts ...pulumi.InvokeOption) GetDatasetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatasetsResultOutput, error) {
 			args := v.(GetDatasetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatasetsResult
-			secret, err := ctx.InvokePackageRaw("oci:DataLabellingService/getDatasets:getDatasets", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatasetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatasetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatasetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataLabellingService/getDatasets:getDatasets", args, GetDatasetsResultOutput{}, options).(GetDatasetsResultOutput), nil
 		}).(GetDatasetsResultOutput)
 }
 

@@ -72,6 +72,37 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetAgentKnowledgeBasesResult> Invoke(GetAgentKnowledgeBasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentKnowledgeBasesResult>("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", args ?? new GetAgentKnowledgeBasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
+        /// 
+        /// **ListKnowledgeBases**
+        /// 
+        /// Gets a list of knowledge bases.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKnowledgeBases = Oci.GenerativeAi.GetAgentKnowledgeBases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = knowledgeBaseDisplayName,
+        ///         State = knowledgeBaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentKnowledgeBasesResult> Invoke(GetAgentKnowledgeBasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentKnowledgeBasesResult>("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", args ?? new GetAgentKnowledgeBasesInvokeArgs(), options.WithDefaults());
     }
 
 

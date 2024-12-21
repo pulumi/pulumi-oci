@@ -122,21 +122,11 @@ type LookupDomainsOauthPartnerCertificateResult struct {
 }
 
 func LookupDomainsOauthPartnerCertificateOutput(ctx *pulumi.Context, args LookupDomainsOauthPartnerCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsOauthPartnerCertificateResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDomainsOauthPartnerCertificateResultOutput, error) {
 			args := v.(LookupDomainsOauthPartnerCertificateArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDomainsOauthPartnerCertificateResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDomainsOauthPartnerCertificateResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDomainsOauthPartnerCertificateResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDomainsOauthPartnerCertificateResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", args, LookupDomainsOauthPartnerCertificateResultOutput{}, options).(LookupDomainsOauthPartnerCertificateResultOutput), nil
 		}).(LookupDomainsOauthPartnerCertificateResultOutput)
 }
 

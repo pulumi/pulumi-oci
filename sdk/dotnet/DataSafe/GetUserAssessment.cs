@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetUserAssessmentResult> Invoke(GetUserAssessmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentResult>("oci:DataSafe/getUserAssessment:getUserAssessment", args ?? new GetUserAssessmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a user assessment by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAssessment = Oci.DataSafe.GetUserAssessment.Invoke(new()
+        ///     {
+        ///         UserAssessmentId = testUserAssessmentOciDataSafeUserAssessment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserAssessmentResult> Invoke(GetUserAssessmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentResult>("oci:DataSafe/getUserAssessment:getUserAssessment", args ?? new GetUserAssessmentInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,21 +82,11 @@ type GetBdsInstancePatchHistoriesResult struct {
 }
 
 func GetBdsInstancePatchHistoriesOutput(ctx *pulumi.Context, args GetBdsInstancePatchHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstancePatchHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBdsInstancePatchHistoriesResultOutput, error) {
 			args := v.(GetBdsInstancePatchHistoriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBdsInstancePatchHistoriesResult
-			secret, err := ctx.InvokePackageRaw("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args, &rv, "", opts...)
-			if err != nil {
-				return GetBdsInstancePatchHistoriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBdsInstancePatchHistoriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBdsInstancePatchHistoriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args, GetBdsInstancePatchHistoriesResultOutput{}, options).(GetBdsInstancePatchHistoriesResultOutput), nil
 		}).(GetBdsInstancePatchHistoriesResultOutput)
 }
 

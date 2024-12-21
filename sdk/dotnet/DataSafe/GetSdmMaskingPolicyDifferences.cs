@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferencesResult> Invoke(GetSdmMaskingPolicyDifferencesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferencesResult>("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", args ?? new GetSdmMaskingPolicyDifferencesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sdm Masking Policy Differences in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of SDM and masking policy difference resources based on the specified query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSdmMaskingPolicyDifferences = Oci.DataSafe.GetSdmMaskingPolicyDifferences.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+        ///         DifferenceAccessLevel = sdmMaskingPolicyDifferenceDifferenceAccessLevel,
+        ///         DisplayName = sdmMaskingPolicyDifferenceDisplayName,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = sdmMaskingPolicyDifferenceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSdmMaskingPolicyDifferencesResult> Invoke(GetSdmMaskingPolicyDifferencesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferencesResult>("oci:DataSafe/getSdmMaskingPolicyDifferences:getSdmMaskingPolicyDifferences", args ?? new GetSdmMaskingPolicyDifferencesInvokeArgs(), options.WithDefaults());
     }
 
 

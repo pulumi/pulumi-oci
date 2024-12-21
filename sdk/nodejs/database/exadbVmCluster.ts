@@ -11,6 +11,59 @@ import * as utilities from "../utilities";
  *
  * Creates an Exadata VM cluster on Exascale Infrastructure
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadbVmCluster = new oci.database.ExadbVmCluster("test_exadb_vm_cluster", {
+ *     availabilityDomain: exadbVmClusterAvailabilityDomain,
+ *     backupSubnetId: testSubnet.id,
+ *     compartmentId: compartmentId,
+ *     displayName: exadbVmClusterDisplayName,
+ *     exascaleDbStorageVaultId: testExascaleDbStorageVault.id,
+ *     gridImageId: testImage.id,
+ *     hostname: exadbVmClusterHostname,
+ *     shape: exadbVmClusterShape,
+ *     nodeConfig: {
+ *         enabledEcpuCountPerNode: exadbVmClusterEnabledEcpuCountPerNode,
+ *         totalEcpuCountPerNode: exadbVmClusterTotalEcpuCountPerNode,
+ *         vmFileSystemStorageSizeGbsPerNode: exadbVmClusterVmFileSystemStorageSizeInGbsPerNode,
+ *     },
+ *     nodeResources: [
+ *         {
+ *             nodeName: "node1",
+ *         },
+ *         {
+ *             nodeName: "node2",
+ *         },
+ *     ],
+ *     sshPublicKeys: exadbVmClusterSshPublicKeys,
+ *     subnetId: testSubnet.id,
+ *     backupNetworkNsgIds: exadbVmClusterBackupNetworkNsgIds,
+ *     clusterName: exadbVmClusterClusterName,
+ *     dataCollectionOptions: {
+ *         isDiagnosticsEventsEnabled: exadbVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
+ *         isHealthMonitoringEnabled: exadbVmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
+ *         isIncidentLogsEnabled: exadbVmClusterDataCollectionOptionsIsIncidentLogsEnabled,
+ *     },
+ *     definedTags: exadbVmClusterDefinedTags,
+ *     domain: exadbVmClusterDomain,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     licenseModel: exadbVmClusterLicenseModel,
+ *     nsgIds: exadbVmClusterNsgIds,
+ *     privateZoneId: testZone.id,
+ *     scanListenerPortTcp: exadbVmClusterScanListenerPortTcp,
+ *     scanListenerPortTcpSsl: exadbVmClusterScanListenerPortTcpSsl,
+ *     securityAttributes: exadbVmClusterSecurityAttributes,
+ *     systemVersion: exadbVmClusterSystemVersion,
+ *     timeZone: exadbVmClusterTimeZone,
+ * });
+ * ```
+ *
  * ## Import
  *
  * ExadbVmClusters can be imported using the `id`, e.g.

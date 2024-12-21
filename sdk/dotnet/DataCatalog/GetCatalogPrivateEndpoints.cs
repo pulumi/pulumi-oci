@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetCatalogPrivateEndpointsResult> Invoke(GetCatalogPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointsResult>("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args ?? new GetCatalogPrivateEndpointsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Returns a list of all the catalog private endpoints in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCatalogPrivateEndpoints = Oci.DataCatalog.GetCatalogPrivateEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = catalogPrivateEndpointDisplayName,
+        ///         State = catalogPrivateEndpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCatalogPrivateEndpointsResult> Invoke(GetCatalogPrivateEndpointsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointsResult>("oci:DataCatalog/getCatalogPrivateEndpoints:getCatalogPrivateEndpoints", args ?? new GetCatalogPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

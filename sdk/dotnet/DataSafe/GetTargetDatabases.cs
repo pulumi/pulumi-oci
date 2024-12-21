@@ -80,6 +80,41 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetDatabasesResult> Invoke(GetTargetDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesResult>("oci:DataSafe/getTargetDatabases:getTargetDatabases", args ?? new GetTargetDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns the list of registered target databases in Data Safe.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetDatabases = Oci.DataSafe.GetTargetDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetDatabaseAccessLevel,
+        ///         AssociatedResourceId = testAssociatedResource.Id,
+        ///         CompartmentIdInSubtree = targetDatabaseCompartmentIdInSubtree,
+        ///         DatabaseType = targetDatabaseDatabaseType,
+        ///         DisplayName = targetDatabaseDisplayName,
+        ///         InfrastructureType = targetDatabaseInfrastructureType,
+        ///         State = targetDatabaseState,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetDatabasesResult> Invoke(GetTargetDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesResult>("oci:DataSafe/getTargetDatabases:getTargetDatabases", args ?? new GetTargetDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

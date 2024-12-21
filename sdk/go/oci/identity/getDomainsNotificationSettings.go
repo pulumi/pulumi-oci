@@ -91,21 +91,11 @@ type GetDomainsNotificationSettingsResult struct {
 }
 
 func GetDomainsNotificationSettingsOutput(ctx *pulumi.Context, args GetDomainsNotificationSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsNotificationSettingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsNotificationSettingsResultOutput, error) {
 			args := v.(GetDomainsNotificationSettingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsNotificationSettingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsNotificationSettingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsNotificationSettingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsNotificationSettingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", args, GetDomainsNotificationSettingsResultOutput{}, options).(GetDomainsNotificationSettingsResultOutput), nil
 		}).(GetDomainsNotificationSettingsResultOutput)
 }
 

@@ -26,6 +26,14 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public static Output<GetCleanEnergyUsageResult> Invoke(GetCleanEnergyUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+        /// 
+        /// Returns the clean energy usage summary by region.
+        /// </summary>
+        public static Output<GetCleanEnergyUsageResult> Invoke(GetCleanEnergyUsageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageInvokeArgs(), options.WithDefaults());
     }
 
 

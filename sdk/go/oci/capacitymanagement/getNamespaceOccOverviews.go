@@ -85,21 +85,11 @@ type GetNamespaceOccOverviewsResult struct {
 }
 
 func GetNamespaceOccOverviewsOutput(ctx *pulumi.Context, args GetNamespaceOccOverviewsOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceOccOverviewsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNamespaceOccOverviewsResultOutput, error) {
 			args := v.(GetNamespaceOccOverviewsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNamespaceOccOverviewsResult
-			secret, err := ctx.InvokePackageRaw("oci:CapacityManagement/getNamespaceOccOverviews:getNamespaceOccOverviews", args, &rv, "", opts...)
-			if err != nil {
-				return GetNamespaceOccOverviewsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNamespaceOccOverviewsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNamespaceOccOverviewsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CapacityManagement/getNamespaceOccOverviews:getNamespaceOccOverviews", args, GetNamespaceOccOverviewsResultOutput{}, options).(GetNamespaceOccOverviewsResultOutput), nil
 		}).(GetNamespaceOccOverviewsResultOutput)
 }
 

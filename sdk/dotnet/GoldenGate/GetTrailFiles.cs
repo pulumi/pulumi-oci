@@ -14,7 +14,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
         /// 
-        /// Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+        /// Lists the TrailFiles for a deployment.
+        /// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
         /// 
         /// 
         /// ## Example Usage
@@ -43,7 +44,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
         /// 
-        /// Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+        /// Lists the TrailFiles for a deployment.
+        /// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
         /// 
         /// 
         /// ## Example Usage
@@ -67,6 +69,36 @@ namespace Pulumi.Oci.GoldenGate
         /// ```
         /// </summary>
         public static Output<GetTrailFilesResult> Invoke(GetTrailFilesInvokeArgs args, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTrailFilesResult>("oci:GoldenGate/getTrailFiles:getTrailFiles", args ?? new GetTrailFilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the TrailFiles for a deployment.
+        /// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTrailFiles = Oci.GoldenGate.GetTrailFiles.Invoke(new()
+        ///     {
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailFileDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTrailFilesResult> Invoke(GetTrailFilesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetTrailFilesResult>("oci:GoldenGate/getTrailFiles:getTrailFiles", args ?? new GetTrailFilesInvokeArgs(), options.WithDefaults());
     }
 

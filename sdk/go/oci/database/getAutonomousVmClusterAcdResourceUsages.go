@@ -72,21 +72,11 @@ type GetAutonomousVmClusterAcdResourceUsagesResult struct {
 }
 
 func GetAutonomousVmClusterAcdResourceUsagesOutput(ctx *pulumi.Context, args GetAutonomousVmClusterAcdResourceUsagesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousVmClusterAcdResourceUsagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousVmClusterAcdResourceUsagesResultOutput, error) {
 			args := v.(GetAutonomousVmClusterAcdResourceUsagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousVmClusterAcdResourceUsagesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousVmClusterAcdResourceUsagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousVmClusterAcdResourceUsagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousVmClusterAcdResourceUsagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args, GetAutonomousVmClusterAcdResourceUsagesResultOutput{}, options).(GetAutonomousVmClusterAcdResourceUsagesResultOutput), nil
 		}).(GetAutonomousVmClusterAcdResourceUsagesResultOutput)
 }
 

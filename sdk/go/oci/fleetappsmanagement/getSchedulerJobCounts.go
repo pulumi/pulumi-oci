@@ -68,21 +68,11 @@ type GetSchedulerJobCountsResult struct {
 }
 
 func GetSchedulerJobCountsOutput(ctx *pulumi.Context, args GetSchedulerJobCountsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerJobCountsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSchedulerJobCountsResultOutput, error) {
 			args := v.(GetSchedulerJobCountsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSchedulerJobCountsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getSchedulerJobCounts:getSchedulerJobCounts", args, &rv, "", opts...)
-			if err != nil {
-				return GetSchedulerJobCountsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSchedulerJobCountsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSchedulerJobCountsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerJobCounts:getSchedulerJobCounts", args, GetSchedulerJobCountsResultOutput{}, options).(GetSchedulerJobCountsResultOutput), nil
 		}).(GetSchedulerJobCountsResultOutput)
 }
 

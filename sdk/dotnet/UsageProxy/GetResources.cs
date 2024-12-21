@@ -70,6 +70,36 @@ namespace Pulumi.Oci.UsageProxy
         /// </summary>
         public static Output<GetResourcesResult> Invoke(GetResourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourcesResult>("oci:UsageProxy/getResources:getResources", args ?? new GetResourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
+        /// 
+        /// Returns the resource details for a service
+        /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResources = Oci.UsageProxy.GetResources.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ServiceName = testService.Name,
+        ///         EntitlementId = testEntitlement.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResourcesResult> Invoke(GetResourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourcesResult>("oci:UsageProxy/getResources:getResources", args ?? new GetResourcesInvokeArgs(), options.WithDefaults());
     }
 
 

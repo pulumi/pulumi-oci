@@ -76,6 +76,39 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetExportsResult> Invoke(GetExportsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExportsResult>("oci:FileStorage/getExports:getExports", args ?? new GetExportsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Lists export resources by compartment, file system, or export
+        /// set. You must specify an export set ID, a file system ID, and
+        /// / or a compartment ID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExports = Oci.FileStorage.GetExports.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ExportSetId = testExportSet.Id,
+        ///         FileSystemId = testFileSystem.Id,
+        ///         Id = exportId,
+        ///         State = exportState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExportsResult> Invoke(GetExportsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExportsResult>("oci:FileStorage/getExports:getExports", args ?? new GetExportsInvokeArgs(), options.WithDefaults());
     }
 
 

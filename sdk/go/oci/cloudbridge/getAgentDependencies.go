@@ -87,21 +87,11 @@ type GetAgentDependenciesResult struct {
 }
 
 func GetAgentDependenciesOutput(ctx *pulumi.Context, args GetAgentDependenciesOutputArgs, opts ...pulumi.InvokeOption) GetAgentDependenciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAgentDependenciesResultOutput, error) {
 			args := v.(GetAgentDependenciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAgentDependenciesResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args, &rv, "", opts...)
-			if err != nil {
-				return GetAgentDependenciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAgentDependenciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAgentDependenciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args, GetAgentDependenciesResultOutput{}, options).(GetAgentDependenciesResultOutput), nil
 		}).(GetAgentDependenciesResultOutput)
 }
 

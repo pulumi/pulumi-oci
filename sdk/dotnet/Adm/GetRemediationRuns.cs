@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetRemediationRunsResult> Invoke(GetRemediationRunsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunsResult>("oci:Adm/getRemediationRuns:getRemediationRuns", args ?? new GetRemediationRunsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+        /// 
+        /// Returns a list of remediation runs contained by a compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemediationRuns = Oci.Adm.GetRemediationRuns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = remediationRunDisplayName,
+        ///         Id = remediationRunId,
+        ///         RemediationRecipeId = testRemediationRecipe.Id,
+        ///         State = remediationRunState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemediationRunsResult> Invoke(GetRemediationRunsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRunsResult>("oci:Adm/getRemediationRuns:getRemediationRuns", args ?? new GetRemediationRunsInvokeArgs(), options.WithDefaults());
     }
 
 

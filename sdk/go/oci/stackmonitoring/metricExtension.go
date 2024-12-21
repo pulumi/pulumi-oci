@@ -64,9 +64,12 @@ import (
 //					JmxAttributes:          pulumi.Any(metricExtensionQueryPropertiesJmxAttributes),
 //					ManagedBeanQuery:       pulumi.Any(metricExtensionQueryPropertiesManagedBeanQuery),
 //					OutParamDetails: &stackmonitoring.MetricExtensionQueryPropertiesOutParamDetailsArgs{
+//						OutParamName:     pulumi.Any(metricExtensionQueryPropertiesOutParamDetailsOutParamName),
 //						OutParamPosition: pulumi.Any(metricExtensionQueryPropertiesOutParamDetailsOutParamPosition),
 //						OutParamType:     pulumi.Any(metricExtensionQueryPropertiesOutParamDetailsOutParamType),
 //					},
+//					ProtocolType:        pulumi.Any(metricExtensionQueryPropertiesProtocolType),
+//					ResponseContentType: pulumi.Any(metricExtensionQueryPropertiesResponseContentType),
 //					ScriptDetails: &stackmonitoring.MetricExtensionQueryPropertiesScriptDetailsArgs{
 //						Content: pulumi.Any(metricExtensionQueryPropertiesScriptDetailsContent),
 //						Name:    pulumi.Any(metricExtensionQueryPropertiesScriptDetailsName),
@@ -77,6 +80,7 @@ import (
 //					},
 //					SqlType:    pulumi.Any(metricExtensionQueryPropertiesSqlType),
 //					StartsWith: pulumi.Any(metricExtensionQueryPropertiesStartsWith),
+//					Url:        pulumi.Any(metricExtensionQueryPropertiesUrl),
 //				},
 //				ResourceType: pulumi.Any(metricExtensionResourceType),
 //				Description:  pulumi.Any(metricExtensionDescription),

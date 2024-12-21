@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetListJreUsageResult> Invoke(GetListJreUsageInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListJreUsageResult>("oci:Jms/getListJreUsage:getListJreUsage", args ?? new GetListJreUsageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// List Java Runtime usage in a specified host filtered by query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListJreUsage = Oci.Jms.GetListJreUsage.Invoke(new()
+        ///     {
+        ///         ApplicationId = testApplication.Id,
+        ///         ApplicationName = testApplication.Name,
+        ///         CompartmentId = compartmentId,
+        ///         HostId = testHost.Id,
+        ///         TimeEnd = listJreUsageTimeEnd,
+        ///         TimeStart = listJreUsageTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListJreUsageResult> Invoke(GetListJreUsageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListJreUsageResult>("oci:Jms/getListJreUsage:getListJreUsage", args ?? new GetListJreUsageInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceAvailableWindowsUpdatesResult> Invoke(GetManagedInstanceAvailableWindowsUpdatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceAvailableWindowsUpdatesResult>("oci:OsManagementHub/getManagedInstanceAvailableWindowsUpdates:getManagedInstanceAvailableWindowsUpdates", args ?? new GetManagedInstanceAvailableWindowsUpdatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Available Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a list of Windows updates that can be installed on the specified managed instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceAvailableWindowsUpdates = Oci.OsManagementHub.GetManagedInstanceAvailableWindowsUpdates.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ClassificationTypes = managedInstanceAvailableWindowsUpdateClassificationType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = managedInstanceAvailableWindowsUpdateDisplayName,
+        ///         DisplayNameContains = managedInstanceAvailableWindowsUpdateDisplayNameContains,
+        ///         IsInstallable = managedInstanceAvailableWindowsUpdateIsInstallable,
+        ///         Names = managedInstanceAvailableWindowsUpdateName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceAvailableWindowsUpdatesResult> Invoke(GetManagedInstanceAvailableWindowsUpdatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceAvailableWindowsUpdatesResult>("oci:OsManagementHub/getManagedInstanceAvailableWindowsUpdates:getManagedInstanceAvailableWindowsUpdates", args ?? new GetManagedInstanceAvailableWindowsUpdatesInvokeArgs(), options.WithDefaults());
     }
 
 

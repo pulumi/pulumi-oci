@@ -90,21 +90,11 @@ type GetFleetResourcesResult struct {
 }
 
 func GetFleetResourcesOutput(ctx *pulumi.Context, args GetFleetResourcesOutputArgs, opts ...pulumi.InvokeOption) GetFleetResourcesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetResourcesResultOutput, error) {
 			args := v.(GetFleetResourcesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetResourcesResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getFleetResources:getFleetResources", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetResourcesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetResourcesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetResourcesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetResources:getFleetResources", args, GetFleetResourcesResultOutput{}, options).(GetFleetResourcesResultOutput), nil
 		}).(GetFleetResourcesResultOutput)
 }
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public static Output<GetFsuCycleResult> Invoke(GetFsuCycleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFsuCycleResult>("oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle", args ?? new GetFsuCycleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
+        /// 
+        /// Gets a Exadata Fleet Update Cycle by identifier.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFsuCycle = Oci.FleetSoftwareUpdate.GetFsuCycle.Invoke(new()
+        ///     {
+        ///         FsuCycleId = testFsuCycleOciFleetSoftwareUpdateFsuCycle.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFsuCycleResult> Invoke(GetFsuCycleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFsuCycleResult>("oci:FleetSoftwareUpdate/getFsuCycle:getFsuCycle", args ?? new GetFsuCycleInvokeArgs(), options.WithDefaults());
     }
 
 

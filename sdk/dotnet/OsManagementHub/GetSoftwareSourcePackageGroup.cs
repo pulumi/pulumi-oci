@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourcePackageGroupResult> Invoke(GetSoftwareSourcePackageGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcePackageGroupResult>("oci:OsManagementHub/getSoftwareSourcePackageGroup:getSoftwareSourcePackageGroup", args ?? new GetSoftwareSourcePackageGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns information about the specified package group from a software source.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourcePackageGroup = Oci.OsManagementHub.GetSoftwareSourcePackageGroup.Invoke(new()
+        ///     {
+        ///         PackageGroupId = testGroup.Id,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourcePackageGroupResult> Invoke(GetSoftwareSourcePackageGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourcePackageGroupResult>("oci:OsManagementHub/getSoftwareSourcePackageGroup:getSoftwareSourcePackageGroup", args ?? new GetSoftwareSourcePackageGroupInvokeArgs(), options.WithDefaults());
     }
 
 

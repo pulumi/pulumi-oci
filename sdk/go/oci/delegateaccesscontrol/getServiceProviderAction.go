@@ -80,21 +80,11 @@ type GetServiceProviderActionResult struct {
 }
 
 func GetServiceProviderActionOutput(ctx *pulumi.Context, args GetServiceProviderActionOutputArgs, opts ...pulumi.InvokeOption) GetServiceProviderActionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetServiceProviderActionResultOutput, error) {
 			args := v.(GetServiceProviderActionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetServiceProviderActionResult
-			secret, err := ctx.InvokePackageRaw("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", args, &rv, "", opts...)
-			if err != nil {
-				return GetServiceProviderActionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetServiceProviderActionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetServiceProviderActionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", args, GetServiceProviderActionResultOutput{}, options).(GetServiceProviderActionResultOutput), nil
 		}).(GetServiceProviderActionResultOutput)
 }
 

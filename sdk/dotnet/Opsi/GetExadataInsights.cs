@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetExadataInsightsResult> Invoke(GetExadataInsightsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInsightsResult>("oci:Opsi/getExadataInsights:getExadataInsights", args ?? new GetExadataInsightsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+        /// When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInsights = Oci.Opsi.GetExadataInsights.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = exadataInsightCompartmentIdInSubtree,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataTypes = exadataInsightExadataType,
+        ///         Id = exadataInsightId,
+        ///         States = exadataInsightState,
+        ///         Statuses = exadataInsightStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExadataInsightsResult> Invoke(GetExadataInsightsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInsightsResult>("oci:Opsi/getExadataInsights:getExadataInsights", args ?? new GetExadataInsightsInvokeArgs(), options.WithDefaults());
     }
 
 

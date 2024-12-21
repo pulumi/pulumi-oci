@@ -70,6 +70,36 @@ namespace Pulumi.Oci.CapacityManagement
         /// </summary>
         public static Output<GetOccCustomerGroupsResult> Invoke(GetOccCustomerGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccCustomerGroupsResult>("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", args ?? new GetOccCustomerGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Occ Customer Groups in Oracle Cloud Infrastructure Capacity Management service.
+        /// 
+        /// Lists all the customer groups.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOccCustomerGroups = Oci.CapacityManagement.GetOccCustomerGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = occCustomerGroupDisplayName,
+        ///         Id = occCustomerGroupId,
+        ///         Status = occCustomerGroupStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOccCustomerGroupsResult> Invoke(GetOccCustomerGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOccCustomerGroupsResult>("oci:CapacityManagement/getOccCustomerGroups:getOccCustomerGroups", args ?? new GetOccCustomerGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

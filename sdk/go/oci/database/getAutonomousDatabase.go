@@ -159,6 +159,8 @@ type LookupAutonomousDatabaseResult struct {
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled bool `pulumi:"isAutoScalingForStorageEnabled"`
+	// Indicates if the Autonomous Database is backup retention locked.
+	IsBackupRetentionLocked bool `pulumi:"isBackupRetentionLocked"`
 	// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled bool `pulumi:"isDataGuardEnabled"`
 	// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
@@ -337,21 +339,11 @@ type LookupAutonomousDatabaseResult struct {
 }
 
 func LookupAutonomousDatabaseOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAutonomousDatabaseResultOutput, error) {
 			args := v.(LookupAutonomousDatabaseArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAutonomousDatabaseResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAutonomousDatabaseResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAutonomousDatabaseResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAutonomousDatabaseResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args, LookupAutonomousDatabaseResultOutput{}, options).(LookupAutonomousDatabaseResultOutput), nil
 		}).(LookupAutonomousDatabaseResultOutput)
 }
 
@@ -638,6 +630,11 @@ func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingEnabled() pulumi.Bool
 // Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 func (o LookupAutonomousDatabaseResultOutput) IsAutoScalingForStorageEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsAutoScalingForStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if the Autonomous Database is backup retention locked.
+func (o LookupAutonomousDatabaseResultOutput) IsBackupRetentionLocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsBackupRetentionLocked }).(pulumi.BoolOutput)
 }
 
 // **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.

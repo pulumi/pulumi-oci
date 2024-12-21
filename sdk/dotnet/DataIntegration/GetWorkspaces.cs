@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspacesResult> Invoke(GetWorkspacesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspacesResult>("oci:DataIntegration/getWorkspaces:getWorkspaces", args ?? new GetWorkspacesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a list of Data Integration workspaces.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaces = Oci.DataIntegration.GetWorkspaces.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Name = workspaceName,
+        ///         State = workspaceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspacesResult> Invoke(GetWorkspacesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspacesResult>("oci:DataIntegration/getWorkspaces:getWorkspaces", args ?? new GetWorkspacesInvokeArgs(), options.WithDefaults());
     }
 
 

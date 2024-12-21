@@ -64,6 +64,33 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public static Output<GetProcessorJobResult> Invoke(GetProcessorJobInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessorJobResult>("oci:AiDocument/getProcessorJob:getProcessorJob", args ?? new GetProcessorJobInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
+        /// 
+        /// Get the details of a processor job.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProcessorJob = Oci.AiDocument.GetProcessorJob.Invoke(new()
+        ///     {
+        ///         ProcessorJobId = testProcessorJobOciAiDocumentProcessorJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProcessorJobResult> Invoke(GetProcessorJobInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProcessorJobResult>("oci:AiDocument/getProcessorJob:getProcessorJob", args ?? new GetProcessorJobInvokeArgs(), options.WithDefaults());
     }
 
 

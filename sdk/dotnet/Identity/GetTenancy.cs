@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetTenancyResult> Invoke(GetTenancyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTenancyResult>("oci:Identity/getTenancy:getTenancy", args ?? new GetTenancyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Get the specified tenancy's information.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTenancy = Oci.Identity.GetTenancy.Invoke(new()
+        ///     {
+        ///         TenancyId = tenancyOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTenancyResult> Invoke(GetTenancyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTenancyResult>("oci:Identity/getTenancy:getTenancy", args ?? new GetTenancyInvokeArgs(), options.WithDefaults());
     }
 
 

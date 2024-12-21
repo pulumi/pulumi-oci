@@ -91,21 +91,11 @@ type GetDomainsSecurityQuestionSettingsResult struct {
 }
 
 func GetDomainsSecurityQuestionSettingsOutput(ctx *pulumi.Context, args GetDomainsSecurityQuestionSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSecurityQuestionSettingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsSecurityQuestionSettingsResultOutput, error) {
 			args := v.(GetDomainsSecurityQuestionSettingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsSecurityQuestionSettingsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsSecurityQuestionSettingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsSecurityQuestionSettingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsSecurityQuestionSettingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", args, GetDomainsSecurityQuestionSettingsResultOutput{}, options).(GetDomainsSecurityQuestionSettingsResultOutput), nil
 		}).(GetDomainsSecurityQuestionSettingsResultOutput)
 }
 

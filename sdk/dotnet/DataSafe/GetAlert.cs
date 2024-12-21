@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetAlertResult> Invoke(GetAlertInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertResult>("oci:DataSafe/getAlert:getAlert", args ?? new GetAlertInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified alerts.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAlert = Oci.DataSafe.GetAlert.Invoke(new()
+        ///     {
+        ///         AlertId = testAlertOciDataSafeAlert.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertResult> Invoke(GetAlertInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertResult>("oci:DataSafe/getAlert:getAlert", args ?? new GetAlertInvokeArgs(), options.WithDefaults());
     }
 
 

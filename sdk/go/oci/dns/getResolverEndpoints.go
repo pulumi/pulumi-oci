@@ -85,21 +85,11 @@ type GetResolverEndpointsResult struct {
 }
 
 func GetResolverEndpointsOutput(ctx *pulumi.Context, args GetResolverEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetResolverEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetResolverEndpointsResultOutput, error) {
 			args := v.(GetResolverEndpointsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetResolverEndpointsResult
-			secret, err := ctx.InvokePackageRaw("oci:Dns/getResolverEndpoints:getResolverEndpoints", args, &rv, "", opts...)
-			if err != nil {
-				return GetResolverEndpointsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetResolverEndpointsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetResolverEndpointsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Dns/getResolverEndpoints:getResolverEndpoints", args, GetResolverEndpointsResultOutput{}, options).(GetResolverEndpointsResultOutput), nil
 		}).(GetResolverEndpointsResultOutput)
 }
 

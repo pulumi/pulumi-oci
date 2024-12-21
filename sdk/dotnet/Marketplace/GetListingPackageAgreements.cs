@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetListingPackageAgreementsResult> Invoke(GetListingPackageAgreementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListingPackageAgreements = Oci.Marketplace.GetListingPackageAgreements.Invoke(new()
+        ///     {
+        ///         ListingId = testListing.Id,
+        ///         PackageVersion = listingPackageAgreementPackageVersion,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListingPackageAgreementsResult> Invoke(GetListingPackageAgreementsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsInvokeArgs(), options.WithDefaults());
     }
 
 

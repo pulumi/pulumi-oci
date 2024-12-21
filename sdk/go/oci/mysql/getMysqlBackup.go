@@ -108,21 +108,11 @@ type LookupMysqlBackupResult struct {
 }
 
 func LookupMysqlBackupOutput(ctx *pulumi.Context, args LookupMysqlBackupOutputArgs, opts ...pulumi.InvokeOption) LookupMysqlBackupResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMysqlBackupResultOutput, error) {
 			args := v.(LookupMysqlBackupArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMysqlBackupResult
-			secret, err := ctx.InvokePackageRaw("oci:Mysql/getMysqlBackup:getMysqlBackup", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMysqlBackupResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMysqlBackupResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMysqlBackupResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Mysql/getMysqlBackup:getMysqlBackup", args, LookupMysqlBackupResultOutput{}, options).(LookupMysqlBackupResultOutput), nil
 		}).(LookupMysqlBackupResultOutput)
 }
 

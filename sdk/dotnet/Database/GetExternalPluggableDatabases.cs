@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExternalPluggableDatabasesResult> Invoke(GetExternalPluggableDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalPluggableDatabasesResult>("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", args ?? new GetExternalPluggableDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
+        /// resources in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalPluggableDatabases = Oci.Database.GetExternalPluggableDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalPluggableDatabaseDisplayName,
+        ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+        ///         State = externalPluggableDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalPluggableDatabasesResult> Invoke(GetExternalPluggableDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalPluggableDatabasesResult>("oci:Database/getExternalPluggableDatabases:getExternalPluggableDatabases", args ?? new GetExternalPluggableDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

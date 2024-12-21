@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetVirtualServicesResult> Invoke(GetVirtualServicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServicesResult>("oci:ServiceMesh/getVirtualServices:getVirtualServices", args ?? new GetVirtualServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Returns a list of VirtualService objects.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualServices = Oci.ServiceMesh.GetVirtualServices.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Id = virtualServiceId,
+        ///         MeshId = testMesh.Id,
+        ///         Name = virtualServiceName,
+        ///         State = virtualServiceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualServicesResult> Invoke(GetVirtualServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServicesResult>("oci:ServiceMesh/getVirtualServices:getVirtualServices", args ?? new GetVirtualServicesInvokeArgs(), options.WithDefaults());
     }
 
 

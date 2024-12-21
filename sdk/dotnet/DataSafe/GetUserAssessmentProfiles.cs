@@ -126,6 +126,64 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetUserAssessmentProfilesResult> Invoke(GetUserAssessmentProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentProfilesResult>("oci:DataSafe/getUserAssessmentProfiles:getUserAssessmentProfiles", args ?? new GetUserAssessmentProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Assessment Profiles in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of user profiles containing the profile details along with the target id and user counts.
+        /// 
+        /// The ListProfiles operation returns only the profiles belonging to a certain target. If compartment type user assessment
+        /// id is provided, then profile information for all the targets belonging to the pertaining compartment is returned.
+        /// The list does not include any subcompartments of the compartment under consideration.
+        /// 
+        /// The parameter 'accessLevel' specifies whether to return only those compartments for which the requestor has
+        /// INSPECT permissions on at least one resource directly or indirectly (ACCESSIBLE) (the resource can be in a
+        /// subcompartment) or to return Not Authorized if Principal doesn't have access to even one of the child compartments.
+        /// This is valid only when 'compartmentIdInSubtree' is set to 'true'.
+        /// 
+        /// The parameter 'compartmentIdInSubtree' applies when you perform ListUserProfiles on the 'compartmentId' belonging
+        /// to the assessmentId passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment), set the parameter
+        /// 'compartmentIdInSubtree' to true and 'accessLevel' to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAssessmentProfiles = Oci.DataSafe.GetUserAssessmentProfiles.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentProfileAccessLevel,
+        ///         CompartmentIdInSubtree = userAssessmentProfileCompartmentIdInSubtree,
+        ///         FailedLoginAttemptsGreaterThanOrEqual = userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual,
+        ///         FailedLoginAttemptsLessThan = userAssessmentProfileFailedLoginAttemptsLessThan,
+        ///         InactiveAccountTimeGreaterThanOrEqual = userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual,
+        ///         InactiveAccountTimeLessThan = userAssessmentProfileInactiveAccountTimeLessThan,
+        ///         IsUserCreated = userAssessmentProfileIsUserCreated,
+        ///         PasswordLockTimeGreaterThanOrEqual = userAssessmentProfilePasswordLockTimeGreaterThanOrEqual,
+        ///         PasswordLockTimeLessThan = userAssessmentProfilePasswordLockTimeLessThan,
+        ///         PasswordVerificationFunction = userAssessmentProfilePasswordVerificationFunction,
+        ///         ProfileName = testProfile.Name,
+        ///         SessionsPerUserGreaterThanOrEqual = userAssessmentProfileSessionsPerUserGreaterThanOrEqual,
+        ///         SessionsPerUserLessThan = userAssessmentProfileSessionsPerUserLessThan,
+        ///         TargetId = testTarget.Id,
+        ///         UserCountGreaterThanOrEqual = userAssessmentProfileUserCountGreaterThanOrEqual,
+        ///         UserCountLessThan = userAssessmentProfileUserCountLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserAssessmentProfilesResult> Invoke(GetUserAssessmentProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentProfilesResult>("oci:DataSafe/getUserAssessmentProfiles:getUserAssessmentProfiles", args ?? new GetUserAssessmentProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

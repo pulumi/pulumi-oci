@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSecurityQuestionSettingResult> Invoke(GetDomainsSecurityQuestionSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionSettingResult>("oci:Identity/getDomainsSecurityQuestionSetting:getDomainsSecurityQuestionSetting", args ?? new GetDomainsSecurityQuestionSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a security question setting.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityQuestionSetting = Oci.Identity.GetDomainsSecurityQuestionSetting.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionSettingId = testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = securityQuestionSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSecurityQuestionSettingResult> Invoke(GetDomainsSecurityQuestionSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionSettingResult>("oci:Identity/getDomainsSecurityQuestionSetting:getDomainsSecurityQuestionSetting", args ?? new GetDomainsSecurityQuestionSettingInvokeArgs(), options.WithDefaults());
     }
 
 

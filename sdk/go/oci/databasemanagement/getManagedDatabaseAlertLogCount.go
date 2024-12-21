@@ -95,21 +95,11 @@ type GetManagedDatabaseAlertLogCountResult struct {
 }
 
 func GetManagedDatabaseAlertLogCountOutput(ctx *pulumi.Context, args GetManagedDatabaseAlertLogCountOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseAlertLogCountResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseAlertLogCountResultOutput, error) {
 			args := v.(GetManagedDatabaseAlertLogCountArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseAlertLogCountResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseAlertLogCountResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseAlertLogCountResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseAlertLogCountResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args, GetManagedDatabaseAlertLogCountResultOutput{}, options).(GetManagedDatabaseAlertLogCountResultOutput), nil
 		}).(GetManagedDatabaseAlertLogCountResultOutput)
 }
 

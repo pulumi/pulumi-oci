@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentGetAutoUpgradableConfigResult> Invoke(GetManagementAgentGetAutoUpgradableConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Get the AutoUpgradable configuration for all agents in a tenancy.
+        /// The supplied compartmentId must be a tenancy root.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentGetAutoUpgradableConfig = Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentGetAutoUpgradableConfigResult> Invoke(GetManagementAgentGetAutoUpgradableConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentGetAutoUpgradableConfigResult>("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args ?? new GetManagementAgentGetAutoUpgradableConfigInvokeArgs(), options.WithDefaults());
     }
 
 

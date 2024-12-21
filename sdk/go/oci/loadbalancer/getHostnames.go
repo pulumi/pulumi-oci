@@ -68,21 +68,11 @@ type GetHostnamesResult struct {
 }
 
 func GetHostnamesOutput(ctx *pulumi.Context, args GetHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetHostnamesResultOutput, error) {
 			args := v.(GetHostnamesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetHostnamesResult
-			secret, err := ctx.InvokePackageRaw("oci:LoadBalancer/getHostnames:getHostnames", args, &rv, "", opts...)
-			if err != nil {
-				return GetHostnamesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetHostnamesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetHostnamesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LoadBalancer/getHostnames:getHostnames", args, GetHostnamesResultOutput{}, options).(GetHostnamesResultOutput), nil
 		}).(GetHostnamesResultOutput)
 }
 

@@ -58,7 +58,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly Outputs.MetricExtensionQueryPropertiesOutParamDetails? OutParamDetails;
         /// <summary>
-        /// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        /// (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        /// </summary>
+        public readonly string? ProtocolType;
+        /// <summary>
+        /// (Updatable) Type of content response given by the http(s) URL
+        /// </summary>
+        public readonly string? ResponseContentType;
+        /// <summary>
+        /// (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         /// </summary>
         public readonly Outputs.MetricExtensionQueryPropertiesScriptDetails? ScriptDetails;
         /// <summary>
@@ -73,6 +81,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// (Updatable) String prefix used to identify metric output of the OS Command
         /// </summary>
         public readonly string? StartsWith;
+        /// <summary>
+        /// (Updatable) Http(s) end point URL
+        /// </summary>
+        public readonly string? Url;
 
         [OutputConstructor]
         private MetricExtensionQueryProperties(
@@ -98,13 +110,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             Outputs.MetricExtensionQueryPropertiesOutParamDetails? outParamDetails,
 
+            string? protocolType,
+
+            string? responseContentType,
+
             Outputs.MetricExtensionQueryPropertiesScriptDetails? scriptDetails,
 
             Outputs.MetricExtensionQueryPropertiesSqlDetails? sqlDetails,
 
             string? sqlType,
 
-            string? startsWith)
+            string? startsWith,
+
+            string? url)
         {
             Arguments = arguments;
             AutoRowPrefix = autoRowPrefix;
@@ -117,10 +135,13 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             JmxAttributes = jmxAttributes;
             ManagedBeanQuery = managedBeanQuery;
             OutParamDetails = outParamDetails;
+            ProtocolType = protocolType;
+            ResponseContentType = responseContentType;
             ScriptDetails = scriptDetails;
             SqlDetails = sqlDetails;
             SqlType = sqlType;
             StartsWith = startsWith;
+            Url = url;
         }
     }
 }

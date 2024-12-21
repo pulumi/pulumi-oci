@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsNetworkPerimeterResult> Invoke(GetDomainsNetworkPerimeterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNetworkPerimeterResult>("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", args ?? new GetDomainsNetworkPerimeterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a NetworkPerimeter
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkPerimeter = Oci.Identity.GetDomainsNetworkPerimeter.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NetworkPerimeterId = testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = networkPerimeterAuthorization,
+        ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsNetworkPerimeterResult> Invoke(GetDomainsNetworkPerimeterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNetworkPerimeterResult>("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", args ?? new GetDomainsNetworkPerimeterInvokeArgs(), options.WithDefaults());
     }
 
 

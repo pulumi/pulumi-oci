@@ -66,6 +66,34 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentCertificateResult> Invoke(GetDeploymentCertificateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentCertificateResult>("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", args ?? new GetDeploymentCertificateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Retrieves a Certificate.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentCertificate = Oci.GoldenGate.GetDeploymentCertificate.Invoke(new()
+        ///     {
+        ///         CertificateKey = deploymentCertificateCertificateKey,
+        ///         DeploymentId = testDeployment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentCertificateResult> Invoke(GetDeploymentCertificateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentCertificateResult>("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", args ?? new GetDeploymentCertificateInvokeArgs(), options.WithDefaults());
     }
 
 

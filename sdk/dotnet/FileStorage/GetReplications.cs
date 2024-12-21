@@ -74,6 +74,38 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public static Output<GetReplicationsResult> Invoke(GetReplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationsResult>("oci:FileStorage/getReplications:getReplications", args ?? new GetReplicationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
+        /// 
+        /// Lists the replication resources in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplications = Oci.FileStorage.GetReplications.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = replicationAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationDisplayName,
+        ///         FileSystemId = testFileSystem.Id,
+        ///         Id = replicationId,
+        ///         State = replicationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicationsResult> Invoke(GetReplicationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationsResult>("oci:FileStorage/getReplications:getReplications", args ?? new GetReplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

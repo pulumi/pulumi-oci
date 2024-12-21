@@ -65,9 +65,12 @@ namespace Pulumi.Oci.StackMonitoring
     ///             ManagedBeanQuery = metricExtensionQueryPropertiesManagedBeanQuery,
     ///             OutParamDetails = new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesOutParamDetailsArgs
     ///             {
+    ///                 OutParamName = metricExtensionQueryPropertiesOutParamDetailsOutParamName,
     ///                 OutParamPosition = metricExtensionQueryPropertiesOutParamDetailsOutParamPosition,
     ///                 OutParamType = metricExtensionQueryPropertiesOutParamDetailsOutParamType,
     ///             },
+    ///             ProtocolType = metricExtensionQueryPropertiesProtocolType,
+    ///             ResponseContentType = metricExtensionQueryPropertiesResponseContentType,
     ///             ScriptDetails = new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesScriptDetailsArgs
     ///             {
     ///                 Content = metricExtensionQueryPropertiesScriptDetailsContent,
@@ -80,6 +83,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///             },
     ///             SqlType = metricExtensionQueryPropertiesSqlType,
     ///             StartsWith = metricExtensionQueryPropertiesStartsWith,
+    ///             Url = metricExtensionQueryPropertiesUrl,
     ///         },
     ///         ResourceType = metricExtensionResourceType,
     ///         Description = metricExtensionDescription,

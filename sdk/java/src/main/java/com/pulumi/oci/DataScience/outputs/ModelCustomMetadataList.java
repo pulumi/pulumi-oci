@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ModelCustomMetadataList {
     /**
-     * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+     * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
      * 
      */
     private @Nullable String category;
@@ -28,7 +28,7 @@ public final class ModelCustomMetadataList {
      * * libraryVersion
      * * estimatorClass
      * * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      * 
      */
     private @Nullable String key;
@@ -42,7 +42,7 @@ public final class ModelCustomMetadataList {
 
     private ModelCustomMetadataList() {}
     /**
-     * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+     * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
      * 
      */
     public Optional<String> category() {
@@ -62,7 +62,7 @@ public final class ModelCustomMetadataList {
      * * libraryVersion
      * * estimatorClass
      * * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      * 
      */
     public Optional<String> key() {

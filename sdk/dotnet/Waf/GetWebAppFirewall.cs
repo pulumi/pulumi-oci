@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Waf
         /// </summary>
         public static Output<GetWebAppFirewallResult> Invoke(GetWebAppFirewallInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWebAppFirewallResult>("oci:Waf/getWebAppFirewall:getWebAppFirewall", args ?? new GetWebAppFirewallInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
+        /// 
+        /// Gets a WebAppFirewall by OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWebAppFirewall = Oci.Waf.GetWebAppFirewall.Invoke(new()
+        ///     {
+        ///         WebAppFirewallId = testWebAppFirewallOciWafWebAppFirewall.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWebAppFirewallResult> Invoke(GetWebAppFirewallInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWebAppFirewallResult>("oci:Waf/getWebAppFirewall:getWebAppFirewall", args ?? new GetWebAppFirewallInvokeArgs(), options.WithDefaults());
     }
 
 

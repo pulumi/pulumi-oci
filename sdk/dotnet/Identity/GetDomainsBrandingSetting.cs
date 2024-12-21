@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsBrandingSettingResult> Invoke(GetDomainsBrandingSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsBrandingSettingResult>("oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting", args ?? new GetDomainsBrandingSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Branding Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get Branding Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBrandingSetting = Oci.Identity.GetDomainsBrandingSetting.Invoke(new()
+        ///     {
+        ///         BrandingSettingId = "BrandingSettings",
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = brandingSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = brandingSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsBrandingSettingResult> Invoke(GetDomainsBrandingSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsBrandingSettingResult>("oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting", args ?? new GetDomainsBrandingSettingInvokeArgs(), options.WithDefaults());
     }
 
 

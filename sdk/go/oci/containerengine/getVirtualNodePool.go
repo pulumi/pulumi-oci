@@ -100,21 +100,11 @@ type LookupVirtualNodePoolResult struct {
 }
 
 func LookupVirtualNodePoolOutput(ctx *pulumi.Context, args LookupVirtualNodePoolOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualNodePoolResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupVirtualNodePoolResultOutput, error) {
 			args := v.(LookupVirtualNodePoolArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupVirtualNodePoolResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", args, &rv, "", opts...)
-			if err != nil {
-				return LookupVirtualNodePoolResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupVirtualNodePoolResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupVirtualNodePoolResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", args, LookupVirtualNodePoolResultOutput{}, options).(LookupVirtualNodePoolResultOutput), nil
 		}).(LookupVirtualNodePoolResultOutput)
 }
 

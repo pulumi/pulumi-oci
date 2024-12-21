@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVirtualCircuitAssociatedTunnelsResult> Invoke(GetVirtualCircuitAssociatedTunnelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitAssociatedTunnelsResult>("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args ?? new GetVirtualCircuitAssociatedTunnelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified virtual circuit's associatedTunnelsInfo.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualCircuitAssociatedTunnels = Oci.Core.GetVirtualCircuitAssociatedTunnels.Invoke(new()
+        ///     {
+        ///         VirtualCircuitId = testVirtualCircuit.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualCircuitAssociatedTunnelsResult> Invoke(GetVirtualCircuitAssociatedTunnelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitAssociatedTunnelsResult>("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args ?? new GetVirtualCircuitAssociatedTunnelsInvokeArgs(), options.WithDefaults());
     }
 
 

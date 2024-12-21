@@ -188,14 +188,44 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+     * (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+     * 
+     */
+    @Import(name="protocolType")
+    private @Nullable Output<String> protocolType;
+
+    /**
+     * @return (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+     * 
+     */
+    public Optional<Output<String>> protocolType() {
+        return Optional.ofNullable(this.protocolType);
+    }
+
+    /**
+     * (Updatable) Type of content response given by the http(s) URL
+     * 
+     */
+    @Import(name="responseContentType")
+    private @Nullable Output<String> responseContentType;
+
+    /**
+     * @return (Updatable) Type of content response given by the http(s) URL
+     * 
+     */
+    public Optional<Output<String>> responseContentType() {
+        return Optional.ofNullable(this.responseContentType);
+    }
+
+    /**
+     * (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its &#34;content&#34; property to an empty string. In that case, &#34;name&#34; property value is ignored.
      * 
      */
     @Import(name="scriptDetails")
     private @Nullable Output<MetricExtensionQueryPropertiesScriptDetailsArgs> scriptDetails;
 
     /**
-     * @return (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+     * @return (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its &#34;content&#34; property to an empty string. In that case, &#34;name&#34; property value is ignored.
      * 
      */
     public Optional<Output<MetricExtensionQueryPropertiesScriptDetailsArgs>> scriptDetails() {
@@ -247,6 +277,21 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
         return Optional.ofNullable(this.startsWith);
     }
 
+    /**
+     * (Updatable) Http(s) end point URL
+     * 
+     */
+    @Import(name="url")
+    private @Nullable Output<String> url;
+
+    /**
+     * @return (Updatable) Http(s) end point URL
+     * 
+     */
+    public Optional<Output<String>> url() {
+        return Optional.ofNullable(this.url);
+    }
+
     private MetricExtensionQueryPropertiesArgs() {}
 
     private MetricExtensionQueryPropertiesArgs(MetricExtensionQueryPropertiesArgs $) {
@@ -261,10 +306,13 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
         this.jmxAttributes = $.jmxAttributes;
         this.managedBeanQuery = $.managedBeanQuery;
         this.outParamDetails = $.outParamDetails;
+        this.protocolType = $.protocolType;
+        this.responseContentType = $.responseContentType;
         this.scriptDetails = $.scriptDetails;
         this.sqlDetails = $.sqlDetails;
         this.sqlType = $.sqlType;
         this.startsWith = $.startsWith;
+        this.url = $.url;
     }
 
     public static Builder builder() {
@@ -527,7 +575,49 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param scriptDetails (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+         * @param protocolType (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocolType(@Nullable Output<String> protocolType) {
+            $.protocolType = protocolType;
+            return this;
+        }
+
+        /**
+         * @param protocolType (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocolType(String protocolType) {
+            return protocolType(Output.of(protocolType));
+        }
+
+        /**
+         * @param responseContentType (Updatable) Type of content response given by the http(s) URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder responseContentType(@Nullable Output<String> responseContentType) {
+            $.responseContentType = responseContentType;
+            return this;
+        }
+
+        /**
+         * @param responseContentType (Updatable) Type of content response given by the http(s) URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder responseContentType(String responseContentType) {
+            return responseContentType(Output.of(responseContentType));
+        }
+
+        /**
+         * @param scriptDetails (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its &#34;content&#34; property to an empty string. In that case, &#34;name&#34; property value is ignored.
          * 
          * @return builder
          * 
@@ -538,7 +628,7 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param scriptDetails (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+         * @param scriptDetails (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its &#34;content&#34; property to an empty string. In that case, &#34;name&#34; property value is ignored.
          * 
          * @return builder
          * 
@@ -608,6 +698,27 @@ public final class MetricExtensionQueryPropertiesArgs extends com.pulumi.resourc
          */
         public Builder startsWith(String startsWith) {
             return startsWith(Output.of(startsWith));
+        }
+
+        /**
+         * @param url (Updatable) Http(s) end point URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder url(@Nullable Output<String> url) {
+            $.url = url;
+            return this;
+        }
+
+        /**
+         * @param url (Updatable) Http(s) end point URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder url(String url) {
+            return url(Output.of(url));
         }
 
         public MetricExtensionQueryPropertiesArgs build() {

@@ -67,21 +67,11 @@ type GetAverageCarbonEmissionResult struct {
 }
 
 func GetAverageCarbonEmissionOutput(ctx *pulumi.Context, args GetAverageCarbonEmissionOutputArgs, opts ...pulumi.InvokeOption) GetAverageCarbonEmissionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAverageCarbonEmissionResultOutput, error) {
 			args := v.(GetAverageCarbonEmissionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAverageCarbonEmissionResult
-			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", args, &rv, "", opts...)
-			if err != nil {
-				return GetAverageCarbonEmissionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAverageCarbonEmissionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAverageCarbonEmissionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", args, GetAverageCarbonEmissionResultOutput{}, options).(GetAverageCarbonEmissionResultOutput), nil
 		}).(GetAverageCarbonEmissionResultOutput)
 }
 

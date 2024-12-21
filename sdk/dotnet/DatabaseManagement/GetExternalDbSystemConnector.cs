@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDbSystemConnectorResult> Invoke(GetExternalDbSystemConnectorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemConnectorResult>("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", args ?? new GetExternalDbSystemConnectorInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDbSystemConnector = Oci.DatabaseManagement.GetExternalDbSystemConnector.Invoke(new()
+        ///     {
+        ///         ExternalDbSystemConnectorId = testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDbSystemConnectorResult> Invoke(GetExternalDbSystemConnectorInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbSystemConnectorResult>("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", args ?? new GetExternalDbSystemConnectorInvokeArgs(), options.WithDefaults());
     }
 
 

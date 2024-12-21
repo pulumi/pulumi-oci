@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public static Output<GetMigrationPlanResult> Invoke(GetMigrationPlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanResult>("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args ?? new GetMigrationPlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        /// 
+        /// Gets a migration plan by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrationPlan = Oci.CloudMigrations.GetMigrationPlan.Invoke(new()
+        ///     {
+        ///         MigrationPlanId = testMigrationPlanOciCloudMigrationsMigrationPlan.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMigrationPlanResult> Invoke(GetMigrationPlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationPlanResult>("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args ?? new GetMigrationPlanInvokeArgs(), options.WithDefaults());
     }
 
 

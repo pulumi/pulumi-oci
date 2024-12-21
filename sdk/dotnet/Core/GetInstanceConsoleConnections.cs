@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceConsoleConnectionsResult> Invoke(GetInstanceConsoleConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceConsoleConnectionsResult>("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args ?? new GetInstanceConsoleConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the console connections for the specified compartment or instance.
+        /// 
+        /// For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceConsoleConnections = Oci.Core.GetInstanceConsoleConnections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         InstanceId = testInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceConsoleConnectionsResult> Invoke(GetInstanceConsoleConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceConsoleConnectionsResult>("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args ?? new GetInstanceConsoleConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstanceMaintenanceEventResult> Invoke(GetInstanceMaintenanceEventInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceEventResult>("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", args ?? new GetInstanceMaintenanceEventInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the maintenance event for the given instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstanceMaintenanceEvent = Oci.Core.GetInstanceMaintenanceEvent.Invoke(new()
+        ///     {
+        ///         InstanceMaintenanceEventId = testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstanceMaintenanceEventResult> Invoke(GetInstanceMaintenanceEventInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceMaintenanceEventResult>("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", args ?? new GetInstanceMaintenanceEventInvokeArgs(), options.WithDefaults());
     }
 
 

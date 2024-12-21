@@ -70,6 +70,36 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetBackendSetsResult> Invoke(GetBackendSetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetsResult>("oci:LoadBalancer/getBackendSets:getBackendSets", args ?? new GetBackendSetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all backend sets associated with a given load balancer.
+        /// 
+        /// ## Supported Aliases
+        /// 
+        /// * `oci_load_balancer_backendsets`
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackendSets = Oci.LoadBalancer.GetBackendSets.Invoke(new()
+        ///     {
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackendSetsResult> Invoke(GetBackendSetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetsResult>("oci:LoadBalancer/getBackendSets:getBackendSets", args ?? new GetBackendSetsInvokeArgs(), options.WithDefaults());
     }
 
 

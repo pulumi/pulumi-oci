@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetRepositoryProtectedBranchesResult> Invoke(GetRepositoryProtectedBranchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryProtectedBranchesResult>("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", args ?? new GetRepositoryProtectedBranchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of Protected Branches.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRepositoryProtectedBranches = Oci.DevOps.GetRepositoryProtectedBranches.Invoke(new()
+        ///     {
+        ///         RepositoryId = testRepository.Id,
+        ///         Name = repositoryProtectedBranchName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRepositoryProtectedBranchesResult> Invoke(GetRepositoryProtectedBranchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryProtectedBranchesResult>("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", args ?? new GetRepositoryProtectedBranchesInvokeArgs(), options.WithDefaults());
     }
 
 

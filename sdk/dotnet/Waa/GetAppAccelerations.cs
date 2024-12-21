@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Waa
         /// </summary>
         public static Output<GetAppAccelerationsResult> Invoke(GetAppAccelerationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationsResult>("oci:Waa/getAppAccelerations:getAppAccelerations", args ?? new GetAppAccelerationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
+        /// 
+        /// Gets a list of all WebAppAccelerations in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWebAppAccelerations = Oci.Waa.GetAppAccelerations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppAccelerationDisplayName,
+        ///         Id = webAppAccelerationId,
+        ///         States = webAppAccelerationState,
+        ///         WebAppAccelerationPolicyId = testWebAppAccelerationPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAppAccelerationsResult> Invoke(GetAppAccelerationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationsResult>("oci:Waa/getAppAccelerations:getAppAccelerations", args ?? new GetAppAccelerationsInvokeArgs(), options.WithDefaults());
     }
 
 

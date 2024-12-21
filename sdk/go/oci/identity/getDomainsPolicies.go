@@ -106,21 +106,11 @@ type GetDomainsPoliciesResult struct {
 }
 
 func GetDomainsPoliciesOutput(ctx *pulumi.Context, args GetDomainsPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsPoliciesResultOutput, error) {
 			args := v.(GetDomainsPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsPolicies:getDomainsPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsPolicies:getDomainsPolicies", args, GetDomainsPoliciesResultOutput{}, options).(GetDomainsPoliciesResultOutput), nil
 		}).(GetDomainsPoliciesResultOutput)
 }
 

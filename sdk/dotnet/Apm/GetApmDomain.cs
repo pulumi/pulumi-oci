@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Apm
         /// </summary>
         public static Output<GetApmDomainResult> Invoke(GetApmDomainInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
+        /// 
+        /// Gets the details of the APM domain specified by OCID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApmDomain = Oci.Apm.GetApmDomain.Invoke(new()
+        ///     {
+        ///         ApmDomainId = testApmDomainOciApmApmDomain.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApmDomainResult> Invoke(GetApmDomainInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApmDomainResult>("oci:Apm/getApmDomain:getApmDomain", args ?? new GetApmDomainInvokeArgs(), options.WithDefaults());
     }
 
 

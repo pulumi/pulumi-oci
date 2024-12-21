@@ -98,6 +98,50 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetImagesResult> Invoke(GetImagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagesResult>("oci:Core/getImages:getImages", args ?? new GetImagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists a subset of images available in the specified compartment, including
+        /// [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
+        /// [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+        /// The list of platform images includes the three most recently published versions
+        /// of each major distribution. The list does not support filtering based on image tags.
+        /// 
+        /// The list of images returned is ordered to first show the recent platform images,
+        /// then all of the custom images.
+        /// 
+        /// **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
+        /// The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImages = Oci.Core.GetImages.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = imageDisplayName,
+        ///         OperatingSystem = imageOperatingSystem,
+        ///         OperatingSystemVersion = imageOperatingSystemVersion,
+        ///         Shape = imageShape,
+        ///         State = imageState,
+        ///         SortBy = imageSortBy,
+        ///         SortOrder = imageSortOrder,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetImagesResult> Invoke(GetImagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetImagesResult>("oci:Core/getImages:getImages", args ?? new GetImagesInvokeArgs(), options.WithDefaults());
     }
 
 

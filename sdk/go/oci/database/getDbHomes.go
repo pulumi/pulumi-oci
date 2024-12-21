@@ -66,21 +66,11 @@ type GetDbHomesResult struct {
 }
 
 func GetDbHomesOutput(ctx *pulumi.Context, args GetDbHomesOutputArgs, opts ...pulumi.InvokeOption) GetDbHomesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDbHomesResultOutput, error) {
 			args := v.(GetDbHomesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDbHomesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getDbHomes:getDbHomes", args, &rv, "", opts...)
-			if err != nil {
-				return GetDbHomesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDbHomesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDbHomesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getDbHomes:getDbHomes", args, GetDbHomesResultOutput{}, options).(GetDbHomesResultOutput), nil
 		}).(GetDbHomesResultOutput)
 }
 

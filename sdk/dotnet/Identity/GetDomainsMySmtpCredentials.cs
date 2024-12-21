@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMySmtpCredentialsResult> Invoke(GetDomainsMySmtpCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMySmtpCredentialsResult>("oci:Identity/getDomainsMySmtpCredentials:getDomainsMySmtpCredentials", args ?? new GetDomainsMySmtpCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Smtp Credentials in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's own SMTP credential.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMySmtpCredentials = Oci.Identity.GetDomainsMySmtpCredentials.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySmtpCredentialCount = mySmtpCredentialMySmtpCredentialCount,
+        ///         MySmtpCredentialFilter = mySmtpCredentialMySmtpCredentialFilter,
+        ///         Authorization = mySmtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = mySmtpCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = mySmtpCredentialStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMySmtpCredentialsResult> Invoke(GetDomainsMySmtpCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMySmtpCredentialsResult>("oci:Identity/getDomainsMySmtpCredentials:getDomainsMySmtpCredentials", args ?? new GetDomainsMySmtpCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -90,21 +90,11 @@ type LookupVirtualServiceRouteTableResult struct {
 }
 
 func LookupVirtualServiceRouteTableOutput(ctx *pulumi.Context, args LookupVirtualServiceRouteTableOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualServiceRouteTableResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupVirtualServiceRouteTableResultOutput, error) {
 			args := v.(LookupVirtualServiceRouteTableArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupVirtualServiceRouteTableResult
-			secret, err := ctx.InvokePackageRaw("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args, &rv, "", opts...)
-			if err != nil {
-				return LookupVirtualServiceRouteTableResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupVirtualServiceRouteTableResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupVirtualServiceRouteTableResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args, LookupVirtualServiceRouteTableResultOutput{}, options).(LookupVirtualServiceRouteTableResultOutput), nil
 		}).(LookupVirtualServiceRouteTableResultOutput)
 }
 

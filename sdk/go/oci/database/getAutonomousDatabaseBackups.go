@@ -89,21 +89,11 @@ type GetAutonomousDatabaseBackupsResult struct {
 }
 
 func GetAutonomousDatabaseBackupsOutput(ctx *pulumi.Context, args GetAutonomousDatabaseBackupsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseBackupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousDatabaseBackupsResultOutput, error) {
 			args := v.(GetAutonomousDatabaseBackupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousDatabaseBackupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousDatabaseBackupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousDatabaseBackupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousDatabaseBackupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", args, GetAutonomousDatabaseBackupsResultOutput{}, options).(GetAutonomousDatabaseBackupsResultOutput), nil
 		}).(GetAutonomousDatabaseBackupsResultOutput)
 }
 

@@ -92,21 +92,11 @@ type LookupSessionResult struct {
 }
 
 func LookupSessionOutput(ctx *pulumi.Context, args LookupSessionOutputArgs, opts ...pulumi.InvokeOption) LookupSessionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSessionResultOutput, error) {
 			args := v.(LookupSessionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSessionResult
-			secret, err := ctx.InvokePackageRaw("oci:Bastion/getSession:getSession", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSessionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSessionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSessionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Bastion/getSession:getSession", args, LookupSessionResultOutput{}, options).(LookupSessionResultOutput), nil
 		}).(LookupSessionResultOutput)
 }
 

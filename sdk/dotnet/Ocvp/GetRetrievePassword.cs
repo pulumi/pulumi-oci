@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetRetrievePasswordResult> Invoke(GetRetrievePasswordInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRetrievePasswordResult>("oci:Ocvp/getRetrievePassword:getRetrievePassword", args ?? new GetRetrievePasswordInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPassword = Oci.Ocvp.GetRetrievePassword.Invoke(new()
+        ///     {
+        ///         SddcId = compartmentId,
+        ///         Type = passwordType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRetrievePasswordResult> Invoke(GetRetrievePasswordInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRetrievePasswordResult>("oci:Ocvp/getRetrievePassword:getRetrievePassword", args ?? new GetRetrievePasswordInvokeArgs(), options.WithDefaults());
     }
 
 

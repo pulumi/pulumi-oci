@@ -69,21 +69,11 @@ type GetLicenseRecordsResult struct {
 }
 
 func GetLicenseRecordsOutput(ctx *pulumi.Context, args GetLicenseRecordsOutputArgs, opts ...pulumi.InvokeOption) GetLicenseRecordsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLicenseRecordsResultOutput, error) {
 			args := v.(GetLicenseRecordsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLicenseRecordsResult
-			secret, err := ctx.InvokePackageRaw("oci:LicenseManager/getLicenseRecords:getLicenseRecords", args, &rv, "", opts...)
-			if err != nil {
-				return GetLicenseRecordsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLicenseRecordsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLicenseRecordsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LicenseManager/getLicenseRecords:getLicenseRecords", args, GetLicenseRecordsResultOutput{}, options).(GetLicenseRecordsResultOutput), nil
 		}).(GetLicenseRecordsResultOutput)
 }
 

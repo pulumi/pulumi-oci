@@ -84,21 +84,11 @@ type GetHttpProbeResultsResult struct {
 }
 
 func GetHttpProbeResultsOutput(ctx *pulumi.Context, args GetHttpProbeResultsOutputArgs, opts ...pulumi.InvokeOption) GetHttpProbeResultsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetHttpProbeResultsResultOutput, error) {
 			args := v.(GetHttpProbeResultsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetHttpProbeResultsResult
-			secret, err := ctx.InvokePackageRaw("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", args, &rv, "", opts...)
-			if err != nil {
-				return GetHttpProbeResultsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetHttpProbeResultsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetHttpProbeResultsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", args, GetHttpProbeResultsResultOutput{}, options).(GetHttpProbeResultsResultOutput), nil
 		}).(GetHttpProbeResultsResultOutput)
 }
 

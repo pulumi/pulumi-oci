@@ -61,21 +61,11 @@ type GetComputedUsagesResult struct {
 }
 
 func GetComputedUsagesOutput(ctx *pulumi.Context, args GetComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetComputedUsagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetComputedUsagesResultOutput, error) {
 			args := v.(GetComputedUsagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetComputedUsagesResult
-			secret, err := ctx.InvokePackageRaw("oci:OsubUsage/getComputedUsages:getComputedUsages", args, &rv, "", opts...)
-			if err != nil {
-				return GetComputedUsagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetComputedUsagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetComputedUsagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsubUsage/getComputedUsages:getComputedUsages", args, GetComputedUsagesResultOutput{}, options).(GetComputedUsagesResultOutput), nil
 		}).(GetComputedUsagesResultOutput)
 }
 

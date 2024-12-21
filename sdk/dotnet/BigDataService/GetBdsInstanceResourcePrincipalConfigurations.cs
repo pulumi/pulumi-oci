@@ -68,6 +68,35 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstanceResourcePrincipalConfigurationsResult> Invoke(GetBdsInstanceResourcePrincipalConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResourcePrincipalConfigurationsResult>("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", args ?? new GetBdsInstanceResourcePrincipalConfigurationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Bds Instance Resource Principal Configurations in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns information about the ResourcePrincipalConfiguration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstanceResourcePrincipalConfigurations = Oci.BigDataService.GetBdsInstanceResourcePrincipalConfigurations.Invoke(new()
+        ///     {
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         DisplayName = bdsInstanceResourcePrincipalConfigurationDisplayName,
+        ///         State = bdsInstanceResourcePrincipalConfigurationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstanceResourcePrincipalConfigurationsResult> Invoke(GetBdsInstanceResourcePrincipalConfigurationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResourcePrincipalConfigurationsResult>("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", args ?? new GetBdsInstanceResourcePrincipalConfigurationsInvokeArgs(), options.WithDefaults());
     }
 
 

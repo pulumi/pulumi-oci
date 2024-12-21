@@ -92,21 +92,11 @@ type GetBaselineableMetricsEvaluateResult struct {
 }
 
 func GetBaselineableMetricsEvaluateOutput(ctx *pulumi.Context, args GetBaselineableMetricsEvaluateOutputArgs, opts ...pulumi.InvokeOption) GetBaselineableMetricsEvaluateResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBaselineableMetricsEvaluateResultOutput, error) {
 			args := v.(GetBaselineableMetricsEvaluateArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBaselineableMetricsEvaluateResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", args, &rv, "", opts...)
-			if err != nil {
-				return GetBaselineableMetricsEvaluateResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBaselineableMetricsEvaluateResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBaselineableMetricsEvaluateResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", args, GetBaselineableMetricsEvaluateResultOutput{}, options).(GetBaselineableMetricsEvaluateResultOutput), nil
 		}).(GetBaselineableMetricsEvaluateResultOutput)
 }
 

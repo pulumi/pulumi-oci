@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVirtualCircuitsResult> Invoke(GetVirtualCircuitsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitsResult>("oci:Core/getVirtualCircuits:getVirtualCircuits", args ?? new GetVirtualCircuitsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the virtual circuits in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualCircuits = Oci.Core.GetVirtualCircuits.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = virtualCircuitDisplayName,
+        ///         State = virtualCircuitState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualCircuitsResult> Invoke(GetVirtualCircuitsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitsResult>("oci:Core/getVirtualCircuits:getVirtualCircuits", args ?? new GetVirtualCircuitsInvokeArgs(), options.WithDefaults());
     }
 
 

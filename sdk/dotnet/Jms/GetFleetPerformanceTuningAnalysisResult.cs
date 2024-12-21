@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetPerformanceTuningAnalysisResultResult> Invoke(GetFleetPerformanceTuningAnalysisResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetPerformanceTuningAnalysisResultResult>("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", args ?? new GetFleetPerformanceTuningAnalysisResultInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Retrieve metadata of the Performance Tuning Analysis result.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetPerformanceTuningAnalysisResult = Oci.Jms.GetFleetPerformanceTuningAnalysisResult.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         PerformanceTuningAnalysisResultId = fleetPerformanceTuningAnalysisResultId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetPerformanceTuningAnalysisResultResult> Invoke(GetFleetPerformanceTuningAnalysisResultInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetPerformanceTuningAnalysisResultResult>("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", args ?? new GetFleetPerformanceTuningAnalysisResultInvokeArgs(), options.WithDefaults());
     }
 
 

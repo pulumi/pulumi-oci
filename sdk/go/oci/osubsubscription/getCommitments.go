@@ -80,21 +80,11 @@ type GetCommitmentsResult struct {
 }
 
 func GetCommitmentsOutput(ctx *pulumi.Context, args GetCommitmentsOutputArgs, opts ...pulumi.InvokeOption) GetCommitmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCommitmentsResultOutput, error) {
 			args := v.(GetCommitmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCommitmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:OsubSubscription/getCommitments:getCommitments", args, &rv, "", opts...)
-			if err != nil {
-				return GetCommitmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCommitmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCommitmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsubSubscription/getCommitments:getCommitments", args, GetCommitmentsResultOutput{}, options).(GetCommitmentsResultOutput), nil
 		}).(GetCommitmentsResultOutput)
 }
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.OsManagement
         /// </summary>
         public static Output<GetManagedInstancesResult> Invoke(GetManagedInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstancesResult>("oci:OsManagement/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
+        /// 
+        /// Returns a list of all Managed Instances.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstances = Oci.OsManagement.GetManagedInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = managedInstanceDisplayName,
+        ///         OsFamily = managedInstanceOsFamily,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstancesResult> Invoke(GetManagedInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstancesResult>("oci:OsManagement/getManagedInstances:getManagedInstances", args ?? new GetManagedInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

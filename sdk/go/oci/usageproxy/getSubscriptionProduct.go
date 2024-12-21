@@ -78,21 +78,11 @@ type GetSubscriptionProductResult struct {
 }
 
 func GetSubscriptionProductOutput(ctx *pulumi.Context, args GetSubscriptionProductOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionProductResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSubscriptionProductResultOutput, error) {
 			args := v.(GetSubscriptionProductArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSubscriptionProductResult
-			secret, err := ctx.InvokePackageRaw("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args, &rv, "", opts...)
-			if err != nil {
-				return GetSubscriptionProductResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSubscriptionProductResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSubscriptionProductResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args, GetSubscriptionProductResultOutput{}, options).(GetSubscriptionProductResultOutput), nil
 		}).(GetSubscriptionProductResultOutput)
 }
 

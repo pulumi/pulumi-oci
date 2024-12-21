@@ -99,21 +99,11 @@ type GetFleetJavaMigrationAnalysisResultResult struct {
 }
 
 func GetFleetJavaMigrationAnalysisResultOutput(ctx *pulumi.Context, args GetFleetJavaMigrationAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetJavaMigrationAnalysisResultResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFleetJavaMigrationAnalysisResultResultOutput, error) {
 			args := v.(GetFleetJavaMigrationAnalysisResultArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFleetJavaMigrationAnalysisResultResult
-			secret, err := ctx.InvokePackageRaw("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args, &rv, "", opts...)
-			if err != nil {
-				return GetFleetJavaMigrationAnalysisResultResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFleetJavaMigrationAnalysisResultResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFleetJavaMigrationAnalysisResultResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args, GetFleetJavaMigrationAnalysisResultResultOutput{}, options).(GetFleetJavaMigrationAnalysisResultResultOutput), nil
 		}).(GetFleetJavaMigrationAnalysisResultResultOutput)
 }
 

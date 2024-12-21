@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentDataSourceResult> Invoke(GetManagementAgentDataSourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentDataSourceResult>("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", args ?? new GetManagementAgentDataSourceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Get Datasource details for given Id and given Management Agent.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentDataSource = Oci.ManagementAgent.GetManagementAgentDataSource.Invoke(new()
+        ///     {
+        ///         DataSourceKey = managementAgentDataSourceDataSourceKey,
+        ///         ManagementAgentId = testManagementAgent.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentDataSourceResult> Invoke(GetManagementAgentDataSourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentDataSourceResult>("oci:ManagementAgent/getManagementAgentDataSource:getManagementAgentDataSource", args ?? new GetManagementAgentDataSourceInvokeArgs(), options.WithDefaults());
     }
 
 

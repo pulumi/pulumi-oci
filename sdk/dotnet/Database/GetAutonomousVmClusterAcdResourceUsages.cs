@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousVmClusterAcdResourceUsagesResult> Invoke(GetAutonomousVmClusterAcdResourceUsagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClusterAcdResourceUsagesResult>("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args ?? new GetAutonomousVmClusterAcdResourceUsagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousVmClusterAcdResourceUsages = Oci.Database.GetAutonomousVmClusterAcdResourceUsages.Invoke(new()
+        ///     {
+        ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousVmClusterAcdResourceUsagesResult> Invoke(GetAutonomousVmClusterAcdResourceUsagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousVmClusterAcdResourceUsagesResult>("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args ?? new GetAutonomousVmClusterAcdResourceUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

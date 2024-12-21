@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetTagStandardTagNamespaceTemplatesResult> Invoke(GetTagStandardTagNamespaceTemplatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTagStandardTagNamespaceTemplatesResult>("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", args ?? new GetTagStandardTagNamespaceTemplatesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists available standard tag namespaces that users can create.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTagStandardTagNamespaceTemplates = Oci.Identity.GetTagStandardTagNamespaceTemplates.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTagStandardTagNamespaceTemplatesResult> Invoke(GetTagStandardTagNamespaceTemplatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagStandardTagNamespaceTemplatesResult>("oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates", args ?? new GetTagStandardTagNamespaceTemplatesInvokeArgs(), options.WithDefaults());
     }
 
 

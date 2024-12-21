@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> Invoke(GetComputeCapacityTopologyComputeHpcIslandsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeHpcIslandsResult>("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args ?? new GetComputeCapacityTopologyComputeHpcIslandsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists compute HPC islands in the specified compute capacity topology.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityTopologyComputeHpcIslands = Oci.Core.GetComputeCapacityTopologyComputeHpcIslands.Invoke(new()
+        ///     {
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> Invoke(GetComputeCapacityTopologyComputeHpcIslandsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeHpcIslandsResult>("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args ?? new GetComputeCapacityTopologyComputeHpcIslandsInvokeArgs(), options.WithDefaults());
     }
 
 

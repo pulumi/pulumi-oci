@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public static Output<GetDrProtectionGroupResult> Invoke(GetDrProtectionGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrProtectionGroupResult>("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", args ?? new GetDrProtectionGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
+        /// 
+        /// Get the DR protection group identified by *drProtectionGroupId*.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrProtectionGroup = Oci.DisasterRecovery.GetDrProtectionGroup.Invoke(new()
+        ///     {
+        ///         DrProtectionGroupId = testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrProtectionGroupResult> Invoke(GetDrProtectionGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrProtectionGroupResult>("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", args ?? new GetDrProtectionGroupInvokeArgs(), options.WithDefaults());
     }
 
 

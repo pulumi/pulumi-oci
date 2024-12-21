@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalAsmDiskGroupsResult> Invoke(GetExternalAsmDiskGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmDiskGroupsResult>("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args ?? new GetExternalAsmDiskGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalAsmDiskGroups = Oci.DatabaseManagement.GetExternalAsmDiskGroups.Invoke(new()
+        ///     {
+        ///         ExternalAsmId = testExternalAsm.Id,
+        ///         OpcNamedCredentialId = externalAsmDiskGroupOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalAsmDiskGroupsResult> Invoke(GetExternalAsmDiskGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmDiskGroupsResult>("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args ?? new GetExternalAsmDiskGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

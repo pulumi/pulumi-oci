@@ -86,6 +86,44 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetUserGroupMembershipsResult> Invoke(GetUserGroupMembershipsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
+        /// as the value for the compartment ID
+        /// (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five)).
+        /// You must also then filter the list in one of these ways:
+        /// 
+        /// - You can limit the results to just the memberships for a given user by specifying a `userId`.
+        /// - Similarly, you can limit the results to just the memberships for a given group by specifying a `groupId`.
+        /// - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
+        /// If the answer is no, the response is an empty list.
+        /// - Although`userId` and `groupId` are not individually required, you must set one of them.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserGroupMemberships = Oci.Identity.GetUserGroupMemberships.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         GroupId = testGroup.Id,
+        ///         UserId = testUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserGroupMembershipsResult> Invoke(GetUserGroupMembershipsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupMembershipsResult>("oci:Identity/getUserGroupMemberships:getUserGroupMemberships", args ?? new GetUserGroupMembershipsInvokeArgs(), options.WithDefaults());
     }
 
 

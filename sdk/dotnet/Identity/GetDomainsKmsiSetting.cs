@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsKmsiSettingResult> Invoke(GetDomainsKmsiSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsKmsiSettingResult>("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", args ?? new GetDomainsKmsiSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get KmsiSettings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKmsiSetting = Oci.Identity.GetDomainsKmsiSetting.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         KmsiSettingId = testKmsiSettingOciIdentityDomainsKmsiSetting.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = kmsiSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = kmsiSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsKmsiSettingResult> Invoke(GetDomainsKmsiSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsKmsiSettingResult>("oci:Identity/getDomainsKmsiSetting:getDomainsKmsiSetting", args ?? new GetDomainsKmsiSettingInvokeArgs(), options.WithDefaults());
     }
 
 

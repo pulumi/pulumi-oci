@@ -106,6 +106,54 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetCompartmentsResult> Invoke(GetCompartmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCompartmentsResult>("oci:Identity/getCompartments:getCompartments", args ?? new GetCompartmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compartments in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the compartments in a specified compartment. The members of the list
+        /// returned depends on the values set for several parameters.
+        /// 
+        /// With the exception of the tenancy (root compartment), the ListCompartments operation
+        /// returns only the first-level child compartments in the parent compartment specified in
+        /// `compartmentId`. The list does not include any subcompartments of the child
+        /// compartments (grandchildren).
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (the resource can be in a subcompartment).
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies only when you perform ListCompartments on the
+        /// tenancy (root compartment). When set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
+        /// 
+        /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCompartments = Oci.Identity.GetCompartments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = compartmentAccessLevel,
+        ///         CompartmentIdInSubtree = compartmentCompartmentIdInSubtree,
+        ///         Name = compartmentName,
+        ///         State = compartmentState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCompartmentsResult> Invoke(GetCompartmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompartmentsResult>("oci:Identity/getCompartments:getCompartments", args ?? new GetCompartmentsInvokeArgs(), options.WithDefaults());
     }
 
 

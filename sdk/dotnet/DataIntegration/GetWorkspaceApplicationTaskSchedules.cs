@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceApplicationTaskSchedulesResult> Invoke(GetWorkspaceApplicationTaskSchedulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationTaskSchedulesResult>("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", args ?? new GetWorkspaceApplicationTaskSchedulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// This endpoint can be used to get the list of all the TaskSchedule objects.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceApplicationTaskSchedules = Oci.DataIntegration.GetWorkspaceApplicationTaskSchedules.Invoke(new()
+        ///     {
+        ///         ApplicationKey = workspaceApplicationTaskScheduleApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Identifiers = workspaceApplicationTaskScheduleIdentifier,
+        ///         IsEnabled = workspaceApplicationTaskScheduleIsEnabled,
+        ///         Keys = workspaceApplicationTaskScheduleKey,
+        ///         Name = workspaceApplicationTaskScheduleName,
+        ///         Types = workspaceApplicationTaskScheduleType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceApplicationTaskSchedulesResult> Invoke(GetWorkspaceApplicationTaskSchedulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationTaskSchedulesResult>("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", args ?? new GetWorkspaceApplicationTaskSchedulesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public static Output<GetMonitoredResourceTaskResult> Invoke(GetMonitoredResourceTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceTaskResult>("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", args ?? new GetMonitoredResourceTaskInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        /// 
+        /// Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMonitoredResourceTask = Oci.StackMonitoring.GetMonitoredResourceTask.Invoke(new()
+        ///     {
+        ///         MonitoredResourceTaskId = testMonitoredResourceTaskOciStackMonitoringMonitoredResourceTask.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMonitoredResourceTaskResult> Invoke(GetMonitoredResourceTaskInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceTaskResult>("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", args ?? new GetMonitoredResourceTaskInvokeArgs(), options.WithDefaults());
     }
 
 

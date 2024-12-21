@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceScheduledTaskResult> Invoke(GetNamespaceScheduledTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceScheduledTaskResult>("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", args ?? new GetNamespaceScheduledTaskInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Get the scheduled task for the specified task identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceScheduledTask = Oci.LogAnalytics.GetNamespaceScheduledTask.Invoke(new()
+        ///     {
+        ///         Namespace = namespaceScheduledTaskNamespace,
+        ///         ScheduledTaskId = testScheduledTask.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceScheduledTaskResult> Invoke(GetNamespaceScheduledTaskInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceScheduledTaskResult>("oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask", args ?? new GetNamespaceScheduledTaskInvokeArgs(), options.WithDefaults());
     }
 
 

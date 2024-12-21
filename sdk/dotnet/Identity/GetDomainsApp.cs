@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAppResult> Invoke(GetDomainsAppInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAppResult>("oci:Identity/getDomainsApp:getDomainsApp", args ?? new GetDomainsAppInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific App resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get an App
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApp = Oci.Identity.GetDomainsApp.Invoke(new()
+        ///     {
+        ///         AppId = testAppOciIdentityDomainsApp.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = appAuthorization,
+        ///         ResourceTypeSchemaVersion = appResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAppResult> Invoke(GetDomainsAppInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAppResult>("oci:Identity/getDomainsApp:getDomainsApp", args ?? new GetDomainsAppInvokeArgs(), options.WithDefaults());
     }
 
 

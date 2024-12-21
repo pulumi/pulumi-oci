@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsRulesResult> Invoke(GetDomainsRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsRulesResult>("oci:Identity/getDomainsRules:getDomainsRules", args ?? new GetDomainsRulesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Rules.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRules = Oci.Identity.GetDomainsRules.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         RuleCount = ruleRuleCount,
+        ///         RuleFilter = ruleRuleFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = ruleAuthorization,
+        ///         ResourceTypeSchemaVersion = ruleResourceTypeSchemaVersion,
+        ///         StartIndex = ruleStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsRulesResult> Invoke(GetDomainsRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsRulesResult>("oci:Identity/getDomainsRules:getDomainsRules", args ?? new GetDomainsRulesInvokeArgs(), options.WithDefaults());
     }
 
 

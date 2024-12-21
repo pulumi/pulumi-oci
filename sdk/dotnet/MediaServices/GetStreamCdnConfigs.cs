@@ -68,6 +68,35 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetStreamCdnConfigsResult> Invoke(GetStreamCdnConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamCdnConfigsResult>("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", args ?? new GetStreamCdnConfigsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Lists the StreamCdnConfig.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStreamCdnConfigs = Oci.MediaServices.GetStreamCdnConfigs.Invoke(new()
+        ///     {
+        ///         DistributionChannelId = testChannel.Id,
+        ///         DisplayName = streamCdnConfigDisplayName,
+        ///         Id = streamCdnConfigId,
+        ///         State = streamCdnConfigState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStreamCdnConfigsResult> Invoke(GetStreamCdnConfigsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamCdnConfigsResult>("oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs", args ?? new GetStreamCdnConfigsInvokeArgs(), options.WithDefaults());
     }
 
 

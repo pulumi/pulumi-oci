@@ -74,6 +74,38 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstanceMetastoreConfigsResult> Invoke(GetBdsInstanceMetastoreConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceMetastoreConfigsResult>("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", args ?? new GetBdsInstanceMetastoreConfigsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Bds Instance Metastore Configs in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns a list of metastore configurations ssociated with this Big Data Service cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstanceMetastoreConfigs = Oci.BigDataService.GetBdsInstanceMetastoreConfigs.Invoke(new()
+        ///     {
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         BdsApiKeyId = testApiKey.Id,
+        ///         DisplayName = bdsInstanceMetastoreConfigDisplayName,
+        ///         MetastoreId = testMetastore.Id,
+        ///         MetastoreType = bdsInstanceMetastoreConfigMetastoreType,
+        ///         State = bdsInstanceMetastoreConfigState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstanceMetastoreConfigsResult> Invoke(GetBdsInstanceMetastoreConfigsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceMetastoreConfigsResult>("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", args ?? new GetBdsInstanceMetastoreConfigsInvokeArgs(), options.WithDefaults());
     }
 
 

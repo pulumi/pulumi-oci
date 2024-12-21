@@ -78,6 +78,40 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseAlertLogCountResult> Invoke(GetManagedDatabaseAlertLogCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Get the counts of alert logs for the specified Managed Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseAlertLogCount = Oci.DatabaseManagement.GetManagedDatabaseAlertLogCount.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         GroupBy = managedDatabaseAlertLogCountGroupBy,
+        ///         IsRegularExpression = managedDatabaseAlertLogCountIsRegularExpression,
+        ///         LevelFilter = managedDatabaseAlertLogCountLevelFilter,
+        ///         LogSearchText = managedDatabaseAlertLogCountLogSearchText,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseAlertLogCountTimeLessThanOrEqualTo,
+        ///         TypeFilter = managedDatabaseAlertLogCountTypeFilter,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseAlertLogCountResult> Invoke(GetManagedDatabaseAlertLogCountInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountInvokeArgs(), options.WithDefaults());
     }
 
 

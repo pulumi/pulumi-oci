@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetRecommendationsResult> Invoke(GetRecommendationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationsResult>("oci:Optimizer/getRecommendations:getRecommendations", args ?? new GetRecommendationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the Cloud Advisor recommendations that are currently supported.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = recommendationCompartmentIdInSubtree,
+        ///         CategoryId = testCategory.Id,
+        ///         CategoryName = testCategory.Name,
+        ///         ChildTenancyIds = recommendationChildTenancyIds,
+        ///         IncludeOrganization = recommendationIncludeOrganization,
+        ///         Name = recommendationName,
+        ///         State = recommendationState,
+        ///         Status = recommendationStatus,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRecommendationsResult> Invoke(GetRecommendationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationsResult>("oci:Optimizer/getRecommendations:getRecommendations", args ?? new GetRecommendationsInvokeArgs(), options.WithDefaults());
     }
 
 

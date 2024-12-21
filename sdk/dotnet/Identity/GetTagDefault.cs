@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetTagDefaultResult> Invoke(GetTagDefaultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTagDefaultResult>("oci:Identity/getTagDefault:getTagDefault", args ?? new GetTagDefaultInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Retrieves the specified tag default.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTagDefault = Oci.Identity.GetTagDefault.Invoke(new()
+        ///     {
+        ///         TagDefaultId = testTagDefaultOciIdentityTagDefault.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTagDefaultResult> Invoke(GetTagDefaultInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagDefaultResult>("oci:Identity/getTagDefault:getTagDefault", args ?? new GetTagDefaultInvokeArgs(), options.WithDefaults());
     }
 
 

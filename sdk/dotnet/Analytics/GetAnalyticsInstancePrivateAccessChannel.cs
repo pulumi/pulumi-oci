@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public static Output<GetAnalyticsInstancePrivateAccessChannelResult> Invoke(GetAnalyticsInstancePrivateAccessChannelInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstancePrivateAccessChannelResult>("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args ?? new GetAnalyticsInstancePrivateAccessChannelInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
+        /// 
+        /// Retrieve private access channel in the specified Analytics Instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAnalyticsInstancePrivateAccessChannel = Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.Invoke(new()
+        ///     {
+        ///         AnalyticsInstanceId = testAnalyticsInstance.Id,
+        ///         PrivateAccessChannelKey = analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAnalyticsInstancePrivateAccessChannelResult> Invoke(GetAnalyticsInstancePrivateAccessChannelInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstancePrivateAccessChannelResult>("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args ?? new GetAnalyticsInstancePrivateAccessChannelInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         public static Output<GetProtocolsResult> Invoke(GetProtocolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtocolsResult>("oci:LoadBalancer/getProtocols:getProtocols", args ?? new GetProtocolsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
+        /// 
+        /// Lists all supported traffic protocols.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLoadBalancerProtocols = Oci.LoadBalancer.GetProtocols.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtocolsResult> Invoke(GetProtocolsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtocolsResult>("oci:LoadBalancer/getProtocols:getProtocols", args ?? new GetProtocolsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -24,6 +24,8 @@ import * as utilities from "../utilities";
  *     patchingConfig: {
  *         patchingConfigStrategy: bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
  *         batchSize: bdsInstancePatchActionPatchingConfigBatchSize,
+ *         toleranceThresholdPerBatch: bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch,
+ *         toleranceThresholdPerDomain: bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain,
  *         waitTimeBetweenBatchInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
  *         waitTimeBetweenDomainInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
  *     },

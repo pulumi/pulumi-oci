@@ -72,21 +72,11 @@ type GetRepositoryObjectContentResult struct {
 }
 
 func GetRepositoryObjectContentOutput(ctx *pulumi.Context, args GetRepositoryObjectContentOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryObjectContentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRepositoryObjectContentResultOutput, error) {
 			args := v.(GetRepositoryObjectContentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRepositoryObjectContentResult
-			secret, err := ctx.InvokePackageRaw("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args, &rv, "", opts...)
-			if err != nil {
-				return GetRepositoryObjectContentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRepositoryObjectContentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRepositoryObjectContentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args, GetRepositoryObjectContentResultOutput{}, options).(GetRepositoryObjectContentResultOutput), nil
 		}).(GetRepositoryObjectContentResultOutput)
 }
 

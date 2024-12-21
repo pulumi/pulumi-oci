@@ -77,21 +77,11 @@ type GetSchedulerDefinitionScheduledFleetsResult struct {
 }
 
 func GetSchedulerDefinitionScheduledFleetsOutput(ctx *pulumi.Context, args GetSchedulerDefinitionScheduledFleetsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerDefinitionScheduledFleetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSchedulerDefinitionScheduledFleetsResultOutput, error) {
 			args := v.(GetSchedulerDefinitionScheduledFleetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSchedulerDefinitionScheduledFleetsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", args, &rv, "", opts...)
-			if err != nil {
-				return GetSchedulerDefinitionScheduledFleetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSchedulerDefinitionScheduledFleetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSchedulerDefinitionScheduledFleetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", args, GetSchedulerDefinitionScheduledFleetsResultOutput{}, options).(GetSchedulerDefinitionScheduledFleetsResultOutput), nil
 		}).(GetSchedulerDefinitionScheduledFleetsResultOutput)
 }
 

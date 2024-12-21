@@ -23,11 +23,14 @@ class BdsInstanceApiKeyArgs:
                  key_alias: pulumi.Input[str],
                  passphrase: pulumi.Input[str],
                  user_id: pulumi.Input[str],
-                 default_region: Optional[pulumi.Input[str]] = None):
+                 default_region: Optional[pulumi.Input[str]] = None,
+                 domain_ocid: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BdsInstanceApiKey resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+               <<<<<<< ours
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+               >>>>>>> theirs
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
         :param pulumi.Input[str] user_id: The OCID of the user for whom this new generated API key pair will be created.
                
@@ -35,6 +38,7 @@ class BdsInstanceApiKeyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] domain_ocid: Identity domain OCID , where user is present. For default domain , this field will be optional.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "key_alias", key_alias)
@@ -42,12 +46,15 @@ class BdsInstanceApiKeyArgs:
         pulumi.set(__self__, "user_id", user_id)
         if default_region is not None:
             pulumi.set(__self__, "default_region", default_region)
+        if domain_ocid is not None:
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Input[str]:
         """
         The OCID of the cluster.
+        <<<<<<< ours
         """
         return pulumi.get(self, "bds_instance_id")
 
@@ -60,6 +67,7 @@ class BdsInstanceApiKeyArgs:
     def key_alias(self) -> pulumi.Input[str]:
         """
         User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "key_alias")
 
@@ -107,12 +115,25 @@ class BdsInstanceApiKeyArgs:
     def default_region(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "default_region", value)
 
+    @property
+    @pulumi.getter(name="domainOcid")
+    def domain_ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Identity domain OCID , where user is present. For default domain , this field will be optional.
+        """
+        return pulumi.get(self, "domain_ocid")
+
+    @domain_ocid.setter
+    def domain_ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_ocid", value)
+
 
 @pulumi.input_type
 class _BdsInstanceApiKeyState:
     def __init__(__self__, *,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  default_region: Optional[pulumi.Input[str]] = None,
+                 domain_ocid: Optional[pulumi.Input[str]] = None,
                  fingerprint: Optional[pulumi.Input[str]] = None,
                  key_alias: Optional[pulumi.Input[str]] = None,
                  passphrase: Optional[pulumi.Input[str]] = None,
@@ -124,9 +145,12 @@ class _BdsInstanceApiKeyState:
         """
         Input properties used for looking up and filtering BdsInstanceApiKey resources.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+               <<<<<<< ours
         :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] domain_ocid: Identity domain OCID , where user is present. For default domain , this field will be optional.
         :param pulumi.Input[str] fingerprint: The fingerprint that corresponds to the public API key requested.
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+               >>>>>>> theirs
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
         :param pulumi.Input[str] pemfilepath: The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
         :param pulumi.Input[str] state: The current status of the API key.
@@ -142,6 +166,8 @@ class _BdsInstanceApiKeyState:
             pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         if default_region is not None:
             pulumi.set(__self__, "default_region", default_region)
+        if domain_ocid is not None:
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
         if fingerprint is not None:
             pulumi.set(__self__, "fingerprint", fingerprint)
         if key_alias is not None:
@@ -164,6 +190,7 @@ class _BdsInstanceApiKeyState:
     def bds_instance_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the cluster.
+        <<<<<<< ours
         """
         return pulumi.get(self, "bds_instance_id")
 
@@ -184,6 +211,18 @@ class _BdsInstanceApiKeyState:
         pulumi.set(self, "default_region", value)
 
     @property
+    @pulumi.getter(name="domainOcid")
+    def domain_ocid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Identity domain OCID , where user is present. For default domain , this field will be optional.
+        """
+        return pulumi.get(self, "domain_ocid")
+
+    @domain_ocid.setter
+    def domain_ocid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_ocid", value)
+
+    @property
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[str]]:
         """
@@ -200,6 +239,7 @@ class _BdsInstanceApiKeyState:
     def key_alias(self) -> Optional[pulumi.Input[str]]:
         """
         User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "key_alias")
 
@@ -291,6 +331,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  default_region: Optional[pulumi.Input[str]] = None,
+                 domain_ocid: Optional[pulumi.Input[str]] = None,
                  key_alias: Optional[pulumi.Input[str]] = None,
                  passphrase: Optional[pulumi.Input[str]] = None,
                  user_id: Optional[pulumi.Input[str]] = None,
@@ -311,7 +352,8 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             key_alias=bds_instance_api_key_key_alias,
             passphrase=bds_instance_api_key_passphrase,
             user_id=test_user["id"],
-            default_region=bds_instance_api_key_default_region)
+            default_region=bds_instance_api_key_default_region,
+            domain_ocid=bds_instance_api_key_domain_ocid)
         ```
 
         ## Import
@@ -325,8 +367,11 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+               <<<<<<< ours
         :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] domain_ocid: Identity domain OCID , where user is present. For default domain , this field will be optional.
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+               >>>>>>> theirs
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
         :param pulumi.Input[str] user_id: The OCID of the user for whom this new generated API key pair will be created.
                
@@ -356,7 +401,8 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             key_alias=bds_instance_api_key_key_alias,
             passphrase=bds_instance_api_key_passphrase,
             user_id=test_user["id"],
-            default_region=bds_instance_api_key_default_region)
+            default_region=bds_instance_api_key_default_region,
+            domain_ocid=bds_instance_api_key_domain_ocid)
         ```
 
         ## Import
@@ -384,6 +430,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  default_region: Optional[pulumi.Input[str]] = None,
+                 domain_ocid: Optional[pulumi.Input[str]] = None,
                  key_alias: Optional[pulumi.Input[str]] = None,
                  passphrase: Optional[pulumi.Input[str]] = None,
                  user_id: Optional[pulumi.Input[str]] = None,
@@ -400,6 +447,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
                 raise TypeError("Missing required property 'bds_instance_id'")
             __props__.__dict__["bds_instance_id"] = bds_instance_id
             __props__.__dict__["default_region"] = default_region
+            __props__.__dict__["domain_ocid"] = domain_ocid
             if key_alias is None and not opts.urn:
                 raise TypeError("Missing required property 'key_alias'")
             __props__.__dict__["key_alias"] = key_alias
@@ -428,6 +476,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             bds_instance_id: Optional[pulumi.Input[str]] = None,
             default_region: Optional[pulumi.Input[str]] = None,
+            domain_ocid: Optional[pulumi.Input[str]] = None,
             fingerprint: Optional[pulumi.Input[str]] = None,
             key_alias: Optional[pulumi.Input[str]] = None,
             passphrase: Optional[pulumi.Input[str]] = None,
@@ -444,9 +493,12 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
+               <<<<<<< ours
         :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
+        :param pulumi.Input[str] domain_ocid: Identity domain OCID , where user is present. For default domain , this field will be optional.
         :param pulumi.Input[str] fingerprint: The fingerprint that corresponds to the public API key requested.
         :param pulumi.Input[str] key_alias: User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+               >>>>>>> theirs
         :param pulumi.Input[str] passphrase: Base64 passphrase used to secure the private key which will be created on user behalf.
         :param pulumi.Input[str] pemfilepath: The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
         :param pulumi.Input[str] state: The current status of the API key.
@@ -464,6 +516,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
 
         __props__.__dict__["bds_instance_id"] = bds_instance_id
         __props__.__dict__["default_region"] = default_region
+        __props__.__dict__["domain_ocid"] = domain_ocid
         __props__.__dict__["fingerprint"] = fingerprint
         __props__.__dict__["key_alias"] = key_alias
         __props__.__dict__["passphrase"] = passphrase
@@ -479,6 +532,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     def bds_instance_id(self) -> pulumi.Output[str]:
         """
         The OCID of the cluster.
+        <<<<<<< ours
         """
         return pulumi.get(self, "bds_instance_id")
 
@@ -489,6 +543,14 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
         """
         return pulumi.get(self, "default_region")
+
+    @property
+    @pulumi.getter(name="domainOcid")
+    def domain_ocid(self) -> pulumi.Output[str]:
+        """
+        Identity domain OCID , where user is present. For default domain , this field will be optional.
+        """
+        return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
@@ -503,6 +565,7 @@ class BdsInstanceApiKey(pulumi.CustomResource):
     def key_alias(self) -> pulumi.Output[str]:
         """
         User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "key_alias")
 

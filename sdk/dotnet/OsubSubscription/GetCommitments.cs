@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsubSubscription
         /// </summary>
         public static Output<GetCommitmentsResult> Invoke(GetCommitmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentsResult>("oci:OsubSubscription/getCommitments:getCommitments", args ?? new GetCommitmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
+        /// 
+        /// This list API returns all commitments for a particular Subscribed Service
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCommitments = Oci.OsubSubscription.GetCommitments.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         SubscribedServiceId = testService.Id,
+        ///         XOneGatewaySubscriptionId = commitmentXOneGatewaySubscriptionId,
+        ///         XOneOriginRegion = commitmentXOneOriginRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCommitmentsResult> Invoke(GetCommitmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCommitmentsResult>("oci:OsubSubscription/getCommitments:getCommitments", args ?? new GetCommitmentsInvokeArgs(), options.WithDefaults());
     }
 
 

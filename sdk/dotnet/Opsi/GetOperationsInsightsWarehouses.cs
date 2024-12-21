@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetOperationsInsightsWarehousesResult> Invoke(GetOperationsInsightsWarehousesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehousesResult>("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", args ?? new GetOperationsInsightsWarehousesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
+        /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperationsInsightsWarehouses = Oci.Opsi.GetOperationsInsightsWarehouses.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = operationsInsightsWarehouseDisplayName,
+        ///         Id = operationsInsightsWarehouseId,
+        ///         States = operationsInsightsWarehouseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOperationsInsightsWarehousesResult> Invoke(GetOperationsInsightsWarehousesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehousesResult>("oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses", args ?? new GetOperationsInsightsWarehousesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -14,6 +14,72 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates an Exadata VM cluster on Exascale Infrastructure
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExadbVmCluster = new Oci.Database.ExadbVmCluster("test_exadb_vm_cluster", new()
+    ///     {
+    ///         AvailabilityDomain = exadbVmClusterAvailabilityDomain,
+    ///         BackupSubnetId = testSubnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = exadbVmClusterDisplayName,
+    ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
+    ///         GridImageId = testImage.Id,
+    ///         Hostname = exadbVmClusterHostname,
+    ///         Shape = exadbVmClusterShape,
+    ///         NodeConfig = new Oci.Database.Inputs.ExadbVmClusterNodeConfigArgs
+    ///         {
+    ///             EnabledEcpuCountPerNode = exadbVmClusterEnabledEcpuCountPerNode,
+    ///             TotalEcpuCountPerNode = exadbVmClusterTotalEcpuCountPerNode,
+    ///             VmFileSystemStorageSizeGbsPerNode = exadbVmClusterVmFileSystemStorageSizeInGbsPerNode,
+    ///         },
+    ///         NodeResources = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.ExadbVmClusterNodeResourceArgs
+    ///             {
+    ///                 NodeName = "node1",
+    ///             },
+    ///             new Oci.Database.Inputs.ExadbVmClusterNodeResourceArgs
+    ///             {
+    ///                 NodeName = "node2",
+    ///             },
+    ///         },
+    ///         SshPublicKeys = exadbVmClusterSshPublicKeys,
+    ///         SubnetId = testSubnet.Id,
+    ///         BackupNetworkNsgIds = exadbVmClusterBackupNetworkNsgIds,
+    ///         ClusterName = exadbVmClusterClusterName,
+    ///         DataCollectionOptions = new Oci.Database.Inputs.ExadbVmClusterDataCollectionOptionsArgs
+    ///         {
+    ///             IsDiagnosticsEventsEnabled = exadbVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
+    ///             IsHealthMonitoringEnabled = exadbVmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
+    ///             IsIncidentLogsEnabled = exadbVmClusterDataCollectionOptionsIsIncidentLogsEnabled,
+    ///         },
+    ///         DefinedTags = exadbVmClusterDefinedTags,
+    ///         Domain = exadbVmClusterDomain,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LicenseModel = exadbVmClusterLicenseModel,
+    ///         NsgIds = exadbVmClusterNsgIds,
+    ///         PrivateZoneId = testZone.Id,
+    ///         ScanListenerPortTcp = exadbVmClusterScanListenerPortTcp,
+    ///         ScanListenerPortTcpSsl = exadbVmClusterScanListenerPortTcpSsl,
+    ///         SecurityAttributes = exadbVmClusterSecurityAttributes,
+    ///         SystemVersion = exadbVmClusterSystemVersion,
+    ///         TimeZone = exadbVmClusterTimeZone,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ExadbVmClusters can be imported using the `id`, e.g.

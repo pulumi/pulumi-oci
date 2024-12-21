@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstancePoolsResult> Invoke(GetInstancePoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstancePoolsResult>("oci:Core/getInstancePools:getInstancePools", args ?? new GetInstancePoolsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Instance Pools in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the instance pools in the specified compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstancePools = Oci.Core.GetInstancePools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = instancePoolDisplayName,
+        ///         State = instancePoolState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstancePoolsResult> Invoke(GetInstancePoolsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstancePoolsResult>("oci:Core/getInstancePools:getInstancePools", args ?? new GetInstancePoolsInvokeArgs(), options.WithDefaults());
     }
 
 

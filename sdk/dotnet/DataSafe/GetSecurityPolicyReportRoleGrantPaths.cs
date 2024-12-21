@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyReportRoleGrantPathsResult> Invoke(GetSecurityPolicyReportRoleGrantPathsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportRoleGrantPathsResult>("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args ?? new GetSecurityPolicyReportRoleGrantPathsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Policy Report Role Grant Paths in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Retrieves a list of all role grant paths for a particular user.
+        /// 
+        /// The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyReportRoleGrantPaths = Oci.DataSafe.GetSecurityPolicyReportRoleGrantPaths.Invoke(new()
+        ///     {
+        ///         GrantedRole = securityPolicyReportRoleGrantPathGrantedRole,
+        ///         Grantee = securityPolicyReportRoleGrantPathGrantee,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyReportRoleGrantPathsResult> Invoke(GetSecurityPolicyReportRoleGrantPathsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportRoleGrantPathsResult>("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args ?? new GetSecurityPolicyReportRoleGrantPathsInvokeArgs(), options.WithDefaults());
     }
 
 

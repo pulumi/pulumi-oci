@@ -102,21 +102,11 @@ type LookupResourceActionResult struct {
 }
 
 func LookupResourceActionOutput(ctx *pulumi.Context, args LookupResourceActionOutputArgs, opts ...pulumi.InvokeOption) LookupResourceActionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupResourceActionResultOutput, error) {
 			args := v.(LookupResourceActionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupResourceActionResult
-			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getResourceAction:getResourceAction", args, &rv, "", opts...)
-			if err != nil {
-				return LookupResourceActionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupResourceActionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupResourceActionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Optimizer/getResourceAction:getResourceAction", args, LookupResourceActionResultOutput{}, options).(LookupResourceActionResultOutput), nil
 		}).(LookupResourceActionResultOutput)
 }
 

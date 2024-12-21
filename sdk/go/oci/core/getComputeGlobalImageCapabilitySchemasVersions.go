@@ -74,21 +74,11 @@ type GetComputeGlobalImageCapabilitySchemasVersionsResult struct {
 }
 
 func GetComputeGlobalImageCapabilitySchemasVersionsOutput(ctx *pulumi.Context, args GetComputeGlobalImageCapabilitySchemasVersionsOutputArgs, opts ...pulumi.InvokeOption) GetComputeGlobalImageCapabilitySchemasVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetComputeGlobalImageCapabilitySchemasVersionsResultOutput, error) {
 			args := v.(GetComputeGlobalImageCapabilitySchemasVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetComputeGlobalImageCapabilitySchemasVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetComputeGlobalImageCapabilitySchemasVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetComputeGlobalImageCapabilitySchemasVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetComputeGlobalImageCapabilitySchemasVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", args, GetComputeGlobalImageCapabilitySchemasVersionsResultOutput{}, options).(GetComputeGlobalImageCapabilitySchemasVersionsResultOutput), nil
 		}).(GetComputeGlobalImageCapabilitySchemasVersionsResultOutput)
 }
 

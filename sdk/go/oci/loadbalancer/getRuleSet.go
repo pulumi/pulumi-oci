@@ -71,21 +71,11 @@ type LookupRuleSetResult struct {
 }
 
 func LookupRuleSetOutput(ctx *pulumi.Context, args LookupRuleSetOutputArgs, opts ...pulumi.InvokeOption) LookupRuleSetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupRuleSetResultOutput, error) {
 			args := v.(LookupRuleSetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupRuleSetResult
-			secret, err := ctx.InvokePackageRaw("oci:LoadBalancer/getRuleSet:getRuleSet", args, &rv, "", opts...)
-			if err != nil {
-				return LookupRuleSetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupRuleSetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupRuleSetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LoadBalancer/getRuleSet:getRuleSet", args, LookupRuleSetResultOutput{}, options).(LookupRuleSetResultOutput), nil
 		}).(LookupRuleSetResultOutput)
 }
 

@@ -21,7 +21,7 @@ import java.util.Objects;
 public final class GetJobRunResult {
     private Boolean asynchronous;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
      * 
      */
     private String compartmentId;
@@ -61,7 +61,7 @@ public final class GetJobRunResult {
      */
     private List<GetJobRunJobEnvironmentConfigurationOverrideDetail> jobEnvironmentConfigurationOverrideDetails;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * 
      */
     private String jobId;
@@ -93,7 +93,7 @@ public final class GetJobRunResult {
     private List<GetJobRunLogDetail> logDetails;
     private String opcParentRptUrl;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      * 
      */
     private String projectId;
@@ -123,7 +123,7 @@ public final class GetJobRunResult {
         return this.asynchronous;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
      * 
      */
     public String compartmentId() {
@@ -179,7 +179,7 @@ public final class GetJobRunResult {
         return this.jobEnvironmentConfigurationOverrideDetails;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * 
      */
     public String jobId() {
@@ -227,7 +227,7 @@ public final class GetJobRunResult {
         return this.opcParentRptUrl;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      * 
      */
     public String projectId() {

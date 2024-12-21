@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetKnowledgebasesResult> Invoke(GetKnowledgebasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKnowledgebasesResult>("oci:Adm/getKnowledgebases:getKnowledgebases", args ?? new GetKnowledgebasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure ADM service.
+        /// 
+        /// Returns a list of KnowledgeBases based on the specified query parameters.
+        /// At least id or compartmentId query parameter must be provided.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKnowledgeBases = Oci.Adm.GetKnowledgebases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = knowledgeBaseDisplayName,
+        ///         Id = knowledgeBaseId,
+        ///         State = knowledgeBaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetKnowledgebasesResult> Invoke(GetKnowledgebasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKnowledgebasesResult>("oci:Adm/getKnowledgebases:getKnowledgebases", args ?? new GetKnowledgebasesInvokeArgs(), options.WithDefaults());
     }
 
 

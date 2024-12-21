@@ -12,26 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetMetricExtensionQueryPropertyOutParamDetail {
     /**
-     * @return Position of PL/SQL procedure OUT parameter
+     * @return Name of the Out Parameter
+     * 
+     */
+    private String outParamName;
+    /**
+     * @return Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
      * 
      */
     private Integer outParamPosition;
     /**
-     * @return SQL Type of PL/SQL procedure OUT parameter
+     * @return SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
      * 
      */
     private String outParamType;
 
     private GetMetricExtensionQueryPropertyOutParamDetail() {}
     /**
-     * @return Position of PL/SQL procedure OUT parameter
+     * @return Name of the Out Parameter
+     * 
+     */
+    public String outParamName() {
+        return this.outParamName;
+    }
+    /**
+     * @return Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
      * 
      */
     public Integer outParamPosition() {
         return this.outParamPosition;
     }
     /**
-     * @return SQL Type of PL/SQL procedure OUT parameter
+     * @return SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
      * 
      */
     public String outParamType() {
@@ -47,15 +59,25 @@ public final class GetMetricExtensionQueryPropertyOutParamDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String outParamName;
         private Integer outParamPosition;
         private String outParamType;
         public Builder() {}
         public Builder(GetMetricExtensionQueryPropertyOutParamDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.outParamName = defaults.outParamName;
     	      this.outParamPosition = defaults.outParamPosition;
     	      this.outParamType = defaults.outParamType;
         }
 
+        @CustomType.Setter
+        public Builder outParamName(String outParamName) {
+            if (outParamName == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryPropertyOutParamDetail", "outParamName");
+            }
+            this.outParamName = outParamName;
+            return this;
+        }
         @CustomType.Setter
         public Builder outParamPosition(Integer outParamPosition) {
             if (outParamPosition == null) {
@@ -74,6 +96,7 @@ public final class GetMetricExtensionQueryPropertyOutParamDetail {
         }
         public GetMetricExtensionQueryPropertyOutParamDetail build() {
             final var _resultValue = new GetMetricExtensionQueryPropertyOutParamDetail();
+            _resultValue.outParamName = outParamName;
             _resultValue.outParamPosition = outParamPosition;
             _resultValue.outParamType = outParamType;
             return _resultValue;

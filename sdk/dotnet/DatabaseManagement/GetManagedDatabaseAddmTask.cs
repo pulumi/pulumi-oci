@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseAddmTaskResult> Invoke(GetManagedDatabaseAddmTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTaskResult>("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", args ?? new GetManagedDatabaseAddmTaskInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
+        /// the name of the ADDM task, description, user, status and creation date time.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseAddmTask = Oci.DatabaseManagement.GetManagedDatabaseAddmTask.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         TimeEnd = managedDatabaseAddmTaskTimeEnd,
+        ///         TimeStart = managedDatabaseAddmTaskTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseAddmTaskResult> Invoke(GetManagedDatabaseAddmTaskInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAddmTaskResult>("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", args ?? new GetManagedDatabaseAddmTaskInvokeArgs(), options.WithDefaults());
     }
 
 

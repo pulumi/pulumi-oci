@@ -104,21 +104,11 @@ type LookupExternalExadataInfrastructureResult struct {
 }
 
 func LookupExternalExadataInfrastructureOutput(ctx *pulumi.Context, args LookupExternalExadataInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataInfrastructureResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalExadataInfrastructureResultOutput, error) {
 			args := v.(LookupExternalExadataInfrastructureArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalExadataInfrastructureResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalExadataInfrastructureResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalExadataInfrastructureResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalExadataInfrastructureResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", args, LookupExternalExadataInfrastructureResultOutput{}, options).(LookupExternalExadataInfrastructureResultOutput), nil
 		}).(LookupExternalExadataInfrastructureResultOutput)
 }
 

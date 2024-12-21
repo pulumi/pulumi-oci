@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetMaintenanceRunsResult> Invoke(GetMaintenanceRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceRunsResult>("oci:Database/getMaintenanceRuns:getMaintenanceRuns", args ?? new GetMaintenanceRunsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the maintenance runs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaintenanceRuns = Oci.Database.GetMaintenanceRuns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = maintenanceRunAvailabilityDomain,
+        ///         MaintenanceSubtype = maintenanceRunMaintenanceSubtype,
+        ///         MaintenanceType = maintenanceRunMaintenanceType,
+        ///         State = maintenanceRunState,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = maintenanceRunTargetResourceType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaintenanceRunsResult> Invoke(GetMaintenanceRunsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceRunsResult>("oci:Database/getMaintenanceRuns:getMaintenanceRuns", args ?? new GetMaintenanceRunsInvokeArgs(), options.WithDefaults());
     }
 
 

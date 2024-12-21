@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.BigDataService.BdsInstanceArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceState;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceBdsClusterVersionSummary;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceComputeOnlyWorkerNode;
@@ -17,6 +18,7 @@ import com.pulumi.oci.BigDataService.outputs.BdsInstanceKafkaBrokerNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNode;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceStartClusterShapeConfig;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceUtilNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceWorkerNode;
 import com.pulumi.oci.Utilities;
@@ -57,6 +59,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeShapeConfigArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceBdsClusterVersionSummaryArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -145,6 +148,10 @@ import javax.annotation.Nullable;
  *                     .ocpus(bdsInstanceNodesShapeConfigOcpus)
  *                     .build())
  *                 .build())
+ *             .bdsClusterVersionSummary(BdsInstanceBdsClusterVersionSummaryArgs.builder()
+ *                 .bdsVersion(bdsInstanceBdsClusterVersionSummaryBdsVersion)
+ *                 .odhVersion(bdsInstanceBdsClusterVersionSummaryOdhVersion)
+ *                 .build())
  *             .bootstrapScriptUrl(bdsInstanceBootstrapScriptUrl)
  *             .clusterProfile(bdsInstanceClusterProfile)
  *             .definedTags(bdsInstanceDefinedTags)
@@ -175,6 +182,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:BigDataService/bdsInstance:BdsInstance")
 public class BdsInstance extends com.pulumi.resources.CustomResource {
+    /**
+     * Cluster version details including bds and odh version information.
+     * 
+     */
+    @Export(name="bdsClusterVersionSummary", refs={BdsInstanceBdsClusterVersionSummary.class}, tree="[0]")
+    private Output<BdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummary;
+
+    /**
+     * @return Cluster version details including bds and odh version information.
+     * 
+     */
+    public Output<BdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummary() {
+        return this.bdsClusterVersionSummary;
+    }
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      * 
@@ -383,6 +404,12 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isCloudSqlConfigured() {
         return this.isCloudSqlConfigured;
     }
+    @Export(name="isForceRemoveEnabled", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> isForceRemoveEnabled;
+
+    public Output<Optional<Boolean>> isForceRemoveEnabled() {
+        return Codegen.optional(this.isForceRemoveEnabled);
+    }
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      * 
@@ -496,14 +523,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.masterNode;
     }
     /**
-     * Additional configuration of the user&#39;s network.
+     * (Updatable) Additional configuration of the user&#39;s network.
      * 
      */
     @Export(name="networkConfig", refs={BdsInstanceNetworkConfig.class}, tree="[0]")
     private Output<BdsInstanceNetworkConfig> networkConfig;
 
     /**
-     * @return Additional configuration of the user&#39;s network.
+     * @return (Updatable) Additional configuration of the user&#39;s network.
      * 
      */
     public Output<BdsInstanceNetworkConfig> networkConfig() {
@@ -564,6 +591,26 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> osPatchVersion() {
         return Codegen.optional(this.osPatchVersion);
+    }
+    /**
+     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * 
+     */
+    @Export(name="removeNode", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> removeNode;
+
+    /**
+     * @return (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * 
+     */
+    public Output<Optional<String>> removeNode() {
+        return Codegen.optional(this.removeNode);
+    }
+    @Export(name="startClusterShapeConfigs", refs={List.class,BdsInstanceStartClusterShapeConfig.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<BdsInstanceStartClusterShapeConfig>> startClusterShapeConfigs;
+
+    public Output<Optional<List<BdsInstanceStartClusterShapeConfig>>> startClusterShapeConfigs() {
+        return Codegen.optional(this.startClusterShapeConfigs);
     }
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

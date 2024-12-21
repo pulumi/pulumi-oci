@@ -85,21 +85,11 @@ type GetManagedDatabaseGroupsResult struct {
 }
 
 func GetManagedDatabaseGroupsOutput(ctx *pulumi.Context, args GetManagedDatabaseGroupsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseGroupsResultOutput, error) {
 			args := v.(GetManagedDatabaseGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseGroupsResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", args, GetManagedDatabaseGroupsResultOutput{}, options).(GetManagedDatabaseGroupsResultOutput), nil
 		}).(GetManagedDatabaseGroupsResultOutput)
 }
 

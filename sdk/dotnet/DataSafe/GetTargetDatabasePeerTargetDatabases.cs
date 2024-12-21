@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetDatabasePeerTargetDatabasesResult> Invoke(GetTargetDatabasePeerTargetDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasePeerTargetDatabasesResult>("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", args ?? new GetTargetDatabasePeerTargetDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Database Peer Target Databases in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Lists all the peer target databases under the primary target database identified by the OCID passed as path parameter.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetDatabasePeerTargetDatabases = Oci.DataSafe.GetTargetDatabasePeerTargetDatabases.Invoke(new()
+        ///     {
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetDatabasePeerTargetDatabasesResult> Invoke(GetTargetDatabasePeerTargetDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasePeerTargetDatabasesResult>("oci:DataSafe/getTargetDatabasePeerTargetDatabases:getTargetDatabasePeerTargetDatabases", args ?? new GetTargetDatabasePeerTargetDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

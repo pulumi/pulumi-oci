@@ -72,6 +72,37 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// </summary>
         public static Output<GetBillingScheduleResult> Invoke(GetBillingScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Osub Billing Schedule service.
+        /// 
+        /// This list API returns all billing schedules for given subscription id and
+        /// for a particular Subscribed Service if provided
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBillingSchedules = Oci.OsubBillingSchedule.GetBillingSchedule.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         SubscribedServiceId = testService.Id,
+        ///         XOneOriginRegion = billingScheduleXOneOriginRegion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBillingScheduleResult> Invoke(GetBillingScheduleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleInvokeArgs(), options.WithDefaults());
     }
 
 

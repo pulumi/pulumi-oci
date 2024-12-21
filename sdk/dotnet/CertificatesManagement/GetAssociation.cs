@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetAssociationResult> Invoke(GetAssociationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssociationResult>("oci:CertificatesManagement/getAssociation:getAssociation", args ?? new GetAssociationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Association resource in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Gets details about the specified association.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAssociation = Oci.CertificatesManagement.GetAssociation.Invoke(new()
+        ///     {
+        ///         AssociationId = testAssociationOciCertificatesManagementAssociation.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAssociationResult> Invoke(GetAssociationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAssociationResult>("oci:CertificatesManagement/getAssociation:getAssociation", args ?? new GetAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

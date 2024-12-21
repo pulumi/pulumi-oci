@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceFolderResult> Invoke(GetWorkspaceFolderInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceFolderResult>("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args ?? new GetWorkspaceFolderInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a folder using the specified identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceFolder = Oci.DataIntegration.GetWorkspaceFolder.Invoke(new()
+        ///     {
+        ///         FolderKey = workspaceFolderFolderKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceFolderResult> Invoke(GetWorkspaceFolderInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceFolderResult>("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args ?? new GetWorkspaceFolderInvokeArgs(), options.WithDefaults());
     }
 
 

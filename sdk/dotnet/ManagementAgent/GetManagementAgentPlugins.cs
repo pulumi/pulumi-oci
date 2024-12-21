@@ -72,6 +72,37 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         public static Output<GetManagementAgentPluginsResult> Invoke(GetManagementAgentPluginsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginsResult>("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", args ?? new GetManagementAgentPluginsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
+        /// 
+        /// Returns a list of managementAgentPlugins.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagementAgentPlugins = Oci.ManagementAgent.GetManagementAgentPlugins.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AgentId = managementAgentId,
+        ///         DisplayName = managementAgentPluginDisplayName,
+        ///         PlatformTypes = managementAgentPluginPlatformType,
+        ///         State = managementAgentPluginState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagementAgentPluginsResult> Invoke(GetManagementAgentPluginsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginsResult>("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", args ?? new GetManagementAgentPluginsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public static Output<GetAgentDependencyResult> Invoke(GetAgentDependencyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAgentDependencyResult>("oci:CloudBridge/getAgentDependency:getAgentDependency", args ?? new GetAgentDependencyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        /// 
+        /// Gets an AgentDependency by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAgentDependency = Oci.CloudBridge.GetAgentDependency.Invoke(new()
+        ///     {
+        ///         AgentDependencyId = testAgentDependencyOciCloudBridgeAgentDependency.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAgentDependencyResult> Invoke(GetAgentDependencyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentDependencyResult>("oci:CloudBridge/getAgentDependency:getAgentDependency", args ?? new GetAgentDependencyInvokeArgs(), options.WithDefaults());
     }
 
 

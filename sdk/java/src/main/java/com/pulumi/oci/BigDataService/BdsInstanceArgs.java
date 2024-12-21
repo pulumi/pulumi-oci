@@ -6,12 +6,14 @@ package com.pulumi.oci.BigDataService;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceBdsClusterVersionSummaryArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceStartClusterShapeConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceUtilNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceWorkerNodeArgs;
 import java.lang.Boolean;
@@ -26,6 +28,21 @@ import javax.annotation.Nullable;
 public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BdsInstanceArgs Empty = new BdsInstanceArgs();
+
+    /**
+     * Cluster version details including bds and odh version information.
+     * 
+     */
+    @Import(name="bdsClusterVersionSummary")
+    private @Nullable Output<BdsInstanceBdsClusterVersionSummaryArgs> bdsClusterVersionSummary;
+
+    /**
+     * @return Cluster version details including bds and odh version information.
+     * 
+     */
+    public Optional<Output<BdsInstanceBdsClusterVersionSummaryArgs>> bdsClusterVersionSummary() {
+        return Optional.ofNullable(this.bdsClusterVersionSummary);
+    }
 
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
@@ -221,6 +238,13 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isCloudSqlConfigured);
     }
 
+    @Import(name="isForceRemoveEnabled")
+    private @Nullable Output<Boolean> isForceRemoveEnabled;
+
+    public Optional<Output<Boolean>> isForceRemoveEnabled() {
+        return Optional.ofNullable(this.isForceRemoveEnabled);
+    }
+
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      * 
@@ -342,14 +366,14 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Additional configuration of the user&#39;s network.
+     * (Updatable) Additional configuration of the user&#39;s network.
      * 
      */
     @Import(name="networkConfig")
     private @Nullable Output<BdsInstanceNetworkConfigArgs> networkConfig;
 
     /**
-     * @return Additional configuration of the user&#39;s network.
+     * @return (Updatable) Additional configuration of the user&#39;s network.
      * 
      */
     public Optional<Output<BdsInstanceNetworkConfigArgs>> networkConfig() {
@@ -369,6 +393,28 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> osPatchVersion() {
         return Optional.ofNullable(this.osPatchVersion);
+    }
+
+    /**
+     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * 
+     */
+    @Import(name="removeNode")
+    private @Nullable Output<String> removeNode;
+
+    /**
+     * @return (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * 
+     */
+    public Optional<Output<String>> removeNode() {
+        return Optional.ofNullable(this.removeNode);
+    }
+
+    @Import(name="startClusterShapeConfigs")
+    private @Nullable Output<List<BdsInstanceStartClusterShapeConfigArgs>> startClusterShapeConfigs;
+
+    public Optional<Output<List<BdsInstanceStartClusterShapeConfigArgs>>> startClusterShapeConfigs() {
+        return Optional.ofNullable(this.startClusterShapeConfigs);
     }
 
     /**
@@ -411,6 +457,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     private BdsInstanceArgs() {}
 
     private BdsInstanceArgs(BdsInstanceArgs $) {
+        this.bdsClusterVersionSummary = $.bdsClusterVersionSummary;
         this.bootstrapScriptUrl = $.bootstrapScriptUrl;
         this.cloudSqlDetails = $.cloudSqlDetails;
         this.clusterAdminPassword = $.clusterAdminPassword;
@@ -425,6 +472,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.ignoreExistingNodesShapes = $.ignoreExistingNodesShapes;
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
+        this.isForceRemoveEnabled = $.isForceRemoveEnabled;
         this.isForceStopJobs = $.isForceStopJobs;
         this.isHighAvailability = $.isHighAvailability;
         this.isKafkaConfigured = $.isKafkaConfigured;
@@ -435,6 +483,8 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
         this.osPatchVersion = $.osPatchVersion;
+        this.removeNode = $.removeNode;
+        this.startClusterShapeConfigs = $.startClusterShapeConfigs;
         this.state = $.state;
         this.utilNode = $.utilNode;
         this.workerNode = $.workerNode;
@@ -456,6 +506,27 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(BdsInstanceArgs defaults) {
             $ = new BdsInstanceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param bdsClusterVersionSummary Cluster version details including bds and odh version information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bdsClusterVersionSummary(@Nullable Output<BdsInstanceBdsClusterVersionSummaryArgs> bdsClusterVersionSummary) {
+            $.bdsClusterVersionSummary = bdsClusterVersionSummary;
+            return this;
+        }
+
+        /**
+         * @param bdsClusterVersionSummary Cluster version details including bds and odh version information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bdsClusterVersionSummary(BdsInstanceBdsClusterVersionSummaryArgs bdsClusterVersionSummary) {
+            return bdsClusterVersionSummary(Output.of(bdsClusterVersionSummary));
         }
 
         /**
@@ -748,6 +819,15 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
             return isCloudSqlConfigured(Output.of(isCloudSqlConfigured));
         }
 
+        public Builder isForceRemoveEnabled(@Nullable Output<Boolean> isForceRemoveEnabled) {
+            $.isForceRemoveEnabled = isForceRemoveEnabled;
+            return this;
+        }
+
+        public Builder isForceRemoveEnabled(Boolean isForceRemoveEnabled) {
+            return isForceRemoveEnabled(Output.of(isForceRemoveEnabled));
+        }
+
         /**
          * @param isForceStopJobs (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
          * 
@@ -917,7 +997,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of the user&#39;s network.
+         * @param networkConfig (Updatable) Additional configuration of the user&#39;s network.
          * 
          * @return builder
          * 
@@ -928,7 +1008,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of the user&#39;s network.
+         * @param networkConfig (Updatable) Additional configuration of the user&#39;s network.
          * 
          * @return builder
          * 
@@ -956,6 +1036,40 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder osPatchVersion(String osPatchVersion) {
             return osPatchVersion(Output.of(osPatchVersion));
+        }
+
+        /**
+         * @param removeNode (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeNode(@Nullable Output<String> removeNode) {
+            $.removeNode = removeNode;
+            return this;
+        }
+
+        /**
+         * @param removeNode (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeNode(String removeNode) {
+            return removeNode(Output.of(removeNode));
+        }
+
+        public Builder startClusterShapeConfigs(@Nullable Output<List<BdsInstanceStartClusterShapeConfigArgs>> startClusterShapeConfigs) {
+            $.startClusterShapeConfigs = startClusterShapeConfigs;
+            return this;
+        }
+
+        public Builder startClusterShapeConfigs(List<BdsInstanceStartClusterShapeConfigArgs> startClusterShapeConfigs) {
+            return startClusterShapeConfigs(Output.of(startClusterShapeConfigs));
+        }
+
+        public Builder startClusterShapeConfigs(BdsInstanceStartClusterShapeConfigArgs... startClusterShapeConfigs) {
+            return startClusterShapeConfigs(List.of(startClusterShapeConfigs));
         }
 
         /**

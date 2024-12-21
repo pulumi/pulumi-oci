@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceStorageRecallCountResult> Invoke(GetNamespaceStorageRecallCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageRecallCountResult>("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", args ?? new GetNamespaceStorageRecallCountInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// This API gets the number of recalls made and the maximum recalls that can be made
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceStorageRecallCount = Oci.LogAnalytics.GetNamespaceStorageRecallCount.Invoke(new()
+        ///     {
+        ///         Namespace = namespaceStorageRecallCountNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceStorageRecallCountResult> Invoke(GetNamespaceStorageRecallCountInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageRecallCountResult>("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", args ?? new GetNamespaceStorageRecallCountInvokeArgs(), options.WithDefaults());
     }
 
 

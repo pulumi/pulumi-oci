@@ -3204,6 +3204,162 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Value() pulumi.
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetricThreshold) int { return v.Value }).(pulumi.IntOutput)
 }
 
+type BdsInstanceBdsClusterVersionSummary struct {
+	// BDS version to be used for cluster creation
+	BdsVersion string `pulumi:"bdsVersion"`
+	// ODH version to be used for cluster creation
+	OdhVersion *string `pulumi:"odhVersion"`
+}
+
+// BdsInstanceBdsClusterVersionSummaryInput is an input type that accepts BdsInstanceBdsClusterVersionSummaryArgs and BdsInstanceBdsClusterVersionSummaryOutput values.
+// You can construct a concrete instance of `BdsInstanceBdsClusterVersionSummaryInput` via:
+//
+//	BdsInstanceBdsClusterVersionSummaryArgs{...}
+type BdsInstanceBdsClusterVersionSummaryInput interface {
+	pulumi.Input
+
+	ToBdsInstanceBdsClusterVersionSummaryOutput() BdsInstanceBdsClusterVersionSummaryOutput
+	ToBdsInstanceBdsClusterVersionSummaryOutputWithContext(context.Context) BdsInstanceBdsClusterVersionSummaryOutput
+}
+
+type BdsInstanceBdsClusterVersionSummaryArgs struct {
+	// BDS version to be used for cluster creation
+	BdsVersion pulumi.StringInput `pulumi:"bdsVersion"`
+	// ODH version to be used for cluster creation
+	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
+}
+
+func (BdsInstanceBdsClusterVersionSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (i BdsInstanceBdsClusterVersionSummaryArgs) ToBdsInstanceBdsClusterVersionSummaryOutput() BdsInstanceBdsClusterVersionSummaryOutput {
+	return i.ToBdsInstanceBdsClusterVersionSummaryOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceBdsClusterVersionSummaryArgs) ToBdsInstanceBdsClusterVersionSummaryOutputWithContext(ctx context.Context) BdsInstanceBdsClusterVersionSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceBdsClusterVersionSummaryOutput)
+}
+
+func (i BdsInstanceBdsClusterVersionSummaryArgs) ToBdsInstanceBdsClusterVersionSummaryPtrOutput() BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return i.ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceBdsClusterVersionSummaryArgs) ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(ctx context.Context) BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceBdsClusterVersionSummaryOutput).ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceBdsClusterVersionSummaryPtrInput is an input type that accepts BdsInstanceBdsClusterVersionSummaryArgs, BdsInstanceBdsClusterVersionSummaryPtr and BdsInstanceBdsClusterVersionSummaryPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceBdsClusterVersionSummaryPtrInput` via:
+//
+//	        BdsInstanceBdsClusterVersionSummaryArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceBdsClusterVersionSummaryPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceBdsClusterVersionSummaryPtrOutput() BdsInstanceBdsClusterVersionSummaryPtrOutput
+	ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(context.Context) BdsInstanceBdsClusterVersionSummaryPtrOutput
+}
+
+type bdsInstanceBdsClusterVersionSummaryPtrType BdsInstanceBdsClusterVersionSummaryArgs
+
+func BdsInstanceBdsClusterVersionSummaryPtr(v *BdsInstanceBdsClusterVersionSummaryArgs) BdsInstanceBdsClusterVersionSummaryPtrInput {
+	return (*bdsInstanceBdsClusterVersionSummaryPtrType)(v)
+}
+
+func (*bdsInstanceBdsClusterVersionSummaryPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (i *bdsInstanceBdsClusterVersionSummaryPtrType) ToBdsInstanceBdsClusterVersionSummaryPtrOutput() BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return i.ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceBdsClusterVersionSummaryPtrType) ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(ctx context.Context) BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceBdsClusterVersionSummaryPtrOutput)
+}
+
+type BdsInstanceBdsClusterVersionSummaryOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceBdsClusterVersionSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryOutput) ToBdsInstanceBdsClusterVersionSummaryOutput() BdsInstanceBdsClusterVersionSummaryOutput {
+	return o
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryOutput) ToBdsInstanceBdsClusterVersionSummaryOutputWithContext(ctx context.Context) BdsInstanceBdsClusterVersionSummaryOutput {
+	return o
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryOutput) ToBdsInstanceBdsClusterVersionSummaryPtrOutput() BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return o.ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryOutput) ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(ctx context.Context) BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceBdsClusterVersionSummary) *BdsInstanceBdsClusterVersionSummary {
+		return &v
+	}).(BdsInstanceBdsClusterVersionSummaryPtrOutput)
+}
+
+// BDS version to be used for cluster creation
+func (o BdsInstanceBdsClusterVersionSummaryOutput) BdsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceBdsClusterVersionSummary) string { return v.BdsVersion }).(pulumi.StringOutput)
+}
+
+// ODH version to be used for cluster creation
+func (o BdsInstanceBdsClusterVersionSummaryOutput) OdhVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsClusterVersionSummary) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceBdsClusterVersionSummaryPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceBdsClusterVersionSummaryPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) ToBdsInstanceBdsClusterVersionSummaryPtrOutput() BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return o
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) ToBdsInstanceBdsClusterVersionSummaryPtrOutputWithContext(ctx context.Context) BdsInstanceBdsClusterVersionSummaryPtrOutput {
+	return o
+}
+
+func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) Elem() BdsInstanceBdsClusterVersionSummaryOutput {
+	return o.ApplyT(func(v *BdsInstanceBdsClusterVersionSummary) BdsInstanceBdsClusterVersionSummary {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceBdsClusterVersionSummary
+		return ret
+	}).(BdsInstanceBdsClusterVersionSummaryOutput)
+}
+
+// BDS version to be used for cluster creation
+func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) BdsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceBdsClusterVersionSummary) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.BdsVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// ODH version to be used for cluster creation
+func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) OdhVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceBdsClusterVersionSummary) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OdhVersion
+	}).(pulumi.StringPtrOutput)
+}
+
 type BdsInstanceCloudSqlDetail struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
@@ -4463,6 +4619,600 @@ func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type BdsInstanceIdentityConfigurationIamUserSyncConfiguration struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired *bool `pulumi:"isPosixAttributesAdditionRequired"`
+	// Lifecycle state of the UPST config
+	State *string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+}
+
+// BdsInstanceIdentityConfigurationIamUserSyncConfigurationInput is an input type that accepts BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs and BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationIamUserSyncConfigurationInput` via:
+//
+//	BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs{...}
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired pulumi.BoolPtrInput `pulumi:"isPosixAttributesAdditionRequired"`
+	// Lifecycle state of the UPST config
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+}
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return i.ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput)
+}
+
+// BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput is an input type that accepts BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray and BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput` via:
+//
+//	BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray{ BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs{...} }
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray []BdsInstanceIdentityConfigurationIamUserSyncConfigurationInput
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return i.ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput)
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return o
+}
+
+// whether to append POSIX attributes to IAM users
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) IsPosixAttributesAdditionRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationIamUserSyncConfiguration) *bool {
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Lifecycle state of the UPST config
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationIamUserSyncConfiguration) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationIamUserSyncConfiguration) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationIamUserSyncConfiguration) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) Index(i pulumi.IntInput) BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceIdentityConfigurationIamUserSyncConfiguration {
+		return vs[0].([]BdsInstanceIdentityConfigurationIamUserSyncConfiguration)[vs[1].(int)]
+	}).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput)
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails struct {
+	// (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+	IsPosixAttributesAdditionRequired *bool `pulumi:"isPosixAttributesAdditionRequired"`
+}
+
+// BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsInput is an input type that accepts BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs and BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsInput` via:
+//
+//	BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs{...}
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutputWithContext(context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs struct {
+	// (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+	IsPosixAttributesAdditionRequired pulumi.BoolPtrInput `pulumi:"isPosixAttributesAdditionRequired"`
+}
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails)(nil)).Elem()
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput {
+	return i.ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput)
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return i.ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput).ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrInput is an input type that accepts BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs, BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtr and BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrInput` via:
+//
+//	        BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput
+	ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput
+}
+
+type bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrType BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs
+
+func BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtr(v *BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrInput {
+	return (*bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrType)(v)
+}
+
+func (*bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails)(nil)).Elem()
+}
+
+func (i *bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrType) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return i.ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrType) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return o.ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails) *BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails {
+		return &v
+	}).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput) IsPosixAttributesAdditionRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails) *bool {
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput) ToBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput) Elem() BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput {
+	return o.ApplyT(func(v *BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails) BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails
+		return ret
+	}).(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput)
+}
+
+// (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+func (o BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput) IsPosixAttributesAdditionRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationUpstConfiguration struct {
+	// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+	KeytabContent *string `pulumi:"keytabContent"`
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId *string `pulumi:"masterEncryptionKeyId"`
+	// Secret ID for token exchange keytab
+	SecretId *string `pulumi:"secretId"`
+	// Lifecycle state of the UPST config
+	State *string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+	TimeTokenExchangeKeytabLastRefreshed *string `pulumi:"timeTokenExchangeKeytabLastRefreshed"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// Token exchange kerberos Principal name in cluster
+	TokenExchangePrincipalName *string `pulumi:"tokenExchangePrincipalName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId *string `pulumi:"vaultId"`
+}
+
+// BdsInstanceIdentityConfigurationUpstConfigurationInput is an input type that accepts BdsInstanceIdentityConfigurationUpstConfigurationArgs and BdsInstanceIdentityConfigurationUpstConfigurationOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationUpstConfigurationInput` via:
+//
+//	BdsInstanceIdentityConfigurationUpstConfigurationArgs{...}
+type BdsInstanceIdentityConfigurationUpstConfigurationInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationUpstConfigurationOutput() BdsInstanceIdentityConfigurationUpstConfigurationOutput
+	ToBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(context.Context) BdsInstanceIdentityConfigurationUpstConfigurationOutput
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationArgs struct {
+	// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+	KeytabContent pulumi.StringPtrInput `pulumi:"keytabContent"`
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId pulumi.StringPtrInput `pulumi:"masterEncryptionKeyId"`
+	// Secret ID for token exchange keytab
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
+	// Lifecycle state of the UPST config
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+	TimeTokenExchangeKeytabLastRefreshed pulumi.StringPtrInput `pulumi:"timeTokenExchangeKeytabLastRefreshed"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// Token exchange kerberos Principal name in cluster
+	TokenExchangePrincipalName pulumi.StringPtrInput `pulumi:"tokenExchangePrincipalName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId pulumi.StringPtrInput `pulumi:"vaultId"`
+}
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationArgs) ToBdsInstanceIdentityConfigurationUpstConfigurationOutput() BdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return i.ToBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationArgs) ToBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationUpstConfigurationOutput)
+}
+
+// BdsInstanceIdentityConfigurationUpstConfigurationArrayInput is an input type that accepts BdsInstanceIdentityConfigurationUpstConfigurationArray and BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationUpstConfigurationArrayInput` via:
+//
+//	BdsInstanceIdentityConfigurationUpstConfigurationArray{ BdsInstanceIdentityConfigurationUpstConfigurationArgs{...} }
+type BdsInstanceIdentityConfigurationUpstConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput() BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput
+	ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(context.Context) BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationArray []BdsInstanceIdentityConfigurationUpstConfigurationInput
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationArray) ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput() BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return i.ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationArray) ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput)
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationOutput() BdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return o
+}
+
+// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) KeytabContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.KeytabContent }).(pulumi.StringPtrOutput)
+}
+
+// Master Encryption key used for encrypting token exchange keytab.
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) MasterEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.MasterEncryptionKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Secret ID for token exchange keytab
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.SecretId }).(pulumi.StringPtrOutput)
+}
+
+// Lifecycle state of the UPST config
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) TimeTokenExchangeKeytabLastRefreshed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string {
+		return v.TimeTokenExchangeKeytabLastRefreshed
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// Token exchange kerberos Principal name in cluster
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) TokenExchangePrincipalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.TokenExchangePrincipalName }).(pulumi.StringPtrOutput)
+}
+
+// The instance OCID of the node, which is the resource from which the node backup was acquired.
+func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.VaultId }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput() BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) Index(i pulumi.IntInput) BdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceIdentityConfigurationUpstConfiguration {
+		return vs[0].([]BdsInstanceIdentityConfigurationUpstConfiguration)[vs[1].(int)]
+	}).(BdsInstanceIdentityConfigurationUpstConfigurationOutput)
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationDetails struct {
+	// (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+	MasterEncryptionKeyId *string `pulumi:"masterEncryptionKeyId"`
+	// (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+	VaultId *string `pulumi:"vaultId"`
+}
+
+// BdsInstanceIdentityConfigurationUpstConfigurationDetailsInput is an input type that accepts BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs and BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationUpstConfigurationDetailsInput` via:
+//
+//	BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs{...}
+type BdsInstanceIdentityConfigurationUpstConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput
+	ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutputWithContext(context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs struct {
+	// (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+	MasterEncryptionKeyId pulumi.StringPtrInput `pulumi:"masterEncryptionKeyId"`
+	// (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+	VaultId pulumi.StringPtrInput `pulumi:"vaultId"`
+}
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfigurationDetails)(nil)).Elem()
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput {
+	return i.ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput)
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return i.ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput).ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrInput is an input type that accepts BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs, BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtr and BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrInput` via:
+//
+//	        BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput
+	ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput
+}
+
+type bdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrType BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs
+
+func BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtr(v *BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs) BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrInput {
+	return (*bdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrType)(v)
+}
+
+func (*bdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceIdentityConfigurationUpstConfigurationDetails)(nil)).Elem()
+}
+
+func (i *bdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrType) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return i.ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrType) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfigurationDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return o.ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceIdentityConfigurationUpstConfigurationDetails) *BdsInstanceIdentityConfigurationUpstConfigurationDetails {
+		return &v
+	}).(BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) MasterEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfigurationDetails) *string {
+		return v.MasterEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfigurationDetails) *string { return v.VaultId }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceIdentityConfigurationUpstConfigurationDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput() BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput) ToBdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput) Elem() BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput {
+	return o.ApplyT(func(v *BdsInstanceIdentityConfigurationUpstConfigurationDetails) BdsInstanceIdentityConfigurationUpstConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceIdentityConfigurationUpstConfigurationDetails
+		return ret
+	}).(BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput)
+}
+
+// (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput) MasterEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceIdentityConfigurationUpstConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MasterEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+func (o BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceIdentityConfigurationUpstConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultId
+	}).(pulumi.StringPtrOutput)
+}
+
 type BdsInstanceKafkaBrokerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
@@ -5236,9 +5986,9 @@ func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 }
 
 type BdsInstanceNetworkConfig struct {
-	// The CIDR IP address block of the VCN.
+	// (Updatable) The CIDR IP address block of the VCN.
 	CidrBlock *string `pulumi:"cidrBlock"`
-	// A boolean flag whether to configure a NAT gateway.
+	// (Updatable) A boolean flag whether to configure a NAT gateway.
 	IsNatGatewayRequired *bool `pulumi:"isNatGatewayRequired"`
 }
 
@@ -5254,9 +6004,9 @@ type BdsInstanceNetworkConfigInput interface {
 }
 
 type BdsInstanceNetworkConfigArgs struct {
-	// The CIDR IP address block of the VCN.
+	// (Updatable) The CIDR IP address block of the VCN.
 	CidrBlock pulumi.StringPtrInput `pulumi:"cidrBlock"`
-	// A boolean flag whether to configure a NAT gateway.
+	// (Updatable) A boolean flag whether to configure a NAT gateway.
 	IsNatGatewayRequired pulumi.BoolPtrInput `pulumi:"isNatGatewayRequired"`
 }
 
@@ -5337,12 +6087,12 @@ func (o BdsInstanceNetworkConfigOutput) ToBdsInstanceNetworkConfigPtrOutputWithC
 	}).(BdsInstanceNetworkConfigPtrOutput)
 }
 
-// The CIDR IP address block of the VCN.
+// (Updatable) The CIDR IP address block of the VCN.
 func (o BdsInstanceNetworkConfigOutput) CidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNetworkConfig) *string { return v.CidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// A boolean flag whether to configure a NAT gateway.
+// (Updatable) A boolean flag whether to configure a NAT gateway.
 func (o BdsInstanceNetworkConfigOutput) IsNatGatewayRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNetworkConfig) *bool { return v.IsNatGatewayRequired }).(pulumi.BoolPtrOutput)
 }
@@ -5371,7 +6121,7 @@ func (o BdsInstanceNetworkConfigPtrOutput) Elem() BdsInstanceNetworkConfigOutput
 	}).(BdsInstanceNetworkConfigOutput)
 }
 
-// The CIDR IP address block of the VCN.
+// (Updatable) The CIDR IP address block of the VCN.
 func (o BdsInstanceNetworkConfigPtrOutput) CidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceNetworkConfig) *string {
 		if v == nil {
@@ -5381,7 +6131,7 @@ func (o BdsInstanceNetworkConfigPtrOutput) CidrBlock() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// A boolean flag whether to configure a NAT gateway.
+// (Updatable) A boolean flag whether to configure a NAT gateway.
 func (o BdsInstanceNetworkConfigPtrOutput) IsNatGatewayRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceNetworkConfig) *bool {
 		if v == nil {
@@ -5420,6 +6170,8 @@ type BdsInstanceNode struct {
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion *string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion *string `pulumi:"osVersion"`
 	// (Updatable) Shape of the node.
@@ -5476,6 +6228,8 @@ type BdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// (Updatable) Shape of the node.
@@ -5611,6 +6365,11 @@ func (o BdsInstanceNodeOutput) Nvmes() pulumi.IntPtrOutput {
 // The total number of OCPUs available to the node.
 func (o BdsInstanceNodeOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o BdsInstanceNodeOutput) OdhVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
 }
 
 // BDS-assigned Operating System version for the node.
@@ -6040,6 +6799,10 @@ type BdsInstancePatchActionPatchingConfig struct {
 	BatchSize *int `pulumi:"batchSize"`
 	// Type of strategy used for detailed patching configuration
 	PatchingConfigStrategy string `pulumi:"patchingConfigStrategy"`
+	// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+	ToleranceThresholdPerBatch *int `pulumi:"toleranceThresholdPerBatch"`
+	// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+	ToleranceThresholdPerDomain *int `pulumi:"toleranceThresholdPerDomain"`
 	// The wait time between batches in seconds.
 	WaitTimeBetweenBatchInSeconds *int `pulumi:"waitTimeBetweenBatchInSeconds"`
 	// The wait time between AD/FD in seconds.
@@ -6062,6 +6825,10 @@ type BdsInstancePatchActionPatchingConfigArgs struct {
 	BatchSize pulumi.IntPtrInput `pulumi:"batchSize"`
 	// Type of strategy used for detailed patching configuration
 	PatchingConfigStrategy pulumi.StringInput `pulumi:"patchingConfigStrategy"`
+	// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+	ToleranceThresholdPerBatch pulumi.IntPtrInput `pulumi:"toleranceThresholdPerBatch"`
+	// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+	ToleranceThresholdPerDomain pulumi.IntPtrInput `pulumi:"toleranceThresholdPerDomain"`
 	// The wait time between batches in seconds.
 	WaitTimeBetweenBatchInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
 	// The wait time between AD/FD in seconds.
@@ -6155,6 +6922,16 @@ func (o BdsInstancePatchActionPatchingConfigOutput) PatchingConfigStrategy() pul
 	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) string { return v.PatchingConfigStrategy }).(pulumi.StringOutput)
 }
 
+// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+func (o BdsInstancePatchActionPatchingConfigOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) *int { return v.ToleranceThresholdPerBatch }).(pulumi.IntPtrOutput)
+}
+
+// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+func (o BdsInstancePatchActionPatchingConfigOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) *int { return v.ToleranceThresholdPerDomain }).(pulumi.IntPtrOutput)
+}
+
 // The wait time between batches in seconds.
 func (o BdsInstancePatchActionPatchingConfigOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
@@ -6209,6 +6986,26 @@ func (o BdsInstancePatchActionPatchingConfigPtrOutput) PatchingConfigStrategy() 
 	}).(pulumi.StringPtrOutput)
 }
 
+// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ToleranceThresholdPerBatch
+	}).(pulumi.IntPtrOutput)
+}
+
+// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ToleranceThresholdPerDomain
+	}).(pulumi.IntPtrOutput)
+}
+
 // The wait time between batches in seconds.
 func (o BdsInstancePatchActionPatchingConfigPtrOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *int {
@@ -6227,6 +7024,208 @@ func (o BdsInstancePatchActionPatchingConfigPtrOutput) WaitTimeBetweenDomainInSe
 		}
 		return v.WaitTimeBetweenDomainInSeconds
 	}).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceStartClusterShapeConfig struct {
+	NodeTypeShapeConfigs []BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig `pulumi:"nodeTypeShapeConfigs"`
+}
+
+// BdsInstanceStartClusterShapeConfigInput is an input type that accepts BdsInstanceStartClusterShapeConfigArgs and BdsInstanceStartClusterShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceStartClusterShapeConfigInput` via:
+//
+//	BdsInstanceStartClusterShapeConfigArgs{...}
+type BdsInstanceStartClusterShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceStartClusterShapeConfigOutput() BdsInstanceStartClusterShapeConfigOutput
+	ToBdsInstanceStartClusterShapeConfigOutputWithContext(context.Context) BdsInstanceStartClusterShapeConfigOutput
+}
+
+type BdsInstanceStartClusterShapeConfigArgs struct {
+	NodeTypeShapeConfigs BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput `pulumi:"nodeTypeShapeConfigs"`
+}
+
+func (BdsInstanceStartClusterShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceStartClusterShapeConfigArgs) ToBdsInstanceStartClusterShapeConfigOutput() BdsInstanceStartClusterShapeConfigOutput {
+	return i.ToBdsInstanceStartClusterShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceStartClusterShapeConfigArgs) ToBdsInstanceStartClusterShapeConfigOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceStartClusterShapeConfigOutput)
+}
+
+// BdsInstanceStartClusterShapeConfigArrayInput is an input type that accepts BdsInstanceStartClusterShapeConfigArray and BdsInstanceStartClusterShapeConfigArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceStartClusterShapeConfigArrayInput` via:
+//
+//	BdsInstanceStartClusterShapeConfigArray{ BdsInstanceStartClusterShapeConfigArgs{...} }
+type BdsInstanceStartClusterShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceStartClusterShapeConfigArrayOutput() BdsInstanceStartClusterShapeConfigArrayOutput
+	ToBdsInstanceStartClusterShapeConfigArrayOutputWithContext(context.Context) BdsInstanceStartClusterShapeConfigArrayOutput
+}
+
+type BdsInstanceStartClusterShapeConfigArray []BdsInstanceStartClusterShapeConfigInput
+
+func (BdsInstanceStartClusterShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceStartClusterShapeConfigArray) ToBdsInstanceStartClusterShapeConfigArrayOutput() BdsInstanceStartClusterShapeConfigArrayOutput {
+	return i.ToBdsInstanceStartClusterShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceStartClusterShapeConfigArray) ToBdsInstanceStartClusterShapeConfigArrayOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceStartClusterShapeConfigArrayOutput)
+}
+
+type BdsInstanceStartClusterShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceStartClusterShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceStartClusterShapeConfigOutput) ToBdsInstanceStartClusterShapeConfigOutput() BdsInstanceStartClusterShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigOutput) ToBdsInstanceStartClusterShapeConfigOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigOutput) NodeTypeShapeConfigs() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o.ApplyT(func(v BdsInstanceStartClusterShapeConfig) []BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+		return v.NodeTypeShapeConfigs
+	}).(BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput)
+}
+
+type BdsInstanceStartClusterShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceStartClusterShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceStartClusterShapeConfigArrayOutput) ToBdsInstanceStartClusterShapeConfigArrayOutput() BdsInstanceStartClusterShapeConfigArrayOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigArrayOutput) ToBdsInstanceStartClusterShapeConfigArrayOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigArrayOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigArrayOutput) Index(i pulumi.IntInput) BdsInstanceStartClusterShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceStartClusterShapeConfig {
+		return vs[0].([]BdsInstanceStartClusterShapeConfig)[vs[1].(int)]
+	}).(BdsInstanceStartClusterShapeConfigOutput)
+}
+
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig struct {
+	// BDS instance node type
+	NodeType *string `pulumi:"nodeType"`
+	// Shape of the node
+	Shape *string `pulumi:"shape"`
+}
+
+// BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput is an input type that accepts BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs and BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput` via:
+//
+//	BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{...}
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput
+	ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(context.Context) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput
+}
+
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs struct {
+	// BDS instance node type
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// Shape of the node
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
+}
+
+func (BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return i.ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput)
+}
+
+// BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput is an input type that accepts BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray and BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput` via:
+//
+//	BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray{ BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{...} }
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput
+	ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(context.Context) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput
+}
+
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray []BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput
+
+func (BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return i.ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput)
+}
+
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return o
+}
+
+// BDS instance node type
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) *string { return v.Shape }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ToBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(ctx context.Context) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o
+}
+
+func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) Index(i pulumi.IntInput) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+		return vs[0].([]BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)[vs[1].(int)]
+	}).(BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput)
 }
 
 type BdsInstanceUtilNode struct {
@@ -11900,11 +12899,227 @@ func (o GetAutoScalingConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetAutoScalingConfigurationsFilterOutput)
 }
 
+type GetBdsClusterVersionsBdsClusterVersion struct {
+	// BDS version to be used for cluster creation
+	BdsVersion string `pulumi:"bdsVersion"`
+	// ODH version to be used for cluster creation
+	OdhVersion string `pulumi:"odhVersion"`
+}
+
+// GetBdsClusterVersionsBdsClusterVersionInput is an input type that accepts GetBdsClusterVersionsBdsClusterVersionArgs and GetBdsClusterVersionsBdsClusterVersionOutput values.
+// You can construct a concrete instance of `GetBdsClusterVersionsBdsClusterVersionInput` via:
+//
+//	GetBdsClusterVersionsBdsClusterVersionArgs{...}
+type GetBdsClusterVersionsBdsClusterVersionInput interface {
+	pulumi.Input
+
+	ToGetBdsClusterVersionsBdsClusterVersionOutput() GetBdsClusterVersionsBdsClusterVersionOutput
+	ToGetBdsClusterVersionsBdsClusterVersionOutputWithContext(context.Context) GetBdsClusterVersionsBdsClusterVersionOutput
+}
+
+type GetBdsClusterVersionsBdsClusterVersionArgs struct {
+	// BDS version to be used for cluster creation
+	BdsVersion pulumi.StringInput `pulumi:"bdsVersion"`
+	// ODH version to be used for cluster creation
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
+}
+
+func (GetBdsClusterVersionsBdsClusterVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsClusterVersionsBdsClusterVersion)(nil)).Elem()
+}
+
+func (i GetBdsClusterVersionsBdsClusterVersionArgs) ToGetBdsClusterVersionsBdsClusterVersionOutput() GetBdsClusterVersionsBdsClusterVersionOutput {
+	return i.ToGetBdsClusterVersionsBdsClusterVersionOutputWithContext(context.Background())
+}
+
+func (i GetBdsClusterVersionsBdsClusterVersionArgs) ToGetBdsClusterVersionsBdsClusterVersionOutputWithContext(ctx context.Context) GetBdsClusterVersionsBdsClusterVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsClusterVersionsBdsClusterVersionOutput)
+}
+
+// GetBdsClusterVersionsBdsClusterVersionArrayInput is an input type that accepts GetBdsClusterVersionsBdsClusterVersionArray and GetBdsClusterVersionsBdsClusterVersionArrayOutput values.
+// You can construct a concrete instance of `GetBdsClusterVersionsBdsClusterVersionArrayInput` via:
+//
+//	GetBdsClusterVersionsBdsClusterVersionArray{ GetBdsClusterVersionsBdsClusterVersionArgs{...} }
+type GetBdsClusterVersionsBdsClusterVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsClusterVersionsBdsClusterVersionArrayOutput() GetBdsClusterVersionsBdsClusterVersionArrayOutput
+	ToGetBdsClusterVersionsBdsClusterVersionArrayOutputWithContext(context.Context) GetBdsClusterVersionsBdsClusterVersionArrayOutput
+}
+
+type GetBdsClusterVersionsBdsClusterVersionArray []GetBdsClusterVersionsBdsClusterVersionInput
+
+func (GetBdsClusterVersionsBdsClusterVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsClusterVersionsBdsClusterVersion)(nil)).Elem()
+}
+
+func (i GetBdsClusterVersionsBdsClusterVersionArray) ToGetBdsClusterVersionsBdsClusterVersionArrayOutput() GetBdsClusterVersionsBdsClusterVersionArrayOutput {
+	return i.ToGetBdsClusterVersionsBdsClusterVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsClusterVersionsBdsClusterVersionArray) ToGetBdsClusterVersionsBdsClusterVersionArrayOutputWithContext(ctx context.Context) GetBdsClusterVersionsBdsClusterVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsClusterVersionsBdsClusterVersionArrayOutput)
+}
+
+type GetBdsClusterVersionsBdsClusterVersionOutput struct{ *pulumi.OutputState }
+
+func (GetBdsClusterVersionsBdsClusterVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsClusterVersionsBdsClusterVersion)(nil)).Elem()
+}
+
+func (o GetBdsClusterVersionsBdsClusterVersionOutput) ToGetBdsClusterVersionsBdsClusterVersionOutput() GetBdsClusterVersionsBdsClusterVersionOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsBdsClusterVersionOutput) ToGetBdsClusterVersionsBdsClusterVersionOutputWithContext(ctx context.Context) GetBdsClusterVersionsBdsClusterVersionOutput {
+	return o
+}
+
+// BDS version to be used for cluster creation
+func (o GetBdsClusterVersionsBdsClusterVersionOutput) BdsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsClusterVersionsBdsClusterVersion) string { return v.BdsVersion }).(pulumi.StringOutput)
+}
+
+// ODH version to be used for cluster creation
+func (o GetBdsClusterVersionsBdsClusterVersionOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsClusterVersionsBdsClusterVersion) string { return v.OdhVersion }).(pulumi.StringOutput)
+}
+
+type GetBdsClusterVersionsBdsClusterVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsClusterVersionsBdsClusterVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsClusterVersionsBdsClusterVersion)(nil)).Elem()
+}
+
+func (o GetBdsClusterVersionsBdsClusterVersionArrayOutput) ToGetBdsClusterVersionsBdsClusterVersionArrayOutput() GetBdsClusterVersionsBdsClusterVersionArrayOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsBdsClusterVersionArrayOutput) ToGetBdsClusterVersionsBdsClusterVersionArrayOutputWithContext(ctx context.Context) GetBdsClusterVersionsBdsClusterVersionArrayOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsBdsClusterVersionArrayOutput) Index(i pulumi.IntInput) GetBdsClusterVersionsBdsClusterVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsClusterVersionsBdsClusterVersion {
+		return vs[0].([]GetBdsClusterVersionsBdsClusterVersion)[vs[1].(int)]
+	}).(GetBdsClusterVersionsBdsClusterVersionOutput)
+}
+
+type GetBdsClusterVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsClusterVersionsFilterInput is an input type that accepts GetBdsClusterVersionsFilterArgs and GetBdsClusterVersionsFilterOutput values.
+// You can construct a concrete instance of `GetBdsClusterVersionsFilterInput` via:
+//
+//	GetBdsClusterVersionsFilterArgs{...}
+type GetBdsClusterVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsClusterVersionsFilterOutput() GetBdsClusterVersionsFilterOutput
+	ToGetBdsClusterVersionsFilterOutputWithContext(context.Context) GetBdsClusterVersionsFilterOutput
+}
+
+type GetBdsClusterVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsClusterVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsClusterVersionsFilter)(nil)).Elem()
+}
+
+func (i GetBdsClusterVersionsFilterArgs) ToGetBdsClusterVersionsFilterOutput() GetBdsClusterVersionsFilterOutput {
+	return i.ToGetBdsClusterVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsClusterVersionsFilterArgs) ToGetBdsClusterVersionsFilterOutputWithContext(ctx context.Context) GetBdsClusterVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsClusterVersionsFilterOutput)
+}
+
+// GetBdsClusterVersionsFilterArrayInput is an input type that accepts GetBdsClusterVersionsFilterArray and GetBdsClusterVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsClusterVersionsFilterArrayInput` via:
+//
+//	GetBdsClusterVersionsFilterArray{ GetBdsClusterVersionsFilterArgs{...} }
+type GetBdsClusterVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsClusterVersionsFilterArrayOutput() GetBdsClusterVersionsFilterArrayOutput
+	ToGetBdsClusterVersionsFilterArrayOutputWithContext(context.Context) GetBdsClusterVersionsFilterArrayOutput
+}
+
+type GetBdsClusterVersionsFilterArray []GetBdsClusterVersionsFilterInput
+
+func (GetBdsClusterVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsClusterVersionsFilter)(nil)).Elem()
+}
+
+func (i GetBdsClusterVersionsFilterArray) ToGetBdsClusterVersionsFilterArrayOutput() GetBdsClusterVersionsFilterArrayOutput {
+	return i.ToGetBdsClusterVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsClusterVersionsFilterArray) ToGetBdsClusterVersionsFilterArrayOutputWithContext(ctx context.Context) GetBdsClusterVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsClusterVersionsFilterArrayOutput)
+}
+
+type GetBdsClusterVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsClusterVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsClusterVersionsFilter)(nil)).Elem()
+}
+
+func (o GetBdsClusterVersionsFilterOutput) ToGetBdsClusterVersionsFilterOutput() GetBdsClusterVersionsFilterOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsFilterOutput) ToGetBdsClusterVersionsFilterOutputWithContext(ctx context.Context) GetBdsClusterVersionsFilterOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsClusterVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsClusterVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsClusterVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsClusterVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsClusterVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsClusterVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsClusterVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsClusterVersionsFilter)(nil)).Elem()
+}
+
+func (o GetBdsClusterVersionsFilterArrayOutput) ToGetBdsClusterVersionsFilterArrayOutput() GetBdsClusterVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsFilterArrayOutput) ToGetBdsClusterVersionsFilterArrayOutputWithContext(ctx context.Context) GetBdsClusterVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsClusterVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsClusterVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsClusterVersionsFilter {
+		return vs[0].([]GetBdsClusterVersionsFilter)[vs[1].(int)]
+	}).(GetBdsClusterVersionsFilterOutput)
+}
+
 type GetBdsInstanceApiKeysBdsApiKey struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+	// > > > > > > > theirs
 	DefaultRegion string `pulumi:"defaultRegion"`
+	// Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+	// ===
+	DomainOcid string `pulumi:"domainOcid"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint string `pulumi:"fingerprint"`
 	// Identifier of the user's API key.
@@ -11939,7 +13154,11 @@ type GetBdsInstanceApiKeysBdsApiKeyArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+	// > > > > > > > theirs
 	DefaultRegion pulumi.StringInput `pulumi:"defaultRegion"`
+	// Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+	// ===
+	DomainOcid pulumi.StringInput `pulumi:"domainOcid"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
 	// Identifier of the user's API key.
@@ -12016,8 +13235,15 @@ func (o GetBdsInstanceApiKeysBdsApiKeyOutput) BdsInstanceId() pulumi.StringOutpu
 }
 
 // The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
+// > > > > > > > theirs
 func (o GetBdsInstanceApiKeysBdsApiKeyOutput) DefaultRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceApiKeysBdsApiKey) string { return v.DefaultRegion }).(pulumi.StringOutput)
+}
+
+// Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+// ===
+func (o GetBdsInstanceApiKeysBdsApiKeyOutput) DomainOcid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceApiKeysBdsApiKey) string { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
 // The fingerprint that corresponds to the public API key requested.
@@ -12188,6 +13414,112 @@ func (o GetBdsInstanceApiKeysFilterArrayOutput) Index(i pulumi.IntInput) GetBdsI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceApiKeysFilter {
 		return vs[0].([]GetBdsInstanceApiKeysFilter)[vs[1].(int)]
 	}).(GetBdsInstanceApiKeysFilterOutput)
+}
+
+type GetBdsInstanceBdsClusterVersionSummary struct {
+	// Big Data Service version installed in the cluster.
+	BdsVersion string `pulumi:"bdsVersion"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion string `pulumi:"odhVersion"`
+}
+
+// GetBdsInstanceBdsClusterVersionSummaryInput is an input type that accepts GetBdsInstanceBdsClusterVersionSummaryArgs and GetBdsInstanceBdsClusterVersionSummaryOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsClusterVersionSummaryInput` via:
+//
+//	GetBdsInstanceBdsClusterVersionSummaryArgs{...}
+type GetBdsInstanceBdsClusterVersionSummaryInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsClusterVersionSummaryOutput() GetBdsInstanceBdsClusterVersionSummaryOutput
+	ToGetBdsInstanceBdsClusterVersionSummaryOutputWithContext(context.Context) GetBdsInstanceBdsClusterVersionSummaryOutput
+}
+
+type GetBdsInstanceBdsClusterVersionSummaryArgs struct {
+	// Big Data Service version installed in the cluster.
+	BdsVersion pulumi.StringInput `pulumi:"bdsVersion"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
+}
+
+func (GetBdsInstanceBdsClusterVersionSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsClusterVersionSummaryArgs) ToGetBdsInstanceBdsClusterVersionSummaryOutput() GetBdsInstanceBdsClusterVersionSummaryOutput {
+	return i.ToGetBdsInstanceBdsClusterVersionSummaryOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsClusterVersionSummaryArgs) ToGetBdsInstanceBdsClusterVersionSummaryOutputWithContext(ctx context.Context) GetBdsInstanceBdsClusterVersionSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsClusterVersionSummaryOutput)
+}
+
+// GetBdsInstanceBdsClusterVersionSummaryArrayInput is an input type that accepts GetBdsInstanceBdsClusterVersionSummaryArray and GetBdsInstanceBdsClusterVersionSummaryArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsClusterVersionSummaryArrayInput` via:
+//
+//	GetBdsInstanceBdsClusterVersionSummaryArray{ GetBdsInstanceBdsClusterVersionSummaryArgs{...} }
+type GetBdsInstanceBdsClusterVersionSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsClusterVersionSummaryArrayOutput() GetBdsInstanceBdsClusterVersionSummaryArrayOutput
+	ToGetBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(context.Context) GetBdsInstanceBdsClusterVersionSummaryArrayOutput
+}
+
+type GetBdsInstanceBdsClusterVersionSummaryArray []GetBdsInstanceBdsClusterVersionSummaryInput
+
+func (GetBdsInstanceBdsClusterVersionSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsClusterVersionSummaryArray) ToGetBdsInstanceBdsClusterVersionSummaryArrayOutput() GetBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return i.ToGetBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsClusterVersionSummaryArray) ToGetBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsClusterVersionSummaryArrayOutput)
+}
+
+type GetBdsInstanceBdsClusterVersionSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsClusterVersionSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsClusterVersionSummaryOutput) ToGetBdsInstanceBdsClusterVersionSummaryOutput() GetBdsInstanceBdsClusterVersionSummaryOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsClusterVersionSummaryOutput) ToGetBdsInstanceBdsClusterVersionSummaryOutputWithContext(ctx context.Context) GetBdsInstanceBdsClusterVersionSummaryOutput {
+	return o
+}
+
+// Big Data Service version installed in the cluster.
+func (o GetBdsInstanceBdsClusterVersionSummaryOutput) BdsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsClusterVersionSummary) string { return v.BdsVersion }).(pulumi.StringOutput)
+}
+
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o GetBdsInstanceBdsClusterVersionSummaryOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsClusterVersionSummary) string { return v.OdhVersion }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceBdsClusterVersionSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsClusterVersionSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsClusterVersionSummaryArrayOutput) ToGetBdsInstanceBdsClusterVersionSummaryArrayOutput() GetBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsClusterVersionSummaryArrayOutput) ToGetBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsClusterVersionSummaryArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsClusterVersionSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsClusterVersionSummary {
+		return vs[0].([]GetBdsInstanceBdsClusterVersionSummary)[vs[1].(int)]
+	}).(GetBdsInstanceBdsClusterVersionSummaryOutput)
 }
 
 type GetBdsInstanceCloudSqlDetail struct {
@@ -13403,6 +14735,1386 @@ func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) Index(i pulumi.IntInpu
 	}).(GetBdsInstanceGetOsPatchTargetPackageOutput)
 }
 
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired bool `pulumi:"isPosixAttributesAdditionRequired"`
+	// Lifecycle state of the UPST config
+	State string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationInput is an input type that accepts GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs and GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs{...}
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired pulumi.BoolInput `pulumi:"isPosixAttributesAdditionRequired"`
+	// Lifecycle state of the UPST config
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray and GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray{ GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs{...} }
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray []GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationInput
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return o
+}
+
+// whether to append POSIX attributes to IAM users
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) IsPosixAttributesAdditionRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration) bool {
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolOutput)
+}
+
+// Lifecycle state of the UPST config
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationIamUserSyncConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired bool `pulumi:"isPosixAttributesAdditionRequired"`
+}
+
+// GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailInput is an input type that accepts GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs and GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs{...}
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired pulumi.BoolInput `pulumi:"isPosixAttributesAdditionRequired"`
+}
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray and GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray{ GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs{...} }
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput
+	ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray []GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailInput
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return o
+}
+
+// whether to append POSIX attributes to IAM users
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput) IsPosixAttributesAdditionRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail) bool {
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetail)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfiguration struct {
+	// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+	KeytabContent string `pulumi:"keytabContent"`
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId string `pulumi:"masterEncryptionKeyId"`
+	// Secret ID for token exchange keytab
+	SecretId string `pulumi:"secretId"`
+	// Lifecycle state of the UPST config
+	State string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+	TimeTokenExchangeKeytabLastRefreshed string `pulumi:"timeTokenExchangeKeytabLastRefreshed"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Token exchange kerberos Principal name in cluster
+	TokenExchangePrincipalName string `pulumi:"tokenExchangePrincipalName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetBdsInstanceIdentityConfigurationUpstConfigurationInput is an input type that accepts GetBdsInstanceIdentityConfigurationUpstConfigurationArgs and GetBdsInstanceIdentityConfigurationUpstConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationUpstConfigurationInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationUpstConfigurationArgs{...}
+type GetBdsInstanceIdentityConfigurationUpstConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationOutput
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationOutput
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationArgs struct {
+	// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+	KeytabContent pulumi.StringInput `pulumi:"keytabContent"`
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId pulumi.StringInput `pulumi:"masterEncryptionKeyId"`
+	// Secret ID for token exchange keytab
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// Lifecycle state of the UPST config
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+	TimeTokenExchangeKeytabLastRefreshed pulumi.StringInput `pulumi:"timeTokenExchangeKeytabLastRefreshed"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Token exchange kerberos Principal name in cluster
+	TokenExchangePrincipalName pulumi.StringInput `pulumi:"tokenExchangePrincipalName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationArgs) ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationArgs) ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationUpstConfigurationOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationUpstConfigurationArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationUpstConfigurationArray and GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationUpstConfigurationArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationUpstConfigurationArray{ GetBdsInstanceIdentityConfigurationUpstConfigurationArgs{...} }
+type GetBdsInstanceIdentityConfigurationUpstConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationArray []GetBdsInstanceIdentityConfigurationUpstConfigurationInput
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationArray) ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationArray) ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return o
+}
+
+// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) KeytabContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.KeytabContent }).(pulumi.StringOutput)
+}
+
+// Master Encryption key used for encrypting token exchange keytab.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) MasterEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.MasterEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Secret ID for token exchange keytab
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// Lifecycle state of the UPST config
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) TimeTokenExchangeKeytabLastRefreshed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string {
+		return v.TimeTokenExchangeKeytabLastRefreshed
+	}).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Token exchange kerberos Principal name in cluster
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) TokenExchangePrincipalName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string {
+		return v.TokenExchangePrincipalName
+	}).(pulumi.StringOutput)
+}
+
+// The instance OCID of the node, which is the resource from which the node backup was acquired.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfiguration) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationUpstConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationUpstConfiguration {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationUpstConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationUpstConfigurationOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetail struct {
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId string `pulumi:"masterEncryptionKeyId"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetBdsInstanceIdentityConfigurationUpstConfigurationDetailInput is an input type that accepts GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs and GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationUpstConfigurationDetailInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs{...}
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs struct {
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId pulumi.StringInput `pulumi:"masterEncryptionKeyId"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray and GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray{ GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs{...} }
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput
+	ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray []GetBdsInstanceIdentityConfigurationUpstConfigurationDetailInput
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput {
+	return o
+}
+
+// Master Encryption key used for encrypting token exchange keytab.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput) MasterEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfigurationDetail) string {
+		return v.MasterEncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The instance OCID of the node, which is the resource from which the node backup was acquired.
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationUpstConfigurationDetail) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationUpstConfigurationDetail {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationUpstConfigurationDetail)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceIdentityConfigurationsFilterInput is an input type that accepts GetBdsInstanceIdentityConfigurationsFilterArgs and GetBdsInstanceIdentityConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsFilterInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsFilterArgs{...}
+type GetBdsInstanceIdentityConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsFilterOutput() GetBdsInstanceIdentityConfigurationsFilterOutput
+	ToGetBdsInstanceIdentityConfigurationsFilterOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsFilterOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceIdentityConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsFilterArgs) ToGetBdsInstanceIdentityConfigurationsFilterOutput() GetBdsInstanceIdentityConfigurationsFilterOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsFilterArgs) ToGetBdsInstanceIdentityConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsFilterOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationsFilterArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationsFilterArray and GetBdsInstanceIdentityConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsFilterArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsFilterArray{ GetBdsInstanceIdentityConfigurationsFilterArgs{...} }
+type GetBdsInstanceIdentityConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsFilterArrayOutput() GetBdsInstanceIdentityConfigurationsFilterArrayOutput
+	ToGetBdsInstanceIdentityConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsFilterArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsFilterArray []GetBdsInstanceIdentityConfigurationsFilterInput
+
+func (GetBdsInstanceIdentityConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsFilterArray) ToGetBdsInstanceIdentityConfigurationsFilterArrayOutput() GetBdsInstanceIdentityConfigurationsFilterArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsFilterArray) ToGetBdsInstanceIdentityConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsFilterArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterOutput) ToGetBdsInstanceIdentityConfigurationsFilterOutput() GetBdsInstanceIdentityConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterOutput) ToGetBdsInstanceIdentityConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterArrayOutput) ToGetBdsInstanceIdentityConfigurationsFilterArrayOutput() GetBdsInstanceIdentityConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterArrayOutput) ToGetBdsInstanceIdentityConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationsFilter {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationsFilterOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfiguration struct {
+	ActivateIamUserSyncConfigurationTrigger string `pulumi:"activateIamUserSyncConfigurationTrigger"`
+	ActivateUpstConfigurationTrigger        string `pulumi:"activateUpstConfigurationTrigger"`
+	// The OCID of the cluster.
+	BdsInstanceId        string `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// identity domain confidential application ID for the identity config
+	ConfidentialApplicationId string `pulumi:"confidentialApplicationId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName                     string                                                                                    `pulumi:"displayName"`
+	IamUserSyncConfigurationDetails []GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail `pulumi:"iamUserSyncConfigurationDetails"`
+	// Information about the IAM user sync configuration.
+	IamUserSyncConfigurations []GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration `pulumi:"iamUserSyncConfigurations"`
+	// The id of the identity config
+	Id string `pulumi:"id"`
+	// Identity domain to use for identity config
+	IdentityDomainId                      string `pulumi:"identityDomainId"`
+	RefreshConfidentialApplicationTrigger string `pulumi:"refreshConfidentialApplicationTrigger"`
+	RefreshUpstTokenExchangeKeytabTrigger string `pulumi:"refreshUpstTokenExchangeKeytabTrigger"`
+	// The state of the identity config
+	State string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated              string                                                                             `pulumi:"timeUpdated"`
+	UpstConfigurationDetails []GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail `pulumi:"upstConfigurationDetails"`
+	// Information about the UPST configuration.
+	UpstConfigurations []GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration `pulumi:"upstConfigurations"`
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs and GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs{...}
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs struct {
+	ActivateIamUserSyncConfigurationTrigger pulumi.StringInput `pulumi:"activateIamUserSyncConfigurationTrigger"`
+	ActivateUpstConfigurationTrigger        pulumi.StringInput `pulumi:"activateUpstConfigurationTrigger"`
+	// The OCID of the cluster.
+	BdsInstanceId        pulumi.StringInput `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword pulumi.StringInput `pulumi:"clusterAdminPassword"`
+	// identity domain confidential application ID for the identity config
+	ConfidentialApplicationId pulumi.StringInput `pulumi:"confidentialApplicationId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName                     pulumi.StringInput                                                                                `pulumi:"displayName"`
+	IamUserSyncConfigurationDetails GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayInput `pulumi:"iamUserSyncConfigurationDetails"`
+	// Information about the IAM user sync configuration.
+	IamUserSyncConfigurations GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayInput `pulumi:"iamUserSyncConfigurations"`
+	// The id of the identity config
+	Id pulumi.StringInput `pulumi:"id"`
+	// Identity domain to use for identity config
+	IdentityDomainId                      pulumi.StringInput `pulumi:"identityDomainId"`
+	RefreshConfidentialApplicationTrigger pulumi.StringInput `pulumi:"refreshConfidentialApplicationTrigger"`
+	RefreshUpstTokenExchangeKeytabTrigger pulumi.StringInput `pulumi:"refreshUpstTokenExchangeKeytabTrigger"`
+	// The state of the identity config
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated              pulumi.StringInput                                                                         `pulumi:"timeUpdated"`
+	UpstConfigurationDetails GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayInput `pulumi:"upstConfigurationDetails"`
+	// Information about the UPST configuration.
+	UpstConfigurations GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayInput `pulumi:"upstConfigurations"`
+}
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray and GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray{ GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs{...} }
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray []GetBdsInstanceIdentityConfigurationsIdentityConfigurationInput
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ActivateIamUserSyncConfigurationTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string {
+		return v.ActivateIamUserSyncConfigurationTrigger
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ActivateUpstConfigurationTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string {
+		return v.ActivateUpstConfigurationTrigger
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.BdsInstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ClusterAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string {
+		return v.ClusterAdminPassword
+	}).(pulumi.StringOutput)
+}
+
+// identity domain confidential application ID for the identity config
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) ConfidentialApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string {
+		return v.ConfidentialApplicationId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) IamUserSyncConfigurationDetails() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) []GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail {
+		return v.IamUserSyncConfigurationDetails
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput)
+}
+
+// Information about the IAM user sync configuration.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) IamUserSyncConfigurations() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) []GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration {
+		return v.IamUserSyncConfigurations
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput)
+}
+
+// The id of the identity config
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Identity domain to use for identity config
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) IdentityDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.IdentityDomainId }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) RefreshConfidentialApplicationTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string {
+		return v.RefreshConfidentialApplicationTrigger
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) RefreshUpstTokenExchangeKeytabTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string {
+		return v.RefreshUpstTokenExchangeKeytabTrigger
+	}).(pulumi.StringOutput)
+}
+
+// The state of the identity config
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) UpstConfigurationDetails() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) []GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail {
+		return v.UpstConfigurationDetails
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput)
+}
+
+// Information about the UPST configuration.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput) UpstConfigurations() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfiguration) []GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration {
+		return v.UpstConfigurations
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationsIdentityConfiguration {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationsIdentityConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired bool `pulumi:"isPosixAttributesAdditionRequired"`
+	// The state of the identity config
+	State string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs and GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs{...}
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired pulumi.BoolInput `pulumi:"isPosixAttributesAdditionRequired"`
+	// The state of the identity config
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray and GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray{ GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs{...} }
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray []GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationInput
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput {
+	return o
+}
+
+// whether to append POSIX attributes to IAM users
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) IsPosixAttributesAdditionRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration) bool {
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolOutput)
+}
+
+// The state of the identity config
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired bool `pulumi:"isPosixAttributesAdditionRequired"`
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs and GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs{...}
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs struct {
+	// whether to append POSIX attributes to IAM users
+	IsPosixAttributesAdditionRequired pulumi.BoolInput `pulumi:"isPosixAttributesAdditionRequired"`
+}
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray and GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray{ GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs{...} }
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray []GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailInput
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return o
+}
+
+// whether to append POSIX attributes to IAM users
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput) IsPosixAttributesAdditionRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail) bool {
+		return v.IsPosixAttributesAdditionRequired
+	}).(pulumi.BoolOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetail)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration struct {
+	// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+	KeytabContent string `pulumi:"keytabContent"`
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId string `pulumi:"masterEncryptionKeyId"`
+	// Secret ID for token exchange keytab
+	SecretId string `pulumi:"secretId"`
+	// The state of the identity config
+	State string `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+	TimeTokenExchangeKeytabLastRefreshed string `pulumi:"timeTokenExchangeKeytabLastRefreshed"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Token exchange kerberos Principal name in cluster
+	TokenExchangePrincipalName string `pulumi:"tokenExchangePrincipalName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs and GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs{...}
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs struct {
+	// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+	KeytabContent pulumi.StringInput `pulumi:"keytabContent"`
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId pulumi.StringInput `pulumi:"masterEncryptionKeyId"`
+	// Secret ID for token exchange keytab
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// The state of the identity config
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+	TimeTokenExchangeKeytabLastRefreshed pulumi.StringInput `pulumi:"timeTokenExchangeKeytabLastRefreshed"`
+	// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Token exchange kerberos Principal name in cluster
+	TokenExchangePrincipalName pulumi.StringInput `pulumi:"tokenExchangePrincipalName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray and GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray{ GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs{...} }
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray []GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationInput
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput {
+	return o
+}
+
+// The kerberos keytab content used for creating identity propagation trust config, in base64 format
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) KeytabContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.KeytabContent
+	}).(pulumi.StringOutput)
+}
+
+// Master Encryption key used for encrypting token exchange keytab.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) MasterEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.MasterEncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// Secret ID for token exchange keytab
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.SecretId
+	}).(pulumi.StringOutput)
+}
+
+// The state of the identity config
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) TimeTokenExchangeKeytabLastRefreshed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.TimeTokenExchangeKeytabLastRefreshed
+	}).(pulumi.StringOutput)
+}
+
+// Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Token exchange kerberos Principal name in cluster
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) TokenExchangePrincipalName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.TokenExchangePrincipalName
+	}).(pulumi.StringOutput)
+}
+
+// The instance OCID of the node, which is the resource from which the node backup was acquired.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration) string {
+		return v.VaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail struct {
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId string `pulumi:"masterEncryptionKeyId"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs and GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs{...}
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs struct {
+	// Master Encryption key used for encrypting token exchange keytab.
+	MasterEncryptionKeyId pulumi.StringInput `pulumi:"masterEncryptionKeyId"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput)
+}
+
+// GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayInput is an input type that accepts GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray and GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayInput` via:
+//
+//	GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray{ GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs{...} }
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput
+	ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray []GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailInput
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return i.ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput {
+	return o
+}
+
+// Master Encryption key used for encrypting token exchange keytab.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput) MasterEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail) string {
+		return v.MasterEncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The instance OCID of the node, which is the resource from which the node backup was acquired.
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail) string {
+		return v.VaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput() GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput) ToGetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail {
+		return vs[0].([]GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetail)[vs[1].(int)]
+	}).(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput)
+}
+
 type GetBdsInstanceKafkaBrokerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
@@ -14541,6 +17253,8 @@ type GetBdsInstanceNode struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
@@ -14597,6 +17311,8 @@ type GetBdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
@@ -14732,6 +17448,11 @@ func (o GetBdsInstanceNodeOutput) Nvmes() pulumi.IntOutput {
 // The total number of OCPUs available to the node.
 func (o GetBdsInstanceNodeOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o GetBdsInstanceNodeOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.OdhVersion }).(pulumi.StringOutput)
 }
 
 // BDS-assigned Operating System version for the node.
@@ -15646,6 +18367,208 @@ func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurat
 	}).(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput)
 }
 
+type GetBdsInstanceStartClusterShapeConfig struct {
+	NodeTypeShapeConfigs []GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig `pulumi:"nodeTypeShapeConfigs"`
+}
+
+// GetBdsInstanceStartClusterShapeConfigInput is an input type that accepts GetBdsInstanceStartClusterShapeConfigArgs and GetBdsInstanceStartClusterShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceStartClusterShapeConfigInput` via:
+//
+//	GetBdsInstanceStartClusterShapeConfigArgs{...}
+type GetBdsInstanceStartClusterShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceStartClusterShapeConfigOutput() GetBdsInstanceStartClusterShapeConfigOutput
+	ToGetBdsInstanceStartClusterShapeConfigOutputWithContext(context.Context) GetBdsInstanceStartClusterShapeConfigOutput
+}
+
+type GetBdsInstanceStartClusterShapeConfigArgs struct {
+	NodeTypeShapeConfigs GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput `pulumi:"nodeTypeShapeConfigs"`
+}
+
+func (GetBdsInstanceStartClusterShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigArgs) ToGetBdsInstanceStartClusterShapeConfigOutput() GetBdsInstanceStartClusterShapeConfigOutput {
+	return i.ToGetBdsInstanceStartClusterShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigArgs) ToGetBdsInstanceStartClusterShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceStartClusterShapeConfigOutput)
+}
+
+// GetBdsInstanceStartClusterShapeConfigArrayInput is an input type that accepts GetBdsInstanceStartClusterShapeConfigArray and GetBdsInstanceStartClusterShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceStartClusterShapeConfigArrayInput` via:
+//
+//	GetBdsInstanceStartClusterShapeConfigArray{ GetBdsInstanceStartClusterShapeConfigArgs{...} }
+type GetBdsInstanceStartClusterShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceStartClusterShapeConfigArrayOutput() GetBdsInstanceStartClusterShapeConfigArrayOutput
+	ToGetBdsInstanceStartClusterShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceStartClusterShapeConfigArrayOutput
+}
+
+type GetBdsInstanceStartClusterShapeConfigArray []GetBdsInstanceStartClusterShapeConfigInput
+
+func (GetBdsInstanceStartClusterShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigArray) ToGetBdsInstanceStartClusterShapeConfigArrayOutput() GetBdsInstanceStartClusterShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceStartClusterShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigArray) ToGetBdsInstanceStartClusterShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceStartClusterShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceStartClusterShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceStartClusterShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigOutput) ToGetBdsInstanceStartClusterShapeConfigOutput() GetBdsInstanceStartClusterShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigOutput) ToGetBdsInstanceStartClusterShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigOutput) NodeTypeShapeConfigs() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceStartClusterShapeConfig) []GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+		return v.NodeTypeShapeConfigs
+	}).(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceStartClusterShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceStartClusterShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigArrayOutput) ToGetBdsInstanceStartClusterShapeConfigArrayOutput() GetBdsInstanceStartClusterShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigArrayOutput) ToGetBdsInstanceStartClusterShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceStartClusterShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceStartClusterShapeConfig {
+		return vs[0].([]GetBdsInstanceStartClusterShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceStartClusterShapeConfigOutput)
+}
+
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig struct {
+	// Cluster node type.
+	NodeType string `pulumi:"nodeType"`
+	// Shape of the node.
+	Shape string `pulumi:"shape"`
+}
+
+// GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput is an input type that accepts GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs and GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput` via:
+//
+//	GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{...}
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput
+	ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(context.Context) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput
+}
+
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs struct {
+	// Cluster node type.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Shape of the node.
+	Shape pulumi.StringInput `pulumi:"shape"`
+}
+
+func (GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return i.ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput)
+}
+
+// GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput is an input type that accepts GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray and GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput` via:
+//
+//	GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray{ GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{...} }
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput
+	ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray []GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput
+
+func (GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return o
+}
+
+// Cluster node type.
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ToGetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+		return vs[0].([]GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput)
+}
+
 type GetBdsInstanceUtilNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
@@ -16137,6 +19060,8 @@ func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetBdsInstancesBdsInstance struct {
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummaries []GetBdsInstancesBdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummaries"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -16166,6 +19091,7 @@ type GetBdsInstancesBdsInstance struct {
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured bool `pulumi:"isCloudSqlConfigured"`
+	IsForceRemoveEnabled bool `pulumi:"isForceRemoveEnabled"`
 	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
@@ -16185,8 +19111,10 @@ type GetBdsInstancesBdsInstance struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          string `pulumi:"osPatchVersion"`
+	NumberOfNodesRequiringMaintenanceReboot int                                                 `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          string                                              `pulumi:"osPatchVersion"`
+	RemoveNode                              string                                              `pulumi:"removeNode"`
+	StartClusterShapeConfigs                []GetBdsInstancesBdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -16209,6 +19137,8 @@ type GetBdsInstancesBdsInstanceInput interface {
 }
 
 type GetBdsInstancesBdsInstanceArgs struct {
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummaries GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput `pulumi:"bdsClusterVersionSummaries"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl pulumi.StringInput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -16238,6 +19168,7 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	IgnoreExistingNodesShapes pulumi.StringArrayInput `pulumi:"ignoreExistingNodesShapes"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured pulumi.BoolInput `pulumi:"isCloudSqlConfigured"`
+	IsForceRemoveEnabled pulumi.BoolInput `pulumi:"isForceRemoveEnabled"`
 	IsForceStopJobs      pulumi.BoolInput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability pulumi.BoolInput `pulumi:"isHighAvailability"`
@@ -16257,8 +19188,10 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          pulumi.StringInput `pulumi:"osPatchVersion"`
+	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput                                             `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          pulumi.StringInput                                          `pulumi:"osPatchVersion"`
+	RemoveNode                              pulumi.StringInput                                          `pulumi:"removeNode"`
+	StartClusterShapeConfigs                GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput `pulumi:"startClusterShapeConfigs"`
 	// The state of the cluster.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -16318,6 +19251,13 @@ func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutput() G
 
 func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceOutput {
 	return o
+}
+
+// Cluster version details including bds and odh version information.
+func (o GetBdsInstancesBdsInstanceOutput) BdsClusterVersionSummaries() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceBdsClusterVersionSummary {
+		return v.BdsClusterVersionSummaries
+	}).(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput)
 }
 
 // pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -16404,6 +19344,10 @@ func (o GetBdsInstancesBdsInstanceOutput) IsCloudSqlConfigured() pulumi.BoolOutp
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceOutput) IsForceRemoveEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsForceRemoveEnabled }).(pulumi.BoolOutput)
+}
+
 func (o GetBdsInstancesBdsInstanceOutput) IsForceStopJobs() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsForceStopJobs }).(pulumi.BoolOutput)
 }
@@ -16466,6 +19410,16 @@ func (o GetBdsInstancesBdsInstanceOutput) OsPatchVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.OsPatchVersion }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceOutput) RemoveNode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.RemoveNode }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) StartClusterShapeConfigs() GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceStartClusterShapeConfig {
+		return v.StartClusterShapeConfigs
+	}).(GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput)
+}
+
 // The state of the cluster.
 func (o GetBdsInstancesBdsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.State }).(pulumi.StringOutput)
@@ -16507,6 +19461,112 @@ func (o GetBdsInstancesBdsInstanceArrayOutput) Index(i pulumi.IntInput) GetBdsIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstance {
 		return vs[0].([]GetBdsInstancesBdsInstance)[vs[1].(int)]
 	}).(GetBdsInstancesBdsInstanceOutput)
+}
+
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummary struct {
+	// Big Data Service version installed in the cluster.
+	BdsVersion string `pulumi:"bdsVersion"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion string `pulumi:"odhVersion"`
+}
+
+// GetBdsInstancesBdsInstanceBdsClusterVersionSummaryInput is an input type that accepts GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs and GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceBdsClusterVersionSummaryInput` via:
+//
+//	GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs{...}
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummaryInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput
+	ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutputWithContext(context.Context) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput
+}
+
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs struct {
+	// Big Data Service version installed in the cluster.
+	BdsVersion pulumi.StringInput `pulumi:"bdsVersion"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
+}
+
+func (GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput {
+	return i.ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput)
+}
+
+// GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput is an input type that accepts GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray and GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray{ GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs{...} }
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput
+	ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray []GetBdsInstancesBdsInstanceBdsClusterVersionSummaryInput
+
+func (GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput {
+	return o
+}
+
+// Big Data Service version installed in the cluster.
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput) BdsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsClusterVersionSummary) string { return v.BdsVersion }).(pulumi.StringOutput)
+}
+
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsClusterVersionSummary) string { return v.OdhVersion }).(pulumi.StringOutput)
+}
+
+type GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceBdsClusterVersionSummary)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput) ToGetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceBdsClusterVersionSummary {
+		return vs[0].([]GetBdsInstancesBdsInstanceBdsClusterVersionSummary)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput)
 }
 
 type GetBdsInstancesBdsInstanceCloudSqlDetail struct {
@@ -18120,6 +21180,8 @@ type GetBdsInstancesBdsInstanceNode struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
@@ -18176,6 +21238,8 @@ type GetBdsInstancesBdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
@@ -18313,6 +21377,11 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) Nvmes() pulumi.IntOutput {
 // The total number of OCPUs available to the node.
 func (o GetBdsInstancesBdsInstanceNodeOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o GetBdsInstancesBdsInstanceNodeOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.OdhVersion }).(pulumi.StringOutput)
 }
 
 // BDS-assigned Operating System version for the node.
@@ -18474,6 +21543,208 @@ func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceNodeAttachedBlockVolume {
 		return vs[0].([]GetBdsInstancesBdsInstanceNodeAttachedBlockVolume)[vs[1].(int)]
 	}).(GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput)
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfig struct {
+	NodeTypeShapeConfigs []GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig `pulumi:"nodeTypeShapeConfigs"`
+}
+
+// GetBdsInstancesBdsInstanceStartClusterShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs and GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceStartClusterShapeConfigInput` via:
+//
+//	GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs struct {
+	NodeTypeShapeConfigs GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput `pulumi:"nodeTypeShapeConfigs"`
+}
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceStartClusterShapeConfigArray and GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceStartClusterShapeConfigArray{ GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigArray []GetBdsInstancesBdsInstanceStartClusterShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigArray) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigArray) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput) NodeTypeShapeConfigs() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceStartClusterShapeConfig) []GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+		return v.NodeTypeShapeConfigs
+	}).(GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceStartClusterShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceStartClusterShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceStartClusterShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput)
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig struct {
+	// Cluster node type.
+	NodeType string `pulumi:"nodeType"`
+	// Shape of the node.
+	Shape string `pulumi:"shape"`
+}
+
+// GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs and GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput` via:
+//
+//	GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs struct {
+	// Cluster node type.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Shape of the node.
+	Shape pulumi.StringInput `pulumi:"shape"`
+}
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray and GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray{ GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray []GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return o
+}
+
+// Cluster node type.
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+type GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput)
 }
 
 type GetBdsInstancesBdsInstanceUtilNode struct {
@@ -19115,6 +22386,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleArrayInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleMetricThresholdInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), BdsInstanceBdsClusterVersionSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsClusterVersionSummaryPtrInput)(nil)).Elem(), BdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceCloudSqlDetailInput)(nil)).Elem(), BdsInstanceCloudSqlDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceCloudSqlDetailArrayInput)(nil)).Elem(), BdsInstanceCloudSqlDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceCloudSqlDetailKerberosDetailInput)(nil)).Elem(), BdsInstanceCloudSqlDetailKerberosDetailArgs{})
@@ -19129,6 +22402,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodePtrInput)(nil)).Elem(), BdsInstanceEdgeNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), BdsInstanceEdgeNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceEdgeNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfigurationInput)(nil)).Elem(), BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput)(nil)).Elem(), BdsInstanceIdentityConfigurationIamUserSyncConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsInput)(nil)).Elem(), BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrInput)(nil)).Elem(), BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfigurationInput)(nil)).Elem(), BdsInstanceIdentityConfigurationUpstConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfigurationArrayInput)(nil)).Elem(), BdsInstanceIdentityConfigurationUpstConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfigurationDetailsInput)(nil)).Elem(), BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrInput)(nil)).Elem(), BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodeInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodePtrInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceKafkaBrokerNodeShapeConfigInput)(nil)).Elem(), BdsInstanceKafkaBrokerNodeShapeConfigArgs{})
@@ -19149,6 +22430,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigArrayInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstancePatchActionPatchingConfigInput)(nil)).Elem(), BdsInstancePatchActionPatchingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstancePatchActionPatchingConfigPtrInput)(nil)).Elem(), BdsInstancePatchActionPatchingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceStartClusterShapeConfigInput)(nil)).Elem(), BdsInstanceStartClusterShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceStartClusterShapeConfigArrayInput)(nil)).Elem(), BdsInstanceStartClusterShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput)(nil)).Elem(), BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput)(nil)).Elem(), BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodePtrInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), BdsInstanceUtilNodeShapeConfigArgs{})
@@ -19241,10 +22526,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsFilterInput)(nil)).Elem(), GetAutoScalingConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsFilterArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsBdsClusterVersionInput)(nil)).Elem(), GetBdsClusterVersionsBdsClusterVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsBdsClusterVersionArrayInput)(nil)).Elem(), GetBdsClusterVersionsBdsClusterVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsFilterInput)(nil)).Elem(), GetBdsClusterVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsFilterArrayInput)(nil)).Elem(), GetBdsClusterVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysBdsApiKeyInput)(nil)).Elem(), GetBdsInstanceApiKeysBdsApiKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysBdsApiKeyArrayInput)(nil)).Elem(), GetBdsInstanceApiKeysBdsApiKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysFilterInput)(nil)).Elem(), GetBdsInstanceApiKeysFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysFilterArrayInput)(nil)).Elem(), GetBdsInstanceApiKeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), GetBdsInstanceBdsClusterVersionSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsClusterVersionSummaryArrayInput)(nil)).Elem(), GetBdsInstanceBdsClusterVersionSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceCloudSqlDetailInput)(nil)).Elem(), GetBdsInstanceCloudSqlDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceCloudSqlDetailArrayInput)(nil)).Elem(), GetBdsInstanceCloudSqlDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceCloudSqlDetailKerberosDetailInput)(nil)).Elem(), GetBdsInstanceCloudSqlDetailKerberosDetailArgs{})
@@ -19263,6 +22554,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchFilterArrayInput)(nil)).Elem(), GetBdsInstanceGetOsPatchFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchTargetPackageInput)(nil)).Elem(), GetBdsInstanceGetOsPatchTargetPackageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceGetOsPatchTargetPackageArrayInput)(nil)).Elem(), GetBdsInstanceGetOsPatchTargetPackageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfigurationInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationUpstConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationUpstConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfigurationDetailInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayInput)(nil)).Elem(), GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeArrayInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceKafkaBrokerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceKafkaBrokerNodeShapeConfigArgs{})
@@ -19297,6 +22608,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeInput)(nil)).Elem(), GetBdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeArrayInput)(nil)).Elem(), GetBdsInstanceUtilNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceUtilNodeShapeConfigArgs{})
@@ -19307,6 +22622,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceWorkerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceInput)(nil)).Elem(), GetBdsInstancesBdsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceCloudSqlDetailInput)(nil)).Elem(), GetBdsInstancesBdsInstanceCloudSqlDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceCloudSqlDetailArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceCloudSqlDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailInput)(nil)).Elem(), GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArgs{})
@@ -19335,6 +22652,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceStartClusterShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceStartClusterShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs{})
@@ -19383,6 +22704,8 @@ func init() {
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleMetricOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleMetricThresholdOutput{})
+	pulumi.RegisterOutputType(BdsInstanceBdsClusterVersionSummaryOutput{})
+	pulumi.RegisterOutputType(BdsInstanceBdsClusterVersionSummaryPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceCloudSqlDetailOutput{})
 	pulumi.RegisterOutputType(BdsInstanceCloudSqlDetailArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceCloudSqlDetailKerberosDetailOutput{})
@@ -19397,6 +22720,14 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceEdgeNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceEdgeNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstanceEdgeNodeShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationUpstConfigurationOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationUpstConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationUpstConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(BdsInstanceIdentityConfigurationUpstConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceKafkaBrokerNodeShapeConfigOutput{})
@@ -19417,6 +22748,10 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstancePatchActionPatchingConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstancePatchActionPatchingConfigPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceStartClusterShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceStartClusterShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeShapeConfigOutput{})
@@ -19509,10 +22844,16 @@ func init() {
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsClusterVersionsBdsClusterVersionOutput{})
+	pulumi.RegisterOutputType(GetBdsClusterVersionsBdsClusterVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsClusterVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsClusterVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysBdsApiKeyOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysBdsApiKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysFilterOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsClusterVersionSummaryOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsClusterVersionSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceCloudSqlDetailOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceCloudSqlDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceCloudSqlDetailKerberosDetailOutput{})
@@ -19531,6 +22872,26 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchTargetPackageOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceGetOsPatchTargetPackageArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationUpstConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationUpstConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationUpstConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationUpstConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationIamUserSyncConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceIdentityConfigurationsIdentityConfigurationUpstConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceKafkaBrokerNodeShapeConfigOutput{})
@@ -19565,6 +22926,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeShapeConfigOutput{})
@@ -19575,6 +22940,8 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceWorkerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceCloudSqlDetailOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput{})
@@ -19603,6 +22970,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceStartClusterShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput{})

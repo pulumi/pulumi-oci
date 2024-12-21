@@ -92,6 +92,47 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public static Output<GetMetricsResult> Invoke(GetMetricsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricsResult>("oci:Monitoring/getMetrics:getMetrics", args ?? new GetMetricsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
+        /// 
+        /// Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
+        /// For more information, see
+        /// [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+        /// For information about metrics, see
+        /// [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+        /// 
+        /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMetrics = Oci.Monitoring.GetMetrics.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = metricCompartmentIdInSubtree,
+        ///         DimensionFilters = metricDimensionFilters,
+        ///         GroupBies = metricGroupBy,
+        ///         Name = metricName,
+        ///         Namespace = metricNamespace,
+        ///         ResourceGroup = metricResourceGroup,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMetricsResult> Invoke(GetMetricsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetricsResult>("oci:Monitoring/getMetrics:getMetrics", args ?? new GetMetricsInvokeArgs(), options.WithDefaults());
     }
 
 

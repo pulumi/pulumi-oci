@@ -26,6 +26,14 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetAggregatedComputedUsagesResult> Invoke(GetAggregatedComputedUsagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAggregatedComputedUsagesResult>("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args ?? new GetAggregatedComputedUsagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Aggregated Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+        /// </summary>
+        public static Output<GetAggregatedComputedUsagesResult> Invoke(GetAggregatedComputedUsagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAggregatedComputedUsagesResult>("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args ?? new GetAggregatedComputedUsagesInvokeArgs(), options.WithDefaults());
     }
 
 

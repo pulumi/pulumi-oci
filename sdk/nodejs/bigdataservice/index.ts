@@ -20,6 +20,11 @@ export type BdsInstanceApiKey = import("./bdsInstanceApiKey").BdsInstanceApiKey;
 export const BdsInstanceApiKey: typeof import("./bdsInstanceApiKey").BdsInstanceApiKey = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceApiKey"], () => require("./bdsInstanceApiKey"));
 
+export { BdsInstanceIdentityConfigurationArgs, BdsInstanceIdentityConfigurationState } from "./bdsInstanceIdentityConfiguration";
+export type BdsInstanceIdentityConfiguration = import("./bdsInstanceIdentityConfiguration").BdsInstanceIdentityConfiguration;
+export const BdsInstanceIdentityConfiguration: typeof import("./bdsInstanceIdentityConfiguration").BdsInstanceIdentityConfiguration = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceIdentityConfiguration"], () => require("./bdsInstanceIdentityConfiguration"));
+
 export { BdsInstanceMetastoreConfigArgs, BdsInstanceMetastoreConfigState } from "./bdsInstanceMetastoreConfig";
 export type BdsInstanceMetastoreConfig = import("./bdsInstanceMetastoreConfig").BdsInstanceMetastoreConfig;
 export const BdsInstanceMetastoreConfig: typeof import("./bdsInstanceMetastoreConfig").BdsInstanceMetastoreConfig = null as any;
@@ -55,6 +60,11 @@ export const getAutoScalingConfigurations: typeof import("./getAutoScalingConfig
 export const getAutoScalingConfigurationsOutput: typeof import("./getAutoScalingConfigurations").getAutoScalingConfigurationsOutput = null as any;
 utilities.lazyLoad(exports, ["getAutoScalingConfigurations","getAutoScalingConfigurationsOutput"], () => require("./getAutoScalingConfigurations"));
 
+export { GetBdsClusterVersionsArgs, GetBdsClusterVersionsResult, GetBdsClusterVersionsOutputArgs } from "./getBdsClusterVersions";
+export const getBdsClusterVersions: typeof import("./getBdsClusterVersions").getBdsClusterVersions = null as any;
+export const getBdsClusterVersionsOutput: typeof import("./getBdsClusterVersions").getBdsClusterVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsClusterVersions","getBdsClusterVersionsOutput"], () => require("./getBdsClusterVersions"));
+
 export { GetBdsInstanceArgs, GetBdsInstanceResult, GetBdsInstanceOutputArgs } from "./getBdsInstance";
 export const getBdsInstance: typeof import("./getBdsInstance").getBdsInstance = null as any;
 export const getBdsInstanceOutput: typeof import("./getBdsInstance").getBdsInstanceOutput = null as any;
@@ -74,6 +84,16 @@ export { GetBdsInstanceGetOsPatchArgs, GetBdsInstanceGetOsPatchResult, GetBdsIns
 export const getBdsInstanceGetOsPatch: typeof import("./getBdsInstanceGetOsPatch").getBdsInstanceGetOsPatch = null as any;
 export const getBdsInstanceGetOsPatchOutput: typeof import("./getBdsInstanceGetOsPatch").getBdsInstanceGetOsPatchOutput = null as any;
 utilities.lazyLoad(exports, ["getBdsInstanceGetOsPatch","getBdsInstanceGetOsPatchOutput"], () => require("./getBdsInstanceGetOsPatch"));
+
+export { GetBdsInstanceIdentityConfigurationArgs, GetBdsInstanceIdentityConfigurationResult, GetBdsInstanceIdentityConfigurationOutputArgs } from "./getBdsInstanceIdentityConfiguration";
+export const getBdsInstanceIdentityConfiguration: typeof import("./getBdsInstanceIdentityConfiguration").getBdsInstanceIdentityConfiguration = null as any;
+export const getBdsInstanceIdentityConfigurationOutput: typeof import("./getBdsInstanceIdentityConfiguration").getBdsInstanceIdentityConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceIdentityConfiguration","getBdsInstanceIdentityConfigurationOutput"], () => require("./getBdsInstanceIdentityConfiguration"));
+
+export { GetBdsInstanceIdentityConfigurationsArgs, GetBdsInstanceIdentityConfigurationsResult, GetBdsInstanceIdentityConfigurationsOutputArgs } from "./getBdsInstanceIdentityConfigurations";
+export const getBdsInstanceIdentityConfigurations: typeof import("./getBdsInstanceIdentityConfigurations").getBdsInstanceIdentityConfigurations = null as any;
+export const getBdsInstanceIdentityConfigurationsOutput: typeof import("./getBdsInstanceIdentityConfigurations").getBdsInstanceIdentityConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceIdentityConfigurations","getBdsInstanceIdentityConfigurationsOutput"], () => require("./getBdsInstanceIdentityConfigurations"));
 
 export { GetBdsInstanceListOsPatchesArgs, GetBdsInstanceListOsPatchesResult, GetBdsInstanceListOsPatchesOutputArgs } from "./getBdsInstanceListOsPatches";
 export const getBdsInstanceListOsPatches: typeof import("./getBdsInstanceListOsPatches").getBdsInstanceListOsPatches = null as any;
@@ -126,6 +146,8 @@ const _module = {
                 return new BdsInstance(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
                 return new BdsInstanceApiKey(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration":
+                return new BdsInstanceIdentityConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
                 return new BdsInstanceMetastoreConfig(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement":
@@ -144,6 +166,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "BigDataService/autoScalingConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceIdentityConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastoreConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOperationCertificateManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOsPatchAction", _module)

@@ -106,21 +106,11 @@ type GetCompartmentsResult struct {
 }
 
 func GetCompartmentsOutput(ctx *pulumi.Context, args GetCompartmentsOutputArgs, opts ...pulumi.InvokeOption) GetCompartmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCompartmentsResultOutput, error) {
 			args := v.(GetCompartmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCompartmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getCompartments:getCompartments", args, &rv, "", opts...)
-			if err != nil {
-				return GetCompartmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCompartmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCompartmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getCompartments:getCompartments", args, GetCompartmentsResultOutput{}, options).(GetCompartmentsResultOutput), nil
 		}).(GetCompartmentsResultOutput)
 }
 

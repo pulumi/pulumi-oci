@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousCharacterSetsResult> Invoke(GetAutonomousCharacterSetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousCharacterSetsResult>("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args ?? new GetAutonomousCharacterSetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of supported character sets.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
+        ///     {
+        ///         CharacterSetType = autonomousDatabaseCharacterSetCharacterSetType,
+        ///         IsDedicated = autonomousDatabaseCharacterSetIsDedicated,
+        ///         IsShared = autonomousDatabaseCharacterSetIsShared,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousCharacterSetsResult> Invoke(GetAutonomousCharacterSetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousCharacterSetsResult>("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args ?? new GetAutonomousCharacterSetsInvokeArgs(), options.WithDefaults());
     }
 
 

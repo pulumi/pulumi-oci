@@ -203,6 +203,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsAutoScalingForStorageEnabled;
         /// <summary>
+        /// Indicates if the Autonomous Database is backup retention locked.
+        /// </summary>
+        public readonly bool IsBackupRetentionLocked;
+        /// <summary>
         /// A filter to return only resources that have Data Guard enabled.
         /// </summary>
         public readonly bool IsDataGuardEnabled;
@@ -639,6 +643,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isAutoScalingForStorageEnabled,
 
+            bool isBackupRetentionLocked,
+
             bool isDataGuardEnabled,
 
             bool isDedicated,
@@ -874,6 +880,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsAccessControlEnabled = isAccessControlEnabled;
             IsAutoScalingEnabled = isAutoScalingEnabled;
             IsAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            IsBackupRetentionLocked = isBackupRetentionLocked;
             IsDataGuardEnabled = isDataGuardEnabled;
             IsDedicated = isDedicated;
             IsDevTier = isDevTier;

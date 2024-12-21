@@ -86,21 +86,11 @@ type GetAgentDataIngestionJobsResult struct {
 }
 
 func GetAgentDataIngestionJobsOutput(ctx *pulumi.Context, args GetAgentDataIngestionJobsOutputArgs, opts ...pulumi.InvokeOption) GetAgentDataIngestionJobsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAgentDataIngestionJobsResultOutput, error) {
 			args := v.(GetAgentDataIngestionJobsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAgentDataIngestionJobsResult
-			secret, err := ctx.InvokePackageRaw("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", args, &rv, "", opts...)
-			if err != nil {
-				return GetAgentDataIngestionJobsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAgentDataIngestionJobsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAgentDataIngestionJobsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GenerativeAi/getAgentDataIngestionJobs:getAgentDataIngestionJobs", args, GetAgentDataIngestionJobsResultOutput{}, options).(GetAgentDataIngestionJobsResultOutput), nil
 		}).(GetAgentDataIngestionJobsResultOutput)
 }
 

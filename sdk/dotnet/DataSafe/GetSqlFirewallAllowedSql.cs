@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlFirewallAllowedSqlResult> Invoke(GetSqlFirewallAllowedSqlInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallAllowedSqlResult>("oci:DataSafe/getSqlFirewallAllowedSql:getSqlFirewallAllowedSql", args ?? new GetSqlFirewallAllowedSqlInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sql Firewall Allowed Sql resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a SQL firewall allowed SQL by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlFirewallAllowedSql = Oci.DataSafe.GetSqlFirewallAllowedSql.Invoke(new()
+        ///     {
+        ///         SqlFirewallAllowedSqlId = testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlFirewallAllowedSqlResult> Invoke(GetSqlFirewallAllowedSqlInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlFirewallAllowedSqlResult>("oci:DataSafe/getSqlFirewallAllowedSql:getSqlFirewallAllowedSql", args ?? new GetSqlFirewallAllowedSqlInvokeArgs(), options.WithDefaults());
     }
 
 

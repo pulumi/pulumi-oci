@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDedicatedVmHostShapesResult> Invoke(GetDedicatedVmHostShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostShapesResult>("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args ?? new GetDedicatedVmHostShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedVmHostShapes = Oci.Core.GetDedicatedVmHostShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostShapeAvailabilityDomain,
+        ///         InstanceShapeName = dedicatedVmHostShapeInstanceShapeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedVmHostShapesResult> Invoke(GetDedicatedVmHostShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostShapesResult>("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args ?? new GetDedicatedVmHostShapesInvokeArgs(), options.WithDefaults());
     }
 
 

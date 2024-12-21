@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveDataModelSensitiveTypesResult> Invoke(GetSensitiveDataModelSensitiveTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveTypesResult>("oci:DataSafe/getSensitiveDataModelSensitiveTypes:getSensitiveDataModelSensitiveTypes", args ?? new GetSensitiveDataModelSensitiveTypesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sensitive Data Model Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of sensitive type Ids present in the specified sensitive data model.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelSensitiveTypes = Oci.DataSafe.GetSensitiveDataModelSensitiveTypes.Invoke(new()
+        ///     {
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveDataModelSensitiveTypesResult> Invoke(GetSensitiveDataModelSensitiveTypesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveTypesResult>("oci:DataSafe/getSensitiveDataModelSensitiveTypes:getSensitiveDataModelSensitiveTypes", args ?? new GetSensitiveDataModelSensitiveTypesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetIngressGatewayRouteTableResult> Invoke(GetIngressGatewayRouteTableInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIngressGatewayRouteTableResult>("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", args ?? new GetIngressGatewayRouteTableInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Gets a IngressGatewayRouteTable by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIngressGatewayRouteTable = Oci.ServiceMesh.GetIngressGatewayRouteTable.Invoke(new()
+        ///     {
+        ///         IngressGatewayRouteTableId = testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIngressGatewayRouteTableResult> Invoke(GetIngressGatewayRouteTableInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIngressGatewayRouteTableResult>("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", args ?? new GetIngressGatewayRouteTableInvokeArgs(), options.WithDefaults());
     }
 
 

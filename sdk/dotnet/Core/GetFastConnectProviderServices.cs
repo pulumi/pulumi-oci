@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetFastConnectProviderServicesResult> Invoke(GetFastConnectProviderServicesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServicesResult>("oci:Core/getFastConnectProviderServices:getFastConnectProviderServices", args ?? new GetFastConnectProviderServicesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the service offerings from supported providers. You need this
+        /// information so you can specify your desired provider and service
+        /// offering when you create a virtual circuit.
+        /// 
+        /// For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
+        /// 
+        /// For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFastConnectProviderServices = Oci.Core.GetFastConnectProviderServices.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFastConnectProviderServicesResult> Invoke(GetFastConnectProviderServicesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServicesResult>("oci:Core/getFastConnectProviderServices:getFastConnectProviderServices", args ?? new GetFastConnectProviderServicesInvokeArgs(), options.WithDefaults());
     }
 
 

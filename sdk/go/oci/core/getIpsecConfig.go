@@ -75,21 +75,11 @@ type GetIpsecConfigResult struct {
 }
 
 func GetIpsecConfigOutput(ctx *pulumi.Context, args GetIpsecConfigOutputArgs, opts ...pulumi.InvokeOption) GetIpsecConfigResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIpsecConfigResultOutput, error) {
 			args := v.(GetIpsecConfigArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIpsecConfigResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getIpsecConfig:getIpsecConfig", args, &rv, "", opts...)
-			if err != nil {
-				return GetIpsecConfigResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIpsecConfigResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIpsecConfigResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getIpsecConfig:getIpsecConfig", args, GetIpsecConfigResultOutput{}, options).(GetIpsecConfigResultOutput), nil
 		}).(GetIpsecConfigResultOutput)
 }
 

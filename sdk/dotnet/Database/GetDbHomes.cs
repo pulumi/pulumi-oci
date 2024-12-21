@@ -26,6 +26,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDbHomesResult> Invoke(GetDbHomesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbHomesResult>("oci:Database/getDbHomes:getDbHomes", args ?? new GetDbHomesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
+        /// </summary>
+        public static Output<GetDbHomesResult> Invoke(GetDbHomesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbHomesResult>("oci:Database/getDbHomes:getDbHomes", args ?? new GetDbHomesInvokeArgs(), options.WithDefaults());
     }
 
 

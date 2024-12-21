@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseResult> Invoke(GetAutonomousContainerDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResult>("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args ?? new GetAutonomousContainerDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified Autonomous Container Database.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousContainerDatabase = Oci.Database.GetAutonomousContainerDatabase.Invoke(new()
+        ///     {
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousContainerDatabaseResult> Invoke(GetAutonomousContainerDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResult>("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args ?? new GetAutonomousContainerDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

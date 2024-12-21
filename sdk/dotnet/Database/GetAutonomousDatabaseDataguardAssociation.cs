@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseDataguardAssociationResult> Invoke(GetAutonomousDatabaseDataguardAssociationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseDataguardAssociationResult>("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args ?? new GetAutonomousDatabaseDataguardAssociationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseDataguardAssociation = Oci.Database.GetAutonomousDatabaseDataguardAssociation.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseDataguardAssociationId = testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.Id,
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseDataguardAssociationResult> Invoke(GetAutonomousDatabaseDataguardAssociationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseDataguardAssociationResult>("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args ?? new GetAutonomousDatabaseDataguardAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

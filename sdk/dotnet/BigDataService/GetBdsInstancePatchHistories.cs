@@ -70,6 +70,36 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstancePatchHistoriesResult> Invoke(GetBdsInstancePatchHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// List the patch history of this cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstancePatchHistories = Oci.BigDataService.GetBdsInstancePatchHistories.Invoke(new()
+        ///     {
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         PatchType = bdsInstancePatchHistoryPatchType,
+        ///         PatchVersion = bdsInstancePatchHistoryPatchVersion,
+        ///         State = bdsInstancePatchHistoryState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstancePatchHistoriesResult> Invoke(GetBdsInstancePatchHistoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

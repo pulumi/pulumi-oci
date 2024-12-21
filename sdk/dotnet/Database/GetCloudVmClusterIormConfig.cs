@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudVmClusterIormConfigResult> Invoke(GetCloudVmClusterIormConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the IORM configuration settings for the specified Cloud Vm Cluster.
+        /// All Exadata service instances have default IORM settings.
+        /// 
+        /// The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudVmClusterIormConfig = Oci.Database.GetCloudVmClusterIormConfig.Invoke(new()
+        ///     {
+        ///         CloudVmClusterId = testCloudVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudVmClusterIormConfigResult> Invoke(GetCloudVmClusterIormConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigInvokeArgs(), options.WithDefaults());
     }
 
 

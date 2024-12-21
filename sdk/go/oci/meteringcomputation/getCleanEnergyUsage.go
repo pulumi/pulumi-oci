@@ -43,21 +43,11 @@ type GetCleanEnergyUsageResult struct {
 }
 
 func GetCleanEnergyUsageOutput(ctx *pulumi.Context, args GetCleanEnergyUsageOutputArgs, opts ...pulumi.InvokeOption) GetCleanEnergyUsageResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCleanEnergyUsageResultOutput, error) {
 			args := v.(GetCleanEnergyUsageArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCleanEnergyUsageResult
-			secret, err := ctx.InvokePackageRaw("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args, &rv, "", opts...)
-			if err != nil {
-				return GetCleanEnergyUsageResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCleanEnergyUsageResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCleanEnergyUsageResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args, GetCleanEnergyUsageResultOutput{}, options).(GetCleanEnergyUsageResultOutput), nil
 		}).(GetCleanEnergyUsageResultOutput)
 }
 

@@ -114,6 +114,58 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabasesResult> Invoke(GetAutonomousDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// ## 
+        /// 
+        /// ---
+        /// ## subcategory: "Database"
+        /// 
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+        /// description: |-
+        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+        /// ---
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabases
+        /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of Autonomous Databases based on the query parameters specified.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         DbVersion = autonomousDatabaseDbVersion,
+        ///         DbWorkload = autonomousDatabaseDbWorkload,
+        ///         DisplayName = autonomousDatabaseDisplayName,
+        ///         InfrastructureType = autonomousDatabaseInfrastructureType,
+        ///         IsDataGuardEnabled = autonomousDatabaseIsDataGuardEnabled,
+        ///         IsFreeTier = autonomousDatabaseIsFreeTier,
+        ///         IsRefreshableClone = autonomousDatabaseIsRefreshableClone,
+        ///         IsResourcePoolLeader = autonomousDatabaseIsResourcePoolLeader,
+        ///         LifecycleStateNotEqualTo = autonomousDatabaseLifecycleStateNotEqualTo,
+        ///         ResourcePoolLeaderId = testResourcePoolLeader.Id,
+        ///         State = autonomousDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabasesResult> Invoke(GetAutonomousDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

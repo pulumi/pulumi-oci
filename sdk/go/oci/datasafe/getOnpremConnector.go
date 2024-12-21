@@ -86,21 +86,11 @@ type GetOnpremConnectorResult struct {
 }
 
 func GetOnpremConnectorOutput(ctx *pulumi.Context, args GetOnpremConnectorOutputArgs, opts ...pulumi.InvokeOption) GetOnpremConnectorResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOnpremConnectorResultOutput, error) {
 			args := v.(GetOnpremConnectorArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOnpremConnectorResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getOnpremConnector:getOnpremConnector", args, &rv, "", opts...)
-			if err != nil {
-				return GetOnpremConnectorResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOnpremConnectorResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOnpremConnectorResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getOnpremConnector:getOnpremConnector", args, GetOnpremConnectorResultOutput{}, options).(GetOnpremConnectorResultOutput), nil
 		}).(GetOnpremConnectorResultOutput)
 }
 

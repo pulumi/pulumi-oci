@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsNotificationSettingResult> Invoke(GetDomainsNotificationSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNotificationSettingResult>("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", args ?? new GetDomainsNotificationSettingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get Notification Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotificationSetting = Oci.Identity.GetDomainsNotificationSetting.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NotificationSettingId = testNotificationSettingOciIdentityDomainsNotificationSetting.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = notificationSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = notificationSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsNotificationSettingResult> Invoke(GetDomainsNotificationSettingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNotificationSettingResult>("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", args ?? new GetDomainsNotificationSettingInvokeArgs(), options.WithDefaults());
     }
 
 

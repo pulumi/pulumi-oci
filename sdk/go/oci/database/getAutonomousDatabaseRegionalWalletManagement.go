@@ -61,18 +61,8 @@ type LookupAutonomousDatabaseRegionalWalletManagementResult struct {
 
 func LookupAutonomousDatabaseRegionalWalletManagementOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseRegionalWalletManagementResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (LookupAutonomousDatabaseRegionalWalletManagementResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv LookupAutonomousDatabaseRegionalWalletManagementResult
-		secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", nil, &rv, "", opts...)
-		if err != nil {
-			return LookupAutonomousDatabaseRegionalWalletManagementResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(LookupAutonomousDatabaseRegionalWalletManagementResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(LookupAutonomousDatabaseRegionalWalletManagementResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", nil, LookupAutonomousDatabaseRegionalWalletManagementResultOutput{}, options).(LookupAutonomousDatabaseRegionalWalletManagementResultOutput), nil
 	}).(LookupAutonomousDatabaseRegionalWalletManagementResultOutput)
 }
 

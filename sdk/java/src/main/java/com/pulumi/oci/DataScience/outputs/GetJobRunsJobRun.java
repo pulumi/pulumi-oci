@@ -92,7 +92,7 @@ public final class GetJobRunsJobRun {
     private List<GetJobRunsJobRunLogDetail> logDetails;
     private String opcParentRptUrl;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      * 
      */
     private String projectId;
@@ -223,7 +223,7 @@ public final class GetJobRunsJobRun {
         return this.opcParentRptUrl;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      * 
      */
     public String projectId() {

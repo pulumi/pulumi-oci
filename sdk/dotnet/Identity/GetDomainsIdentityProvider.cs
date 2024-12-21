@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsIdentityProviderResult> Invoke(GetDomainsIdentityProviderInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityProviderResult>("oci:Identity/getDomainsIdentityProvider:getDomainsIdentityProvider", args ?? new GetDomainsIdentityProviderInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get an Identity Provider
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIdentityProvider = Oci.Identity.GetDomainsIdentityProvider.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityProviderId = testIdentityProviderOciIdentityIdentityProvider.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = identityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsIdentityProviderResult> Invoke(GetDomainsIdentityProviderInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsIdentityProviderResult>("oci:Identity/getDomainsIdentityProvider:getDomainsIdentityProvider", args ?? new GetDomainsIdentityProviderInvokeArgs(), options.WithDefaults());
     }
 
 

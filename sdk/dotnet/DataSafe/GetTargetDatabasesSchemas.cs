@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetDatabasesSchemasResult> Invoke(GetTargetDatabasesSchemasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesSchemasResult>("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", args ?? new GetTargetDatabasesSchemasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns list of schema.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetDatabasesSchemas = Oci.DataSafe.GetTargetDatabasesSchemas.Invoke(new()
+        ///     {
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         IsOracleMaintained = targetDatabasesSchemaIsOracleMaintained,
+        ///         SchemaNames = targetDatabasesSchemaSchemaName,
+        ///         SchemaNameContains = targetDatabasesSchemaSchemaNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetDatabasesSchemasResult> Invoke(GetTargetDatabasesSchemasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesSchemasResult>("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", args ?? new GetTargetDatabasesSchemasInvokeArgs(), options.WithDefaults());
     }
 
 

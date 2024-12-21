@@ -68,6 +68,35 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespaceStorageRecalledDataSizeResult> Invoke(GetNamespaceStorageRecalledDataSizeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageRecalledDataSizeResult>("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", args ?? new GetNamespaceStorageRecalledDataSizeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// This API gets the datasize of recalls for a given timeframe
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespaceStorageRecalledDataSize = Oci.LogAnalytics.GetNamespaceStorageRecalledDataSize.Invoke(new()
+        ///     {
+        ///         Namespace = namespaceStorageRecalledDataSizeNamespace,
+        ///         TimeDataEnded = namespaceStorageRecalledDataSizeTimeDataEnded,
+        ///         TimeDataStarted = namespaceStorageRecalledDataSizeTimeDataStarted,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespaceStorageRecalledDataSizeResult> Invoke(GetNamespaceStorageRecalledDataSizeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceStorageRecalledDataSizeResult>("oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize", args ?? new GetNamespaceStorageRecalledDataSizeInvokeArgs(), options.WithDefaults());
     }
 
 

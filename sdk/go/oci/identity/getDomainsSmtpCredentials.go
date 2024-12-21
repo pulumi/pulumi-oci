@@ -104,21 +104,11 @@ type GetDomainsSmtpCredentialsResult struct {
 }
 
 func GetDomainsSmtpCredentialsOutput(ctx *pulumi.Context, args GetDomainsSmtpCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSmtpCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDomainsSmtpCredentialsResultOutput, error) {
 			args := v.(GetDomainsSmtpCredentialsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDomainsSmtpCredentialsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getDomainsSmtpCredentials:getDomainsSmtpCredentials", args, &rv, "", opts...)
-			if err != nil {
-				return GetDomainsSmtpCredentialsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDomainsSmtpCredentialsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDomainsSmtpCredentialsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getDomainsSmtpCredentials:getDomainsSmtpCredentials", args, GetDomainsSmtpCredentialsResultOutput{}, options).(GetDomainsSmtpCredentialsResultOutput), nil
 		}).(GetDomainsSmtpCredentialsResultOutput)
 }
 

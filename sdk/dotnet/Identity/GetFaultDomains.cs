@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetFaultDomainsResult> Invoke(GetFaultDomainsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFaultDomainsResult>("oci:Identity/getFaultDomains:getFaultDomains", args ?? new GetFaultDomainsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
+        /// of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
+        /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFaultDomains = Oci.Identity.GetFaultDomains.Invoke(new()
+        ///     {
+        ///         AvailabilityDomain = faultDomainAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFaultDomainsResult> Invoke(GetFaultDomainsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFaultDomainsResult>("oci:Identity/getFaultDomains:getFaultDomains", args ?? new GetFaultDomainsInvokeArgs(), options.WithDefaults());
     }
 
 

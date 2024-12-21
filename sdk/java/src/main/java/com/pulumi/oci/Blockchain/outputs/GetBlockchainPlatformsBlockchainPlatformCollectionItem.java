@@ -30,7 +30,7 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
      */
     private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails;
     /**
-     * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
      * 
      */
     private String computeShape;
@@ -166,7 +166,7 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
         return this.componentDetails;
     }
     /**
-     * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
      * 
      */
     public String computeShape() {

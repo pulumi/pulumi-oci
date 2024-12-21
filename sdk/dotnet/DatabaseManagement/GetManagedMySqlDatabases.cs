@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedMySqlDatabasesResult> Invoke(GetManagedMySqlDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabasesResult>("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", args ?? new GetManagedMySqlDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of Managed MySQL Databases in a specific compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedMySqlDatabases = Oci.DatabaseManagement.GetManagedMySqlDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedMySqlDatabasesResult> Invoke(GetManagedMySqlDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedMySqlDatabasesResult>("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", args ?? new GetManagedMySqlDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

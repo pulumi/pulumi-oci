@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetDatabaseSecurityConfigResult> Invoke(GetDatabaseSecurityConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSecurityConfigResult>("oci:DataSafe/getDatabaseSecurityConfig:getDatabaseSecurityConfig", args ?? new GetDatabaseSecurityConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a database security configuration by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseSecurityConfig = Oci.DataSafe.GetDatabaseSecurityConfig.Invoke(new()
+        ///     {
+        ///         DatabaseSecurityConfigId = testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseSecurityConfigResult> Invoke(GetDatabaseSecurityConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSecurityConfigResult>("oci:DataSafe/getDatabaseSecurityConfig:getDatabaseSecurityConfig", args ?? new GetDatabaseSecurityConfigInvokeArgs(), options.WithDefaults());
     }
 
 

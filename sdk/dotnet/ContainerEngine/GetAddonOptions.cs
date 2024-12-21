@@ -64,6 +64,33 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetAddonOptionsResult> Invoke(GetAddonOptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddonOptionsResult>("oci:ContainerEngine/getAddonOptions:getAddonOptions", args ?? new GetAddonOptionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// Get list of supported addons for a specific kubernetes version.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddonOptions = Oci.ContainerEngine.GetAddonOptions.Invoke(new()
+        ///     {
+        ///         KubernetesVersion = addonOptionKubernetesVersion,
+        ///         AddonName = testAddon.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddonOptionsResult> Invoke(GetAddonOptionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddonOptionsResult>("oci:ContainerEngine/getAddonOptions:getAddonOptions", args ?? new GetAddonOptionsInvokeArgs(), options.WithDefaults());
     }
 
 

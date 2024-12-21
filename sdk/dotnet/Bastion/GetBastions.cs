@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         public static Output<GetBastionsResult> Invoke(GetBastionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBastionsResult>("oci:Bastion/getBastions:getBastions", args ?? new GetBastionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
+        /// 
+        /// Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBastions = Oci.Bastion.GetBastions.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         BastionId = testBastion.Id,
+        ///         BastionLifecycleState = bastionBastionLifecycleState,
+        ///         Name = bastionName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBastionsResult> Invoke(GetBastionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBastionsResult>("oci:Bastion/getBastions:getBastions", args ?? new GetBastionsInvokeArgs(), options.WithDefaults());
     }
 
 

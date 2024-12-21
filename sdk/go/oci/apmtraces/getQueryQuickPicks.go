@@ -69,21 +69,11 @@ type GetQueryQuickPicksResult struct {
 }
 
 func GetQueryQuickPicksOutput(ctx *pulumi.Context, args GetQueryQuickPicksOutputArgs, opts ...pulumi.InvokeOption) GetQueryQuickPicksResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetQueryQuickPicksResultOutput, error) {
 			args := v.(GetQueryQuickPicksArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetQueryQuickPicksResult
-			secret, err := ctx.InvokePackageRaw("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args, &rv, "", opts...)
-			if err != nil {
-				return GetQueryQuickPicksResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetQueryQuickPicksResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetQueryQuickPicksResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args, GetQueryQuickPicksResultOutput{}, options).(GetQueryQuickPicksResultOutput), nil
 		}).(GetQueryQuickPicksResultOutput)
 }
 

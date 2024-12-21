@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyDeploymentResult> Invoke(GetSecurityPolicyDeploymentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentResult>("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args ?? new GetSecurityPolicyDeploymentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a security policy deployment by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyDeployment = Oci.DataSafe.GetSecurityPolicyDeployment.Invoke(new()
+        ///     {
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyDeploymentResult> Invoke(GetSecurityPolicyDeploymentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentResult>("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args ?? new GetSecurityPolicyDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 

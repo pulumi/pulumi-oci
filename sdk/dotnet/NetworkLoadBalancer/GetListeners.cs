@@ -62,6 +62,32 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public static Output<GetListenersResult> Invoke(GetListenersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListenersResult>("oci:NetworkLoadBalancer/getListeners:getListeners", args ?? new GetListenersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
+        /// 
+        /// Lists all listeners associated with a given network load balancer.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListeners = Oci.NetworkLoadBalancer.GetListeners.Invoke(new()
+        ///     {
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListenersResult> Invoke(GetListenersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListenersResult>("oci:NetworkLoadBalancer/getListeners:getListeners", args ?? new GetListenersInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -76,6 +76,39 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetDiscoveryAnalyticResult> Invoke(GetDiscoveryAnalyticInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticResult>("oci:DataSafe/getDiscoveryAnalytic:getDiscoveryAnalytic", args ?? new GetDiscoveryAnalyticInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets consolidated discovery analytics data based on the specified query parameters.
+        /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+        /// is equivalent to accessLevel "ACCESSIBLE" by default.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDiscoveryAnalytic = Oci.DataSafe.GetDiscoveryAnalytic.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = discoveryAnalyticCompartmentIdInSubtree,
+        ///         GroupBy = discoveryAnalyticGroupBy,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDiscoveryAnalyticResult> Invoke(GetDiscoveryAnalyticInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryAnalyticResult>("oci:DataSafe/getDiscoveryAnalytic:getDiscoveryAnalytic", args ?? new GetDiscoveryAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

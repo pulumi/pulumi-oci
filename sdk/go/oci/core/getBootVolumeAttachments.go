@@ -86,21 +86,11 @@ type GetBootVolumeAttachmentsResult struct {
 }
 
 func GetBootVolumeAttachmentsOutput(ctx *pulumi.Context, args GetBootVolumeAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetBootVolumeAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBootVolumeAttachmentsResultOutput, error) {
 			args := v.(GetBootVolumeAttachmentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBootVolumeAttachmentsResult
-			secret, err := ctx.InvokePackageRaw("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args, &rv, "", opts...)
-			if err != nil {
-				return GetBootVolumeAttachmentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBootVolumeAttachmentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBootVolumeAttachmentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", args, GetBootVolumeAttachmentsResultOutput{}, options).(GetBootVolumeAttachmentsResultOutput), nil
 		}).(GetBootVolumeAttachmentsResultOutput)
 }
 

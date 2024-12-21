@@ -14,11 +14,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class BdsInstanceNetworkConfig
     {
         /// <summary>
-        /// The CIDR IP address block of the VCN.
+        /// (Updatable) The CIDR IP address block of the VCN.
         /// </summary>
         public readonly string? CidrBlock;
         /// <summary>
-        /// A boolean flag whether to configure a NAT gateway.
+        /// (Updatable) A boolean flag whether to configure a NAT gateway.
         /// </summary>
         public readonly bool? IsNatGatewayRequired;
 

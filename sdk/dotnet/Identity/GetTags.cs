@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetTagsResult> Invoke(GetTagsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTagsResult>("oci:Identity/getTags:getTags", args ?? new GetTagsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the tag definitions in the specified tag namespace.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTags = Oci.Identity.GetTags.Invoke(new()
+        ///     {
+        ///         TagNamespaceId = testTagNamespace.Id,
+        ///         State = tagState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTagsResult> Invoke(GetTagsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagsResult>("oci:Identity/getTags:getTags", args ?? new GetTagsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,21 +82,11 @@ type GetWebAppFirewallPoliciesResult struct {
 }
 
 func GetWebAppFirewallPoliciesOutput(ctx *pulumi.Context, args GetWebAppFirewallPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetWebAppFirewallPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetWebAppFirewallPoliciesResultOutput, error) {
 			args := v.(GetWebAppFirewallPoliciesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetWebAppFirewallPoliciesResult
-			secret, err := ctx.InvokePackageRaw("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args, &rv, "", opts...)
-			if err != nil {
-				return GetWebAppFirewallPoliciesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetWebAppFirewallPoliciesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetWebAppFirewallPoliciesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args, GetWebAppFirewallPoliciesResultOutput{}, options).(GetWebAppFirewallPoliciesResultOutput), nil
 		}).(GetWebAppFirewallPoliciesResultOutput)
 }
 

@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public static Output<GetViewResult> Invoke(GetViewInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
+        /// 
+        /// Gets information about a specific view.
+        /// 
+        /// Note that attempting to get a
+        /// view in the DELETED lifecycleState will result in a `404` response to be
+        /// consistent with other operations of the API.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testView = Oci.Dns.GetView.Invoke(new()
+        ///     {
+        ///         ViewId = testViewOciDnsView.Id,
+        ///         Scope = "PRIVATE",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetViewResult> Invoke(GetViewInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewInvokeArgs(), options.WithDefaults());
     }
 
 

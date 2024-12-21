@@ -86,6 +86,44 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DataCatalog/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
+        /// 
+        /// Returns a list of all Connections for a data asset.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnections = Oci.DataCatalog.GetConnections.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         DataAssetKey = connectionDataAssetKey,
+        ///         CreatedById = testCreatedBy.Id,
+        ///         DisplayName = connectionDisplayName,
+        ///         DisplayNameContains = connectionDisplayNameContains,
+        ///         ExternalKey = connectionExternalKey,
+        ///         Fields = connectionFields,
+        ///         IsDefault = connectionIsDefault,
+        ///         State = connectionState,
+        ///         TimeCreated = connectionTimeCreated,
+        ///         TimeStatusUpdated = connectionTimeStatusUpdated,
+        ///         TimeUpdated = connectionTimeUpdated,
+        ///         UpdatedById = testUpdatedBy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DataCatalog/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

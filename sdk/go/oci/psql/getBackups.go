@@ -94,21 +94,11 @@ type GetBackupsResult struct {
 }
 
 func GetBackupsOutput(ctx *pulumi.Context, args GetBackupsOutputArgs, opts ...pulumi.InvokeOption) GetBackupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBackupsResultOutput, error) {
 			args := v.(GetBackupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBackupsResult
-			secret, err := ctx.InvokePackageRaw("oci:Psql/getBackups:getBackups", args, &rv, "", opts...)
-			if err != nil {
-				return GetBackupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBackupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBackupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Psql/getBackups:getBackups", args, GetBackupsResultOutput{}, options).(GetBackupsResultOutput), nil
 		}).(GetBackupsResultOutput)
 }
 

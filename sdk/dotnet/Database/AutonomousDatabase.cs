@@ -354,6 +354,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsAutoScalingForStorageEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) True if the Autonomous Database is backup retention locked.
+        /// </summary>
+        [Output("isBackupRetentionLocked")]
+        public Output<bool> IsBackupRetentionLocked { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         [Output("isDataGuardEnabled")]
@@ -1266,6 +1272,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsAutoScalingForStorageEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) True if the Autonomous Database is backup retention locked.
+        /// </summary>
+        [Input("isBackupRetentionLocked")]
+        public Input<bool>? IsBackupRetentionLocked { get; set; }
+
+        /// <summary>
         /// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         [Input("isDataGuardEnabled")]
@@ -2032,6 +2044,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isAutoScalingForStorageEnabled")]
         public Input<bool>? IsAutoScalingForStorageEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) True if the Autonomous Database is backup retention locked.
+        /// </summary>
+        [Input("isBackupRetentionLocked")]
+        public Input<bool>? IsBackupRetentionLocked { get; set; }
 
         /// <summary>
         /// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.

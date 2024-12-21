@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public static Output<GetRemediationRecipeResult> Invoke(GetRemediationRecipeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRecipeResult>("oci:Adm/getRemediationRecipe:getRemediationRecipe", args ?? new GetRemediationRecipeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+        /// 
+        /// Returns the details of the specified RemediationRecipe.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRemediationRecipe = Oci.Adm.GetRemediationRecipe.Invoke(new()
+        ///     {
+        ///         RemediationRecipeId = testRemediationRecipeOciAdmRemediationRecipe.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRemediationRecipeResult> Invoke(GetRemediationRecipeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemediationRecipeResult>("oci:Adm/getRemediationRecipe:getRemediationRecipe", args ?? new GetRemediationRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

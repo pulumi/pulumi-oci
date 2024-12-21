@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetExportStatusResult> Invoke(GetFleetExportStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetExportStatusResult>("oci:Jms/getFleetExportStatus:getFleetExportStatus", args ?? new GetFleetExportStatusInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns last export status for the specified fleet.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetExportStatus = Oci.Jms.GetFleetExportStatus.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetExportStatusResult> Invoke(GetFleetExportStatusInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetExportStatusResult>("oci:Jms/getFleetExportStatus:getFleetExportStatus", args ?? new GetFleetExportStatusInvokeArgs(), options.WithDefaults());
     }
 
 

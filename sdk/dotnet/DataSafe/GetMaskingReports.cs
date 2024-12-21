@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetMaskingReportsResult> Invoke(GetMaskingReportsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportsResult>("oci:DataSafe/getMaskingReports:getMaskingReports", args ?? new GetMaskingReportsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of masking reports based on the specified query parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMaskingReports = Oci.DataSafe.GetMaskingReports.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = maskingReportAccessLevel,
+        ///         CompartmentIdInSubtree = maskingReportCompartmentIdInSubtree,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         TargetId = testTarget.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMaskingReportsResult> Invoke(GetMaskingReportsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportsResult>("oci:DataSafe/getMaskingReports:getMaskingReports", args ?? new GetMaskingReportsInvokeArgs(), options.WithDefaults());
     }
 
 

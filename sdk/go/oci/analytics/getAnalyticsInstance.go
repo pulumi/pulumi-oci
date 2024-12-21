@@ -104,21 +104,11 @@ type LookupAnalyticsInstanceResult struct {
 }
 
 func LookupAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupAnalyticsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAnalyticsInstanceResultOutput, error) {
 			args := v.(LookupAnalyticsInstanceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAnalyticsInstanceResult
-			secret, err := ctx.InvokePackageRaw("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAnalyticsInstanceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAnalyticsInstanceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAnalyticsInstanceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args, LookupAnalyticsInstanceResultOutput{}, options).(LookupAnalyticsInstanceResultOutput), nil
 		}).(LookupAnalyticsInstanceResultOutput)
 }
 

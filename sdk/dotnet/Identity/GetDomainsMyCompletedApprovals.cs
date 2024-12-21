@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsMyCompletedApprovalsResult> Invoke(GetDomainsMyCompletedApprovalsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCompletedApprovalsResult>("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", args ?? new GetDomainsMyCompletedApprovalsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of My Completed Approvals in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search My MyCompletedApproval
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMyCompletedApprovals = Oci.Identity.GetDomainsMyCompletedApprovals.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCompletedApprovalCount = myCompletedApprovalMyCompletedApprovalCount,
+        ///         MyCompletedApprovalFilter = myCompletedApprovalMyCompletedApprovalFilter,
+        ///         Authorization = myCompletedApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myCompletedApprovalResourceTypeSchemaVersion,
+        ///         StartIndex = myCompletedApprovalStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsMyCompletedApprovalsResult> Invoke(GetDomainsMyCompletedApprovalsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyCompletedApprovalsResult>("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", args ?? new GetDomainsMyCompletedApprovalsInvokeArgs(), options.WithDefaults());
     }
 
 

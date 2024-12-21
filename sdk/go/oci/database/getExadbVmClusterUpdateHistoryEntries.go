@@ -73,21 +73,11 @@ type GetExadbVmClusterUpdateHistoryEntriesResult struct {
 }
 
 func GetExadbVmClusterUpdateHistoryEntriesOutput(ctx *pulumi.Context, args GetExadbVmClusterUpdateHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetExadbVmClusterUpdateHistoryEntriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExadbVmClusterUpdateHistoryEntriesResultOutput, error) {
 			args := v.(GetExadbVmClusterUpdateHistoryEntriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExadbVmClusterUpdateHistoryEntriesResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", args, &rv, "", opts...)
-			if err != nil {
-				return GetExadbVmClusterUpdateHistoryEntriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExadbVmClusterUpdateHistoryEntriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExadbVmClusterUpdateHistoryEntriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", args, GetExadbVmClusterUpdateHistoryEntriesResultOutput{}, options).(GetExadbVmClusterUpdateHistoryEntriesResultOutput), nil
 		}).(GetExadbVmClusterUpdateHistoryEntriesResultOutput)
 }
 

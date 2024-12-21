@@ -846,6 +846,10 @@ class MetricExtensionQueryProperties(dict):
             suggest = "managed_bean_query"
         elif key == "outParamDetails":
             suggest = "out_param_details"
+        elif key == "protocolType":
+            suggest = "protocol_type"
+        elif key == "responseContentType":
+            suggest = "response_content_type"
         elif key == "scriptDetails":
             suggest = "script_details"
         elif key == "sqlDetails":
@@ -878,10 +882,13 @@ class MetricExtensionQueryProperties(dict):
                  jmx_attributes: Optional[str] = None,
                  managed_bean_query: Optional[str] = None,
                  out_param_details: Optional['outputs.MetricExtensionQueryPropertiesOutParamDetails'] = None,
+                 protocol_type: Optional[str] = None,
+                 response_content_type: Optional[str] = None,
                  script_details: Optional['outputs.MetricExtensionQueryPropertiesScriptDetails'] = None,
                  sql_details: Optional['outputs.MetricExtensionQueryPropertiesSqlDetails'] = None,
                  sql_type: Optional[str] = None,
-                 starts_with: Optional[str] = None):
+                 starts_with: Optional[str] = None,
+                 url: Optional[str] = None):
         """
         :param str collection_method: (Updatable) Type of possible collection methods.
         :param str arguments: (Updatable) Arguments required by either command or script
@@ -894,10 +901,13 @@ class MetricExtensionQueryProperties(dict):
         :param str jmx_attributes: (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
         :param str managed_bean_query: (Updatable) JMX Managed Bean Query or Metric Service Table name
         :param 'MetricExtensionQueryPropertiesOutParamDetailsArgs' out_param_details: (Updatable) Position and SQL Type of PL/SQL OUT parameter
-        :param 'MetricExtensionQueryPropertiesScriptDetailsArgs' script_details: (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        :param str protocol_type: (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        :param str response_content_type: (Updatable) Type of content response given by the http(s) URL
+        :param 'MetricExtensionQueryPropertiesScriptDetailsArgs' script_details: (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         :param 'MetricExtensionQueryPropertiesSqlDetailsArgs' sql_details: (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
         :param str sql_type: (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
         :param str starts_with: (Updatable) String prefix used to identify metric output of the OS Command
+        :param str url: (Updatable) Http(s) end point URL
         """
         pulumi.set(__self__, "collection_method", collection_method)
         if arguments is not None:
@@ -920,6 +930,10 @@ class MetricExtensionQueryProperties(dict):
             pulumi.set(__self__, "managed_bean_query", managed_bean_query)
         if out_param_details is not None:
             pulumi.set(__self__, "out_param_details", out_param_details)
+        if protocol_type is not None:
+            pulumi.set(__self__, "protocol_type", protocol_type)
+        if response_content_type is not None:
+            pulumi.set(__self__, "response_content_type", response_content_type)
         if script_details is not None:
             pulumi.set(__self__, "script_details", script_details)
         if sql_details is not None:
@@ -928,6 +942,8 @@ class MetricExtensionQueryProperties(dict):
             pulumi.set(__self__, "sql_type", sql_type)
         if starts_with is not None:
             pulumi.set(__self__, "starts_with", starts_with)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter(name="collectionMethod")
@@ -1018,10 +1034,26 @@ class MetricExtensionQueryProperties(dict):
         return pulumi.get(self, "out_param_details")
 
     @property
+    @pulumi.getter(name="protocolType")
+    def protocol_type(self) -> Optional[str]:
+        """
+        (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        """
+        return pulumi.get(self, "protocol_type")
+
+    @property
+    @pulumi.getter(name="responseContentType")
+    def response_content_type(self) -> Optional[str]:
+        """
+        (Updatable) Type of content response given by the http(s) URL
+        """
+        return pulumi.get(self, "response_content_type")
+
+    @property
     @pulumi.getter(name="scriptDetails")
     def script_details(self) -> Optional['outputs.MetricExtensionQueryPropertiesScriptDetails']:
         """
-        (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         """
         return pulumi.get(self, "script_details")
 
@@ -1048,6 +1080,14 @@ class MetricExtensionQueryProperties(dict):
         (Updatable) String prefix used to identify metric output of the OS Command
         """
         return pulumi.get(self, "starts_with")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        """
+        (Updatable) Http(s) end point URL
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -1107,6 +1147,8 @@ class MetricExtensionQueryPropertiesOutParamDetails(dict):
             suggest = "out_param_position"
         elif key == "outParamType":
             suggest = "out_param_type"
+        elif key == "outParamName":
+            suggest = "out_param_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MetricExtensionQueryPropertiesOutParamDetails. Access the value via the '{suggest}' property getter instead.")
@@ -1121,19 +1163,23 @@ class MetricExtensionQueryPropertiesOutParamDetails(dict):
 
     def __init__(__self__, *,
                  out_param_position: int,
-                 out_param_type: str):
+                 out_param_type: str,
+                 out_param_name: Optional[str] = None):
         """
-        :param int out_param_position: (Updatable) Position of PL/SQL procedure OUT parameter
-        :param str out_param_type: (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        :param int out_param_position: (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
+        :param str out_param_type: (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
+        :param str out_param_name: (Updatable) Name of the Out Parameter
         """
         pulumi.set(__self__, "out_param_position", out_param_position)
         pulumi.set(__self__, "out_param_type", out_param_type)
+        if out_param_name is not None:
+            pulumi.set(__self__, "out_param_name", out_param_name)
 
     @property
     @pulumi.getter(name="outParamPosition")
     def out_param_position(self) -> int:
         """
-        (Updatable) Position of PL/SQL procedure OUT parameter
+        (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
         """
         return pulumi.get(self, "out_param_position")
 
@@ -1141,9 +1187,17 @@ class MetricExtensionQueryPropertiesOutParamDetails(dict):
     @pulumi.getter(name="outParamType")
     def out_param_type(self) -> str:
         """
-        (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         """
         return pulumi.get(self, "out_param_type")
+
+    @property
+    @pulumi.getter(name="outParamName")
+    def out_param_name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the Out Parameter
+        """
+        return pulumi.get(self, "out_param_name")
 
 
 @pulumi.output_type
@@ -1152,7 +1206,7 @@ class MetricExtensionQueryPropertiesScriptDetails(dict):
                  content: str,
                  name: str):
         """
-        :param str content: (Updatable) Content of the script file as base64 encoded string
+        :param str content: (Updatable) Content of the script/JavaScript file as base64 encoded string
         :param str name: (Updatable) Name of the script file
         """
         pulumi.set(__self__, "content", content)
@@ -1162,7 +1216,7 @@ class MetricExtensionQueryPropertiesScriptDetails(dict):
     @pulumi.getter
     def content(self) -> str:
         """
-        (Updatable) Content of the script file as base64 encoded string
+        (Updatable) Content of the script/JavaScript file as base64 encoded string
         """
         return pulumi.get(self, "content")
 
@@ -4843,10 +4897,13 @@ class GetMetricExtensionQueryPropertyResult(dict):
                  jmx_attributes: str,
                  managed_bean_query: str,
                  out_param_details: Sequence['outputs.GetMetricExtensionQueryPropertyOutParamDetailResult'],
+                 protocol_type: str,
+                 response_content_type: str,
                  script_details: Sequence['outputs.GetMetricExtensionQueryPropertyScriptDetailResult'],
                  sql_details: Sequence['outputs.GetMetricExtensionQueryPropertySqlDetailResult'],
                  sql_type: str,
-                 starts_with: str):
+                 starts_with: str,
+                 url: str):
         """
         :param str arguments: Arguments required by either command or script
         :param str auto_row_prefix: Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
@@ -4859,10 +4916,13 @@ class GetMetricExtensionQueryPropertyResult(dict):
         :param str jmx_attributes: List of JMX attributes or Metric Service Table columns separated by semi-colon
         :param str managed_bean_query: JMX Managed Bean Query or Metric Service Table name
         :param Sequence['GetMetricExtensionQueryPropertyOutParamDetailArgs'] out_param_details: Position and SQL Type of PL/SQL OUT parameter
-        :param Sequence['GetMetricExtensionQueryPropertyScriptDetailArgs'] script_details: Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        :param str protocol_type: Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        :param str response_content_type: Type of content response given by the http(s) URL
+        :param Sequence['GetMetricExtensionQueryPropertyScriptDetailArgs'] script_details: Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         :param Sequence['GetMetricExtensionQueryPropertySqlDetailArgs'] sql_details: Details of Sql content which needs to execute to collect Metric Extension data
         :param str sql_type: Type of SQL data collection method i.e. either a Statement or SQL Script File
         :param str starts_with: String prefix used to identify metric output of the OS Command
+        :param str url: Http(s) end point URL
         """
         pulumi.set(__self__, "arguments", arguments)
         pulumi.set(__self__, "auto_row_prefix", auto_row_prefix)
@@ -4875,10 +4935,13 @@ class GetMetricExtensionQueryPropertyResult(dict):
         pulumi.set(__self__, "jmx_attributes", jmx_attributes)
         pulumi.set(__self__, "managed_bean_query", managed_bean_query)
         pulumi.set(__self__, "out_param_details", out_param_details)
+        pulumi.set(__self__, "protocol_type", protocol_type)
+        pulumi.set(__self__, "response_content_type", response_content_type)
         pulumi.set(__self__, "script_details", script_details)
         pulumi.set(__self__, "sql_details", sql_details)
         pulumi.set(__self__, "sql_type", sql_type)
         pulumi.set(__self__, "starts_with", starts_with)
+        pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
@@ -4969,10 +5032,26 @@ class GetMetricExtensionQueryPropertyResult(dict):
         return pulumi.get(self, "out_param_details")
 
     @property
+    @pulumi.getter(name="protocolType")
+    def protocol_type(self) -> str:
+        """
+        Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        """
+        return pulumi.get(self, "protocol_type")
+
+    @property
+    @pulumi.getter(name="responseContentType")
+    def response_content_type(self) -> str:
+        """
+        Type of content response given by the http(s) URL
+        """
+        return pulumi.get(self, "response_content_type")
+
+    @property
     @pulumi.getter(name="scriptDetails")
     def script_details(self) -> Sequence['outputs.GetMetricExtensionQueryPropertyScriptDetailResult']:
         """
-        Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         """
         return pulumi.get(self, "script_details")
 
@@ -4999,6 +5078,14 @@ class GetMetricExtensionQueryPropertyResult(dict):
         String prefix used to identify metric output of the OS Command
         """
         return pulumi.get(self, "starts_with")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Http(s) end point URL
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -5033,20 +5120,31 @@ class GetMetricExtensionQueryPropertyInParamDetailResult(dict):
 @pulumi.output_type
 class GetMetricExtensionQueryPropertyOutParamDetailResult(dict):
     def __init__(__self__, *,
+                 out_param_name: str,
                  out_param_position: int,
                  out_param_type: str):
         """
-        :param int out_param_position: Position of PL/SQL procedure OUT parameter
-        :param str out_param_type: SQL Type of PL/SQL procedure OUT parameter
+        :param str out_param_name: Name of the Out Parameter
+        :param int out_param_position: Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
+        :param str out_param_type: SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         """
+        pulumi.set(__self__, "out_param_name", out_param_name)
         pulumi.set(__self__, "out_param_position", out_param_position)
         pulumi.set(__self__, "out_param_type", out_param_type)
+
+    @property
+    @pulumi.getter(name="outParamName")
+    def out_param_name(self) -> str:
+        """
+        Name of the Out Parameter
+        """
+        return pulumi.get(self, "out_param_name")
 
     @property
     @pulumi.getter(name="outParamPosition")
     def out_param_position(self) -> int:
         """
-        Position of PL/SQL procedure OUT parameter
+        Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
         """
         return pulumi.get(self, "out_param_position")
 
@@ -5054,7 +5152,7 @@ class GetMetricExtensionQueryPropertyOutParamDetailResult(dict):
     @pulumi.getter(name="outParamType")
     def out_param_type(self) -> str:
         """
-        SQL Type of PL/SQL procedure OUT parameter
+        SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         """
         return pulumi.get(self, "out_param_type")
 
@@ -5523,10 +5621,13 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult(dict):
                  jmx_attributes: str,
                  managed_bean_query: str,
                  out_param_details: Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailResult'],
+                 protocol_type: str,
+                 response_content_type: str,
                  script_details: Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailResult'],
                  sql_details: Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailResult'],
                  sql_type: str,
-                 starts_with: str):
+                 starts_with: str,
+                 url: str):
         """
         :param str arguments: Arguments required by either command or script
         :param str auto_row_prefix: Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
@@ -5539,10 +5640,13 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult(dict):
         :param str jmx_attributes: List of JMX attributes or Metric Service Table columns separated by semi-colon
         :param str managed_bean_query: JMX Managed Bean Query or Metric Service Table name
         :param Sequence['GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs'] out_param_details: Position and SQL Type of PL/SQL OUT parameter
-        :param Sequence['GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs'] script_details: Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        :param str protocol_type: Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        :param str response_content_type: Type of content response given by the http(s) URL
+        :param Sequence['GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs'] script_details: Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         :param Sequence['GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs'] sql_details: Details of Sql content which needs to execute to collect Metric Extension data
         :param str sql_type: Type of SQL data collection method i.e. either a Statement or SQL Script File
         :param str starts_with: String prefix used to identify metric output of the OS Command
+        :param str url: Http(s) end point URL
         """
         pulumi.set(__self__, "arguments", arguments)
         pulumi.set(__self__, "auto_row_prefix", auto_row_prefix)
@@ -5555,10 +5659,13 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult(dict):
         pulumi.set(__self__, "jmx_attributes", jmx_attributes)
         pulumi.set(__self__, "managed_bean_query", managed_bean_query)
         pulumi.set(__self__, "out_param_details", out_param_details)
+        pulumi.set(__self__, "protocol_type", protocol_type)
+        pulumi.set(__self__, "response_content_type", response_content_type)
         pulumi.set(__self__, "script_details", script_details)
         pulumi.set(__self__, "sql_details", sql_details)
         pulumi.set(__self__, "sql_type", sql_type)
         pulumi.set(__self__, "starts_with", starts_with)
+        pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
@@ -5649,10 +5756,26 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult(dict):
         return pulumi.get(self, "out_param_details")
 
     @property
+    @pulumi.getter(name="protocolType")
+    def protocol_type(self) -> str:
+        """
+        Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+        """
+        return pulumi.get(self, "protocol_type")
+
+    @property
+    @pulumi.getter(name="responseContentType")
+    def response_content_type(self) -> str:
+        """
+        Type of content response given by the http(s) URL
+        """
+        return pulumi.get(self, "response_content_type")
+
+    @property
     @pulumi.getter(name="scriptDetails")
     def script_details(self) -> Sequence['outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailResult']:
         """
-        Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
         """
         return pulumi.get(self, "script_details")
 
@@ -5679,6 +5802,14 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult(dict):
         String prefix used to identify metric output of the OS Command
         """
         return pulumi.get(self, "starts_with")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Http(s) end point URL
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -5713,20 +5844,31 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail
 @pulumi.output_type
 class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailResult(dict):
     def __init__(__self__, *,
+                 out_param_name: str,
                  out_param_position: int,
                  out_param_type: str):
         """
-        :param int out_param_position: Position of PL/SQL procedure OUT parameter
-        :param str out_param_type: SQL Type of PL/SQL procedure OUT parameter
+        :param str out_param_name: Name of the Out Parameter
+        :param int out_param_position: Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
+        :param str out_param_type: SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         """
+        pulumi.set(__self__, "out_param_name", out_param_name)
         pulumi.set(__self__, "out_param_position", out_param_position)
         pulumi.set(__self__, "out_param_type", out_param_type)
+
+    @property
+    @pulumi.getter(name="outParamName")
+    def out_param_name(self) -> str:
+        """
+        Name of the Out Parameter
+        """
+        return pulumi.get(self, "out_param_name")
 
     @property
     @pulumi.getter(name="outParamPosition")
     def out_param_position(self) -> int:
         """
-        Position of PL/SQL procedure OUT parameter
+        Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
         """
         return pulumi.get(self, "out_param_position")
 
@@ -5734,7 +5876,7 @@ class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetai
     @pulumi.getter(name="outParamType")
     def out_param_type(self) -> str:
         """
-        SQL Type of PL/SQL procedure OUT parameter
+        SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
         """
         return pulumi.get(self, "out_param_type")
 

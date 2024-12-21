@@ -25524,7 +25524,8 @@ type GetVolumeAttachmentsVolumeAttachment struct {
 	// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment was created in read-only mode.
-	IsReadOnly  bool `pulumi:"isReadOnly"`
+	IsReadOnly bool `pulumi:"isReadOnly"`
+	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 	IsShareable bool `pulumi:"isShareable"`
 	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
 	IsVolumeCreatedDuringLaunch bool `pulumi:"isVolumeCreatedDuringLaunch"`
@@ -25588,7 +25589,8 @@ type GetVolumeAttachmentsVolumeAttachmentArgs struct {
 	// Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment was created in read-only mode.
-	IsReadOnly  pulumi.BoolInput `pulumi:"isReadOnly"`
+	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
+	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 	IsShareable pulumi.BoolInput `pulumi:"isShareable"`
 	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
 	IsVolumeCreatedDuringLaunch pulumi.BoolInput `pulumi:"isVolumeCreatedDuringLaunch"`
@@ -25740,6 +25742,7 @@ func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutp
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
 }
 
+// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsShareable }).(pulumi.BoolOutput)
 }

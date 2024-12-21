@@ -74,6 +74,38 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetDatabaseSoftwareImagesResult> Invoke(GetDatabaseSoftwareImagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImagesResult>("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args ?? new GetDatabaseSoftwareImagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of the database software images in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseSoftwareImageDisplayName,
+        ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
+        ///         ImageType = databaseSoftwareImageImageType,
+        ///         IsUpgradeSupported = databaseSoftwareImageIsUpgradeSupported,
+        ///         State = databaseSoftwareImageState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDatabaseSoftwareImagesResult> Invoke(GetDatabaseSoftwareImagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImagesResult>("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args ?? new GetDatabaseSoftwareImagesInvokeArgs(), options.WithDefaults());
     }
 
 

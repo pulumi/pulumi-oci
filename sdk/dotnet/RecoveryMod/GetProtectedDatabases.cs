@@ -74,6 +74,38 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
+        /// 
+        /// Lists the protected databases based on the specified parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectedDatabaseDisplayName,
+        ///         Id = protectedDatabaseId,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
+        ///         State = protectedDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -9,6 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -16,14 +18,29 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
     public static final MetricExtensionQueryPropertiesOutParamDetailsArgs Empty = new MetricExtensionQueryPropertiesOutParamDetailsArgs();
 
     /**
-     * (Updatable) Position of PL/SQL procedure OUT parameter
+     * (Updatable) Name of the Out Parameter
+     * 
+     */
+    @Import(name="outParamName")
+    private @Nullable Output<String> outParamName;
+
+    /**
+     * @return (Updatable) Name of the Out Parameter
+     * 
+     */
+    public Optional<Output<String>> outParamName() {
+        return Optional.ofNullable(this.outParamName);
+    }
+
+    /**
+     * (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
      * 
      */
     @Import(name="outParamPosition", required=true)
     private Output<Integer> outParamPosition;
 
     /**
-     * @return (Updatable) Position of PL/SQL procedure OUT parameter
+     * @return (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
      * 
      */
     public Output<Integer> outParamPosition() {
@@ -31,14 +48,14 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
     }
 
     /**
-     * (Updatable) SQL Type of PL/SQL procedure OUT parameter
+     * (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
      * 
      */
     @Import(name="outParamType", required=true)
     private Output<String> outParamType;
 
     /**
-     * @return (Updatable) SQL Type of PL/SQL procedure OUT parameter
+     * @return (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
      * 
      */
     public Output<String> outParamType() {
@@ -48,6 +65,7 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
     private MetricExtensionQueryPropertiesOutParamDetailsArgs() {}
 
     private MetricExtensionQueryPropertiesOutParamDetailsArgs(MetricExtensionQueryPropertiesOutParamDetailsArgs $) {
+        this.outParamName = $.outParamName;
         this.outParamPosition = $.outParamPosition;
         this.outParamType = $.outParamType;
     }
@@ -71,7 +89,28 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
         }
 
         /**
-         * @param outParamPosition (Updatable) Position of PL/SQL procedure OUT parameter
+         * @param outParamName (Updatable) Name of the Out Parameter
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outParamName(@Nullable Output<String> outParamName) {
+            $.outParamName = outParamName;
+            return this;
+        }
+
+        /**
+         * @param outParamName (Updatable) Name of the Out Parameter
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outParamName(String outParamName) {
+            return outParamName(Output.of(outParamName));
+        }
+
+        /**
+         * @param outParamPosition (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
          * 
          * @return builder
          * 
@@ -82,7 +121,7 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
         }
 
         /**
-         * @param outParamPosition (Updatable) Position of PL/SQL procedure OUT parameter
+         * @param outParamPosition (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if &#34;outParamType&#34; is set to NO_OUT_PARAM value.
          * 
          * @return builder
          * 
@@ -92,7 +131,7 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
         }
 
         /**
-         * @param outParamType (Updatable) SQL Type of PL/SQL procedure OUT parameter
+         * @param outParamType (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
          * 
          * @return builder
          * 
@@ -103,7 +142,7 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
         }
 
         /**
-         * @param outParamType (Updatable) SQL Type of PL/SQL procedure OUT parameter
+         * @param outParamType (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of &#34;outParamPosition&#34; will be ignored.
          * 
          * @return builder
          * 

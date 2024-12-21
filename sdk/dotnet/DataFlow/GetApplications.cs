@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetApplicationsResult> Invoke(GetApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplicationsResult>("oci:DataFlow/getApplications:getApplications", args ?? new GetApplicationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApplications = Oci.DataFlow.GetApplications.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applicationDisplayName,
+        ///         DisplayNameStartsWith = applicationDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         SparkVersion = applicationSparkVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetApplicationsResult> Invoke(GetApplicationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetApplicationsResult>("oci:DataFlow/getApplications:getApplications", args ?? new GetApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

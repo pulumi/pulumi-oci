@@ -28,7 +28,7 @@ class GetMetricExtensionsResult:
     """
     A collection of values returned by getMetricExtensions.
     """
-    def __init__(__self__, compartment_id=None, enabled_on_resource_id=None, filters=None, id=None, metric_extension_collections=None, name=None, resource_type=None, state=None, status=None):
+    def __init__(__self__, compartment_id=None, enabled_on_resource_id=None, filters=None, id=None, metric_extension_collections=None, metric_extension_id=None, name=None, resource_type=None, state=None, status=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetMetricExtensionsResult:
         if metric_extension_collections and not isinstance(metric_extension_collections, list):
             raise TypeError("Expected argument 'metric_extension_collections' to be a list")
         pulumi.set(__self__, "metric_extension_collections", metric_extension_collections)
+        if metric_extension_id and not isinstance(metric_extension_id, str):
+            raise TypeError("Expected argument 'metric_extension_id' to be a str")
+        pulumi.set(__self__, "metric_extension_id", metric_extension_id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -59,7 +62,7 @@ class GetMetricExtensionsResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
+    def compartment_id(self) -> Optional[str]:
         """
         Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
@@ -90,6 +93,11 @@ class GetMetricExtensionsResult:
         The list of metric_extension_collection.
         """
         return pulumi.get(self, "metric_extension_collections")
+
+    @property
+    @pulumi.getter(name="metricExtensionId")
+    def metric_extension_id(self) -> Optional[str]:
+        return pulumi.get(self, "metric_extension_id")
 
     @property
     @pulumi.getter
@@ -135,6 +143,7 @@ class AwaitableGetMetricExtensionsResult(GetMetricExtensionsResult):
             filters=self.filters,
             id=self.id,
             metric_extension_collections=self.metric_extension_collections,
+            metric_extension_id=self.metric_extension_id,
             name=self.name,
             resource_type=self.resource_type,
             state=self.state,
@@ -144,6 +153,7 @@ class AwaitableGetMetricExtensionsResult(GetMetricExtensionsResult):
 def get_metric_extensions(compartment_id: Optional[str] = None,
                           enabled_on_resource_id: Optional[str] = None,
                           filters: Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]] = None,
+                          metric_extension_id: Optional[str] = None,
                           name: Optional[str] = None,
                           resource_type: Optional[str] = None,
                           state: Optional[str] = None,
@@ -162,6 +172,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
 
     test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
         enabled_on_resource_id=test_resource["id"],
+        metric_extension_id=test_metric_extension["id"],
         name=metric_extension_name,
         resource_type=metric_extension_resource_type,
         state=metric_extension_state,
@@ -171,6 +182,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which data is listed.
     :param str enabled_on_resource_id: A filter to return metric extensions based on input resource Id on which metric extension is enabled
+    :param str metric_extension_id: Identifier for the metric extension
     :param str name: A filter to return resources based on name.
     :param str resource_type: A filter to return resources based on resource type.
     :param str state: A filter to return metric extensions based on Lifecycle State
@@ -180,6 +192,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['enabledOnResourceId'] = enabled_on_resource_id
     __args__['filters'] = filters
+    __args__['metricExtensionId'] = metric_extension_id
     __args__['name'] = name
     __args__['resourceType'] = resource_type
     __args__['state'] = state
@@ -193,13 +206,15 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         metric_extension_collections=pulumi.get(__ret__, 'metric_extension_collections'),
+        metric_extension_id=pulumi.get(__ret__, 'metric_extension_id'),
         name=pulumi.get(__ret__, 'name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  enabled_on_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]]]] = None,
+                                 metric_extension_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -218,6 +233,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
         enabled_on_resource_id=test_resource["id"],
+        metric_extension_id=test_metric_extension["id"],
         name=metric_extension_name,
         resource_type=metric_extension_resource_type,
         state=metric_extension_state,
@@ -227,6 +243,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     :param str compartment_id: The ID of the compartment in which data is listed.
     :param str enabled_on_resource_id: A filter to return metric extensions based on input resource Id on which metric extension is enabled
+    :param str metric_extension_id: Identifier for the metric extension
     :param str name: A filter to return resources based on name.
     :param str resource_type: A filter to return resources based on resource type.
     :param str state: A filter to return metric extensions based on Lifecycle State
@@ -236,6 +253,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
     __args__['compartmentId'] = compartment_id
     __args__['enabledOnResourceId'] = enabled_on_resource_id
     __args__['filters'] = filters
+    __args__['metricExtensionId'] = metric_extension_id
     __args__['name'] = name
     __args__['resourceType'] = resource_type
     __args__['state'] = state
@@ -248,6 +266,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         metric_extension_collections=pulumi.get(__response__, 'metric_extension_collections'),
+        metric_extension_id=pulumi.get(__response__, 'metric_extension_id'),
         name=pulumi.get(__response__, 'name'),
         resource_type=pulumi.get(__response__, 'resource_type'),
         state=pulumi.get(__response__, 'state'),

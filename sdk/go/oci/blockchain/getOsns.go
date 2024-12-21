@@ -72,21 +72,11 @@ type GetOsnsResult struct {
 }
 
 func GetOsnsOutput(ctx *pulumi.Context, args GetOsnsOutputArgs, opts ...pulumi.InvokeOption) GetOsnsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOsnsResultOutput, error) {
 			args := v.(GetOsnsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOsnsResult
-			secret, err := ctx.InvokePackageRaw("oci:Blockchain/getOsns:getOsns", args, &rv, "", opts...)
-			if err != nil {
-				return GetOsnsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOsnsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOsnsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Blockchain/getOsns:getOsns", args, GetOsnsResultOutput{}, options).(GetOsnsResultOutput), nil
 		}).(GetOsnsResultOutput)
 }
 

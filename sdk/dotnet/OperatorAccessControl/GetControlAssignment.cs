@@ -62,6 +62,32 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public static Output<GetControlAssignmentResult> Invoke(GetControlAssignmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetControlAssignmentResult>("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", args ?? new GetControlAssignmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
+        /// 
+        /// Gets the details of an Operator Control Assignment of the specified ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOperatorControlAssignment = Oci.OperatorAccessControl.GetControlAssignment.Invoke(new()
+        ///     {
+        ///         OperatorControlAssignmentId = testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetControlAssignmentResult> Invoke(GetControlAssignmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetControlAssignmentResult>("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", args ?? new GetControlAssignmentInvokeArgs(), options.WithDefaults());
     }
 
 

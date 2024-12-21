@@ -1583,7 +1583,11 @@ type MetricExtensionQueryProperties struct {
 	ManagedBeanQuery *string `pulumi:"managedBeanQuery"`
 	// (Updatable) Position and SQL Type of PL/SQL OUT parameter
 	OutParamDetails *MetricExtensionQueryPropertiesOutParamDetails `pulumi:"outParamDetails"`
-	// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	// (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+	ProtocolType *string `pulumi:"protocolType"`
+	// (Updatable) Type of content response given by the http(s) URL
+	ResponseContentType *string `pulumi:"responseContentType"`
+	// (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 	ScriptDetails *MetricExtensionQueryPropertiesScriptDetails `pulumi:"scriptDetails"`
 	// (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
 	SqlDetails *MetricExtensionQueryPropertiesSqlDetails `pulumi:"sqlDetails"`
@@ -1591,6 +1595,8 @@ type MetricExtensionQueryProperties struct {
 	SqlType *string `pulumi:"sqlType"`
 	// (Updatable) String prefix used to identify metric output of the OS Command
 	StartsWith *string `pulumi:"startsWith"`
+	// (Updatable) Http(s) end point URL
+	Url *string `pulumi:"url"`
 }
 
 // MetricExtensionQueryPropertiesInput is an input type that accepts MetricExtensionQueryPropertiesArgs and MetricExtensionQueryPropertiesOutput values.
@@ -1627,7 +1633,11 @@ type MetricExtensionQueryPropertiesArgs struct {
 	ManagedBeanQuery pulumi.StringPtrInput `pulumi:"managedBeanQuery"`
 	// (Updatable) Position and SQL Type of PL/SQL OUT parameter
 	OutParamDetails MetricExtensionQueryPropertiesOutParamDetailsPtrInput `pulumi:"outParamDetails"`
-	// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	// (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+	ProtocolType pulumi.StringPtrInput `pulumi:"protocolType"`
+	// (Updatable) Type of content response given by the http(s) URL
+	ResponseContentType pulumi.StringPtrInput `pulumi:"responseContentType"`
+	// (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 	ScriptDetails MetricExtensionQueryPropertiesScriptDetailsPtrInput `pulumi:"scriptDetails"`
 	// (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
 	SqlDetails MetricExtensionQueryPropertiesSqlDetailsPtrInput `pulumi:"sqlDetails"`
@@ -1635,6 +1645,8 @@ type MetricExtensionQueryPropertiesArgs struct {
 	SqlType pulumi.StringPtrInput `pulumi:"sqlType"`
 	// (Updatable) String prefix used to identify metric output of the OS Command
 	StartsWith pulumi.StringPtrInput `pulumi:"startsWith"`
+	// (Updatable) Http(s) end point URL
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (MetricExtensionQueryPropertiesArgs) ElementType() reflect.Type {
@@ -1773,7 +1785,17 @@ func (o MetricExtensionQueryPropertiesOutput) OutParamDetails() MetricExtensionQ
 	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
 }
 
-// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+// (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+func (o MetricExtensionQueryPropertiesOutput) ProtocolType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.ProtocolType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of content response given by the http(s) URL
+func (o MetricExtensionQueryPropertiesOutput) ResponseContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.ResponseContentType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 func (o MetricExtensionQueryPropertiesOutput) ScriptDetails() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
 	return o.ApplyT(func(v MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesScriptDetails {
 		return v.ScriptDetails
@@ -1793,6 +1815,11 @@ func (o MetricExtensionQueryPropertiesOutput) SqlType() pulumi.StringPtrOutput {
 // (Updatable) String prefix used to identify metric output of the OS Command
 func (o MetricExtensionQueryPropertiesOutput) StartsWith() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.StartsWith }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Http(s) end point URL
+func (o MetricExtensionQueryPropertiesOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type MetricExtensionQueryPropertiesPtrOutput struct{ *pulumi.OutputState }
@@ -1929,7 +1956,27 @@ func (o MetricExtensionQueryPropertiesPtrOutput) OutParamDetails() MetricExtensi
 	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
 }
 
-// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+// (Updatable) Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+func (o MetricExtensionQueryPropertiesPtrOutput) ProtocolType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProtocolType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of content response given by the http(s) URL
+func (o MetricExtensionQueryPropertiesPtrOutput) ResponseContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 func (o MetricExtensionQueryPropertiesPtrOutput) ScriptDetails() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
 	return o.ApplyT(func(v *MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesScriptDetails {
 		if v == nil {
@@ -1966,6 +2013,16 @@ func (o MetricExtensionQueryPropertiesPtrOutput) StartsWith() pulumi.StringPtrOu
 			return nil
 		}
 		return v.StartsWith
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Http(s) end point URL
+func (o MetricExtensionQueryPropertiesPtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2076,9 +2133,11 @@ func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) Index(i pulumi.I
 }
 
 type MetricExtensionQueryPropertiesOutParamDetails struct {
-	// (Updatable) Position of PL/SQL procedure OUT parameter
+	// (Updatable) Name of the Out Parameter
+	OutParamName *string `pulumi:"outParamName"`
+	// (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 	OutParamPosition int `pulumi:"outParamPosition"`
-	// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+	// (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 	OutParamType string `pulumi:"outParamType"`
 }
 
@@ -2094,9 +2153,11 @@ type MetricExtensionQueryPropertiesOutParamDetailsInput interface {
 }
 
 type MetricExtensionQueryPropertiesOutParamDetailsArgs struct {
-	// (Updatable) Position of PL/SQL procedure OUT parameter
+	// (Updatable) Name of the Out Parameter
+	OutParamName pulumi.StringPtrInput `pulumi:"outParamName"`
+	// (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 	OutParamPosition pulumi.IntInput `pulumi:"outParamPosition"`
-	// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+	// (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 	OutParamType pulumi.StringInput `pulumi:"outParamType"`
 }
 
@@ -2177,12 +2238,17 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToMetricExtensionQu
 	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
 }
 
-// (Updatable) Position of PL/SQL procedure OUT parameter
+// (Updatable) Name of the Out Parameter
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) OutParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesOutParamDetails) *string { return v.OutParamName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) OutParamPosition() pulumi.IntOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesOutParamDetails) int { return v.OutParamPosition }).(pulumi.IntOutput)
 }
 
-// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+// (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) OutParamType() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesOutParamDetails) string { return v.OutParamType }).(pulumi.StringOutput)
 }
@@ -2211,7 +2277,17 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) Elem() MetricExt
 	}).(MetricExtensionQueryPropertiesOutParamDetailsOutput)
 }
 
-// (Updatable) Position of PL/SQL procedure OUT parameter
+// (Updatable) Name of the Out Parameter
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesOutParamDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OutParamName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamPosition() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MetricExtensionQueryPropertiesOutParamDetails) *int {
 		if v == nil {
@@ -2221,7 +2297,7 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamPosition
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+// (Updatable) SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MetricExtensionQueryPropertiesOutParamDetails) *string {
 		if v == nil {
@@ -2232,7 +2308,7 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamType() p
 }
 
 type MetricExtensionQueryPropertiesScriptDetails struct {
-	// (Updatable) Content of the script file as base64 encoded string
+	// (Updatable) Content of the script/JavaScript file as base64 encoded string
 	Content string `pulumi:"content"`
 	// (Updatable) Name of the script file
 	Name string `pulumi:"name"`
@@ -2250,7 +2326,7 @@ type MetricExtensionQueryPropertiesScriptDetailsInput interface {
 }
 
 type MetricExtensionQueryPropertiesScriptDetailsArgs struct {
-	// (Updatable) Content of the script file as base64 encoded string
+	// (Updatable) Content of the script/JavaScript file as base64 encoded string
 	Content pulumi.StringInput `pulumi:"content"`
 	// (Updatable) Name of the script file
 	Name pulumi.StringInput `pulumi:"name"`
@@ -2333,7 +2409,7 @@ func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQuer
 	}).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
 }
 
-// (Updatable) Content of the script file as base64 encoded string
+// (Updatable) Content of the script/JavaScript file as base64 encoded string
 func (o MetricExtensionQueryPropertiesScriptDetailsOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesScriptDetails) string { return v.Content }).(pulumi.StringOutput)
 }
@@ -2367,7 +2443,7 @@ func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Elem() MetricExten
 	}).(MetricExtensionQueryPropertiesScriptDetailsOutput)
 }
 
-// (Updatable) Content of the script file as base64 encoded string
+// (Updatable) Content of the script/JavaScript file as base64 encoded string
 func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MetricExtensionQueryPropertiesScriptDetails) *string {
 		if v == nil {
@@ -10381,7 +10457,11 @@ type GetMetricExtensionQueryProperty struct {
 	ManagedBeanQuery string `pulumi:"managedBeanQuery"`
 	// Position and SQL Type of PL/SQL OUT parameter
 	OutParamDetails []GetMetricExtensionQueryPropertyOutParamDetail `pulumi:"outParamDetails"`
-	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+	ProtocolType string `pulumi:"protocolType"`
+	// Type of content response given by the http(s) URL
+	ResponseContentType string `pulumi:"responseContentType"`
+	// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 	ScriptDetails []GetMetricExtensionQueryPropertyScriptDetail `pulumi:"scriptDetails"`
 	// Details of Sql content which needs to execute to collect Metric Extension data
 	SqlDetails []GetMetricExtensionQueryPropertySqlDetail `pulumi:"sqlDetails"`
@@ -10389,6 +10469,8 @@ type GetMetricExtensionQueryProperty struct {
 	SqlType string `pulumi:"sqlType"`
 	// String prefix used to identify metric output of the OS Command
 	StartsWith string `pulumi:"startsWith"`
+	// Http(s) end point URL
+	Url string `pulumi:"url"`
 }
 
 // GetMetricExtensionQueryPropertyInput is an input type that accepts GetMetricExtensionQueryPropertyArgs and GetMetricExtensionQueryPropertyOutput values.
@@ -10425,7 +10507,11 @@ type GetMetricExtensionQueryPropertyArgs struct {
 	ManagedBeanQuery pulumi.StringInput `pulumi:"managedBeanQuery"`
 	// Position and SQL Type of PL/SQL OUT parameter
 	OutParamDetails GetMetricExtensionQueryPropertyOutParamDetailArrayInput `pulumi:"outParamDetails"`
-	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+	ProtocolType pulumi.StringInput `pulumi:"protocolType"`
+	// Type of content response given by the http(s) URL
+	ResponseContentType pulumi.StringInput `pulumi:"responseContentType"`
+	// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 	ScriptDetails GetMetricExtensionQueryPropertyScriptDetailArrayInput `pulumi:"scriptDetails"`
 	// Details of Sql content which needs to execute to collect Metric Extension data
 	SqlDetails GetMetricExtensionQueryPropertySqlDetailArrayInput `pulumi:"sqlDetails"`
@@ -10433,6 +10519,8 @@ type GetMetricExtensionQueryPropertyArgs struct {
 	SqlType pulumi.StringInput `pulumi:"sqlType"`
 	// String prefix used to identify metric output of the OS Command
 	StartsWith pulumi.StringInput `pulumi:"startsWith"`
+	// Http(s) end point URL
+	Url pulumi.StringInput `pulumi:"url"`
 }
 
 func (GetMetricExtensionQueryPropertyArgs) ElementType() reflect.Type {
@@ -10545,7 +10633,17 @@ func (o GetMetricExtensionQueryPropertyOutput) OutParamDetails() GetMetricExtens
 	}).(GetMetricExtensionQueryPropertyOutParamDetailArrayOutput)
 }
 
-// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+func (o GetMetricExtensionQueryPropertyOutput) ProtocolType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.ProtocolType }).(pulumi.StringOutput)
+}
+
+// Type of content response given by the http(s) URL
+func (o GetMetricExtensionQueryPropertyOutput) ResponseContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.ResponseContentType }).(pulumi.StringOutput)
+}
+
+// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 func (o GetMetricExtensionQueryPropertyOutput) ScriptDetails() GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
 	return o.ApplyT(func(v GetMetricExtensionQueryProperty) []GetMetricExtensionQueryPropertyScriptDetail {
 		return v.ScriptDetails
@@ -10567,6 +10665,11 @@ func (o GetMetricExtensionQueryPropertyOutput) SqlType() pulumi.StringOutput {
 // String prefix used to identify metric output of the OS Command
 func (o GetMetricExtensionQueryPropertyOutput) StartsWith() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.StartsWith }).(pulumi.StringOutput)
+}
+
+// Http(s) end point URL
+func (o GetMetricExtensionQueryPropertyOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.Url }).(pulumi.StringOutput)
 }
 
 type GetMetricExtensionQueryPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -10696,9 +10799,11 @@ func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) Index(i pulumi.
 }
 
 type GetMetricExtensionQueryPropertyOutParamDetail struct {
-	// Position of PL/SQL procedure OUT parameter
+	// Name of the Out Parameter
+	OutParamName string `pulumi:"outParamName"`
+	// Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 	OutParamPosition int `pulumi:"outParamPosition"`
-	// SQL Type of PL/SQL procedure OUT parameter
+	// SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 	OutParamType string `pulumi:"outParamType"`
 }
 
@@ -10714,9 +10819,11 @@ type GetMetricExtensionQueryPropertyOutParamDetailInput interface {
 }
 
 type GetMetricExtensionQueryPropertyOutParamDetailArgs struct {
-	// Position of PL/SQL procedure OUT parameter
+	// Name of the Out Parameter
+	OutParamName pulumi.StringInput `pulumi:"outParamName"`
+	// Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 	OutParamPosition pulumi.IntInput `pulumi:"outParamPosition"`
-	// SQL Type of PL/SQL procedure OUT parameter
+	// SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 	OutParamType pulumi.StringInput `pulumi:"outParamType"`
 }
 
@@ -10771,12 +10878,17 @@ func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToGetMetricExtensio
 	return o
 }
 
-// Position of PL/SQL procedure OUT parameter
+// Name of the Out Parameter
+func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) OutParamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyOutParamDetail) string { return v.OutParamName }).(pulumi.StringOutput)
+}
+
+// Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) OutParamPosition() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMetricExtensionQueryPropertyOutParamDetail) int { return v.OutParamPosition }).(pulumi.IntOutput)
 }
 
-// SQL Type of PL/SQL procedure OUT parameter
+// SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) OutParamType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricExtensionQueryPropertyOutParamDetail) string { return v.OutParamType }).(pulumi.StringOutput)
 }
@@ -11778,7 +11890,11 @@ type GetMetricExtensionsMetricExtensionCollectionItemQueryProperty struct {
 	ManagedBeanQuery string `pulumi:"managedBeanQuery"`
 	// Position and SQL Type of PL/SQL OUT parameter
 	OutParamDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail `pulumi:"outParamDetails"`
-	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+	ProtocolType string `pulumi:"protocolType"`
+	// Type of content response given by the http(s) URL
+	ResponseContentType string `pulumi:"responseContentType"`
+	// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 	ScriptDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail `pulumi:"scriptDetails"`
 	// Details of Sql content which needs to execute to collect Metric Extension data
 	SqlDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail `pulumi:"sqlDetails"`
@@ -11786,6 +11902,8 @@ type GetMetricExtensionsMetricExtensionCollectionItemQueryProperty struct {
 	SqlType string `pulumi:"sqlType"`
 	// String prefix used to identify metric output of the OS Command
 	StartsWith string `pulumi:"startsWith"`
+	// Http(s) end point URL
+	Url string `pulumi:"url"`
 }
 
 // GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput values.
@@ -11822,7 +11940,11 @@ type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs struct {
 	ManagedBeanQuery pulumi.StringInput `pulumi:"managedBeanQuery"`
 	// Position and SQL Type of PL/SQL OUT parameter
 	OutParamDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput `pulumi:"outParamDetails"`
-	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+	ProtocolType pulumi.StringInput `pulumi:"protocolType"`
+	// Type of content response given by the http(s) URL
+	ResponseContentType pulumi.StringInput `pulumi:"responseContentType"`
+	// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 	ScriptDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput `pulumi:"scriptDetails"`
 	// Details of Sql content which needs to execute to collect Metric Extension data
 	SqlDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput `pulumi:"sqlDetails"`
@@ -11830,6 +11952,8 @@ type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs struct {
 	SqlType pulumi.StringInput `pulumi:"sqlType"`
 	// String prefix used to identify metric output of the OS Command
 	StartsWith pulumi.StringInput `pulumi:"startsWith"`
+	// Http(s) end point URL
+	Url pulumi.StringInput `pulumi:"url"`
 }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ElementType() reflect.Type {
@@ -11948,7 +12072,19 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) Out
 	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput)
 }
 
-// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+// Supported protocol of resources to be associated with this metric extension. This is optional and defaults to HTTPS, which uses secure connection to the URL
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ProtocolType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.ProtocolType }).(pulumi.StringOutput)
+}
+
+// Type of content response given by the http(s) URL
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ResponseContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string {
+		return v.ResponseContentType
+	}).(pulumi.StringOutput)
+}
+
+// Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ScriptDetails() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
 	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail {
 		return v.ScriptDetails
@@ -11970,6 +12106,11 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) Sql
 // String prefix used to identify metric output of the OS Command
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) StartsWith() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.StartsWith }).(pulumi.StringOutput)
+}
+
+// Http(s) end point URL
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.Url }).(pulumi.StringOutput)
 }
 
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -12103,9 +12244,11 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDeta
 }
 
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail struct {
-	// Position of PL/SQL procedure OUT parameter
+	// Name of the Out Parameter
+	OutParamName string `pulumi:"outParamName"`
+	// Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 	OutParamPosition int `pulumi:"outParamPosition"`
-	// SQL Type of PL/SQL procedure OUT parameter
+	// SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 	OutParamType string `pulumi:"outParamType"`
 }
 
@@ -12121,9 +12264,11 @@ type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail
 }
 
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs struct {
-	// Position of PL/SQL procedure OUT parameter
+	// Name of the Out Parameter
+	OutParamName pulumi.StringInput `pulumi:"outParamName"`
+	// Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 	OutParamPosition pulumi.IntInput `pulumi:"outParamPosition"`
-	// SQL Type of PL/SQL procedure OUT parameter
+	// SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 	OutParamType pulumi.StringInput `pulumi:"outParamType"`
 }
 
@@ -12178,14 +12323,21 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDet
 	return o
 }
 
-// Position of PL/SQL procedure OUT parameter
+// Name of the Out Parameter
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) OutParamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail) string {
+		return v.OutParamName
+	}).(pulumi.StringOutput)
+}
+
+// Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if "outParamType" is set to NO_OUT_PARAM value.
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) OutParamPosition() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail) int {
 		return v.OutParamPosition
 	}).(pulumi.IntOutput)
 }
 
-// SQL Type of PL/SQL procedure OUT parameter
+// SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of "outParamPosition" will be ignored.
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) OutParamType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail) string {
 		return v.OutParamType

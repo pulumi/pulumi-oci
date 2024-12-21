@@ -86,21 +86,11 @@ type GetAutonomousContainerDatabaseResourceUsageResult struct {
 }
 
 func GetAutonomousContainerDatabaseResourceUsageOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseResourceUsageResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAutonomousContainerDatabaseResourceUsageResultOutput, error) {
 			args := v.(GetAutonomousContainerDatabaseResourceUsageArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAutonomousContainerDatabaseResourceUsageResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args, &rv, "", opts...)
-			if err != nil {
-				return GetAutonomousContainerDatabaseResourceUsageResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAutonomousContainerDatabaseResourceUsageResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAutonomousContainerDatabaseResourceUsageResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args, GetAutonomousContainerDatabaseResourceUsageResultOutput{}, options).(GetAutonomousContainerDatabaseResourceUsageResultOutput), nil
 		}).(GetAutonomousContainerDatabaseResourceUsageResultOutput)
 }
 

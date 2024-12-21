@@ -135,6 +135,36 @@ export const getMessages: typeof import("./getMessages").getMessages = null as a
 export const getMessagesOutput: typeof import("./getMessages").getMessagesOutput = null as any;
 utilities.lazyLoad(exports, ["getMessages","getMessagesOutput"], () => require("./getMessages"));
 
+export { GetPipelineArgs, GetPipelineResult, GetPipelineOutputArgs } from "./getPipeline";
+export const getPipeline: typeof import("./getPipeline").getPipeline = null as any;
+export const getPipelineOutput: typeof import("./getPipeline").getPipelineOutput = null as any;
+utilities.lazyLoad(exports, ["getPipeline","getPipelineOutput"], () => require("./getPipeline"));
+
+export { GetPipelineRunningProcessesArgs, GetPipelineRunningProcessesResult, GetPipelineRunningProcessesOutputArgs } from "./getPipelineRunningProcesses";
+export const getPipelineRunningProcesses: typeof import("./getPipelineRunningProcesses").getPipelineRunningProcesses = null as any;
+export const getPipelineRunningProcessesOutput: typeof import("./getPipelineRunningProcesses").getPipelineRunningProcessesOutput = null as any;
+utilities.lazyLoad(exports, ["getPipelineRunningProcesses","getPipelineRunningProcessesOutput"], () => require("./getPipelineRunningProcesses"));
+
+export { GetPipelineSchemaTablesArgs, GetPipelineSchemaTablesResult, GetPipelineSchemaTablesOutputArgs } from "./getPipelineSchemaTables";
+export const getPipelineSchemaTables: typeof import("./getPipelineSchemaTables").getPipelineSchemaTables = null as any;
+export const getPipelineSchemaTablesOutput: typeof import("./getPipelineSchemaTables").getPipelineSchemaTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getPipelineSchemaTables","getPipelineSchemaTablesOutput"], () => require("./getPipelineSchemaTables"));
+
+export { GetPipelineSchemasArgs, GetPipelineSchemasResult, GetPipelineSchemasOutputArgs } from "./getPipelineSchemas";
+export const getPipelineSchemas: typeof import("./getPipelineSchemas").getPipelineSchemas = null as any;
+export const getPipelineSchemasOutput: typeof import("./getPipelineSchemas").getPipelineSchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getPipelineSchemas","getPipelineSchemasOutput"], () => require("./getPipelineSchemas"));
+
+export { GetPipelinesArgs, GetPipelinesResult, GetPipelinesOutputArgs } from "./getPipelines";
+export const getPipelines: typeof import("./getPipelines").getPipelines = null as any;
+export const getPipelinesOutput: typeof import("./getPipelines").getPipelinesOutput = null as any;
+utilities.lazyLoad(exports, ["getPipelines","getPipelinesOutput"], () => require("./getPipelines"));
+
+export { GetRecipesArgs, GetRecipesResult, GetRecipesOutputArgs } from "./getRecipes";
+export const getRecipes: typeof import("./getRecipes").getRecipes = null as any;
+export const getRecipesOutput: typeof import("./getRecipes").getRecipesOutput = null as any;
+utilities.lazyLoad(exports, ["getRecipes","getRecipesOutput"], () => require("./getRecipes"));
+
 export { GetTrailFileArgs, GetTrailFileResult, GetTrailFileOutputArgs } from "./getTrailFile";
 export const getTrailFile: typeof import("./getTrailFile").getTrailFile = null as any;
 export const getTrailFileOutput: typeof import("./getTrailFile").getTrailFileOutput = null as any;
@@ -155,6 +185,11 @@ export const getTrailSequences: typeof import("./getTrailSequences").getTrailSeq
 export const getTrailSequencesOutput: typeof import("./getTrailSequences").getTrailSequencesOutput = null as any;
 utilities.lazyLoad(exports, ["getTrailSequences","getTrailSequencesOutput"], () => require("./getTrailSequences"));
 
+export { PipelineArgs, PipelineState } from "./pipeline";
+export type Pipeline = import("./pipeline").Pipeline;
+export const Pipeline: typeof import("./pipeline").Pipeline = null as any;
+utilities.lazyLoad(exports, ["Pipeline"], () => require("./pipeline"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -172,6 +207,8 @@ const _module = {
                 return new DeploymentBackup(name, <any>undefined, { urn })
             case "oci:GoldenGate/deploymentCertificate:DeploymentCertificate":
                 return new DeploymentCertificate(name, <any>undefined, { urn })
+            case "oci:GoldenGate/pipeline:Pipeline":
+                return new Pipeline(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -183,3 +220,4 @@ pulumi.runtime.registerResourceModule("oci", "GoldenGate/databaseRegistration", 
 pulumi.runtime.registerResourceModule("oci", "GoldenGate/deployment", _module)
 pulumi.runtime.registerResourceModule("oci", "GoldenGate/deploymentBackup", _module)
 pulumi.runtime.registerResourceModule("oci", "GoldenGate/deploymentCertificate", _module)
+pulumi.runtime.registerResourceModule("oci", "GoldenGate/pipeline", _module)

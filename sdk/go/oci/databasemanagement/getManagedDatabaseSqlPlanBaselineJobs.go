@@ -77,21 +77,11 @@ type GetManagedDatabaseSqlPlanBaselineJobsResult struct {
 }
 
 func GetManagedDatabaseSqlPlanBaselineJobsOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlPlanBaselineJobsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlPlanBaselineJobsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabaseSqlPlanBaselineJobsResultOutput, error) {
 			args := v.(GetManagedDatabaseSqlPlanBaselineJobsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabaseSqlPlanBaselineJobsResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabaseSqlPlanBaselineJobsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabaseSqlPlanBaselineJobsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabaseSqlPlanBaselineJobsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", args, GetManagedDatabaseSqlPlanBaselineJobsResultOutput{}, options).(GetManagedDatabaseSqlPlanBaselineJobsResultOutput), nil
 		}).(GetManagedDatabaseSqlPlanBaselineJobsResultOutput)
 }
 

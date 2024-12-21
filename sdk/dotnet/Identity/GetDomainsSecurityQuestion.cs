@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSecurityQuestionResult> Invoke(GetDomainsSecurityQuestionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionResult>("oci:Identity/getDomainsSecurityQuestion:getDomainsSecurityQuestion", args ?? new GetDomainsSecurityQuestionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a security question.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityQuestion = Oci.Identity.GetDomainsSecurityQuestion.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionId = testSecurityQuestionOciIdentityDomainsSecurityQuestion.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = securityQuestionAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSecurityQuestionResult> Invoke(GetDomainsSecurityQuestionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionResult>("oci:Identity/getDomainsSecurityQuestion:getDomainsSecurityQuestion", args ?? new GetDomainsSecurityQuestionInvokeArgs(), options.WithDefaults());
     }
 
 

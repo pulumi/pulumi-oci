@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowsResult> Invoke(GetDomainsApprovalWorkflowsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowsResult>("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", args ?? new GetDomainsApprovalWorkflowsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Approval Workflows in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search ApprovalWorkflow
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApprovalWorkflows = Oci.Identity.GetDomainsApprovalWorkflows.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowCount = approvalWorkflowApprovalWorkflowCount,
+        ///         ApprovalWorkflowFilter = approvalWorkflowApprovalWorkflowFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = approvalWorkflowAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApprovalWorkflowsResult> Invoke(GetDomainsApprovalWorkflowsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowsResult>("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", args ?? new GetDomainsApprovalWorkflowsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetCpeDeviceShapesResult> Invoke(GetCpeDeviceShapesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the CPE device types that the Networking service provides CPE configuration
+        /// content for (example: Cisco ASA). The content helps a network engineer configure
+        /// the actual CPE device represented by a [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
+        /// 
+        /// If you want to generate CPE configuration content for one of the returned CPE device types,
+        /// ensure that the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object's `cpeDeviceShapeId` attribute is set
+        /// to the CPE device type's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
+        /// 
+        /// For information about generating CPE configuration content, see these operations:
+        /// 
+        ///   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+        ///   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+        ///   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCpeDeviceShapes = Oci.Core.GetCpeDeviceShapes.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCpeDeviceShapesResult> Invoke(GetCpeDeviceShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
 //
-// Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+// Lists the Trail Sequences for a TrailFile in a given deployment.
+// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
 //
 // ## Example Usage
 //
@@ -81,21 +82,11 @@ type GetTrailSequencesResult struct {
 }
 
 func GetTrailSequencesOutput(ctx *pulumi.Context, args GetTrailSequencesOutputArgs, opts ...pulumi.InvokeOption) GetTrailSequencesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetTrailSequencesResultOutput, error) {
 			args := v.(GetTrailSequencesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetTrailSequencesResult
-			secret, err := ctx.InvokePackageRaw("oci:GoldenGate/getTrailSequences:getTrailSequences", args, &rv, "", opts...)
-			if err != nil {
-				return GetTrailSequencesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetTrailSequencesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetTrailSequencesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:GoldenGate/getTrailSequences:getTrailSequences", args, GetTrailSequencesResultOutput{}, options).(GetTrailSequencesResultOutput), nil
 		}).(GetTrailSequencesResultOutput)
 }
 

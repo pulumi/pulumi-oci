@@ -106,21 +106,11 @@ type LookupConfigResult struct {
 }
 
 func LookupConfigOutput(ctx *pulumi.Context, args LookupConfigOutputArgs, opts ...pulumi.InvokeOption) LookupConfigResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupConfigResultOutput, error) {
 			args := v.(LookupConfigArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupConfigResult
-			secret, err := ctx.InvokePackageRaw("oci:ApmConfig/getConfig:getConfig", args, &rv, "", opts...)
-			if err != nil {
-				return LookupConfigResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupConfigResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupConfigResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ApmConfig/getConfig:getConfig", args, LookupConfigResultOutput{}, options).(LookupConfigResultOutput), nil
 		}).(LookupConfigResultOutput)
 }
 

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BdsInstanceNetworkConfig {
     /**
-     * @return The CIDR IP address block of the VCN.
+     * @return (Updatable) The CIDR IP address block of the VCN.
      * 
      */
     private @Nullable String cidrBlock;
     /**
-     * @return A boolean flag whether to configure a NAT gateway.
+     * @return (Updatable) A boolean flag whether to configure a NAT gateway.
      * 
      */
     private @Nullable Boolean isNatGatewayRequired;
 
     private BdsInstanceNetworkConfig() {}
     /**
-     * @return The CIDR IP address block of the VCN.
+     * @return (Updatable) The CIDR IP address block of the VCN.
      * 
      */
     public Optional<String> cidrBlock() {
         return Optional.ofNullable(this.cidrBlock);
     }
     /**
-     * @return A boolean flag whether to configure a NAT gateway.
+     * @return (Updatable) A boolean flag whether to configure a NAT gateway.
      * 
      */
     public Optional<Boolean> isNatGatewayRequired() {

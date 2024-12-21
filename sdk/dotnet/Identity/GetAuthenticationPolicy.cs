@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetAuthenticationPolicyResult> Invoke(GetAuthenticationPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthenticationPolicyResult>("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args ?? new GetAuthenticationPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
+        /// the compartment ID (remember that the tenancy is simply the root compartment).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuthenticationPolicy = Oci.Identity.GetAuthenticationPolicy.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAuthenticationPolicyResult> Invoke(GetAuthenticationPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuthenticationPolicyResult>("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args ?? new GetAuthenticationPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

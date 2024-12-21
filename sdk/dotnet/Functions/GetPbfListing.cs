@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public static Output<GetPbfListingResult> Invoke(GetPbfListingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingResult>("oci:Functions/getPbfListing:getPbfListing", args ?? new GetPbfListingInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
+        /// 
+        /// Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPbfListing = Oci.Functions.GetPbfListing.Invoke(new()
+        ///     {
+        ///         PbfListingId = testPbfListingOciFunctionsPbfListing.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPbfListingResult> Invoke(GetPbfListingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingResult>("oci:Functions/getPbfListing:getPbfListing", args ?? new GetPbfListingInvokeArgs(), options.WithDefaults());
     }
 
 

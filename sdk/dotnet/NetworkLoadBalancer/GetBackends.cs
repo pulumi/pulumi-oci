@@ -64,6 +64,33 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public static Output<GetBackendsResult> Invoke(GetBackendsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendsResult>("oci:NetworkLoadBalancer/getBackends:getBackends", args ?? new GetBackendsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Backends in Oracle Cloud Infrastructure Network Load Balancer service.
+        /// 
+        /// Lists the backend servers for a given network load balancer and backend set.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackends = Oci.NetworkLoadBalancer.GetBackends.Invoke(new()
+        ///     {
+        ///         BackendSetName = testBackendSet.Name,
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackendsResult> Invoke(GetBackendsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendsResult>("oci:NetworkLoadBalancer/getBackends:getBackends", args ?? new GetBackendsInvokeArgs(), options.WithDefaults());
     }
 
 

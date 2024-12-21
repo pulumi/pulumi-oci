@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadTokenResult> Invoke(GetJavaDownloadsJavaDownloadTokenInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadTokenResult>("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", args ?? new GetJavaDownloadsJavaDownloadTokenInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Gets a JavaDownloadToken by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaDownloadToken = Oci.Jms.GetJavaDownloadsJavaDownloadToken.Invoke(new()
+        ///     {
+        ///         JavaDownloadTokenId = testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaDownloadTokenResult> Invoke(GetJavaDownloadsJavaDownloadTokenInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadTokenResult>("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", args ?? new GetJavaDownloadsJavaDownloadTokenInvokeArgs(), options.WithDefaults());
     }
 
 

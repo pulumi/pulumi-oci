@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalListenersResult> Invoke(GetExternalListenersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalListenersResult>("oci:DatabaseManagement/getExternalListeners:getExternalListeners", args ?? new GetExternalListenersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the listeners in the specified external DB system.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalListeners = Oci.DatabaseManagement.GetExternalListeners.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalListenerDisplayName,
+        ///         ExternalDbSystemId = testExternalDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalListenersResult> Invoke(GetExternalListenersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalListenersResult>("oci:DatabaseManagement/getExternalListeners:getExternalListeners", args ?? new GetExternalListenersInvokeArgs(), options.WithDefaults());
     }
 
 

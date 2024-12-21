@@ -115,21 +115,11 @@ type LookupSecurityAssessmentResult struct {
 }
 
 func LookupSecurityAssessmentOutput(ctx *pulumi.Context, args LookupSecurityAssessmentOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityAssessmentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupSecurityAssessmentResultOutput, error) {
 			args := v.(LookupSecurityAssessmentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupSecurityAssessmentResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", args, &rv, "", opts...)
-			if err != nil {
-				return LookupSecurityAssessmentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupSecurityAssessmentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupSecurityAssessmentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", args, LookupSecurityAssessmentResultOutput{}, options).(LookupSecurityAssessmentResultOutput), nil
 		}).(LookupSecurityAssessmentResultOutput)
 }
 

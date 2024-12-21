@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabaseBackupsResult> Invoke(GetAutonomousDatabaseBackupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseBackupsResult>("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", args ?? new GetAutonomousDatabaseBackupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseBackups = Oci.Database.GetAutonomousDatabaseBackups.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = autonomousDatabaseBackupDisplayName,
+        ///         State = autonomousDatabaseBackupState,
+        ///         Type = autonomousDatabaseBackupType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabaseBackupsResult> Invoke(GetAutonomousDatabaseBackupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseBackupsResult>("oci:Database/getAutonomousDatabaseBackups:getAutonomousDatabaseBackups", args ?? new GetAutonomousDatabaseBackupsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeBackupPolicyAssignmentsResult> Invoke(GetVolumeBackupPolicyAssignmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPolicyAssignmentsResult>("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", args ?? new GetVolumeBackupPolicyAssignmentsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the volume backup policy assignment for the specified volume. The
+        /// `assetId` query parameter is required, and the returned list will contain at most
+        /// one item, since volume can only have one volume backup policy assigned at a time.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeBackupPolicyAssignments = Oci.Core.GetVolumeBackupPolicyAssignments.Invoke(new()
+        ///     {
+        ///         AssetId = testVolume.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeBackupPolicyAssignmentsResult> Invoke(GetVolumeBackupPolicyAssignmentsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeBackupPolicyAssignmentsResult>("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", args ?? new GetVolumeBackupPolicyAssignmentsInvokeArgs(), options.WithDefaults());
     }
 
 

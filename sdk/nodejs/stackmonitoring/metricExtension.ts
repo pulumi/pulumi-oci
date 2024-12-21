@@ -47,9 +47,12 @@ import * as utilities from "../utilities";
  *         jmxAttributes: metricExtensionQueryPropertiesJmxAttributes,
  *         managedBeanQuery: metricExtensionQueryPropertiesManagedBeanQuery,
  *         outParamDetails: {
+ *             outParamName: metricExtensionQueryPropertiesOutParamDetailsOutParamName,
  *             outParamPosition: metricExtensionQueryPropertiesOutParamDetailsOutParamPosition,
  *             outParamType: metricExtensionQueryPropertiesOutParamDetailsOutParamType,
  *         },
+ *         protocolType: metricExtensionQueryPropertiesProtocolType,
+ *         responseContentType: metricExtensionQueryPropertiesResponseContentType,
  *         scriptDetails: {
  *             content: metricExtensionQueryPropertiesScriptDetailsContent,
  *             name: metricExtensionQueryPropertiesScriptDetailsName,
@@ -60,6 +63,7 @@ import * as utilities from "../utilities";
  *         },
  *         sqlType: metricExtensionQueryPropertiesSqlType,
  *         startsWith: metricExtensionQueryPropertiesStartsWith,
+ *         url: metricExtensionQueryPropertiesUrl,
  *     },
  *     resourceType: metricExtensionResourceType,
  *     description: metricExtensionDescription,

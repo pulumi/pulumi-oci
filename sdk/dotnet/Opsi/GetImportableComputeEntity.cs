@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public static Output<GetImportableComputeEntityResult> Invoke(GetImportableComputeEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImportableComputeEntityResult>("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", args ?? new GetImportableComputeEntityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
+        /// 
+        /// Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is "available"
+        /// and will be shown if all the following conditions are true:
+        ///    1. Compute is running OCA
+        ///    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+        ///       2.1 The agent OCID is not already being used for an existing hostInsight.
+        ///       2.2 The agent availabilityStatus = 'ACTIVE'
+        ///       2.3 The agent lifecycleState = 'ACTIVE'
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testImportableComputeEntity = Oci.Opsi.GetImportableComputeEntity.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetImportableComputeEntityResult> Invoke(GetImportableComputeEntityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetImportableComputeEntityResult>("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", args ?? new GetImportableComputeEntityInvokeArgs(), options.WithDefaults());
     }
 
 

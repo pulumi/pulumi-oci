@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetManagedListResult> Invoke(GetManagedListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a managed list identified by managedListId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedList = Oci.CloudGuard.GetManagedList.Invoke(new()
+        ///     {
+        ///         ManagedListId = testManagedListOciCloudGuardManagedList.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedListResult> Invoke(GetManagedListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListInvokeArgs(), options.WithDefaults());
     }
 
 

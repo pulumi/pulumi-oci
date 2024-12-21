@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public static Output<GetJobOutputResult> Invoke(GetJobOutputInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobOutputResult>("oci:DatabaseMigration/getJobOutput:getJobOutput", args ?? new GetJobOutputInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// List the Job Outputs
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJobOutput = Oci.DatabaseMigration.GetJobOutput.Invoke(new()
+        ///     {
+        ///         JobId = testJob.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJobOutputResult> Invoke(GetJobOutputInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobOutputResult>("oci:DatabaseMigration/getJobOutput:getJobOutput", args ?? new GetJobOutputInvokeArgs(), options.WithDefaults());
     }
 
 

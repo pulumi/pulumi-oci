@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExternalNonContainerDatabaseResult> Invoke(GetExternalNonContainerDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalNonContainerDatabaseResult>("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", args ?? new GetExternalNonContainerDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Non Container Database resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about a specific external non-container database.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalNonContainerDatabase = Oci.Database.GetExternalNonContainerDatabase.Invoke(new()
+        ///     {
+        ///         ExternalNonContainerDatabaseId = testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalNonContainerDatabaseResult> Invoke(GetExternalNonContainerDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalNonContainerDatabaseResult>("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", args ?? new GetExternalNonContainerDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

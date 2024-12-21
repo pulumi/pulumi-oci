@@ -111,21 +111,11 @@ type LookupUserAssessmentResult struct {
 }
 
 func LookupUserAssessmentOutput(ctx *pulumi.Context, args LookupUserAssessmentOutputArgs, opts ...pulumi.InvokeOption) LookupUserAssessmentResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupUserAssessmentResultOutput, error) {
 			args := v.(LookupUserAssessmentArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupUserAssessmentResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getUserAssessment:getUserAssessment", args, &rv, "", opts...)
-			if err != nil {
-				return LookupUserAssessmentResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupUserAssessmentResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupUserAssessmentResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getUserAssessment:getUserAssessment", args, LookupUserAssessmentResultOutput{}, options).(LookupUserAssessmentResultOutput), nil
 		}).(LookupUserAssessmentResultOutput)
 }
 

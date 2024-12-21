@@ -86,21 +86,11 @@ type LookupAppAccelerationPolicyResult struct {
 }
 
 func LookupAppAccelerationPolicyOutput(ctx *pulumi.Context, args LookupAppAccelerationPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAppAccelerationPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppAccelerationPolicyResultOutput, error) {
 			args := v.(LookupAppAccelerationPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppAccelerationPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppAccelerationPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppAccelerationPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppAccelerationPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", args, LookupAppAccelerationPolicyResultOutput{}, options).(LookupAppAccelerationPolicyResultOutput), nil
 		}).(LookupAppAccelerationPolicyResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Vbs
         /// </summary>
         public static Output<GetInstVbsInstanceResult> Invoke(GetInstVbsInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstVbsInstanceResult>("oci:Vbs/getInstVbsInstance:getInstVbsInstance", args ?? new GetInstVbsInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
+        /// 
+        /// Gets a VbsInstance by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVbsInstance = Oci.Vbs.GetInstVbsInstance.Invoke(new()
+        ///     {
+        ///         VbsInstanceId = testVbsInstanceOciVbsInstVbsInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstVbsInstanceResult> Invoke(GetInstVbsInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstVbsInstanceResult>("oci:Vbs/getInstVbsInstance:getInstVbsInstance", args ?? new GetInstVbsInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

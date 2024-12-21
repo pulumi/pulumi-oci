@@ -66,21 +66,11 @@ type GetLogSetsCountResult struct {
 }
 
 func GetLogSetsCountOutput(ctx *pulumi.Context, args GetLogSetsCountOutputArgs, opts ...pulumi.InvokeOption) GetLogSetsCountResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetLogSetsCountResultOutput, error) {
 			args := v.(GetLogSetsCountArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetLogSetsCountResult
-			secret, err := ctx.InvokePackageRaw("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args, &rv, "", opts...)
-			if err != nil {
-				return GetLogSetsCountResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetLogSetsCountResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetLogSetsCountResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args, GetLogSetsCountResultOutput{}, options).(GetLogSetsCountResultOutput), nil
 		}).(GetLogSetsCountResultOutput)
 }
 

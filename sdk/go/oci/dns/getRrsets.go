@@ -94,21 +94,11 @@ type GetRrsetsResult struct {
 }
 
 func GetRrsetsOutput(ctx *pulumi.Context, args GetRrsetsOutputArgs, opts ...pulumi.InvokeOption) GetRrsetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetRrsetsResultOutput, error) {
 			args := v.(GetRrsetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetRrsetsResult
-			secret, err := ctx.InvokePackageRaw("oci:Dns/getRrsets:getRrsets", args, &rv, "", opts...)
-			if err != nil {
-				return GetRrsetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetRrsetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetRrsetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Dns/getRrsets:getRrsets", args, GetRrsetsResultOutput{}, options).(GetRrsetsResultOutput), nil
 		}).(GetRrsetsResultOutput)
 }
 

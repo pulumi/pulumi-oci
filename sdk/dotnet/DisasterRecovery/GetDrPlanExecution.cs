@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public static Output<GetDrPlanExecutionResult> Invoke(GetDrPlanExecutionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanExecutionResult>("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", args ?? new GetDrPlanExecutionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
+        /// 
+        /// Get details for the DR plan execution identified by *drPlanExecutionId*.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrPlanExecution = Oci.DisasterRecovery.GetDrPlanExecution.Invoke(new()
+        ///     {
+        ///         DrPlanExecutionId = testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrPlanExecutionResult> Invoke(GetDrPlanExecutionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanExecutionResult>("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", args ?? new GetDrPlanExecutionInvokeArgs(), options.WithDefaults());
     }
 
 

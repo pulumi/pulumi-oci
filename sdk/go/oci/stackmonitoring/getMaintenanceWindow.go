@@ -84,21 +84,11 @@ type LookupMaintenanceWindowResult struct {
 }
 
 func LookupMaintenanceWindowOutput(ctx *pulumi.Context, args LookupMaintenanceWindowOutputArgs, opts ...pulumi.InvokeOption) LookupMaintenanceWindowResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMaintenanceWindowResultOutput, error) {
 			args := v.(LookupMaintenanceWindowArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMaintenanceWindowResult
-			secret, err := ctx.InvokePackageRaw("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMaintenanceWindowResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMaintenanceWindowResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMaintenanceWindowResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", args, LookupMaintenanceWindowResultOutput{}, options).(LookupMaintenanceWindowResultOutput), nil
 		}).(LookupMaintenanceWindowResultOutput)
 }
 

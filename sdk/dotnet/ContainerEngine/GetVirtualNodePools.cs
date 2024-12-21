@@ -26,6 +26,14 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public static Output<GetVirtualNodePoolsResult> Invoke(GetVirtualNodePoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
+        /// 
+        /// List all the virtual node pools in a compartment, and optionally filter by cluster.
+        /// </summary>
+        public static Output<GetVirtualNodePoolsResult> Invoke(GetVirtualNodePoolsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsInvokeArgs(), options.WithDefaults());
     }
 
 

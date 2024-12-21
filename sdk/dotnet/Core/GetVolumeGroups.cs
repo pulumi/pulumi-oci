@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVolumeGroupsResult> Invoke(GetVolumeGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupsResult>("oci:Core/getVolumeGroups:getVolumeGroups", args ?? new GetVolumeGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the volume groups in the specified compartment and availability domain.
+        /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVolumeGroups = Oci.Core.GetVolumeGroups.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = volumeGroupAvailabilityDomain,
+        ///         DisplayName = volumeGroupDisplayName,
+        ///         State = volumeGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVolumeGroupsResult> Invoke(GetVolumeGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupsResult>("oci:Core/getVolumeGroups:getVolumeGroups", args ?? new GetVolumeGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

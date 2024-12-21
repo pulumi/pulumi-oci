@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Zpr
         /// </summary>
         public static Output<GetZprPolicyResult> Invoke(GetZprPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetZprPolicyResult>("oci:Zpr/getZprPolicy:getZprPolicy", args ?? new GetZprPolicyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
+        /// 
+        /// Gets information about a ZprPolicy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testZprPolicy = Oci.Zpr.GetZprPolicy.Invoke(new()
+        ///     {
+        ///         ZprPolicyId = testZprPolicyOciZprZprPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetZprPolicyResult> Invoke(GetZprPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetZprPolicyResult>("oci:Zpr/getZprPolicy:getZprPolicy", args ?? new GetZprPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

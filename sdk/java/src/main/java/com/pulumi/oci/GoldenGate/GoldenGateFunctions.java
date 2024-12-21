@@ -48,6 +48,18 @@ import com.pulumi.oci.GoldenGate.inputs.GetMessageArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetMessagePlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetMessagesArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetMessagesPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelinePlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetPipelinesPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetRecipesPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailFileArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailFilePlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailFilesArgs;
@@ -76,6 +88,12 @@ import com.pulumi.oci.GoldenGate.outputs.GetDeploymentVersionsResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsResult;
 import com.pulumi.oci.GoldenGate.outputs.GetMessageResult;
 import com.pulumi.oci.GoldenGate.outputs.GetMessagesResult;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelineResult;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelineRunningProcessesResult;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelineSchemaTablesResult;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelineSchemasResult;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelinesResult;
+import com.pulumi.oci.GoldenGate.outputs.GetRecipesResult;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailFileResult;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailFilesResult;
 import com.pulumi.oci.GoldenGate.outputs.GetTrailSequenceResult;
@@ -4665,6 +4683,1371 @@ public final class GoldenGateFunctions {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getMessages:getMessages", TypeShape.of(GetMessagesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args) {
+        return getPipeline(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineResult> getPipelinePlain(GetPipelinePlainArgs args) {
+        return getPipelinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineResult> getPipeline(GetPipelineArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipeline = GoldenGateFunctions.getPipeline(GetPipelineArgs.builder()
+     *             .pipelineId(testPipelineOciGoldenGatePipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineResult> getPipelinePlain(GetPipelinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getPipeline:getPipeline", TypeShape.of(GetPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineRunningProcessesResult> getPipelineRunningProcesses(GetPipelineRunningProcessesArgs args) {
+        return getPipelineRunningProcesses(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineRunningProcessesResult> getPipelineRunningProcessesPlain(GetPipelineRunningProcessesPlainArgs args) {
+        return getPipelineRunningProcessesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineRunningProcessesResult> getPipelineRunningProcesses(GetPipelineRunningProcessesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelineRunningProcesses:getPipelineRunningProcesses", TypeShape.of(GetPipelineRunningProcessesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineRunningProcessesResult> getPipelineRunningProcesses(GetPipelineRunningProcessesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelineRunningProcesses:getPipelineRunningProcesses", TypeShape.of(GetPipelineRunningProcessesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineRunningProcessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineRunningProcesses = GoldenGateFunctions.getPipelineRunningProcesses(GetPipelineRunningProcessesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineRunningProcessesResult> getPipelineRunningProcessesPlain(GetPipelineRunningProcessesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getPipelineRunningProcesses:getPipelineRunningProcesses", TypeShape.of(GetPipelineRunningProcessesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
+     *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
+     *             .displayName(pipelineSchemaTableDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineSchemaTablesResult> getPipelineSchemaTables(GetPipelineSchemaTablesArgs args) {
+        return getPipelineSchemaTables(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
+     *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
+     *             .displayName(pipelineSchemaTableDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineSchemaTablesResult> getPipelineSchemaTablesPlain(GetPipelineSchemaTablesPlainArgs args) {
+        return getPipelineSchemaTablesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
+     *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
+     *             .displayName(pipelineSchemaTableDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineSchemaTablesResult> getPipelineSchemaTables(GetPipelineSchemaTablesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelineSchemaTables:getPipelineSchemaTables", TypeShape.of(GetPipelineSchemaTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
+     *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
+     *             .displayName(pipelineSchemaTableDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineSchemaTablesResult> getPipelineSchemaTables(GetPipelineSchemaTablesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelineSchemaTables:getPipelineSchemaTables", TypeShape.of(GetPipelineSchemaTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemaTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemaTables = GoldenGateFunctions.getPipelineSchemaTables(GetPipelineSchemaTablesArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .sourceSchemaName(pipelineSchemaTableSourceSchemaName)
+     *             .targetSchemaName(pipelineSchemaTableTargetSchemaName)
+     *             .displayName(pipelineSchemaTableDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineSchemaTablesResult> getPipelineSchemaTablesPlain(GetPipelineSchemaTablesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getPipelineSchemaTables:getPipelineSchemaTables", TypeShape.of(GetPipelineSchemaTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .displayName(pipelineSchemaDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineSchemasResult> getPipelineSchemas(GetPipelineSchemasArgs args) {
+        return getPipelineSchemas(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .displayName(pipelineSchemaDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineSchemasResult> getPipelineSchemasPlain(GetPipelineSchemasPlainArgs args) {
+        return getPipelineSchemasPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .displayName(pipelineSchemaDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineSchemasResult> getPipelineSchemas(GetPipelineSchemasArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelineSchemas:getPipelineSchemas", TypeShape.of(GetPipelineSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .displayName(pipelineSchemaDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelineSchemasResult> getPipelineSchemas(GetPipelineSchemasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelineSchemas:getPipelineSchemas", TypeShape.of(GetPipelineSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelineSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelineSchemas = GoldenGateFunctions.getPipelineSchemas(GetPipelineSchemasArgs.builder()
+     *             .pipelineId(testPipeline.id())
+     *             .displayName(pipelineSchemaDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelineSchemasResult> getPipelineSchemasPlain(GetPipelineSchemasPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getPipelineSchemas:getPipelineSchemas", TypeShape.of(GetPipelineSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Pipelines in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = GoldenGateFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pipelineDisplayName)
+     *             .lifecycleSubState(pipelineLifecycleSubState)
+     *             .state(pipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args) {
+        return getPipelines(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Pipelines in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = GoldenGateFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pipelineDisplayName)
+     *             .lifecycleSubState(pipelineLifecycleSubState)
+     *             .state(pipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args) {
+        return getPipelinesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Pipelines in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = GoldenGateFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pipelineDisplayName)
+     *             .lifecycleSubState(pipelineLifecycleSubState)
+     *             .state(pipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Pipelines in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = GoldenGateFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pipelineDisplayName)
+     *             .lifecycleSubState(pipelineLifecycleSubState)
+     *             .state(pipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPipelinesResult> getPipelines(GetPipelinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Lists the Pipelines in the compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPipelines = GoldenGateFunctions.getPipelines(GetPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(pipelineDisplayName)
+     *             .lifecycleSubState(pipelineLifecycleSubState)
+     *             .state(pipelineState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of Recipe Summary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecipes = GoldenGateFunctions.getRecipes(GetRecipesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(recipeDisplayName)
+     *             .recipeType(recipeRecipeType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecipesResult> getRecipes(GetRecipesArgs args) {
+        return getRecipes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of Recipe Summary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecipes = GoldenGateFunctions.getRecipes(GetRecipesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(recipeDisplayName)
+     *             .recipeType(recipeRecipeType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRecipesResult> getRecipesPlain(GetRecipesPlainArgs args) {
+        return getRecipesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of Recipe Summary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecipes = GoldenGateFunctions.getRecipes(GetRecipesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(recipeDisplayName)
+     *             .recipeType(recipeRecipeType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecipesResult> getRecipes(GetRecipesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getRecipes:getRecipes", TypeShape.of(GetRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of Recipe Summary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecipes = GoldenGateFunctions.getRecipes(GetRecipesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(recipeDisplayName)
+     *             .recipeType(recipeRecipeType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRecipesResult> getRecipes(GetRecipesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getRecipes:getRecipes", TypeShape.of(GetRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns an array of Recipe Summary.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecipes = GoldenGateFunctions.getRecipes(GetRecipesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(recipeDisplayName)
+     *             .recipeType(recipeRecipeType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRecipesResult> getRecipesPlain(GetRecipesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getRecipes:getRecipes", TypeShape.of(GetRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
      * Lists the TrailFiles for a deployment.
@@ -4897,7 +6280,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the TrailFiles for a deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -4943,7 +6327,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the TrailFiles for a deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -4989,7 +6374,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the TrailFiles for a deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5035,7 +6421,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the TrailFiles for a deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5081,7 +6468,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the TrailFiles for a deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5362,7 +6750,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5409,7 +6798,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5456,7 +6846,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5503,7 +6894,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -5550,7 +6942,8 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 

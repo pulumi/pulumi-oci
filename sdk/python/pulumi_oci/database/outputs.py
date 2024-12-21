@@ -18800,6 +18800,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  is_access_control_enabled: bool,
                  is_auto_scaling_enabled: bool,
                  is_auto_scaling_for_storage_enabled: bool,
+                 is_backup_retention_locked: bool,
                  is_data_guard_enabled: bool,
                  is_dedicated: bool,
                  is_dev_tier: bool,
@@ -18939,6 +18940,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        :param bool is_backup_retention_locked: Indicates if the Autonomous Database is backup retention locked.
         :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param bool is_dev_tier: Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
@@ -19073,6 +19075,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
+        pulumi.set(__self__, "is_backup_retention_locked", is_backup_retention_locked)
         pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dedicated", is_dedicated)
         pulumi.set(__self__, "is_dev_tier", is_dev_tier)
@@ -19558,6 +19561,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
+
+    @property
+    @pulumi.getter(name="isBackupRetentionLocked")
+    def is_backup_retention_locked(self) -> bool:
+        """
+        Indicates if the Autonomous Database is backup retention locked.
+        """
+        return pulumi.get(self, "is_backup_retention_locked")
 
     @property
     @pulumi.getter(name="isDataGuardEnabled")
@@ -21539,6 +21550,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  is_access_control_enabled: bool,
                  is_auto_scaling_enabled: bool,
                  is_auto_scaling_for_storage_enabled: bool,
+                 is_backup_retention_locked: bool,
                  is_data_guard_enabled: bool,
                  is_dedicated: bool,
                  is_dev_tier: bool,
@@ -21664,6 +21676,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        :param bool is_backup_retention_locked: Indicates if the Autonomous Database is backup retention locked.
         :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param bool is_dev_tier: Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
@@ -21790,6 +21803,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
+        pulumi.set(__self__, "is_backup_retention_locked", is_backup_retention_locked)
         pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dedicated", is_dedicated)
         pulumi.set(__self__, "is_dev_tier", is_dev_tier)
@@ -22232,6 +22246,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         """
         return pulumi.get(self, "is_auto_scaling_for_storage_enabled")
+
+    @property
+    @pulumi.getter(name="isBackupRetentionLocked")
+    def is_backup_retention_locked(self) -> bool:
+        """
+        Indicates if the Autonomous Database is backup retention locked.
+        """
+        return pulumi.get(self, "is_backup_retention_locked")
 
     @property
     @pulumi.getter(name="isDataGuardEnabled")

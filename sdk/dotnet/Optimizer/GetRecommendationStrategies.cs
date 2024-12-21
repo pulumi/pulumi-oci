@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetRecommendationStrategiesResult> Invoke(GetRecommendationStrategiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationStrategiesResult>("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", args ?? new GetRecommendationStrategiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Lists the existing strategies.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecommendationStrategies = Oci.Optimizer.GetRecommendationStrategies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = recommendationStrategyCompartmentIdInSubtree,
+        ///         Name = recommendationStrategyName,
+        ///         RecommendationName = testRecommendation.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRecommendationStrategiesResult> Invoke(GetRecommendationStrategiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationStrategiesResult>("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", args ?? new GetRecommendationStrategiesInvokeArgs(), options.WithDefaults());
     }
 
 

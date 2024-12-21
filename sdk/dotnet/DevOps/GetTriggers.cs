@@ -72,6 +72,37 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetTriggersResult> Invoke(GetTriggersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTriggersResult>("oci:DevOps/getTriggers:getTriggers", args ?? new GetTriggersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of triggers.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTriggers = Oci.DevOps.GetTriggers.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = triggerDisplayName,
+        ///         Id = triggerId,
+        ///         ProjectId = testProject.Id,
+        ///         State = triggerState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTriggersResult> Invoke(GetTriggersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTriggersResult>("oci:DevOps/getTriggers:getTriggers", args ?? new GetTriggersInvokeArgs(), options.WithDefaults());
     }
 
 

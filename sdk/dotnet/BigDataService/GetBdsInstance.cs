@@ -62,6 +62,32 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public static Output<GetBdsInstanceResult> Invoke(GetBdsInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
+        /// 
+        /// Returns information about the Big Data Service cluster identified by the given ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBdsInstance = Oci.BigDataService.GetBdsInstance.Invoke(new()
+        ///     {
+        ///         BdsInstanceId = testBdsInstanceOciBdsBdsInstance.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBdsInstanceResult> Invoke(GetBdsInstanceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -97,6 +123,10 @@ namespace Pulumi.Oci.BigDataService
     [OutputType]
     public sealed class GetBdsInstanceResult
     {
+        /// <summary>
+        /// Cluster version details including bds and odh version information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBdsInstanceBdsClusterVersionSummaryResult> BdsClusterVersionSummaries;
         public readonly string BdsInstanceId;
         /// <summary>
         /// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -151,6 +181,7 @@ namespace Pulumi.Oci.BigDataService
         /// Boolean flag specifying whether or not Cloud SQL should be configured.
         /// </summary>
         public readonly bool IsCloudSqlConfigured;
+        public readonly bool IsForceRemoveEnabled;
         public readonly bool IsForceStopJobs;
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -188,6 +219,8 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly int NumberOfNodesRequiringMaintenanceReboot;
         public readonly string OsPatchVersion;
+        public readonly string RemoveNode;
+        public readonly ImmutableArray<Outputs.GetBdsInstanceStartClusterShapeConfigResult> StartClusterShapeConfigs;
         /// <summary>
         /// The state of the cluster.
         /// </summary>
@@ -205,6 +238,8 @@ namespace Pulumi.Oci.BigDataService
 
         [OutputConstructor]
         private GetBdsInstanceResult(
+            ImmutableArray<Outputs.GetBdsInstanceBdsClusterVersionSummaryResult> bdsClusterVersionSummaries,
+
             string bdsInstanceId,
 
             string bootstrapScriptUrl,
@@ -241,6 +276,8 @@ namespace Pulumi.Oci.BigDataService
 
             bool isCloudSqlConfigured,
 
+            bool isForceRemoveEnabled,
+
             bool isForceStopJobs,
 
             bool isHighAvailability,
@@ -267,6 +304,10 @@ namespace Pulumi.Oci.BigDataService
 
             string osPatchVersion,
 
+            string removeNode,
+
+            ImmutableArray<Outputs.GetBdsInstanceStartClusterShapeConfigResult> startClusterShapeConfigs,
+
             string state,
 
             string timeCreated,
@@ -277,6 +318,7 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceWorkerNodeResult> workerNodes)
         {
+            BdsClusterVersionSummaries = bdsClusterVersionSummaries;
             BdsInstanceId = bdsInstanceId;
             BootstrapScriptUrl = bootstrapScriptUrl;
             CloudSqlDetails = cloudSqlDetails;
@@ -295,6 +337,7 @@ namespace Pulumi.Oci.BigDataService
             Id = id;
             IgnoreExistingNodesShapes = ignoreExistingNodesShapes;
             IsCloudSqlConfigured = isCloudSqlConfigured;
+            IsForceRemoveEnabled = isForceRemoveEnabled;
             IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;
             IsKafkaConfigured = isKafkaConfigured;
@@ -308,6 +351,8 @@ namespace Pulumi.Oci.BigDataService
             NumberOfNodes = numberOfNodes;
             NumberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             OsPatchVersion = osPatchVersion;
+            RemoveNode = removeNode;
+            StartClusterShapeConfigs = startClusterShapeConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

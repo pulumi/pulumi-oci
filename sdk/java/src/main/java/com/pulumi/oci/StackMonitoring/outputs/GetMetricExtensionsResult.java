@@ -19,7 +19,7 @@ public final class GetMetricExtensionsResult {
      * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     private @Nullable String enabledOnResourceId;
     private @Nullable List<GetMetricExtensionsFilter> filters;
     /**
@@ -32,6 +32,7 @@ public final class GetMetricExtensionsResult {
      * 
      */
     private List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections;
+    private @Nullable String metricExtensionId;
     /**
      * @return Name of the script file
      * 
@@ -58,8 +59,8 @@ public final class GetMetricExtensionsResult {
      * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public Optional<String> enabledOnResourceId() {
         return Optional.ofNullable(this.enabledOnResourceId);
@@ -80,6 +81,9 @@ public final class GetMetricExtensionsResult {
      */
     public List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections() {
         return this.metricExtensionCollections;
+    }
+    public Optional<String> metricExtensionId() {
+        return Optional.ofNullable(this.metricExtensionId);
     }
     /**
      * @return Name of the script file
@@ -119,11 +123,12 @@ public final class GetMetricExtensionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable String enabledOnResourceId;
         private @Nullable List<GetMetricExtensionsFilter> filters;
         private String id;
         private List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections;
+        private @Nullable String metricExtensionId;
         private @Nullable String name;
         private @Nullable String resourceType;
         private @Nullable String state;
@@ -136,6 +141,7 @@ public final class GetMetricExtensionsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.metricExtensionCollections = defaults.metricExtensionCollections;
+    	      this.metricExtensionId = defaults.metricExtensionId;
     	      this.name = defaults.name;
     	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
@@ -143,10 +149,8 @@ public final class GetMetricExtensionsResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetMetricExtensionsResult", "compartmentId");
-            }
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
@@ -185,6 +189,12 @@ public final class GetMetricExtensionsResult {
             return metricExtensionCollections(List.of(metricExtensionCollections));
         }
         @CustomType.Setter
+        public Builder metricExtensionId(@Nullable String metricExtensionId) {
+
+            this.metricExtensionId = metricExtensionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
 
             this.name = name;
@@ -215,6 +225,7 @@ public final class GetMetricExtensionsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.metricExtensionCollections = metricExtensionCollections;
+            _resultValue.metricExtensionId = metricExtensionId;
             _resultValue.name = name;
             _resultValue.resourceType = resourceType;
             _resultValue.state = state;

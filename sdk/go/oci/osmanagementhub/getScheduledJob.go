@@ -120,21 +120,11 @@ type LookupScheduledJobResult struct {
 }
 
 func LookupScheduledJobOutput(ctx *pulumi.Context, args LookupScheduledJobOutputArgs, opts ...pulumi.InvokeOption) LookupScheduledJobResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupScheduledJobResultOutput, error) {
 			args := v.(LookupScheduledJobArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupScheduledJobResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getScheduledJob:getScheduledJob", args, &rv, "", opts...)
-			if err != nil {
-				return LookupScheduledJobResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupScheduledJobResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupScheduledJobResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getScheduledJob:getScheduledJob", args, LookupScheduledJobResultOutput{}, options).(LookupScheduledJobResultOutput), nil
 		}).(LookupScheduledJobResultOutput)
 }
 

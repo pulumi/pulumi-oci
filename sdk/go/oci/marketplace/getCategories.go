@@ -69,21 +69,11 @@ type GetCategoriesResult struct {
 }
 
 func GetCategoriesOutput(ctx *pulumi.Context, args GetCategoriesOutputArgs, opts ...pulumi.InvokeOption) GetCategoriesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCategoriesResultOutput, error) {
 			args := v.(GetCategoriesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCategoriesResult
-			secret, err := ctx.InvokePackageRaw("oci:Marketplace/getCategories:getCategories", args, &rv, "", opts...)
-			if err != nil {
-				return GetCategoriesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCategoriesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCategoriesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Marketplace/getCategories:getCategories", args, GetCategoriesResultOutput{}, options).(GetCategoriesResultOutput), nil
 		}).(GetCategoriesResultOutput)
 }
 

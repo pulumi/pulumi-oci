@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetUiPasswordResult> Invoke(GetUiPasswordInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUiPasswordResult>("oci:Identity/getUiPassword:getUiPassword", args ?? new GetUiPasswordInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Gets the specified user's console password information. The returned object contains the user's OCID,
+        /// but not the password itself. The actual password is returned only when created or reset.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUiPassword = Oci.Identity.GetUiPassword.Invoke(new()
+        ///     {
+        ///         UserId = testUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUiPasswordResult> Invoke(GetUiPasswordInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUiPasswordResult>("oci:Identity/getUiPassword:getUiPassword", args ?? new GetUiPasswordInvokeArgs(), options.WithDefaults());
     }
 
 

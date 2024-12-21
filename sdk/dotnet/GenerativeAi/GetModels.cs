@@ -72,6 +72,37 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:GenerativeAi/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
+        /// 
+        /// Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModels = Oci.GenerativeAi.GetModels.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Capabilities = modelCapability,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         State = modelState,
+        ///         Vendor = modelVendor,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetModelsResult> Invoke(GetModelsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelsResult>("oci:GenerativeAi/getModels:getModels", args ?? new GetModelsInvokeArgs(), options.WithDefaults());
     }
 
 

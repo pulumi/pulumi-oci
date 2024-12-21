@@ -5,7 +5,6 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -22,15 +21,15 @@ public final class GetMetricExtensionsArgs extends com.pulumi.resources.InvokeAr
      * The ID of the compartment in which data is listed.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private Output<String> compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
 
     /**
      * @return The ID of the compartment in which data is listed.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -53,6 +52,21 @@ public final class GetMetricExtensionsArgs extends com.pulumi.resources.InvokeAr
 
     public Optional<Output<List<GetMetricExtensionsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * Identifier for the metric extension
+     * 
+     */
+    @Import(name="metricExtensionId")
+    private @Nullable Output<String> metricExtensionId;
+
+    /**
+     * @return Identifier for the metric extension
+     * 
+     */
+    public Optional<Output<String>> metricExtensionId() {
+        return Optional.ofNullable(this.metricExtensionId);
     }
 
     /**
@@ -121,6 +135,7 @@ public final class GetMetricExtensionsArgs extends com.pulumi.resources.InvokeAr
         this.compartmentId = $.compartmentId;
         this.enabledOnResourceId = $.enabledOnResourceId;
         this.filters = $.filters;
+        this.metricExtensionId = $.metricExtensionId;
         this.name = $.name;
         this.resourceType = $.resourceType;
         this.state = $.state;
@@ -151,7 +166,7 @@ public final class GetMetricExtensionsArgs extends com.pulumi.resources.InvokeAr
          * @return builder
          * 
          */
-        public Builder compartmentId(Output<String> compartmentId) {
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -198,6 +213,27 @@ public final class GetMetricExtensionsArgs extends com.pulumi.resources.InvokeAr
 
         public Builder filters(GetMetricExtensionsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param metricExtensionId Identifier for the metric extension
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricExtensionId(@Nullable Output<String> metricExtensionId) {
+            $.metricExtensionId = metricExtensionId;
+            return this;
+        }
+
+        /**
+         * @param metricExtensionId Identifier for the metric extension
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricExtensionId(String metricExtensionId) {
+            return metricExtensionId(Output.of(metricExtensionId));
         }
 
         /**
@@ -285,9 +321,6 @@ public final class GetMetricExtensionsArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetMetricExtensionsArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetMetricExtensionsArgs", "compartmentId");
-            }
             return $;
         }
     }

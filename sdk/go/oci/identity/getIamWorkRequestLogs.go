@@ -72,21 +72,11 @@ type GetIamWorkRequestLogsResult struct {
 }
 
 func GetIamWorkRequestLogsOutput(ctx *pulumi.Context, args GetIamWorkRequestLogsOutputArgs, opts ...pulumi.InvokeOption) GetIamWorkRequestLogsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetIamWorkRequestLogsResultOutput, error) {
 			args := v.(GetIamWorkRequestLogsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetIamWorkRequestLogsResult
-			secret, err := ctx.InvokePackageRaw("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", args, &rv, "", opts...)
-			if err != nil {
-				return GetIamWorkRequestLogsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetIamWorkRequestLogsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetIamWorkRequestLogsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", args, GetIamWorkRequestLogsResultOutput{}, options).(GetIamWorkRequestLogsResultOutput), nil
 		}).(GetIamWorkRequestLogsResultOutput)
 }
 

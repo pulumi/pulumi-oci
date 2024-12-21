@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> Invoke(GetSecurityPolicyDeploymentSecurityPolicyEntryStateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult>("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", args ?? new GetSecurityPolicyDeploymentSecurityPolicyEntryStateInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a security policy entity states by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityPolicyDeploymentSecurityPolicyEntryState = Oci.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryState.Invoke(new()
+        ///     {
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
+        ///         SecurityPolicyEntryStateId = testSecurityPolicyEntryState.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult> Invoke(GetSecurityPolicyDeploymentSecurityPolicyEntryStateInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult>("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", args ?? new GetSecurityPolicyDeploymentSecurityPolicyEntryStateInvokeArgs(), options.WithDefaults());
     }
 
 

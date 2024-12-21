@@ -14,7 +14,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
         /// 
-        /// Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+        /// Lists the Trail Sequences for a TrailFile in a given deployment.
+        /// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +45,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
         /// 
-        /// Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+        /// Lists the Trail Sequences for a TrailFile in a given deployment.
+        /// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
         /// 
         /// 
         /// ## Example Usage
@@ -69,6 +71,37 @@ namespace Pulumi.Oci.GoldenGate
         /// ```
         /// </summary>
         public static Output<GetTrailSequencesResult> Invoke(GetTrailSequencesInvokeArgs args, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTrailSequencesResult>("oci:GoldenGate/getTrailSequences:getTrailSequences", args ?? new GetTrailSequencesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Lists the Trail Sequences for a TrailFile in a given deployment.
+        /// Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTrailSequences = Oci.GoldenGate.GetTrailSequences.Invoke(new()
+        ///     {
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailSequenceDisplayName,
+        ///         TrailSequenceId = testTrailSequence.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTrailSequencesResult> Invoke(GetTrailSequencesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetTrailSequencesResult>("oci:GoldenGate/getTrailSequences:getTrailSequences", args ?? new GetTrailSequencesInvokeArgs(), options.WithDefaults());
     }
 

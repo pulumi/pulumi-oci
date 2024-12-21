@@ -89,21 +89,11 @@ type LookupTargetDatabasePeerTargetDatabaseResult struct {
 }
 
 func LookupTargetDatabasePeerTargetDatabaseOutput(ctx *pulumi.Context, args LookupTargetDatabasePeerTargetDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupTargetDatabasePeerTargetDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupTargetDatabasePeerTargetDatabaseResultOutput, error) {
 			args := v.(LookupTargetDatabasePeerTargetDatabaseArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupTargetDatabasePeerTargetDatabaseResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", args, &rv, "", opts...)
-			if err != nil {
-				return LookupTargetDatabasePeerTargetDatabaseResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupTargetDatabasePeerTargetDatabaseResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupTargetDatabasePeerTargetDatabaseResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabasePeerTargetDatabase:getTargetDatabasePeerTargetDatabase", args, LookupTargetDatabasePeerTargetDatabaseResultOutput{}, options).(LookupTargetDatabasePeerTargetDatabaseResultOutput), nil
 		}).(LookupTargetDatabasePeerTargetDatabaseResultOutput)
 }
 

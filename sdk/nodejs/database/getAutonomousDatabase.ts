@@ -237,6 +237,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly isAutoScalingForStorageEnabled: boolean;
     /**
+     * Indicates if the Autonomous Database is backup retention locked.
+     */
+    readonly isBackupRetentionLocked: boolean;
+    /**
      * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     readonly isDataGuardEnabled: boolean;

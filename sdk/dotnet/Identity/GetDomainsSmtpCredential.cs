@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSmtpCredentialResult> Invoke(GetDomainsSmtpCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSmtpCredentialResult>("oci:Identity/getDomainsSmtpCredential:getDomainsSmtpCredential", args ?? new GetDomainsSmtpCredentialInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a user's SMTP credentials.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSmtpCredential = Oci.Identity.GetDomainsSmtpCredential.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SmtpCredentialId = testSmtpCredentialOciIdentitySmtpCredential.Id,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = smtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = smtpCredentialResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSmtpCredentialResult> Invoke(GetDomainsSmtpCredentialInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSmtpCredentialResult>("oci:Identity/getDomainsSmtpCredential:getDomainsSmtpCredential", args ?? new GetDomainsSmtpCredentialInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -88,21 +88,11 @@ type GetMigrationPlansResult struct {
 }
 
 func GetMigrationPlansOutput(ctx *pulumi.Context, args GetMigrationPlansOutputArgs, opts ...pulumi.InvokeOption) GetMigrationPlansResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMigrationPlansResultOutput, error) {
 			args := v.(GetMigrationPlansArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMigrationPlansResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getMigrationPlans:getMigrationPlans", args, &rv, "", opts...)
-			if err != nil {
-				return GetMigrationPlansResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMigrationPlansResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMigrationPlansResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudMigrations/getMigrationPlans:getMigrationPlans", args, GetMigrationPlansResultOutput{}, options).(GetMigrationPlansResultOutput), nil
 		}).(GetMigrationPlansResultOutput)
 }
 

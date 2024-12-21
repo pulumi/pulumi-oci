@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetInstancePoolLoadBalancerAttachmentResult> Invoke(GetInstancePoolLoadBalancerAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstancePoolLoadBalancerAttachmentResult>("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args ?? new GetInstancePoolLoadBalancerAttachmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information about a load balancer that is attached to the specified instance pool.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInstancePoolLoadBalancerAttachment = Oci.Core.GetInstancePoolLoadBalancerAttachment.Invoke(new()
+        ///     {
+        ///         InstancePoolId = testInstancePool.Id,
+        ///         InstancePoolLoadBalancerAttachmentId = testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInstancePoolLoadBalancerAttachmentResult> Invoke(GetInstancePoolLoadBalancerAttachmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstancePoolLoadBalancerAttachmentResult>("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", args ?? new GetInstancePoolLoadBalancerAttachmentInvokeArgs(), options.WithDefaults());
     }
 
 

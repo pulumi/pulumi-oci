@@ -113,7 +113,7 @@ type JobRun struct {
 	LogDetails JobRunLogDetailArrayOutput `pulumi:"logDetails"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrOutput `pulumi:"opcParentRptUrl"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -197,7 +197,7 @@ type jobRunState struct {
 	LogDetails []JobRunLogDetail `pulumi:"logDetails"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,7 +243,7 @@ type JobRunState struct {
 	LogDetails JobRunLogDetailArrayInput
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,7 +283,7 @@ type jobRunArgs struct {
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -312,7 +312,7 @@ type JobRunArgs struct {
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -489,7 +489,7 @@ func (o JobRunOutput) OpcParentRptUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.OpcParentRptUrl }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

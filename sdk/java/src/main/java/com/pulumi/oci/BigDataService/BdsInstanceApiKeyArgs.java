@@ -18,6 +18,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * The OCID of the cluster.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="bdsInstanceId", required=true)
@@ -25,6 +26,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * @return The OCID of the cluster.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> bdsInstanceId() {
@@ -47,7 +49,23 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Identity domain OCID , where user is present. For default domain , this field will be optional.
+     * 
+     */
+    @Import(name="domainOcid")
+    private @Nullable Output<String> domainOcid;
+
+    /**
+     * @return Identity domain OCID , where user is present. For default domain , this field will be optional.
+     * 
+     */
+    public Optional<Output<String>> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
+    }
+
+    /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="keyAlias", required=true)
@@ -55,6 +73,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * @return User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<String> keyAlias() {
@@ -102,6 +121,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
     private BdsInstanceApiKeyArgs(BdsInstanceApiKeyArgs $) {
         this.bdsInstanceId = $.bdsInstanceId;
         this.defaultRegion = $.defaultRegion;
+        this.domainOcid = $.domainOcid;
         this.keyAlias = $.keyAlias;
         this.passphrase = $.passphrase;
         this.userId = $.userId;
@@ -127,6 +147,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bdsInstanceId The OCID of the cluster.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -138,6 +159,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bdsInstanceId The OCID of the cluster.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -168,7 +190,29 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param domainOcid Identity domain OCID , where user is present. For default domain , this field will be optional.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainOcid(@Nullable Output<String> domainOcid) {
+            $.domainOcid = domainOcid;
+            return this;
+        }
+
+        /**
+         * @param domainOcid Identity domain OCID , where user is present. For default domain , this field will be optional.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainOcid(String domainOcid) {
+            return domainOcid(Output.of(domainOcid));
+        }
+
+        /**
          * @param keyAlias User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -180,6 +224,7 @@ public final class BdsInstanceApiKeyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param keyAlias User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 

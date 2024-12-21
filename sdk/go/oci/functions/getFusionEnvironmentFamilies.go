@@ -83,21 +83,11 @@ type GetFusionEnvironmentFamiliesResult struct {
 }
 
 func GetFusionEnvironmentFamiliesOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamiliesOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamiliesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFusionEnvironmentFamiliesResultOutput, error) {
 			args := v.(GetFusionEnvironmentFamiliesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFusionEnvironmentFamiliesResult
-			secret, err := ctx.InvokePackageRaw("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args, &rv, "", opts...)
-			if err != nil {
-				return GetFusionEnvironmentFamiliesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFusionEnvironmentFamiliesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFusionEnvironmentFamiliesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args, GetFusionEnvironmentFamiliesResultOutput{}, options).(GetFusionEnvironmentFamiliesResultOutput), nil
 		}).(GetFusionEnvironmentFamiliesResultOutput)
 }
 

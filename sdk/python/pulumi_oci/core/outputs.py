@@ -46869,6 +46869,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         :param bool is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         :param bool is_pv_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
         :param bool is_read_only: Whether the attachment was created in read-only mode.
+        :param bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param bool is_volume_created_during_launch: Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
         :param str iscsi_login_state: The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         :param Sequence['GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs'] multipath_devices: A list of secondary multipath devices
@@ -47035,6 +47036,9 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
     @property
     @pulumi.getter(name="isShareable")
     def is_shareable(self) -> bool:
+        """
+        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        """
         return pulumi.get(self, "is_shareable")
 
     @property

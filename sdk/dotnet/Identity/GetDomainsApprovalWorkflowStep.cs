@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsApprovalWorkflowStepResult> Invoke(GetDomainsApprovalWorkflowStepInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowStepResult>("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", args ?? new GetDomainsApprovalWorkflowStepInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get ApprovalWorkflowStep
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testApprovalWorkflowStep = Oci.Identity.GetDomainsApprovalWorkflowStep.Invoke(new()
+        ///     {
+        ///         ApprovalWorkflowStepId = testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = approvalWorkflowStepAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsApprovalWorkflowStepResult> Invoke(GetDomainsApprovalWorkflowStepInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsApprovalWorkflowStepResult>("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", args ?? new GetDomainsApprovalWorkflowStepInvokeArgs(), options.WithDefaults());
     }
 
 

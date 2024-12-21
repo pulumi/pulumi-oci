@@ -69,21 +69,11 @@ type GetClusterWorkloadMappingsResult struct {
 }
 
 func GetClusterWorkloadMappingsOutput(ctx *pulumi.Context, args GetClusterWorkloadMappingsOutputArgs, opts ...pulumi.InvokeOption) GetClusterWorkloadMappingsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetClusterWorkloadMappingsResultOutput, error) {
 			args := v.(GetClusterWorkloadMappingsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetClusterWorkloadMappingsResult
-			secret, err := ctx.InvokePackageRaw("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", args, &rv, "", opts...)
-			if err != nil {
-				return GetClusterWorkloadMappingsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetClusterWorkloadMappingsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetClusterWorkloadMappingsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", args, GetClusterWorkloadMappingsResultOutput{}, options).(GetClusterWorkloadMappingsResultOutput), nil
 		}).(GetClusterWorkloadMappingsResultOutput)
 }
 

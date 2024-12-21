@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSecurityQuestionSettingsResult> Invoke(GetDomainsSecurityQuestionSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionSettingsResult>("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", args ?? new GetDomainsSecurityQuestionSettingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Question Settings in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for security question settings.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSecurityQuestionSettings = Oci.Identity.GetDomainsSecurityQuestionSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = securityQuestionSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSecurityQuestionSettingsResult> Invoke(GetDomainsSecurityQuestionSettingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionSettingsResult>("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", args ?? new GetDomainsSecurityQuestionSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

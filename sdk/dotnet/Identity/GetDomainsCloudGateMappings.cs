@@ -82,6 +82,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsCloudGateMappingsResult> Invoke(GetDomainsCloudGateMappingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateMappingsResult>("oci:Identity/getDomainsCloudGateMappings:getDomainsCloudGateMappings", args ?? new GetDomainsCloudGateMappingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cloud Gate Mappings in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Cloud Gate mappings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudGateMappings = Oci.Identity.GetDomainsCloudGateMappings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateMappingCount = cloudGateMappingCloudGateMappingCount,
+        ///         CloudGateMappingFilter = cloudGateMappingCloudGateMappingFilter,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = cloudGateMappingAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateMappingStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsCloudGateMappingsResult> Invoke(GetDomainsCloudGateMappingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCloudGateMappingsResult>("oci:Identity/getDomainsCloudGateMappings:getDomainsCloudGateMappings", args ?? new GetDomainsCloudGateMappingsInvokeArgs(), options.WithDefaults());
     }
 
 

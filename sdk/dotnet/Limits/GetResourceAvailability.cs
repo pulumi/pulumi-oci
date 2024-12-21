@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public static Output<GetResourceAvailabilityResult> Invoke(GetResourceAvailabilityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
+        /// 
+        /// For a given compartmentId, resource limit name, and scope, returns the following:
+        ///   * The number of available resources associated with the given limit.
+        ///   * The usage in the selected compartment for the given limit.
+        /// If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResourceAvailability = Oci.Limits.GetResourceAvailability.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         LimitName = resourceAvailabilityLimitName,
+        ///         ServiceName = testService.Name,
+        ///         AvailabilityDomain = resourceAvailabilityAvailabilityDomain,
+        ///         SubscriptionId = subscriptionOcid,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResourceAvailabilityResult> Invoke(GetResourceAvailabilityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityInvokeArgs(), options.WithDefaults());
     }
 
 

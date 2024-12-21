@@ -98,6 +98,10 @@ public final class GetVolumeAttachmentsVolumeAttachment {
      * 
      */
     private Boolean isReadOnly;
+    /**
+     * @return Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+     * 
+     */
     private Boolean isShareable;
     /**
      * @return Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
@@ -253,6 +257,10 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     public Boolean isReadOnly() {
         return this.isReadOnly;
     }
+    /**
+     * @return Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+     * 
+     */
     public Boolean isShareable() {
         return this.isShareable;
     }

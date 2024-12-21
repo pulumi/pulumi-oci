@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public static Output<GetRunLogsResult> Invoke(GetRunLogsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRunLogsResult>("oci:DataFlow/getRunLogs:getRunLogs", args ?? new GetRunLogsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
+        /// 
+        /// Retrieves summaries of the run's logs.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRunLogs = Oci.DataFlow.GetRunLogs.Invoke(new()
+        ///     {
+        ///         RunId = testRun.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRunLogsResult> Invoke(GetRunLogsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRunLogsResult>("oci:DataFlow/getRunLogs:getRunLogs", args ?? new GetRunLogsInvokeArgs(), options.WithDefaults());
     }
 
 

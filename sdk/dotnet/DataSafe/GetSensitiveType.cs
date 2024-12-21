@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveTypeResult> Invoke(GetSensitiveTypeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveTypeResult>("oci:DataSafe/getSensitiveType:getSensitiveType", args ?? new GetSensitiveTypeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets the details of the specified sensitive type.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveType = Oci.DataSafe.GetSensitiveType.Invoke(new()
+        ///     {
+        ///         SensitiveTypeId = testSensitiveTypeOciDataSafeSensitiveType.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveTypeResult> Invoke(GetSensitiveTypeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveTypeResult>("oci:DataSafe/getSensitiveType:getSensitiveType", args ?? new GetSensitiveTypeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.LicenseManager
         /// </summary>
         public static Output<GetProductLicensesResult> Invoke(GetProductLicensesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProductLicensesResult>("oci:LicenseManager/getProductLicenses:getProductLicenses", args ?? new GetProductLicensesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Product Licenses in Oracle Cloud Infrastructure License Manager service.
+        /// 
+        /// Retrieves all the product licenses from a given compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProductLicenses = Oci.LicenseManager.GetProductLicenses.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = productLicenseIsCompartmentIdInSubtree,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProductLicensesResult> Invoke(GetProductLicensesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProductLicensesResult>("oci:LicenseManager/getProductLicenses:getProductLicenses", args ?? new GetProductLicensesInvokeArgs(), options.WithDefaults());
     }
 
 

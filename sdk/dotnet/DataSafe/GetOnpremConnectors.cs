@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetOnpremConnectorsResult> Invoke(GetOnpremConnectorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnpremConnectorsResult>("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", args ?? new GetOnpremConnectorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of on-premises connectors.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOnPremConnectors = Oci.DataSafe.GetOnpremConnectors.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = onPremConnectorAccessLevel,
+        ///         CompartmentIdInSubtree = onPremConnectorCompartmentIdInSubtree,
+        ///         DisplayName = onPremConnectorDisplayName,
+        ///         OnPremConnectorId = testOnPremConnector.Id,
+        ///         OnPremConnectorLifecycleState = onPremConnectorOnPremConnectorLifecycleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOnpremConnectorsResult> Invoke(GetOnpremConnectorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnpremConnectorsResult>("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", args ?? new GetOnpremConnectorsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudAutonomousVmClusterResourceUsageResult> Invoke(GetCloudAutonomousVmClusterResourceUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterResourceUsageResult>("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", args ?? new GetCloudAutonomousVmClusterResourceUsageInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudAutonomousVmClusterResourceUsage = Oci.Database.GetCloudAutonomousVmClusterResourceUsage.Invoke(new()
+        ///     {
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudAutonomousVmClusterResourceUsageResult> Invoke(GetCloudAutonomousVmClusterResourceUsageInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterResourceUsageResult>("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", args ?? new GetCloudAutonomousVmClusterResourceUsageInvokeArgs(), options.WithDefaults());
     }
 
 

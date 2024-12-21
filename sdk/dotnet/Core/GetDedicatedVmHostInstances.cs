@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDedicatedVmHostInstancesResult> Invoke(GetDedicatedVmHostInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstancesResult>("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", args ?? new GetDedicatedVmHostInstancesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedVmHostsInstances = Oci.Core.GetDedicatedVmHostInstances.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DedicatedVmHostId = testDedicatedVmHost.Id,
+        ///         AvailabilityDomain = dedicatedVmHostsInstanceAvailabilityDomain,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedVmHostInstancesResult> Invoke(GetDedicatedVmHostInstancesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstancesResult>("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", args ?? new GetDedicatedVmHostInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

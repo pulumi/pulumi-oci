@@ -110,6 +110,56 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetPublicIpsResult> Invoke(GetPublicIpsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpsResult>("oci:Core/getPublicIps:getPublicIps", args ?? new GetPublicIpsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the [PublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) objects
+        /// in the specified compartment. You can filter the list by using query parameters.
+        /// 
+        /// To list your reserved public IPs:
+        ///   * Set `scope` = `REGION`  (required)
+        ///   * Leave the `availabilityDomain` parameter empty
+        ///   * Set `lifetime` = `RESERVED`
+        /// 
+        /// To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
+        ///   * Set `scope` = `REGION`  (required)
+        ///   * Leave the `availabilityDomain` parameter empty
+        ///   * Set `lifetime` = `EPHEMERAL`
+        /// 
+        /// To list the ephemeral public IPs assigned to private IPs:
+        ///   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+        ///   * Set the `availabilityDomain` parameter to the desired availability domain (required)
+        ///   * Set `lifetime` = `EPHEMERAL`
+        /// 
+        /// **Note:** An ephemeral public IP assigned to a private IP
+        /// is always in the same availability domain and compartment as the private IP.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPublicIps = Oci.Core.GetPublicIps.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Scope = publicIpScope,
+        ///         AvailabilityDomain = publicIpAvailabilityDomain,
+        ///         Lifetime = publicIpLifetime,
+        ///         PublicIpPoolId = testPublicIpPool.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPublicIpsResult> Invoke(GetPublicIpsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpsResult>("oci:Core/getPublicIps:getPublicIps", args ?? new GetPublicIpsInvokeArgs(), options.WithDefaults());
     }
 
 

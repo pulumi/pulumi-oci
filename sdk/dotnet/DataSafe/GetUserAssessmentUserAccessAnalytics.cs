@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetUserAssessmentUserAccessAnalyticsResult> Invoke(GetUserAssessmentUserAccessAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUserAccessAnalyticsResult>("oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics", args ?? new GetUserAssessmentUserAccessAnalyticsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of aggregated user access analytics in the specified target in a compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAssessmentUserAccessAnalytics = Oci.DataSafe.GetUserAssessmentUserAccessAnalytics.Invoke(new()
+        ///     {
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserAssessmentUserAccessAnalyticsResult> Invoke(GetUserAssessmentUserAccessAnalyticsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUserAccessAnalyticsResult>("oci:DataSafe/getUserAssessmentUserAccessAnalytics:getUserAssessmentUserAccessAnalytics", args ?? new GetUserAssessmentUserAccessAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> Invoke(GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeGlobalImageCapabilitySchemasVersionResult>("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", args ?? new GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets the specified Compute Global Image Capability Schema Version
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeGlobalImageCapabilitySchemasVersion = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersion.Invoke(new()
+        ///     {
+        ///         ComputeGlobalImageCapabilitySchemaId = testComputeGlobalImageCapabilitySchema.Id,
+        ///         ComputeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> Invoke(GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeGlobalImageCapabilitySchemasVersionResult>("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", args ?? new GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs(), options.WithDefaults());
     }
 
 

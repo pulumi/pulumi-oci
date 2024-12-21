@@ -24,6 +24,16 @@ public final class BdsInstancePatchActionPatchingConfig {
      */
     private String patchingConfigStrategy;
     /**
+     * @return Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    private @Nullable Integer toleranceThresholdPerBatch;
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    private @Nullable Integer toleranceThresholdPerDomain;
+    /**
      * @return The wait time between batches in seconds.
      * 
      */
@@ -48,6 +58,20 @@ public final class BdsInstancePatchActionPatchingConfig {
      */
     public String patchingConfigStrategy() {
         return this.patchingConfigStrategy;
+    }
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    public Optional<Integer> toleranceThresholdPerBatch() {
+        return Optional.ofNullable(this.toleranceThresholdPerBatch);
+    }
+    /**
+     * @return Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * 
+     */
+    public Optional<Integer> toleranceThresholdPerDomain() {
+        return Optional.ofNullable(this.toleranceThresholdPerDomain);
     }
     /**
      * @return The wait time between batches in seconds.
@@ -75,6 +99,8 @@ public final class BdsInstancePatchActionPatchingConfig {
     public static final class Builder {
         private @Nullable Integer batchSize;
         private String patchingConfigStrategy;
+        private @Nullable Integer toleranceThresholdPerBatch;
+        private @Nullable Integer toleranceThresholdPerDomain;
         private @Nullable Integer waitTimeBetweenBatchInSeconds;
         private @Nullable Integer waitTimeBetweenDomainInSeconds;
         public Builder() {}
@@ -82,6 +108,8 @@ public final class BdsInstancePatchActionPatchingConfig {
     	      Objects.requireNonNull(defaults);
     	      this.batchSize = defaults.batchSize;
     	      this.patchingConfigStrategy = defaults.patchingConfigStrategy;
+    	      this.toleranceThresholdPerBatch = defaults.toleranceThresholdPerBatch;
+    	      this.toleranceThresholdPerDomain = defaults.toleranceThresholdPerDomain;
     	      this.waitTimeBetweenBatchInSeconds = defaults.waitTimeBetweenBatchInSeconds;
     	      this.waitTimeBetweenDomainInSeconds = defaults.waitTimeBetweenDomainInSeconds;
         }
@@ -101,6 +129,18 @@ public final class BdsInstancePatchActionPatchingConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder toleranceThresholdPerBatch(@Nullable Integer toleranceThresholdPerBatch) {
+
+            this.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder toleranceThresholdPerDomain(@Nullable Integer toleranceThresholdPerDomain) {
+
+            this.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
+            return this;
+        }
+        @CustomType.Setter
         public Builder waitTimeBetweenBatchInSeconds(@Nullable Integer waitTimeBetweenBatchInSeconds) {
 
             this.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
@@ -116,6 +156,8 @@ public final class BdsInstancePatchActionPatchingConfig {
             final var _resultValue = new BdsInstancePatchActionPatchingConfig();
             _resultValue.batchSize = batchSize;
             _resultValue.patchingConfigStrategy = patchingConfigStrategy;
+            _resultValue.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            _resultValue.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
             _resultValue.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
             _resultValue.waitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
             return _resultValue;

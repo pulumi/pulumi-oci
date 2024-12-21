@@ -105,21 +105,11 @@ type GetErrataResult struct {
 }
 
 func GetErrataOutput(ctx *pulumi.Context, args GetErrataOutputArgs, opts ...pulumi.InvokeOption) GetErrataResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetErrataResultOutput, error) {
 			args := v.(GetErrataArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetErrataResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getErrata:getErrata", args, &rv, "", opts...)
-			if err != nil {
-				return GetErrataResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetErrataResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetErrataResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getErrata:getErrata", args, GetErrataResultOutput{}, options).(GetErrataResultOutput), nil
 		}).(GetErrataResultOutput)
 }
 

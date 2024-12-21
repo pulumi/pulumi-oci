@@ -88,21 +88,11 @@ type LookupNetworkAddressListResult struct {
 }
 
 func LookupNetworkAddressListOutput(ctx *pulumi.Context, args LookupNetworkAddressListOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkAddressListResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNetworkAddressListResultOutput, error) {
 			args := v.(LookupNetworkAddressListArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNetworkAddressListResult
-			secret, err := ctx.InvokePackageRaw("oci:Waf/getNetworkAddressList:getNetworkAddressList", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNetworkAddressListResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNetworkAddressListResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNetworkAddressListResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Waf/getNetworkAddressList:getNetworkAddressList", args, LookupNetworkAddressListResultOutput{}, options).(LookupNetworkAddressListResultOutput), nil
 		}).(LookupNetworkAddressListResultOutput)
 }
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public static Output<GetReplicationScheduleResult> Invoke(GetReplicationScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationScheduleResult>("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", args ?? new GetReplicationScheduleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        /// 
+        /// Gets a replication schedule by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplicationSchedule = Oci.CloudMigrations.GetReplicationSchedule.Invoke(new()
+        ///     {
+        ///         ReplicationScheduleId = testReplicationScheduleOciCloudMigrationsReplicationSchedule.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicationScheduleResult> Invoke(GetReplicationScheduleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationScheduleResult>("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", args ?? new GetReplicationScheduleInvokeArgs(), options.WithDefaults());
     }
 
 

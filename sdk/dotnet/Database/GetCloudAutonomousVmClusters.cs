@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetCloudAutonomousVmClustersResult> Invoke(GetCloudAutonomousVmClustersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClustersResult>("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", args ?? new GetCloudAutonomousVmClustersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCloudAutonomousVmClusters = Oci.Database.GetCloudAutonomousVmClusters.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = cloudAutonomousVmClusterAvailabilityDomain,
+        ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
+        ///         DisplayName = cloudAutonomousVmClusterDisplayName,
+        ///         State = cloudAutonomousVmClusterState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCloudAutonomousVmClustersResult> Invoke(GetCloudAutonomousVmClustersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClustersResult>("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", args ?? new GetCloudAutonomousVmClustersInvokeArgs(), options.WithDefaults());
     }
 
 

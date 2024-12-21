@@ -62,6 +62,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public static Output<GetResponderRecipeResult> Invoke(GetResponderRecipeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResponderRecipeResult>("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args ?? new GetResponderRecipeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        /// 
+        /// Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResponderRecipe = Oci.CloudGuard.GetResponderRecipe.Invoke(new()
+        ///     {
+        ///         ResponderRecipeId = testResponderRecipeOciCloudGuardResponderRecipe.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResponderRecipeResult> Invoke(GetResponderRecipeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResponderRecipeResult>("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args ?? new GetResponderRecipeInvokeArgs(), options.WithDefaults());
     }
 
 

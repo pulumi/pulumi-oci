@@ -62,6 +62,32 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetDeployEnvironmentResult> Invoke(GetDeployEnvironmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeployEnvironmentResult>("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args ?? new GetDeployEnvironmentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Retrieves a deployment environment by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeployEnvironment = Oci.DevOps.GetDeployEnvironment.Invoke(new()
+        ///     {
+        ///         DeployEnvironmentId = testDeployEnvironmentOciDevopsDeployEnvironment.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeployEnvironmentResult> Invoke(GetDeployEnvironmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployEnvironmentResult>("oci:DevOps/getDeployEnvironment:getDeployEnvironment", args ?? new GetDeployEnvironmentInvokeArgs(), options.WithDefaults());
     }
 
 

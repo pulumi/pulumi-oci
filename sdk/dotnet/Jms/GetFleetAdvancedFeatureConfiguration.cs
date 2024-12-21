@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetAdvancedFeatureConfigurationResult> Invoke(GetFleetAdvancedFeatureConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetAdvancedFeatureConfigurationResult>("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args ?? new GetFleetAdvancedFeatureConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns Fleet level advanced feature configuration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetAdvancedFeatureConfiguration = Oci.Jms.GetFleetAdvancedFeatureConfiguration.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetAdvancedFeatureConfigurationResult> Invoke(GetFleetAdvancedFeatureConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetAdvancedFeatureConfigurationResult>("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args ?? new GetFleetAdvancedFeatureConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

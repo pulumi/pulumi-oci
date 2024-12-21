@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetCompatibleFormatsForSensitiveTypeResult> Invoke(GetCompatibleFormatsForSensitiveTypeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCompatibleFormatsForSensitiveTypeResult>("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args ?? new GetCompatibleFormatsForSensitiveTypeInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of library masking formats compatible with the existing sensitive types.
+        /// For each sensitive type, it returns the assigned default masking format as well as
+        /// the other library masking formats that have the sensitiveTypeIds attribute containing
+        /// the OCID of the sensitive type.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCompatibleFormatsForSensitiveType = Oci.DataSafe.GetCompatibleFormatsForSensitiveType.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = compatibleFormatsForSensitiveTypeAccessLevel,
+        ///         CompartmentIdInSubtree = compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCompatibleFormatsForSensitiveTypeResult> Invoke(GetCompatibleFormatsForSensitiveTypeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompatibleFormatsForSensitiveTypeResult>("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args ?? new GetCompatibleFormatsForSensitiveTypeInvokeArgs(), options.WithDefaults());
     }
 
 

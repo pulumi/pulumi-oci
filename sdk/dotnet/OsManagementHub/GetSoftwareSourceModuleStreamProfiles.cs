@@ -72,6 +72,37 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourceModuleStreamProfilesResult> Invoke(GetSoftwareSourceModuleStreamProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamProfilesResult>("oci:OsManagementHub/getSoftwareSourceModuleStreamProfiles:getSoftwareSourceModuleStreamProfiles", args ?? new GetSoftwareSourceModuleStreamProfilesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of 
+        /// criteria including but not limited to its module name, stream name, and profile name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceModuleStreamProfiles = Oci.OsManagementHub.GetSoftwareSourceModuleStreamProfiles.Invoke(new()
+        ///     {
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         ModuleName = softwareSourceModuleStreamProfileModuleName,
+        ///         Name = softwareSourceModuleStreamProfileName,
+        ///         StreamName = testStream.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceModuleStreamProfilesResult> Invoke(GetSoftwareSourceModuleStreamProfilesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamProfilesResult>("oci:OsManagementHub/getSoftwareSourceModuleStreamProfiles:getSoftwareSourceModuleStreamProfiles", args ?? new GetSoftwareSourceModuleStreamProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

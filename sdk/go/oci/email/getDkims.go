@@ -82,21 +82,11 @@ type GetDkimsResult struct {
 }
 
 func GetDkimsOutput(ctx *pulumi.Context, args GetDkimsOutputArgs, opts ...pulumi.InvokeOption) GetDkimsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDkimsResultOutput, error) {
 			args := v.(GetDkimsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDkimsResult
-			secret, err := ctx.InvokePackageRaw("oci:Email/getDkims:getDkims", args, &rv, "", opts...)
-			if err != nil {
-				return GetDkimsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDkimsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDkimsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Email/getDkims:getDkims", args, GetDkimsResultOutput{}, options).(GetDkimsResultOutput), nil
 		}).(GetDkimsResultOutput)
 }
 

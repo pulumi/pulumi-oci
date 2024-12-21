@@ -70,21 +70,11 @@ type GetManagedDatabasesAsmPropertyResult struct {
 }
 
 func GetManagedDatabasesAsmPropertyOutput(ctx *pulumi.Context, args GetManagedDatabasesAsmPropertyOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabasesAsmPropertyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagedDatabasesAsmPropertyResultOutput, error) {
 			args := v.(GetManagedDatabasesAsmPropertyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagedDatabasesAsmPropertyResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagedDatabasesAsmPropertyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagedDatabasesAsmPropertyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagedDatabasesAsmPropertyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", args, GetManagedDatabasesAsmPropertyResultOutput{}, options).(GetManagedDatabasesAsmPropertyResultOutput), nil
 		}).(GetManagedDatabasesAsmPropertyResultOutput)
 }
 

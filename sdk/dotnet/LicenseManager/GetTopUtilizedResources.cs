@@ -66,6 +66,34 @@ namespace Pulumi.Oci.LicenseManager
         /// </summary>
         public static Output<GetTopUtilizedResourcesResult> Invoke(GetTopUtilizedResourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Top Utilized Resources in Oracle Cloud Infrastructure License Manager service.
+        /// 
+        /// Retrieves the top utilized resources for a given compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTopUtilizedResources = Oci.LicenseManager.GetTopUtilizedResources.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = topUtilizedResourceIsCompartmentIdInSubtree,
+        ///         ResourceUnitType = topUtilizedResourceResourceUnitType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTopUtilizedResourcesResult> Invoke(GetTopUtilizedResourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTopUtilizedResourcesResult>("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args ?? new GetTopUtilizedResourcesInvokeArgs(), options.WithDefaults());
     }
 
 

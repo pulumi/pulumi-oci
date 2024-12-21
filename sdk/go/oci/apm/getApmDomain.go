@@ -84,21 +84,11 @@ type LookupApmDomainResult struct {
 }
 
 func LookupApmDomainOutput(ctx *pulumi.Context, args LookupApmDomainOutputArgs, opts ...pulumi.InvokeOption) LookupApmDomainResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupApmDomainResultOutput, error) {
 			args := v.(LookupApmDomainArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupApmDomainResult
-			secret, err := ctx.InvokePackageRaw("oci:Apm/getApmDomain:getApmDomain", args, &rv, "", opts...)
-			if err != nil {
-				return LookupApmDomainResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupApmDomainResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupApmDomainResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Apm/getApmDomain:getApmDomain", args, LookupApmDomainResultOutput{}, options).(LookupApmDomainResultOutput), nil
 		}).(LookupApmDomainResultOutput)
 }
 

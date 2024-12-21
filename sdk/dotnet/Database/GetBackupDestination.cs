@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetBackupDestinationResult> Invoke(GetBackupDestinationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackupDestinationResult>("oci:Database/getBackupDestination:getBackupDestination", args ?? new GetBackupDestinationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about the specified backup destination in an Exadata Cloud@Customer system.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackupDestination = Oci.Database.GetBackupDestination.Invoke(new()
+        ///     {
+        ///         BackupDestinationId = testBackupDestinationOciDatabaseBackupDestination.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetBackupDestinationResult> Invoke(GetBackupDestinationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackupDestinationResult>("oci:Database/getBackupDestination:getBackupDestination", args ?? new GetBackupDestinationInvokeArgs(), options.WithDefaults());
     }
 
 

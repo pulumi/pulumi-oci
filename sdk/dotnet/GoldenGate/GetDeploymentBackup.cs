@@ -64,6 +64,33 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public static Output<GetDeploymentBackupResult> Invoke(GetDeploymentBackupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
+        /// 
+        /// Retrieves a DeploymentBackup.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDeploymentBackup = Oci.GoldenGate.GetDeploymentBackup.Invoke(new()
+        ///     {
+        ///         DeploymentBackupId = testDeploymentBackupOciGoldenGateDeploymentBackup.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDeploymentBackupResult> Invoke(GetDeploymentBackupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupInvokeArgs(), options.WithDefaults());
     }
 
 

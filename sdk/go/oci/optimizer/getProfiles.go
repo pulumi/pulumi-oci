@@ -79,21 +79,11 @@ type GetProfilesResult struct {
 }
 
 func GetProfilesOutput(ctx *pulumi.Context, args GetProfilesOutputArgs, opts ...pulumi.InvokeOption) GetProfilesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetProfilesResultOutput, error) {
 			args := v.(GetProfilesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetProfilesResult
-			secret, err := ctx.InvokePackageRaw("oci:Optimizer/getProfiles:getProfiles", args, &rv, "", opts...)
-			if err != nil {
-				return GetProfilesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetProfilesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetProfilesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Optimizer/getProfiles:getProfiles", args, GetProfilesResultOutput{}, options).(GetProfilesResultOutput), nil
 		}).(GetProfilesResultOutput)
 }
 

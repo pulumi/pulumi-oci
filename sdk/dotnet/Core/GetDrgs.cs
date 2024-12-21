@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDrgsResult> Invoke(GetDrgsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgsResult>("oci:Core/getDrgs:getDrgs", args ?? new GetDrgsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the DRGs in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDrgs = Oci.Core.GetDrgs.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDrgsResult> Invoke(GetDrgsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgsResult>("oci:Core/getDrgs:getDrgs", args ?? new GetDrgsInvokeArgs(), options.WithDefaults());
     }
 
 

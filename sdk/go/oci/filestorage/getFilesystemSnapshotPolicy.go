@@ -85,21 +85,11 @@ type LookupFilesystemSnapshotPolicyResult struct {
 }
 
 func LookupFilesystemSnapshotPolicyOutput(ctx *pulumi.Context, args LookupFilesystemSnapshotPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupFilesystemSnapshotPolicyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupFilesystemSnapshotPolicyResultOutput, error) {
 			args := v.(LookupFilesystemSnapshotPolicyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupFilesystemSnapshotPolicyResult
-			secret, err := ctx.InvokePackageRaw("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args, &rv, "", opts...)
-			if err != nil {
-				return LookupFilesystemSnapshotPolicyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupFilesystemSnapshotPolicyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupFilesystemSnapshotPolicyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", args, LookupFilesystemSnapshotPolicyResultOutput{}, options).(LookupFilesystemSnapshotPolicyResultOutput), nil
 		}).(LookupFilesystemSnapshotPolicyResultOutput)
 }
 

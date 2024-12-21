@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the findings and possible actions for a given object in a SQL tuning task.
+        /// The task ID and object ID are used to retrieve the findings and recommendations.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksRecommendations.Invoke(new()
+        ///     {
+        ///         ExecutionId = testExecution.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlObjectId = testObject.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsInvokeArgs(), options.WithDefaults());
     }
 
 

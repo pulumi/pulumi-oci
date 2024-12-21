@@ -74,21 +74,11 @@ type GetInvoicesInvoiceLineResult struct {
 }
 
 func GetInvoicesInvoiceLineOutput(ctx *pulumi.Context, args GetInvoicesInvoiceLineOutputArgs, opts ...pulumi.InvokeOption) GetInvoicesInvoiceLineResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetInvoicesInvoiceLineResultOutput, error) {
 			args := v.(GetInvoicesInvoiceLineArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetInvoicesInvoiceLineResult
-			secret, err := ctx.InvokePackageRaw("oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine", args, &rv, "", opts...)
-			if err != nil {
-				return GetInvoicesInvoiceLineResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetInvoicesInvoiceLineResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetInvoicesInvoiceLineResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine", args, GetInvoicesInvoiceLineResultOutput{}, options).(GetInvoicesInvoiceLineResultOutput), nil
 		}).(GetInvoicesInvoiceLineResultOutput)
 }
 

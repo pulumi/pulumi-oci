@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetComputeCapacityTopologiesResult> Invoke(GetComputeCapacityTopologiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologiesResult>("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", args ?? new GetComputeCapacityTopologiesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+        /// capacity topology display name.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComputeCapacityTopologies = Oci.Core.GetComputeCapacityTopologies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityTopologyAvailabilityDomain,
+        ///         DisplayName = computeCapacityTopologyDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComputeCapacityTopologiesResult> Invoke(GetComputeCapacityTopologiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologiesResult>("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", args ?? new GetComputeCapacityTopologiesInvokeArgs(), options.WithDefaults());
     }
 
 

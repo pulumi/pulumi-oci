@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetSupportedHostShapesResult> Invoke(GetSupportedHostShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists supported compute shapes for ESXi hosts.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         InitialHostShapeName = testShape.Name,
+        ///         IsSingleHostSddcSupported = supportedHostShapeIsSingleHostSddcSupported,
+        ///         Name = supportedHostShapeName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSupportedHostShapesResult> Invoke(GetSupportedHostShapesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSupportedHostShapesResult>("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args ?? new GetSupportedHostShapesInvokeArgs(), options.WithDefaults());
     }
 
 

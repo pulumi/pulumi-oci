@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetVirtualCircuitPublicPrefixesResult> Invoke(GetVirtualCircuitPublicPrefixesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Lists the public IP prefixes and their details for the specified
+        /// public virtual circuit.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualCircuitPublicPrefixes = Oci.Core.GetVirtualCircuitPublicPrefixes.Invoke(new()
+        ///     {
+        ///         VirtualCircuitId = testVirtualCircuit.Id,
+        ///         VerificationState = virtualCircuitPublicPrefixVerificationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualCircuitPublicPrefixesResult> Invoke(GetVirtualCircuitPublicPrefixesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -92,21 +92,11 @@ type LookupNamedCredentialResult struct {
 }
 
 func LookupNamedCredentialOutput(ctx *pulumi.Context, args LookupNamedCredentialOutputArgs, opts ...pulumi.InvokeOption) LookupNamedCredentialResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNamedCredentialResultOutput, error) {
 			args := v.(LookupNamedCredentialArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNamedCredentialResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getNamedCredential:getNamedCredential", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNamedCredentialResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNamedCredentialResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNamedCredentialResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getNamedCredential:getNamedCredential", args, LookupNamedCredentialResultOutput{}, options).(LookupNamedCredentialResultOutput), nil
 		}).(LookupNamedCredentialResultOutput)
 }
 

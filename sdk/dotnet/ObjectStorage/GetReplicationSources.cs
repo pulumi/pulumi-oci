@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public static Output<GetReplicationSourcesResult> Invoke(GetReplicationSourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationSourcesResult>("oci:ObjectStorage/getReplicationSources:getReplicationSources", args ?? new GetReplicationSourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// List the replication sources of a destination bucket.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplicationSources = Oci.ObjectStorage.GetReplicationSources.Invoke(new()
+        ///     {
+        ///         Bucket = replicationSourceBucket,
+        ///         Namespace = replicationSourceNamespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicationSourcesResult> Invoke(GetReplicationSourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationSourcesResult>("oci:ObjectStorage/getReplicationSources:getReplicationSources", args ?? new GetReplicationSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

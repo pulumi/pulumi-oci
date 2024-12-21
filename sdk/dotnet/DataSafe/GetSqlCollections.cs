@@ -108,6 +108,55 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSqlCollectionsResult> Invoke(GetSqlCollectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSqlCollectionsResult>("oci:DataSafe/getSqlCollections:getSqlCollections", args ?? new GetSqlCollectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Retrieves a list of all SQL collections in Data Safe.
+        /// 
+        /// The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
+        /// 
+        /// The parameter `accessLevel` specifies whether to return only those compartments for which the
+        /// requestor has INSPECT permissions on at least one resource directly
+        /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        /// Principal doesn't have access to even one of the child compartments. This is valid only when
+        /// `compartmentIdInSubtree` is set to `true`.
+        /// 
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+        /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSqlCollections = Oci.DataSafe.GetSqlCollections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sqlCollectionAccessLevel,
+        ///         CompartmentIdInSubtree = sqlCollectionCompartmentIdInSubtree,
+        ///         DbUserName = testUser.Name,
+        ///         DisplayName = sqlCollectionDisplayName,
+        ///         SqlCollectionId = testSqlCollection.Id,
+        ///         State = sqlCollectionState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = sqlCollectionTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sqlCollectionTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSqlCollectionsResult> Invoke(GetSqlCollectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSqlCollectionsResult>("oci:DataSafe/getSqlCollections:getSqlCollections", args ?? new GetSqlCollectionsInvokeArgs(), options.WithDefaults());
     }
 
 

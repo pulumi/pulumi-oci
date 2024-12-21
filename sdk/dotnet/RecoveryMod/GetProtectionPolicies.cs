@@ -72,6 +72,37 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public static Output<GetProtectionPoliciesResult> Invoke(GetProtectionPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesResult>("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args ?? new GetProtectionPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Protection Policies in Oracle Cloud Infrastructure Recovery service.
+        /// 
+        /// Gets a list of protection policies based on the specified parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectionPolicies = Oci.RecoveryMod.GetProtectionPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectionPolicyDisplayName,
+        ///         Owner = protectionPolicyOwner,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         State = protectionPolicyState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectionPoliciesResult> Invoke(GetProtectionPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesResult>("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args ?? new GetProtectionPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

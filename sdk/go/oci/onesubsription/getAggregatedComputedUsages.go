@@ -59,21 +59,11 @@ type GetAggregatedComputedUsagesResult struct {
 }
 
 func GetAggregatedComputedUsagesOutput(ctx *pulumi.Context, args GetAggregatedComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetAggregatedComputedUsagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAggregatedComputedUsagesResultOutput, error) {
 			args := v.(GetAggregatedComputedUsagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAggregatedComputedUsagesResult
-			secret, err := ctx.InvokePackageRaw("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args, &rv, "", opts...)
-			if err != nil {
-				return GetAggregatedComputedUsagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAggregatedComputedUsagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAggregatedComputedUsagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args, GetAggregatedComputedUsagesResultOutput{}, options).(GetAggregatedComputedUsagesResultOutput), nil
 		}).(GetAggregatedComputedUsagesResultOutput)
 }
 

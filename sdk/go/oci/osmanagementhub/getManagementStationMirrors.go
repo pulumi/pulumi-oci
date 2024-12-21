@@ -81,21 +81,11 @@ type GetManagementStationMirrorsResult struct {
 }
 
 func GetManagementStationMirrorsOutput(ctx *pulumi.Context, args GetManagementStationMirrorsOutputArgs, opts ...pulumi.InvokeOption) GetManagementStationMirrorsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagementStationMirrorsResultOutput, error) {
 			args := v.(GetManagementStationMirrorsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagementStationMirrorsResult
-			secret, err := ctx.InvokePackageRaw("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagementStationMirrorsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagementStationMirrorsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagementStationMirrorsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:OsManagementHub/getManagementStationMirrors:getManagementStationMirrors", args, GetManagementStationMirrorsResultOutput{}, options).(GetManagementStationMirrorsResultOutput), nil
 		}).(GetManagementStationMirrorsResultOutput)
 }
 

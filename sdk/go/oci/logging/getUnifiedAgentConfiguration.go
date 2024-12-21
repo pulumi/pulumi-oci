@@ -88,21 +88,11 @@ type LookupUnifiedAgentConfigurationResult struct {
 }
 
 func LookupUnifiedAgentConfigurationOutput(ctx *pulumi.Context, args LookupUnifiedAgentConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupUnifiedAgentConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupUnifiedAgentConfigurationResultOutput, error) {
 			args := v.(LookupUnifiedAgentConfigurationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupUnifiedAgentConfigurationResult
-			secret, err := ctx.InvokePackageRaw("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args, &rv, "", opts...)
-			if err != nil {
-				return LookupUnifiedAgentConfigurationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupUnifiedAgentConfigurationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupUnifiedAgentConfigurationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args, LookupUnifiedAgentConfigurationResultOutput{}, options).(LookupUnifiedAgentConfigurationResultOutput), nil
 		}).(LookupUnifiedAgentConfigurationResultOutput)
 }
 

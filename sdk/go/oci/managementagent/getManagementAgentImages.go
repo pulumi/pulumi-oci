@@ -81,21 +81,11 @@ type GetManagementAgentImagesResult struct {
 }
 
 func GetManagementAgentImagesOutput(ctx *pulumi.Context, args GetManagementAgentImagesOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentImagesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetManagementAgentImagesResultOutput, error) {
 			args := v.(GetManagementAgentImagesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetManagementAgentImagesResult
-			secret, err := ctx.InvokePackageRaw("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args, &rv, "", opts...)
-			if err != nil {
-				return GetManagementAgentImagesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetManagementAgentImagesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetManagementAgentImagesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args, GetManagementAgentImagesResultOutput{}, options).(GetManagementAgentImagesResultOutput), nil
 		}).(GetManagementAgentImagesResultOutput)
 }
 

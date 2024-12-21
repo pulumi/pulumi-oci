@@ -56,6 +56,29 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public static Output<GetEdgeSubnetsResult> Invoke(GetEdgeSubnetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        /// 
+        /// Return the list of the tenant's edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEdgeSubnets = Oci.Waas.GetEdgeSubnets.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEdgeSubnetsResult> Invoke(GetEdgeSubnetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsInvokeArgs(), options.WithDefaults());
     }
 
 

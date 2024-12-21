@@ -105,21 +105,11 @@ type GetObjectVersionsResult struct {
 }
 
 func GetObjectVersionsOutput(ctx *pulumi.Context, args GetObjectVersionsOutputArgs, opts ...pulumi.InvokeOption) GetObjectVersionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetObjectVersionsResultOutput, error) {
 			args := v.(GetObjectVersionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetObjectVersionsResult
-			secret, err := ctx.InvokePackageRaw("oci:ObjectStorage/getObjectVersions:getObjectVersions", args, &rv, "", opts...)
-			if err != nil {
-				return GetObjectVersionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetObjectVersionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetObjectVersionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:ObjectStorage/getObjectVersions:getObjectVersions", args, GetObjectVersionsResultOutput{}, options).(GetObjectVersionsResultOutput), nil
 		}).(GetObjectVersionsResultOutput)
 }
 

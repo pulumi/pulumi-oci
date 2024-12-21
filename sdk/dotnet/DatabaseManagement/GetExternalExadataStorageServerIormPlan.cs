@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageServerIormPlanResult> Invoke(GetExternalExadataStorageServerIormPlanInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerIormPlanResult>("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", args ?? new GetExternalExadataStorageServerIormPlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Get the IORM plan from the specific Exadata storage server.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageServerIormPlan = Oci.DatabaseManagement.GetExternalExadataStorageServerIormPlan.Invoke(new()
+        ///     {
+        ///         ExternalExadataStorageServerId = testExternalExadataStorageServer.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageServerIormPlanResult> Invoke(GetExternalExadataStorageServerIormPlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerIormPlanResult>("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", args ?? new GetExternalExadataStorageServerIormPlanInvokeArgs(), options.WithDefaults());
     }
 
 

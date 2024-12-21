@@ -55,6 +55,8 @@ __all__ = [
     'AutoScalingConfigurationPolicyRuleMetricArgsDict',
     'AutoScalingConfigurationPolicyRuleMetricThresholdArgs',
     'AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict',
+    'BdsInstanceBdsClusterVersionSummaryArgs',
+    'BdsInstanceBdsClusterVersionSummaryArgsDict',
     'BdsInstanceCloudSqlDetailArgs',
     'BdsInstanceCloudSqlDetailArgsDict',
     'BdsInstanceCloudSqlDetailKerberosDetailArgs',
@@ -69,6 +71,14 @@ __all__ = [
     'BdsInstanceEdgeNodeArgsDict',
     'BdsInstanceEdgeNodeShapeConfigArgs',
     'BdsInstanceEdgeNodeShapeConfigArgsDict',
+    'BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs',
+    'BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict',
+    'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs',
+    'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict',
+    'BdsInstanceIdentityConfigurationUpstConfigurationArgs',
+    'BdsInstanceIdentityConfigurationUpstConfigurationArgsDict',
+    'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs',
+    'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict',
     'BdsInstanceKafkaBrokerNodeArgs',
     'BdsInstanceKafkaBrokerNodeArgsDict',
     'BdsInstanceKafkaBrokerNodeShapeConfigArgs',
@@ -89,6 +99,10 @@ __all__ = [
     'BdsInstanceOsPatchActionPatchingConfigArgsDict',
     'BdsInstancePatchActionPatchingConfigArgs',
     'BdsInstancePatchActionPatchingConfigArgsDict',
+    'BdsInstanceStartClusterShapeConfigArgs',
+    'BdsInstanceStartClusterShapeConfigArgsDict',
+    'BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs',
+    'BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict',
     'BdsInstanceUtilNodeArgs',
     'BdsInstanceUtilNodeArgsDict',
     'BdsInstanceUtilNodeShapeConfigArgs',
@@ -99,10 +113,14 @@ __all__ = [
     'BdsInstanceWorkerNodeShapeConfigArgsDict',
     'GetAutoScalingConfigurationsFilterArgs',
     'GetAutoScalingConfigurationsFilterArgsDict',
+    'GetBdsClusterVersionsFilterArgs',
+    'GetBdsClusterVersionsFilterArgsDict',
     'GetBdsInstanceApiKeysFilterArgs',
     'GetBdsInstanceApiKeysFilterArgsDict',
     'GetBdsInstanceGetOsPatchFilterArgs',
     'GetBdsInstanceGetOsPatchFilterArgsDict',
+    'GetBdsInstanceIdentityConfigurationsFilterArgs',
+    'GetBdsInstanceIdentityConfigurationsFilterArgsDict',
     'GetBdsInstanceListOsPatchesFilterArgs',
     'GetBdsInstanceListOsPatchesFilterArgsDict',
     'GetBdsInstanceMetastoreConfigsFilterArgs',
@@ -1622,6 +1640,57 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
 
 
 if not MYPY:
+    class BdsInstanceBdsClusterVersionSummaryArgsDict(TypedDict):
+        bds_version: pulumi.Input[str]
+        """
+        BDS version to be used for cluster creation
+        """
+        odh_version: NotRequired[pulumi.Input[str]]
+        """
+        ODH version to be used for cluster creation
+        """
+elif False:
+    BdsInstanceBdsClusterVersionSummaryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceBdsClusterVersionSummaryArgs:
+    def __init__(__self__, *,
+                 bds_version: pulumi.Input[str],
+                 odh_version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] bds_version: BDS version to be used for cluster creation
+        :param pulumi.Input[str] odh_version: ODH version to be used for cluster creation
+        """
+        pulumi.set(__self__, "bds_version", bds_version)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
+
+    @property
+    @pulumi.getter(name="bdsVersion")
+    def bds_version(self) -> pulumi.Input[str]:
+        """
+        BDS version to be used for cluster creation
+        """
+        return pulumi.get(self, "bds_version")
+
+    @bds_version.setter
+    def bds_version(self, value: pulumi.Input[str]):
+        pulumi.set(self, "bds_version", value)
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        ODH version to be used for cluster creation
+        """
+        return pulumi.get(self, "odh_version")
+
+    @odh_version.setter
+    def odh_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "odh_version", value)
+
+
+if not MYPY:
     class BdsInstanceCloudSqlDetailArgsDict(TypedDict):
         shape: pulumi.Input[str]
         """
@@ -2505,6 +2574,374 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
 
 
 if not MYPY:
+    class BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict(TypedDict):
+        is_posix_attributes_addition_required: NotRequired[pulumi.Input[bool]]
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        Lifecycle state of the UPST config
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+elif False:
+    BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs:
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: Optional[pulumi.Input[bool]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_posix_attributes_addition_required: whether to append POSIX attributes to IAM users
+        :param pulumi.Input[str] state: Lifecycle state of the UPST config
+        :param pulumi.Input[str] time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param pulumi.Input[str] time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        if is_posix_attributes_addition_required is not None:
+            pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        whether to append POSIX attributes to IAM users
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+    @is_posix_attributes_addition_required.setter
+    def is_posix_attributes_addition_required(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_posix_attributes_addition_required", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Lifecycle state of the UPST config
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+if not MYPY:
+    class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict(TypedDict):
+        is_posix_attributes_addition_required: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+        """
+elif False:
+    BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 is_posix_attributes_addition_required: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_posix_attributes_addition_required: (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+        """
+        if is_posix_attributes_addition_required is not None:
+            pulumi.set(__self__, "is_posix_attributes_addition_required", is_posix_attributes_addition_required)
+
+    @property
+    @pulumi.getter(name="isPosixAttributesAdditionRequired")
+    def is_posix_attributes_addition_required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+        """
+        return pulumi.get(self, "is_posix_attributes_addition_required")
+
+    @is_posix_attributes_addition_required.setter
+    def is_posix_attributes_addition_required(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_posix_attributes_addition_required", value)
+
+
+if not MYPY:
+    class BdsInstanceIdentityConfigurationUpstConfigurationArgsDict(TypedDict):
+        keytab_content: NotRequired[pulumi.Input[str]]
+        """
+        The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        """
+        master_encryption_key_id: NotRequired[pulumi.Input[str]]
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        secret_id: NotRequired[pulumi.Input[str]]
+        """
+        Secret ID for token exchange keytab
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        Lifecycle state of the UPST config
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        time_token_exchange_keytab_last_refreshed: NotRequired[pulumi.Input[str]]
+        """
+        Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        token_exchange_principal_name: NotRequired[pulumi.Input[str]]
+        """
+        Token exchange kerberos Principal name in cluster
+        """
+        vault_id: NotRequired[pulumi.Input[str]]
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+elif False:
+    BdsInstanceIdentityConfigurationUpstConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceIdentityConfigurationUpstConfigurationArgs:
+    def __init__(__self__, *,
+                 keytab_content: Optional[pulumi.Input[str]] = None,
+                 master_encryption_key_id: Optional[pulumi.Input[str]] = None,
+                 secret_id: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_token_exchange_keytab_last_refreshed: Optional[pulumi.Input[str]] = None,
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 token_exchange_principal_name: Optional[pulumi.Input[str]] = None,
+                 vault_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] keytab_content: The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        :param pulumi.Input[str] master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
+        :param pulumi.Input[str] secret_id: Secret ID for token exchange keytab
+        :param pulumi.Input[str] state: Lifecycle state of the UPST config
+        :param pulumi.Input[str] time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        :param pulumi.Input[str] time_token_exchange_keytab_last_refreshed: Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        :param pulumi.Input[str] time_updated: Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        :param pulumi.Input[str] token_exchange_principal_name: Token exchange kerberos Principal name in cluster
+        :param pulumi.Input[str] vault_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        if keytab_content is not None:
+            pulumi.set(__self__, "keytab_content", keytab_content)
+        if master_encryption_key_id is not None:
+            pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_token_exchange_keytab_last_refreshed is not None:
+            pulumi.set(__self__, "time_token_exchange_keytab_last_refreshed", time_token_exchange_keytab_last_refreshed)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if token_exchange_principal_name is not None:
+            pulumi.set(__self__, "token_exchange_principal_name", token_exchange_principal_name)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="keytabContent")
+    def keytab_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        The kerberos keytab content used for creating identity propagation trust config, in base64 format
+        """
+        return pulumi.get(self, "keytab_content")
+
+    @keytab_content.setter
+    def keytab_content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "keytab_content", value)
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Master Encryption key used for encrypting token exchange keytab.
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @master_encryption_key_id.setter
+    def master_encryption_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "master_encryption_key_id", value)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Secret ID for token exchange keytab
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Lifecycle state of the UPST config
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeTokenExchangeKeytabLastRefreshed")
+    def time_token_exchange_keytab_last_refreshed(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_token_exchange_keytab_last_refreshed")
+
+    @time_token_exchange_keytab_last_refreshed.setter
+    def time_token_exchange_keytab_last_refreshed(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_token_exchange_keytab_last_refreshed", value)
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @property
+    @pulumi.getter(name="tokenExchangePrincipalName")
+    def token_exchange_principal_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Token exchange kerberos Principal name in cluster
+        """
+        return pulumi.get(self, "token_exchange_principal_name")
+
+    @token_exchange_principal_name.setter
+    def token_exchange_principal_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "token_exchange_principal_name", value)
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_id", value)
+
+
+if not MYPY:
+    class BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict(TypedDict):
+        master_encryption_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+        """
+        vault_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+        """
+elif False:
+    BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 master_encryption_key_id: Optional[pulumi.Input[str]] = None,
+                 vault_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] master_encryption_key_id: (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+        """
+        if master_encryption_key_id is not None:
+            pulumi.set(__self__, "master_encryption_key_id", master_encryption_key_id)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="masterEncryptionKeyId")
+    def master_encryption_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+        """
+        return pulumi.get(self, "master_encryption_key_id")
+
+    @master_encryption_key_id.setter
+    def master_encryption_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "master_encryption_key_id", value)
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_id", value)
+
+
+if not MYPY:
     class BdsInstanceKafkaBrokerNodeArgsDict(TypedDict):
         number_of_kafka_nodes: pulumi.Input[int]
         shape: pulumi.Input[str]
@@ -2863,11 +3300,11 @@ if not MYPY:
     class BdsInstanceNetworkConfigArgsDict(TypedDict):
         cidr_block: NotRequired[pulumi.Input[str]]
         """
-        The CIDR IP address block of the VCN.
+        (Updatable) The CIDR IP address block of the VCN.
         """
         is_nat_gateway_required: NotRequired[pulumi.Input[bool]]
         """
-        A boolean flag whether to configure a NAT gateway.
+        (Updatable) A boolean flag whether to configure a NAT gateway.
         """
 elif False:
     BdsInstanceNetworkConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -2878,8 +3315,8 @@ class BdsInstanceNetworkConfigArgs:
                  cidr_block: Optional[pulumi.Input[str]] = None,
                  is_nat_gateway_required: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] cidr_block: The CIDR IP address block of the VCN.
-        :param pulumi.Input[bool] is_nat_gateway_required: A boolean flag whether to configure a NAT gateway.
+        :param pulumi.Input[str] cidr_block: (Updatable) The CIDR IP address block of the VCN.
+        :param pulumi.Input[bool] is_nat_gateway_required: (Updatable) A boolean flag whether to configure a NAT gateway.
         """
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
@@ -2890,7 +3327,7 @@ class BdsInstanceNetworkConfigArgs:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
         """
-        The CIDR IP address block of the VCN.
+        (Updatable) The CIDR IP address block of the VCN.
         """
         return pulumi.get(self, "cidr_block")
 
@@ -2902,7 +3339,7 @@ class BdsInstanceNetworkConfigArgs:
     @pulumi.getter(name="isNatGatewayRequired")
     def is_nat_gateway_required(self) -> Optional[pulumi.Input[bool]]:
         """
-        A boolean flag whether to configure a NAT gateway.
+        (Updatable) A boolean flag whether to configure a NAT gateway.
         """
         return pulumi.get(self, "is_nat_gateway_required")
 
@@ -2969,6 +3406,10 @@ if not MYPY:
         """
         The total number of OCPUs available to the node.
         """
+        odh_version: NotRequired[pulumi.Input[str]]
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
         os_version: NotRequired[pulumi.Input[str]]
         """
         BDS-assigned Operating System version for the node.
@@ -3017,6 +3458,7 @@ class BdsInstanceNodeArgs:
                  node_type: Optional[pulumi.Input[str]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None,
+                 odh_version: Optional[pulumi.Input[str]] = None,
                  os_version: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_fingerprint: Optional[pulumi.Input[str]] = None,
@@ -3039,6 +3481,7 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[str] node_type: The Big Data Service cluster node type.
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
+        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param pulumi.Input[str] os_version: BDS-assigned Operating System version for the node.
         :param pulumi.Input[str] shape: (Updatable) Shape of the node.
         :param pulumi.Input[str] ssh_fingerprint: The fingerprint of the SSH key used for node access
@@ -3075,6 +3518,8 @@ class BdsInstanceNodeArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
         if os_version is not None:
             pulumi.set(__self__, "os_version", os_version)
         if shape is not None:
@@ -3257,6 +3702,18 @@ class BdsInstanceNodeArgs:
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "ocpus", value)
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
+
+    @odh_version.setter
+    def odh_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "odh_version", value)
 
     @property
     @pulumi.getter(name="osVersion")
@@ -3608,6 +4065,14 @@ if not MYPY:
         """
         How many nodes to be patched in each iteration.
         """
+        tolerance_threshold_per_batch: NotRequired[pulumi.Input[int]]
+        """
+        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        """
+        tolerance_threshold_per_domain: NotRequired[pulumi.Input[int]]
+        """
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        """
         wait_time_between_batch_in_seconds: NotRequired[pulumi.Input[int]]
         """
         The wait time between batches in seconds.
@@ -3624,17 +4089,25 @@ class BdsInstancePatchActionPatchingConfigArgs:
     def __init__(__self__, *,
                  patching_config_strategy: pulumi.Input[str],
                  batch_size: Optional[pulumi.Input[int]] = None,
+                 tolerance_threshold_per_batch: Optional[pulumi.Input[int]] = None,
+                 tolerance_threshold_per_domain: Optional[pulumi.Input[int]] = None,
                  wait_time_between_batch_in_seconds: Optional[pulumi.Input[int]] = None,
                  wait_time_between_domain_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] patching_config_strategy: Type of strategy used for detailed patching configuration
         :param pulumi.Input[int] batch_size: How many nodes to be patched in each iteration.
+        :param pulumi.Input[int] tolerance_threshold_per_batch: Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        :param pulumi.Input[int] tolerance_threshold_per_domain: Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
         :param pulumi.Input[int] wait_time_between_batch_in_seconds: The wait time between batches in seconds.
         :param pulumi.Input[int] wait_time_between_domain_in_seconds: The wait time between AD/FD in seconds.
         """
         pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
         if batch_size is not None:
             pulumi.set(__self__, "batch_size", batch_size)
+        if tolerance_threshold_per_batch is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_batch", tolerance_threshold_per_batch)
+        if tolerance_threshold_per_domain is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_domain", tolerance_threshold_per_domain)
         if wait_time_between_batch_in_seconds is not None:
             pulumi.set(__self__, "wait_time_between_batch_in_seconds", wait_time_between_batch_in_seconds)
         if wait_time_between_domain_in_seconds is not None:
@@ -3665,6 +4138,30 @@ class BdsInstancePatchActionPatchingConfigArgs:
         pulumi.set(self, "batch_size", value)
 
     @property
+    @pulumi.getter(name="toleranceThresholdPerBatch")
+    def tolerance_threshold_per_batch(self) -> Optional[pulumi.Input[int]]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        """
+        return pulumi.get(self, "tolerance_threshold_per_batch")
+
+    @tolerance_threshold_per_batch.setter
+    def tolerance_threshold_per_batch(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "tolerance_threshold_per_batch", value)
+
+    @property
+    @pulumi.getter(name="toleranceThresholdPerDomain")
+    def tolerance_threshold_per_domain(self) -> Optional[pulumi.Input[int]]:
+        """
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+        """
+        return pulumi.get(self, "tolerance_threshold_per_domain")
+
+    @tolerance_threshold_per_domain.setter
+    def tolerance_threshold_per_domain(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "tolerance_threshold_per_domain", value)
+
+    @property
     @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
     def wait_time_between_batch_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
@@ -3687,6 +4184,81 @@ class BdsInstancePatchActionPatchingConfigArgs:
     @wait_time_between_domain_in_seconds.setter
     def wait_time_between_domain_in_seconds(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "wait_time_between_domain_in_seconds", value)
+
+
+if not MYPY:
+    class BdsInstanceStartClusterShapeConfigArgsDict(TypedDict):
+        node_type_shape_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict']]]]
+elif False:
+    BdsInstanceStartClusterShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceStartClusterShapeConfigArgs:
+    def __init__(__self__, *,
+                 node_type_shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs']]]] = None):
+        if node_type_shape_configs is not None:
+            pulumi.set(__self__, "node_type_shape_configs", node_type_shape_configs)
+
+    @property
+    @pulumi.getter(name="nodeTypeShapeConfigs")
+    def node_type_shape_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs']]]]:
+        return pulumi.get(self, "node_type_shape_configs")
+
+    @node_type_shape_configs.setter
+    def node_type_shape_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs']]]]):
+        pulumi.set(self, "node_type_shape_configs", value)
+
+
+if not MYPY:
+    class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict(TypedDict):
+        node_type: NotRequired[pulumi.Input[str]]
+        """
+        BDS instance node type
+        """
+        shape: NotRequired[pulumi.Input[str]]
+        """
+        Shape of the node
+        """
+elif False:
+    BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs:
+    def __init__(__self__, *,
+                 node_type: Optional[pulumi.Input[str]] = None,
+                 shape: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] node_type: BDS instance node type
+        :param pulumi.Input[str] shape: Shape of the node
+        """
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        BDS instance node type
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        Shape of the node
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
 
 
 if not MYPY:
@@ -4092,6 +4664,53 @@ class GetAutoScalingConfigurationsFilterArgs:
 
 
 if not MYPY:
+    class GetBdsClusterVersionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBdsClusterVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBdsClusterVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetBdsInstanceApiKeysFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -4148,6 +4767,53 @@ elif False:
 
 @pulumi.input_type
 class GetBdsInstanceGetOsPatchFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBdsInstanceIdentityConfigurationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBdsInstanceIdentityConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBdsInstanceIdentityConfigurationsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

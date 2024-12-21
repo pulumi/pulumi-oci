@@ -68,21 +68,11 @@ type GetComplianceRecordCountsResult struct {
 }
 
 func GetComplianceRecordCountsOutput(ctx *pulumi.Context, args GetComplianceRecordCountsOutputArgs, opts ...pulumi.InvokeOption) GetComplianceRecordCountsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetComplianceRecordCountsResultOutput, error) {
 			args := v.(GetComplianceRecordCountsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetComplianceRecordCountsResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getComplianceRecordCounts:getComplianceRecordCounts", args, &rv, "", opts...)
-			if err != nil {
-				return GetComplianceRecordCountsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetComplianceRecordCountsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetComplianceRecordCountsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getComplianceRecordCounts:getComplianceRecordCounts", args, GetComplianceRecordCountsResultOutput{}, options).(GetComplianceRecordCountsResultOutput), nil
 		}).(GetComplianceRecordCountsResultOutput)
 }
 

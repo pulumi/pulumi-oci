@@ -88,21 +88,11 @@ type GetExportsResult struct {
 }
 
 func GetExportsOutput(ctx *pulumi.Context, args GetExportsOutputArgs, opts ...pulumi.InvokeOption) GetExportsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExportsResultOutput, error) {
 			args := v.(GetExportsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExportsResult
-			secret, err := ctx.InvokePackageRaw("oci:FileStorage/getExports:getExports", args, &rv, "", opts...)
-			if err != nil {
-				return GetExportsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExportsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExportsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FileStorage/getExports:getExports", args, GetExportsResultOutput{}, options).(GetExportsResultOutput), nil
 		}).(GetExportsResultOutput)
 }
 

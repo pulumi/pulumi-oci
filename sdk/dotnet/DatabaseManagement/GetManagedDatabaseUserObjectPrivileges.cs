@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetManagedDatabaseUserObjectPrivilegesResult> Invoke(GetManagedDatabaseUserObjectPrivilegesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserObjectPrivilegesResult>("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args ?? new GetManagedDatabaseUserObjectPrivilegesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Database User Object Privileges in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the list of object privileges granted to a specific user.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseUserObjectPrivileges = Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivileges.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabaseUserObjectPrivilegeName,
+        ///         OpcNamedCredentialId = managedDatabaseUserObjectPrivilegeOpcNamedCredentialId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedDatabaseUserObjectPrivilegesResult> Invoke(GetManagedDatabaseUserObjectPrivilegesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserObjectPrivilegesResult>("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivileges:getManagedDatabaseUserObjectPrivileges", args ?? new GetManagedDatabaseUserObjectPrivilegesInvokeArgs(), options.WithDefaults());
     }
 
 

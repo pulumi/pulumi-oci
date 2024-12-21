@@ -26,6 +26,14 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsUserAttributesSettingsResult> Invoke(GetDomainsUserAttributesSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingsResult>("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", args ?? new GetDomainsUserAttributesSettingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search User Schema Attribute Settings
+        /// </summary>
+        public static Output<GetDomainsUserAttributesSettingsResult> Invoke(GetDomainsUserAttributesSettingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingsResult>("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", args ?? new GetDomainsUserAttributesSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -80,6 +80,41 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetInventoryResourcesResult> Invoke(GetInventoryResourcesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInventoryResourcesResult>("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", args ?? new GetInventoryResourcesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Returns a list of InventoryResources.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testInventoryResources = Oci.FleetAppsManagement.GetInventoryResources.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ResourceCompartmentId = testCompartment.Id,
+        ///         DefinedTagEquals = inventoryResourceDefinedTagEquals,
+        ///         DisplayName = inventoryResourceDisplayName,
+        ///         FreeformTagEquals = inventoryResourceFreeformTagEquals,
+        ///         InventoryProperties = inventoryResourceInventoryProperties,
+        ///         MatchingCriteria = inventoryResourceMatchingCriteria,
+        ///         ResourceRegion = inventoryResourceResourceRegion,
+        ///         State = inventoryResourceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetInventoryResourcesResult> Invoke(GetInventoryResourcesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetInventoryResourcesResult>("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", args ?? new GetInventoryResourcesInvokeArgs(), options.WithDefaults());
     }
 
 

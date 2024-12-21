@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public static Output<GetDefaultConfigurationResult> Invoke(GetDefaultConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDefaultConfigurationResult>("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", args ?? new GetDefaultConfigurationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
+        /// 
+        /// Gets a default configuration by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDefaultConfiguration = Oci.Psql.GetDefaultConfiguration.Invoke(new()
+        ///     {
+        ///         DefaultConfigurationId = testDefaultConfigurationOciPsqlDefaultConfiguration.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDefaultConfigurationResult> Invoke(GetDefaultConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDefaultConfigurationResult>("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", args ?? new GetDefaultConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

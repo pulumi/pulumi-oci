@@ -66,6 +66,34 @@ namespace Pulumi.Oci.OneSubsription
         /// </summary>
         public static Output<GetSubscribedServiceResult> Invoke(GetSubscribedServiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscribedServiceResult>("oci:OneSubsription/getSubscribedService:getSubscribedService", args ?? new GetSubscribedServiceInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
+        /// 
+        /// This API returns the subscribed service details corresponding to the id provided
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSubscribedService = Oci.OneSubsription.GetSubscribedService.Invoke(new()
+        ///     {
+        ///         SubscribedServiceId = testSubscribedServiceOciOnesubscriptionSubscribedService.Id,
+        ///         Fields = subscribedServiceFields,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSubscribedServiceResult> Invoke(GetSubscribedServiceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscribedServiceResult>("oci:OneSubsription/getSubscribedService:getSubscribedService", args ?? new GetSubscribedServiceInvokeArgs(), options.WithDefaults());
     }
 
 

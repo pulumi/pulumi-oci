@@ -66,6 +66,34 @@ namespace Pulumi.Oci.ServiceCatalog
         /// </summary>
         public static Output<GetPrivateApplicationsResult> Invoke(GetPrivateApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationsResult>("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", args ?? new GetPrivateApplicationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
+        /// 
+        /// Lists all the private applications in a given compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPrivateApplications = Oci.ServiceCatalog.GetPrivateApplications.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateApplicationDisplayName,
+        ///         PrivateApplicationId = testPrivateApplication.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPrivateApplicationsResult> Invoke(GetPrivateApplicationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationsResult>("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", args ?? new GetPrivateApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetExternalPluggableDatabaseResult> Invoke(GetExternalPluggableDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalPluggableDatabaseResult>("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", args ?? new GetExternalPluggableDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets information about a specific
+        /// [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalPluggableDatabase = Oci.Database.GetExternalPluggableDatabase.Invoke(new()
+        ///     {
+        ///         ExternalPluggableDatabaseId = testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalPluggableDatabaseResult> Invoke(GetExternalPluggableDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalPluggableDatabaseResult>("oci:Database/getExternalPluggableDatabase:getExternalPluggableDatabase", args ?? new GetExternalPluggableDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

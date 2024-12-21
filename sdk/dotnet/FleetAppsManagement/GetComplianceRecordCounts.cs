@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetComplianceRecordCountsResult> Invoke(GetComplianceRecordCountsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComplianceRecordCountsResult>("oci:FleetAppsManagement/getComplianceRecordCounts:getComplianceRecordCounts", args ?? new GetComplianceRecordCountsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testComplianceRecordCounts = Oci.FleetAppsManagement.GetComplianceRecordCounts.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetComplianceRecordCountsResult> Invoke(GetComplianceRecordCountsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetComplianceRecordCountsResult>("oci:FleetAppsManagement/getComplianceRecordCounts:getComplianceRecordCounts", args ?? new GetComplianceRecordCountsInvokeArgs(), options.WithDefaults());
     }
 
 

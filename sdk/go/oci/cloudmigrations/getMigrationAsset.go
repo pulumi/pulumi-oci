@@ -102,21 +102,11 @@ type LookupMigrationAssetResult struct {
 }
 
 func LookupMigrationAssetOutput(ctx *pulumi.Context, args LookupMigrationAssetOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationAssetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupMigrationAssetResultOutput, error) {
 			args := v.(LookupMigrationAssetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupMigrationAssetResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args, &rv, "", opts...)
-			if err != nil {
-				return LookupMigrationAssetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupMigrationAssetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupMigrationAssetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args, LookupMigrationAssetResultOutput{}, options).(LookupMigrationAssetResultOutput), nil
 		}).(LookupMigrationAssetResultOutput)
 }
 

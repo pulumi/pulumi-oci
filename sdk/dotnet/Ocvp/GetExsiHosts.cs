@@ -94,6 +94,48 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public static Output<GetExsiHostsResult> Invoke(GetExsiHostsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// 
+        /// Lists the ESXi hosts in the specified SDDC. The list can be filtered
+        /// by Compute instance OCID or ESXi display name.
+        /// 
+        /// Remember that in terms of implementation, an ESXi host is a Compute instance that
+        /// is configured with the chosen bundle of VMware software. Each `EsxiHost`
+        /// object has its own OCID (`id`), and a separate attribute for the OCID of
+        /// the Compute instance (`computeInstanceId`). When filtering the list of
+        /// ESXi hosts, you can specify the OCID of the Compute instance, not the
+        /// ESXi host OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
+        ///     {
+        ///         ClusterId = testCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeInstanceId = testInstance.Id,
+        ///         DisplayName = esxiHostDisplayName,
+        ///         IsBillingDonorsOnly = esxiHostIsBillingDonorsOnly,
+        ///         IsSwapBillingOnly = esxiHostIsSwapBillingOnly,
+        ///         SddcId = testSddc.Id,
+        ///         State = esxiHostState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExsiHostsResult> Invoke(GetExsiHostsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsInvokeArgs(), options.WithDefaults());
     }
 
 

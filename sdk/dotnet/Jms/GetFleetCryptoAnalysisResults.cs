@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetCryptoAnalysisResultsResult> Invoke(GetFleetCryptoAnalysisResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetCryptoAnalysisResultsResult>("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", args ?? new GetFleetCryptoAnalysisResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Lists the results of a Crypto event analysis.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetCryptoAnalysisResults = Oci.Jms.GetFleetCryptoAnalysisResults.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         AggregationMode = fleetCryptoAnalysisResultAggregationMode,
+        ///         FindingCount = fleetCryptoAnalysisResultFindingCount,
+        ///         FindingCountGreaterThan = fleetCryptoAnalysisResultFindingCountGreaterThan,
+        ///         HostName = fleetCryptoAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetCryptoAnalysisResultManagedInstanceOcid,
+        ///         NonCompliantFindingCount = fleetCryptoAnalysisResultNonCompliantFindingCount,
+        ///         NonCompliantFindingCountGreaterThan = fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
+        ///         TimeEnd = fleetCryptoAnalysisResultTimeEnd,
+        ///         TimeStart = fleetCryptoAnalysisResultTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetCryptoAnalysisResultsResult> Invoke(GetFleetCryptoAnalysisResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetCryptoAnalysisResultsResult>("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", args ?? new GetFleetCryptoAnalysisResultsInvokeArgs(), options.WithDefaults());
     }
 
 

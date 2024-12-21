@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetIdentityProviderGroupsResult> Invoke(GetIdentityProviderGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIdentityProviderGroupsResult>("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args ?? new GetIdentityProviderGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Identity Provider Groups in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+        /// 
+        /// Lists the identity provider groups.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIdentityProviderGroups = Oci.Identity.GetIdentityProviderGroups.Invoke(new()
+        ///     {
+        ///         IdentityProviderId = testIdentityProvider.Id,
+        ///         Name = identityProviderGroupName,
+        ///         State = identityProviderGroupState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetIdentityProviderGroupsResult> Invoke(GetIdentityProviderGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIdentityProviderGroupsResult>("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args ?? new GetIdentityProviderGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

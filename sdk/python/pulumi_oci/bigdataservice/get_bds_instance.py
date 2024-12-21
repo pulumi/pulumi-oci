@@ -27,7 +27,10 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_cluster_version_summaries=None, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_remove_enabled=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, remove_node=None, start_cluster_shape_configs=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+        if bds_cluster_version_summaries and not isinstance(bds_cluster_version_summaries, list):
+            raise TypeError("Expected argument 'bds_cluster_version_summaries' to be a list")
+        pulumi.set(__self__, "bds_cluster_version_summaries", bds_cluster_version_summaries)
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -82,6 +85,9 @@ class GetBdsInstanceResult:
         if is_cloud_sql_configured and not isinstance(is_cloud_sql_configured, bool):
             raise TypeError("Expected argument 'is_cloud_sql_configured' to be a bool")
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+        if is_force_remove_enabled and not isinstance(is_force_remove_enabled, bool):
+            raise TypeError("Expected argument 'is_force_remove_enabled' to be a bool")
+        pulumi.set(__self__, "is_force_remove_enabled", is_force_remove_enabled)
         if is_force_stop_jobs and not isinstance(is_force_stop_jobs, bool):
             raise TypeError("Expected argument 'is_force_stop_jobs' to be a bool")
         pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
@@ -121,6 +127,12 @@ class GetBdsInstanceResult:
         if os_patch_version and not isinstance(os_patch_version, str):
             raise TypeError("Expected argument 'os_patch_version' to be a str")
         pulumi.set(__self__, "os_patch_version", os_patch_version)
+        if remove_node and not isinstance(remove_node, str):
+            raise TypeError("Expected argument 'remove_node' to be a str")
+        pulumi.set(__self__, "remove_node", remove_node)
+        if start_cluster_shape_configs and not isinstance(start_cluster_shape_configs, list):
+            raise TypeError("Expected argument 'start_cluster_shape_configs' to be a list")
+        pulumi.set(__self__, "start_cluster_shape_configs", start_cluster_shape_configs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -136,6 +148,14 @@ class GetBdsInstanceResult:
         if worker_nodes and not isinstance(worker_nodes, list):
             raise TypeError("Expected argument 'worker_nodes' to be a list")
         pulumi.set(__self__, "worker_nodes", worker_nodes)
+
+    @property
+    @pulumi.getter(name="bdsClusterVersionSummaries")
+    def bds_cluster_version_summaries(self) -> Sequence['outputs.GetBdsInstanceBdsClusterVersionSummaryResult']:
+        """
+        Cluster version details including bds and odh version information.
+        """
+        return pulumi.get(self, "bds_cluster_version_summaries")
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -264,6 +284,11 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @property
+    @pulumi.getter(name="isForceRemoveEnabled")
+    def is_force_remove_enabled(self) -> bool:
+        return pulumi.get(self, "is_force_remove_enabled")
+
+    @property
     @pulumi.getter(name="isForceStopJobs")
     def is_force_stop_jobs(self) -> bool:
         return pulumi.get(self, "is_force_stop_jobs")
@@ -353,6 +378,16 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "os_patch_version")
 
     @property
+    @pulumi.getter(name="removeNode")
+    def remove_node(self) -> str:
+        return pulumi.get(self, "remove_node")
+
+    @property
+    @pulumi.getter(name="startClusterShapeConfigs")
+    def start_cluster_shape_configs(self) -> Sequence['outputs.GetBdsInstanceStartClusterShapeConfigResult']:
+        return pulumi.get(self, "start_cluster_shape_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -393,6 +428,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
         if False:
             yield self
         return GetBdsInstanceResult(
+            bds_cluster_version_summaries=self.bds_cluster_version_summaries,
             bds_instance_id=self.bds_instance_id,
             bootstrap_script_url=self.bootstrap_script_url,
             cloud_sql_details=self.cloud_sql_details,
@@ -411,6 +447,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             id=self.id,
             ignore_existing_nodes_shapes=self.ignore_existing_nodes_shapes,
             is_cloud_sql_configured=self.is_cloud_sql_configured,
+            is_force_remove_enabled=self.is_force_remove_enabled,
             is_force_stop_jobs=self.is_force_stop_jobs,
             is_high_availability=self.is_high_availability,
             is_kafka_configured=self.is_kafka_configured,
@@ -424,6 +461,8 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             number_of_nodes=self.number_of_nodes,
             number_of_nodes_requiring_maintenance_reboot=self.number_of_nodes_requiring_maintenance_reboot,
             os_patch_version=self.os_patch_version,
+            remove_node=self.remove_node,
+            start_cluster_shape_configs=self.start_cluster_shape_configs,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -456,6 +495,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult).value
 
     return AwaitableGetBdsInstanceResult(
+        bds_cluster_version_summaries=pulumi.get(__ret__, 'bds_cluster_version_summaries'),
         bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
         bootstrap_script_url=pulumi.get(__ret__, 'bootstrap_script_url'),
         cloud_sql_details=pulumi.get(__ret__, 'cloud_sql_details'),
@@ -474,6 +514,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         ignore_existing_nodes_shapes=pulumi.get(__ret__, 'ignore_existing_nodes_shapes'),
         is_cloud_sql_configured=pulumi.get(__ret__, 'is_cloud_sql_configured'),
+        is_force_remove_enabled=pulumi.get(__ret__, 'is_force_remove_enabled'),
         is_force_stop_jobs=pulumi.get(__ret__, 'is_force_stop_jobs'),
         is_high_availability=pulumi.get(__ret__, 'is_high_availability'),
         is_kafka_configured=pulumi.get(__ret__, 'is_kafka_configured'),
@@ -487,6 +528,8 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         number_of_nodes=pulumi.get(__ret__, 'number_of_nodes'),
         number_of_nodes_requiring_maintenance_reboot=pulumi.get(__ret__, 'number_of_nodes_requiring_maintenance_reboot'),
         os_patch_version=pulumi.get(__ret__, 'os_patch_version'),
+        remove_node=pulumi.get(__ret__, 'remove_node'),
+        start_cluster_shape_configs=pulumi.get(__ret__, 'start_cluster_shape_configs'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
@@ -516,6 +559,7 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceResult(
+        bds_cluster_version_summaries=pulumi.get(__response__, 'bds_cluster_version_summaries'),
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
         bootstrap_script_url=pulumi.get(__response__, 'bootstrap_script_url'),
         cloud_sql_details=pulumi.get(__response__, 'cloud_sql_details'),
@@ -534,6 +578,7 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
         id=pulumi.get(__response__, 'id'),
         ignore_existing_nodes_shapes=pulumi.get(__response__, 'ignore_existing_nodes_shapes'),
         is_cloud_sql_configured=pulumi.get(__response__, 'is_cloud_sql_configured'),
+        is_force_remove_enabled=pulumi.get(__response__, 'is_force_remove_enabled'),
         is_force_stop_jobs=pulumi.get(__response__, 'is_force_stop_jobs'),
         is_high_availability=pulumi.get(__response__, 'is_high_availability'),
         is_kafka_configured=pulumi.get(__response__, 'is_kafka_configured'),
@@ -547,6 +592,8 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
         number_of_nodes=pulumi.get(__response__, 'number_of_nodes'),
         number_of_nodes_requiring_maintenance_reboot=pulumi.get(__response__, 'number_of_nodes_requiring_maintenance_reboot'),
         os_patch_version=pulumi.get(__response__, 'os_patch_version'),
+        remove_node=pulumi.get(__response__, 'remove_node'),
+        start_cluster_shape_configs=pulumi.get(__response__, 'start_cluster_shape_configs'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),

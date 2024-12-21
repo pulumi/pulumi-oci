@@ -26,6 +26,8 @@ import (
 type BdsInstance struct {
 	pulumi.CustomResourceState
 
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummary BdsInstanceBdsClusterVersionSummaryOutput `pulumi:"bdsClusterVersionSummary"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -55,7 +57,8 @@ type BdsInstance struct {
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
 	IgnoreExistingNodesShapes pulumi.StringArrayOutput `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
-	IsCloudSqlConfigured pulumi.BoolOutput `pulumi:"isCloudSqlConfigured"`
+	IsCloudSqlConfigured pulumi.BoolOutput    `pulumi:"isCloudSqlConfigured"`
+	IsForceRemoveEnabled pulumi.BoolPtrOutput `pulumi:"isForceRemoveEnabled"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 	IsForceStopJobs pulumi.BoolPtrOutput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
@@ -72,7 +75,7 @@ type BdsInstance struct {
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeOutput `pulumi:"masterNode"`
-	// Additional configuration of the user's network.
+	// (Updatable) Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigOutput `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
@@ -82,6 +85,9 @@ type BdsInstance struct {
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
+	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	RemoveNode               pulumi.StringPtrOutput                        `pulumi:"removeNode"`
+	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayOutput `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -160,6 +166,8 @@ func GetBdsInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BdsInstance resources.
 type bdsInstanceState struct {
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummary *BdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummary"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -190,6 +198,7 @@ type bdsInstanceState struct {
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
+	IsForceRemoveEnabled *bool `pulumi:"isForceRemoveEnabled"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 	IsForceStopJobs *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
@@ -206,7 +215,7 @@ type bdsInstanceState struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode *BdsInstanceMasterNode `pulumi:"masterNode"`
-	// Additional configuration of the user's network.
+	// (Updatable) Additional configuration of the user's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes []BdsInstanceNode `pulumi:"nodes"`
@@ -216,6 +225,9 @@ type bdsInstanceState struct {
 	NumberOfNodesRequiringMaintenanceReboot *int `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
+	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	RemoveNode               *string                              `pulumi:"removeNode"`
+	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -228,6 +240,8 @@ type bdsInstanceState struct {
 }
 
 type BdsInstanceState struct {
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummary BdsInstanceBdsClusterVersionSummaryPtrInput
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
 	// The information about added Cloud SQL capability
@@ -258,6 +272,7 @@ type BdsInstanceState struct {
 	IgnoreExistingNodesShapes pulumi.StringArrayInput
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
+	IsForceRemoveEnabled pulumi.BoolPtrInput
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 	IsForceStopJobs pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster is HA
@@ -274,7 +289,7 @@ type BdsInstanceState struct {
 	KmsKeyId pulumi.StringPtrInput
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodePtrInput
-	// Additional configuration of the user's network.
+	// (Updatable) Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayInput
@@ -284,6 +299,9 @@ type BdsInstanceState struct {
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrInput
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
+	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	RemoveNode               pulumi.StringPtrInput
+	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
@@ -300,6 +318,8 @@ func (BdsInstanceState) ElementType() reflect.Type {
 }
 
 type bdsInstanceArgs struct {
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummary *BdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummary"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -326,6 +346,7 @@ type bdsInstanceArgs struct {
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
+	IsForceRemoveEnabled *bool `pulumi:"isForceRemoveEnabled"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 	IsForceStopJobs *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
@@ -342,10 +363,13 @@ type bdsInstanceArgs struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNode `pulumi:"masterNode"`
-	// Additional configuration of the user's network.
+	// (Updatable) Additional configuration of the user's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
+	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	RemoveNode               *string                              `pulumi:"removeNode"`
+	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The utility node in the BDS instance
@@ -355,6 +379,8 @@ type bdsInstanceArgs struct {
 
 // The set of arguments for constructing a BdsInstance resource.
 type BdsInstanceArgs struct {
+	// Cluster version details including bds and odh version information.
+	BdsClusterVersionSummary BdsInstanceBdsClusterVersionSummaryPtrInput
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
 	// The information about added Cloud SQL capability
@@ -381,6 +407,7 @@ type BdsInstanceArgs struct {
 	IgnoreExistingNodesShapes pulumi.StringArrayInput
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
+	IsForceRemoveEnabled pulumi.BoolPtrInput
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 	IsForceStopJobs pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster is HA
@@ -397,10 +424,13 @@ type BdsInstanceArgs struct {
 	KmsKeyId pulumi.StringPtrInput
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeInput
-	// Additional configuration of the user's network.
+	// (Updatable) Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
+	// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+	RemoveNode               pulumi.StringPtrInput
+	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The utility node in the BDS instance
@@ -495,6 +525,11 @@ func (o BdsInstanceOutput) ToBdsInstanceOutputWithContext(ctx context.Context) B
 	return o
 }
 
+// Cluster version details including bds and odh version information.
+func (o BdsInstanceOutput) BdsClusterVersionSummary() BdsInstanceBdsClusterVersionSummaryOutput {
+	return o.ApplyT(func(v *BdsInstance) BdsInstanceBdsClusterVersionSummaryOutput { return v.BdsClusterVersionSummary }).(BdsInstanceBdsClusterVersionSummaryOutput)
+}
+
 // (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 func (o BdsInstanceOutput) BootstrapScriptUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
@@ -573,6 +608,10 @@ func (o BdsInstanceOutput) IsCloudSqlConfigured() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
 }
 
+func (o BdsInstanceOutput) IsForceRemoveEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.BoolPtrOutput { return v.IsForceRemoveEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
 func (o BdsInstanceOutput) IsForceStopJobs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolPtrOutput { return v.IsForceStopJobs }).(pulumi.BoolPtrOutput)
@@ -613,7 +652,7 @@ func (o BdsInstanceOutput) MasterNode() BdsInstanceMasterNodeOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceMasterNodeOutput { return v.MasterNode }).(BdsInstanceMasterNodeOutput)
 }
 
-// Additional configuration of the user's network.
+// (Updatable) Additional configuration of the user's network.
 func (o BdsInstanceOutput) NetworkConfig() BdsInstanceNetworkConfigOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceNetworkConfigOutput { return v.NetworkConfig }).(BdsInstanceNetworkConfigOutput)
 }
@@ -636,6 +675,15 @@ func (o BdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntO
 // (Updatable) The version of the patch to be upated.
 func (o BdsInstanceOutput) OsPatchVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.OsPatchVersion }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+func (o BdsInstanceOutput) RemoveNode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.RemoveNode }).(pulumi.StringPtrOutput)
+}
+
+func (o BdsInstanceOutput) StartClusterShapeConfigs() BdsInstanceStartClusterShapeConfigArrayOutput {
+	return o.ApplyT(func(v *BdsInstance) BdsInstanceStartClusterShapeConfigArrayOutput { return v.StartClusterShapeConfigs }).(BdsInstanceStartClusterShapeConfigArrayOutput)
 }
 
 // (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

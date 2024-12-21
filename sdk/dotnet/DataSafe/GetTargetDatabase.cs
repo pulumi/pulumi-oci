@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetTargetDatabaseResult> Invoke(GetTargetDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseResult>("oci:DataSafe/getTargetDatabase:getTargetDatabase", args ?? new GetTargetDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Returns the details of the specified Data Safe target database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetDatabase = Oci.DataSafe.GetTargetDatabase.Invoke(new()
+        ///     {
+        ///         TargetDatabaseId = testTargetDatabaseOciDataSafeTargetDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTargetDatabaseResult> Invoke(GetTargetDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseResult>("oci:DataSafe/getTargetDatabase:getTargetDatabase", args ?? new GetTargetDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

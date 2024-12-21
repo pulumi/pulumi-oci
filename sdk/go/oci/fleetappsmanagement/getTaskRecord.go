@@ -91,21 +91,11 @@ type LookupTaskRecordResult struct {
 }
 
 func LookupTaskRecordOutput(ctx *pulumi.Context, args LookupTaskRecordOutputArgs, opts ...pulumi.InvokeOption) LookupTaskRecordResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupTaskRecordResultOutput, error) {
 			args := v.(LookupTaskRecordArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupTaskRecordResult
-			secret, err := ctx.InvokePackageRaw("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args, &rv, "", opts...)
-			if err != nil {
-				return LookupTaskRecordResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupTaskRecordResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupTaskRecordResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args, LookupTaskRecordResultOutput{}, options).(LookupTaskRecordResultOutput), nil
 		}).(LookupTaskRecordResultOutput)
 }
 

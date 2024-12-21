@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceApplicationsResult> Invoke(GetWorkspaceApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationsResult>("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", args ?? new GetWorkspaceApplicationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a list of applications and provides options to filter the list.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceApplications = Oci.DataIntegration.GetWorkspaceApplications.Invoke(new()
+        ///     {
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceApplicationFields,
+        ///         Identifiers = workspaceApplicationIdentifier,
+        ///         Name = workspaceApplicationName,
+        ///         NameContains = workspaceApplicationNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceApplicationsResult> Invoke(GetWorkspaceApplicationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationsResult>("oci:DataIntegration/getWorkspaceApplications:getWorkspaceApplications", args ?? new GetWorkspaceApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

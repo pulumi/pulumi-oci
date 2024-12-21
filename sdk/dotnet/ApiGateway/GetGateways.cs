@@ -70,6 +70,36 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         public static Output<GetGatewaysResult> Invoke(GetGatewaysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGatewaysResult>("oci:ApiGateway/getGateways:getGateways", args ?? new GetGatewaysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
+        /// 
+        /// Returns a list of gateways.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGateways = Oci.ApiGateway.GetGateways.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         CertificateId = ociApigatewayCertificate.TestCertificate.Id,
+        ///         DisplayName = gatewayDisplayName,
+        ///         State = gatewayState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGatewaysResult> Invoke(GetGatewaysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGatewaysResult>("oci:ApiGateway/getGateways:getGateways", args ?? new GetGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

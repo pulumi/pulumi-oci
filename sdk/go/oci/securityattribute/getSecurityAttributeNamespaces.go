@@ -83,21 +83,11 @@ type GetSecurityAttributeNamespacesResult struct {
 }
 
 func GetSecurityAttributeNamespacesOutput(ctx *pulumi.Context, args GetSecurityAttributeNamespacesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAttributeNamespacesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetSecurityAttributeNamespacesResultOutput, error) {
 			args := v.(GetSecurityAttributeNamespacesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetSecurityAttributeNamespacesResult
-			secret, err := ctx.InvokePackageRaw("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", args, &rv, "", opts...)
-			if err != nil {
-				return GetSecurityAttributeNamespacesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetSecurityAttributeNamespacesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetSecurityAttributeNamespacesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:SecurityAttribute/getSecurityAttributeNamespaces:getSecurityAttributeNamespaces", args, GetSecurityAttributeNamespacesResultOutput{}, options).(GetSecurityAttributeNamespacesResultOutput), nil
 		}).(GetSecurityAttributeNamespacesResultOutput)
 }
 

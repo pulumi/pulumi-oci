@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetSummarizeResourceInventoryResult> Invoke(GetSummarizeResourceInventoryInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSummarizeResourceInventory = Oci.Jms.GetSummarizeResourceInventory.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         TimeEnd = summarizeResourceInventoryTimeEnd,
+        ///         TimeStart = summarizeResourceInventoryTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSummarizeResourceInventoryResult> Invoke(GetSummarizeResourceInventoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryInvokeArgs(), options.WithDefaults());
     }
 
 

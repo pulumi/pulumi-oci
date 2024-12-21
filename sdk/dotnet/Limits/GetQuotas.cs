@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public static Output<GetQuotasResult> Invoke(GetQuotasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQuotasResult>("oci:Limits/getQuotas:getQuotas", args ?? new GetQuotasInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
+        /// 
+        /// Lists all quotas on resources from the given compartment.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testQuotas = Oci.Limits.GetQuotas.Invoke(new()
+        ///     {
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = quotaName,
+        ///         State = quotaState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetQuotasResult> Invoke(GetQuotasInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetQuotasResult>("oci:Limits/getQuotas:getQuotas", args ?? new GetQuotasInvokeArgs(), options.WithDefaults());
     }
 
 

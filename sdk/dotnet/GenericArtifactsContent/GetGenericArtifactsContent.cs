@@ -62,6 +62,32 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// </summary>
         public static Output<GetGenericArtifactsContentResult> Invoke(GetGenericArtifactsContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGenericArtifactsContentResult>("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", args ?? new GetGenericArtifactsContentInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
+        /// 
+        /// Gets the specified artifact's content.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testGenericArtifactsContent = Oci.GenericArtifactsContent.GetGenericArtifactsContent.Invoke(new()
+        ///     {
+        ///         ArtifactId = testArtifact.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetGenericArtifactsContentResult> Invoke(GetGenericArtifactsContentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGenericArtifactsContentResult>("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", args ?? new GetGenericArtifactsContentInvokeArgs(), options.WithDefaults());
     }
 
 

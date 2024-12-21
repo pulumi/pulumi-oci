@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaReleasesResult> Invoke(GetJavaReleasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Returns a list of Java releases.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaReleases = Oci.Jms.GetJavaReleases.Invoke(new()
+        ///     {
+        ///         FamilyVersion = javaReleaseFamilyVersion,
+        ///         JreSecurityStatus = javaReleaseJreSecurityStatus,
+        ///         LicenseType = javaReleaseLicenseType,
+        ///         ReleaseType = javaReleaseReleaseType,
+        ///         ReleaseVersion = javaReleaseReleaseVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaReleasesResult> Invoke(GetJavaReleasesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesInvokeArgs(), options.WithDefaults());
     }
 
 

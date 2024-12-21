@@ -64,6 +64,33 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public static Output<GetCertificateVersionResult> Invoke(GetCertificateVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
+        /// 
+        /// Gets details about the specified version of a certificate.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateVersion = Oci.CertificatesManagement.GetCertificateVersion.Invoke(new()
+        ///     {
+        ///         CertificateId = testCertificate.Id,
+        ///         CertificateVersionNumber = certificateVersionCertificateVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCertificateVersionResult> Invoke(GetCertificateVersionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionInvokeArgs(), options.WithDefaults());
     }
 
 

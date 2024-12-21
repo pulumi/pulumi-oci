@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetAutonomousDatabasePeersResult> Invoke(GetAutonomousDatabasePeersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasePeersResult>("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", args ?? new GetAutonomousDatabasePeersInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the Autonomous Database peers for the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabasePeers = Oci.Database.GetAutonomousDatabasePeers.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAutonomousDatabasePeersResult> Invoke(GetAutonomousDatabasePeersInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasePeersResult>("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", args ?? new GetAutonomousDatabasePeersInvokeArgs(), options.WithDefaults());
     }
 
 

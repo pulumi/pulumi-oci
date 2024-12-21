@@ -68,6 +68,35 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetTagNamespacesResult> Invoke(GetTagNamespacesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTagNamespacesResult>("oci:Identity/getTagNamespaces:getTagNamespaces", args ?? new GetTagNamespacesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the tag namespaces in the specified compartment.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTagNamespaces = Oci.Identity.GetTagNamespaces.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         IncludeSubcompartments = tagNamespaceIncludeSubcompartments,
+        ///         State = tagNamespaceState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTagNamespacesResult> Invoke(GetTagNamespacesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagNamespacesResult>("oci:Identity/getTagNamespaces:getTagNamespaces", args ?? new GetTagNamespacesInvokeArgs(), options.WithDefaults());
     }
 
 

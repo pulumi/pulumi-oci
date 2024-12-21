@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetKeyResult> Invoke(GetKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKeyResult>("oci:Kms/getKey:getKey", args ?? new GetKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// Gets information about the specified master encryption key.
+        /// 
+        /// As a management operation, this call is subject to a Key Management limit that applies to the total number
+        /// of requests across all management read operations. Key Management might throttle this call to reject an
+        /// otherwise valid request when the total rate of management read operations exceeds 10 requests per second for
+        /// a given tenancy.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKey = Oci.Kms.GetKey.Invoke(new()
+        ///     {
+        ///         KeyId = testKeyOciKmsKey.Id,
+        ///         ManagementEndpoint = keyManagementEndpoint,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetKeyResult> Invoke(GetKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKeyResult>("oci:Kms/getKey:getKey", args ?? new GetKeyInvokeArgs(), options.WithDefaults());
     }
 
 

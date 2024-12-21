@@ -13,13 +13,13 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class BdsInstanceNetworkConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The CIDR IP address block of the VCN.
+        /// (Updatable) The CIDR IP address block of the VCN.
         /// </summary>
         [Input("cidrBlock")]
         public Input<string>? CidrBlock { get; set; }
 
         /// <summary>
-        /// A boolean flag whether to configure a NAT gateway.
+        /// (Updatable) A boolean flag whether to configure a NAT gateway.
         /// </summary>
         [Input("isNatGatewayRequired")]
         public Input<bool>? IsNatGatewayRequired { get; set; }

@@ -41,6 +41,7 @@ namespace Pulumi.Oci.DataScience
     ///                         MemoryInGbs = modelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsMemoryInGbs,
     ///                         Ocpus = modelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOcpus,
     ///                     },
+    ///                     PrivateEndpointId = testPrivateEndpoint.Id,
     ///                     SubnetId = testSubnet.Id,
     ///                 },
     ///                 ModelId = testModel.Id,

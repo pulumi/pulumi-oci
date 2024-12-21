@@ -100,21 +100,11 @@ type LookupExternalClusterInstanceResult struct {
 }
 
 func LookupExternalClusterInstanceOutput(ctx *pulumi.Context, args LookupExternalClusterInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupExternalClusterInstanceResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupExternalClusterInstanceResultOutput, error) {
 			args := v.(LookupExternalClusterInstanceArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupExternalClusterInstanceResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", args, &rv, "", opts...)
-			if err != nil {
-				return LookupExternalClusterInstanceResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupExternalClusterInstanceResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupExternalClusterInstanceResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalClusterInstance:getExternalClusterInstance", args, LookupExternalClusterInstanceResultOutput{}, options).(LookupExternalClusterInstanceResultOutput), nil
 		}).(LookupExternalClusterInstanceResultOutput)
 }
 

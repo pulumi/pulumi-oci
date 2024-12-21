@@ -68,6 +68,35 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageConnectorsResult> Invoke(GetExternalExadataStorageConnectorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageConnectorsResult>("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", args ?? new GetExternalExadataStorageConnectorsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageConnectors = Oci.DatabaseManagement.GetExternalExadataStorageConnectors.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ExternalExadataInfrastructureId = testExternalExadataInfrastructure.Id,
+        ///         DisplayName = externalExadataStorageConnectorDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageConnectorsResult> Invoke(GetExternalExadataStorageConnectorsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageConnectorsResult>("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", args ?? new GetExternalExadataStorageConnectorsInvokeArgs(), options.WithDefaults());
     }
 
 

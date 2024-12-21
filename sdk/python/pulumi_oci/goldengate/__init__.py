@@ -31,9 +31,16 @@ from .get_deployment_versions import *
 from .get_deployments import *
 from .get_message import *
 from .get_messages import *
+from .get_pipeline import *
+from .get_pipeline_running_processes import *
+from .get_pipeline_schema_tables import *
+from .get_pipeline_schemas import *
+from .get_pipelines import *
+from .get_recipes import *
 from .get_trail_file import *
 from .get_trail_files import *
 from .get_trail_sequence import *
 from .get_trail_sequences import *
+from .pipeline import *
 from ._inputs import *
 from . import outputs

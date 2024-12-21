@@ -68,6 +68,35 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourceModuleStreamResult> Invoke(GetSoftwareSourceModuleStreamInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamResult>("oci:OsManagementHub/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", args ?? new GetSoftwareSourceModuleStreamInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns information about the specified module stream in a software source.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceModuleStream = Oci.OsManagementHub.GetSoftwareSourceModuleStream.Invoke(new()
+        ///     {
+        ///         ModuleName = softwareSourceModuleStreamModuleName,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         StreamName = testStream.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceModuleStreamResult> Invoke(GetSoftwareSourceModuleStreamInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamResult>("oci:OsManagementHub/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", args ?? new GetSoftwareSourceModuleStreamInvokeArgs(), options.WithDefaults());
     }
 
 

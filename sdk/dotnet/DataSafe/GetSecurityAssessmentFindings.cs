@@ -26,6 +26,14 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// List all the findings from all the targets in the specified compartment.
+        /// </summary>
+        public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -121,21 +121,11 @@ type LookupWorkspaceApplicationTaskScheduleResult struct {
 }
 
 func LookupWorkspaceApplicationTaskScheduleOutput(ctx *pulumi.Context, args LookupWorkspaceApplicationTaskScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceApplicationTaskScheduleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupWorkspaceApplicationTaskScheduleResultOutput, error) {
 			args := v.(LookupWorkspaceApplicationTaskScheduleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupWorkspaceApplicationTaskScheduleResult
-			secret, err := ctx.InvokePackageRaw("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", args, &rv, "", opts...)
-			if err != nil {
-				return LookupWorkspaceApplicationTaskScheduleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupWorkspaceApplicationTaskScheduleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupWorkspaceApplicationTaskScheduleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", args, LookupWorkspaceApplicationTaskScheduleResultOutput{}, options).(LookupWorkspaceApplicationTaskScheduleResultOutput), nil
 		}).(LookupWorkspaceApplicationTaskScheduleResultOutput)
 }
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataInfrastructureResult> Invoke(GetExternalExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataInfrastructureResult>("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", args ?? new GetExternalExadataInfrastructureInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+        /// Exadata infrastructure.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataInfrastructure = Oci.DatabaseManagement.GetExternalExadataInfrastructure.Invoke(new()
+        ///     {
+        ///         ExternalExadataInfrastructureId = testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataInfrastructureResult> Invoke(GetExternalExadataInfrastructureInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataInfrastructureResult>("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", args ?? new GetExternalExadataInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 

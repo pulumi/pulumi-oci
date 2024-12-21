@@ -80,6 +80,41 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public static Output<GetMysqlDbSystemsResult> Invoke(GetMysqlDbSystemsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
+        /// 
+        /// Get a list of DB Systems in the specified compartment.
+        /// The default sort order is by timeUpdated, descending.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMysqlDbSystems = Oci.Mysql.GetMysqlDbSystems.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = mysqlConfigurationId,
+        ///         DatabaseManagements = mysqlDbSystemDatabaseManagement,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = mysqlDbSystemDisplayName,
+        ///         IsHeatWaveClusterAttached = mysqlDbSystemIsHeatWaveClusterAttached,
+        ///         IsUpToDate = mysqlDbSystemIsUpToDate,
+        ///         State = mysqlDbSystemState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetMysqlDbSystemsResult> Invoke(GetMysqlDbSystemsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsInvokeArgs(), options.WithDefaults());
     }
 
 

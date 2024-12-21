@@ -78,6 +78,40 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsSelfRegistrationProfileResult> Invoke(GetDomainsSelfRegistrationProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSelfRegistrationProfileResult>("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", args ?? new GetDomainsSelfRegistrationProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a self-registration profile.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSelfRegistrationProfile = Oci.Identity.GetDomainsSelfRegistrationProfile.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SelfRegistrationProfileId = testProfile.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = selfRegistrationProfileAuthorization,
+        ///         ResourceTypeSchemaVersion = selfRegistrationProfileResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsSelfRegistrationProfileResult> Invoke(GetDomainsSelfRegistrationProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSelfRegistrationProfileResult>("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", args ?? new GetDomainsSelfRegistrationProfileInvokeArgs(), options.WithDefaults());
     }
 
 

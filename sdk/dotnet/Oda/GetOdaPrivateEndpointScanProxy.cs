@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public static Output<GetOdaPrivateEndpointScanProxyResult> Invoke(GetOdaPrivateEndpointScanProxyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointScanProxyResult>("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args ?? new GetOdaPrivateEndpointScanProxyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
+        /// 
+        /// Gets the specified ODA Private Endpoint Scan Proxy.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testOdaPrivateEndpointScanProxy = Oci.Oda.GetOdaPrivateEndpointScanProxy.Invoke(new()
+        ///     {
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         OdaPrivateEndpointScanProxyId = testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetOdaPrivateEndpointScanProxyResult> Invoke(GetOdaPrivateEndpointScanProxyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointScanProxyResult>("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args ?? new GetOdaPrivateEndpointScanProxyInvokeArgs(), options.WithDefaults());
     }
 
 

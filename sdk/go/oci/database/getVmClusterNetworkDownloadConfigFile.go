@@ -73,21 +73,11 @@ type GetVmClusterNetworkDownloadConfigFileResult struct {
 }
 
 func GetVmClusterNetworkDownloadConfigFileOutput(ctx *pulumi.Context, args GetVmClusterNetworkDownloadConfigFileOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterNetworkDownloadConfigFileResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetVmClusterNetworkDownloadConfigFileResultOutput, error) {
 			args := v.(GetVmClusterNetworkDownloadConfigFileArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetVmClusterNetworkDownloadConfigFileResult
-			secret, err := ctx.InvokePackageRaw("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args, &rv, "", opts...)
-			if err != nil {
-				return GetVmClusterNetworkDownloadConfigFileResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetVmClusterNetworkDownloadConfigFileResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetVmClusterNetworkDownloadConfigFileResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args, GetVmClusterNetworkDownloadConfigFileResultOutput{}, options).(GetVmClusterNetworkDownloadConfigFileResultOutput), nil
 		}).(GetVmClusterNetworkDownloadConfigFileResultOutput)
 }
 

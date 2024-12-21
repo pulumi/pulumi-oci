@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsUserDbCredentialsResult> Invoke(GetDomainsUserDbCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserDbCredentialsResult>("oci:Identity/getDomainsUserDbCredentials:getDomainsUserDbCredentials", args ?? new GetDomainsUserDbCredentialsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search for a user's database (DB) credentials.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserDbCredentials = Oci.Identity.GetDomainsUserDbCredentials.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserDbCredentialCount = userDbCredentialUserDbCredentialCount,
+        ///         UserDbCredentialFilter = userDbCredentialUserDbCredentialFilter,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = userDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = userDbCredentialStartIndex,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsUserDbCredentialsResult> Invoke(GetDomainsUserDbCredentialsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserDbCredentialsResult>("oci:Identity/getDomainsUserDbCredentials:getDomainsUserDbCredentials", args ?? new GetDomainsUserDbCredentialsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2582,7 +2582,7 @@ func (o ModelBackupSettingPtrOutput) IsBackupEnabled() pulumi.BoolPtrOutput {
 }
 
 type ModelCustomMetadataList struct {
-	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category *string `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description *string `pulumi:"description"`
@@ -2592,7 +2592,7 @@ type ModelCustomMetadataList struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key *string `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
@@ -2612,7 +2612,7 @@ type ModelCustomMetadataListInput interface {
 }
 
 type ModelCustomMetadataListArgs struct {
-	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category pulumi.StringPtrInput `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description pulumi.StringPtrInput `pulumi:"description"`
@@ -2622,7 +2622,7 @@ type ModelCustomMetadataListArgs struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
@@ -2681,7 +2681,7 @@ func (o ModelCustomMetadataListOutput) ToModelCustomMetadataListOutputWithContex
 	return o
 }
 
-// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 func (o ModelCustomMetadataListOutput) Category() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
@@ -2697,7 +2697,7 @@ func (o ModelCustomMetadataListOutput) Description() pulumi.StringPtrOutput {
 // * libraryVersion
 // * estimatorClass
 // * hyperParameters
-// * testartifactresults
+// * testArtifactresults
 func (o ModelCustomMetadataListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -2730,7 +2730,7 @@ func (o ModelCustomMetadataListArrayOutput) Index(i pulumi.IntInput) ModelCustom
 }
 
 type ModelDefinedMetadataList struct {
-	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category *string `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description *string `pulumi:"description"`
@@ -2740,7 +2740,7 @@ type ModelDefinedMetadataList struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key *string `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
@@ -2760,7 +2760,7 @@ type ModelDefinedMetadataListInput interface {
 }
 
 type ModelDefinedMetadataListArgs struct {
-	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category pulumi.StringPtrInput `pulumi:"category"`
 	// (Updatable) Description of model metadata
 	Description pulumi.StringPtrInput `pulumi:"description"`
@@ -2770,7 +2770,7 @@ type ModelDefinedMetadataListArgs struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	//
@@ -2829,7 +2829,7 @@ func (o ModelDefinedMetadataListOutput) ToModelDefinedMetadataListOutputWithCont
 	return o
 }
 
-// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 func (o ModelDefinedMetadataListOutput) Category() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
@@ -2845,7 +2845,7 @@ func (o ModelDefinedMetadataListOutput) Description() pulumi.StringPtrOutput {
 // * libraryVersion
 // * estimatorClass
 // * hyperParameters
-// * testartifactresults
+// * testArtifactresults
 func (o ModelDefinedMetadataListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -4038,6 +4038,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// (Updatable) Details for the model-deployment instance shape configuration.
 	ModelDeploymentInstanceShapeConfigDetails *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails `pulumi:"modelDeploymentInstanceShapeConfigDetails"`
+	// (Updatable) The OCID of a Data Science private endpoint.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 	SubnetId *string `pulumi:"subnetId"`
 }
@@ -4058,6 +4060,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// (Updatable) Details for the model-deployment instance shape configuration.
 	ModelDeploymentInstanceShapeConfigDetails ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrInput `pulumi:"modelDeploymentInstanceShapeConfigDetails"`
+	// (Updatable) The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
@@ -4153,6 +4157,13 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput)
 }
 
+// (Updatable) The OCID of a Data Science private endpoint.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) *string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) *string {
@@ -4202,6 +4213,16 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 		}
 		return v.ModelDeploymentInstanceShapeConfigDetails
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of a Data Science private endpoint.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -11988,7 +12009,7 @@ type GetJobRunsJobRun struct {
 	// Customer logging details for job run.
 	LogDetails      []GetJobRunsJobRunLogDetail `pulumi:"logDetails"`
 	OpcParentRptUrl string                      `pulumi:"opcParentRptUrl"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	ProjectId string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
@@ -12042,7 +12063,7 @@ type GetJobRunsJobRunArgs struct {
 	// Customer logging details for job run.
 	LogDetails      GetJobRunsJobRunLogDetailArrayInput `pulumi:"logDetails"`
 	OpcParentRptUrl pulumi.StringInput                  `pulumi:"opcParentRptUrl"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
@@ -12193,7 +12214,7 @@ func (o GetJobRunsJobRunOutput) OpcParentRptUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunsJobRun) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 func (o GetJobRunsJobRunOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunsJobRun) string { return v.ProjectId }).(pulumi.StringOutput)
 }
@@ -14786,7 +14807,7 @@ func (o GetModelBackupSettingArrayOutput) Index(i pulumi.IntInput) GetModelBacku
 }
 
 type GetModelCustomMetadataList struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
@@ -14796,7 +14817,7 @@ type GetModelCustomMetadataList struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key string `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
@@ -14814,7 +14835,7 @@ type GetModelCustomMetadataListInput interface {
 }
 
 type GetModelCustomMetadataListArgs struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -14824,7 +14845,7 @@ type GetModelCustomMetadataListArgs struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key pulumi.StringInput `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
@@ -14881,7 +14902,7 @@ func (o GetModelCustomMetadataListOutput) ToGetModelCustomMetadataListOutputWith
 	return o
 }
 
-// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 func (o GetModelCustomMetadataListOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelCustomMetadataList) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -14897,7 +14918,7 @@ func (o GetModelCustomMetadataListOutput) Description() pulumi.StringOutput {
 // * libraryVersion
 // * estimatorClass
 // * hyperParameters
-// * testartifactresults
+// * testArtifactresults
 func (o GetModelCustomMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelCustomMetadataList) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -14928,7 +14949,7 @@ func (o GetModelCustomMetadataListArrayOutput) Index(i pulumi.IntInput) GetModel
 }
 
 type GetModelDefinedMetadataList struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
@@ -14938,7 +14959,7 @@ type GetModelDefinedMetadataList struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key string `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
@@ -14956,7 +14977,7 @@ type GetModelDefinedMetadataListInput interface {
 }
 
 type GetModelDefinedMetadataListArgs struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -14966,7 +14987,7 @@ type GetModelDefinedMetadataListArgs struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key pulumi.StringInput `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
@@ -15023,7 +15044,7 @@ func (o GetModelDefinedMetadataListOutput) ToGetModelDefinedMetadataListOutputWi
 	return o
 }
 
-// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 func (o GetModelDefinedMetadataListOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDefinedMetadataList) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -15039,7 +15060,7 @@ func (o GetModelDefinedMetadataListOutput) Description() pulumi.StringOutput {
 // * libraryVersion
 // * estimatorClass
 // * hyperParameters
-// * testartifactresults
+// * testArtifactresults
 func (o GetModelDefinedMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDefinedMetadataList) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -15834,6 +15855,8 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
 	ModelDeploymentInstanceShapeConfigDetails []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail `pulumi:"modelDeploymentInstanceShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -15854,6 +15877,8 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
 	ModelDeploymentInstanceShapeConfigDetails GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput `pulumi:"modelDeploymentInstanceShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -15921,6 +15946,13 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail {
 		return v.ModelDeploymentInstanceShapeConfigDetails
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
 }
 
 // A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -18222,6 +18254,8 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
 	ModelDeploymentInstanceShapeConfigDetails []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail `pulumi:"modelDeploymentInstanceShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -18242,6 +18276,8 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
 	ModelDeploymentInstanceShapeConfigDetails GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput `pulumi:"modelDeploymentInstanceShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -18309,6 +18345,13 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail {
 		return v.ModelDeploymentInstanceShapeConfigDetails
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
 }
 
 // A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -20487,7 +20530,7 @@ func (o GetModelsModelBackupSettingArrayOutput) Index(i pulumi.IntInput) GetMode
 }
 
 type GetModelsModelCustomMetadataList struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
@@ -20497,7 +20540,7 @@ type GetModelsModelCustomMetadataList struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key string `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
@@ -20515,7 +20558,7 @@ type GetModelsModelCustomMetadataListInput interface {
 }
 
 type GetModelsModelCustomMetadataListArgs struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -20525,7 +20568,7 @@ type GetModelsModelCustomMetadataListArgs struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key pulumi.StringInput `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
@@ -20582,7 +20625,7 @@ func (o GetModelsModelCustomMetadataListOutput) ToGetModelsModelCustomMetadataLi
 	return o
 }
 
-// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 func (o GetModelsModelCustomMetadataListOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCustomMetadataList) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -20598,7 +20641,7 @@ func (o GetModelsModelCustomMetadataListOutput) Description() pulumi.StringOutpu
 // * libraryVersion
 // * estimatorClass
 // * hyperParameters
-// * testartifactresults
+// * testArtifactresults
 func (o GetModelsModelCustomMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCustomMetadataList) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -20629,7 +20672,7 @@ func (o GetModelsModelCustomMetadataListArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetModelsModelDefinedMetadataList struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category string `pulumi:"category"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
@@ -20639,7 +20682,7 @@ type GetModelsModelDefinedMetadataList struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key string `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value string `pulumi:"value"`
@@ -20657,7 +20700,7 @@ type GetModelsModelDefinedMetadataListInput interface {
 }
 
 type GetModelsModelDefinedMetadataListArgs struct {
-	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 	Category pulumi.StringInput `pulumi:"category"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -20667,7 +20710,7 @@ type GetModelsModelDefinedMetadataListArgs struct {
 	// * libraryVersion
 	// * estimatorClass
 	// * hyperParameters
-	// * testartifactresults
+	// * testArtifactresults
 	Key pulumi.StringInput `pulumi:"key"`
 	// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 	Value pulumi.StringInput `pulumi:"value"`
@@ -20724,7 +20767,7 @@ func (o GetModelsModelDefinedMetadataListOutput) ToGetModelsModelDefinedMetadata
 	return o
 }
 
-// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
 func (o GetModelsModelDefinedMetadataListOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -20740,7 +20783,7 @@ func (o GetModelsModelDefinedMetadataListOutput) Description() pulumi.StringOutp
 // * libraryVersion
 // * estimatorClass
 // * hyperParameters
-// * testartifactresults
+// * testArtifactresults
 func (o GetModelsModelDefinedMetadataListOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelDefinedMetadataList) string { return v.Key }).(pulumi.StringOutput)
 }

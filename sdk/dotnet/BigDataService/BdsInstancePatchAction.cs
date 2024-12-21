@@ -33,6 +33,8 @@ namespace Pulumi.Oci.BigDataService
     ///         {
     ///             PatchingConfigStrategy = bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
     ///             BatchSize = bdsInstancePatchActionPatchingConfigBatchSize,
+    ///             ToleranceThresholdPerBatch = bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch,
+    ///             ToleranceThresholdPerDomain = bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain,
     ///             WaitTimeBetweenBatchInSeconds = bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
     ///             WaitTimeBetweenDomainInSeconds = bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
     ///         },

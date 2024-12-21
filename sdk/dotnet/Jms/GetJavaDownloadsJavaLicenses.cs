@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetJavaDownloadsJavaLicensesResult> Invoke(GetJavaDownloadsJavaLicensesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicensesResult>("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", args ?? new GetJavaDownloadsJavaLicensesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+        /// 
+        /// Return a list with details of all Java licenses.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testJavaLicenses = Oci.Jms.GetJavaDownloadsJavaLicenses.Invoke(new()
+        ///     {
+        ///         DisplayName = javaLicenseDisplayName,
+        ///         LicenseType = javaLicenseLicenseType,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetJavaDownloadsJavaLicensesResult> Invoke(GetJavaDownloadsJavaLicensesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicensesResult>("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", args ?? new GetJavaDownloadsJavaLicensesInvokeArgs(), options.WithDefaults());
     }
 
 

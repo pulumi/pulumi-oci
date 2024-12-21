@@ -72,7 +72,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         public readonly ImmutableArray<Outputs.GetJobRunsJobRunLogDetailResult> LogDetails;
         public readonly string OpcParentRptUrl;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         /// </summary>
         public readonly string ProjectId;
         /// <summary>

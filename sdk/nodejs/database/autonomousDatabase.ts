@@ -276,6 +276,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly isAutoScalingForStorageEnabled!: pulumi.Output<boolean>;
     /**
+     * (Updatable) True if the Autonomous Database is backup retention locked.
+     */
+    public readonly isBackupRetentionLocked!: pulumi.Output<boolean>;
+    /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     public readonly isDataGuardEnabled!: pulumi.Output<boolean>;
@@ -749,6 +753,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isAccessControlEnabled"] = state ? state.isAccessControlEnabled : undefined;
             resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
             resourceInputs["isAutoScalingForStorageEnabled"] = state ? state.isAutoScalingForStorageEnabled : undefined;
+            resourceInputs["isBackupRetentionLocked"] = state ? state.isBackupRetentionLocked : undefined;
             resourceInputs["isDataGuardEnabled"] = state ? state.isDataGuardEnabled : undefined;
             resourceInputs["isDedicated"] = state ? state.isDedicated : undefined;
             resourceInputs["isDevTier"] = state ? state.isDevTier : undefined;
@@ -884,6 +889,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isAccessControlEnabled"] = args ? args.isAccessControlEnabled : undefined;
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
             resourceInputs["isAutoScalingForStorageEnabled"] = args ? args.isAutoScalingForStorageEnabled : undefined;
+            resourceInputs["isBackupRetentionLocked"] = args ? args.isBackupRetentionLocked : undefined;
             resourceInputs["isDataGuardEnabled"] = args ? args.isDataGuardEnabled : undefined;
             resourceInputs["isDedicated"] = args ? args.isDedicated : undefined;
             resourceInputs["isDevTier"] = args ? args.isDevTier : undefined;
@@ -1229,6 +1235,10 @@ export interface AutonomousDatabaseState {
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      */
     isAutoScalingForStorageEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) True if the Autonomous Database is backup retention locked.
+     */
+    isBackupRetentionLocked?: pulumi.Input<boolean>;
     /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
@@ -1811,6 +1821,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      */
     isAutoScalingForStorageEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) True if the Autonomous Database is backup retention locked.
+     */
+    isBackupRetentionLocked?: pulumi.Input<boolean>;
     /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */

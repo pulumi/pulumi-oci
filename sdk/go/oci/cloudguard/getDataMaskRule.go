@@ -92,21 +92,11 @@ type LookupDataMaskRuleResult struct {
 }
 
 func LookupDataMaskRuleOutput(ctx *pulumi.Context, args LookupDataMaskRuleOutputArgs, opts ...pulumi.InvokeOption) LookupDataMaskRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDataMaskRuleResultOutput, error) {
 			args := v.(LookupDataMaskRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDataMaskRuleResult
-			secret, err := ctx.InvokePackageRaw("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDataMaskRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDataMaskRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDataMaskRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args, LookupDataMaskRuleResultOutput{}, options).(LookupDataMaskRuleResultOutput), nil
 		}).(LookupDataMaskRuleResultOutput)
 }
 

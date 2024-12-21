@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public static Output<GetReplicationStatusResult> Invoke(GetReplicationStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
+        /// 
+        /// When a vault has a replica, each operation on the vault or its resources, such as
+        /// keys, is replicated and has an associated replicationId. Replication status provides
+        /// details about whether the operation associated with the given replicationId has been
+        /// successfully applied across replicas.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testReplicationStatus = Oci.Kms.GetReplicationStatus.Invoke(new()
+        ///     {
+        ///         ReplicationId = testReplication.Id,
+        ///         ManagementEndpoint = replicationStatusManagementEndpoint,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetReplicationStatusResult> Invoke(GetReplicationStatusInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusInvokeArgs(), options.WithDefaults());
     }
 
 

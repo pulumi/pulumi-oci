@@ -64,6 +64,33 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetFleetCredentialResult> Invoke(GetFleetCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetCredentialResult>("oci:FleetAppsManagement/getFleetCredential:getFleetCredential", args ?? new GetFleetCredentialInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a FleetCredential by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetCredential = Oci.FleetAppsManagement.GetFleetCredential.Invoke(new()
+        ///     {
+        ///         FleetCredentialId = testFleetCredentialOciFleetAppsManagementFleetCredential.Id,
+        ///         FleetId = testFleet.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetCredentialResult> Invoke(GetFleetCredentialInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetCredentialResult>("oci:FleetAppsManagement/getFleetCredential:getFleetCredential", args ?? new GetFleetCredentialInvokeArgs(), options.WithDefaults());
     }
 
 

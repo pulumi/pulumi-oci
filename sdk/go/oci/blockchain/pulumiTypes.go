@@ -2523,7 +2523,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Blockchain Platform component details.
 	ComponentDetails []GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail `pulumi:"componentDetails"`
-	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 	ComputeShape string `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -2590,7 +2590,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Blockchain Platform component details.
 	ComponentDetails GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayInput `pulumi:"componentDetails"`
-	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 	ComputeShape pulumi.StringInput `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -2707,7 +2707,7 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ComponentD
 	}).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput)
 }
 
-// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ComputeShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBlockchainPlatformsBlockchainPlatformCollectionItem) string { return v.ComputeShape }).(pulumi.StringOutput)
 }

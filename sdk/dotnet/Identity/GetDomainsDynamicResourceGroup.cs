@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsDynamicResourceGroupResult> Invoke(GetDomainsDynamicResourceGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsDynamicResourceGroupResult>("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", args ?? new GetDomainsDynamicResourceGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Get a Dynamic Resource Group.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDynamicResourceGroup = Oci.Identity.GetDomainsDynamicResourceGroup.Invoke(new()
+        ///     {
+        ///         DynamicResourceGroupId = testGroup.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = dynamicResourceGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = dynamicResourceGroupResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsDynamicResourceGroupResult> Invoke(GetDomainsDynamicResourceGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsDynamicResourceGroupResult>("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", args ?? new GetDomainsDynamicResourceGroupInvokeArgs(), options.WithDefaults());
     }
 
 

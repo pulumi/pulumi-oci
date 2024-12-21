@@ -72,6 +72,37 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public static Output<GetNamespacePropertiesMetadataResult> Invoke(GetNamespacePropertiesMetadataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespacePropertiesMetadataResult>("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args ?? new GetNamespacePropertiesMetadataInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
+        /// 
+        /// Returns a list of properties along with their metadata.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNamespacePropertiesMetadata = Oci.LogAnalytics.GetNamespacePropertiesMetadata.Invoke(new()
+        ///     {
+        ///         Namespace = namespacePropertiesMetadataNamespace,
+        ///         Constraints = namespacePropertiesMetadataConstraints,
+        ///         DisplayText = namespacePropertiesMetadataDisplayText,
+        ///         Level = namespacePropertiesMetadataLevel,
+        ///         Name = namespacePropertiesMetadataName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNamespacePropertiesMetadataResult> Invoke(GetNamespacePropertiesMetadataInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespacePropertiesMetadataResult>("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args ?? new GetNamespacePropertiesMetadataInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Output<GetVirtualServiceRouteTableResult> Invoke(GetVirtualServiceRouteTableInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServiceRouteTableResult>("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args ?? new GetVirtualServiceRouteTableInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Gets a VirtualServiceRouteTable by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualServiceRouteTable = Oci.ServiceMesh.GetVirtualServiceRouteTable.Invoke(new()
+        ///     {
+        ///         VirtualServiceRouteTableId = testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVirtualServiceRouteTableResult> Invoke(GetVirtualServiceRouteTableInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServiceRouteTableResult>("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args ?? new GetVirtualServiceRouteTableInvokeArgs(), options.WithDefaults());
     }
 
 

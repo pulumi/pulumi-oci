@@ -73,21 +73,11 @@ type GetMaskingPolicyMaskingSchemasResult struct {
 }
 
 func GetMaskingPolicyMaskingSchemasOutput(ctx *pulumi.Context, args GetMaskingPolicyMaskingSchemasOutputArgs, opts ...pulumi.InvokeOption) GetMaskingPolicyMaskingSchemasResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMaskingPolicyMaskingSchemasResultOutput, error) {
 			args := v.(GetMaskingPolicyMaskingSchemasArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMaskingPolicyMaskingSchemasResult
-			secret, err := ctx.InvokePackageRaw("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", args, &rv, "", opts...)
-			if err != nil {
-				return GetMaskingPolicyMaskingSchemasResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMaskingPolicyMaskingSchemasResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMaskingPolicyMaskingSchemasResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", args, GetMaskingPolicyMaskingSchemasResultOutput{}, options).(GetMaskingPolicyMaskingSchemasResultOutput), nil
 		}).(GetMaskingPolicyMaskingSchemasResultOutput)
 }
 

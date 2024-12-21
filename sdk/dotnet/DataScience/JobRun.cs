@@ -170,7 +170,7 @@ namespace Pulumi.Oci.DataScience
         public Output<string?> OpcParentRptUrl { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -322,7 +322,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? OpcParentRptUrl { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -460,7 +460,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? OpcParentRptUrl { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         /// 
         /// 
         /// ** IMPORTANT **

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetModelCustomMetadataList {
     /**
-     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
      * 
      */
     private String category;
@@ -27,7 +27,7 @@ public final class GetModelCustomMetadataList {
      * * libraryVersion
      * * estimatorClass
      * * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      * 
      */
     private String key;
@@ -39,7 +39,7 @@ public final class GetModelCustomMetadataList {
 
     private GetModelCustomMetadataList() {}
     /**
-     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
+     * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other&#34;.
      * 
      */
     public String category() {
@@ -59,7 +59,7 @@ public final class GetModelCustomMetadataList {
      * * libraryVersion
      * * estimatorClass
      * * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      * 
      */
     public String key() {

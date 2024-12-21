@@ -70,6 +70,36 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsAuthenticationFactorSettingsResult> Invoke(GetDomainsAuthenticationFactorSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthenticationFactorSettingsResult>("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args ?? new GetDomainsAuthenticationFactorSettingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Authentication Factor Settings in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Authentication Factor Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAuthenticationFactorSettings = Oci.Identity.GetDomainsAuthenticationFactorSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new() { },
+        ///         Attributes = "",
+        ///         Authorization = authenticationFactorSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = authenticationFactorSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsAuthenticationFactorSettingsResult> Invoke(GetDomainsAuthenticationFactorSettingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthenticationFactorSettingsResult>("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args ?? new GetDomainsAuthenticationFactorSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

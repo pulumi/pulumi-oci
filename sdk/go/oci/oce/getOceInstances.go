@@ -83,21 +83,11 @@ type GetOceInstancesResult struct {
 }
 
 func GetOceInstancesOutput(ctx *pulumi.Context, args GetOceInstancesOutputArgs, opts ...pulumi.InvokeOption) GetOceInstancesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetOceInstancesResultOutput, error) {
 			args := v.(GetOceInstancesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetOceInstancesResult
-			secret, err := ctx.InvokePackageRaw("oci:Oce/getOceInstances:getOceInstances", args, &rv, "", opts...)
-			if err != nil {
-				return GetOceInstancesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetOceInstancesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetOceInstancesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Oce/getOceInstances:getOceInstances", args, GetOceInstancesResultOutput{}, options).(GetOceInstancesResultOutput), nil
 		}).(GetOceInstancesResultOutput)
 }
 

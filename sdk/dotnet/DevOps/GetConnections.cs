@@ -74,6 +74,38 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DevOps/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
+        /// 
+        /// Returns a list of connections.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnections = Oci.DevOps.GetConnections.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionType = connectionConnectionType,
+        ///         DisplayName = connectionDisplayName,
+        ///         Id = connectionId,
+        ///         ProjectId = testProject.Id,
+        ///         State = connectionState,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConnectionsResult> Invoke(GetConnectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConnectionsResult>("oci:DevOps/getConnections:getConnections", args ?? new GetConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

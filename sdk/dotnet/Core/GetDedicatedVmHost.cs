@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Output<GetDedicatedVmHostResult> Invoke(GetDedicatedVmHostInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostResult>("oci:Core/getDedicatedVmHost:getDedicatedVmHost", args ?? new GetDedicatedVmHostInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// Gets information about the specified dedicated virtual machine host.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDedicatedVmHost = Oci.Core.GetDedicatedVmHost.Invoke(new()
+        ///     {
+        ///         DedicatedVmHostId = testDedicatedVmHostOciCoreDedicatedVmHost.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDedicatedVmHostResult> Invoke(GetDedicatedVmHostInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostResult>("oci:Core/getDedicatedVmHost:getDedicatedVmHost", args ?? new GetDedicatedVmHostInvokeArgs(), options.WithDefaults());
     }
 
 

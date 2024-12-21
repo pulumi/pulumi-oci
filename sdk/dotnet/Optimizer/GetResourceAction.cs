@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public static Output<GetResourceActionResult> Invoke(GetResourceActionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceActionResult>("oci:Optimizer/getResourceAction:getResourceAction", args ?? new GetResourceActionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
+        /// 
+        /// Gets the resource action that corresponds to the specified OCID.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
+        ///     {
+        ///         ResourceActionId = testResourceActionOciOptimizerResourceAction.Id,
+        ///         IncludeResourceMetadata = resourceActionIncludeResourceMetadata,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetResourceActionResult> Invoke(GetResourceActionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceActionResult>("oci:Optimizer/getResourceAction:getResourceAction", args ?? new GetResourceActionInvokeArgs(), options.WithDefaults());
     }
 
 

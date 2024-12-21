@@ -66,6 +66,34 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalDbHomesResult> Invoke(GetExternalDbHomesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbHomesResult>("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", args ?? new GetExternalDbHomesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Lists the DB homes in the specified external DB system.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalDbHomes = Oci.DatabaseManagement.GetExternalDbHomes.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalDbHomeDisplayName,
+        ///         ExternalDbSystemId = testExternalDbSystem.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalDbHomesResult> Invoke(GetExternalDbHomesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbHomesResult>("oci:DatabaseManagement/getExternalDbHomes:getExternalDbHomes", args ?? new GetExternalDbHomesInvokeArgs(), options.WithDefaults());
     }
 
 

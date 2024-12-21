@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetJavaMigrationAnalysisResultsResult> Invoke(GetFleetJavaMigrationAnalysisResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetJavaMigrationAnalysisResultsResult>("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", args ?? new GetFleetJavaMigrationAnalysisResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Java Migration Analysis Results in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// Lists the results of a Java migration analysis.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetJavaMigrationAnalysisResults = Oci.Jms.GetFleetJavaMigrationAnalysisResults.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationName = fleetJavaMigrationAnalysisResultApplicationName,
+        ///         HostName = fleetJavaMigrationAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetJavaMigrationAnalysisResultManagedInstanceId,
+        ///         TimeEnd = fleetJavaMigrationAnalysisResultTimeEnd,
+        ///         TimeStart = fleetJavaMigrationAnalysisResultTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetJavaMigrationAnalysisResultsResult> Invoke(GetFleetJavaMigrationAnalysisResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetJavaMigrationAnalysisResultsResult>("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", args ?? new GetFleetJavaMigrationAnalysisResultsInvokeArgs(), options.WithDefaults());
     }
 
 

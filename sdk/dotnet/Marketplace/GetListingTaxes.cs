@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public static Output<GetListingTaxesResult> Invoke(GetListingTaxesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
+        /// 
+        /// Returns list of all tax implications that current tenant may be liable to once they launch the listing.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testListingTaxes = Oci.Marketplace.GetListingTaxes.Invoke(new()
+        ///     {
+        ///         ListingId = testListing.Id,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetListingTaxesResult> Invoke(GetListingTaxesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesInvokeArgs(), options.WithDefaults());
     }
 
 

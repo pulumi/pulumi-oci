@@ -804,6 +804,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
+     * (Updatable) True if the Autonomous Database is backup retention locked.
+     * 
+     */
+    @Export(name="isBackupRetentionLocked", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isBackupRetentionLocked;
+
+    /**
+     * @return (Updatable) True if the Autonomous Database is backup retention locked.
+     * 
+     */
+    public Output<Boolean> isBackupRetentionLocked() {
+        return this.isBackupRetentionLocked;
+    }
+    /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */

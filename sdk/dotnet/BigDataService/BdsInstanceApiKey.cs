@@ -31,6 +31,7 @@ namespace Pulumi.Oci.BigDataService
     ///         Passphrase = bdsInstanceApiKeyPassphrase,
     ///         UserId = testUser.Id,
     ///         DefaultRegion = bdsInstanceApiKeyDefaultRegion,
+    ///         DomainOcid = bdsInstanceApiKeyDomainOcid,
     ///     });
     /// 
     /// });
@@ -49,6 +50,7 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// The OCID of the cluster.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("bdsInstanceId")]
         public Output<string> BdsInstanceId { get; private set; } = null!;
@@ -60,6 +62,12 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> DefaultRegion { get; private set; } = null!;
 
         /// <summary>
+        /// Identity domain OCID , where user is present. For default domain , this field will be optional.
+        /// </summary>
+        [Output("domainOcid")]
+        public Output<string> DomainOcid { get; private set; } = null!;
+
+        /// <summary>
         /// The fingerprint that corresponds to the public API key requested.
         /// </summary>
         [Output("fingerprint")]
@@ -67,6 +75,7 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Output("keyAlias")]
         public Output<string> KeyAlias { get; private set; } = null!;
@@ -163,6 +172,7 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// The OCID of the cluster.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
@@ -174,7 +184,14 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? DefaultRegion { get; set; }
 
         /// <summary>
+        /// Identity domain OCID , where user is present. For default domain , this field will be optional.
+        /// </summary>
+        [Input("domainOcid")]
+        public Input<string>? DomainOcid { get; set; }
+
+        /// <summary>
         /// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Input("keyAlias", required: true)]
         public Input<string> KeyAlias { get; set; } = null!;
@@ -215,6 +232,7 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// The OCID of the cluster.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("bdsInstanceId")]
         public Input<string>? BdsInstanceId { get; set; }
@@ -226,6 +244,12 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? DefaultRegion { get; set; }
 
         /// <summary>
+        /// Identity domain OCID , where user is present. For default domain , this field will be optional.
+        /// </summary>
+        [Input("domainOcid")]
+        public Input<string>? DomainOcid { get; set; }
+
+        /// <summary>
         /// The fingerprint that corresponds to the public API key requested.
         /// </summary>
         [Input("fingerprint")]
@@ -233,6 +257,7 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Input("keyAlias")]
         public Input<string>? KeyAlias { get; set; }

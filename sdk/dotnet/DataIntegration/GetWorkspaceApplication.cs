@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceApplicationResult> Invoke(GetWorkspaceApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationResult>("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", args ?? new GetWorkspaceApplicationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves an application using the specified identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceApplication = Oci.DataIntegration.GetWorkspaceApplication.Invoke(new()
+        ///     {
+        ///         ApplicationKey = workspaceApplicationApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceApplicationResult> Invoke(GetWorkspaceApplicationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationResult>("oci:DataIntegration/getWorkspaceApplication:getWorkspaceApplication", args ?? new GetWorkspaceApplicationInvokeArgs(), options.WithDefaults());
     }
 
 

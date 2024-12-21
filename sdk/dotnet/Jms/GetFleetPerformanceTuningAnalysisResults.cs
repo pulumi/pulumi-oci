@@ -72,6 +72,37 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public static Output<GetFleetPerformanceTuningAnalysisResultsResult> Invoke(GetFleetPerformanceTuningAnalysisResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetPerformanceTuningAnalysisResultsResult>("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", args ?? new GetFleetPerformanceTuningAnalysisResultsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Fleet Performance Tuning Analysis Results in Oracle Cloud Infrastructure Jms service.
+        /// 
+        /// List Performance Tuning Analysis results.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFleetPerformanceTuningAnalysisResults = Oci.Jms.GetFleetPerformanceTuningAnalysisResults.Invoke(new()
+        ///     {
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationId = fleetPerformanceTuningAnalysisResultApplicationId,
+        ///         HostName = fleetPerformanceTuningAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetPerformanceTuningAnalysisResultManagedInstanceId,
+        ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
+        ///         TimeStart = fleetPerformanceTuningAnalysisResultTimeStart,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFleetPerformanceTuningAnalysisResultsResult> Invoke(GetFleetPerformanceTuningAnalysisResultsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetPerformanceTuningAnalysisResultsResult>("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", args ?? new GetFleetPerformanceTuningAnalysisResultsInvokeArgs(), options.WithDefaults());
     }
 
 

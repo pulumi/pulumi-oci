@@ -70,6 +70,36 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Output<GetSensitiveDataModelSensitiveObjectsResult> Invoke(GetSensitiveDataModelSensitiveObjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveObjectsResult>("oci:DataSafe/getSensitiveDataModelSensitiveObjects:getSensitiveDataModelSensitiveObjects", args ?? new GetSensitiveDataModelSensitiveObjectsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Sensitive Data Model Sensitive Objects in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelSensitiveObjects = Oci.DataSafe.GetSensitiveDataModelSensitiveObjects.Invoke(new()
+        ///     {
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         Objects = sensitiveDataModelSensitiveObjectObject,
+        ///         ObjectTypes = sensitiveDataModelSensitiveObjectObjectType,
+        ///         SchemaNames = sensitiveDataModelSensitiveObjectSchemaName,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSensitiveDataModelSensitiveObjectsResult> Invoke(GetSensitiveDataModelSensitiveObjectsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveObjectsResult>("oci:DataSafe/getSensitiveDataModelSensitiveObjects:getSensitiveDataModelSensitiveObjects", args ?? new GetSensitiveDataModelSensitiveObjectsInvokeArgs(), options.WithDefaults());
     }
 
 

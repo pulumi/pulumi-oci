@@ -62,6 +62,32 @@ namespace Pulumi.Oci.Streaming
         /// </summary>
         public static Output<GetStreamPoolResult> Invoke(GetStreamPoolInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamPoolResult>("oci:Streaming/getStreamPool:getStreamPool", args ?? new GetStreamPoolInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
+        /// 
+        /// Gets detailed information about the stream pool, such as Kafka settings.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStreamPool = Oci.Streaming.GetStreamPool.Invoke(new()
+        ///     {
+        ///         StreamPoolId = testStreamPoolOciStreamingStreamPool.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStreamPoolResult> Invoke(GetStreamPoolInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamPoolResult>("oci:Streaming/getStreamPool:getStreamPool", args ?? new GetStreamPoolInvokeArgs(), options.WithDefaults());
     }
 
 

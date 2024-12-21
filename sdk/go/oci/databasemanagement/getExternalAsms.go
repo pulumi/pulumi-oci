@@ -79,21 +79,11 @@ type GetExternalAsmsResult struct {
 }
 
 func GetExternalAsmsOutput(ctx *pulumi.Context, args GetExternalAsmsOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalAsmsResultOutput, error) {
 			args := v.(GetExternalAsmsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalAsmsResult
-			secret, err := ctx.InvokePackageRaw("oci:DatabaseManagement/getExternalAsms:getExternalAsms", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalAsmsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalAsmsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalAsmsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsms:getExternalAsms", args, GetExternalAsmsResultOutput{}, options).(GetExternalAsmsResultOutput), nil
 		}).(GetExternalAsmsResultOutput)
 }
 

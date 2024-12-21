@@ -93,21 +93,11 @@ type GetConfigurationsResult struct {
 }
 
 func GetConfigurationsOutput(ctx *pulumi.Context, args GetConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetConfigurationsResultOutput, error) {
 			args := v.(GetConfigurationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetConfigurationsResult
-			secret, err := ctx.InvokePackageRaw("oci:Psql/getConfigurations:getConfigurations", args, &rv, "", opts...)
-			if err != nil {
-				return GetConfigurationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetConfigurationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetConfigurationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("oci:Psql/getConfigurations:getConfigurations", args, GetConfigurationsResultOutput{}, options).(GetConfigurationsResultOutput), nil
 		}).(GetConfigurationsResultOutput)
 }
 

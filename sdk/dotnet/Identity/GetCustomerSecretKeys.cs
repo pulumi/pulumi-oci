@@ -66,6 +66,34 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetCustomerSecretKeysResult> Invoke(GetCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
+        /// 
+        /// Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
+        /// the secret key itself. The actual secret key is returned only upon creation.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCustomerSecretKeys = Oci.Identity.GetCustomerSecretKeys.Invoke(new()
+        ///     {
+        ///         UserId = testUser.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetCustomerSecretKeysResult> Invoke(GetCustomerSecretKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public static Output<GetDelegatedResourceAccessRequestHistoriesResult> Invoke(GetDelegatedResourceAccessRequestHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestHistoriesResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", args ?? new GetDelegatedResourceAccessRequestHistoriesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.
+        /// 
+        /// Returns a history of all status associated with the Delegated Resource Access RequestId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDelegatedResourceAccessRequestHistories = Oci.DelegateAccessControl.GetDelegatedResourceAccessRequestHistories.Invoke(new()
+        ///     {
+        ///         DelegatedResourceAccessRequestId = testDelegatedResourceAccessRequest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDelegatedResourceAccessRequestHistoriesResult> Invoke(GetDelegatedResourceAccessRequestHistoriesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDelegatedResourceAccessRequestHistoriesResult>("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", args ?? new GetDelegatedResourceAccessRequestHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

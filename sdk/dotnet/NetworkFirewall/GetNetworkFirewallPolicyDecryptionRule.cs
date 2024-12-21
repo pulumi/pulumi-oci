@@ -26,6 +26,14 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> Invoke(GetNetworkFirewallPolicyDecryptionRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args ?? new GetNetworkFirewallPolicyDecryptionRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+        /// 
+        /// Get Decryption Rule by the given name in the context of network firewall policy.
+        /// </summary>
+        public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> Invoke(GetNetworkFirewallPolicyDecryptionRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args ?? new GetNetworkFirewallPolicyDecryptionRuleInvokeArgs(), options.WithDefaults());
     }
 
 

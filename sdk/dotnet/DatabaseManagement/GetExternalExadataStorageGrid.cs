@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public static Output<GetExternalExadataStorageGridResult> Invoke(GetExternalExadataStorageGridInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageGridResult>("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", args ?? new GetExternalExadataStorageGridInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+        /// 
+        /// Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExternalExadataStorageGrid = Oci.DatabaseManagement.GetExternalExadataStorageGrid.Invoke(new()
+        ///     {
+        ///         ExternalExadataStorageGridId = testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalExadataStorageGridResult> Invoke(GetExternalExadataStorageGridInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageGridResult>("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", args ?? new GetExternalExadataStorageGridInvokeArgs(), options.WithDefaults());
     }
 
 

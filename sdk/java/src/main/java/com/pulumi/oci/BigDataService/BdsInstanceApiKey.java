@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *             .passphrase(bdsInstanceApiKeyPassphrase)
  *             .userId(testUser.id())
  *             .defaultRegion(bdsInstanceApiKeyDefaultRegion)
+ *             .domainOcid(bdsInstanceApiKeyDomainOcid)
  *             .build());
  * 
  *     }
@@ -71,6 +72,7 @@ import javax.annotation.Nullable;
 public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the cluster.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
@@ -78,6 +80,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The OCID of the cluster.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> bdsInstanceId() {
@@ -98,6 +101,20 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
         return this.defaultRegion;
     }
     /**
+     * Identity domain OCID , where user is present. For default domain , this field will be optional.
+     * 
+     */
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
+    private Output<String> domainOcid;
+
+    /**
+     * @return Identity domain OCID , where user is present. For default domain , this field will be optional.
+     * 
+     */
+    public Output<String> domainOcid() {
+        return this.domainOcid;
+    }
+    /**
      * The fingerprint that corresponds to the public API key requested.
      * 
      */
@@ -113,6 +130,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
     }
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Export(name="keyAlias", refs={String.class}, tree="[0]")
@@ -120,6 +138,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
 
     /**
      * @return User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<String> keyAlias() {

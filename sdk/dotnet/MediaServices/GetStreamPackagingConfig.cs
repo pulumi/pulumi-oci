@@ -62,6 +62,32 @@ namespace Pulumi.Oci.MediaServices
         /// </summary>
         public static Output<GetStreamPackagingConfigResult> Invoke(GetStreamPackagingConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamPackagingConfigResult>("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", args ?? new GetStreamPackagingConfigInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
+        /// 
+        /// Gets a Stream Packaging Configuration by identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStreamPackagingConfig = Oci.MediaServices.GetStreamPackagingConfig.Invoke(new()
+        ///     {
+        ///         StreamPackagingConfigId = testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStreamPackagingConfigResult> Invoke(GetStreamPackagingConfigInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStreamPackagingConfigResult>("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", args ?? new GetStreamPackagingConfigInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetSoftwareSourceModuleStreamProfileResult> Invoke(GetSoftwareSourceModuleStreamProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamProfileResult>("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", args ?? new GetSoftwareSourceModuleStreamProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns information about the specified module stream profile in a software source.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSoftwareSourceModuleStreamProfile = Oci.OsManagementHub.GetSoftwareSourceModuleStreamProfile.Invoke(new()
+        ///     {
+        ///         ModuleName = softwareSourceModuleStreamProfileModuleName,
+        ///         ProfileName = testProfile.Name,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         StreamName = testStream.Name,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetSoftwareSourceModuleStreamProfileResult> Invoke(GetSoftwareSourceModuleStreamProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceModuleStreamProfileResult>("oci:OsManagementHub/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", args ?? new GetSoftwareSourceModuleStreamProfileInvokeArgs(), options.WithDefaults());
     }
 
 

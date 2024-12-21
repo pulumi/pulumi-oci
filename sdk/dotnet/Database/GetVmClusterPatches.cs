@@ -64,6 +64,33 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Output<GetVmClusterPatchesResult> Invoke(GetVmClusterPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchesResult>("oci:Database/getVmClusterPatches:getVmClusterPatches", args ?? new GetVmClusterPatchesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVmClusterPatches = Oci.Database.GetVmClusterPatches.Invoke(new()
+        ///     {
+        ///         VmClusterId = testVmCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVmClusterPatchesResult> Invoke(GetVmClusterPatchesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchesResult>("oci:Database/getVmClusterPatches:getVmClusterPatches", args ?? new GetVmClusterPatchesInvokeArgs(), options.WithDefaults());
     }
 
 

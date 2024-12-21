@@ -62,6 +62,32 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public static Output<GetTaskRecordResult> Invoke(GetTaskRecordInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTaskRecordResult>("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args ?? new GetTaskRecordInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        /// 
+        /// Gets a Task by identifier
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTaskRecord = Oci.FleetAppsManagement.GetTaskRecord.Invoke(new()
+        ///     {
+        ///         TaskRecordId = testTaskRecordOciFleetAppsManagementTaskRecord.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetTaskRecordResult> Invoke(GetTaskRecordInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetTaskRecordResult>("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args ?? new GetTaskRecordInvokeArgs(), options.WithDefaults());
     }
 
 

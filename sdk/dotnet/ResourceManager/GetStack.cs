@@ -62,6 +62,32 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         public static Output<GetStackResult> Invoke(GetStackInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStackResult>("oci:ResourceManager/getStack:getStack", args ?? new GetStackInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
+        /// 
+        /// Gets a stack using the stack ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testStack = Oci.ResourceManager.GetStack.Invoke(new()
+        ///     {
+        ///         StackId = testStackOciResourcemanagerStack.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetStackResult> Invoke(GetStackInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStackResult>("oci:ResourceManager/getStack:getStack", args ?? new GetStackInvokeArgs(), options.WithDefaults());
     }
 
 

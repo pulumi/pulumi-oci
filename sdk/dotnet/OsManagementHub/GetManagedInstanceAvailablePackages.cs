@@ -70,6 +70,36 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public static Output<GetManagedInstanceAvailablePackagesResult> Invoke(GetManagedInstanceAvailablePackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceAvailablePackagesResult>("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", args ?? new GetManagedInstanceAvailablePackagesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Managed Instance Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
+        /// 
+        /// Returns a list of packages that are available for installation on a managed instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedInstanceAvailablePackages = Oci.OsManagementHub.GetManagedInstanceAvailablePackages.Invoke(new()
+        ///     {
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceAvailablePackageDisplayName,
+        ///         DisplayNameContains = managedInstanceAvailablePackageDisplayNameContains,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetManagedInstanceAvailablePackagesResult> Invoke(GetManagedInstanceAvailablePackagesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceAvailablePackagesResult>("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", args ?? new GetManagedInstanceAvailablePackagesInvokeArgs(), options.WithDefaults());
     }
 
 

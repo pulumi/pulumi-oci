@@ -64,6 +64,33 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public static Output<GetWorkspaceProjectResult> Invoke(GetWorkspaceProjectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceProjectResult>("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", args ?? new GetWorkspaceProjectInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
+        /// 
+        /// Retrieves a project using the specified identifier.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceProject = Oci.DataIntegration.GetWorkspaceProject.Invoke(new()
+        ///     {
+        ///         ProjectKey = workspaceProjectProjectKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetWorkspaceProjectResult> Invoke(GetWorkspaceProjectInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceProjectResult>("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", args ?? new GetWorkspaceProjectInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -66,6 +66,34 @@ namespace Pulumi.Oci.VisualBuilder
         /// </summary>
         public static Output<GetVbInstanceApplicationsResult> Invoke(GetVbInstanceApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
+        /// 
+        /// Returns a list of published and staged applications of a Visual Builder instance.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVbInstanceApplications = Oci.VisualBuilder.GetVbInstanceApplications.Invoke(new()
+        ///     {
+        ///         VbInstanceId = testVbInstance.Id,
+        ///         IdcsOpenId = "idcs_open_id_value",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetVbInstanceApplicationsResult> Invoke(GetVbInstanceApplicationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

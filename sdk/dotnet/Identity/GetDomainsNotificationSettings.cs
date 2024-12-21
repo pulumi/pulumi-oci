@@ -76,6 +76,39 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public static Output<GetDomainsNotificationSettingsResult> Invoke(GetDomainsNotificationSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNotificationSettingsResult>("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", args ?? new GetDomainsNotificationSettingsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides the list of Notification Settings in Oracle Cloud Infrastructure Identity Domains service.
+        /// 
+        /// Search Notification Settings
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNotificationSettings = Oci.Identity.GetDomainsNotificationSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = notificationSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = notificationSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDomainsNotificationSettingsResult> Invoke(GetDomainsNotificationSettingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDomainsNotificationSettingsResult>("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", args ?? new GetDomainsNotificationSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

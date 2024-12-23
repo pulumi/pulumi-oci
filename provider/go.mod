@@ -15,7 +15,7 @@ replace github.com/oracle/oci-go-sdk/v65 => github.com/oracle/oci-go-sdk/v65 v65
 require (
 	github.com/oracle/terraform-provider-oci v1.0.19-0.20241219201451-fb38e3739b13 // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.98.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.98.1-0.20241223162608-daafe0d49c40
 	github.com/pulumi/pulumi/pkg/v3 v3.143.0 // indirect
 	github.com/pulumi/pulumi/sdk/v3 v3.143.0
 )
@@ -177,7 +177,7 @@ require (
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/yuin/goldmark v1.7.4 // indirect
-	github.com/zclconf/go-cty v1.14.2 // indirect
+	github.com/zclconf/go-cty v1.14.4 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.49.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.49.0 // indirect

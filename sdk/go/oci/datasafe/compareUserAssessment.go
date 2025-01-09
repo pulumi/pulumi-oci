@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewCompareUserAssessment(ctx, "test_compare_user_assessment", &DataSafe.CompareUserAssessmentArgs{
+//			_, err := datasafe.NewCompareUserAssessment(ctx, "test_compare_user_assessment", &datasafe.CompareUserAssessmentArgs{
 //				ComparisonUserAssessmentId: pulumi.Any(testUserAssessment.Id),
 //				UserAssessmentId:           pulumi.Any(testUserAssessment.Id),
 //			})

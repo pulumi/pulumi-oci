@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Email"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/email"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewDkim(ctx, "test_dkim", &Email.DkimArgs{
+//			_, err := email.NewDkim(ctx, "test_dkim", &email.DkimArgs{
 //				EmailDomainId: pulumi.Any(testEmailDomain.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),

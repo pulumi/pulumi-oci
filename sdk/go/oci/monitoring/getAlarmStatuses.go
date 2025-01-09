@@ -34,14 +34,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/monitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Monitoring.GetAlarmStatuses(ctx, &monitoring.GetAlarmStatusesArgs{
+//			_, err := monitoring.GetAlarmStatuses(ctx, &monitoring.GetAlarmStatusesArgs{
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: pulumi.BoolRef(alarmStatusCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(alarmStatusDisplayName),

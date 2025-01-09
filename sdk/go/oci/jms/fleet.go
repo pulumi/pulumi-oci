@@ -29,14 +29,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.NewFleet(ctx, "test_fleet", &Jms.FleetArgs{
+//			_, err := jms.NewFleet(ctx, "test_fleet", &jms.FleetArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(fleetDisplayName),
 //				InventoryLog: &jms.FleetInventoryLogArgs{

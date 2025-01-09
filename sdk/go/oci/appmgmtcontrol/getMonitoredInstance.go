@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AppMgmtControl"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/appmgmtcontrol"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AppMgmtControl.GetMonitoredInstance(ctx, &appmgmtcontrol.GetMonitoredInstanceArgs{
+//			_, err := appmgmtcontrol.GetMonitoredInstance(ctx, &appmgmtcontrol.GetMonitoredInstanceArgs{
 //				MonitoredInstanceId: testMonitoredInstanceOciAppmgmtControlMonitoredInstance.Id,
 //			}, nil)
 //			if err != nil {

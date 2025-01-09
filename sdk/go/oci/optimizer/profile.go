@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/optimizer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Optimizer.NewProfile(ctx, "test_profile", &Optimizer.ProfileArgs{
+//			_, err := optimizer.NewProfile(ctx, "test_profile", &optimizer.ProfileArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Description:   pulumi.Any(profileDescription),
 //				LevelsConfiguration: &optimizer.ProfileLevelsConfigurationArgs{

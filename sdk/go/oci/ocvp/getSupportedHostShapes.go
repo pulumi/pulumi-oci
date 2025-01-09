@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ocvp.GetSupportedHostShapes(ctx, &ocvp.GetSupportedHostShapesArgs{
+//			_, err := ocvp.GetSupportedHostShapes(ctx, &ocvp.GetSupportedHostShapesArgs{
 //				CompartmentId:             compartmentId,
 //				InitialHostShapeName:      pulumi.StringRef(testShape.Name),
 //				IsSingleHostSddcSupported: pulumi.BoolRef(supportedHostShapeIsSingleHostSddcSupported),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/UsageProxy"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/usageproxy"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := UsageProxy.GetSubscriptionRewards(ctx, &usageproxy.GetSubscriptionRewardsArgs{
+//			_, err := usageproxy.GetSubscriptionRewards(ctx, &usageproxy.GetSubscriptionRewardsArgs{
 //				SubscriptionId: testSubscription.Id,
 //				TenancyId:      testTenancy.Id,
 //			}, nil)

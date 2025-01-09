@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewOneoffPatch(ctx, "test_oneoff_patch", &Database.OneoffPatchArgs{
+//			_, err := database.NewOneoffPatch(ctx, "test_oneoff_patch", &database.OneoffPatchArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DbVersion:     pulumi.Any(oneoffPatchDbVersion),
 //				DisplayName:   pulumi.Any(oneoffPatchDisplayName),

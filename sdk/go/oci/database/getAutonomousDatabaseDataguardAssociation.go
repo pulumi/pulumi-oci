@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetAutonomousDatabaseDataguardAssociation(ctx, &database.GetAutonomousDatabaseDataguardAssociationArgs{
+//			_, err := database.GetAutonomousDatabaseDataguardAssociation(ctx, &database.GetAutonomousDatabaseDataguardAssociationArgs{
 //				AutonomousDatabaseDataguardAssociationId: testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.Id,
 //				AutonomousDatabaseId:                     testAutonomousDatabase.Id,
 //			}, nil)

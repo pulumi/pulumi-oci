@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewManagedInstanceGroupUpdateAllPackagesManagement(ctx, "test_managed_instance_group_update_all_packages_management", &OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementArgs{
+//			_, err := osmanagementhub.NewManagedInstanceGroupUpdateAllPackagesManagement(ctx, "test_managed_instance_group_update_all_packages_management", &osmanagementhub.ManagedInstanceGroupUpdateAllPackagesManagementArgs{
 //				ManagedInstanceGroupId: pulumi.Any(testManagedInstanceGroup.Id),
 //				UpdateTypes:            pulumi.Any(managedInstanceGroupUpdateAllPackagesManagementUpdateTypes),
 //				WorkRequestDetails: &osmanagementhub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs{

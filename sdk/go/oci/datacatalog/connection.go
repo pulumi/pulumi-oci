@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datacatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.NewConnection(ctx, "test_connection", &DataCatalog.ConnectionArgs{
+//			_, err := datacatalog.NewConnection(ctx, "test_connection", &datacatalog.ConnectionArgs{
 //				CatalogId:     pulumi.Any(testCatalog.Id),
 //				DataAssetKey:  pulumi.Any(connectionDataAssetKey),
 //				DisplayName:   pulumi.Any(connectionDisplayName),

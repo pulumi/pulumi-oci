@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CapacityManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/capacitymanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CapacityManagement.NewOccCustomerGroup(ctx, "test_occ_customer_group", &CapacityManagement.OccCustomerGroupArgs{
+//			_, err := capacitymanagement.NewOccCustomerGroup(ctx, "test_occ_customer_group", &capacitymanagement.OccCustomerGroupArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(occCustomerGroupDisplayName),
 //				CustomersLists: capacitymanagement.OccCustomerGroupCustomersListArray{

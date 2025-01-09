@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewVmClusterRemoveVirtualMachine(ctx, "test_vm_cluster_remove_virtual_machine", &Database.VmClusterRemoveVirtualMachineArgs{
+//			_, err := database.NewVmClusterRemoveVirtualMachine(ctx, "test_vm_cluster_remove_virtual_machine", &database.VmClusterRemoveVirtualMachineArgs{
 //				DbServers: database.VmClusterRemoveVirtualMachineDbServerArray{
 //					&database.VmClusterRemoveVirtualMachineDbServerArgs{
 //						DbServerId: pulumi.Any(testDbServer.Id),

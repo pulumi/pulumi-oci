@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewDiscoveryMod(ctx, "test_discovery_job", &DataSafe.DiscoveryModArgs{
+//			_, err := datasafe.NewDiscoveryMod(ctx, "test_discovery_job", &datasafe.DiscoveryModArgs{
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				SensitiveDataModelId: pulumi.Any(testSensitiveDataModel.Id),
 //				DefinedTags: pulumi.StringMap{

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmsynthetics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.NewOnPremiseVantagePoint(ctx, "test_on_premise_vantage_point", &ApmSynthetics.OnPremiseVantagePointArgs{
+//			_, err := apmsynthetics.NewOnPremiseVantagePoint(ctx, "test_on_premise_vantage_point", &apmsynthetics.OnPremiseVantagePointArgs{
 //				ApmDomainId: pulumi.Any(testApmDomain.Id),
 //				Name:        pulumi.Any(onPremiseVantagePointName),
 //				DefinedTags: pulumi.StringMap{

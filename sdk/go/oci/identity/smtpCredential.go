@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewSmtpCredential(ctx, "test_smtp_credential", &Identity.SmtpCredentialArgs{
+//			_, err := identity.NewSmtpCredential(ctx, "test_smtp_credential", &identity.SmtpCredentialArgs{
 //				Description: pulumi.Any(smtpCredentialDescription),
 //				UserId:      pulumi.Any(testUser.Id),
 //			})

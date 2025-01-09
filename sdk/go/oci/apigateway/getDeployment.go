@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apigateway"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.GetDeployment(ctx, &apigateway.GetDeploymentArgs{
+//			_, err := apigateway.GetDeployment(ctx, &apigateway.GetDeploymentArgs{
 //				DeploymentId: testDeploymentOciApigatewayDeployment.Id,
 //			}, nil)
 //			if err != nil {

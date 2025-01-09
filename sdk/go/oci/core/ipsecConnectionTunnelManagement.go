@@ -37,14 +37,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewIpsecConnectionTunnelManagement(ctx, "test_ip_sec_connection_tunnel", &Core.IpsecConnectionTunnelManagementArgs{
+//			_, err := core.NewIpsecConnectionTunnelManagement(ctx, "test_ip_sec_connection_tunnel", &core.IpsecConnectionTunnelManagementArgs{
 //				IpsecId:  pulumi.Any(testIpsec.Id),
 //				TunnelId: pulumi.Any(testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id),
 //				Routing:  pulumi.Any(ipSecConnectionTunnelManagementRouting),

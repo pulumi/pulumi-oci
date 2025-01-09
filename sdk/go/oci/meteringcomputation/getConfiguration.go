@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.GetConfiguration(ctx, &meteringcomputation.GetConfigurationArgs{
+//			_, err := meteringcomputation.GetConfiguration(ctx, &meteringcomputation.GetConfigurationArgs{
 //				TenantId: testTenant.Id,
 //			}, nil)
 //			if err != nil {

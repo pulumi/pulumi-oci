@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OspGateway"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ospgateway"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OspGateway.NewAddressActionVerification(ctx, "test_address_action_verification", &OspGateway.AddressActionVerificationArgs{
+//			_, err := ospgateway.NewAddressActionVerification(ctx, "test_address_action_verification", &ospgateway.AddressActionVerificationArgs{
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				OspHomeRegion:        pulumi.Any(addressActionVerificationOspHomeRegion),
 //				AddressKey:           pulumi.Any(addressActionVerificationAddressKey),

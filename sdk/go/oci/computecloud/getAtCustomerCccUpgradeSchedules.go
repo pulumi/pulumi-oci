@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ComputeCloud"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/computecloud"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ComputeCloud.GetAtCustomerCccUpgradeSchedules(ctx, &computecloud.GetAtCustomerCccUpgradeSchedulesArgs{
+//			_, err := computecloud.GetAtCustomerCccUpgradeSchedules(ctx, &computecloud.GetAtCustomerCccUpgradeSchedulesArgs{
 //				AccessLevel:            pulumi.StringRef(cccUpgradeScheduleAccessLevel),
 //				CccUpgradeScheduleId:   pulumi.StringRef(testCccUpgradeSchedule.Id),
 //				CompartmentId:          pulumi.StringRef(compartmentId),

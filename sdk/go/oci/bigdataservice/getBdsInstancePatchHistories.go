@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/bigdataservice"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.GetBdsInstancePatchHistories(ctx, &bigdataservice.GetBdsInstancePatchHistoriesArgs{
+//			_, err := bigdataservice.GetBdsInstancePatchHistories(ctx, &bigdataservice.GetBdsInstancePatchHistoriesArgs{
 //				BdsInstanceId: testBdsInstance.Id,
 //				PatchType:     pulumi.StringRef(bdsInstancePatchHistoryPatchType),
 //				PatchVersion:  pulumi.StringRef(bdsInstancePatchHistoryPatchVersion),

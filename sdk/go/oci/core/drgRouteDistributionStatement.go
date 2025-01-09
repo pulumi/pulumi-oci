@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgRouteDistributionStatement(ctx, "test_drg_route_distribution_statement", &Core.DrgRouteDistributionStatementArgs{
+//			_, err := core.NewDrgRouteDistributionStatement(ctx, "test_drg_route_distribution_statement", &core.DrgRouteDistributionStatementArgs{
 //				DrgRouteDistributionId: pulumi.Any(testDrgRouteDistribution.Id),
 //				Action:                 pulumi.Any(drgRouteDistributionStatementStatementsAction),
 //				MatchCriteria: &core.DrgRouteDistributionStatementMatchCriteriaArgs{

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewNamespaceIngestTimeRule(ctx, "test_namespace_ingest_time_rule", &LogAnalytics.NamespaceIngestTimeRuleArgs{
+//			_, err := loganalytics.NewNamespaceIngestTimeRule(ctx, "test_namespace_ingest_time_rule", &loganalytics.NamespaceIngestTimeRuleArgs{
 //				Actions: loganalytics.NamespaceIngestTimeRuleActionArray{
 //					&loganalytics.NamespaceIngestTimeRuleActionArgs{
 //						CompartmentId: pulumi.Any(compartmentId),

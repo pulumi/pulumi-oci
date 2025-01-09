@@ -20,14 +20,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ocvp.GetRetrievePassword(ctx, &ocvp.GetRetrievePasswordArgs{
+//			_, err := ocvp.GetRetrievePassword(ctx, &ocvp.GetRetrievePasswordArgs{
 //				SddcId: compartmentId,
 //				Type:   passwordType,
 //			}, nil)

@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Budget"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/budget"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Budget.GetBudgets(ctx, &budget.GetBudgetsArgs{
+//			_, err := budget.GetBudgets(ctx, &budget.GetBudgetsArgs{
 //				CompartmentId: tenancyOcid,
 //				DisplayName:   pulumi.StringRef(budgetDisplayName),
 //				State:         pulumi.StringRef(budgetState),

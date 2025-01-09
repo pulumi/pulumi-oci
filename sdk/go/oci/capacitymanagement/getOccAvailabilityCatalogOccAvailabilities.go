@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CapacityManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/capacitymanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CapacityManagement.GetOccAvailabilityCatalogOccAvailabilities(ctx, &capacitymanagement.GetOccAvailabilityCatalogOccAvailabilitiesArgs{
+//			_, err := capacitymanagement.GetOccAvailabilityCatalogOccAvailabilities(ctx, &capacitymanagement.GetOccAvailabilityCatalogOccAvailabilitiesArgs{
 //				OccAvailabilityCatalogId:     testOccAvailabilityCatalog.Id,
 //				DateExpectedCapacityHandover: pulumi.StringRef(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover),
 //				ResourceName:                 pulumi.StringRef(testResource.Name),

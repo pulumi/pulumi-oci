@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApmConfig"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmconfig"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmConfig.GetConfig(ctx, &apmconfig.GetConfigArgs{
+//			_, err := apmconfig.GetConfig(ctx, &apmconfig.GetConfigArgs{
 //				ApmDomainId: testApmDomain.Id,
 //				ConfigId:    testConfigOciApmConfigConfig.Id,
 //			}, nil)

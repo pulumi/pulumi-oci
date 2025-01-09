@@ -31,14 +31,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetUserGroupMemberships(ctx, &identity.GetUserGroupMembershipsArgs{
+//			_, err := identity.GetUserGroupMemberships(ctx, &identity.GetUserGroupMembershipsArgs{
 //				CompartmentId: tenancyOcid,
 //				GroupId:       pulumi.StringRef(testGroup.Id),
 //				UserId:        pulumi.StringRef(testUser.Id),

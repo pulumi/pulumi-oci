@@ -30,14 +30,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewTagDefault(ctx, "test_tag_default", &Identity.TagDefaultArgs{
+//			_, err := identity.NewTagDefault(ctx, "test_tag_default", &identity.TagDefaultArgs{
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				TagDefinitionId: pulumi.Any(testTagDefinition.Id),
 //				Value:           pulumi.Any(tagDefaultValue),

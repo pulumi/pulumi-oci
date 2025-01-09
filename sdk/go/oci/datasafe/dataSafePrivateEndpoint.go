@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewDataSafePrivateEndpoint(ctx, "test_data_safe_private_endpoint", &DataSafe.DataSafePrivateEndpointArgs{
+//			_, err := datasafe.NewDataSafePrivateEndpoint(ctx, "test_data_safe_private_endpoint", &datasafe.DataSafePrivateEndpointArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(dataSafePrivateEndpointDisplayName),
 //				SubnetId:      pulumi.Any(testSubnet.Id),

@@ -33,14 +33,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/monitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Monitoring.NewAlarmSuppression(ctx, "test_alarm_suppression", &Monitoring.AlarmSuppressionArgs{
+//			_, err := monitoring.NewAlarmSuppression(ctx, "test_alarm_suppression", &monitoring.AlarmSuppressionArgs{
 //				AlarmSuppressionTarget: &monitoring.AlarmSuppressionAlarmSuppressionTargetArgs{
 //					TargetType:             pulumi.Any(alarmSuppressionAlarmSuppressionTargetTargetType),
 //					AlarmId:                pulumi.Any(testAlarm.Id),

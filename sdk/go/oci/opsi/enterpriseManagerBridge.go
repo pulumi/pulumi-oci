@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewEnterpriseManagerBridge(ctx, "test_enterprise_manager_bridge", &Opsi.EnterpriseManagerBridgeArgs{
+//			_, err := opsi.NewEnterpriseManagerBridge(ctx, "test_enterprise_manager_bridge", &opsi.EnterpriseManagerBridgeArgs{
 //				CompartmentId:           pulumi.Any(compartmentId),
 //				DisplayName:             pulumi.Any(enterpriseManagerBridgeDisplayName),
 //				ObjectStorageBucketName: pulumi.Any(testBucket.Name),

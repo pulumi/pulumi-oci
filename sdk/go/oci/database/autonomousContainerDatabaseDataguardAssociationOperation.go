@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousContainerDatabaseDataguardAssociationOperation(ctx, "switchover", &Database.AutonomousContainerDatabaseDataguardAssociationOperationArgs{
+//			_, err := database.NewAutonomousContainerDatabaseDataguardAssociationOperation(ctx, "switchover", &database.AutonomousContainerDatabaseDataguardAssociationOperationArgs{
 //				Operation:                     pulumi.String("switchover"),
 //				AutonomousContainerDatabaseId: pulumi.Any(dataguardAssociations.AutonomousContainerDatabaseDataguardAssociations[0].Autonomous_container_database_id),
 //				AutonomousContainerDatabaseDataguardAssociationId: pulumi.Any(dataguardAssociations.AutonomousContainerDatabaseDataguardAssociations[0].Id),

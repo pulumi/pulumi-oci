@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewTsigKey(ctx, "test_tsig_key", &Dns.TsigKeyArgs{
+//			_, err := dns.NewTsigKey(ctx, "test_tsig_key", &dns.TsigKeyArgs{
 //				Algorithm:     pulumi.Any(tsigKeyAlgorithm),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(tsigKeyName),

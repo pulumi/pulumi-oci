@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Zpr"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/zpr"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Zpr.GetConfiguration(ctx, &zpr.GetConfigurationArgs{
+//			_, err := zpr.GetConfiguration(ctx, &zpr.GetConfigurationArgs{
 //				CompartmentId: tenancyOcid,
 //			}, nil)
 //			if err != nil {

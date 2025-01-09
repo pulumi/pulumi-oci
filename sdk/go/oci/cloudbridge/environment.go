@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewEnvironment(ctx, "test_environment", &CloudBridge.EnvironmentArgs{
+//			_, err := cloudbridge.NewEnvironment(ctx, "test_environment", &cloudbridge.EnvironmentArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),

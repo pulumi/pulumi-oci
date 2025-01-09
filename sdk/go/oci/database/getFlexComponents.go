@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetFlexComponents(ctx, &database.GetFlexComponentsArgs{
+//			_, err := database.GetFlexComponents(ctx, &database.GetFlexComponentsArgs{
 //				CompartmentId: compartmentId,
 //				Name:          pulumi.StringRef(flexComponentName),
 //			}, nil)

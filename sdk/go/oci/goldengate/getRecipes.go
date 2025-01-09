@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/goldengate"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.GetRecipes(ctx, &goldengate.GetRecipesArgs{
+//			_, err := goldengate.GetRecipes(ctx, &goldengate.GetRecipesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(recipeDisplayName),
 //				RecipeType:    pulumi.StringRef(recipeRecipeType),

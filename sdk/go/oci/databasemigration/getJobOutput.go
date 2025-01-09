@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemigration"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseMigration.GetJobOutput(ctx, databasemigration.GetJobOutputArgs{
+//			_, err := databasemigration.GetJobOutput(ctx, databasemigration.GetJobOutputArgs{
 //				JobId: testJob.Id,
 //			}, nil)
 //			if err != nil {

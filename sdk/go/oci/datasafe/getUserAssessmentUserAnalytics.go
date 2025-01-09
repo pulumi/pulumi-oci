@@ -36,14 +36,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.GetUserAssessmentUserAnalytics(ctx, &datasafe.GetUserAssessmentUserAnalyticsArgs{
+//			_, err := datasafe.GetUserAssessmentUserAnalytics(ctx, &datasafe.GetUserAssessmentUserAnalyticsArgs{
 //				UserAssessmentId:                  testUserAssessment.Id,
 //				AccessLevel:                       pulumi.StringRef(userAssessmentUserAnalyticAccessLevel),
 //				AccountStatus:                     pulumi.StringRef(userAssessmentUserAnalyticAccountStatus),

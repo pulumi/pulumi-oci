@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewInventory(ctx, "test_inventory", &CloudBridge.InventoryArgs{
+//			_, err := cloudbridge.NewInventory(ctx, "test_inventory", &cloudbridge.InventoryArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(inventoryDisplayName),
 //				DefinedTags: pulumi.StringMap{

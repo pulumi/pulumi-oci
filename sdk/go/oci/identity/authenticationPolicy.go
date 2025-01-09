@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewAuthenticationPolicy(ctx, "test_authentication_policy", &Identity.AuthenticationPolicyArgs{
+//			_, err := identity.NewAuthenticationPolicy(ctx, "test_authentication_policy", &identity.AuthenticationPolicyArgs{
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				NetworkPolicy: &identity.AuthenticationPolicyNetworkPolicyArgs{
 //					NetworkSourceIds: pulumi.Any(authenticationPolicyNetworkPolicyNetworkSourceIds),

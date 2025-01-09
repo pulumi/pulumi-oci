@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/aianomalydetection"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiAnomalyDetection.NewProject(ctx, "test_project", &AiAnomalyDetection.ProjectArgs{
+//			_, err := aianomalydetection.NewProject(ctx, "test_project", &aianomalydetection.ProjectArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),

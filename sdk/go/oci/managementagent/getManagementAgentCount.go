@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/managementagent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.GetManagementAgentCount(ctx, &managementagent.GetManagementAgentCountArgs{
+//			_, err := managementagent.GetManagementAgentCount(ctx, &managementagent.GetManagementAgentCountArgs{
 //				CompartmentId: compartmentId,
 //				GroupBies:     managementAgentCountGroupBy,
 //				HasPlugins:    pulumi.BoolRef(managementAgentCountHasPlugins),

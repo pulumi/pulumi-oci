@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/certificatesmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CertificatesManagement.GetAssociations(ctx, &certificatesmanagement.GetAssociationsArgs{
+//			_, err := certificatesmanagement.GetAssociations(ctx, &certificatesmanagement.GetAssociationsArgs{
 //				AssociatedResourceId:   pulumi.StringRef(testAssociatedResource.Id),
 //				AssociationId:          pulumi.StringRef(testAssociation.Id),
 //				AssociationType:        pulumi.StringRef(associationAssociationType),

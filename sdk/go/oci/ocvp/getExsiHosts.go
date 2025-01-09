@@ -30,14 +30,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ocvp.GetExsiHosts(ctx, &ocvp.GetExsiHostsArgs{
+//			_, err := ocvp.GetExsiHosts(ctx, &ocvp.GetExsiHostsArgs{
 //				ClusterId:           pulumi.StringRef(testCluster.Id),
 //				CompartmentId:       pulumi.StringRef(compartmentId),
 //				ComputeInstanceId:   pulumi.StringRef(testInstance.Id),

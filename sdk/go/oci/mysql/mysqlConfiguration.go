@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewMysqlConfiguration(ctx, "test_mysql_configuration", &Mysql.MysqlConfigurationArgs{
+//			_, err := mysql.NewMysqlConfiguration(ctx, "test_mysql_configuration", &mysql.MysqlConfigurationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ShapeName:     pulumi.Any(testShape.Name),
 //				DefinedTags: pulumi.StringMap{

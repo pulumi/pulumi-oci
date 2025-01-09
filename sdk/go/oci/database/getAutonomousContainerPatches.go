@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetAutonomousContainerPatches(ctx, &database.GetAutonomousContainerPatchesArgs{
+//			_, err := database.GetAutonomousContainerPatches(ctx, &database.GetAutonomousContainerPatchesArgs{
 //				AutonomousContainerDatabaseId: testAutonomousContainerDatabase.Id,
 //				CompartmentId:                 compartmentId,
 //				AutonomousPatchType:           pulumi.StringRef(autonomousContainerPatchAutonomousPatchType),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.GetJavaReleases(ctx, &jms.GetJavaReleasesArgs{
+//			_, err := jms.GetJavaReleases(ctx, &jms.GetJavaReleasesArgs{
 //				FamilyVersion:     pulumi.StringRef(javaReleaseFamilyVersion),
 //				JreSecurityStatus: pulumi.StringRef(javaReleaseJreSecurityStatus),
 //				LicenseType:       pulumi.StringRef(javaReleaseLicenseType),

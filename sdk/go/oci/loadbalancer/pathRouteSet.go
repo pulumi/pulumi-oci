@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loadbalancer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewPathRouteSet(ctx, "test_path_route_set", &LoadBalancer.PathRouteSetArgs{
+//			_, err := loadbalancer.NewPathRouteSet(ctx, "test_path_route_set", &loadbalancer.PathRouteSetArgs{
 //				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
 //				Name:           pulumi.Any(pathRouteSetName),
 //				PathRoutes: loadbalancer.PathRouteSetPathRouteArray{

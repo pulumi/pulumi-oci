@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/objectstorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.GetObjectLifecyclePolicy(ctx, &objectstorage.GetObjectLifecyclePolicyArgs{
+//			_, err := objectstorage.GetObjectLifecyclePolicy(ctx, &objectstorage.GetObjectLifecyclePolicyArgs{
 //				Bucket:    objectLifecyclePolicyBucket,
 //				Namespace: objectLifecyclePolicyNamespace,
 //			}, nil)

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waas"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waas"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.GetWaasPolicy(ctx, &waas.GetWaasPolicyArgs{
+//			_, err := waas.GetWaasPolicy(ctx, &waas.GetWaasPolicyArgs{
 //				WaasPolicyId: testWaasPolicyOciWaasWaasPolicy.Id,
 //			}, nil)
 //			if err != nil {

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewKeyStore(ctx, "test_key_store", &Database.KeyStoreArgs{
+//			_, err := database.NewKeyStore(ctx, "test_key_store", &database.KeyStoreArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(keyStoreDisplayName),
 //				TypeDetails: &database.KeyStoreTypeDetailsArgs{

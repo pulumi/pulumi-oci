@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FleetAppsManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/fleetappsmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FleetAppsManagement.GetSchedulerJobJobActivityResources(ctx, &fleetappsmanagement.GetSchedulerJobJobActivityResourcesArgs{
+//			_, err := fleetappsmanagement.GetSchedulerJobJobActivityResources(ctx, &fleetappsmanagement.GetSchedulerJobJobActivityResourcesArgs{
 //				JobActivityId:  testJobActivity.Id,
 //				SchedulerJobId: testJob.Id,
 //				ResourceTaskId: pulumi.StringRef(testResourceTask.Id),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/healthchecks"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.GetPingMonitor(ctx, &healthchecks.GetPingMonitorArgs{
+//			_, err := healthchecks.GetPingMonitor(ctx, &healthchecks.GetPingMonitorArgs{
 //				MonitorId: testMonitor.Id,
 //			}, nil)
 //			if err != nil {

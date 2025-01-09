@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Limits"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/limits"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Limits.GetLimitValues(ctx, &limits.GetLimitValuesArgs{
+//			_, err := limits.GetLimitValues(ctx, &limits.GetLimitValuesArgs{
 //				CompartmentId:      tenancyOcid,
 //				ServiceName:        testService.Name,
 //				AvailabilityDomain: pulumi.StringRef(limitValueAvailabilityDomain),

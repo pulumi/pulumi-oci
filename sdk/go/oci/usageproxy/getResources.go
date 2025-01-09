@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/UsageProxy"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/usageproxy"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := UsageProxy.GetResources(ctx, &usageproxy.GetResourcesArgs{
+//			_, err := usageproxy.GetResources(ctx, &usageproxy.GetResourcesArgs{
 //				CompartmentId: compartmentId,
 //				ServiceName:   testService.Name,
 //				EntitlementId: pulumi.StringRef(testEntitlement.Id),

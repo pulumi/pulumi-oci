@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Functions"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/functions"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.NewInvokeFunction(ctx, "test_invoke_function", &Functions.InvokeFunctionArgs{
+//			_, err := functions.NewInvokeFunction(ctx, "test_invoke_function", &functions.InvokeFunctionArgs{
 //				FunctionId:          pulumi.Any(testFunction.Id),
 //				InvokeFunctionBody:  pulumi.Any(invokeFunctionInvokeFunctionBody),
 //				FnIntent:            pulumi.Any(invokeFunctionFnIntent),

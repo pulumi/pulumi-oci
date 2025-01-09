@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewAuditArchiveRetrieval(ctx, "test_audit_archive_retrieval", &DataSafe.AuditArchiveRetrievalArgs{
+//			_, err := datasafe.NewAuditArchiveRetrieval(ctx, "test_audit_archive_retrieval", &datasafe.AuditArchiveRetrievalArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				EndDate:       pulumi.Any(auditArchiveRetrievalEndDate),
 //				StartDate:     pulumi.Any(auditArchiveRetrievalStartDate),

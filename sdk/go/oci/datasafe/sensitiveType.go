@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSensitiveType(ctx, "test_sensitive_type", &DataSafe.SensitiveTypeArgs{
+//			_, err := datasafe.NewSensitiveType(ctx, "test_sensitive_type", &datasafe.SensitiveTypeArgs{
 //				CompartmentId:          pulumi.Any(compartmentId),
 //				EntityType:             pulumi.Any(sensitiveTypeEntityType),
 //				CommentPattern:         pulumi.Any(sensitiveTypeCommentPattern),

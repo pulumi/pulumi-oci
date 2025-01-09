@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenerativeAi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/generativeai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.GetEndpoints(ctx, &generativeai.GetEndpointsArgs{
+//			_, err := generativeai.GetEndpoints(ctx, &generativeai.GetEndpointsArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(endpointDisplayName),
 //				Id:            pulumi.StringRef(endpointId),

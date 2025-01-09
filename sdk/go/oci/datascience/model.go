@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datascience"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModel(ctx, "test_model", &DataScience.ModelArgs{
+//			_, err := datascience.NewModel(ctx, "test_model", &datascience.ModelArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ProjectId:     pulumi.Any(testProject.Id),
 //				BackupSetting: &datascience.ModelBackupSettingArgs{

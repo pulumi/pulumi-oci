@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ManagementDashboard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/managementdashboard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementDashboard.NewManagementDashboardsImport(ctx, "test_management_dashboards_import", &ManagementDashboard.ManagementDashboardsImportArgs{
+//			_, err := managementdashboard.NewManagementDashboardsImport(ctx, "test_management_dashboards_import", &managementdashboard.ManagementDashboardsImportArgs{
 //				ImportDetails:     pulumi.Any(sampleImportDetails),
 //				ImportDetailsFile: pulumi.Any(sampleImportDetailsFilePath),
 //			})

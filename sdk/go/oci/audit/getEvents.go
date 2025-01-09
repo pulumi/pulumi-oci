@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Audit"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/audit"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Audit.GetEvents(ctx, &audit.GetEventsArgs{
+//			_, err := audit.GetEvents(ctx, &audit.GetEventsArgs{
 //				CompartmentId: compartmentId,
 //				EndTime:       auditEventEndTime,
 //				StartTime:     auditEventStartTime,

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DelegateAccessControl"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/delegateaccesscontrol"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DelegateAccessControl.GetDelegationControlResources(ctx, &delegateaccesscontrol.GetDelegationControlResourcesArgs{
+//			_, err := delegateaccesscontrol.GetDelegationControlResources(ctx, &delegateaccesscontrol.GetDelegationControlResourcesArgs{
 //				DelegationControlId: testDelegationControl.Id,
 //			}, nil)
 //			if err != nil {

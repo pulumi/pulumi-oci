@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Functions"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/functions"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.GetPbfListingTriggers(ctx, &functions.GetPbfListingTriggersArgs{
+//			_, err := functions.GetPbfListingTriggers(ctx, &functions.GetPbfListingTriggersArgs{
 //				Name: pulumi.StringRef(pbfListingTriggerName),
 //			}, nil)
 //			if err != nil {

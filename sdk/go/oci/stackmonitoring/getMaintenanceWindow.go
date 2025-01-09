@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/stackmonitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.GetMaintenanceWindow(ctx, &stackmonitoring.GetMaintenanceWindowArgs{
+//			_, err := stackmonitoring.GetMaintenanceWindow(ctx, &stackmonitoring.GetMaintenanceWindowArgs{
 //				MaintenanceWindowId: testMaintenanceWindowOciStackMonitoringMaintenanceWindow.Id,
 //			}, nil)
 //			if err != nil {

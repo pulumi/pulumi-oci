@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewExadataInsight(ctx, "test_exadata_insight", &Opsi.ExadataInsightArgs{
+//			_, err := opsi.NewExadataInsight(ctx, "test_exadata_insight", &opsi.ExadataInsightArgs{
 //				CompartmentId:                     pulumi.Any(compartmentId),
 //				EnterpriseManagerBridgeId:         pulumi.Any(testEnterpriseManagerBridge.Id),
 //				EnterpriseManagerEntityIdentifier: pulumi.Any(exadataInsightEnterpriseManagerEntityIdentifier),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.NewJavaDownloadsJavaLicenseAcceptanceRecord(ctx, "test_java_license_acceptance_record", &Jms.JavaDownloadsJavaLicenseAcceptanceRecordArgs{
+//			_, err := jms.NewJavaDownloadsJavaLicenseAcceptanceRecord(ctx, "test_java_license_acceptance_record", &jms.JavaDownloadsJavaLicenseAcceptanceRecordArgs{
 //				CompartmentId:           pulumi.Any(tenancyOcid),
 //				LicenseAcceptanceStatus: pulumi.Any(javaLicenseAcceptanceRecordLicenseAcceptanceStatus),
 //				LicenseType:             pulumi.Any(javaLicenseAcceptanceRecordLicenseType),

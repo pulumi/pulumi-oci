@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/marketplace"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Marketplace.GetPublicationPackages(ctx, &marketplace.GetPublicationPackagesArgs{
+//			_, err := marketplace.GetPublicationPackages(ctx, &marketplace.GetPublicationPackagesArgs{
 //				PublicationId:  testPublication.Id,
 //				PackageType:    pulumi.StringRef(publicationPackagePackageType),
 //				PackageVersion: pulumi.StringRef(publicationPackagePackageVersion),

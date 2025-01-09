@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Bastion"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/bastion"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Bastion.GetSessions(ctx, &bastion.GetSessionsArgs{
+//			_, err := bastion.GetSessions(ctx, &bastion.GetSessionsArgs{
 //				BastionId:             testBastion.Id,
 //				DisplayName:           pulumi.StringRef(sessionDisplayName),
 //				SessionId:             pulumi.StringRef(testSession.Id),

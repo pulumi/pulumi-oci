@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetRegions(ctx, &identity.GetRegionsArgs{}, nil)
+//			_, err := identity.GetRegions(ctx, &identity.GetRegionsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

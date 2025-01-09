@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewWlpAgent(ctx, "test_wlp_agent", &CloudGuard.WlpAgentArgs{
+//			_, err := cloudguard.NewWlpAgent(ctx, "test_wlp_agent", &cloudguard.WlpAgentArgs{
 //				AgentVersion:             pulumi.Any(wlpAgentAgentVersion),
 //				CertificateSignedRequest: pulumi.Any(wlpAgentCertificateSignedRequest),
 //				CompartmentId:            pulumi.Any(compartmentId),

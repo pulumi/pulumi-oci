@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewVmClusterAddVirtualNetwork(ctx, "test_vm_cluster_add_virtual_machine", &Database.VmClusterAddVirtualNetworkArgs{
+//			_, err := database.NewVmClusterAddVirtualNetwork(ctx, "test_vm_cluster_add_virtual_machine", &database.VmClusterAddVirtualNetworkArgs{
 //				DbServers: database.VmClusterAddVirtualNetworkDbServerArray{
 //					&database.VmClusterAddVirtualNetworkDbServerArgs{
 //						DbServerId: pulumi.Any(testDbServer.Id),

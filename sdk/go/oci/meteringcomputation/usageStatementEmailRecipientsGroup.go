@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsageStatementEmailRecipientsGroup(ctx, "test_usage_statement_email_recipients_group", &MeteringComputation.UsageStatementEmailRecipientsGroupArgs{
+//			_, err := meteringcomputation.NewUsageStatementEmailRecipientsGroup(ctx, "test_usage_statement_email_recipients_group", &meteringcomputation.UsageStatementEmailRecipientsGroupArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				RecipientsLists: meteringcomputation.UsageStatementEmailRecipientsGroupRecipientsListArray{
 //					&meteringcomputation.UsageStatementEmailRecipientsGroupRecipientsListArgs{

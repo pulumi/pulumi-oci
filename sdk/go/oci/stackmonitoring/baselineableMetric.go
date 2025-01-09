@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/stackmonitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewBaselineableMetric(ctx, "test_baselineable_metric", &StackMonitoring.BaselineableMetricArgs{
+//			_, err := stackmonitoring.NewBaselineableMetric(ctx, "test_baselineable_metric", &stackmonitoring.BaselineableMetricArgs{
 //				Column:        pulumi.Any(baselineableMetricColumn),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Namespace:     pulumi.Any(baselineableMetricNamespace),

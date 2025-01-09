@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataIntegration"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataintegration"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.GetWorkspaceApplicationTaskSchedule(ctx, &dataintegration.GetWorkspaceApplicationTaskScheduleArgs{
+//			_, err := dataintegration.GetWorkspaceApplicationTaskSchedule(ctx, &dataintegration.GetWorkspaceApplicationTaskScheduleArgs{
 //				ApplicationKey:  workspaceApplicationTaskScheduleApplicationKey,
 //				TaskScheduleKey: workspaceApplicationTaskScheduleTaskScheduleKey,
 //				WorkspaceId:     testWorkspace.Id,

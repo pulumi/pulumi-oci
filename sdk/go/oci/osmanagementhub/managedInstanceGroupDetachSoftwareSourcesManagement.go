@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewManagedInstanceGroupDetachSoftwareSourcesManagement(ctx, "test_managed_instance_group_detach_software_sources_management", &OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementArgs{
+//			_, err := osmanagementhub.NewManagedInstanceGroupDetachSoftwareSourcesManagement(ctx, "test_managed_instance_group_detach_software_sources_management", &osmanagementhub.ManagedInstanceGroupDetachSoftwareSourcesManagementArgs{
 //				ManagedInstanceGroupId: pulumi.Any(testManagedInstanceGroup.Id),
 //				SoftwareSources:        pulumi.Any(managedInstanceGroupDetachSoftwareSourcesManagementSoftwareSources),
 //				WorkRequestDetails: &osmanagementhub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs{

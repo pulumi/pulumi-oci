@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waas"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waas"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewCertificate(ctx, "test_certificate", &Waas.CertificateArgs{
+//			_, err := waas.NewCertificate(ctx, "test_certificate", &waas.CertificateArgs{
 //				CertificateData: pulumi.Any(certificateCertificateData),
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				PrivateKeyData:  pulumi.Any(certificatePrivateKeyData),

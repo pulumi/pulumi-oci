@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.GetNetworkFirewallPolicyUrlLists(ctx, &networkfirewall.GetNetworkFirewallPolicyUrlListsArgs{
+//			_, err := networkfirewall.GetNetworkFirewallPolicyUrlLists(ctx, &networkfirewall.GetNetworkFirewallPolicyUrlListsArgs{
 //				NetworkFirewallPolicyId: testNetworkFirewallPolicy.Id,
 //				DisplayName:             pulumi.StringRef(networkFirewallPolicyUrlListDisplayName),
 //			}, nil)

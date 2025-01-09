@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewLifecycleEnvironment(ctx, "test_lifecycle_environment", &OsManagementHub.LifecycleEnvironmentArgs{
+//			_, err := osmanagementhub.NewLifecycleEnvironment(ctx, "test_lifecycle_environment", &osmanagementhub.LifecycleEnvironmentArgs{
 //				ArchType:      pulumi.Any(lifecycleEnvironmentArchType),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(lifecycleEnvironmentDisplayName),

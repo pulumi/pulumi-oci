@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ComputeCloud"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/computecloud"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ComputeCloud.NewAtCustomerCccInfrastructure(ctx, "test_ccc_infrastructure", &ComputeCloud.AtCustomerCccInfrastructureArgs{
+//			_, err := computecloud.NewAtCustomerCccInfrastructure(ctx, "test_ccc_infrastructure", &computecloud.AtCustomerCccInfrastructureArgs{
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DisplayName:          pulumi.Any(cccInfrastructureDisplayName),
 //				SubnetId:             pulumi.Any(testSubnet.Id),

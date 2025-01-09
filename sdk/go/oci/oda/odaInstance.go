@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Oda"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oda"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oda.NewOdaInstance(ctx, "test_oda_instance", &Oda.OdaInstanceArgs{
+//			_, err := oda.NewOdaInstance(ctx, "test_oda_instance", &oda.OdaInstanceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ShapeName:     pulumi.String("DEVELOPMENT"),
 //				DefinedTags: pulumi.StringMap{

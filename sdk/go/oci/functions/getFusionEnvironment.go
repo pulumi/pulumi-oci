@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Functions"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/functions"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.GetFusionEnvironment(ctx, &functions.GetFusionEnvironmentArgs{
+//			_, err := functions.GetFusionEnvironment(ctx, &functions.GetFusionEnvironmentArgs{
 //				FusionEnvironmentId: testFusionEnvironmentOciFusionAppsFusionEnvironment.Id,
 //			}, nil)
 //			if err != nil {

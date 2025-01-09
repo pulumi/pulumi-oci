@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.GetTargetAlertPolicyAssociations(ctx, &datasafe.GetTargetAlertPolicyAssociationsArgs{
+//			_, err := datasafe.GetTargetAlertPolicyAssociations(ctx, &datasafe.GetTargetAlertPolicyAssociationsArgs{
 //				CompartmentId:                   compartmentId,
 //				AccessLevel:                     pulumi.StringRef(targetAlertPolicyAssociationAccessLevel),
 //				AlertPolicyId:                   pulumi.StringRef(testAlertPolicy.Id),

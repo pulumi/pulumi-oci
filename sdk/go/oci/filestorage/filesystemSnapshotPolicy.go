@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewFilesystemSnapshotPolicy(ctx, "test_filesystem_snapshot_policy", &FileStorage.FilesystemSnapshotPolicyArgs{
+//			_, err := filestorage.NewFilesystemSnapshotPolicy(ctx, "test_filesystem_snapshot_policy", &filestorage.FilesystemSnapshotPolicyArgs{
 //				AvailabilityDomain: pulumi.Any(filesystemSnapshotPolicyAvailabilityDomain),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{

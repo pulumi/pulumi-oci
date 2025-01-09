@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.GetSecurityRecipes(ctx, &cloudguard.GetSecurityRecipesArgs{
+//			_, err := cloudguard.GetSecurityRecipes(ctx, &cloudguard.GetSecurityRecipesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(securityRecipeDisplayName),
 //				Id:            pulumi.StringRef(securityRecipeId),

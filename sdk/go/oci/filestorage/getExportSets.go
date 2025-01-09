@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.GetExportSets(ctx, &filestorage.GetExportSetsArgs{
+//			_, err := filestorage.GetExportSets(ctx, &filestorage.GetExportSetsArgs{
 //				AvailabilityDomain: exportSetAvailabilityDomain,
 //				CompartmentId:      compartmentId,
 //				DisplayName:        pulumi.StringRef(exportSetDisplayName),

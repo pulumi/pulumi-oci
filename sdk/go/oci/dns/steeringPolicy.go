@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewSteeringPolicy(ctx, "test_steering_policy", &Dns.SteeringPolicyArgs{
+//			_, err := dns.NewSteeringPolicy(ctx, "test_steering_policy", &dns.SteeringPolicyArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(steeringPolicyDisplayName),
 //				Template:      pulumi.Any(steeringPolicyTemplate),

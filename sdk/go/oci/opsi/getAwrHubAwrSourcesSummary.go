@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.GetAwrHubAwrSourcesSummary(ctx, &opsi.GetAwrHubAwrSourcesSummaryArgs{
+//			_, err := opsi.GetAwrHubAwrSourcesSummary(ctx, &opsi.GetAwrHubAwrSourcesSummaryArgs{
 //				AwrHubId:      testAwrHub.Id,
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				Name:          pulumi.StringRef(awrHubAwrSourcesSummaryName),

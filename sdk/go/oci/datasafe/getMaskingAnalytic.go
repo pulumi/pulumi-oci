@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.GetMaskingAnalytic(ctx, &datasafe.GetMaskingAnalyticArgs{
+//			_, err := datasafe.GetMaskingAnalytic(ctx, &datasafe.GetMaskingAnalyticArgs{
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: pulumi.BoolRef(maskingAnalyticCompartmentIdInSubtree),
 //				GroupBy:                pulumi.StringRef(maskingAnalyticGroupBy),

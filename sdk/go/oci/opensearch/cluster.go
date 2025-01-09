@@ -32,14 +32,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opensearch"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opensearch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opensearch.NewCluster(ctx, "test_opensearch_cluster", &Opensearch.ClusterArgs{
+//			_, err := opensearch.NewCluster(ctx, "test_opensearch_cluster", &opensearch.ClusterArgs{
 //				CompartmentId:                  pulumi.Any(compartmentId),
 //				DataNodeCount:                  pulumi.Any(opensearchClusterDataNodeCount),
 //				DataNodeHostMemoryGb:           pulumi.Any(opensearchClusterDataNodeHostMemoryGb),

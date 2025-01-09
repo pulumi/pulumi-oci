@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.GetInstallationSite(ctx, &jms.GetInstallationSiteArgs{
+//			_, err := jms.GetInstallationSite(ctx, &jms.GetInstallationSiteArgs{
 //				FleetId:           testFleet.Id,
 //				ApplicationId:     pulumi.StringRef(fleetInstallationSiteApplicationId),
 //				InstallationPath:  pulumi.StringRef(fleetInstallationSiteInstallationPath),

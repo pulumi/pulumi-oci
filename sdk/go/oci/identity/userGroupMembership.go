@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUserGroupMembership(ctx, "test_user_group_membership", &Identity.UserGroupMembershipArgs{
+//			_, err := identity.NewUserGroupMembership(ctx, "test_user_group_membership", &identity.UserGroupMembershipArgs{
 //				GroupId: pulumi.Any(testGroup.Id),
 //				UserId:  pulumi.Any(testUser.Id),
 //			})

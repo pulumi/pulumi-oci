@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetDedicatedVmHostInstances(ctx, &core.GetDedicatedVmHostInstancesArgs{
+//			_, err := core.GetDedicatedVmHostInstances(ctx, &core.GetDedicatedVmHostInstancesArgs{
 //				CompartmentId:      compartmentId,
 //				DedicatedVmHostId:  testDedicatedVmHost.Id,
 //				AvailabilityDomain: pulumi.StringRef(dedicatedVmHostsInstanceAvailabilityDomain),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Nosql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/nosql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Nosql.GetIndex(ctx, &nosql.GetIndexArgs{
+//			_, err := nosql.GetIndex(ctx, &nosql.GetIndexArgs{
 //				IndexName:     testIndexOciNosqlIndex.Name,
 //				TableNameOrId: testTableNameOr.Id,
 //				CompartmentId: compartmentId,

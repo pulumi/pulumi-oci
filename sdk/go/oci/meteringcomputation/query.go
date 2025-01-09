@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewQuery(ctx, "test_query", &MeteringComputation.QueryArgs{
+//			_, err := meteringcomputation.NewQuery(ctx, "test_query", &meteringcomputation.QueryArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				QueryDefinition: &meteringcomputation.QueryQueryDefinitionArgs{
 //					CostAnalysisUi: &meteringcomputation.QueryQueryDefinitionCostAnalysisUiArgs{

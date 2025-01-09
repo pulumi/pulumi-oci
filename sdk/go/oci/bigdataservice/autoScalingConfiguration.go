@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/bigdataservice"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewAutoScalingConfiguration(ctx, "test_auto_scaling_configuration", &BigDataService.AutoScalingConfigurationArgs{
+//			_, err := bigdataservice.NewAutoScalingConfiguration(ctx, "test_auto_scaling_configuration", &bigdataservice.AutoScalingConfigurationArgs{
 //				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
 //				ClusterAdminPassword: pulumi.Any(autoScalingConfigurationClusterAdminPassword),
 //				IsEnabled:            pulumi.Any(autoScalingConfigurationIsEnabled),

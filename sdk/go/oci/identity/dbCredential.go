@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDbCredential(ctx, "test_db_credential", &Identity.DbCredentialArgs{
+//			_, err := identity.NewDbCredential(ctx, "test_db_credential", &identity.DbCredentialArgs{
 //				Description: pulumi.Any(dbCredentialDescription),
 //				Password:    pulumi.Any(dbCredentialPassword),
 //				UserId:      pulumi.Any(testUser.Id),

@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/artifacts"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewGenericArtifact(ctx, "test_generic_artifact", &Artifacts.GenericArtifactArgs{
+//			_, err := artifacts.NewGenericArtifact(ctx, "test_generic_artifact", &artifacts.GenericArtifactArgs{
 //				ArtifactId: pulumi.Any(testArtifact.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),

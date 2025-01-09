@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenerativeAi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/generativeai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.NewAgentAgentEndpoint(ctx, "test_agent_endpoint", &GenerativeAi.AgentAgentEndpointArgs{
+//			_, err := generativeai.NewAgentAgentEndpoint(ctx, "test_agent_endpoint", &generativeai.AgentAgentEndpointArgs{
 //				AgentId:       pulumi.Any(testAgent.Id),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ContentModerationConfig: &generativeai.AgentAgentEndpointContentModerationConfigArgs{

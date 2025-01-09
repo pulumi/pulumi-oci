@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsUnprocessedDataBucketManagement(ctx, "test_log_analytics_unprocessed_data_bucket_management", &LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs{
+//			_, err := loganalytics.NewLogAnalyticsUnprocessedDataBucketManagement(ctx, "test_log_analytics_unprocessed_data_bucket_management", &loganalytics.LogAnalyticsUnprocessedDataBucketManagementArgs{
 //				Bucket:    pulumi.Any(logAnalyticsUnprocessedDataBucketManagementBucket),
 //				Namespace: pulumi.Any(logAnalyticsUnprocessedDataBucketManagementNamespace),
 //			})

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Zpr"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/zpr"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Zpr.NewZprPolicy(ctx, "test_zpr_policy", &Zpr.ZprPolicyArgs{
+//			_, err := zpr.NewZprPolicy(ctx, "test_zpr_policy", &zpr.ZprPolicyArgs{
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				Description:   pulumi.Any(zprPolicyDescription),
 //				Name:          pulumi.Any(zprPolicyName),

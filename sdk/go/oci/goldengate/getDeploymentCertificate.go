@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/goldengate"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.GetDeploymentCertificate(ctx, &goldengate.GetDeploymentCertificateArgs{
+//			_, err := goldengate.GetDeploymentCertificate(ctx, &goldengate.GetDeploymentCertificateArgs{
 //				CertificateKey: deploymentCertificateCertificateKey,
 //				DeploymentId:   testDeployment.Id,
 //			}, nil)

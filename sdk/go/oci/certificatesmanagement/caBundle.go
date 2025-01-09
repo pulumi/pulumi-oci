@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/certificatesmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CertificatesManagement.NewCaBundle(ctx, "test_ca_bundle", &CertificatesManagement.CaBundleArgs{
+//			_, err := certificatesmanagement.NewCaBundle(ctx, "test_ca_bundle", &certificatesmanagement.CaBundleArgs{
 //				CaBundlePem:   pulumi.Any(caBundleCaBundlePem),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(caBundleName),

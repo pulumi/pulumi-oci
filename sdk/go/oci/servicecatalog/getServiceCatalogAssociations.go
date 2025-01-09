@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicecatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceCatalog.GetServiceCatalogAssociations(ctx, &servicecatalog.GetServiceCatalogAssociationsArgs{
+//			_, err := servicecatalog.GetServiceCatalogAssociations(ctx, &servicecatalog.GetServiceCatalogAssociationsArgs{
 //				EntityId:                    pulumi.StringRef(testEntity.Id),
 //				EntityType:                  pulumi.StringRef(serviceCatalogAssociationEntityType),
 //				ServiceCatalogAssociationId: pulumi.StringRef(testServiceCatalogAssociation.Id),

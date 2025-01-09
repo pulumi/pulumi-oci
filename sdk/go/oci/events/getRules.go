@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Events"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/events"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Events.GetRules(ctx, &events.GetRulesArgs{
+//			_, err := events.GetRules(ctx, &events.GetRulesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(ruleDisplayName),
 //				State:         pulumi.StringRef(ruleState),

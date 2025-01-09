@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/SecurityAttribute"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/securityattribute"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := SecurityAttribute.GetSecurityAttributes(ctx, &securityattribute.GetSecurityAttributesArgs{
+//			_, err := securityattribute.GetSecurityAttributes(ctx, &securityattribute.GetSecurityAttributesArgs{
 //				SecurityAttributeNamespaceId: testSecurityAttributeNamespace.Id,
 //				State:                        pulumi.StringRef(securityAttributeState),
 //			}, nil)

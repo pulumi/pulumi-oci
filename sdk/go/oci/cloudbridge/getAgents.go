@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.GetAgents(ctx, &cloudbridge.GetAgentsArgs{
+//			_, err := cloudbridge.GetAgents(ctx, &cloudbridge.GetAgentsArgs{
 //				CompartmentId: compartmentId,
 //				AgentId:       pulumi.StringRef(testAgent.Id),
 //				DisplayName:   pulumi.StringRef(agentDisplayName),

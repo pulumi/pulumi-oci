@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Adm"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/adm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Adm.GetRemediationRun(ctx, &adm.GetRemediationRunArgs{
+//			_, err := adm.GetRemediationRun(ctx, &adm.GetRemediationRunArgs{
 //				RemediationRunId: testRemediationRunOciAdmRemediationRun.Id,
 //			}, nil)
 //			if err != nil {

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/optimizer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Optimizer.GetProfile(ctx, &optimizer.GetProfileArgs{
+//			_, err := optimizer.GetProfile(ctx, &optimizer.GetProfileArgs{
 //				ProfileId: testProfileOciOptimizerProfile.Id,
 //			}, nil)
 //			if err != nil {

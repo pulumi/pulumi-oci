@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/managementagent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.NewManagementAgentDataSource(ctx, "test_management_agent_data_source", &ManagementAgent.ManagementAgentDataSourceArgs{
+//			_, err := managementagent.NewManagementAgentDataSource(ctx, "test_management_agent_data_source", &managementagent.ManagementAgentDataSourceArgs{
 //				CompartmentId:     pulumi.Any(compartmentId),
 //				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
 //				Name:              pulumi.Any(managementAgentDataSourceName),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicecatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceCatalog.GetPrivateApplicationPackages(ctx, &servicecatalog.GetPrivateApplicationPackagesArgs{
+//			_, err := servicecatalog.GetPrivateApplicationPackages(ctx, &servicecatalog.GetPrivateApplicationPackagesArgs{
 //				PrivateApplicationId:        testPrivateApplication.Id,
 //				DisplayName:                 pulumi.StringRef(privateApplicationPackageDisplayName),
 //				PackageTypes:                privateApplicationPackagePackageType,

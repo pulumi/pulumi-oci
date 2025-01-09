@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicemesh"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.GetVirtualServices(ctx, &servicemesh.GetVirtualServicesArgs{
+//			_, err := servicemesh.GetVirtualServices(ctx, &servicemesh.GetVirtualServicesArgs{
 //				CompartmentId: compartmentId,
 //				Id:            pulumi.StringRef(virtualServiceId),
 //				MeshId:        pulumi.StringRef(testMesh.Id),

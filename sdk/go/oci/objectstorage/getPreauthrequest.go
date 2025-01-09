@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/objectstorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.GetPreauthrequest(ctx, &objectstorage.GetPreauthrequestArgs{
+//			_, err := objectstorage.GetPreauthrequest(ctx, &objectstorage.GetPreauthrequestArgs{
 //				Bucket:    preauthenticatedRequestBucket,
 //				Namespace: preauthenticatedRequestNamespace,
 //				ParId:     testPar.Id,

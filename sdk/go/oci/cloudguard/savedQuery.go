@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewSavedQuery(ctx, "test_saved_query", &CloudGuard.SavedQueryArgs{
+//			_, err := cloudguard.NewSavedQuery(ctx, "test_saved_query", &cloudguard.SavedQueryArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(savedQueryDisplayName),
 //				Query:         pulumi.Any(savedQueryQuery),

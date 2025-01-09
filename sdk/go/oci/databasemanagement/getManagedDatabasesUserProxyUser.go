@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetManagedDatabasesUserProxyUser(ctx, &databasemanagement.GetManagedDatabasesUserProxyUserArgs{
+//			_, err := databasemanagement.GetManagedDatabasesUserProxyUser(ctx, &databasemanagement.GetManagedDatabasesUserProxyUserArgs{
 //				ManagedDatabaseId: testManagedDatabase.Id,
 //				UserName:          testUser.Name,
 //				Name:              pulumi.StringRef(managedDatabasesUserProxyUserName),

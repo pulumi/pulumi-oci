@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DisasterRecovery"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/disasterrecovery"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DisasterRecovery.NewDrPlanExecution(ctx, "test_dr_plan_execution", &DisasterRecovery.DrPlanExecutionArgs{
+//			_, err := disasterrecovery.NewDrPlanExecution(ctx, "test_dr_plan_execution", &disasterrecovery.DrPlanExecutionArgs{
 //				ExecutionOptions: &disasterrecovery.DrPlanExecutionExecutionOptionsArgs{
 //					PlanExecutionType:   pulumi.Any(drPlanExecutionExecutionOptionsPlanExecutionType),
 //					ArePrechecksEnabled: pulumi.Any(drPlanExecutionExecutionOptionsArePrechecksEnabled),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/blockchain"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Blockchain.NewPeer(ctx, "test_peer", &Blockchain.PeerArgs{
+//			_, err := blockchain.NewPeer(ctx, "test_peer", &blockchain.PeerArgs{
 //				Ad:                   pulumi.Any(peerAd),
 //				BlockchainPlatformId: pulumi.Any(testBlockchainPlatform.Id),
 //				OcpuAllocationParam: &blockchain.PeerOcpuAllocationParamArgs{

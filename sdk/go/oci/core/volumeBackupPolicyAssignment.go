@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeBackupPolicyAssignment(ctx, "test_volume_backup_policy_assignment", &Core.VolumeBackupPolicyAssignmentArgs{
+//			_, err := core.NewVolumeBackupPolicyAssignment(ctx, "test_volume_backup_policy_assignment", &core.VolumeBackupPolicyAssignmentArgs{
 //				AssetId:     pulumi.Any(testVolume.Id),
 //				PolicyId:    pulumi.Any(testVolumeBackupPolicy.Id),
 //				XrcKmsKeyId: pulumi.Any(testKey.Id),

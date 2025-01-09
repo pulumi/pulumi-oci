@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApmConfig"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmconfig"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmConfig.NewConfig(ctx, "test_config", &ApmConfig.ConfigArgs{
+//			_, err := apmconfig.NewConfig(ctx, "test_config", &apmconfig.ConfigArgs{
 //				ApmDomainId: pulumi.Any(testApmDomain.Id),
 //				ConfigType:  pulumi.Any(configConfigType),
 //				DisplayName: pulumi.Any(configDisplayName),

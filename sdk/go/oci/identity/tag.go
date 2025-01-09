@@ -44,14 +44,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewTag(ctx, "test_tag", &Identity.TagArgs{
+//			_, err := identity.NewTag(ctx, "test_tag", &identity.TagArgs{
 //				Description:    pulumi.Any(tagDescription),
 //				Name:           pulumi.Any(tagName),
 //				TagNamespaceId: pulumi.Any(testTagNamespace.Id),

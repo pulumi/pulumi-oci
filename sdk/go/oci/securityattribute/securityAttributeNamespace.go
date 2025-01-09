@@ -36,14 +36,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/SecurityAttribute"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/securityattribute"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := SecurityAttribute.NewSecurityAttributeNamespace(ctx, "test_security_attribute_namespace", &SecurityAttribute.SecurityAttributeNamespaceArgs{
+//			_, err := securityattribute.NewSecurityAttributeNamespace(ctx, "test_security_attribute_namespace", &securityattribute.SecurityAttributeNamespaceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Description:   pulumi.Any(securityAttributeNamespaceDescription),
 //				Name:          pulumi.Any(securityAttributeNamespaceName),

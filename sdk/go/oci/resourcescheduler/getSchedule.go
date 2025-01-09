@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ResourceScheduler"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/resourcescheduler"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ResourceScheduler.GetSchedule(ctx, &resourcescheduler.GetScheduleArgs{
+//			_, err := resourcescheduler.GetSchedule(ctx, &resourcescheduler.GetScheduleArgs{
 //				ScheduleId: testScheduleOciResourceSchedulerSchedule.Id,
 //			}, nil)
 //			if err != nil {

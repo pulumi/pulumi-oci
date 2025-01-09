@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Analytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/analytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.NewAnalyticsInstance(ctx, "test_analytics_instance", &Analytics.AnalyticsInstanceArgs{
+//			_, err := analytics.NewAnalyticsInstance(ctx, "test_analytics_instance", &analytics.AnalyticsInstanceArgs{
 //				Capacity: &analytics.AnalyticsInstanceCapacityArgs{
 //					CapacityType:  pulumi.Any(analyticsInstanceCapacityCapacityType),
 //					CapacityValue: pulumi.Any(analyticsInstanceCapacityCapacityValue),

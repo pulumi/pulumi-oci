@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataIntegration"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataintegration"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceExportRequest(ctx, "test_workspace_export_request", &DataIntegration.WorkspaceExportRequestArgs{
+//			_, err := dataintegration.NewWorkspaceExportRequest(ctx, "test_workspace_export_request", &dataintegration.WorkspaceExportRequestArgs{
 //				Bucket:                   pulumi.Any(workspaceExportRequestBucket),
 //				WorkspaceId:              pulumi.Any(testWorkspace.Id),
 //				AreReferencesIncluded:    pulumi.Any(workspaceExportRequestAreReferencesIncluded),

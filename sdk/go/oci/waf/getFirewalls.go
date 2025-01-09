@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waf"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waf"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waf.GetFirewalls(ctx, &waf.GetFirewallsArgs{
+//			_, err := waf.GetFirewalls(ctx, &waf.GetFirewallsArgs{
 //				CompartmentId:          compartmentId,
 //				DisplayName:            pulumi.StringRef(webAppFirewallDisplayName),
 //				Id:                     pulumi.StringRef(webAppFirewallId),

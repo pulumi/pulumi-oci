@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waf"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waf"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waf.NewAppFirewall(ctx, "test_web_app_firewall", &Waf.AppFirewallArgs{
+//			_, err := waf.NewAppFirewall(ctx, "test_web_app_firewall", &waf.AppFirewallArgs{
 //				BackendType:            pulumi.Any(webAppFirewallBackendType),
 //				CompartmentId:          pulumi.Any(compartmentId),
 //				LoadBalancerId:         pulumi.Any(testLoadBalancer.Id),

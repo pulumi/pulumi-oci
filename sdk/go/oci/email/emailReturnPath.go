@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Email"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/email"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewEmailReturnPath(ctx, "test_email_return_path", &Email.EmailReturnPathArgs{
+//			_, err := email.NewEmailReturnPath(ctx, "test_email_return_path", &email.EmailReturnPathArgs{
 //				ParentResourceId: pulumi.Any(testResource.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),

@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSdmMaskingPolicyDifference(ctx, "test_sdm_masking_policy_difference", &DataSafe.SdmMaskingPolicyDifferenceArgs{
+//			_, err := datasafe.NewSdmMaskingPolicyDifference(ctx, "test_sdm_masking_policy_difference", &datasafe.SdmMaskingPolicyDifferenceArgs{
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				MaskingPolicyId: pulumi.Any(testMaskingPolicy.Id),
 //				DefinedTags: pulumi.StringMap{

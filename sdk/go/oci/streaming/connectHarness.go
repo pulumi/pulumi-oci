@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Streaming"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/streaming"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Streaming.NewConnectHarness(ctx, "test_connect_harness", &Streaming.ConnectHarnessArgs{
+//			_, err := streaming.NewConnectHarness(ctx, "test_connect_harness", &streaming.ConnectHarnessArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(connectHarnessName),
 //				DefinedTags:   pulumi.Any(connectHarnessDefinedTags),

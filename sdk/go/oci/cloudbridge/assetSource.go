@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewAssetSource(ctx, "test_asset_source", &CloudBridge.AssetSourceArgs{
+//			_, err := cloudbridge.NewAssetSource(ctx, "test_asset_source", &cloudbridge.AssetSourceArgs{
 //				AssetsCompartmentId: pulumi.Any(testCompartment.Id),
 //				CompartmentId:       pulumi.Any(compartmentId),
 //				DiscoveryCredentials: &cloudbridge.AssetSourceDiscoveryCredentialsArgs{

@@ -51,14 +51,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewFileSystem(ctx, "test_file_system", &FileStorage.FileSystemArgs{
+//			_, err := filestorage.NewFileSystem(ctx, "test_file_system", &filestorage.FileSystemArgs{
 //				AvailabilityDomain: pulumi.Any(fileSystemAvailabilityDomain),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				CloneAttachStatus:  pulumi.Any(fileSystemCloneAttachStatus),

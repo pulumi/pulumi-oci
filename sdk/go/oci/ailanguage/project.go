@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiLanguage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ailanguage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiLanguage.NewProject(ctx, "test_project", &AiLanguage.ProjectArgs{
+//			_, err := ailanguage.NewProject(ctx, "test_project", &ailanguage.ProjectArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),

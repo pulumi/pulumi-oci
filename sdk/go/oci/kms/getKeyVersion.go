@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.GetKeyVersion(ctx, &kms.GetKeyVersionArgs{
+//			_, err := kms.GetKeyVersion(ctx, &kms.GetKeyVersionArgs{
 //				KeyId:              testKey.Id,
 //				KeyVersionId:       testKeyVersionOciKmsKeyVersion.Id,
 //				ManagementEndpoint: keyVersionManagementEndpoint,

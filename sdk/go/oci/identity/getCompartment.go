@@ -29,14 +29,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetCompartment(ctx, &identity.GetCompartmentArgs{
+//			_, err := identity.GetCompartment(ctx, &identity.GetCompartmentArgs{
 //				Id: compartmentId,
 //			}, nil)
 //			if err != nil {

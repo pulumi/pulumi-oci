@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MediaServices"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mediaservices"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.GetSystemMediaWorkflow(ctx, &mediaservices.GetSystemMediaWorkflowArgs{
+//			_, err := mediaservices.GetSystemMediaWorkflow(ctx, &mediaservices.GetSystemMediaWorkflowArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				Name:          pulumi.StringRef(systemMediaWorkflowName),
 //			}, nil)

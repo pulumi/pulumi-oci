@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.GetSoftwareSourceModuleStreams(ctx, &osmanagementhub.GetSoftwareSourceModuleStreamsArgs{
+//			_, err := osmanagementhub.GetSoftwareSourceModuleStreams(ctx, &osmanagementhub.GetSoftwareSourceModuleStreamsArgs{
 //				SoftwareSourceId:   testSoftwareSource.Id,
 //				IsLatest:           pulumi.BoolRef(softwareSourceModuleStreamIsLatest),
 //				ModuleName:         pulumi.StringRef(softwareSourceModuleStreamModuleName),

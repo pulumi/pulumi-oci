@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/licensemanager"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LicenseManager.NewProductLicense(ctx, "test_product_license", &LicenseManager.ProductLicenseArgs{
+//			_, err := licensemanager.NewProductLicense(ctx, "test_product_license", &licensemanager.ProductLicenseArgs{
 //				CompartmentId:  pulumi.Any(compartmentId),
 //				DisplayName:    pulumi.Any(productLicenseDisplayName),
 //				IsVendorOracle: pulumi.Any(productLicenseIsVendorOracle),

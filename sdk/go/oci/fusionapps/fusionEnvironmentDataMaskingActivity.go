@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FusionApps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/fusionapps"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironmentDataMaskingActivity(ctx, "test_fusion_environment_data_masking_activity", &FusionApps.FusionEnvironmentDataMaskingActivityArgs{
+//			_, err := fusionapps.NewFusionEnvironmentDataMaskingActivity(ctx, "test_fusion_environment_data_masking_activity", &fusionapps.FusionEnvironmentDataMaskingActivityArgs{
 //				FusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
 //				IsResumeDataMasking: pulumi.Any(fusionEnvironmentDataMaskingActivityIsResumeDataMasking),
 //			})

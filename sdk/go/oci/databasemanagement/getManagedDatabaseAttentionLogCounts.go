@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetManagedDatabaseAttentionLogCounts(ctx, &databasemanagement.GetManagedDatabaseAttentionLogCountsArgs{
+//			_, err := databasemanagement.GetManagedDatabaseAttentionLogCounts(ctx, &databasemanagement.GetManagedDatabaseAttentionLogCountsArgs{
 //				ManagedDatabaseId:        testManagedDatabase.Id,
 //				GroupBy:                  pulumi.StringRef(managedDatabaseAttentionLogCountGroupBy),
 //				IsRegularExpression:      pulumi.BoolRef(managedDatabaseAttentionLogCountIsRegularExpression),

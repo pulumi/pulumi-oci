@@ -53,14 +53,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUser(ctx, "test_user", &Identity.UserArgs{
+//			_, err := identity.NewUser(ctx, "test_user", &identity.UserArgs{
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				Description:   pulumi.Any(userDescription),
 //				Name:          pulumi.Any(userName),

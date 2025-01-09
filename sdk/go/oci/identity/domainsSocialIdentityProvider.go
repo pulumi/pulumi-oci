@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsSocialIdentityProvider(ctx, "test_social_identity_provider", &Identity.DomainsSocialIdentityProviderArgs{
+//			_, err := identity.NewDomainsSocialIdentityProvider(ctx, "test_social_identity_provider", &identity.DomainsSocialIdentityProviderArgs{
 //				AccountLinkingEnabled: pulumi.Any(socialIdentityProviderAccountLinkingEnabled),
 //				ConsumerKey:           pulumi.Any(socialIdentityProviderConsumerKey),
 //				ConsumerSecret:        pulumi.Any(socialIdentityProviderConsumerSecret),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudMigrations"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudmigrations"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudMigrations.GetTargetAssets(ctx, &cloudmigrations.GetTargetAssetsArgs{
+//			_, err := cloudmigrations.GetTargetAssets(ctx, &cloudmigrations.GetTargetAssetsArgs{
 //				DisplayName:     pulumi.StringRef(targetAssetDisplayName),
 //				MigrationPlanId: pulumi.StringRef(testMigrationPlan.Id),
 //				State:           pulumi.StringRef(targetAssetState),

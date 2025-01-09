@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenerativeAi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/generativeai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.NewEndpoint(ctx, "test_endpoint", &GenerativeAi.EndpointArgs{
+//			_, err := generativeai.NewEndpoint(ctx, "test_endpoint", &generativeai.EndpointArgs{
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DedicatedAiClusterId: pulumi.Any(testDedicatedAiCluster.Id),
 //				ModelId:              pulumi.Any(testModel.Id),

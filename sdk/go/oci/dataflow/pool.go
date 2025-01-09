@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataflow"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.NewPool(ctx, "test_pool", &DataFlow.PoolArgs{
+//			_, err := dataflow.NewPool(ctx, "test_pool", &dataflow.PoolArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Configurations: dataflow.PoolConfigurationArray{
 //					&dataflow.PoolConfigurationArgs{

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicemesh"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.GetMeshes(ctx, &servicemesh.GetMeshesArgs{
+//			_, err := servicemesh.GetMeshes(ctx, &servicemesh.GetMeshesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(meshDisplayName),
 //				Id:            pulumi.StringRef(meshId),

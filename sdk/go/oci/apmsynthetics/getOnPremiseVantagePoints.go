@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmsynthetics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.GetOnPremiseVantagePoints(ctx, &apmsynthetics.GetOnPremiseVantagePointsArgs{
+//			_, err := apmsynthetics.GetOnPremiseVantagePoints(ctx, &apmsynthetics.GetOnPremiseVantagePointsArgs{
 //				ApmDomainId: testApmDomain.Id,
 //				DisplayName: pulumi.StringRef(onPremiseVantagePointDisplayName),
 //				Name:        pulumi.StringRef(onPremiseVantagePointName),

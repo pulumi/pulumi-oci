@@ -29,14 +29,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetIpv6s(ctx, &core.GetIpv6sArgs{
+//			_, err := core.GetIpv6s(ctx, &core.GetIpv6sArgs{
 //				IpAddress: pulumi.StringRef(ipv6IpAddress),
 //				SubnetId:  pulumi.StringRef(testSubnet.Id),
 //				VnicId:    pulumi.StringRef(testVnicAttachment.Id),

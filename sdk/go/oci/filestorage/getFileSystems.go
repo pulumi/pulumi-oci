@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.GetFileSystems(ctx, &filestorage.GetFileSystemsArgs{
+//			_, err := filestorage.GetFileSystems(ctx, &filestorage.GetFileSystemsArgs{
 //				AvailabilityDomain:         fileSystemAvailabilityDomain,
 //				CompartmentId:              compartmentId,
 //				DisplayName:                pulumi.StringRef(fileSystemDisplayName),

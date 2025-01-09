@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewScheduledJob(ctx, "test_scheduled_job", &OsManagementHub.ScheduledJobArgs{
+//			_, err := osmanagementhub.NewScheduledJob(ctx, "test_scheduled_job", &osmanagementhub.ScheduledJobArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Operations: osmanagementhub.ScheduledJobOperationArray{
 //					&osmanagementhub.ScheduledJobOperationArgs{

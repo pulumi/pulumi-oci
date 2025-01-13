@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenericArtifactsContent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/genericartifactscontent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenericArtifactsContent.NewArtifactByPath(ctx, "test_artifact_by_path", &GenericArtifactsContent.ArtifactByPathArgs{
+//			_, err := genericartifactscontent.NewArtifactByPath(ctx, "test_artifact_by_path", &genericartifactscontent.ArtifactByPathArgs{
 //				ArtifactPath: pulumi.Any(artifactPath),
 //				RepositoryId: pulumi.Any(testRepository.Id),
 //				Version:      pulumi.Any(version),

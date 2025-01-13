@@ -36,14 +36,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ons"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ons"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ons.NewNotificationTopic(ctx, "test_notification_topic", &Ons.NotificationTopicArgs{
+//			_, err := ons.NewNotificationTopic(ctx, "test_notification_topic", &ons.NotificationTopicArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(notificationTopicName),
 //				DefinedTags: pulumi.StringMap{

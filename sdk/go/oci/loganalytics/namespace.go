@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewNamespace(ctx, "test_namespace", &LogAnalytics.NamespaceArgs{
+//			_, err := loganalytics.NewNamespace(ctx, "test_namespace", &loganalytics.NamespaceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				IsOnboarded:   pulumi.Any(isOnboarded),
 //				Namespace:     pulumi.Any(namespaceNamespace),

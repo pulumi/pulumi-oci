@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetJobExecutionsStatus(ctx, &databasemanagement.GetJobExecutionsStatusArgs{
+//			_, err := databasemanagement.GetJobExecutionsStatus(ctx, &databasemanagement.GetJobExecutionsStatusArgs{
 //				CompartmentId:          compartmentId,
 //				EndTime:                jobExecutionsStatusEndTime,
 //				StartTime:              jobExecutionsStatusStartTime,

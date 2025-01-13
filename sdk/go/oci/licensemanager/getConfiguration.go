@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/licensemanager"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LicenseManager.GetConfiguration(ctx, &licensemanager.GetConfigurationArgs{
+//			_, err := licensemanager.GetConfiguration(ctx, &licensemanager.GetConfigurationArgs{
 //				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/stackmonitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewProcessSet(ctx, "test_process_set", &StackMonitoring.ProcessSetArgs{
+//			_, err := stackmonitoring.NewProcessSet(ctx, "test_process_set", &stackmonitoring.ProcessSetArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(processSetDisplayName),
 //				Specification: &stackmonitoring.ProcessSetSpecificationArgs{

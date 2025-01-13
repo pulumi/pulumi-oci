@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Autoscaling"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/autoscaling"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Autoscaling.GetAutoScalingConfigurations(ctx, &autoscaling.GetAutoScalingConfigurationsArgs{
+//			_, err := autoscaling.GetAutoScalingConfigurations(ctx, &autoscaling.GetAutoScalingConfigurationsArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(autoScalingConfigurationDisplayName),
 //			}, nil)

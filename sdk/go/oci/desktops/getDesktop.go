@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Desktops"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/desktops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Desktops.GetDesktop(ctx, &desktops.GetDesktopArgs{
+//			_, err := desktops.GetDesktop(ctx, &desktops.GetDesktopArgs{
 //				DesktopId: testDesktopOciDesktopsDesktop.Id,
 //			}, nil)
 //			if err != nil {

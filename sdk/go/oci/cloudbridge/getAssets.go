@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.GetAssets(ctx, &cloudbridge.GetAssetsArgs{
+//			_, err := cloudbridge.GetAssets(ctx, &cloudbridge.GetAssetsArgs{
 //				CompartmentId:    compartmentId,
 //				AssetId:          pulumi.StringRef(testAsset.Id),
 //				AssetType:        pulumi.StringRef(assetAssetType),

@@ -46,14 +46,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewImage(ctx, "test_image", &Core.ImageArgs{
+//			_, err := core.NewImage(ctx, "test_image", &core.ImageArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				InstanceId:    pulumi.Any(testInstance.Id),
 //				DefinedTags: pulumi.StringMap{
@@ -80,14 +80,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewImage(ctx, "test_image", &Core.ImageArgs{
+//			_, err := core.NewImage(ctx, "test_image", &core.ImageArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(imageDisplayName),
 //				LaunchMode:    pulumi.Any(imageLaunchMode),
@@ -116,14 +116,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewImage(ctx, "test_image", &Core.ImageArgs{
+//			_, err := core.NewImage(ctx, "test_image", &core.ImageArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(imageDisplayName),
 //				LaunchMode:    pulumi.Any(imageLaunchMode),

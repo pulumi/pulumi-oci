@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetCustomerSecretKeys(ctx, &identity.GetCustomerSecretKeysArgs{
+//			_, err := identity.GetCustomerSecretKeys(ctx, &identity.GetCustomerSecretKeysArgs{
 //				UserId: testUser.Id,
 //			}, nil)
 //			if err != nil {

@@ -34,14 +34,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCluster(ctx, "test_compute_cluster", &Core.ComputeClusterArgs{
+//			_, err := core.NewComputeCluster(ctx, "test_compute_cluster", &core.ComputeClusterArgs{
 //				AvailabilityDomain: pulumi.Any(computeClusterAvailabilityDomain),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{

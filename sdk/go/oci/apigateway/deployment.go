@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apigateway"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewDeployment(ctx, "test_deployment", &ApiGateway.DeploymentArgs{
+//			_, err := apigateway.NewDeployment(ctx, "test_deployment", &apigateway.DeploymentArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				GatewayId:     pulumi.Any(testGateway.Id),
 //				PathPrefix:    pulumi.Any(deploymentPathPrefix),

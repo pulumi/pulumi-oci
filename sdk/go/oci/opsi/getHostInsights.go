@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.GetHostInsights(ctx, &opsi.GetHostInsightsArgs{
+//			_, err := opsi.GetHostInsights(ctx, &opsi.GetHostInsightsArgs{
 //				CompartmentId:             pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree:    pulumi.BoolRef(hostInsightCompartmentIdInSubtree),
 //				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Oda"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oda"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oda.GetOdaPrivateEndpointAttachment(ctx, &oda.GetOdaPrivateEndpointAttachmentArgs{
+//			_, err := oda.GetOdaPrivateEndpointAttachment(ctx, &oda.GetOdaPrivateEndpointAttachmentArgs{
 //				OdaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.Id,
 //			}, nil)
 //			if err != nil {

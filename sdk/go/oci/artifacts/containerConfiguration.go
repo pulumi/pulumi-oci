@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/artifacts"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewContainerConfiguration(ctx, "test_container_configuration", nil)
+//			_, err := artifacts.NewContainerConfiguration(ctx, "test_container_configuration", nil)
 //			if err != nil {
 //				return err
 //			}

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetNamedCredential(ctx, &databasemanagement.GetNamedCredentialArgs{
+//			_, err := databasemanagement.GetNamedCredential(ctx, &databasemanagement.GetNamedCredentialArgs{
 //				NamedCredentialId: testNamedCredentialOciDatabaseManagementNamedCredential.Id,
 //			}, nil)
 //			if err != nil {

@@ -19,14 +19,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Functions"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/functions"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.NewApplication(ctx, "test_application", &Functions.ApplicationArgs{
+//			_, err := functions.NewApplication(ctx, "test_application", &functions.ApplicationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(applicationDisplayName),
 //				SubnetIds:     pulumi.Any(applicationSubnetIds),

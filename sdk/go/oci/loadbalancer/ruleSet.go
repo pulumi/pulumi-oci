@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loadbalancer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewRuleSet(ctx, "test_rule_set", &LoadBalancer.RuleSetArgs{
+//			_, err := loadbalancer.NewRuleSet(ctx, "test_rule_set", &loadbalancer.RuleSetArgs{
 //				Items: loadbalancer.RuleSetItemArray{
 //					&loadbalancer.RuleSetItemArgs{
 //						Action:                      pulumi.Any(ruleSetItemsAction),

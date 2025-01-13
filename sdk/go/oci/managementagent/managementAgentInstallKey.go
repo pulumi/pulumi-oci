@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/managementagent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.NewManagementAgentInstallKey(ctx, "test_management_agent_install_key", &ManagementAgent.ManagementAgentInstallKeyArgs{
+//			_, err := managementagent.NewManagementAgentInstallKey(ctx, "test_management_agent_install_key", &managementagent.ManagementAgentInstallKeyArgs{
 //				CompartmentId:          pulumi.Any(compartmentId),
 //				DisplayName:            pulumi.Any(managementAgentInstallKeyDisplayName),
 //				AllowedKeyInstallCount: pulumi.Any(managementAgentInstallKeyAllowedKeyInstallCount),

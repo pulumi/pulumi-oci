@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetCrossConnectGroup(ctx, &core.GetCrossConnectGroupArgs{
+//			_, err := core.GetCrossConnectGroup(ctx, &core.GetCrossConnectGroupArgs{
 //				CrossConnectGroupId: testCrossConnectGroupOciCoreCrossConnectGroup.Id,
 //			}, nil)
 //			if err != nil {

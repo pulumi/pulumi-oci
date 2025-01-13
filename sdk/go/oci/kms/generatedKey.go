@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewGeneratedKey(ctx, "test_generated_key", &Kms.GeneratedKeyArgs{
+//			_, err := kms.NewGeneratedKey(ctx, "test_generated_key", &kms.GeneratedKeyArgs{
 //				CryptoEndpoint:      pulumi.Any(generatedKeyCryptoEndpoint),
 //				IncludePlaintextKey: pulumi.Any(generatedKeyIncludePlaintextKey),
 //				KeyId:               pulumi.Any(testKey.Id),

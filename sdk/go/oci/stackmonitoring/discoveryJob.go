@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/stackmonitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewDiscoveryJob(ctx, "test_discovery_job", &StackMonitoring.DiscoveryJobArgs{
+//			_, err := stackmonitoring.NewDiscoveryJob(ctx, "test_discovery_job", &stackmonitoring.DiscoveryJobArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DiscoveryDetails: &stackmonitoring.DiscoveryJobDiscoveryDetailsArgs{
 //					AgentId: pulumi.Any(managementAgentId),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.GetDiscoverySchedule(ctx, &cloudbridge.GetDiscoveryScheduleArgs{
+//			_, err := cloudbridge.GetDiscoverySchedule(ctx, &cloudbridge.GetDiscoveryScheduleArgs{
 //				DiscoveryScheduleId: testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.Id,
 //			}, nil)
 //			if err != nil {

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewManagedDatabasesResetDatabaseParameter(ctx, "test_managed_databases_reset_database_parameter", &DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs{
+//			_, err := databasemanagement.NewManagedDatabasesResetDatabaseParameter(ctx, "test_managed_databases_reset_database_parameter", &databasemanagement.ManagedDatabasesResetDatabaseParameterArgs{
 //				ManagedDatabaseId: pulumi.Any(testManagedDatabase.Id),
 //				Parameters:        pulumi.Any(managedDatabasesResetDatabaseParameterParameters),
 //				Scope:             pulumi.Any(managedDatabasesResetDatabaseParameterScope),

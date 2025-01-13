@@ -62,14 +62,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVcn(ctx, "test_vcn", &Core.VcnArgs{
+//			_, err := core.NewVcn(ctx, "test_vcn", &core.VcnArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Byoipv6cidrDetails: core.VcnByoipv6cidrDetailArray{
 //					&core.VcnByoipv6cidrDetailArgs{

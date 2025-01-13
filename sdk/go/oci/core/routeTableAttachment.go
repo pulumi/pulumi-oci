@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewRouteTableAttachment(ctx, "test_route_table_attachment", &Core.RouteTableAttachmentArgs{
+//			_, err := core.NewRouteTableAttachment(ctx, "test_route_table_attachment", &core.RouteTableAttachmentArgs{
 //				SubnetId:     pulumi.Any(testSubnet.Id),
 //				RouteTableId: pulumi.Any(testRouteTable.Id),
 //			})

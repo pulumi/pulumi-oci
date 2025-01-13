@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Desktops"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/desktops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Desktops.GetDesktopPools(ctx, &desktops.GetDesktopPoolsArgs{
+//			_, err := desktops.GetDesktopPools(ctx, &desktops.GetDesktopPoolsArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(desktopPoolAvailabilityDomain),
 //				DisplayName:        pulumi.StringRef(desktopPoolDisplayName),

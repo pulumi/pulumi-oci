@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FleetAppsManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/fleetappsmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FleetAppsManagement.GetRunbooks(ctx, &fleetappsmanagement.GetRunbooksArgs{
+//			_, err := fleetappsmanagement.GetRunbooks(ctx, &fleetappsmanagement.GetRunbooksArgs{
 //				CompartmentId:    pulumi.StringRef(compartmentId),
 //				DisplayName:      pulumi.StringRef(runbookDisplayName),
 //				Id:               pulumi.StringRef(runbookId),

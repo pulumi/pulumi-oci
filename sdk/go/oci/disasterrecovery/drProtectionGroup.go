@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DisasterRecovery"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/disasterrecovery"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //
@@ -36,7 +36,7 @@ import (
 //			if param := cfg.GetFloat64("disassociateTrigger"); param != 0 {
 //				disassociateTrigger = param
 //			}
-//			_, err := DisasterRecovery.NewDrProtectionGroup(ctx, "test_dr_protection_group", &DisasterRecovery.DrProtectionGroupArgs{
+//			_, err := disasterrecovery.NewDrProtectionGroup(ctx, "test_dr_protection_group", &disasterrecovery.DrProtectionGroupArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(drProtectionGroupDisplayName),
 //				LogLocation: &disasterrecovery.DrProtectionGroupLogLocationArgs{

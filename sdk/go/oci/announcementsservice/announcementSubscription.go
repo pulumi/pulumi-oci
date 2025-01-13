@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AnnouncementsService"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/announcementsservice"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AnnouncementsService.NewAnnouncementSubscription(ctx, "test_announcement_subscription", &AnnouncementsService.AnnouncementSubscriptionArgs{
+//			_, err := announcementsservice.NewAnnouncementSubscription(ctx, "test_announcement_subscription", &announcementsservice.AnnouncementSubscriptionArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(announcementSubscriptionDisplayName),
 //				OnsTopicId:    pulumi.Any(testNotificationTopic.Id),

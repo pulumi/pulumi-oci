@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsubUsage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osubusage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsubUsage.GetComputedUsage(ctx, &osubusage.GetComputedUsageArgs{
+//			_, err := osubusage.GetComputedUsage(ctx, &osubusage.GetComputedUsageArgs{
 //				CompartmentId:    compartmentId,
 //				ComputedUsageId:  testComputedUsageOciOsubUsageComputedUsage.Id,
 //				Fields:           computedUsageFields,

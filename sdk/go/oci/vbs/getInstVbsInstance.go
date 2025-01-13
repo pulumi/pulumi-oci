@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Vbs"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/vbs"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Vbs.GetInstVbsInstance(ctx, &vbs.GetInstVbsInstanceArgs{
+//			_, err := vbs.GetInstVbsInstance(ctx, &vbs.GetInstVbsInstanceArgs{
 //				VbsInstanceId: testVbsInstanceOciVbsInstVbsInstance.Id,
 //			}, nil)
 //			if err != nil {

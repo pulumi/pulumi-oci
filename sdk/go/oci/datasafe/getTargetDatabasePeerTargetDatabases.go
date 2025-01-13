@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.GetTargetDatabasePeerTargetDatabases(ctx, &datasafe.GetTargetDatabasePeerTargetDatabasesArgs{
+//			_, err := datasafe.GetTargetDatabasePeerTargetDatabases(ctx, &datasafe.GetTargetDatabasePeerTargetDatabasesArgs{
 //				TargetDatabaseId: testTargetDatabase.Id,
 //			}, nil)
 //			if err != nil {

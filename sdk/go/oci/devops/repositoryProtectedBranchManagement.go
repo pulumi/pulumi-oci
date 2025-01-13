@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DevOps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/devops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewRepositoryProtectedBranchManagement(ctx, "test_repository_protected_branch_management", &DevOps.RepositoryProtectedBranchManagementArgs{
+//			_, err := devops.NewRepositoryProtectedBranchManagement(ctx, "test_repository_protected_branch_management", &devops.RepositoryProtectedBranchManagementArgs{
 //				BranchName:       pulumi.Any(repositoryProtectedBranchManagementBranchName),
 //				RepositoryId:     pulumi.Any(testRepository.Id),
 //				ProtectionLevels: pulumi.Any(repositoryProtectedBranchManagementProtectionLevels),

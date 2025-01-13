@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.GetResolverEndpoints(ctx, &dns.GetResolverEndpointsArgs{
+//			_, err := dns.GetResolverEndpoints(ctx, &dns.GetResolverEndpointsArgs{
 //				ResolverId: testResolver.Id,
 //				Scope:      "PRIVATE",
 //				Name:       pulumi.StringRef(resolverEndpointName),

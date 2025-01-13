@@ -42,14 +42,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewOutboundConnector(ctx, "test_outbound_connector", &FileStorage.OutboundConnectorArgs{
+//			_, err := filestorage.NewOutboundConnector(ctx, "test_outbound_connector", &filestorage.OutboundConnectorArgs{
 //				AvailabilityDomain:    pulumi.Any(outboundConnectorAvailabilityDomain),
 //				BindDistinguishedName: pulumi.Any(outboundConnectorBindDistinguishedName),
 //				CompartmentId:         pulumi.Any(compartmentId),

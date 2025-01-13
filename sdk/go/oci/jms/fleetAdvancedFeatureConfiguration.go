@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.NewFleetAdvancedFeatureConfiguration(ctx, "test_fleet_advanced_feature_configuration", &Jms.FleetAdvancedFeatureConfigurationArgs{
+//			_, err := jms.NewFleetAdvancedFeatureConfiguration(ctx, "test_fleet_advanced_feature_configuration", &jms.FleetAdvancedFeatureConfigurationArgs{
 //				FleetId: pulumi.Any(testFleet.Id),
 //				AdvancedUsageTracking: &jms.FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{
 //					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationAdvancedUsageTrackingIsEnabled),

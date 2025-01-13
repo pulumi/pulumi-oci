@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.GetFleetExportStatus(ctx, &jms.GetFleetExportStatusArgs{
+//			_, err := jms.GetFleetExportStatus(ctx, &jms.GetFleetExportStatusArgs{
 //				FleetId: testFleet.Id,
 //			}, nil)
 //			if err != nil {

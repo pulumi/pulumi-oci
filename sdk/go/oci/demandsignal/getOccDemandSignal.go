@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DemandSignal"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/demandsignal"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DemandSignal.GetOccDemandSignal(ctx, &demandsignal.GetOccDemandSignalArgs{
+//			_, err := demandsignal.GetOccDemandSignal(ctx, &demandsignal.GetOccDemandSignalArgs{
 //				OccDemandSignalId: testOccDemandSignalOciDemandSignalOccDemandSignal.Id,
 //			}, nil)
 //			if err != nil {

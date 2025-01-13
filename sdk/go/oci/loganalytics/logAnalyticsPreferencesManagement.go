@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsPreferencesManagement(ctx, "test_log_analytics_preferences_management", &LogAnalytics.LogAnalyticsPreferencesManagementArgs{
+//			_, err := loganalytics.NewLogAnalyticsPreferencesManagement(ctx, "test_log_analytics_preferences_management", &loganalytics.LogAnalyticsPreferencesManagementArgs{
 //				Namespace: pulumi.Any(logAnalyticsPreferencesManagementNamespace),
 //				Items: loganalytics.LogAnalyticsPreferencesManagementItemArray{
 //					&loganalytics.LogAnalyticsPreferencesManagementItemArgs{

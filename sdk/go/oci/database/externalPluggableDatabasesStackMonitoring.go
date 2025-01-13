@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalPluggableDatabasesStackMonitoring(ctx, "test_externalpluggabledatabases_stack_monitoring", &Database.ExternalPluggableDatabasesStackMonitoringArgs{
+//			_, err := database.NewExternalPluggableDatabasesStackMonitoring(ctx, "test_externalpluggabledatabases_stack_monitoring", &database.ExternalPluggableDatabasesStackMonitoringArgs{
 //				ExternalDatabaseConnectorId: pulumi.Any(testExternalDatabaseConnector.Id),
 //				ExternalPluggableDatabaseId: pulumi.Any(testExternalPluggableDatabase.Id),
 //				EnableStackMonitoring:       pulumi.Bool(true),

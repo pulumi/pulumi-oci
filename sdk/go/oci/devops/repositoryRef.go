@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DevOps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/devops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewRepositoryRef(ctx, "test_repository_ref", &DevOps.RepositoryRefArgs{
+//			_, err := devops.NewRepositoryRef(ctx, "test_repository_ref", &devops.RepositoryRefArgs{
 //				RefName:      pulumi.Any(repositoryRefRefName),
 //				RefType:      pulumi.Any(repositoryRefRefType),
 //				RepositoryId: pulumi.Any(testRepository.Id),

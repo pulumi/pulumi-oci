@@ -37,14 +37,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDynamicGroup(ctx, "test_dynamic_group", &Identity.DynamicGroupArgs{
+//			_, err := identity.NewDynamicGroup(ctx, "test_dynamic_group", &identity.DynamicGroupArgs{
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				Description:   pulumi.Any(dynamicGroupDescription),
 //				MatchingRule:  pulumi.Any(dynamicGroupMatchingRule),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waas"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waas"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewHttpRedirect(ctx, "test_http_redirect", &Waas.HttpRedirectArgs{
+//			_, err := waas.NewHttpRedirect(ctx, "test_http_redirect", &waas.HttpRedirectArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Domain:        pulumi.Any(httpRedirectDomain),
 //				Target: &waas.HttpRedirectTargetArgs{

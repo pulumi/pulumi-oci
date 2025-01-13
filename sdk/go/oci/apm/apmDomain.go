@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Apm"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Apm.NewApmDomain(ctx, "test_apm_domain", &Apm.ApmDomainArgs{
+//			_, err := apm.NewApmDomain(ctx, "test_apm_domain", &apm.ApmDomainArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(apmDomainDisplayName),
 //				DefinedTags: pulumi.StringMap{

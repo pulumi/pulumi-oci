@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/VisualBuilder"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/visualbuilder"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := VisualBuilder.GetVbInstanceApplications(ctx, &visualbuilder.GetVbInstanceApplicationsArgs{
+//			_, err := visualbuilder.GetVbInstanceApplications(ctx, &visualbuilder.GetVbInstanceApplicationsArgs{
 //				VbInstanceId: testVbInstance.Id,
 //				IdcsOpenId:   pulumi.StringRef("idcs_open_id_value"),
 //			}, nil)

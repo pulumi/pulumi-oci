@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Vault"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/vault"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Vault.GetSecrets(ctx, &vault.GetSecretsArgs{
+//			_, err := vault.GetSecrets(ctx, &vault.GetSecretsArgs{
 //				CompartmentId: compartmentId,
 //				Name:          pulumi.StringRef(secretName),
 //				State:         pulumi.StringRef(secretState),

@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetConsoleHistoryData(ctx, &core.GetConsoleHistoryDataArgs{
+//			_, err := core.GetConsoleHistoryData(ctx, &core.GetConsoleHistoryDataArgs{
 //				ConsoleHistoryId: testConsoleHistory.Id,
 //				Length:           pulumi.IntRef(consoleHistoryContentLength),
 //				Offset:           pulumi.IntRef(consoleHistoryContentOffset),

@@ -41,14 +41,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewCrossConnect(ctx, "test_cross_connect", &Core.CrossConnectArgs{
+//			_, err := core.NewCrossConnect(ctx, "test_cross_connect", &core.CrossConnectArgs{
 //				CompartmentId:         pulumi.Any(compartmentId),
 //				LocationName:          pulumi.Any(crossConnectLocationName),
 //				PortSpeedShapeName:    pulumi.Any(crossConnectPortSpeedShapeName),

@@ -42,14 +42,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Sch"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/sch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Sch.NewConnector(ctx, "test_service_connector", &Sch.ConnectorArgs{
+//			_, err := sch.NewConnector(ctx, "test_service_connector", &sch.ConnectorArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(serviceConnectorDisplayName),
 //				Source: &sch.ConnectorSourceArgs{

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/operatoraccesscontrol"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OperatorAccessControl.NewOperatorControlAssignment(ctx, "test_operator_control_assignment", &OperatorAccessControl.OperatorControlAssignmentArgs{
+//			_, err := operatoraccesscontrol.NewOperatorControlAssignment(ctx, "test_operator_control_assignment", &operatoraccesscontrol.OperatorControlAssignmentArgs{
 //				CompartmentId:                  pulumi.Any(compartmentId),
 //				IsEnforcedAlways:               pulumi.Any(operatorControlAssignmentIsEnforcedAlways),
 //				OperatorControlId:              pulumi.Any(testOperatorControl.Id),

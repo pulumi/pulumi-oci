@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/RecoveryMod"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/recoverymod"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := RecoveryMod.NewProtectionPolicy(ctx, "test_protection_policy", &RecoveryMod.ProtectionPolicyArgs{
+//			_, err := recoverymod.NewProtectionPolicy(ctx, "test_protection_policy", &recoverymod.ProtectionPolicyArgs{
 //				BackupRetentionPeriodInDays: pulumi.Any(protectionPolicyBackupRetentionPeriodInDays),
 //				CompartmentId:               pulumi.Any(compartmentId),
 //				DisplayName:                 pulumi.Any(protectionPolicyDisplayName),

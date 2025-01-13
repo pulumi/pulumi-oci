@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waas"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waas"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewPurgeCache(ctx, "test_purge_cache", &Waas.PurgeCacheArgs{
+//			_, err := waas.NewPurgeCache(ctx, "test_purge_cache", &waas.PurgeCacheArgs{
 //				WaasPolicyId: pulumi.Any(testWaasPolicy.Id),
 //				Resources:    pulumi.Any(purgeCacheResources),
 //			})

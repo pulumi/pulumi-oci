@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/containerengine"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.GetClusters(ctx, &containerengine.GetClustersArgs{
+//			_, err := containerengine.GetClusters(ctx, &containerengine.GetClustersArgs{
 //				CompartmentId: compartmentId,
 //				Name:          pulumi.StringRef(clusterName),
 //				States:        clusterState,

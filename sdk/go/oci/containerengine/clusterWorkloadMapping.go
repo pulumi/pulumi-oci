@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/containerengine"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewClusterWorkloadMapping(ctx, "test_cluster_workload_mapping", &ContainerEngine.ClusterWorkloadMappingArgs{
+//			_, err := containerengine.NewClusterWorkloadMapping(ctx, "test_cluster_workload_mapping", &containerengine.ClusterWorkloadMappingArgs{
 //				ClusterId:           pulumi.Any(testCluster.Id),
 //				MappedCompartmentId: pulumi.Any(testCompartment.Id),
 //				Namespace:           pulumi.Any(clusterWorkloadMappingNamespace),

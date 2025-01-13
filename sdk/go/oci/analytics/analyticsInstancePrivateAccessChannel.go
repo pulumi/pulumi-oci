@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Analytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/analytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.NewAnalyticsInstancePrivateAccessChannel(ctx, "test_analytics_instance_private_access_channel", &Analytics.AnalyticsInstancePrivateAccessChannelArgs{
+//			_, err := analytics.NewAnalyticsInstancePrivateAccessChannel(ctx, "test_analytics_instance_private_access_channel", &analytics.AnalyticsInstancePrivateAccessChannelArgs{
 //				AnalyticsInstanceId: pulumi.Any(testAnalyticsInstance.Id),
 //				DisplayName:         pulumi.Any(analyticsInstancePrivateAccessChannelDisplayName),
 //				PrivateSourceDnsZones: analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{

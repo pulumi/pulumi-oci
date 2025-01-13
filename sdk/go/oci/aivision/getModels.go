@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiVision"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/aivision"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiVision.GetModels(ctx, &aivision.GetModelsArgs{
+//			_, err := aivision.GetModels(ctx, &aivision.GetModelsArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				DisplayName:   pulumi.StringRef(modelDisplayName),
 //				Id:            pulumi.StringRef(modelId),

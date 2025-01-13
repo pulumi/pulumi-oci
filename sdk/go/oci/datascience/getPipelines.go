@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datascience"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.GetPipelines(ctx, &datascience.GetPipelinesArgs{
+//			_, err := datascience.GetPipelines(ctx, &datascience.GetPipelinesArgs{
 //				CompartmentId: compartmentId,
 //				CreatedBy:     pulumi.StringRef(pipelineCreatedBy),
 //				DisplayName:   pulumi.StringRef(pipelineDisplayName),

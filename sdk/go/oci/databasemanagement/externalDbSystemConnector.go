@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalDbSystemConnector(ctx, "test_external_db_system_connector", &DatabaseManagement.ExternalDbSystemConnectorArgs{
+//			_, err := databasemanagement.NewExternalDbSystemConnector(ctx, "test_external_db_system_connector", &databasemanagement.ExternalDbSystemConnectorArgs{
 //				ConnectorType:      pulumi.Any(externalDbSystemConnectorConnectorType),
 //				ExternalDbSystemId: pulumi.Any(testExternalDbSystem.Id),
 //				DisplayName:        pulumi.Any(externalDbSystemConnectorDisplayName),

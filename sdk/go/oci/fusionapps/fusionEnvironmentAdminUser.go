@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FusionApps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/fusionapps"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironmentAdminUser(ctx, "test_fusion_environment_admin_user", &FusionApps.FusionEnvironmentAdminUserArgs{
+//			_, err := fusionapps.NewFusionEnvironmentAdminUser(ctx, "test_fusion_environment_admin_user", &fusionapps.FusionEnvironmentAdminUserArgs{
 //				EmailAddress:        pulumi.Any(fusionEnvironmentAdminUserEmailAddress),
 //				FirstName:           pulumi.Any(fusionEnvironmentAdminUserFirstName),
 //				FusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),

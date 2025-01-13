@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Oda"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oda"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oda.NewOdaPrivateEndpoint(ctx, "test_oda_private_endpoint", &Oda.OdaPrivateEndpointArgs{
+//			_, err := oda.NewOdaPrivateEndpoint(ctx, "test_oda_private_endpoint", &oda.OdaPrivateEndpointArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				SubnetId:      pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.StringMap{

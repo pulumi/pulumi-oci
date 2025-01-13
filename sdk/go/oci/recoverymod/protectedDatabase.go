@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/RecoveryMod"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/recoverymod"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := RecoveryMod.NewProtectedDatabase(ctx, "test_protected_database", &RecoveryMod.ProtectedDatabaseArgs{
+//			_, err := recoverymod.NewProtectedDatabase(ctx, "test_protected_database", &recoverymod.ProtectedDatabaseArgs{
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DbUniqueName:       pulumi.Any(protectedDatabaseDbUniqueName),
 //				DisplayName:        pulumi.Any(protectedDatabaseDisplayName),

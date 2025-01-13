@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApmTraces"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmtraces"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmTraces.GetTraceAggregatedSnapshotData(ctx, &apmtraces.GetTraceAggregatedSnapshotDataArgs{
+//			_, err := apmtraces.GetTraceAggregatedSnapshotData(ctx, &apmtraces.GetTraceAggregatedSnapshotDataArgs{
 //				ApmDomainId: testApmDomain.Id,
 //				TraceKey:    traceAggregatedSnapshotDataTraceKey,
 //				ServerName:  pulumi.StringRef(traceAggregatedSnapshotDataServerName),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/licensemanager"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LicenseManager.NewConfiguration(ctx, "test_configuration", &LicenseManager.ConfigurationArgs{
+//			_, err := licensemanager.NewConfiguration(ctx, "test_configuration", &licensemanager.ConfigurationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				EmailIds:      pulumi.Any(configurationEmailIds),
 //			})

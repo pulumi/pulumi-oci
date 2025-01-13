@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceManagerProxy"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicemanagerproxy"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceManagerProxy.GetServiceEnvironments(ctx, &servicemanagerproxy.GetServiceEnvironmentsArgs{
+//			_, err := servicemanagerproxy.GetServiceEnvironments(ctx, &servicemanagerproxy.GetServiceEnvironmentsArgs{
 //				CompartmentId:          compartmentId,
 //				DisplayName:            pulumi.StringRef(serviceEnvironmentDisplayName),
 //				ServiceEnvironmentId:   pulumi.StringRef(testServiceEnvironment.Id),

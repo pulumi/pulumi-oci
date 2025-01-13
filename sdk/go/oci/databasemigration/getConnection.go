@@ -18,14 +18,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemigration"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseMigration.GetConnection(ctx, &databasemigration.GetConnectionArgs{
+//			_, err := databasemigration.GetConnection(ctx, &databasemigration.GetConnectionArgs{
 //				ConnectionId: testConnectionOciDatabaseMigrationConnection.Id,
 //			}, nil)
 //			if err != nil {

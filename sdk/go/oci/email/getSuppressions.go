@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Email"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/email"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.GetSuppressions(ctx, &email.GetSuppressionsArgs{
+//			_, err := email.GetSuppressions(ctx, &email.GetSuppressionsArgs{
 //				CompartmentId:                   tenancyOcid,
 //				EmailAddress:                    pulumi.StringRef(suppressionEmailAddress),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(suppressionTimeCreatedGreaterThanOrEqualTo),

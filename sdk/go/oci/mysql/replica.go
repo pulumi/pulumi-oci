@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewReplica(ctx, "test_replica", &Mysql.ReplicaArgs{
+//			_, err := mysql.NewReplica(ctx, "test_replica", &mysql.ReplicaArgs{
 //				DbSystemId: pulumi.Any(testMysqlDbSystem.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),

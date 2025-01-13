@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataLabellingService"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datalabellingservice"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataLabellingService.NewDataset(ctx, "test_dataset", &DataLabellingService.DatasetArgs{
+//			_, err := datalabellingservice.NewDataset(ctx, "test_dataset", &datalabellingservice.DatasetArgs{
 //				AnnotationFormat: pulumi.Any(datasetAnnotationFormat),
 //				CompartmentId:    pulumi.Any(compartmentId),
 //				DatasetFormatDetails: &datalabellingservice.DatasetDatasetFormatDetailsArgs{

@@ -19,14 +19,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewExportSet(ctx, "test_export_set", &FileStorage.ExportSetArgs{
+//			_, err := filestorage.NewExportSet(ctx, "test_export_set", &filestorage.ExportSetArgs{
 //				MountTargetId:  pulumi.Any(testMountTarget.Id),
 //				DisplayName:    pulumi.Any(exportSetName),
 //				MaxFsStatBytes: pulumi.String("23843202333"),

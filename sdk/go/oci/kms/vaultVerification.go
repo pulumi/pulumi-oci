@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewVaultVerification(ctx, "test_replication", &Kms.VaultVerificationArgs{
+//			_, err := kms.NewVaultVerification(ctx, "test_replication", &kms.VaultVerificationArgs{
 //				VaultId:       pulumi.Any(testVault.Id),
 //				ReplicaRegion: pulumi.Any(replicaRegion),
 //			})

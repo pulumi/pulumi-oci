@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Streaming"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/streaming"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Streaming.NewStreamPool(ctx, "test_stream_pool", &Streaming.StreamPoolArgs{
+//			_, err := streaming.NewStreamPool(ctx, "test_stream_pool", &streaming.StreamPoolArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(streamPoolName),
 //				CustomEncryptionKey: &streaming.StreamPoolCustomEncryptionKeyArgs{

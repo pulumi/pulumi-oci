@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicyTunnelInspectionRule(ctx, "test_network_firewall_policy_tunnel_inspection_rule", &NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleArgs{
+//			_, err := networkfirewall.NewNetworkFirewallPolicyTunnelInspectionRule(ctx, "test_network_firewall_policy_tunnel_inspection_rule", &networkfirewall.NetworkFirewallPolicyTunnelInspectionRuleArgs{
 //				Condition: &networkfirewall.NetworkFirewallPolicyTunnelInspectionRuleConditionArgs{
 //					DestinationAddresses: pulumi.Any(networkFirewallPolicyTunnelInspectionRuleConditionDestinationAddress),
 //					SourceAddresses:      pulumi.Any(networkFirewallPolicyTunnelInspectionRuleConditionSourceAddress),

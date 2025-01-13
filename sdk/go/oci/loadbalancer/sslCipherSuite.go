@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loadbalancer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewSslCipherSuite(ctx, "test_ssl_cipher_suite", &LoadBalancer.SslCipherSuiteArgs{
+//			_, err := loadbalancer.NewSslCipherSuite(ctx, "test_ssl_cipher_suite", &loadbalancer.SslCipherSuiteArgs{
 //				Ciphers:        pulumi.Any(sslCipherSuiteCiphers),
 //				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
 //				Name:           pulumi.Any(sslCipherSuiteName),

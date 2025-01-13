@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetDomainsNotificationSettings(ctx, &identity.GetDomainsNotificationSettingsArgs{
+//			_, err := identity.GetDomainsNotificationSettings(ctx, &identity.GetDomainsNotificationSettingsArgs{
 //				IdcsEndpoint: testDomain.Url,
 //				AttributeSets: []string{
 //					"all",

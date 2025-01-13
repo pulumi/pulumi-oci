@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Analytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/analytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.NewAnalyticsInstanceVanityUrl(ctx, "test_analytics_instance_vanity_url", &Analytics.AnalyticsInstanceVanityUrlArgs{
+//			_, err := analytics.NewAnalyticsInstanceVanityUrl(ctx, "test_analytics_instance_vanity_url", &analytics.AnalyticsInstanceVanityUrlArgs{
 //				AnalyticsInstanceId: pulumi.Any(testAnalyticsInstance.Id),
 //				CaCertificate:       pulumi.Any(analyticsInstanceVanityUrlCaCertificate),
 //				Hosts:               pulumi.Any(analyticsInstanceVanityUrlHosts),

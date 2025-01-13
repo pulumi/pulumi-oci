@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsOauthPartnerCertificate(ctx, "test_oauth_partner_certificate", &Identity.DomainsOauthPartnerCertificateArgs{
+//			_, err := identity.NewDomainsOauthPartnerCertificate(ctx, "test_oauth_partner_certificate", &identity.DomainsOauthPartnerCertificateArgs{
 //				CertificateAlias: pulumi.Any(oauthPartnerCertificateCertificateAlias),
 //				IdcsEndpoint:     pulumi.Any(testDomain.Url),
 //				Schemas: pulumi.StringArray{

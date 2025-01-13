@@ -30,14 +30,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetExadataIormConfig(ctx, &database.GetExadataIormConfigArgs{
+//			_, err := database.GetExadataIormConfig(ctx, &database.GetExadataIormConfigArgs{
 //				DbSystemId: testDbSystem.Id,
 //			}, nil)
 //			if err != nil {

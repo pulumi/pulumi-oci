@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/goldengate"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.GetPipelineSchemas(ctx, &goldengate.GetPipelineSchemasArgs{
+//			_, err := goldengate.GetPipelineSchemas(ctx, &goldengate.GetPipelineSchemasArgs{
 //				PipelineId:  testPipeline.Id,
 //				DisplayName: pulumi.StringRef(pipelineSchemaDisplayName),
 //			}, nil)

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicemesh"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewVirtualServiceRouteTable(ctx, "test_virtual_service_route_table", &ServiceMesh.VirtualServiceRouteTableArgs{
+//			_, err := servicemesh.NewVirtualServiceRouteTable(ctx, "test_virtual_service_route_table", &servicemesh.VirtualServiceRouteTableArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(virtualServiceRouteTableName),
 //				RouteRules: servicemesh.VirtualServiceRouteTableRouteRuleArray{

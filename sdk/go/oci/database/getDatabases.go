@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetDatabases(ctx, &database.GetDatabasesArgs{
+//			_, err := database.GetDatabases(ctx, &database.GetDatabasesArgs{
 //				CompartmentId: compartmentId,
 //				DbHomeId:      pulumi.StringRef(testDbHome.Id),
 //				DbName:        pulumi.StringRef(databaseDbName),

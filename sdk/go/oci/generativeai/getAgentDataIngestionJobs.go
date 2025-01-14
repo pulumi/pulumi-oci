@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenerativeAi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/generativeai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.GetAgentDataIngestionJobs(ctx, &generativeai.GetAgentDataIngestionJobsArgs{
+//			_, err := generativeai.GetAgentDataIngestionJobs(ctx, &generativeai.GetAgentDataIngestionJobsArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				DataSourceId:  pulumi.StringRef(testDataSource.Id),
 //				DisplayName:   pulumi.StringRef(dataIngestionJobDisplayName),

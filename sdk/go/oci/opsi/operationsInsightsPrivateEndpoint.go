@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOperationsInsightsPrivateEndpoint(ctx, "test_operations_insights_private_endpoint", &Opsi.OperationsInsightsPrivateEndpointArgs{
+//			_, err := opsi.NewOperationsInsightsPrivateEndpoint(ctx, "test_operations_insights_private_endpoint", &opsi.OperationsInsightsPrivateEndpointArgs{
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				DisplayName:     pulumi.Any(operationsInsightsPrivateEndpointDisplayName),
 //				IsUsedForRacDbs: pulumi.Any(operationsInsightsPrivateEndpointIsUsedForRacDbs),

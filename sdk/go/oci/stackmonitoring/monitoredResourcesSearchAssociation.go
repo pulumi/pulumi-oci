@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/stackmonitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResourcesSearchAssociation(ctx, "test_monitored_resources_search_association", &StackMonitoring.MonitoredResourcesSearchAssociationArgs{
+//			_, err := stackmonitoring.NewMonitoredResourcesSearchAssociation(ctx, "test_monitored_resources_search_association", &stackmonitoring.MonitoredResourcesSearchAssociationArgs{
 //				CompartmentId:           pulumi.Any(compartmentId),
 //				AssociationType:         pulumi.Any(monitoredResourcesSearchAssociationAssociationType),
 //				DestinationResourceId:   pulumi.Any(testDestinationResource.Id),

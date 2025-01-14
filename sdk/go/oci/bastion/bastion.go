@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Bastion"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/bastion"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Bastion.NewBastion(ctx, "test_bastion", &Bastion.BastionArgs{
+//			_, err := bastion.NewBastion(ctx, "test_bastion", &bastion.BastionArgs{
 //				BastionType:               pulumi.Any(bastionBastionType),
 //				CompartmentId:             pulumi.Any(compartmentId),
 //				TargetSubnetId:            pulumi.Any(testSubnet.Id),

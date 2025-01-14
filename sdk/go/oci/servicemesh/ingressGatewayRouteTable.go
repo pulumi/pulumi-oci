@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/servicemesh"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewIngressGatewayRouteTable(ctx, "test_ingress_gateway_route_table", &ServiceMesh.IngressGatewayRouteTableArgs{
+//			_, err := servicemesh.NewIngressGatewayRouteTable(ctx, "test_ingress_gateway_route_table", &servicemesh.IngressGatewayRouteTableArgs{
 //				CompartmentId:    pulumi.Any(compartmentId),
 //				IngressGatewayId: pulumi.Any(testIngressGateway.Id),
 //				Name:             pulumi.Any(ingressGatewayRouteTableName),

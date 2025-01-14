@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsubBillingSchedule"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osubbillingschedule"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsubBillingSchedule.GetBillingSchedule(ctx, &osubbillingschedule.GetBillingScheduleArgs{
+//			_, err := osubbillingschedule.GetBillingSchedule(ctx, &osubbillingschedule.GetBillingScheduleArgs{
 //				CompartmentId:       compartmentId,
 //				SubscriptionId:      testSubscription.Id,
 //				SubscribedServiceId: pulumi.StringRef(testService.Id),

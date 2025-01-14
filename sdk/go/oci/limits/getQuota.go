@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Limits"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/limits"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Limits.GetQuota(ctx, &limits.GetQuotaArgs{
+//			_, err := limits.GetQuota(ctx, &limits.GetQuotaArgs{
 //				QuotaId: testQuotaOciLimitsQuota.Id,
 //			}, nil)
 //			if err != nil {

@@ -35,14 +35,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/marketplace"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Marketplace.GetListingPackage(ctx, &marketplace.GetListingPackageArgs{
+//			_, err := marketplace.GetListingPackage(ctx, &marketplace.GetListingPackageArgs{
 //				ListingId:      testListing.Id,
 //				PackageVersion: listingPackagePackageVersion,
 //				CompartmentId:  pulumi.StringRef(compartmentId),

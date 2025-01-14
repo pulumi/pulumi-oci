@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ClusterPlacementGroups"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/clusterplacementgroups"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ClusterPlacementGroups.GetClusterPlacementGroup(ctx, &clusterplacementgroups.GetClusterPlacementGroupArgs{
+//			_, err := clusterplacementgroups.GetClusterPlacementGroup(ctx, &clusterplacementgroups.GetClusterPlacementGroupArgs{
 //				ClusterPlacementGroupId: testClusterPlacementGroupOciClusterPlacementGroupsClusterPlacementGroup.Id,
 //			}, nil)
 //			if err != nil {

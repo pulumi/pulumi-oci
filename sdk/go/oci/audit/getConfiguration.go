@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Audit"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/audit"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Audit.GetConfiguration(ctx, &audit.GetConfigurationArgs{
+//			_, err := audit.GetConfiguration(ctx, &audit.GetConfigurationArgs{
 //				CompartmentId: tenancyOcid,
 //			}, nil)
 //			if err != nil {

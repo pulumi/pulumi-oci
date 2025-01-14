@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OspGateway"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ospgateway"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OspGateway.GetInvoice(ctx, &ospgateway.GetInvoiceArgs{
+//			_, err := ospgateway.GetInvoice(ctx, &ospgateway.GetInvoiceArgs{
 //				CompartmentId:     compartmentId,
 //				InternalInvoiceId: testInvoiceOciOspGatewayInvoice.Id,
 //				OspHomeRegion:     invoiceOspHomeRegion,

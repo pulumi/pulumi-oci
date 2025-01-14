@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenerativeAi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/generativeai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.GetDedicatedAiCluster(ctx, &generativeai.GetDedicatedAiClusterArgs{
+//			_, err := generativeai.GetDedicatedAiCluster(ctx, &generativeai.GetDedicatedAiClusterArgs{
 //				DedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.Id,
 //			}, nil)
 //			if err != nil {

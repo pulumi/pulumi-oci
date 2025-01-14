@@ -31,14 +31,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/monitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Monitoring.NewAlarm(ctx, "test_alarm", &Monitoring.AlarmArgs{
+//			_, err := monitoring.NewAlarm(ctx, "test_alarm", &monitoring.AlarmArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Destinations: pulumi.StringArray{
 //					testNotificationTopic.Id,

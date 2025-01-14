@@ -33,14 +33,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUiPassword(ctx, "test_ui_password", &Identity.UiPasswordArgs{
+//			_, err := identity.NewUiPassword(ctx, "test_ui_password", &identity.UiPasswordArgs{
 //				UserId: pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {

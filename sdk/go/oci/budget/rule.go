@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Budget"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/budget"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Budget.NewRule(ctx, "test_alert_rule", &Budget.RuleArgs{
+//			_, err := budget.NewRule(ctx, "test_alert_rule", &budget.RuleArgs{
 //				BudgetId:      pulumi.Any(testBudget.Id),
 //				Threshold:     pulumi.Any(alertRuleThreshold),
 //				ThresholdType: pulumi.Any(alertRuleThresholdType),

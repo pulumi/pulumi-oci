@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalDbSystemDatabaseManagementsManagement(ctx, "test_external_db_system_database_managements_management", &DatabaseManagement.ExternalDbSystemDatabaseManagementsManagementArgs{
+//			_, err := databasemanagement.NewExternalDbSystemDatabaseManagementsManagement(ctx, "test_external_db_system_database_managements_management", &databasemanagement.ExternalDbSystemDatabaseManagementsManagementArgs{
 //				ExternalDbSystemId:       pulumi.Any(testExternalDbSystem.Id),
 //				EnableDatabaseManagement: pulumi.Any(enableDatabaseManagement),
 //				LicenseModel:             pulumi.Any(externalDbSystemDatabaseManagementsManagementLicenseModel),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DevOps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/devops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewTrigger(ctx, "test_trigger", &DevOps.TriggerArgs{
+//			_, err := devops.NewTrigger(ctx, "test_trigger", &devops.TriggerArgs{
 //				Actions: devops.TriggerActionArray{
 //					&devops.TriggerActionArgs{
 //						BuildPipelineId: pulumi.Any(testBuildPipeline.Id),

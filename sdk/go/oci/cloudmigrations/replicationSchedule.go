@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudMigrations"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudmigrations"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudMigrations.NewReplicationSchedule(ctx, "test_replication_schedule", &CloudMigrations.ReplicationScheduleArgs{
+//			_, err := cloudmigrations.NewReplicationSchedule(ctx, "test_replication_schedule", &cloudmigrations.ReplicationScheduleArgs{
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DisplayName:          pulumi.Any(replicationScheduleDisplayName),
 //				ExecutionRecurrences: pulumi.Any(replicationScheduleExecutionRecurrences),

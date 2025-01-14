@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datacatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.GetMetastores(ctx, &datacatalog.GetMetastoresArgs{
+//			_, err := datacatalog.GetMetastores(ctx, &datacatalog.GetMetastoresArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(metastoreDisplayName),
 //				State:         pulumi.StringRef(metastoreState),

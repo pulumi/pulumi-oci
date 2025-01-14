@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datacatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.NewMetastore(ctx, "test_metastore", &DataCatalog.MetastoreArgs{
+//			_, err := datacatalog.NewMetastore(ctx, "test_metastore", &datacatalog.MetastoreArgs{
 //				CompartmentId:                pulumi.Any(compartmentId),
 //				DefaultExternalTableLocation: pulumi.Any(metastoreDefaultExternalTableLocation),
 //				DefaultManagedTableLocation:  pulumi.Any(metastoreDefaultManagedTableLocation),

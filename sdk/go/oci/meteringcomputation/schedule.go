@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewSchedule(ctx, "test_schedule", &MeteringComputation.ScheduleArgs{
+//			_, err := meteringcomputation.NewSchedule(ctx, "test_schedule", &meteringcomputation.ScheduleArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(scheduleName),
 //				ResultLocation: &meteringcomputation.ScheduleResultLocationArgs{

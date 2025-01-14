@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.GetTsigKey(ctx, &dns.GetTsigKeyArgs{
+//			_, err := dns.GetTsigKey(ctx, &dns.GetTsigKeyArgs{
 //				TsigKeyId: testTsigKeyOciDnsTsigKey.Id,
 //			}, nil)
 //			if err != nil {

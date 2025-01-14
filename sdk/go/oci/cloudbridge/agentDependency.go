@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewAgentDependency(ctx, "test_agent_dependency", &CloudBridge.AgentDependencyArgs{
+//			_, err := cloudbridge.NewAgentDependency(ctx, "test_agent_dependency", &cloudbridge.AgentDependencyArgs{
 //				Bucket:         pulumi.Any(agentDependencyBucket),
 //				CompartmentId:  pulumi.Any(compartmentId),
 //				DependencyName: pulumi.Any(agentDependencyDependencyName),

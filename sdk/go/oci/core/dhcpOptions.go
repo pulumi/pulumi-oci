@@ -38,14 +38,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDhcpOptions(ctx, "test_dhcp_options", &Core.DhcpOptionsArgs{
+//			_, err := core.NewDhcpOptions(ctx, "test_dhcp_options", &core.DhcpOptionsArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Options: core.DhcpOptionsOptionArray{
 //					&core.DhcpOptionsOptionArgs{
@@ -78,14 +78,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDhcpOptions(ctx, "test_dhcp_options", &Core.DhcpOptionsArgs{
+//			_, err := core.NewDhcpOptions(ctx, "test_dhcp_options", &core.DhcpOptionsArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Options: core.DhcpOptionsOptionArray{
 //					&core.DhcpOptionsOptionArgs{

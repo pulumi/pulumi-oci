@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/artifacts"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewContainerImageSignature(ctx, "test_container_image_signature", &Artifacts.ContainerImageSignatureArgs{
+//			_, err := artifacts.NewContainerImageSignature(ctx, "test_container_image_signature", &artifacts.ContainerImageSignatureArgs{
 //				CompartmentId:    pulumi.Any(compartmentId),
 //				ImageId:          pulumi.Any(testImage.Id),
 //				KmsKeyId:         pulumi.Any(testKey.Id),

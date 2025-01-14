@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgAttachmentsList(ctx, "test_drg_attachments_list", &Core.DrgAttachmentsListArgs{
+//			_, err := core.NewDrgAttachmentsList(ctx, "test_drg_attachments_list", &core.DrgAttachmentsListArgs{
 //				DrgId:          pulumi.Any(testDrg.Id),
 //				AttachmentType: pulumi.Any(drgAttachmentsListAttachmentType),
 //				IsCrossTenancy: pulumi.Any(drgAttachmentsListIsCrossTenancy),

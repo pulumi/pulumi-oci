@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewManagementStation(ctx, "test_management_station", &OsManagementHub.ManagementStationArgs{
+//			_, err := osmanagementhub.NewManagementStation(ctx, "test_management_station", &osmanagementhub.ManagementStationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(managementStationDisplayName),
 //				Hostname:      pulumi.Any(managementStationHostname),

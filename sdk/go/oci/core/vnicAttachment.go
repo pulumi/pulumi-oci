@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVnicAttachment(ctx, "test_vnic_attachment", &Core.VnicAttachmentArgs{
+//			_, err := core.NewVnicAttachment(ctx, "test_vnic_attachment", &core.VnicAttachmentArgs{
 //				CreateVnicDetails: &core.VnicAttachmentCreateVnicDetailsArgs{
 //					AssignIpv6ip:                         pulumi.Any(vnicAttachmentCreateVnicDetailsAssignIpv6ip),
 //					AssignPrivateDnsRecord:               pulumi.Any(vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord),

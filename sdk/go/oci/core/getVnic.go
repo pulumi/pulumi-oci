@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetVnic(ctx, &core.GetVnicArgs{
+//			_, err := core.GetVnic(ctx, &core.GetVnicArgs{
 //				VnicId: testVnicOciCoreVnic.Id,
 //			}, nil)
 //			if err != nil {

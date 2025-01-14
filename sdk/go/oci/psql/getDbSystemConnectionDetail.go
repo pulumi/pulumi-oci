@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Psql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/psql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Psql.GetDbSystemConnectionDetail(ctx, &psql.GetDbSystemConnectionDetailArgs{
+//			_, err := psql.GetDbSystemConnectionDetail(ctx, &psql.GetDbSystemConnectionDetailArgs{
 //				DbSystemId: testDbSystem.Id,
 //			}, nil)
 //			if err != nil {

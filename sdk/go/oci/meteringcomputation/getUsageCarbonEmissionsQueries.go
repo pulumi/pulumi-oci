@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.GetUsageCarbonEmissionsQueries(ctx, &meteringcomputation.GetUsageCarbonEmissionsQueriesArgs{
+//			_, err := meteringcomputation.GetUsageCarbonEmissionsQueries(ctx, &meteringcomputation.GetUsageCarbonEmissionsQueriesArgs{
 //				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Secrets"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/secrets"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Secrets.GetSecretbundle(ctx, &secrets.GetSecretbundleArgs{
+//			_, err := secrets.GetSecretbundle(ctx, &secrets.GetSecretbundleArgs{
 //				SecretId:          testSecret.Id,
 //				SecretVersionName: pulumi.StringRef(testSecretVersion.Name),
 //				Stage:             pulumi.StringRef(secretbundleStage),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmsynthetics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.NewScript(ctx, "test_script", &ApmSynthetics.ScriptArgs{
+//			_, err := apmsynthetics.NewScript(ctx, "test_script", &apmsynthetics.ScriptArgs{
 //				ApmDomainId:     pulumi.Any(testApmDomain.Id),
 //				Content:         pulumi.Any(scriptContent),
 //				ContentType:     pulumi.Any(scriptContentType),

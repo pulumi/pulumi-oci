@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewDataMaskRule(ctx, "test_data_mask_rule", &CloudGuard.DataMaskRuleArgs{
+//			_, err := cloudguard.NewDataMaskRule(ctx, "test_data_mask_rule", &cloudguard.DataMaskRuleArgs{
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DataMaskCategories: pulumi.Any(dataMaskRuleDataMaskCategories),
 //				DisplayName:        pulumi.Any(dataMaskRuleDisplayName),

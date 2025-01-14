@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DevOps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/devops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.GetConnections(ctx, &devops.GetConnectionsArgs{
+//			_, err := devops.GetConnections(ctx, &devops.GetConnectionsArgs{
 //				CompartmentId:  pulumi.StringRef(compartmentId),
 //				ConnectionType: pulumi.StringRef(connectionConnectionType),
 //				DisplayName:    pulumi.StringRef(connectionDisplayName),

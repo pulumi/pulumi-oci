@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsubSubscription"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osubsubscription"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsubSubscription.GetRatecards(ctx, &osubsubscription.GetRatecardsArgs{
+//			_, err := osubsubscription.GetRatecards(ctx, &osubsubscription.GetRatecardsArgs{
 //				CompartmentId:    compartmentId,
 //				SubscriptionId:   testSubscription.Id,
 //				PartNumber:       pulumi.StringRef(ratecardPartNumber),

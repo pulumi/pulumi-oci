@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.GetFleetCryptoAnalysisResults(ctx, &jms.GetFleetCryptoAnalysisResultsArgs{
+//			_, err := jms.GetFleetCryptoAnalysisResults(ctx, &jms.GetFleetCryptoAnalysisResultsArgs{
 //				FleetId:                             testFleet.Id,
 //				AggregationMode:                     pulumi.StringRef(fleetCryptoAnalysisResultAggregationMode),
 //				FindingCount:                        pulumi.IntRef(fleetCryptoAnalysisResultFindingCount),

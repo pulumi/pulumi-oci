@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSqlCollection(ctx, "test_sql_collection", &DataSafe.SqlCollectionArgs{
+//			_, err := datasafe.NewSqlCollection(ctx, "test_sql_collection", &datasafe.SqlCollectionArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DbUserName:    pulumi.Any(testUser.Name),
 //				TargetId:      pulumi.Any(testTarget.Id),

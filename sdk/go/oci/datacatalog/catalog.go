@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datacatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.NewCatalog(ctx, "test_catalog", &DataCatalog.CatalogArgs{
+//			_, err := datacatalog.NewCatalog(ctx, "test_catalog", &datacatalog.CatalogArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),

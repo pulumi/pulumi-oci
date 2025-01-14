@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCapacityTopology(ctx, "test_compute_capacity_topology", &Core.ComputeCapacityTopologyArgs{
+//			_, err := core.NewComputeCapacityTopology(ctx, "test_compute_capacity_topology", &core.ComputeCapacityTopologyArgs{
 //				AvailabilityDomain: pulumi.Any(computeCapacityTopologyAvailabilityDomain),
 //				CapacitySource: &core.ComputeCapacityTopologyCapacitySourceArgs{
 //					CapacityType:  pulumi.Any(computeCapacityTopologyCapacitySourceCapacityType),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/onesubsription"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OneSubsription.GetOrganizationSubscriptions(ctx, &onesubsription.GetOrganizationSubscriptionsArgs{
+//			_, err := onesubsription.GetOrganizationSubscriptions(ctx, &onesubsription.GetOrganizationSubscriptionsArgs{
 //				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {

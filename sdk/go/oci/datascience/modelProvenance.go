@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datascience"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModelProvenance(ctx, "test_model_provenance", &DataScience.ModelProvenanceArgs{
+//			_, err := datascience.NewModelProvenance(ctx, "test_model_provenance", &datascience.ModelProvenanceArgs{
 //				ModelId:        pulumi.Any(testModel.Id),
 //				GitBranch:      pulumi.Any(modelProvenanceGitBranch),
 //				GitCommit:      pulumi.Any(modelProvenanceGitCommit),

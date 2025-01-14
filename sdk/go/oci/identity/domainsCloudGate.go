@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsCloudGate(ctx, "test_cloud_gate", &Identity.DomainsCloudGateArgs{
+//			_, err := identity.NewDomainsCloudGate(ctx, "test_cloud_gate", &identity.DomainsCloudGateArgs{
 //				DisplayName:  pulumi.Any(cloudGateDisplayName),
 //				IdcsEndpoint: pulumi.Any(testDomain.Url),
 //				Schemas: pulumi.StringArray{

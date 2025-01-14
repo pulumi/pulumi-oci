@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/onesubsription"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OneSubsription.GetSubscriptions(ctx, &onesubsription.GetSubscriptionsArgs{
+//			_, err := onesubsription.GetSubscriptions(ctx, &onesubsription.GetSubscriptionsArgs{
 //				CompartmentId:        compartmentId,
 //				BuyerEmail:           pulumi.StringRef(subscriptionBuyerEmail),
 //				IsCommitInfoRequired: pulumi.BoolRef(subscriptionIsCommitInfoRequired),

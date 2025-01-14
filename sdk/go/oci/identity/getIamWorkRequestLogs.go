@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetIamWorkRequestLogs(ctx, &identity.GetIamWorkRequestLogsArgs{
+//			_, err := identity.GetIamWorkRequestLogs(ctx, &identity.GetIamWorkRequestLogsArgs{
 //				IamWorkRequestId: testIamWorkRequest.Id,
 //			}, nil)
 //			if err != nil {

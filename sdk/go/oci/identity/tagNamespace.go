@@ -36,14 +36,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewTagNamespace(ctx, "test_tag_namespace", &Identity.TagNamespaceArgs{
+//			_, err := identity.NewTagNamespace(ctx, "test_tag_namespace", &identity.TagNamespaceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Description:   pulumi.Any(tagNamespaceDescription),
 //				Name:          pulumi.Any(tagNamespaceName),

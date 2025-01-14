@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsIdentityPropagationTrust(ctx, "test_identity_propagation_trust", &Identity.DomainsIdentityPropagationTrustArgs{
+//			_, err := identity.NewDomainsIdentityPropagationTrust(ctx, "test_identity_propagation_trust", &identity.DomainsIdentityPropagationTrustArgs{
 //				IdcsEndpoint: pulumi.Any(testDomain.Url),
 //				Issuer:       pulumi.Any(identityPropagationTrustIssuer),
 //				Name:         pulumi.Any(identityPropagationTrustName),

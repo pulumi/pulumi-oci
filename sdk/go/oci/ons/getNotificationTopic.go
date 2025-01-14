@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ons"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ons"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ons.GetNotificationTopic(ctx, &ons.GetNotificationTopicArgs{
+//			_, err := ons.GetNotificationTopic(ctx, &ons.GetNotificationTopicArgs{
 //				TopicId: testNotificationTopicOciOnsNotificationTopic.Id,
 //			}, nil)
 //			if err != nil {

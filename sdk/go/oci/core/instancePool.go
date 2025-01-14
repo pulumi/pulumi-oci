@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewInstancePool(ctx, "test_instance_pool", &Core.InstancePoolArgs{
+//			_, err := core.NewInstancePool(ctx, "test_instance_pool", &core.InstancePoolArgs{
 //				CompartmentId:           pulumi.Any(compartmentId),
 //				InstanceConfigurationId: pulumi.Any(testInstanceConfiguration.Id),
 //				PlacementConfigurations: core.InstancePoolPlacementConfigurationArray{

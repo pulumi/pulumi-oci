@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DevOps"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/devops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewProjectRepositorySetting(ctx, "test_project_repository_setting", &DevOps.ProjectRepositorySettingArgs{
+//			_, err := devops.NewProjectRepositorySetting(ctx, "test_project_repository_setting", &devops.ProjectRepositorySettingArgs{
 //				ProjectId: pulumi.Any(testProject.Id),
 //				ApprovalRules: &devops.ProjectRepositorySettingApprovalRulesArgs{
 //					Items: devops.ProjectRepositorySettingApprovalRulesItemArray{

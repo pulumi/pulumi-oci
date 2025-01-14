@@ -32,14 +32,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewZonePromoteDnssecKeyVersion(ctx, "test_zone_promote_dnssec_key_version", &Dns.ZonePromoteDnssecKeyVersionArgs{
+//			_, err := dns.NewZonePromoteDnssecKeyVersion(ctx, "test_zone_promote_dnssec_key_version", &dns.ZonePromoteDnssecKeyVersionArgs{
 //				DnssecKeyVersionUuid: pulumi.Any(zonePromoteDnssecKeyVersionDnssecKeyVersionUuid),
 //				ZoneId:               pulumi.Any(testZone.Id),
 //				Scope:                pulumi.Any(zonePromoteDnssecKeyVersionScope),

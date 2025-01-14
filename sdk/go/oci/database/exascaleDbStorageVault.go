@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExascaleDbStorageVault(ctx, "test_exascale_db_storage_vault", &Database.ExascaleDbStorageVaultArgs{
+//			_, err := database.NewExascaleDbStorageVault(ctx, "test_exascale_db_storage_vault", &database.ExascaleDbStorageVaultArgs{
 //				AvailabilityDomain: pulumi.Any(exascaleDbStorageVaultAvailabilityDomain),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DisplayName:        pulumi.Any(exascaleDbStorageVaultDisplayName),

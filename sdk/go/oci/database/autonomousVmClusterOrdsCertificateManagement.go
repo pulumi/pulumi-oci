@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousVmClusterOrdsCertificateManagement(ctx, "test_autonomous_vm_cluster_ords_certificate_management", &Database.AutonomousVmClusterOrdsCertificateManagementArgs{
+//			_, err := database.NewAutonomousVmClusterOrdsCertificateManagement(ctx, "test_autonomous_vm_cluster_ords_certificate_management", &database.AutonomousVmClusterOrdsCertificateManagementArgs{
 //				AutonomousVmClusterId:     pulumi.Any(testAutonomousVmCluster.Id),
 //				CertificateGenerationType: pulumi.Any(autonomousVmClusterOrdsCertificateManagementCertificateGenerationType),
 //				CaBundleId:                pulumi.Any(testCaBundle.Id),

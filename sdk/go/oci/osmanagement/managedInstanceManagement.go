@@ -34,14 +34,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagement.NewManagedInstanceManagement(ctx, "test_managed_instance_management", &OsManagement.ManagedInstanceManagementArgs{
+//			_, err := osmanagement.NewManagedInstanceManagement(ctx, "test_managed_instance_management", &osmanagement.ManagedInstanceManagementArgs{
 //				ManagedInstanceId: pulumi.Any(testManagedInstance.Id),
 //				ParentSoftwareSource: &osmanagement.ManagedInstanceManagementParentSoftwareSourceArgs{
 //					Id:   pulumi.Any(testParentSoftwareSource.Id),

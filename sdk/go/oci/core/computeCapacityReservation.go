@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCapacityReservation(ctx, "test_compute_capacity_reservation", &Core.ComputeCapacityReservationArgs{
+//			_, err := core.NewComputeCapacityReservation(ctx, "test_compute_capacity_reservation", &core.ComputeCapacityReservationArgs{
 //				AvailabilityDomain: pulumi.Any(computeCapacityReservationAvailabilityDomain),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{

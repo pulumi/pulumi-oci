@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetShapes(ctx, &core.GetShapesArgs{
+//			_, err := core.GetShapes(ctx, &core.GetShapesArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(shapeAvailabilityDomain),
 //				ImageId:            pulumi.StringRef(testImage.Id),

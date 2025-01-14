@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.GetErratum(ctx, &osmanagementhub.GetErratumArgs{
+//			_, err := osmanagementhub.GetErratum(ctx, &osmanagementhub.GetErratumArgs{
 //				CompartmentId: compartmentId,
 //				Name:          erratumName,
 //			}, nil)

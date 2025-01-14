@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Logging"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/logging"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Logging.NewLogSavedSearch(ctx, "test_log_saved_search", &Logging.LogSavedSearchArgs{
+//			_, err := logging.NewLogSavedSearch(ctx, "test_log_saved_search", &logging.LogSavedSearchArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(logSavedSearchName),
 //				Query:         pulumi.Any(logSavedSearchQuery),

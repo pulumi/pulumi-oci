@@ -31,14 +31,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewVault(ctx, "test_vault", &Kms.VaultArgs{
+//			_, err := kms.NewVault(ctx, "test_vault", &kms.VaultArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(vaultDisplayName),
 //				VaultType:     pulumi.Any(vaultVaultType),

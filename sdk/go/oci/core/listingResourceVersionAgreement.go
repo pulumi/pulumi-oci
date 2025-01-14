@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewAppCatalogListingResourceVersionAgreement(ctx, "test_app_catalog_listing_resource_version_agreement", &Core.AppCatalogListingResourceVersionAgreementArgs{
+//			_, err := core.NewAppCatalogListingResourceVersionAgreement(ctx, "test_app_catalog_listing_resource_version_agreement", &core.AppCatalogListingResourceVersionAgreementArgs{
 //				ListingId:              pulumi.Any(testListing.Id),
 //				ListingResourceVersion: pulumi.Any(appCatalogListingResourceVersionAgreementListingResourceVersion),
 //			})

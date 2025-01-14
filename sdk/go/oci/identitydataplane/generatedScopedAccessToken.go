@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/IdentityDataPlane"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identitydataplane"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := IdentityDataPlane.NewGeneratedScopedAccessToken(ctx, "test_generate_scoped_access_token", &IdentityDataPlane.GeneratedScopedAccessTokenArgs{
+//			_, err := identitydataplane.NewGeneratedScopedAccessToken(ctx, "test_generate_scoped_access_token", &identitydataplane.GeneratedScopedAccessTokenArgs{
 //				PublicKey: pulumi.Any(generateScopedAccessTokenPublicKey),
 //				Scope:     pulumi.Any(generateScopedAccessTokenScope),
 //			})

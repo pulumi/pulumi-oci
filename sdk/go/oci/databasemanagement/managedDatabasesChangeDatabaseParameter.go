@@ -35,14 +35,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "test_managed_databases_change_database_parameter", &DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs{
+//			_, err := databasemanagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "test_managed_databases_change_database_parameter", &databasemanagement.ManagedDatabasesChangeDatabaseParameterArgs{
 //				ManagedDatabaseId: pulumi.Any(testManagedDatabase.Id),
 //				Parameters: databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArray{
 //					&databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArgs{

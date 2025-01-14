@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FleetAppsManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/fleetappsmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FleetAppsManagement.NewMaintenanceWindow(ctx, "test_maintenance_window", &FleetAppsManagement.MaintenanceWindowArgs{
+//			_, err := fleetappsmanagement.NewMaintenanceWindow(ctx, "test_maintenance_window", &fleetappsmanagement.MaintenanceWindowArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Duration:      pulumi.Any(maintenanceWindowDuration),
 //				DefinedTags: pulumi.StringMap{

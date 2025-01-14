@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opa"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opa"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opa.NewOpaInstance(ctx, "test_opa_instance", &Opa.OpaInstanceArgs{
+//			_, err := opa.NewOpaInstance(ctx, "test_opa_instance", &opa.OpaInstanceArgs{
 //				CompartmentId:    pulumi.Any(compartmentId),
 //				DisplayName:      pulumi.Any(opaInstanceDisplayName),
 //				ShapeName:        pulumi.Any(testShape.Name),

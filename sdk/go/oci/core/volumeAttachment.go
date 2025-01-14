@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeAttachment(ctx, "test_volume_attachment", &Core.VolumeAttachmentArgs{
+//			_, err := core.NewVolumeAttachment(ctx, "test_volume_attachment", &core.VolumeAttachmentArgs{
 //				AttachmentType:                 pulumi.Any(volumeAttachmentAttachmentType),
 //				InstanceId:                     pulumi.Any(testInstance.Id),
 //				VolumeId:                       pulumi.Any(testVolume.Id),

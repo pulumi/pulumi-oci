@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Redis"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/redis"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Redis.GetRedisClusterNodes(ctx, &redis.GetRedisClusterNodesArgs{
+//			_, err := redis.GetRedisClusterNodes(ctx, &redis.GetRedisClusterNodesArgs{
 //				RedisClusterId: testRedisCluster.Id,
 //				DisplayName:    pulumi.StringRef(redisClusterNodeDisplayName),
 //			}, nil)

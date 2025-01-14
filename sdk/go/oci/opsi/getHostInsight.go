@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.GetHostInsight(ctx, &opsi.GetHostInsightArgs{
+//			_, err := opsi.GetHostInsight(ctx, &opsi.GetHostInsightArgs{
 //				HostInsightId: testHostInsightOciOpsiHostInsight.Id,
 //			}, nil)
 //			if err != nil {

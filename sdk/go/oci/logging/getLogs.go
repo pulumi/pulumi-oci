@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Logging"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/logging"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Logging.GetLogs(ctx, &logging.GetLogsArgs{
+//			_, err := logging.GetLogs(ctx, &logging.GetLogsArgs{
 //				LogGroupId:     testLogGroup.Id,
 //				DisplayName:    pulumi.StringRef(logDisplayName),
 //				LogType:        pulumi.StringRef(logLogType),

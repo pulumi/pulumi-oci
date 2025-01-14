@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousVmCluster(ctx, "test_autonomous_vm_cluster", &Database.AutonomousVmClusterArgs{
+//			_, err := database.NewAutonomousVmCluster(ctx, "test_autonomous_vm_cluster", &database.AutonomousVmClusterArgs{
 //				CompartmentId:                  pulumi.Any(compartmentId),
 //				DisplayName:                    pulumi.Any(autonomousVmClusterDisplayName),
 //				ExadataInfrastructureId:        pulumi.Any(testExadataInfrastructure.Id),

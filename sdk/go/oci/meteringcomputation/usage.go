@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsage(ctx, "test_usage", &MeteringComputation.UsageArgs{
+//			_, err := meteringcomputation.NewUsage(ctx, "test_usage", &meteringcomputation.UsageArgs{
 //				Granularity:      pulumi.Any(usageGranularity),
 //				TenantId:         pulumi.Any(testTenant.Id),
 //				TimeUsageEnded:   pulumi.Any(usageTimeUsageEnded),

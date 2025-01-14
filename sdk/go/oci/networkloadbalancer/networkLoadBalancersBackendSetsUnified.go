@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkloadbalancer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.NewNetworkLoadBalancersBackendSetsUnified(ctx, "test_network_load_balancers_backend_sets_unified", &NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnifiedArgs{
+//			_, err := networkloadbalancer.NewNetworkLoadBalancersBackendSetsUnified(ctx, "test_network_load_balancers_backend_sets_unified", &networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedArgs{
 //				HealthChecker: &networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{
 //					Protocol: pulumi.Any(networkLoadBalancersBackendSetsUnifiedHealthCheckerProtocol),
 //					Dns: &networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs{

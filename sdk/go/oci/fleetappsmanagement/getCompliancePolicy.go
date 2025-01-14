@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FleetAppsManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/fleetappsmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FleetAppsManagement.GetCompliancePolicy(ctx, &fleetappsmanagement.GetCompliancePolicyArgs{
+//			_, err := fleetappsmanagement.GetCompliancePolicy(ctx, &fleetappsmanagement.GetCompliancePolicyArgs{
 //				CompliancePolicyId: testCompliancePolicyOciFleetAppsManagementCompliancePolicy.Id,
 //			}, nil)
 //			if err != nil {

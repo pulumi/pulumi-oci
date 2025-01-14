@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewEncryptedData(ctx, "test_encrypted_data", &Kms.EncryptedDataArgs{
+//			_, err := kms.NewEncryptedData(ctx, "test_encrypted_data", &kms.EncryptedDataArgs{
 //				CryptoEndpoint:      pulumi.Any(encryptedDataCryptoEndpoint),
 //				KeyId:               pulumi.Any(testKey.Id),
 //				Plaintext:           pulumi.Any(encryptedDataPlaintext),

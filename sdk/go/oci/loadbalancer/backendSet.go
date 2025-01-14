@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loadbalancer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewBackendSet(ctx, "test_backend_set", &LoadBalancer.BackendSetArgs{
+//			_, err := loadbalancer.NewBackendSet(ctx, "test_backend_set", &loadbalancer.BackendSetArgs{
 //				HealthChecker: &loadbalancer.BackendSetHealthCheckerArgs{
 //					Protocol:          pulumi.Any(backendSetHealthCheckerProtocol),
 //					IntervalMs:        pulumi.Any(backendSetHealthCheckerIntervalMs),

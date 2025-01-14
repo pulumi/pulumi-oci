@@ -37,14 +37,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetAutonomousDatabases(ctx, &database.GetAutonomousDatabasesArgs{
+//			_, err := database.GetAutonomousDatabases(ctx, &database.GetAutonomousDatabasesArgs{
 //				CompartmentId:                 compartmentId,
 //				AutonomousContainerDatabaseId: pulumi.StringRef(testAutonomousContainerDatabase.Id),
 //				DbVersion:                     pulumi.StringRef(autonomousDatabaseDbVersion),

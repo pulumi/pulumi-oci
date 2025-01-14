@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ocvp.NewCluster(ctx, "test_cluster", &Ocvp.ClusterArgs{
+//			_, err := ocvp.NewCluster(ctx, "test_cluster", &ocvp.ClusterArgs{
 //				ComputeAvailabilityDomain: pulumi.Any(clusterComputeAvailabilityDomain),
 //				EsxiHostsCount:            pulumi.Any(clusterEsxiHostsCount),
 //				NetworkConfiguration: &ocvp.ClusterNetworkConfigurationArgs{

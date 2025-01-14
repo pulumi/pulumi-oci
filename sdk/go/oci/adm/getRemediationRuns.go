@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Adm"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/adm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Adm.GetRemediationRuns(ctx, &adm.GetRemediationRunsArgs{
+//			_, err := adm.GetRemediationRuns(ctx, &adm.GetRemediationRunsArgs{
 //				CompartmentId:       pulumi.StringRef(compartmentId),
 //				DisplayName:         pulumi.StringRef(remediationRunDisplayName),
 //				Id:                  pulumi.StringRef(remediationRunId),

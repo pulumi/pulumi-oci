@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataflow"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.GetRunLog(ctx, &dataflow.GetRunLogArgs{
+//			_, err := dataflow.GetRunLog(ctx, &dataflow.GetRunLogArgs{
 //				Name:  runLogName,
 //				RunId: testRun.Id,
 //			}, nil)

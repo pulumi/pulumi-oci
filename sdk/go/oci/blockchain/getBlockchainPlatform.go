@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/blockchain"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Blockchain.GetBlockchainPlatform(ctx, &blockchain.GetBlockchainPlatformArgs{
+//			_, err := blockchain.GetBlockchainPlatform(ctx, &blockchain.GetBlockchainPlatformArgs{
 //				BlockchainPlatformId: testBlockchainPlatformOciBlockchainBlockchainPlatform.Id,
 //			}, nil)
 //			if err != nil {

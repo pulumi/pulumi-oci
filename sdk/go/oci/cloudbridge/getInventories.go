@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.GetInventories(ctx, &cloudbridge.GetInventoriesArgs{
+//			_, err := cloudbridge.GetInventories(ctx, &cloudbridge.GetInventoriesArgs{
 //				CompartmentId: compartmentId,
 //				State:         pulumi.StringRef(inventoryState),
 //			}, nil)

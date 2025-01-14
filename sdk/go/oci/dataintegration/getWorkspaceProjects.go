@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataIntegration"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataintegration"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.GetWorkspaceProjects(ctx, &dataintegration.GetWorkspaceProjectsArgs{
+//			_, err := dataintegration.GetWorkspaceProjects(ctx, &dataintegration.GetWorkspaceProjectsArgs{
 //				WorkspaceId:  testWorkspace.Id,
 //				Fields:       workspaceProjectFields,
 //				Identifiers:  workspaceProjectIdentifier,

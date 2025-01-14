@@ -35,14 +35,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainReplicationToRegion(ctx, "test_domain_replication_to_region", &Identity.DomainReplicationToRegionArgs{
+//			_, err := identity.NewDomainReplicationToRegion(ctx, "test_domain_replication_to_region", &identity.DomainReplicationToRegionArgs{
 //				DomainId:      pulumi.Any(testDomain.Id),
 //				ReplicaRegion: pulumi.Any(domainReplicationToRegionReplicaRegion),
 //			})

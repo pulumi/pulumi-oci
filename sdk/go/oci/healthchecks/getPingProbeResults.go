@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/healthchecks"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.GetPingProbeResults(ctx, &healthchecks.GetPingProbeResultsArgs{
+//			_, err := healthchecks.GetPingProbeResults(ctx, &healthchecks.GetPingProbeResultsArgs{
 //				ProbeConfigurationId:          testProbeConfiguration.Id,
 //				StartTimeGreaterThanOrEqualTo: pulumi.Float64Ref(pingProbeResultStartTimeGreaterThanOrEqualTo),
 //				StartTimeLessThanOrEqualTo:    pulumi.Float64Ref(pingProbeResultStartTimeLessThanOrEqualTo),

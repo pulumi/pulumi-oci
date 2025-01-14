@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagementhub"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewLifecycleStageAttachManagedInstancesManagement(ctx, "test_lifecycle_stage_attach_managed_instances_management", &OsManagementHub.LifecycleStageAttachManagedInstancesManagementArgs{
+//			_, err := osmanagementhub.NewLifecycleStageAttachManagedInstancesManagement(ctx, "test_lifecycle_stage_attach_managed_instances_management", &osmanagementhub.LifecycleStageAttachManagedInstancesManagementArgs{
 //				LifecycleStageId: pulumi.Any(testLifecycleStage.Id),
 //				ManagedInstanceDetails: &osmanagementhub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs{
 //					ManagedInstances: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances),

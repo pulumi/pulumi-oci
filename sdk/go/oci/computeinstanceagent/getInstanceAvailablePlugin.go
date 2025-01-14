@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ComputeInstanceAgent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/computeinstanceagent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ComputeInstanceAgent.GetInstanceAvailablePlugin(ctx, &computeinstanceagent.GetInstanceAvailablePluginArgs{
+//			_, err := computeinstanceagent.GetInstanceAvailablePlugin(ctx, &computeinstanceagent.GetInstanceAvailablePluginArgs{
 //				OsName:    instanceAvailablePluginOsName,
 //				OsVersion: instanceAvailablePluginOsVersion,
 //				Name:      pulumi.StringRef(instanceAvailablePluginName),

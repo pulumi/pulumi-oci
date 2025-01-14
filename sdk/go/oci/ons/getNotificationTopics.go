@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ons"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ons"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ons.GetNotificationTopics(ctx, &ons.GetNotificationTopicsArgs{
+//			_, err := ons.GetNotificationTopics(ctx, &ons.GetNotificationTopicsArgs{
 //				CompartmentId: compartmentId,
 //				Id:            pulumi.StringRef(notificationTopicId),
 //				Name:          pulumi.StringRef(notificationTopicName),

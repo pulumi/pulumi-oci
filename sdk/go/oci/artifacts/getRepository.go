@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/artifacts"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.GetRepository(ctx, &artifacts.GetRepositoryArgs{
+//			_, err := artifacts.GetRepository(ctx, &artifacts.GetRepositoryArgs{
 //				RepositoryId: testRepositoryOciArtifactsRepository.Id,
 //			}, nil)
 //			if err != nil {

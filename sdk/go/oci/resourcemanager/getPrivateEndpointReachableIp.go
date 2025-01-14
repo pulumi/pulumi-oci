@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ResourceManager"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/resourcemanager"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ResourceManager.GetPrivateEndpointReachableIp(ctx, &resourcemanager.GetPrivateEndpointReachableIpArgs{
+//			_, err := resourcemanager.GetPrivateEndpointReachableIp(ctx, &resourcemanager.GetPrivateEndpointReachableIpArgs{
 //				PrivateEndpointId: testPrivateEndpoint.Id,
 //				PrivateIp:         privateEndpointReachableIpPrivateIp,
 //			}, nil)

@@ -19,14 +19,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewPublicIpPoolCapacity(ctx, "test_public_ip_pool_capacity", &Core.PublicIpPoolCapacityArgs{
+//			_, err := core.NewPublicIpPoolCapacity(ctx, "test_public_ip_pool_capacity", &core.PublicIpPoolCapacityArgs{
 //				PublicIpPoolId: pulumi.Any(publicIpPoolId),
 //				ByoipId:        pulumi.Any(byoipId),
 //				CidrBlock:      pulumi.Any(cidrBlock),

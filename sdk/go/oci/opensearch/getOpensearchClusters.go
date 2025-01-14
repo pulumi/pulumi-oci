@@ -31,14 +31,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opensearch"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opensearch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opensearch.GetOpensearchClusters(ctx, &opensearch.GetOpensearchClustersArgs{
+//			_, err := opensearch.GetOpensearchClusters(ctx, &opensearch.GetOpensearchClustersArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(opensearchClusterDisplayName),
 //				Id:            pulumi.StringRef(opensearchClusterId),

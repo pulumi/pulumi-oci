@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetExternalCluster(ctx, &databasemanagement.GetExternalClusterArgs{
+//			_, err := databasemanagement.GetExternalCluster(ctx, &databasemanagement.GetExternalClusterArgs{
 //				ExternalClusterId: testExternalClusterOciDatabaseManagementExternalCluster.Id,
 //			}, nil)
 //			if err != nil {

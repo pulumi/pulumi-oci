@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Email"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/email"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.GetDkims(ctx, &email.GetDkimsArgs{
+//			_, err := email.GetDkims(ctx, &email.GetDkimsArgs{
 //				EmailDomainId: testEmailDomain.Id,
 //				Id:            pulumi.StringRef(dkimId),
 //				Name:          pulumi.StringRef(dkimName),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewMaskingReportManagement(ctx, "test_masking_report_management", &DataSafe.MaskingReportManagementArgs{
+//			_, err := datasafe.NewMaskingReportManagement(ctx, "test_masking_report_management", &datasafe.MaskingReportManagementArgs{
 //				TargetId:        pulumi.Any(testTargetDatabase.Id),
 //				MaskingPolicyId: pulumi.Any(testMaskingPolicy.Id),
 //			})

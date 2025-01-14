@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOperationsInsightsWarehouseRotateWarehouseWallet(ctx, "test_operations_insights_warehouse_rotate_warehouse_wallet", &Opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs{
+//			_, err := opsi.NewOperationsInsightsWarehouseRotateWarehouseWallet(ctx, "test_operations_insights_warehouse_rotate_warehouse_wallet", &opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs{
 //				OperationsInsightsWarehouseId: pulumi.Any(testOperationsInsightsWarehouse.Id),
 //			})
 //			if err != nil {

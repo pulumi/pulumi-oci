@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataLabellingService"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datalabellingservice"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataLabellingService.GetDatasets(ctx, &datalabellingservice.GetDatasetsArgs{
+//			_, err := datalabellingservice.GetDatasets(ctx, &datalabellingservice.GetDatasetsArgs{
 //				CompartmentId:    compartmentId,
 //				AnnotationFormat: pulumi.StringRef(datasetAnnotationFormat),
 //				DisplayName:      pulumi.StringRef(datasetDisplayName),

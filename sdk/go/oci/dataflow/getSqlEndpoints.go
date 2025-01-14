@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataflow"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.GetSqlEndpoints(ctx, &dataflow.GetSqlEndpointsArgs{
+//			_, err := dataflow.GetSqlEndpoints(ctx, &dataflow.GetSqlEndpointsArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				DisplayName:   pulumi.StringRef(sqlEndpointDisplayName),
 //				SqlEndpointId: pulumi.StringRef(testSqlEndpoint.Id),

@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewPluggableDatabasesRemoteClone(ctx, "test_pluggable_databases_remote_clone", &Database.PluggableDatabasesRemoteCloneArgs{
+//			_, err := database.NewPluggableDatabasesRemoteClone(ctx, "test_pluggable_databases_remote_clone", &database.PluggableDatabasesRemoteCloneArgs{
 //				ClonedPdbName:                  pulumi.Any(pluggableDatabasesRemoteCloneClonedPdbName),
 //				PluggableDatabaseId:            pulumi.Any(testPluggableDatabase.Id),
 //				SourceContainerDbAdminPassword: pulumi.Any(pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword),

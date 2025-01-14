@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalDatabaseConnector(ctx, "test_external_database_connector", &Database.ExternalDatabaseConnectorArgs{
+//			_, err := database.NewExternalDatabaseConnector(ctx, "test_external_database_connector", &database.ExternalDatabaseConnectorArgs{
 //				ConnectionCredentials: &database.ExternalDatabaseConnectorConnectionCredentialsArgs{
 //					CredentialName: pulumi.Any(externalDatabaseConnectorConnectionCredentialsCredentialName),
 //					CredentialType: pulumi.Any(externalDatabaseConnectorConnectionCredentialsCredentialType),

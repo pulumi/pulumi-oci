@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSetSecurityAssessmentBaselineManagement(ctx, "test_set_security_assessment_baseline_management", &DataSafe.SetSecurityAssessmentBaselineManagementArgs{
+//			_, err := datasafe.NewSetSecurityAssessmentBaselineManagement(ctx, "test_set_security_assessment_baseline_management", &datasafe.SetSecurityAssessmentBaselineManagementArgs{
 //				TargetId:      pulumi.Any(testTargetDatabase.Id),
 //				CompartmentId: pulumi.Any(comaprtmentId),
 //			})

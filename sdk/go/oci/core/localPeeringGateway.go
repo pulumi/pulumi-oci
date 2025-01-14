@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewLocalPeeringGateway(ctx, "test_local_peering_gateway", &Core.LocalPeeringGatewayArgs{
+//			_, err := core.NewLocalPeeringGateway(ctx, "test_local_peering_gateway", &core.LocalPeeringGatewayArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.StringMap{

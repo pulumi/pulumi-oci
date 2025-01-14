@@ -35,14 +35,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.GetSqlFirewallAllowedSqlAnalytics(ctx, &datasafe.GetSqlFirewallAllowedSqlAnalyticsArgs{
+//			_, err := datasafe.GetSqlFirewallAllowedSqlAnalytics(ctx, &datasafe.GetSqlFirewallAllowedSqlAnalyticsArgs{
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(sqlFirewallAllowedSqlAnalyticAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree),

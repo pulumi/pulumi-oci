@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ocvp.GetSupportedSkus(ctx, &ocvp.GetSupportedSkusArgs{
+//			_, err := ocvp.GetSupportedSkus(ctx, &ocvp.GetSupportedSkusArgs{
 //				CompartmentId: compartmentId,
 //				HostShapeName: pulumi.StringRef(testShape.Name),
 //			}, nil)

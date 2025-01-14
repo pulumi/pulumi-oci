@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.GetSnapshot(ctx, &filestorage.GetSnapshotArgs{
+//			_, err := filestorage.GetSnapshot(ctx, &filestorage.GetSnapshotArgs{
 //				SnapshotId: testSnapshotOciFileStorageSnapshot.Id,
 //			}, nil)
 //			if err != nil {

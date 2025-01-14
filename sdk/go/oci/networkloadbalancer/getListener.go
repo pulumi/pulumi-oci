@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkloadbalancer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.GetListener(ctx, &networkloadbalancer.GetListenerArgs{
+//			_, err := networkloadbalancer.GetListener(ctx, &networkloadbalancer.GetListenerArgs{
 //				ListenerName:          testListenerOciNetworkLoadBalancerListener.Name,
 //				NetworkLoadBalancerId: testNetworkLoadBalancer.Id,
 //			}, nil)

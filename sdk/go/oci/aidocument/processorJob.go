@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiDocument"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/aidocument"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiDocument.NewProcessorJob(ctx, "test_processor_job", &AiDocument.ProcessorJobArgs{
+//			_, err := aidocument.NewProcessorJob(ctx, "test_processor_job", &aidocument.ProcessorJobArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				InputLocation: &aidocument.ProcessorJobInputLocationArgs{
 //					SourceType: pulumi.Any(processorJobInputLocationSourceType),

@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewCloudDatabaseManagement(ctx, "test", &Database.CloudDatabaseManagementArgs{
+//			_, err := database.NewCloudDatabaseManagement(ctx, "test", &database.CloudDatabaseManagementArgs{
 //				DatabaseId:        pulumi.Any(testDatabase.Id),
 //				ManagementType:    pulumi.Any(databaseCloudDatabaseManagementDetailsManagementType),
 //				PrivateEndPointId: pulumi.Any(databaseCloudDatabaseManagementDetailsPrivateEndPointId),

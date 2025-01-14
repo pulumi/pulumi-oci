@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/RecoveryMod"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/recoverymod"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := RecoveryMod.NewRecoveryServiceSubnet(ctx, "test_recovery_service_subnet", &RecoveryMod.RecoveryServiceSubnetArgs{
+//			_, err := recoverymod.NewRecoveryServiceSubnet(ctx, "test_recovery_service_subnet", &recoverymod.RecoveryServiceSubnetArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(recoveryServiceSubnetDisplayName),
 //				VcnId:         pulumi.Any(testVcn.Id),

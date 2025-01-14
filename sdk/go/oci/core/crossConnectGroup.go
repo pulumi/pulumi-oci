@@ -37,14 +37,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewCrossConnectGroup(ctx, "test_cross_connect_group", &Core.CrossConnectGroupArgs{
+//			_, err := core.NewCrossConnectGroup(ctx, "test_cross_connect_group", &core.CrossConnectGroupArgs{
 //				CompartmentId:         pulumi.Any(compartmentId),
 //				CustomerReferenceName: pulumi.Any(crossConnectGroupCustomerReferenceName),
 //				DefinedTags: pulumi.StringMap{

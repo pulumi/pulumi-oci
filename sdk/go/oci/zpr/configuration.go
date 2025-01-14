@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Zpr"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/zpr"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Zpr.NewConfiguration(ctx, "test_configuration", &Zpr.ConfigurationArgs{
+//			_, err := zpr.NewConfiguration(ctx, "test_configuration", &zpr.ConfigurationArgs{
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),

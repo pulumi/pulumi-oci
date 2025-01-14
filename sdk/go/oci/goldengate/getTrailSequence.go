@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/goldengate"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.GetTrailSequence(ctx, &goldengate.GetTrailSequenceArgs{
+//			_, err := goldengate.GetTrailSequence(ctx, &goldengate.GetTrailSequenceArgs{
 //				DeploymentId:    testDeployment.Id,
 //				TrailFileId:     testTrailFile.Id,
 //				DisplayName:     trailSequenceDisplayName,

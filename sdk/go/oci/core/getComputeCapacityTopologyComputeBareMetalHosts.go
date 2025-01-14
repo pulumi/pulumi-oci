@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetComputeCapacityTopologyComputeBareMetalHosts(ctx, &core.GetComputeCapacityTopologyComputeBareMetalHostsArgs{
+//			_, err := core.GetComputeCapacityTopologyComputeBareMetalHosts(ctx, &core.GetComputeCapacityTopologyComputeBareMetalHostsArgs{
 //				ComputeCapacityTopologyId: testComputeCapacityTopology.Id,
 //				AvailabilityDomain:        pulumi.StringRef(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain),
 //				CompartmentId:             pulumi.StringRef(compartmentId),

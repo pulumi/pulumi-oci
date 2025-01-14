@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewNewsReport(ctx, "test_news_report", &Opsi.NewsReportArgs{
+//			_, err := opsi.NewNewsReport(ctx, "test_news_report", &opsi.NewsReportArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ContentTypes: &opsi.NewsReportContentTypesArgs{
 //					CapacityPlanningResources:                  pulumi.Any(newsReportContentTypesCapacityPlanningResources),

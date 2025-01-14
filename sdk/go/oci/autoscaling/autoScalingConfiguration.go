@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Autoscaling"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/autoscaling"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Autoscaling.NewAutoScalingConfiguration(ctx, "test_auto_scaling_configuration", &Autoscaling.AutoScalingConfigurationArgs{
+//			_, err := autoscaling.NewAutoScalingConfiguration(ctx, "test_auto_scaling_configuration", &autoscaling.AutoScalingConfigurationArgs{
 //				AutoScalingResources: &autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs{
 //					Id:   pulumi.Any(autoScalingConfigurationAutoScalingResourcesId),
 //					Type: pulumi.Any(autoScalingConfigurationAutoScalingResourcesType),

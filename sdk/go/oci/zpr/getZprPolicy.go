@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Zpr"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/zpr"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Zpr.GetZprPolicy(ctx, &zpr.GetZprPolicyArgs{
+//			_, err := zpr.GetZprPolicy(ctx, &zpr.GetZprPolicyArgs{
 //				ZprPolicyId: testZprPolicyOciZprZprPolicy.Id,
 //			}, nil)
 //			if err != nil {

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MediaServices"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mediaservices"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewStreamPackagingConfig(ctx, "test_stream_packaging_config", &MediaServices.StreamPackagingConfigArgs{
+//			_, err := mediaservices.NewStreamPackagingConfig(ctx, "test_stream_packaging_config", &mediaservices.StreamPackagingConfigArgs{
 //				DisplayName:           pulumi.Any(streamPackagingConfigDisplayName),
 //				DistributionChannelId: pulumi.Any(testChannel.Id),
 //				SegmentTimeInSeconds:  pulumi.Any(streamPackagingConfigSegmentTimeInSeconds),

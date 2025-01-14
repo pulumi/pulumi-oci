@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetVtaps(ctx, &core.GetVtapsArgs{
+//			_, err := core.GetVtaps(ctx, &core.GetVtapsArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(vtapDisplayName),
 //				IsVtapEnabled: pulumi.BoolRef(vtapIsVtapEnabled),

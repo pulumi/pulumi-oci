@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/healthchecks"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.GetHttpMonitors(ctx, &healthchecks.GetHttpMonitorsArgs{
+//			_, err := healthchecks.GetHttpMonitors(ctx, &healthchecks.GetHttpMonitorsArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(httpMonitorDisplayName),
 //				HomeRegion:    pulumi.StringRef(httpMonitorHomeRegion),

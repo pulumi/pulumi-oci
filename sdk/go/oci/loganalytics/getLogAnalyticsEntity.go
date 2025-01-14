@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.GetLogAnalyticsEntity(ctx, &loganalytics.GetLogAnalyticsEntityArgs{
+//			_, err := loganalytics.GetLogAnalyticsEntity(ctx, &loganalytics.GetLogAnalyticsEntityArgs{
 //				LogAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
 //				Namespace:            logAnalyticsEntityNamespace,
 //			}, nil)

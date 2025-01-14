@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsImportCustomContent(ctx, "test_log_analytics_import_custom_content", &LogAnalytics.LogAnalyticsImportCustomContentArgs{
+//			_, err := loganalytics.NewLogAnalyticsImportCustomContent(ctx, "test_log_analytics_import_custom_content", &loganalytics.LogAnalyticsImportCustomContentArgs{
 //				ImportCustomContentFile: pulumi.Any(logAnalyticsImportCustomContentImportCustomContentFile),
 //				Namespace:               pulumi.Any(logAnalyticsImportCustomContentNamespace),
 //				Expect:                  pulumi.Any(logAnalyticsImportCustomContentExpect),

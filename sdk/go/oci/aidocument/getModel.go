@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiDocument"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/aidocument"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiDocument.GetModel(ctx, &aidocument.GetModelArgs{
+//			_, err := aidocument.GetModel(ctx, &aidocument.GetModelArgs{
 //				ModelId: testModelOciAiDocumentModel.Id,
 //			}, nil)
 //			if err != nil {

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/RecoveryMod"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/recoverymod"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := RecoveryMod.GetProtectionPolicy(ctx, &recoverymod.GetProtectionPolicyArgs{
+//			_, err := recoverymod.GetProtectionPolicy(ctx, &recoverymod.GetProtectionPolicyArgs{
 //				ProtectionPolicyId: testProtectionPolicyOciRecoveryProtectionPolicy.Id,
 //			}, nil)
 //			if err != nil {

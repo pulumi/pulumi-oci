@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.GetAdhocQuery(ctx, &cloudguard.GetAdhocQueryArgs{
+//			_, err := cloudguard.GetAdhocQuery(ctx, &cloudguard.GetAdhocQueryArgs{
 //				AdhocQueryId: testAdhocQueryOciCloudGuardAdhocQuery.Id,
 //			}, nil)
 //			if err != nil {

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasetools"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseTools.GetDatabaseToolsEndpointService(ctx, &databasetools.GetDatabaseToolsEndpointServiceArgs{
+//			_, err := databasetools.GetDatabaseToolsEndpointService(ctx, &databasetools.GetDatabaseToolsEndpointServiceArgs{
 //				DatabaseToolsEndpointServiceId: testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.Id,
 //			}, nil)
 //			if err != nil {

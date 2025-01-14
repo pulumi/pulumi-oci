@@ -36,14 +36,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.GetGuardTargets(ctx, &cloudguard.GetGuardTargetsArgs{
+//			_, err := cloudguard.GetGuardTargets(ctx, &cloudguard.GetGuardTargetsArgs{
 //				CompartmentId:                     compartmentId,
 //				AccessLevel:                       pulumi.StringRef(targetAccessLevel),
 //				CompartmentIdInSubtree:            pulumi.BoolRef(targetCompartmentIdInSubtree),

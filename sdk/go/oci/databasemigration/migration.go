@@ -19,14 +19,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemigration"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseMigration.NewMigration(ctx, "test_migration", &DatabaseMigration.MigrationArgs{
+//			_, err := databasemigration.NewMigration(ctx, "test_migration", &databasemigration.MigrationArgs{
 //				CompartmentId:              pulumi.Any(compartmentId),
 //				DatabaseCombination:        pulumi.Any(migrationDatabaseCombination),
 //				SourceDatabaseConnectionId: pulumi.Any(testConnection.Id),

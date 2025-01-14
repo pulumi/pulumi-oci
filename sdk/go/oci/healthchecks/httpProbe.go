@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/healthchecks"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.NewHttpProbe(ctx, "test_http_probe", &HealthChecks.HttpProbeArgs{
+//			_, err := healthchecks.NewHttpProbe(ctx, "test_http_probe", &healthchecks.HttpProbeArgs{
 //				CompartmentId:     pulumi.Any(compartmentId),
 //				Protocol:          pulumi.Any(httpProbeProtocol),
 //				Targets:           pulumi.Any(httpProbeTargets),

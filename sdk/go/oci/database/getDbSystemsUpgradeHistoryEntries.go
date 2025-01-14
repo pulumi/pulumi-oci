@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetDbSystemsUpgradeHistoryEntries(ctx, &database.GetDbSystemsUpgradeHistoryEntriesArgs{
+//			_, err := database.GetDbSystemsUpgradeHistoryEntries(ctx, &database.GetDbSystemsUpgradeHistoryEntriesArgs{
 //				DbSystemId:    testDbSystem.Id,
 //				State:         pulumi.StringRef(dbSystemsUpgradeHistoryEntryState),
 //				UpgradeAction: pulumi.StringRef(dbSystemsUpgradeHistoryEntryUpgradeAction),

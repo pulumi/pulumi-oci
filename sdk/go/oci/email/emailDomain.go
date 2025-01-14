@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Email"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/email"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewEmailDomain(ctx, "test_email_domain", &Email.EmailDomainArgs{
+//			_, err := email.NewEmailDomain(ctx, "test_email_domain", &email.EmailDomainArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(emailDomainName),
 //				DefinedTags: pulumi.StringMap{

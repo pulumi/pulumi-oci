@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewGenerateOnPremConnectorConfiguration(ctx, "test_generate_on_prem_connector_configuration", &DataSafe.GenerateOnPremConnectorConfigurationArgs{
+//			_, err := datasafe.NewGenerateOnPremConnectorConfiguration(ctx, "test_generate_on_prem_connector_configuration", &datasafe.GenerateOnPremConnectorConfigurationArgs{
 //				OnPremConnectorId: pulumi.Any(testOnPremConnector.Id),
 //				Password:          pulumi.Any(generateOnPremConnectorConfigurationPassword),
 //			})

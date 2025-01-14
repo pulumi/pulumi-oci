@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.GetMysqlConfiguration(ctx, &mysql.GetMysqlConfigurationArgs{
+//			_, err := mysql.GetMysqlConfiguration(ctx, &mysql.GetMysqlConfigurationArgs{
 //				ConfigurationId: mysqlConfigurationId,
 //			}, nil)
 //			if err != nil {

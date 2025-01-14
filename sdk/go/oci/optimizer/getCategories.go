@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/optimizer"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
+//			_, err := optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: categoryCompartmentIdInSubtree,
 //				ChildTenancyIds:        categoryChildTenancyIds,

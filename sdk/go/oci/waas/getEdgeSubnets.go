@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waas"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waas"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.GetEdgeSubnets(ctx, &waas.GetEdgeSubnetsArgs{}, nil)
+//			_, err := waas.GetEdgeSubnets(ctx, &waas.GetEdgeSubnetsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

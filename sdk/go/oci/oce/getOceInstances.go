@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Oce"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oce"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oce.GetOceInstances(ctx, &oce.GetOceInstancesArgs{
+//			_, err := oce.GetOceInstances(ctx, &oce.GetOceInstancesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(oceInstanceDisplayName),
 //				State:         pulumi.StringRef(oceInstanceState),

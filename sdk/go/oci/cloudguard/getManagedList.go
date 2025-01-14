@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.GetManagedList(ctx, &cloudguard.GetManagedListArgs{
+//			_, err := cloudguard.GetManagedList(ctx, &cloudguard.GetManagedListArgs{
 //				ManagedListId: testManagedListOciCloudGuardManagedList.Id,
 //			}, nil)
 //			if err != nil {

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewDbManagementPrivateEndpoint(ctx, "test_db_management_private_endpoint", &DatabaseManagement.DbManagementPrivateEndpointArgs{
+//			_, err := databasemanagement.NewDbManagementPrivateEndpoint(ctx, "test_db_management_private_endpoint", &databasemanagement.DbManagementPrivateEndpointArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(dbManagementPrivateEndpointName),
 //				SubnetId:      pulumi.Any(testSubnet.Id),

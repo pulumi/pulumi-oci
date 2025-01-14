@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apigateway"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewSubscriber(ctx, "test_subscriber", &ApiGateway.SubscriberArgs{
+//			_, err := apigateway.NewSubscriber(ctx, "test_subscriber", &apigateway.SubscriberArgs{
 //				Clients: apigateway.SubscriberClientArray{
 //					&apigateway.SubscriberClientArgs{
 //						Name:  pulumi.Any(subscriberClientsName),

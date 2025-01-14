@@ -38,14 +38,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Identity"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/identity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomain(ctx, "test_domain", &Identity.DomainArgs{
+//			_, err := identity.NewDomain(ctx, "test_domain", &identity.DomainArgs{
 //				CompartmentId:  pulumi.Any(compartmentId),
 //				Description:    pulumi.Any(domainDescription),
 //				DisplayName:    pulumi.Any(domainDisplayName),

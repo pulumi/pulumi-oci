@@ -37,14 +37,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewClusterNetwork(ctx, "test_cluster_network", &Core.ClusterNetworkArgs{
+//			_, err := core.NewClusterNetwork(ctx, "test_cluster_network", &core.ClusterNetworkArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				InstancePools: core.ClusterNetworkInstancePoolArray{
 //					&core.ClusterNetworkInstancePoolArgs{

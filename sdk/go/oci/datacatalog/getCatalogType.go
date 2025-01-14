@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datacatalog"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.GetCatalogType(ctx, &datacatalog.GetCatalogTypeArgs{
+//			_, err := datacatalog.GetCatalogType(ctx, &datacatalog.GetCatalogTypeArgs{
 //				CatalogId: testCatalog.Id,
 //				TypeKey:   catalogTypeTypeKey,
 //				Fields:    catalogTypeFields,

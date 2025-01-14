@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Queue"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/queue"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Queue.GetQueue(ctx, &queue.GetQueueArgs{
+//			_, err := queue.GetQueue(ctx, &queue.GetQueueArgs{
 //				QueueId: testQueueOciQueueQueue.Id,
 //			}, nil)
 //			if err != nil {

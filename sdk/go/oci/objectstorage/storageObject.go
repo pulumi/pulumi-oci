@@ -30,14 +30,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/objectstorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.NewStorageObject(ctx, "test_object", &ObjectStorage.StorageObjectArgs{
+//			_, err := objectstorage.NewStorageObject(ctx, "test_object", &objectstorage.StorageObjectArgs{
 //				Bucket:                  pulumi.Any(objectBucket),
 //				Content:                 pulumi.Any(objectContent),
 //				Namespace:               pulumi.Any(objectNamespace),

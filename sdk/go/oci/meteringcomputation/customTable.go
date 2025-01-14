@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewCustomTable(ctx, "test_custom_table", &MeteringComputation.CustomTableArgs{
+//			_, err := meteringcomputation.NewCustomTable(ctx, "test_custom_table", &meteringcomputation.CustomTableArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				SavedCustomTable: &meteringcomputation.CustomTableSavedCustomTableArgs{
 //					DisplayName:      pulumi.Any(customTableSavedCustomTableDisplayName),

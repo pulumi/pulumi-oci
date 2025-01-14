@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/objectstorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.GetNamespace(ctx, &objectstorage.GetNamespaceArgs{
+//			_, err := objectstorage.GetNamespace(ctx, &objectstorage.GetNamespaceArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {

@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osmanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagement.NewManagedInstanceGroup(ctx, "test_managed_instance_group", &OsManagement.ManagedInstanceGroupArgs{
+//			_, err := osmanagement.NewManagedInstanceGroup(ctx, "test_managed_instance_group", &osmanagement.ManagedInstanceGroupArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(managedInstanceGroupDisplayName),
 //				DefinedTags: pulumi.StringMap{

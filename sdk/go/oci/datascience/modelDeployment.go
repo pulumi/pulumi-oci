@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datascience"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModelDeployment(ctx, "test_model_deployment", &DataScience.ModelDeploymentArgs{
+//			_, err := datascience.NewModelDeployment(ctx, "test_model_deployment", &datascience.ModelDeploymentArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ModelDeploymentConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsArgs{
 //					DeploymentType: pulumi.Any(modelDeploymentModelDeploymentConfigurationDetailsDeploymentType),

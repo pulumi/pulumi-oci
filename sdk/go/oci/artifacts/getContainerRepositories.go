@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/artifacts"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.GetContainerRepositories(ctx, &artifacts.GetContainerRepositoriesArgs{
+//			_, err := artifacts.GetContainerRepositories(ctx, &artifacts.GetContainerRepositoriesArgs{
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: pulumi.BoolRef(containerRepositoryCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(containerRepositoryDisplayName),

@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Ons"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ons"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ons.NewSubscription(ctx, "test_subscription", &Ons.SubscriptionArgs{
+//			_, err := ons.NewSubscription(ctx, "test_subscription", &ons.SubscriptionArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Endpoint:      pulumi.Any(subscriptionEndpoint),
 //				Protocol:      pulumi.Any(subscriptionProtocol),

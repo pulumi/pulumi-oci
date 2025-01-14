@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Analytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/analytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.GetAnalyticsInstance(ctx, &analytics.GetAnalyticsInstanceArgs{
+//			_, err := analytics.GetAnalyticsInstance(ctx, &analytics.GetAnalyticsInstanceArgs{
 //				AnalyticsInstanceId: testAnalyticsInstanceOciAnalyticsAnalyticsInstance.Id,
 //			}, nil)
 //			if err != nil {

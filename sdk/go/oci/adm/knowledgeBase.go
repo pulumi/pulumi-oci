@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Adm"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/adm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Adm.NewKnowledgeBase(ctx, "test_knowledge_base", &Adm.KnowledgeBaseArgs{
+//			_, err := adm.NewKnowledgeBase(ctx, "test_knowledge_base", &adm.KnowledgeBaseArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.GetExternalAsmInstances(ctx, &databasemanagement.GetExternalAsmInstancesArgs{
+//			_, err := databasemanagement.GetExternalAsmInstances(ctx, &databasemanagement.GetExternalAsmInstancesArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				DisplayName:   pulumi.StringRef(externalAsmInstanceDisplayName),
 //				ExternalAsmId: pulumi.StringRef(testExternalAsm.Id),

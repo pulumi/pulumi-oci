@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/filestorage"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.GetSnapshots(ctx, &filestorage.GetSnapshotsArgs{
+//			_, err := filestorage.GetSnapshots(ctx, &filestorage.GetSnapshotsArgs{
 //				CompartmentId:              pulumi.StringRef(compartmentId),
 //				FileSystemId:               pulumi.StringRef(testFileSystem.Id),
 //				FilesystemSnapshotPolicyId: pulumi.StringRef(testFilesystemSnapshotPolicy.Id),

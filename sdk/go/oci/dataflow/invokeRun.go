@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dataflow"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.NewInvokeRun(ctx, "test_invoke_run", &DataFlow.InvokeRunArgs{
+//			_, err := dataflow.NewInvokeRun(ctx, "test_invoke_run", &dataflow.InvokeRunArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ApplicationId: pulumi.Any(testApplication.Id),
 //				ApplicationLogConfig: &dataflow.InvokeRunApplicationLogConfigArgs{

@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetExadbVmClusterUpdateHistoryEntry(ctx, &database.GetExadbVmClusterUpdateHistoryEntryArgs{
+//			_, err := database.GetExadbVmClusterUpdateHistoryEntry(ctx, &database.GetExadbVmClusterUpdateHistoryEntryArgs{
 //				ExadbVmClusterId:     testExadbVmCluster.Id,
 //				UpdateHistoryEntryId: testUpdateHistoryEntry.Id,
 //			}, nil)

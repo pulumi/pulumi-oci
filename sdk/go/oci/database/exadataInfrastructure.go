@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExadataInfrastructure(ctx, "test_exadata_infrastructure", &Database.ExadataInfrastructureArgs{
+//			_, err := database.NewExadataInfrastructure(ctx, "test_exadata_infrastructure", &database.ExadataInfrastructureArgs{
 //				AdminNetworkCidr:         pulumi.Any(exadataInfrastructureAdminNetworkCidr),
 //				CloudControlPlaneServer1: pulumi.Any(exadataInfrastructureCloudControlPlaneServer1),
 //				CloudControlPlaneServer2: pulumi.Any(exadataInfrastructureCloudControlPlaneServer2),

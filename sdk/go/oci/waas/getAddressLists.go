@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waas"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waas"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.GetAddressLists(ctx, &waas.GetAddressListsArgs{
+//			_, err := waas.GetAddressLists(ctx, &waas.GetAddressListsArgs{
 //				CompartmentId:                   compartmentId,
 //				Ids:                             addressListIds,
 //				Names:                           addressListNames,

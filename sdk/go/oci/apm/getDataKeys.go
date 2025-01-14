@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Apm"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Apm.GetDataKeys(ctx, &apm.GetDataKeysArgs{
+//			_, err := apm.GetDataKeys(ctx, &apm.GetDataKeysArgs{
 //				ApmDomainId: testApmDomain.Id,
 //				DataKeyType: pulumi.StringRef(dataKeyDataKeyType),
 //			}, nil)

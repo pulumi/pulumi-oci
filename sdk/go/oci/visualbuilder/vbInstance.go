@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/VisualBuilder"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/visualbuilder"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := VisualBuilder.NewVbInstance(ctx, "test_vb_instance", &VisualBuilder.VbInstanceArgs{
+//			_, err := visualbuilder.NewVbInstance(ctx, "test_vb_instance", &visualbuilder.VbInstanceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(vbInstanceDisplayName),
 //				NodeCount:     pulumi.Any(vbInstanceNodeCount),

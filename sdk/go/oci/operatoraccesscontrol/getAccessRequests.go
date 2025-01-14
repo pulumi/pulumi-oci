@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/operatoraccesscontrol"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OperatorAccessControl.GetAccessRequests(ctx, &operatoraccesscontrol.GetAccessRequestsArgs{
+//			_, err := operatoraccesscontrol.GetAccessRequests(ctx, &operatoraccesscontrol.GetAccessRequestsArgs{
 //				CompartmentId: compartmentId,
 //				ResourceName:  pulumi.StringRef(accessRequestResourceName),
 //				ResourceType:  pulumi.StringRef(accessRequestResourceType),

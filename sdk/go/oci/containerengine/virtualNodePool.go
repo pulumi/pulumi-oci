@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/containerengine"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewVirtualNodePool(ctx, "test_virtual_node_pool", &ContainerEngine.VirtualNodePoolArgs{
+//			_, err := containerengine.NewVirtualNodePool(ctx, "test_virtual_node_pool", &containerengine.VirtualNodePoolArgs{
 //				ClusterId:     pulumi.Any(testCluster.Id),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(virtualNodePoolDisplayName),

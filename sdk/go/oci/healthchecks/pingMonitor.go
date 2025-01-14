@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/healthchecks"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.NewPingMonitor(ctx, "test_ping_monitor", &HealthChecks.PingMonitorArgs{
+//			_, err := healthchecks.NewPingMonitor(ctx, "test_ping_monitor", &healthchecks.PingMonitorArgs{
 //				CompartmentId:     pulumi.Any(compartmentId),
 //				DisplayName:       pulumi.Any(pingMonitorDisplayName),
 //				IntervalInSeconds: pulumi.Any(pingMonitorIntervalInSeconds),

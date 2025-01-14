@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/managementagent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.GetManagementAgents(ctx, &managementagent.GetManagementAgentsArgs{
+//			_, err := managementagent.GetManagementAgents(ctx, &managementagent.GetManagementAgentsArgs{
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(managementAgentAccessLevel),
 //				AvailabilityStatus:     pulumi.StringRef(managementAgentAvailabilityStatus),

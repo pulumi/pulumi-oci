@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/managementagent"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.GetManagementAgentImages(ctx, &managementagent.GetManagementAgentImagesArgs{
+//			_, err := managementagent.GetManagementAgentImages(ctx, &managementagent.GetManagementAgentImagesArgs{
 //				CompartmentId: compartmentId,
 //				InstallType:   pulumi.StringRef(managementAgentImageInstallType),
 //				Name:          pulumi.StringRef(managementAgentImageName),

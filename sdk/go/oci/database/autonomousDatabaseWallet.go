@@ -28,14 +28,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseWallet(ctx, "test_autonomous_database_wallet", &Database.AutonomousDatabaseWalletArgs{
+//			_, err := database.NewAutonomousDatabaseWallet(ctx, "test_autonomous_database_wallet", &database.AutonomousDatabaseWalletArgs{
 //				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
 //				Password:             pulumi.Any(autonomousDatabaseWalletPassword),
 //				Base64EncodeContent:  pulumi.Bool(false),

@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewall(ctx, "test_network_firewall", &NetworkFirewall.NetworkFirewallArgs{
+//			_, err := networkfirewall.NewNetworkFirewall(ctx, "test_network_firewall", &networkfirewall.NetworkFirewallArgs{
 //				CompartmentId:           pulumi.Any(compartmentId),
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
 //				SubnetId:                pulumi.Any(testSubnet.Id),

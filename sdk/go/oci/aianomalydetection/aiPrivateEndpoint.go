@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/aianomalydetection"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiAnomalyDetection.NewAiPrivateEndpoint(ctx, "test_ai_private_endpoint", &AiAnomalyDetection.AiPrivateEndpointArgs{
+//			_, err := aianomalydetection.NewAiPrivateEndpoint(ctx, "test_ai_private_endpoint", &aianomalydetection.AiPrivateEndpointArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DnsZones:      pulumi.Any(aiPrivateEndpointDnsZones),
 //				SubnetId:      pulumi.Any(testSubnet.Id),

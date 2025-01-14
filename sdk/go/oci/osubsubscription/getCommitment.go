@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/OsubSubscription"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/osubsubscription"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsubSubscription.GetCommitment(ctx, &osubsubscription.GetCommitmentArgs{
+//			_, err := osubsubscription.GetCommitment(ctx, &osubsubscription.GetCommitmentArgs{
 //				CommitmentId:              testCommitmentOciOsubSubscriptionCommitment.Id,
 //				XOneGatewaySubscriptionId: pulumi.StringRef(commitmentXOneGatewaySubscriptionId),
 //				XOneOriginRegion:          pulumi.StringRef(commitmentXOneOriginRegion),

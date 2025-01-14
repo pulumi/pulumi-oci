@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/VnMonitoring"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/vnmonitoring"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := VnMonitoring.NewPathAnalyzerTest(ctx, "test_path_analyzer_test", &VnMonitoring.PathAnalyzerTestArgs{
+//			_, err := vnmonitoring.NewPathAnalyzerTest(ctx, "test_path_analyzer_test", &vnmonitoring.PathAnalyzerTestArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DestinationEndpoint: &vnmonitoring.PathAnalyzerTestDestinationEndpointArgs{
 //					Type:                  pulumi.Any(pathAnalyzerTestDestinationEndpointType),

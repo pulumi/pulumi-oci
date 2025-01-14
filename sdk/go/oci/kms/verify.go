@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewVerify(ctx, "test_verify", &Kms.VerifyArgs{
+//			_, err := kms.NewVerify(ctx, "test_verify", &kms.VerifyArgs{
 //				CryptoEndpoint:   pulumi.Any(verifyMessageCryptoEndpoint),
 //				KeyId:            pulumi.Any(testKey.Id),
 //				KeyVersionId:     pulumi.Any(testKeyVersion.Id),

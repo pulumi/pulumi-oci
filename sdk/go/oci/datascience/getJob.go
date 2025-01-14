@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datascience"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.GetJob(ctx, &datascience.GetJobArgs{
+//			_, err := datascience.GetJob(ctx, &datascience.GetJobArgs{
 //				JobId: testJobOciDatascienceJob.Id,
 //			}, nil)
 //			if err != nil {

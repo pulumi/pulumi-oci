@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Kms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/kms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewEkmsPrivateEndpoint(ctx, "test_ekms_private_endpoint", &Kms.EkmsPrivateEndpointArgs{
+//			_, err := kms.NewEkmsPrivateEndpoint(ctx, "test_ekms_private_endpoint", &kms.EkmsPrivateEndpointArgs{
 //				CaBundle:             pulumi.Any(ekmsPrivateEndpointCaBundle),
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DisplayName:          pulumi.Any(ekmsPrivateEndpointDisplayName),

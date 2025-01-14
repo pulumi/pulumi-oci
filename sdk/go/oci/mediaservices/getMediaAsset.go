@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MediaServices"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mediaservices"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.GetMediaAsset(ctx, &mediaservices.GetMediaAssetArgs{
+//			_, err := mediaservices.GetMediaAsset(ctx, &mediaservices.GetMediaAssetArgs{
 //				MediaAssetId: testMediaAssetOciMediaServicesMediaAsset.Id,
 //			}, nil)
 //			if err != nil {

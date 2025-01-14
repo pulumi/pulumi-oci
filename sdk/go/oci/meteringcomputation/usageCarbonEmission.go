@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsageCarbonEmission(ctx, "test_usage_carbon_emission", &MeteringComputation.UsageCarbonEmissionArgs{
+//			_, err := meteringcomputation.NewUsageCarbonEmission(ctx, "test_usage_carbon_emission", &meteringcomputation.UsageCarbonEmissionArgs{
 //				TenantId:         pulumi.Any(testTenant.Id),
 //				TimeUsageEnded:   pulumi.Any(usageCarbonEmissionTimeUsageEnded),
 //				TimeUsageStarted: pulumi.Any(usageCarbonEmissionTimeUsageStarted),

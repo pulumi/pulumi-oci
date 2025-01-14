@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ResourceManager"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/resourcemanager"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ResourceManager.GetPrivateEndpoints(ctx, &resourcemanager.GetPrivateEndpointsArgs{
+//			_, err := resourcemanager.GetPrivateEndpoints(ctx, &resourcemanager.GetPrivateEndpointsArgs{
 //				CompartmentId:     pulumi.StringRef(compartmentId),
 //				DisplayName:       pulumi.StringRef(privateEndpointDisplayName),
 //				PrivateEndpointId: pulumi.StringRef(testPrivateEndpoint.Id),

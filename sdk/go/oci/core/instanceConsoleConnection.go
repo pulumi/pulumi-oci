@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewInstanceConsoleConnection(ctx, "test_instance_console_connection", &Core.InstanceConsoleConnectionArgs{
+//			_, err := core.NewInstanceConsoleConnection(ctx, "test_instance_console_connection", &core.InstanceConsoleConnectionArgs{
 //				InstanceId: pulumi.Any(testInstance.Id),
 //				PublicKey:  pulumi.Any(instanceConsoleConnectionPublicKey),
 //				DefinedTags: pulumi.StringMap{

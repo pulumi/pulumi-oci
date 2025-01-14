@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waa"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waa"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waa.GetAppAccelerationPolicies(ctx, &waa.GetAppAccelerationPoliciesArgs{
+//			_, err := waa.GetAppAccelerationPolicies(ctx, &waa.GetAppAccelerationPoliciesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(webAppAccelerationPolicyDisplayName),
 //				Id:            pulumi.StringRef(webAppAccelerationPolicyId),

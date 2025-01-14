@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Events"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/events"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Events.NewRule(ctx, "test_rule", &Events.RuleArgs{
+//			_, err := events.NewRule(ctx, "test_rule", &events.RuleArgs{
 //				Actions: &events.RuleActionsArgs{
 //					Actions: events.RuleActionsActionArray{
 //						&events.RuleActionsActionArgs{

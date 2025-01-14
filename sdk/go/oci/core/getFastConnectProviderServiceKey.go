@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.GetFastConnectProviderServiceKey(ctx, &core.GetFastConnectProviderServiceKeyArgs{
+//			_, err := core.GetFastConnectProviderServiceKey(ctx, &core.GetFastConnectProviderServiceKeyArgs{
 //				ProviderServiceId:      testFastConnectProviderServices.FastConnectProviderServices[0].Id,
 //				ProviderServiceKeyName: fastConnectProviderServiceKeyProviderServiceKeyName,
 //			}, nil)

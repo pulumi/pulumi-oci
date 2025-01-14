@@ -33,14 +33,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgAttachmentManagement(ctx, "test_drg_rpc_attachment", &Core.DrgAttachmentManagementArgs{
+//			_, err := core.NewDrgAttachmentManagement(ctx, "test_drg_rpc_attachment", &core.DrgAttachmentManagementArgs{
 //				AttachmentType:  pulumi.String("REMOTE_PEERING_CONNECTION"),
 //				CompartmentId:   pulumi.Any(compartmentOcid),
 //				NetworkId:       pulumi.Any(testRpc.Id),

@@ -25,14 +25,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/GenerativeAi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/generativeai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.NewAgentKnowledgeBase(ctx, "test_knowledge_base", &GenerativeAi.AgentKnowledgeBaseArgs{
+//			_, err := generativeai.NewAgentKnowledgeBase(ctx, "test_knowledge_base", &generativeai.AgentKnowledgeBaseArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				IndexConfig: &generativeai.AgentKnowledgeBaseIndexConfigArgs{
 //					IndexConfigType: pulumi.Any(knowledgeBaseIndexConfigIndexConfigType),

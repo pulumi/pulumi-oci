@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/AiDocument"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/aidocument"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiDocument.NewProject(ctx, "test_project", &AiDocument.ProjectArgs{
+//			_, err := aidocument.NewProject(ctx, "test_project", &aidocument.ProjectArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags:   pulumi.Any(projectDefinedTags),
 //				Description:   pulumi.Any(projectDescription),

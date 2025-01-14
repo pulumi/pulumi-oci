@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Email"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/email"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.GetSuppression(ctx, &email.GetSuppressionArgs{
+//			_, err := email.GetSuppression(ctx, &email.GetSuppressionArgs{
 //				SuppressionId: testSuppressionOciEmailSuppression.Id,
 //			}, nil)
 //			if err != nil {

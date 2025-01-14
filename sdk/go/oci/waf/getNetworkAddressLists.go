@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Waf"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/waf"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waf.GetNetworkAddressLists(ctx, &waf.GetNetworkAddressListsArgs{
+//			_, err := waf.GetNetworkAddressLists(ctx, &waf.GetNetworkAddressListsArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(networkAddressListDisplayName),
 //				Id:            pulumi.StringRef(networkAddressListId),

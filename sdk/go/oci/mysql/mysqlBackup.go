@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewMysqlBackup(ctx, "test_mysql_backup", &Mysql.MysqlBackupArgs{
+//			_, err := mysql.NewMysqlBackup(ctx, "test_mysql_backup", &mysql.MysqlBackupArgs{
 //				DbSystemId: pulumi.Any(testDbSystem.Id),
 //				BackupType: pulumi.Any(mysqlBackupBackupType),
 //				DefinedTags: pulumi.StringMap{

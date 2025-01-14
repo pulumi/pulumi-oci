@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewHeatWaveCluster(ctx, "test_heat_wave_cluster", &Mysql.HeatWaveClusterArgs{
+//			_, err := mysql.NewHeatWaveCluster(ctx, "test_heat_wave_cluster", &mysql.HeatWaveClusterArgs{
 //				DbSystemId:         pulumi.Any(testDbSystem.Id),
 //				ClusterSize:        pulumi.Any(heatWaveClusterClusterSize),
 //				IsLakehouseEnabled: pulumi.Any(heatWaveClusterIsLakehouseEnabled),

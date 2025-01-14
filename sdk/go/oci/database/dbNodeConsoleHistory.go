@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewDbNodeConsoleHistory(ctx, "test_db_node_console_history", &Database.DbNodeConsoleHistoryArgs{
+//			_, err := database.NewDbNodeConsoleHistory(ctx, "test_db_node_console_history", &database.DbNodeConsoleHistoryArgs{
 //				DbNodeId:    pulumi.Any(testDbNode.Id),
 //				DisplayName: pulumi.Any(dbNodeConsoleHistoryDisplayName),
 //				DefinedTags: pulumi.Any(dbNodeConsoleHistoryDefinedTags),

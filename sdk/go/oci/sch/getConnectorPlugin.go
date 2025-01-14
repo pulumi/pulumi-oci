@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Sch"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/sch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Sch.GetConnectorPlugin(ctx, &sch.GetConnectorPluginArgs{
+//			_, err := sch.GetConnectorPlugin(ctx, &sch.GetConnectorPluginArgs{
 //				ConnectorPluginName: testConnectorPluginOciSchConnectorPlugin.Name,
 //			}, nil)
 //			if err != nil {

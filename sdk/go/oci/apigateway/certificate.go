@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apigateway"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewCertificate(ctx, "test_certificate", &ApiGateway.CertificateArgs{
+//			_, err := apigateway.NewCertificate(ctx, "test_certificate", &apigateway.CertificateArgs{
 //				Certificate:   pulumi.Any(certificateCertificate),
 //				CompartmentId: pulumi.Any(compartmentId),
 //				PrivateKey:    pulumi.Any(certificatePrivateKey),

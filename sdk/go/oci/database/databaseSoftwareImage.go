@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewDatabaseSoftwareImage(ctx, "test_database_software_image", &Database.DatabaseSoftwareImageArgs{
+//			_, err := database.NewDatabaseSoftwareImage(ctx, "test_database_software_image", &database.DatabaseSoftwareImageArgs{
 //				CompartmentId:                      pulumi.Any(compartmentId),
 //				DisplayName:                        pulumi.Any(databaseSoftwareImageDisplayName),
 //				DatabaseSoftwareImageOneOffPatches: pulumi.Any(databaseSoftwareImageDatabaseSoftwareImageOneOffPatches),

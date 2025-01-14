@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewAwrHubSourceAwrhubsourcesManagement(ctx, "test_awr_hub_source_awrhubsources_management", &Opsi.AwrHubSourceAwrhubsourcesManagementArgs{
+//			_, err := opsi.NewAwrHubSourceAwrhubsourcesManagement(ctx, "test_awr_hub_source_awrhubsources_management", &opsi.AwrHubSourceAwrhubsourcesManagementArgs{
 //				AwrHubSourceId:     pulumi.Any(testAwrHubSource.Id),
 //				EnableAwrhubsource: pulumi.Any(enableAwrhubsource),
 //			})

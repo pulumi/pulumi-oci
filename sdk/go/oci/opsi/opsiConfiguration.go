@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opsi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOpsiConfiguration(ctx, "test_opsi_configuration", &Opsi.OpsiConfigurationArgs{
+//			_, err := opsi.NewOpsiConfiguration(ctx, "test_opsi_configuration", &opsi.OpsiConfigurationArgs{
 //				OpsiConfigType:           pulumi.Any(opsiConfigurationOpsiConfigType),
 //				CompartmentId:            pulumi.Any(compartmentId),
 //				ConfigItemCustomStatuses: pulumi.Any(opsiConfigurationConfigItemCustomStatus),

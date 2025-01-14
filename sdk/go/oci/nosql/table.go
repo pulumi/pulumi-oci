@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Nosql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/nosql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Nosql.NewTable(ctx, "test_table", &Nosql.TableArgs{
+//			_, err := nosql.NewTable(ctx, "test_table", &nosql.TableArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DdlStatement:  pulumi.Any(tableDdlStatement),
 //				Name:          pulumi.Any(tableName),

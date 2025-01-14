@@ -24,14 +24,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudguard"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewSecurityZone(ctx, "test_security_zone", &CloudGuard.SecurityZoneArgs{
+//			_, err := cloudguard.NewSecurityZone(ctx, "test_security_zone", &cloudguard.SecurityZoneArgs{
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DisplayName:          pulumi.Any(securityZoneDisplayName),
 //				SecurityZoneRecipeId: pulumi.Any(testSecurityZoneRecipe.Id),

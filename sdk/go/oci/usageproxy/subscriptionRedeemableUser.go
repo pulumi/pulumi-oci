@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/UsageProxy"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/usageproxy"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := UsageProxy.NewSubscriptionRedeemableUser(ctx, "test_subscription_redeemable_user", &UsageProxy.SubscriptionRedeemableUserArgs{
+//			_, err := usageproxy.NewSubscriptionRedeemableUser(ctx, "test_subscription_redeemable_user", &usageproxy.SubscriptionRedeemableUserArgs{
 //				SubscriptionId: pulumi.Any(testSubscription.Id),
 //				TenancyId:      pulumi.Any(testTenancy.Id),
 //				Items: usageproxy.SubscriptionRedeemableUserItemArray{

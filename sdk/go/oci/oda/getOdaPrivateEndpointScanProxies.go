@@ -27,14 +27,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Oda"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/oda"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oda.GetOdaPrivateEndpointScanProxies(ctx, &oda.GetOdaPrivateEndpointScanProxiesArgs{
+//			_, err := oda.GetOdaPrivateEndpointScanProxies(ctx, &oda.GetOdaPrivateEndpointScanProxiesArgs{
 //				OdaPrivateEndpointId: testOdaPrivateEndpoint.Id,
 //				State:                pulumi.StringRef(odaPrivateEndpointScanProxyState),
 //			}, nil)

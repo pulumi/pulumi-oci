@@ -26,14 +26,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.GetRrsets(ctx, &dns.GetRrsetsArgs{
+//			_, err := dns.GetRrsets(ctx, &dns.GetRrsetsArgs{
 //				ZoneNameOrId:   testZone.Id,
 //				Domain:         pulumi.StringRef(rrsetDomain),
 //				DomainContains: pulumi.StringRef(rrsetDomain),

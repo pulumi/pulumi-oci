@@ -22,14 +22,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/CloudBridge"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/cloudbridge"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.GetEnvironment(ctx, &cloudbridge.GetEnvironmentArgs{
+//			_, err := cloudbridge.GetEnvironment(ctx, &cloudbridge.GetEnvironmentArgs{
 //				EnvironmentId: testEnvironmentOciCloudBridgeEnvironment.Id,
 //			}, nil)
 //			if err != nil {

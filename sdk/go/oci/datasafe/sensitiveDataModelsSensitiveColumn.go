@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/datasafe"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSensitiveDataModelsSensitiveColumn(ctx, "test_sensitive_data_models_sensitive_column", &DataSafe.SensitiveDataModelsSensitiveColumnArgs{
+//			_, err := datasafe.NewSensitiveDataModelsSensitiveColumn(ctx, "test_sensitive_data_models_sensitive_column", &datasafe.SensitiveDataModelsSensitiveColumnArgs{
 //				ColumnName:                pulumi.Any(sensitiveDataModelsSensitiveColumnColumnName),
 //				Object:                    pulumi.Any(sensitiveDataModelsSensitiveColumnObject),
 //				SchemaName:                pulumi.Any(sensitiveDataModelsSensitiveColumnSchemaName),

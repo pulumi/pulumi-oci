@@ -30,14 +30,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewRecord(ctx, "test_record", &Dns.RecordArgs{
+//			_, err := dns.NewRecord(ctx, "test_record", &dns.RecordArgs{
 //				ZoneNameOrId: pulumi.Any(testZoneNameOr.Id),
 //				Domain:       pulumi.Any(recordItemsDomain),
 //				Rtype:        pulumi.Any(recordItemsRtype),

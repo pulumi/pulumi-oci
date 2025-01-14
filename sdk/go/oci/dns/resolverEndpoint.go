@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewResolverEndpoint(ctx, "test_resolver_endpoint", &Dns.ResolverEndpointArgs{
+//			_, err := dns.NewResolverEndpoint(ctx, "test_resolver_endpoint", &dns.ResolverEndpointArgs{
 //				IsForwarding:      pulumi.Any(resolverEndpointIsForwarding),
 //				IsListening:       pulumi.Any(resolverEndpointIsListening),
 //				Name:              pulumi.Any(resolverEndpointName),

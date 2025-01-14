@@ -37,7 +37,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -45,7 +45,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Filter on Subnet OCID
-//			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
+//			_, err := core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
 //				SubnetId: pulumi.StringRef(privateIpSubnetId),
 //			}, nil)
 //			if err != nil {
@@ -61,7 +61,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -69,7 +69,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Filter on VNIC OCID
-//			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
+//			_, err := core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
 //				VnicId: pulumi.StringRef(testVnic.Id),
 //			}, nil)
 //			if err != nil {
@@ -85,7 +85,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -93,7 +93,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Filter on private IP address and Subnet OCID
-//			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
+//			_, err := core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
 //				IpAddress: pulumi.StringRef(privateIpIpAddress),
 //				SubnetId:  pulumi.StringRef(testSubnet.Id),
 //				VlanId:    pulumi.StringRef(testVlan.Id),

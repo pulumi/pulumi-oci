@@ -93,6 +93,21 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    @Import(name="routeTableId")
+    private @Nullable Output<String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    public Optional<Output<String>> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC&#39;s subnet.
      * 
      * ** IMPORTANT **
@@ -121,6 +136,7 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
+        this.routeTableId = $.routeTableId;
         this.vnicId = $.vnicId;
     }
 
@@ -245,6 +261,27 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipv6subnetCidr(String ipv6subnetCidr) {
             return ipv6subnetCidr(Output.of(ipv6subnetCidr));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(@Nullable Output<String> routeTableId) {
+            $.routeTableId = routeTableId;
+            return this;
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(String routeTableId) {
+            return routeTableId(Output.of(routeTableId));
         }
 
         /**

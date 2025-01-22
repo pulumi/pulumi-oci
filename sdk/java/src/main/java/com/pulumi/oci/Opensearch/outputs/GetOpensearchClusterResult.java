@@ -5,6 +5,9 @@ package com.pulumi.oci.Opensearch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterMaintenanceDetail;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterOutboundClusterConfig;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterReverseConnectionEndpoint;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -23,6 +26,7 @@ public final class GetOpensearchClusterResult {
      * 
      */
     private String compartmentId;
+    private Integer configureOutboundClusterTrigger;
     /**
      * @return The number of data nodes configured for the cluster.
      * 
@@ -59,7 +63,7 @@ public final class GetOpensearchClusterResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return The name of the cluster. Avoid entering confidential information.
+     * @return Name of the Outbound cluster. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -79,10 +83,20 @@ public final class GetOpensearchClusterResult {
      */
     private String id;
     /**
+     * @return List of inbound clusters for which this cluster is an outbound cluster
+     * 
+     */
+    private List<String> inboundClusterIds;
+    /**
      * @return Additional information about the current lifecycle state of the cluster.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Details for the maintenance activity.
+     * 
+     */
+    private List<GetOpensearchClusterMaintenanceDetail> maintenanceDetails;
     /**
      * @return The number of master nodes configured for the cluster.
      * 
@@ -144,6 +158,21 @@ public final class GetOpensearchClusterResult {
      * 
      */
     private String opensearchPrivateIp;
+    /**
+     * @return This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    private List<GetOpensearchClusterOutboundClusterConfig> outboundClusterConfigs;
+    /**
+     * @return The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    private List<String> reverseConnectionEndpointCustomerIps;
+    /**
+     * @return The list of reverse connection endpoints.
+     * 
+     */
+    private List<GetOpensearchClusterReverseConnectionEndpoint> reverseConnectionEndpoints;
     /**
      * @return The name of the master user that are used to manage security config
      * 
@@ -230,6 +259,9 @@ public final class GetOpensearchClusterResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    public Integer configureOutboundClusterTrigger() {
+        return this.configureOutboundClusterTrigger;
+    }
     /**
      * @return The number of data nodes configured for the cluster.
      * 
@@ -280,7 +312,7 @@ public final class GetOpensearchClusterResult {
         return this.definedTags;
     }
     /**
-     * @return The name of the cluster. Avoid entering confidential information.
+     * @return Name of the Outbound cluster. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -308,11 +340,25 @@ public final class GetOpensearchClusterResult {
         return this.id;
     }
     /**
+     * @return List of inbound clusters for which this cluster is an outbound cluster
+     * 
+     */
+    public List<String> inboundClusterIds() {
+        return this.inboundClusterIds;
+    }
+    /**
      * @return Additional information about the current lifecycle state of the cluster.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Details for the maintenance activity.
+     * 
+     */
+    public List<GetOpensearchClusterMaintenanceDetail> maintenanceDetails() {
+        return this.maintenanceDetails;
     }
     /**
      * @return The number of master nodes configured for the cluster.
@@ -400,6 +446,27 @@ public final class GetOpensearchClusterResult {
      */
     public String opensearchPrivateIp() {
         return this.opensearchPrivateIp;
+    }
+    /**
+     * @return This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    public List<GetOpensearchClusterOutboundClusterConfig> outboundClusterConfigs() {
+        return this.outboundClusterConfigs;
+    }
+    /**
+     * @return The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    public List<String> reverseConnectionEndpointCustomerIps() {
+        return this.reverseConnectionEndpointCustomerIps;
+    }
+    /**
+     * @return The list of reverse connection endpoints.
+     * 
+     */
+    public List<GetOpensearchClusterReverseConnectionEndpoint> reverseConnectionEndpoints() {
+        return this.reverseConnectionEndpoints;
     }
     /**
      * @return The name of the master user that are used to manage security config
@@ -511,6 +578,7 @@ public final class GetOpensearchClusterResult {
     public static final class Builder {
         private List<String> availabilityDomains;
         private String compartmentId;
+        private Integer configureOutboundClusterTrigger;
         private Integer dataNodeCount;
         private String dataNodeHostBareMetalShape;
         private Integer dataNodeHostMemoryGb;
@@ -522,7 +590,9 @@ public final class GetOpensearchClusterResult {
         private String fqdn;
         private Map<String,String> freeformTags;
         private String id;
+        private List<String> inboundClusterIds;
         private String lifecycleDetails;
+        private List<GetOpensearchClusterMaintenanceDetail> maintenanceDetails;
         private Integer masterNodeCount;
         private String masterNodeHostBareMetalShape;
         private Integer masterNodeHostMemoryGb;
@@ -536,6 +606,9 @@ public final class GetOpensearchClusterResult {
         private String opensearchClusterId;
         private String opensearchFqdn;
         private String opensearchPrivateIp;
+        private List<GetOpensearchClusterOutboundClusterConfig> outboundClusterConfigs;
+        private List<String> reverseConnectionEndpointCustomerIps;
+        private List<GetOpensearchClusterReverseConnectionEndpoint> reverseConnectionEndpoints;
         private String securityMasterUserName;
         private String securityMasterUserPasswordHash;
         private String securityMode;
@@ -555,6 +628,7 @@ public final class GetOpensearchClusterResult {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomains = defaults.availabilityDomains;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configureOutboundClusterTrigger = defaults.configureOutboundClusterTrigger;
     	      this.dataNodeCount = defaults.dataNodeCount;
     	      this.dataNodeHostBareMetalShape = defaults.dataNodeHostBareMetalShape;
     	      this.dataNodeHostMemoryGb = defaults.dataNodeHostMemoryGb;
@@ -566,7 +640,9 @@ public final class GetOpensearchClusterResult {
     	      this.fqdn = defaults.fqdn;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.inboundClusterIds = defaults.inboundClusterIds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.maintenanceDetails = defaults.maintenanceDetails;
     	      this.masterNodeCount = defaults.masterNodeCount;
     	      this.masterNodeHostBareMetalShape = defaults.masterNodeHostBareMetalShape;
     	      this.masterNodeHostMemoryGb = defaults.masterNodeHostMemoryGb;
@@ -580,6 +656,9 @@ public final class GetOpensearchClusterResult {
     	      this.opensearchClusterId = defaults.opensearchClusterId;
     	      this.opensearchFqdn = defaults.opensearchFqdn;
     	      this.opensearchPrivateIp = defaults.opensearchPrivateIp;
+    	      this.outboundClusterConfigs = defaults.outboundClusterConfigs;
+    	      this.reverseConnectionEndpointCustomerIps = defaults.reverseConnectionEndpointCustomerIps;
+    	      this.reverseConnectionEndpoints = defaults.reverseConnectionEndpoints;
     	      this.securityMasterUserName = defaults.securityMasterUserName;
     	      this.securityMasterUserPasswordHash = defaults.securityMasterUserPasswordHash;
     	      this.securityMode = defaults.securityMode;
@@ -613,6 +692,14 @@ public final class GetOpensearchClusterResult {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configureOutboundClusterTrigger(Integer configureOutboundClusterTrigger) {
+            if (configureOutboundClusterTrigger == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "configureOutboundClusterTrigger");
+            }
+            this.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
             return this;
         }
         @CustomType.Setter
@@ -704,12 +791,34 @@ public final class GetOpensearchClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder inboundClusterIds(List<String> inboundClusterIds) {
+            if (inboundClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "inboundClusterIds");
+            }
+            this.inboundClusterIds = inboundClusterIds;
+            return this;
+        }
+        public Builder inboundClusterIds(String... inboundClusterIds) {
+            return inboundClusterIds(List.of(inboundClusterIds));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder maintenanceDetails(List<GetOpensearchClusterMaintenanceDetail> maintenanceDetails) {
+            if (maintenanceDetails == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "maintenanceDetails");
+            }
+            this.maintenanceDetails = maintenanceDetails;
+            return this;
+        }
+        public Builder maintenanceDetails(GetOpensearchClusterMaintenanceDetail... maintenanceDetails) {
+            return maintenanceDetails(List.of(maintenanceDetails));
         }
         @CustomType.Setter
         public Builder masterNodeCount(Integer masterNodeCount) {
@@ -814,6 +923,39 @@ public final class GetOpensearchClusterResult {
             }
             this.opensearchPrivateIp = opensearchPrivateIp;
             return this;
+        }
+        @CustomType.Setter
+        public Builder outboundClusterConfigs(List<GetOpensearchClusterOutboundClusterConfig> outboundClusterConfigs) {
+            if (outboundClusterConfigs == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "outboundClusterConfigs");
+            }
+            this.outboundClusterConfigs = outboundClusterConfigs;
+            return this;
+        }
+        public Builder outboundClusterConfigs(GetOpensearchClusterOutboundClusterConfig... outboundClusterConfigs) {
+            return outboundClusterConfigs(List.of(outboundClusterConfigs));
+        }
+        @CustomType.Setter
+        public Builder reverseConnectionEndpointCustomerIps(List<String> reverseConnectionEndpointCustomerIps) {
+            if (reverseConnectionEndpointCustomerIps == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "reverseConnectionEndpointCustomerIps");
+            }
+            this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            return this;
+        }
+        public Builder reverseConnectionEndpointCustomerIps(String... reverseConnectionEndpointCustomerIps) {
+            return reverseConnectionEndpointCustomerIps(List.of(reverseConnectionEndpointCustomerIps));
+        }
+        @CustomType.Setter
+        public Builder reverseConnectionEndpoints(List<GetOpensearchClusterReverseConnectionEndpoint> reverseConnectionEndpoints) {
+            if (reverseConnectionEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "reverseConnectionEndpoints");
+            }
+            this.reverseConnectionEndpoints = reverseConnectionEndpoints;
+            return this;
+        }
+        public Builder reverseConnectionEndpoints(GetOpensearchClusterReverseConnectionEndpoint... reverseConnectionEndpoints) {
+            return reverseConnectionEndpoints(List.of(reverseConnectionEndpoints));
         }
         @CustomType.Setter
         public Builder securityMasterUserName(String securityMasterUserName) {
@@ -931,6 +1073,7 @@ public final class GetOpensearchClusterResult {
             final var _resultValue = new GetOpensearchClusterResult();
             _resultValue.availabilityDomains = availabilityDomains;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
             _resultValue.dataNodeCount = dataNodeCount;
             _resultValue.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             _resultValue.dataNodeHostMemoryGb = dataNodeHostMemoryGb;
@@ -942,7 +1085,9 @@ public final class GetOpensearchClusterResult {
             _resultValue.fqdn = fqdn;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.inboundClusterIds = inboundClusterIds;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceDetails = maintenanceDetails;
             _resultValue.masterNodeCount = masterNodeCount;
             _resultValue.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             _resultValue.masterNodeHostMemoryGb = masterNodeHostMemoryGb;
@@ -956,6 +1101,9 @@ public final class GetOpensearchClusterResult {
             _resultValue.opensearchClusterId = opensearchClusterId;
             _resultValue.opensearchFqdn = opensearchFqdn;
             _resultValue.opensearchPrivateIp = opensearchPrivateIp;
+            _resultValue.outboundClusterConfigs = outboundClusterConfigs;
+            _resultValue.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            _resultValue.reverseConnectionEndpoints = reverseConnectionEndpoints;
             _resultValue.securityMasterUserName = securityMasterUserName;
             _resultValue.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             _resultValue.securityMode = securityMode;

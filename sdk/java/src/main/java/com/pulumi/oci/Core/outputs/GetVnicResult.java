@@ -78,6 +78,7 @@ public final class GetVnicResult {
      * 
      */
     private String publicIpAddress;
+    private String routeTableId;
     /**
      * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -202,6 +203,9 @@ public final class GetVnicResult {
     public String publicIpAddress() {
         return this.publicIpAddress;
     }
+    public String routeTableId() {
+        return this.routeTableId;
+    }
     /**
      * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -270,6 +274,7 @@ public final class GetVnicResult {
         private List<String> nsgIds;
         private String privateIpAddress;
         private String publicIpAddress;
+        private String routeTableId;
         private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String state;
@@ -293,6 +298,7 @@ public final class GetVnicResult {
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIpAddress = defaults.privateIpAddress;
     	      this.publicIpAddress = defaults.publicIpAddress;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.state = defaults.state;
@@ -413,6 +419,14 @@ public final class GetVnicResult {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(String routeTableId) {
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetVnicResult", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             if (securityAttributes == null) {
               throw new MissingRequiredPropertyException("GetVnicResult", "securityAttributes");
@@ -483,6 +497,7 @@ public final class GetVnicResult {
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIpAddress = privateIpAddress;
             _resultValue.publicIpAddress = publicIpAddress;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.state = state;

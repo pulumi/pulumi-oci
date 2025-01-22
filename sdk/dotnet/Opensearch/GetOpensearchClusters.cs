@@ -234,7 +234,7 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The name of the cluster. Avoid entering confidential information.
+        /// Name of the Outbound cluster. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetOpensearchClustersFilterResult> Filters;

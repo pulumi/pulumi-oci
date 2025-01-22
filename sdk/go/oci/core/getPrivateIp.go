@@ -80,8 +80,9 @@ type LookupPrivateIpResult struct {
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary bool `pulumi:"isPrimary"`
 	// true if the IP is reserved and can exist detached from vnic
-	IsReserved  bool   `pulumi:"isReserved"`
-	PrivateIpId string `pulumi:"privateIpId"`
+	IsReserved   bool   `pulumi:"isReserved"`
+	PrivateIpId  string `pulumi:"privateIpId"`
+	RouteTableId string `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
 	SubnetId string `pulumi:"subnetId"`
 	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -178,6 +179,10 @@ func (o LookupPrivateIpResultOutput) IsReserved() pulumi.BoolOutput {
 
 func (o LookupPrivateIpResultOutput) PrivateIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.PrivateIpId }).(pulumi.StringOutput)
+}
+
+func (o LookupPrivateIpResultOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.

@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceCreateVnicDetail;
 import com.pulumi.oci.Core.outputs.GetInstanceInstanceOption;
 import com.pulumi.oci.Core.outputs.GetInstanceLaunchOption;
 import com.pulumi.oci.Core.outputs.GetInstanceLaunchVolumeAttachment;
+import com.pulumi.oci.Core.outputs.GetInstanceLicensingConfig;
 import com.pulumi.oci.Core.outputs.GetInstancePlatformConfig;
 import com.pulumi.oci.Core.outputs.GetInstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceShapeConfig;
@@ -155,6 +156,11 @@ public final class GetInstanceResult {
      */
     private List<GetInstanceLaunchOption> launchOptions;
     private List<GetInstanceLaunchVolumeAttachment> launchVolumeAttachments;
+    /**
+     * @return List of licensing configurations associated with the instance.
+     * 
+     */
+    private List<GetInstanceLicensingConfig> licensingConfigs;
     /**
      * @return Custom metadata that you provide.
      * 
@@ -431,6 +437,13 @@ public final class GetInstanceResult {
         return this.launchVolumeAttachments;
     }
     /**
+     * @return List of licensing configurations associated with the instance.
+     * 
+     */
+    public List<GetInstanceLicensingConfig> licensingConfigs() {
+        return this.licensingConfigs;
+    }
+    /**
      * @return Custom metadata that you provide.
      * 
      */
@@ -591,6 +604,7 @@ public final class GetInstanceResult {
         private String launchMode;
         private List<GetInstanceLaunchOption> launchOptions;
         private List<GetInstanceLaunchVolumeAttachment> launchVolumeAttachments;
+        private List<GetInstanceLicensingConfig> licensingConfigs;
         private Map<String,String> metadata;
         private List<GetInstancePlatformConfig> platformConfigs;
         private List<GetInstancePreemptibleInstanceConfig> preemptibleInstanceConfigs;
@@ -641,6 +655,7 @@ public final class GetInstanceResult {
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
     	      this.launchVolumeAttachments = defaults.launchVolumeAttachments;
+    	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
@@ -905,6 +920,17 @@ public final class GetInstanceResult {
             return launchVolumeAttachments(List.of(launchVolumeAttachments));
         }
         @CustomType.Setter
+        public Builder licensingConfigs(List<GetInstanceLicensingConfig> licensingConfigs) {
+            if (licensingConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "licensingConfigs");
+            }
+            this.licensingConfigs = licensingConfigs;
+            return this;
+        }
+        public Builder licensingConfigs(GetInstanceLicensingConfig... licensingConfigs) {
+            return licensingConfigs(List.of(licensingConfigs));
+        }
+        @CustomType.Setter
         public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "metadata");
@@ -1098,6 +1124,7 @@ public final class GetInstanceResult {
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;
             _resultValue.launchVolumeAttachments = launchVolumeAttachments;
+            _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;

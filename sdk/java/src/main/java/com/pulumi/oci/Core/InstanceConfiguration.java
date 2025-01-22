@@ -41,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs;
  * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs;
  * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs;
  * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs;
  * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs;
  * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs;
@@ -160,6 +161,10 @@ import javax.annotation.Nullable;
  *                         .isPvEncryptionInTransitEnabled(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled)
  *                         .networkType(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType)
  *                         .remoteDataVolumeType(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType)
+ *                         .build())
+ *                     .licensingConfigs(InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs.builder()
+ *                         .type(instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsType)
+ *                         .licenseType(instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsLicenseType)
  *                         .build())
  *                     .metadata(instanceConfigurationInstanceDetailsLaunchDetailsMetadata)
  *                     .platformConfig(InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs.builder()
@@ -295,6 +300,10 @@ import javax.annotation.Nullable;
  *                             .isPvEncryptionInTransitEnabled(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled)
  *                             .networkType(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType)
  *                             .remoteDataVolumeType(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType)
+ *                             .build())
+ *                         .licensingConfigs(InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs.builder()
+ *                             .type(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsType)
+ *                             .licenseType(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsLicenseType)
  *                             .build())
  *                         .metadata(instanceConfigurationInstanceDetailsOptionsLaunchDetailsMetadata)
  *                         .platformConfig(InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs.builder()

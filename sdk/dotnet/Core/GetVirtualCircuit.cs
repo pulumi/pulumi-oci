@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Core
         public readonly string Type;
         public readonly string VirtualCircuitId;
         /// <summary>
-        /// Redundancy level details of the virtual circuit
+        /// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualCircuitVirtualCircuitRedundancyMetadataResult> VirtualCircuitRedundancyMetadatas;
 

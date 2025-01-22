@@ -15,6 +15,7 @@ import com.pulumi.oci.Core.outputs.InstanceCreateVnicDetails;
 import com.pulumi.oci.Core.outputs.InstanceInstanceOptions;
 import com.pulumi.oci.Core.outputs.InstanceLaunchOptions;
 import com.pulumi.oci.Core.outputs.InstanceLaunchVolumeAttachment;
+import com.pulumi.oci.Core.outputs.InstanceLicensingConfigs;
 import com.pulumi.oci.Core.outputs.InstancePlatformConfig;
 import com.pulumi.oci.Core.outputs.InstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.InstanceShapeConfig;
@@ -494,6 +495,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<InstanceLaunchVolumeAttachment>> launchVolumeAttachments() {
         return this.launchVolumeAttachments;
+    }
+    /**
+     * (Updatable) List of licensing configurations associated with target launch values.
+     * 
+     */
+    @Export(name="licensingConfigs", refs={InstanceLicensingConfigs.class}, tree="[0]")
+    private Output<InstanceLicensingConfigs> licensingConfigs;
+
+    /**
+     * @return (Updatable) List of licensing configurations associated with target launch values.
+     * 
+     */
+    public Output<InstanceLicensingConfigs> licensingConfigs() {
+        return this.licensingConfigs;
     }
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.

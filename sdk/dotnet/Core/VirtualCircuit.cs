@@ -278,7 +278,7 @@ namespace Pulumi.Oci.Core
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// Redundancy level details of the virtual circuit
+        /// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         /// </summary>
         [Output("virtualCircuitRedundancyMetadatas")]
         public Output<ImmutableArray<Outputs.VirtualCircuitVirtualCircuitRedundancyMetadata>> VirtualCircuitRedundancyMetadatas { get; private set; } = null!;
@@ -691,7 +691,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.VirtualCircuitVirtualCircuitRedundancyMetadataGetArgs>? _virtualCircuitRedundancyMetadatas;
 
         /// <summary>
-        /// Redundancy level details of the virtual circuit
+        /// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         /// </summary>
         public InputList<Inputs.VirtualCircuitVirtualCircuitRedundancyMetadataGetArgs> VirtualCircuitRedundancyMetadatas
         {

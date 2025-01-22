@@ -1862,10 +1862,10 @@ github.com/opentracing/basictracer-go v1.1.0/go.mod h1:V2HZueSJEp879yv285Aap1BS6
 github.com/opentracing/opentracing-go v1.1.0/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
 github.com/opentracing/opentracing-go v1.2.0 h1:uEJPy/1a5RIPAJ0Ov+OIO8OxWu77jEv+1B0VhjKrZUs=
 github.com/opentracing/opentracing-go v1.2.0/go.mod h1:GxEUsuufX4nBwe+T+Wl9TAgYrxe9dPLANfrWvHYVTgc=
-github.com/oracle/oci-go-sdk/v65 v65.81.1 h1:JYc47bk8n/MUchA2KHu1ggsCQzlJZQLJ+tTKfOho00E=
-github.com/oracle/oci-go-sdk/v65 v65.81.1/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20241219201451-fb38e3739b13 h1:omrg8YIaC49SKVIm0DBfXNELo/3v3PX7BKaYBENClW4=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20241219201451-fb38e3739b13/go.mod h1:ZVinH8/5UJblUK/g59EG03EB4Tjq7HE9Jr7Q/Z+aYu0=
+github.com/oracle/oci-go-sdk/v65 v65.81.2 h1:yhdu9xphYOJed+MPQP4OHAtPlSm0dxKY2L/lf5ntJbU=
+github.com/oracle/oci-go-sdk/v65 v65.81.2/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20250116234330-ec8765be1c40 h1:eO08qLdKljKs18KD5wvZh3zScZLyFgzIPgB8iqwy83I=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20250116234330-ec8765be1c40/go.mod h1:iIZlXMdl2RWp6YtTvU2mx467N4h4IhoqYC49GOg8jao=
 github.com/pgavlin/fx v0.1.6 h1:r9jEg69DhNoCd3Xh0+5mIbdbS3PqWrVWujkY76MFRTU=
 github.com/pgavlin/fx v0.1.6/go.mod h1:KWZJ6fqBBSh8GxHYqwYCf3rYE7Gp2p0N8tJp8xv9u9M=
 github.com/pgavlin/goldmark v1.1.33-0.20200616210433-b5eb04559386 h1:LoCV5cscNVWyK5ChN/uCoIFJz8jZD63VQiGJIRgr6uo=

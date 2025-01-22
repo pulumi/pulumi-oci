@@ -26,6 +26,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         public readonly string PrivateIp;
+        public readonly string RouteTableId;
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly bool SkipSourceDestCheck;
         /// <summary>
@@ -59,6 +60,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string privateIp,
 
+            string routeTableId,
+
             ImmutableDictionary<string, string> securityAttributes,
 
             bool skipSourceDestCheck,
@@ -77,6 +80,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            RouteTableId = routeTableId;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             SubnetId = subnetId;

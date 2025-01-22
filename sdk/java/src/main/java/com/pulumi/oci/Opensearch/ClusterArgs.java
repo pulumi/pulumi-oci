@@ -6,8 +6,11 @@ package com.pulumi.oci.Opensearch;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,6 +34,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="configureOutboundClusterTrigger")
+    private @Nullable Output<Integer> configureOutboundClusterTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> configureOutboundClusterTrigger() {
+        return Optional.ofNullable(this.configureOutboundClusterTrigger);
     }
 
     /**
@@ -169,6 +193,36 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * List of inbound clusters that will be queried using cross cluster search
+     * 
+     */
+    @Import(name="inboundClusterIds")
+    private @Nullable Output<List<String>> inboundClusterIds;
+
+    /**
+     * @return List of inbound clusters that will be queried using cross cluster search
+     * 
+     */
+    public Optional<Output<List<String>>> inboundClusterIds() {
+        return Optional.ofNullable(this.inboundClusterIds);
+    }
+
+    /**
+     * (Updatable) Details for creation of maintenance details
+     * 
+     */
+    @Import(name="maintenanceDetails")
+    private @Nullable Output<ClusterMaintenanceDetailsArgs> maintenanceDetails;
+
+    /**
+     * @return (Updatable) Details for creation of maintenance details
+     * 
+     */
+    public Optional<Output<ClusterMaintenanceDetailsArgs>> maintenanceDetails() {
+        return Optional.ofNullable(this.maintenanceDetails);
+    }
+
+    /**
      * (Updatable) The number of master nodes to configure for the cluster.
      * 
      */
@@ -286,6 +340,36 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<Integer> opendashboardNodeHostOcpuCount() {
         return this.opendashboardNodeHostOcpuCount;
+    }
+
+    /**
+     * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    @Import(name="outboundClusterConfig")
+    private @Nullable Output<ClusterOutboundClusterConfigArgs> outboundClusterConfig;
+
+    /**
+     * @return (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    public Optional<Output<ClusterOutboundClusterConfigArgs>> outboundClusterConfig() {
+        return Optional.ofNullable(this.outboundClusterConfig);
+    }
+
+    /**
+     * (Updatable) The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    @Import(name="reverseConnectionEndpointCustomerIps")
+    private @Nullable Output<List<String>> reverseConnectionEndpointCustomerIps;
+
+    /**
+     * @return (Updatable) The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    public Optional<Output<List<String>>> reverseConnectionEndpointCustomerIps() {
+        return Optional.ofNullable(this.reverseConnectionEndpointCustomerIps);
     }
 
     /**
@@ -411,18 +495,12 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the cluster&#39;s VCN.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="vcnId", required=true)
     private Output<String> vcnId;
 
     /**
      * @return The OCID of the cluster&#39;s VCN.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcnId() {
@@ -433,6 +511,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     private ClusterArgs(ClusterArgs $) {
         this.compartmentId = $.compartmentId;
+        this.configureOutboundClusterTrigger = $.configureOutboundClusterTrigger;
         this.dataNodeCount = $.dataNodeCount;
         this.dataNodeHostBareMetalShape = $.dataNodeHostBareMetalShape;
         this.dataNodeHostMemoryGb = $.dataNodeHostMemoryGb;
@@ -442,6 +521,8 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.inboundClusterIds = $.inboundClusterIds;
+        this.maintenanceDetails = $.maintenanceDetails;
         this.masterNodeCount = $.masterNodeCount;
         this.masterNodeHostBareMetalShape = $.masterNodeHostBareMetalShape;
         this.masterNodeHostMemoryGb = $.masterNodeHostMemoryGb;
@@ -450,6 +531,8 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.opendashboardNodeCount = $.opendashboardNodeCount;
         this.opendashboardNodeHostMemoryGb = $.opendashboardNodeHostMemoryGb;
         this.opendashboardNodeHostOcpuCount = $.opendashboardNodeHostOcpuCount;
+        this.outboundClusterConfig = $.outboundClusterConfig;
+        this.reverseConnectionEndpointCustomerIps = $.reverseConnectionEndpointCustomerIps;
         this.securityMasterUserName = $.securityMasterUserName;
         this.securityMasterUserPasswordHash = $.securityMasterUserPasswordHash;
         this.securityMode = $.securityMode;
@@ -498,6 +581,33 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param configureOutboundClusterTrigger (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configureOutboundClusterTrigger(@Nullable Output<Integer> configureOutboundClusterTrigger) {
+            $.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
+            return this;
+        }
+
+        /**
+         * @param configureOutboundClusterTrigger (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configureOutboundClusterTrigger(Integer configureOutboundClusterTrigger) {
+            return configureOutboundClusterTrigger(Output.of(configureOutboundClusterTrigger));
         }
 
         /**
@@ -690,6 +800,58 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param inboundClusterIds List of inbound clusters that will be queried using cross cluster search
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inboundClusterIds(@Nullable Output<List<String>> inboundClusterIds) {
+            $.inboundClusterIds = inboundClusterIds;
+            return this;
+        }
+
+        /**
+         * @param inboundClusterIds List of inbound clusters that will be queried using cross cluster search
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inboundClusterIds(List<String> inboundClusterIds) {
+            return inboundClusterIds(Output.of(inboundClusterIds));
+        }
+
+        /**
+         * @param inboundClusterIds List of inbound clusters that will be queried using cross cluster search
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inboundClusterIds(String... inboundClusterIds) {
+            return inboundClusterIds(List.of(inboundClusterIds));
+        }
+
+        /**
+         * @param maintenanceDetails (Updatable) Details for creation of maintenance details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDetails(@Nullable Output<ClusterMaintenanceDetailsArgs> maintenanceDetails) {
+            $.maintenanceDetails = maintenanceDetails;
+            return this;
+        }
+
+        /**
+         * @param maintenanceDetails (Updatable) Details for creation of maintenance details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDetails(ClusterMaintenanceDetailsArgs maintenanceDetails) {
+            return maintenanceDetails(Output.of(maintenanceDetails));
+        }
+
+        /**
          * @param masterNodeCount (Updatable) The number of master nodes to configure for the cluster.
          * 
          * @return builder
@@ -855,6 +1017,58 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder opendashboardNodeHostOcpuCount(Integer opendashboardNodeHostOcpuCount) {
             return opendashboardNodeHostOcpuCount(Output.of(opendashboardNodeHostOcpuCount));
+        }
+
+        /**
+         * @param outboundClusterConfig (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outboundClusterConfig(@Nullable Output<ClusterOutboundClusterConfigArgs> outboundClusterConfig) {
+            $.outboundClusterConfig = outboundClusterConfig;
+            return this;
+        }
+
+        /**
+         * @param outboundClusterConfig (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outboundClusterConfig(ClusterOutboundClusterConfigArgs outboundClusterConfig) {
+            return outboundClusterConfig(Output.of(outboundClusterConfig));
+        }
+
+        /**
+         * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpointCustomerIps(@Nullable Output<List<String>> reverseConnectionEndpointCustomerIps) {
+            $.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            return this;
+        }
+
+        /**
+         * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpointCustomerIps(List<String> reverseConnectionEndpointCustomerIps) {
+            return reverseConnectionEndpointCustomerIps(Output.of(reverseConnectionEndpointCustomerIps));
+        }
+
+        /**
+         * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpointCustomerIps(String... reverseConnectionEndpointCustomerIps) {
+            return reverseConnectionEndpointCustomerIps(List.of(reverseConnectionEndpointCustomerIps));
         }
 
         /**
@@ -1028,9 +1242,6 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vcnId The OCID of the cluster&#39;s VCN.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1041,9 +1252,6 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vcnId The OCID of the cluster&#39;s VCN.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

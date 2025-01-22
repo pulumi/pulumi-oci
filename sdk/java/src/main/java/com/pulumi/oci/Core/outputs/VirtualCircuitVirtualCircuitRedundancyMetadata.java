@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VirtualCircuitVirtualCircuitRedundancyMetadata {
     /**
-     * @return The configured redundancy level of the virtual circuit
+     * @return The configured redundancy level of the virtual circuit.
      * 
      */
     private @Nullable String configuredRedundancyLevel;
     /**
-     * @return IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv4 BGP redundancy.
      * 
      */
     private @Nullable String ipv4bgpSessionRedundancyStatus;
     /**
-     * @return IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv6 BGP redundancy.
      * 
      */
     private @Nullable String ipv6bgpSessionRedundancyStatus;
 
     private VirtualCircuitVirtualCircuitRedundancyMetadata() {}
     /**
-     * @return The configured redundancy level of the virtual circuit
+     * @return The configured redundancy level of the virtual circuit.
      * 
      */
     public Optional<String> configuredRedundancyLevel() {
         return Optional.ofNullable(this.configuredRedundancyLevel);
     }
     /**
-     * @return IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv4 BGP redundancy.
      * 
      */
     public Optional<String> ipv4bgpSessionRedundancyStatus() {
         return Optional.ofNullable(this.ipv4bgpSessionRedundancyStatus);
     }
     /**
-     * @return IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv6 BGP redundancy.
      * 
      */
     public Optional<String> ipv6bgpSessionRedundancyStatus() {

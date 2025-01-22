@@ -28,6 +28,12 @@ To use with Python, install using `pip`:
 python3 -m pip install pulumi_oci
 ```
 
+To use [uv](https://docs.astral.sh/uv/) instead:
+
+```bash
+uv pip install pulumi_oci
+```
+
 ### Go
 
 To use with Go, use `go get` to grab the latest version of the library:

@@ -63,6 +63,7 @@ public final class GetPrivateIpResult {
      */
     private Boolean isReserved;
     private String privateIpId;
+    private String routeTableId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
@@ -158,6 +159,9 @@ public final class GetPrivateIpResult {
     public String privateIpId() {
         return this.privateIpId;
     }
+    public String routeTableId() {
+        return this.routeTableId;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
@@ -207,6 +211,7 @@ public final class GetPrivateIpResult {
         private Boolean isPrimary;
         private Boolean isReserved;
         private String privateIpId;
+        private String routeTableId;
         private String subnetId;
         private String timeCreated;
         private String vlanId;
@@ -225,6 +230,7 @@ public final class GetPrivateIpResult {
     	      this.isPrimary = defaults.isPrimary;
     	      this.isReserved = defaults.isReserved;
     	      this.privateIpId = defaults.privateIpId;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vlanId = defaults.vlanId;
@@ -320,6 +326,14 @@ public final class GetPrivateIpResult {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(String routeTableId) {
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpResult", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetPrivateIpResult", "subnetId");
@@ -364,6 +378,7 @@ public final class GetPrivateIpResult {
             _resultValue.isPrimary = isPrimary;
             _resultValue.isReserved = isReserved;
             _resultValue.privateIpId = privateIpId;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vlanId = vlanId;

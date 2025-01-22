@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.inputs.Ipv6State;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -51,6 +52,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .ipAddress(ipv6IpAddress)
  *             .ipv6subnetCidr(ipv6Ipv6subnetCidr)
+ *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }
@@ -153,6 +155,20 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ipv6subnetCidr() {
         return this.ipv6subnetCidr;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    @Export(name="routeTableId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    public Output<Optional<String>> routeTableId() {
+        return Codegen.optional(this.routeTableId);
     }
     /**
      * The IPv6&#39;s current state.

@@ -222,6 +222,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly launchVolumeAttachments!: pulumi.Output<outputs.Core.InstanceLaunchVolumeAttachment[]>;
     /**
+     * (Updatable) List of licensing configurations associated with target launch values.
+     */
+    public readonly licensingConfigs!: pulumi.Output<outputs.Core.InstanceLicensingConfigs>;
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -384,6 +388,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["launchMode"] = state ? state.launchMode : undefined;
             resourceInputs["launchOptions"] = state ? state.launchOptions : undefined;
             resourceInputs["launchVolumeAttachments"] = state ? state.launchVolumeAttachments : undefined;
+            resourceInputs["licensingConfigs"] = state ? state.licensingConfigs : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["platformConfig"] = state ? state.platformConfig : undefined;
             resourceInputs["preemptibleInstanceConfig"] = state ? state.preemptibleInstanceConfig : undefined;
@@ -434,6 +439,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["isPvEncryptionInTransitEnabled"] = args ? args.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["launchOptions"] = args ? args.launchOptions : undefined;
             resourceInputs["launchVolumeAttachments"] = args ? args.launchVolumeAttachments : undefined;
+            resourceInputs["licensingConfigs"] = args ? args.licensingConfigs : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["platformConfig"] = args ? args.platformConfig : undefined;
             resourceInputs["preemptibleInstanceConfig"] = args ? args.preemptibleInstanceConfig : undefined;
@@ -592,6 +598,10 @@ export interface InstanceState {
      * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
      */
     launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[]>;
+    /**
+     * (Updatable) List of licensing configurations associated with target launch values.
+     */
+    licensingConfigs?: pulumi.Input<inputs.Core.InstanceLicensingConfigs>;
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
@@ -831,6 +841,10 @@ export interface InstanceArgs {
      * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
      */
     launchVolumeAttachments?: pulumi.Input<pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachment>[]>;
+    /**
+     * (Updatable) List of licensing configurations associated with target launch values.
+     */
+    licensingConfigs?: pulumi.Input<inputs.Core.InstanceLicensingConfigs>;
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *

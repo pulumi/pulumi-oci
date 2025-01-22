@@ -62,6 +62,7 @@ public final class GetPrivateIpsPrivateIp {
      * 
      */
     private Boolean isReserved;
+    private String routeTableId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
@@ -154,6 +155,9 @@ public final class GetPrivateIpsPrivateIp {
     public Boolean isReserved() {
         return this.isReserved;
     }
+    public String routeTableId() {
+        return this.routeTableId;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
@@ -202,6 +206,7 @@ public final class GetPrivateIpsPrivateIp {
         private String ipAddress;
         private Boolean isPrimary;
         private Boolean isReserved;
+        private String routeTableId;
         private String subnetId;
         private String timeCreated;
         private String vlanId;
@@ -219,6 +224,7 @@ public final class GetPrivateIpsPrivateIp {
     	      this.ipAddress = defaults.ipAddress;
     	      this.isPrimary = defaults.isPrimary;
     	      this.isReserved = defaults.isReserved;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vlanId = defaults.vlanId;
@@ -306,6 +312,14 @@ public final class GetPrivateIpsPrivateIp {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(String routeTableId) {
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "subnetId");
@@ -349,6 +363,7 @@ public final class GetPrivateIpsPrivateIp {
             _resultValue.ipAddress = ipAddress;
             _resultValue.isPrimary = isPrimary;
             _resultValue.isReserved = isReserved;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vlanId = vlanId;

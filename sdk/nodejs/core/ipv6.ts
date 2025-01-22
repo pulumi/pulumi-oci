@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     },
  *     ipAddress: ipv6IpAddress,
  *     ipv6subnetCidr: ipv6Ipv6subnetCidr,
+ *     routeTableId: testRouteTable.id,
  * });
  * ```
  *
@@ -90,6 +91,10 @@ export class Ipv6 extends pulumi.CustomResource {
      */
     public readonly ipv6subnetCidr!: pulumi.Output<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    public readonly routeTableId!: pulumi.Output<string | undefined>;
+    /**
      * The IPv6's current state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -129,6 +134,7 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
             resourceInputs["ipv6subnetCidr"] = state ? state.ipv6subnetCidr : undefined;
+            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -143,6 +149,7 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
             resourceInputs["ipv6subnetCidr"] = args ? args.ipv6subnetCidr : undefined;
+            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
             resourceInputs["vnicId"] = args ? args.vnicId : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -182,6 +189,10 @@ export interface Ipv6State {
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     ipv6subnetCidr?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    routeTableId?: pulumi.Input<string>;
     /**
      * The IPv6's current state.
      */
@@ -228,6 +239,10 @@ export interface Ipv6Args {
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     ipv6subnetCidr?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    routeTableId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
      *

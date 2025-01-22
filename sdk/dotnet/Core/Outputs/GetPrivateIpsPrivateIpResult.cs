@@ -53,6 +53,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// true if the IP is reserved and can exist detached from vnic
         /// </summary>
         public readonly bool IsReserved;
+        public readonly string RouteTableId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         /// </summary>
@@ -92,6 +93,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isReserved,
 
+            string routeTableId,
+
             string subnetId,
 
             string timeCreated,
@@ -110,6 +113,7 @@ namespace Pulumi.Oci.Core.Outputs
             IpAddress = ipAddress;
             IsPrimary = isPrimary;
             IsReserved = isReserved;
+            RouteTableId = routeTableId;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
             VlanId = vlanId;

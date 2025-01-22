@@ -152,6 +152,10 @@ export interface GetInstanceResult {
     readonly launchOptions: outputs.Core.GetInstanceLaunchOption[];
     readonly launchVolumeAttachments: outputs.Core.GetInstanceLaunchVolumeAttachment[];
     /**
+     * List of licensing configurations associated with the instance.
+     */
+    readonly licensingConfigs: outputs.Core.GetInstanceLicensingConfig[];
+    /**
      * Custom metadata that you provide.
      */
     readonly metadata: {[key: string]: string};

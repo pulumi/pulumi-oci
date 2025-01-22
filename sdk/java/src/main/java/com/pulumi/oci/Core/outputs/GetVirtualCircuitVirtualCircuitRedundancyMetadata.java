@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetVirtualCircuitVirtualCircuitRedundancyMetadata {
     /**
-     * @return The configured redundancy level of the virtual circuit
+     * @return The configured redundancy level of the virtual circuit.
      * 
      */
     private String configuredRedundancyLevel;
     /**
-     * @return IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv4 BGP redundancy.
      * 
      */
     private String ipv4bgpSessionRedundancyStatus;
     /**
-     * @return IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv6 BGP redundancy.
      * 
      */
     private String ipv6bgpSessionRedundancyStatus;
 
     private GetVirtualCircuitVirtualCircuitRedundancyMetadata() {}
     /**
-     * @return The configured redundancy level of the virtual circuit
+     * @return The configured redundancy level of the virtual circuit.
      * 
      */
     public String configuredRedundancyLevel() {
         return this.configuredRedundancyLevel;
     }
     /**
-     * @return IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv4 BGP redundancy.
      * 
      */
     public String ipv4bgpSessionRedundancyStatus() {
         return this.ipv4bgpSessionRedundancyStatus;
     }
     /**
-     * @return IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv6 BGP redundancy.
      * 
      */
     public String ipv6bgpSessionRedundancyStatus() {

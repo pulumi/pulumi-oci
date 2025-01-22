@@ -96,6 +96,7 @@ export interface GetVnicResult {
      * The public IP address of the VNIC, if one is assigned.
      */
     readonly publicIpAddress: string;
+    readonly routeTableId: string;
     /**
      * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */

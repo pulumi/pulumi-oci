@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -17,47 +19,6 @@ import * as utilities from "../utilities";
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testOpensearchCluster = new oci.opensearch.Cluster("test_opensearch_cluster", {
- *     compartmentId: compartmentId,
- *     dataNodeCount: opensearchClusterDataNodeCount,
- *     dataNodeHostMemoryGb: opensearchClusterDataNodeHostMemoryGb,
- *     dataNodeHostOcpuCount: opensearchClusterDataNodeHostOcpuCount,
- *     dataNodeHostType: opensearchClusterDataNodeHostType,
- *     dataNodeStorageGb: opensearchClusterDataNodeStorageGb,
- *     displayName: opensearchClusterDisplayName,
- *     masterNodeCount: opensearchClusterMasterNodeCount,
- *     masterNodeHostMemoryGb: opensearchClusterMasterNodeHostMemoryGb,
- *     masterNodeHostOcpuCount: opensearchClusterMasterNodeHostOcpuCount,
- *     masterNodeHostType: opensearchClusterMasterNodeHostType,
- *     opendashboardNodeCount: opensearchClusterOpendashboardNodeCount,
- *     opendashboardNodeHostMemoryGb: opensearchClusterOpendashboardNodeHostMemoryGb,
- *     opendashboardNodeHostOcpuCount: opensearchClusterOpendashboardNodeHostOcpuCount,
- *     softwareVersion: opensearchClusterSoftwareVersion,
- *     subnetCompartmentId: testCompartment.id,
- *     subnetId: testSubnet.id,
- *     vcnCompartmentId: testCompartment.id,
- *     vcnId: testVcn.id,
- *     dataNodeHostBareMetalShape: opensearchClusterDataNodeHostBareMetalShape,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     masterNodeHostBareMetalShape: opensearchClusterMasterNodeHostBareMetalShape,
- *     securityMasterUserName: testUser.name,
- *     securityMasterUserPasswordHash: opensearchClusterSecurityMasterUserPasswordHash,
- *     securityMode: opensearchClusterSecurityMode,
- *     systemTags: opensearchClusterSystemTags,
- * });
- * ```
  *
  * ## Import
  *
@@ -104,6 +65,14 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly configureOutboundClusterTrigger!: pulumi.Output<number | undefined>;
+    /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
     public readonly dataNodeCount!: pulumi.Output<number>;
@@ -144,9 +113,17 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * List of inbound clusters that will be queried using cross cluster search
+     */
+    public readonly inboundClusterIds!: pulumi.Output<string[]>;
+    /**
      * Additional information about the current lifecycle state of the cluster.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * (Updatable) Details for creation of maintenance details
+     */
+    public readonly maintenanceDetails!: pulumi.Output<outputs.Opensearch.ClusterMaintenanceDetails>;
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
@@ -195,6 +172,18 @@ export class Cluster extends pulumi.CustomResource {
      * The cluster's private IP address.
      */
     public /*out*/ readonly opensearchPrivateIp!: pulumi.Output<string>;
+    /**
+     * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     */
+    public readonly outboundClusterConfig!: pulumi.Output<outputs.Opensearch.ClusterOutboundClusterConfig>;
+    /**
+     * (Updatable) The customer IP addresses of the endpoint in customer VCN
+     */
+    public readonly reverseConnectionEndpointCustomerIps!: pulumi.Output<string[]>;
+    /**
+     * The list of reverse connection endpoints.
+     */
+    public /*out*/ readonly reverseConnectionEndpoints!: pulumi.Output<outputs.Opensearch.ClusterReverseConnectionEndpoint[]>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -249,10 +238,6 @@ export class Cluster extends pulumi.CustomResource {
     public readonly vcnCompartmentId!: pulumi.Output<string>;
     /**
      * The OCID of the cluster's VCN.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vcnId!: pulumi.Output<string>;
 
@@ -271,6 +256,7 @@ export class Cluster extends pulumi.CustomResource {
             const state = argsOrState as ClusterState | undefined;
             resourceInputs["availabilityDomains"] = state ? state.availabilityDomains : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["configureOutboundClusterTrigger"] = state ? state.configureOutboundClusterTrigger : undefined;
             resourceInputs["dataNodeCount"] = state ? state.dataNodeCount : undefined;
             resourceInputs["dataNodeHostBareMetalShape"] = state ? state.dataNodeHostBareMetalShape : undefined;
             resourceInputs["dataNodeHostMemoryGb"] = state ? state.dataNodeHostMemoryGb : undefined;
@@ -281,7 +267,9 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["fqdn"] = state ? state.fqdn : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["inboundClusterIds"] = state ? state.inboundClusterIds : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["maintenanceDetails"] = state ? state.maintenanceDetails : undefined;
             resourceInputs["masterNodeCount"] = state ? state.masterNodeCount : undefined;
             resourceInputs["masterNodeHostBareMetalShape"] = state ? state.masterNodeHostBareMetalShape : undefined;
             resourceInputs["masterNodeHostMemoryGb"] = state ? state.masterNodeHostMemoryGb : undefined;
@@ -294,6 +282,9 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opendashboardPrivateIp"] = state ? state.opendashboardPrivateIp : undefined;
             resourceInputs["opensearchFqdn"] = state ? state.opensearchFqdn : undefined;
             resourceInputs["opensearchPrivateIp"] = state ? state.opensearchPrivateIp : undefined;
+            resourceInputs["outboundClusterConfig"] = state ? state.outboundClusterConfig : undefined;
+            resourceInputs["reverseConnectionEndpointCustomerIps"] = state ? state.reverseConnectionEndpointCustomerIps : undefined;
+            resourceInputs["reverseConnectionEndpoints"] = state ? state.reverseConnectionEndpoints : undefined;
             resourceInputs["securityMasterUserName"] = state ? state.securityMasterUserName : undefined;
             resourceInputs["securityMasterUserPasswordHash"] = state ? state.securityMasterUserPasswordHash : undefined;
             resourceInputs["securityMode"] = state ? state.securityMode : undefined;
@@ -368,6 +359,7 @@ export class Cluster extends pulumi.CustomResource {
                 throw new Error("Missing required property 'vcnId'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["configureOutboundClusterTrigger"] = args ? args.configureOutboundClusterTrigger : undefined;
             resourceInputs["dataNodeCount"] = args ? args.dataNodeCount : undefined;
             resourceInputs["dataNodeHostBareMetalShape"] = args ? args.dataNodeHostBareMetalShape : undefined;
             resourceInputs["dataNodeHostMemoryGb"] = args ? args.dataNodeHostMemoryGb : undefined;
@@ -377,6 +369,8 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["inboundClusterIds"] = args ? args.inboundClusterIds : undefined;
+            resourceInputs["maintenanceDetails"] = args ? args.maintenanceDetails : undefined;
             resourceInputs["masterNodeCount"] = args ? args.masterNodeCount : undefined;
             resourceInputs["masterNodeHostBareMetalShape"] = args ? args.masterNodeHostBareMetalShape : undefined;
             resourceInputs["masterNodeHostMemoryGb"] = args ? args.masterNodeHostMemoryGb : undefined;
@@ -385,6 +379,8 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opendashboardNodeCount"] = args ? args.opendashboardNodeCount : undefined;
             resourceInputs["opendashboardNodeHostMemoryGb"] = args ? args.opendashboardNodeHostMemoryGb : undefined;
             resourceInputs["opendashboardNodeHostOcpuCount"] = args ? args.opendashboardNodeHostOcpuCount : undefined;
+            resourceInputs["outboundClusterConfig"] = args ? args.outboundClusterConfig : undefined;
+            resourceInputs["reverseConnectionEndpointCustomerIps"] = args ? args.reverseConnectionEndpointCustomerIps : undefined;
             resourceInputs["securityMasterUserName"] = args ? args.securityMasterUserName : undefined;
             resourceInputs["securityMasterUserPasswordHash"] = args?.securityMasterUserPasswordHash ? pulumi.secret(args.securityMasterUserPasswordHash) : undefined;
             resourceInputs["securityMode"] = args ? args.securityMode : undefined;
@@ -401,6 +397,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opendashboardPrivateIp"] = undefined /*out*/;
             resourceInputs["opensearchFqdn"] = undefined /*out*/;
             resourceInputs["opensearchPrivateIp"] = undefined /*out*/;
+            resourceInputs["reverseConnectionEndpoints"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeDeleted"] = undefined /*out*/;
@@ -426,6 +423,14 @@ export interface ClusterState {
      * The OCID of the compartment to create the cluster in.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    configureOutboundClusterTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
@@ -467,9 +472,17 @@ export interface ClusterState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * List of inbound clusters that will be queried using cross cluster search
+     */
+    inboundClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Additional information about the current lifecycle state of the cluster.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details for creation of maintenance details
+     */
+    maintenanceDetails?: pulumi.Input<inputs.Opensearch.ClusterMaintenanceDetails>;
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
@@ -518,6 +531,18 @@ export interface ClusterState {
      * The cluster's private IP address.
      */
     opensearchPrivateIp?: pulumi.Input<string>;
+    /**
+     * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     */
+    outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig>;
+    /**
+     * (Updatable) The customer IP addresses of the endpoint in customer VCN
+     */
+    reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The list of reverse connection endpoints.
+     */
+    reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterReverseConnectionEndpoint>[]>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -572,10 +597,6 @@ export interface ClusterState {
     vcnCompartmentId?: pulumi.Input<string>;
     /**
      * The OCID of the cluster's VCN.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId?: pulumi.Input<string>;
 }
@@ -588,6 +609,14 @@ export interface ClusterArgs {
      * The OCID of the compartment to create the cluster in.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    configureOutboundClusterTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
@@ -625,6 +654,14 @@ export interface ClusterArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * List of inbound clusters that will be queried using cross cluster search
+     */
+    inboundClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Details for creation of maintenance details
+     */
+    maintenanceDetails?: pulumi.Input<inputs.Opensearch.ClusterMaintenanceDetails>;
+    /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
     masterNodeCount: pulumi.Input<number>;
@@ -656,6 +693,14 @@ export interface ClusterArgs {
      * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostOcpuCount: pulumi.Input<number>;
+    /**
+     * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     */
+    outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig>;
+    /**
+     * (Updatable) The customer IP addresses of the endpoint in customer VCN
+     */
+    reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -690,10 +735,6 @@ export interface ClusterArgs {
     vcnCompartmentId: pulumi.Input<string>;
     /**
      * The OCID of the cluster's VCN.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId: pulumi.Input<string>;
 }

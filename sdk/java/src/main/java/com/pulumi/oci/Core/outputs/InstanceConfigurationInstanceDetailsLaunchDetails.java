@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDet
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions;
+import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig;
@@ -139,6 +140,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions launchOptions;
     /**
+     * @return List of licensing configurations associated with target launch values.
+     * 
+     */
+    private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs licensingConfigs;
+    /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -189,7 +195,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     private @Nullable String preferredMaintenanceAction;
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     private @Nullable Map<String,String> securityAttributes;
@@ -365,6 +371,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         return Optional.ofNullable(this.launchOptions);
     }
     /**
+     * @return List of licensing configurations associated with target launch values.
+     * 
+     */
+    public Optional<InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs> licensingConfigs() {
+        return Optional.ofNullable(this.licensingConfigs);
+    }
+    /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -423,7 +436,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         return Optional.ofNullable(this.preferredMaintenanceAction);
     }
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     public Map<String,String> securityAttributes() {
@@ -480,6 +493,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String launchMode;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions launchOptions;
+        private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs licensingConfigs;
         private @Nullable Map<String,String> metadata;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig platformConfig;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig;
@@ -509,6 +523,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
+    	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
     	      this.platformConfig = defaults.platformConfig;
     	      this.preemptibleInstanceConfig = defaults.preemptibleInstanceConfig;
@@ -628,6 +643,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder licensingConfigs(@Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs licensingConfigs) {
+
+            this.licensingConfigs = licensingConfigs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder metadata(@Nullable Map<String,String> metadata) {
 
             this.metadata = metadata;
@@ -695,6 +716,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;
+            _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
             _resultValue.platformConfig = platformConfig;
             _resultValue.preemptibleInstanceConfig = preemptibleInstanceConfig;

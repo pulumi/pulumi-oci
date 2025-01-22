@@ -77,7 +77,7 @@ export interface GetOpensearchClustersResult {
      */
     readonly compartmentId: string;
     /**
-     * The name of the cluster. Avoid entering confidential information.
+     * Name of the Outbound cluster. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Opensearch.GetOpensearchClustersFilter[];

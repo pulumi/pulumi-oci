@@ -44,6 +44,7 @@ class InstanceArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
+                 licensing_configs: Optional[pulumi.Input['InstanceLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
@@ -99,6 +100,7 @@ class InstanceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        :param pulumi.Input['InstanceLicensingConfigsArgs'] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -211,6 +213,8 @@ class InstanceArgs:
             pulumi.set(__self__, "launch_options", launch_options)
         if launch_volume_attachments is not None:
             pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
+        if licensing_configs is not None:
+            pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
@@ -532,6 +536,18 @@ class InstanceArgs:
         pulumi.set(self, "launch_volume_attachments", value)
 
     @property
+    @pulumi.getter(name="licensingConfigs")
+    def licensing_configs(self) -> Optional[pulumi.Input['InstanceLicensingConfigsArgs']]:
+        """
+        (Updatable) List of licensing configurations associated with target launch values.
+        """
+        return pulumi.get(self, "licensing_configs")
+
+    @licensing_configs.setter
+    def licensing_configs(self, value: Optional[pulumi.Input['InstanceLicensingConfigsArgs']]):
+        pulumi.set(self, "licensing_configs", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -751,6 +767,7 @@ class _InstanceState:
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
+                 licensing_configs: Optional[pulumi.Input['InstanceLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
@@ -820,6 +837,7 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        :param pulumi.Input['InstanceLicensingConfigsArgs'] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -947,6 +965,8 @@ class _InstanceState:
             pulumi.set(__self__, "launch_options", launch_options)
         if launch_volume_attachments is not None:
             pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
+        if licensing_configs is not None:
+            pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
@@ -1322,6 +1342,18 @@ class _InstanceState:
         pulumi.set(self, "launch_volume_attachments", value)
 
     @property
+    @pulumi.getter(name="licensingConfigs")
+    def licensing_configs(self) -> Optional[pulumi.Input['InstanceLicensingConfigsArgs']]:
+        """
+        (Updatable) List of licensing configurations associated with target launch values.
+        """
+        return pulumi.get(self, "licensing_configs")
+
+    @licensing_configs.setter
+    def licensing_configs(self, value: Optional[pulumi.Input['InstanceLicensingConfigsArgs']]):
+        pulumi.set(self, "licensing_configs", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -1624,6 +1656,7 @@ class Instance(pulumi.CustomResource):
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
+                 licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
@@ -1741,6 +1774,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        :param pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1908,6 +1942,7 @@ class Instance(pulumi.CustomResource):
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
+                 licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
@@ -1956,6 +1991,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
             __props__.__dict__["launch_options"] = launch_options
             __props__.__dict__["launch_volume_attachments"] = launch_volume_attachments
+            __props__.__dict__["licensing_configs"] = licensing_configs
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["platform_config"] = platform_config
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
@@ -2014,6 +2050,7 @@ class Instance(pulumi.CustomResource):
             launch_mode: Optional[pulumi.Input[str]] = None,
             launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
             launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
+            licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
             preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
@@ -2088,6 +2125,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
+        :param pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -2187,6 +2225,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["launch_mode"] = launch_mode
         __props__.__dict__["launch_options"] = launch_options
         __props__.__dict__["launch_volume_attachments"] = launch_volume_attachments
+        __props__.__dict__["licensing_configs"] = licensing_configs
         __props__.__dict__["metadata"] = metadata
         __props__.__dict__["platform_config"] = platform_config
         __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
@@ -2435,6 +2474,14 @@ class Instance(pulumi.CustomResource):
         **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
         """
         return pulumi.get(self, "launch_volume_attachments")
+
+    @property
+    @pulumi.getter(name="licensingConfigs")
+    def licensing_configs(self) -> pulumi.Output['outputs.InstanceLicensingConfigs']:
+        """
+        (Updatable) List of licensing configurations associated with target launch values.
+        """
+        return pulumi.get(self, "licensing_configs")
 
     @property
     @pulumi.getter

@@ -162,6 +162,10 @@ namespace Pulumi.Oci.Core
         public readonly string Ipv6id;
         public readonly string Ipv6subnetCidr;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        public readonly string RouteTableId;
+        /// <summary>
         /// The IPv6's current state.
         /// </summary>
         public readonly string State;
@@ -196,6 +200,8 @@ namespace Pulumi.Oci.Core
 
             string ipv6subnetCidr,
 
+            string routeTableId,
+
             string state,
 
             string subnetId,
@@ -212,6 +218,7 @@ namespace Pulumi.Oci.Core
             IpAddress = ipAddress;
             Ipv6id = ipv6id;
             Ipv6subnetCidr = ipv6subnetCidr;
+            RouteTableId = routeTableId;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

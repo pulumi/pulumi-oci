@@ -89,6 +89,7 @@ public final class VnicAttachmentCreateVnicDetails {
      * 
      */
     private @Nullable String privateIp;
+    private @Nullable String routeTableId;
     /**
      * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -213,6 +214,9 @@ public final class VnicAttachmentCreateVnicDetails {
     public Optional<String> privateIp() {
         return Optional.ofNullable(this.privateIp);
     }
+    public Optional<String> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
+    }
     /**
      * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -269,6 +273,7 @@ public final class VnicAttachmentCreateVnicDetails {
         private @Nullable List<VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
+        private @Nullable String routeTableId;
         private @Nullable Map<String,String> securityAttributes;
         private @Nullable Boolean skipSourceDestCheck;
         private @Nullable String subnetId;
@@ -286,6 +291,7 @@ public final class VnicAttachmentCreateVnicDetails {
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
@@ -359,6 +365,12 @@ public final class VnicAttachmentCreateVnicDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(@Nullable String routeTableId) {
+
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
 
             this.securityAttributes = securityAttributes;
@@ -394,6 +406,7 @@ public final class VnicAttachmentCreateVnicDetails {
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetId = subnetId;

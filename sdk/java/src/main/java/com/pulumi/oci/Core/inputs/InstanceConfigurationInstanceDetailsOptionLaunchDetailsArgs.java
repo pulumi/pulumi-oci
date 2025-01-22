@@ -10,6 +10,7 @@ import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaun
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs;
@@ -305,6 +306,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
+     * List of licensing configurations associated with target launch values.
+     * 
+     */
+    @Import(name="licensingConfigs")
+    private @Nullable Output<InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs> licensingConfigs;
+
+    /**
+     * @return List of licensing configurations associated with target launch values.
+     * 
+     */
+    public Optional<Output<InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs>> licensingConfigs() {
+        return Optional.ofNullable(this.licensingConfigs);
+    }
+
+    /**
      * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
@@ -369,14 +385,14 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     @Import(name="securityAttributes")
     private @Nullable Output<Map<String,String>> securityAttributes;
 
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     public Optional<Output<Map<String,String>>> securityAttributes() {
@@ -441,6 +457,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchMode = $.launchMode;
         this.launchOptions = $.launchOptions;
+        this.licensingConfigs = $.licensingConfigs;
         this.metadata = $.metadata;
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
@@ -856,6 +873,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
+         * @param licensingConfigs List of licensing configurations associated with target launch values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licensingConfigs(@Nullable Output<InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs> licensingConfigs) {
+            $.licensingConfigs = licensingConfigs;
+            return this;
+        }
+
+        /**
+         * @param licensingConfigs List of licensing configurations associated with target launch values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licensingConfigs(InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs licensingConfigs) {
+            return licensingConfigs(Output.of(licensingConfigs));
+        }
+
+        /**
          * @param metadata Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          * 
          * @return builder
@@ -944,7 +982,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
-         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * @param securityAttributes [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
          * 
          * @return builder
          * 
@@ -955,7 +993,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
-         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * @param securityAttributes [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
          * 
          * @return builder
          * 

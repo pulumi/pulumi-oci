@@ -79,7 +79,7 @@ type GetOpensearchClustersArgs struct {
 type GetOpensearchClustersResult struct {
 	// The OCID of the compartment where the cluster is located.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The name of the cluster. Avoid entering confidential information.
+	// Name of the Outbound cluster. Avoid entering confidential information.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetOpensearchClustersFilter `pulumi:"filters"`
 	// The OCID of the cluster.
@@ -136,7 +136,7 @@ func (o GetOpensearchClustersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The name of the cluster. Avoid entering confidential information.
+// Name of the Outbound cluster. Avoid entering confidential information.
 func (o GetOpensearchClustersResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetOpensearchClustersResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

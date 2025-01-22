@@ -120,6 +120,9 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
+
         [Input("securityAttributes")]
         private InputMap<string>? _securityAttributes;
 

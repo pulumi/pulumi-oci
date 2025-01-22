@@ -183,6 +183,8 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgsDict',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgsDict',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgsDict',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs',
@@ -225,6 +227,8 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgsDict',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgsDict',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgsDict',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgsDict',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs',
@@ -261,6 +265,8 @@ __all__ = [
     'InstanceLaunchVolumeAttachmentArgsDict',
     'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs',
     'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgsDict',
+    'InstanceLicensingConfigsArgs',
+    'InstanceLicensingConfigsArgsDict',
     'InstancePlatformConfigArgs',
     'InstancePlatformConfigArgsDict',
     'InstancePoolInstanceLoadBalancerBackendArgs',
@@ -7069,6 +7075,10 @@ if not MYPY:
         """
         Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         """
+        licensing_configs: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict']]
+        """
+        List of licensing configurations associated with target launch values.
+        """
         metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
@@ -7117,7 +7127,7 @@ if not MYPY:
         """
         security_attributes: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         shape: NotRequired[pulumi.Input[str]]
         """
@@ -7158,6 +7168,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs']] = None,
+                 licensing_configs: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
@@ -7211,6 +7222,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -7245,7 +7257,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
         :param pulumi.Input[str] preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -7291,6 +7303,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
             pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
             pulumi.set(__self__, "launch_options", launch_options)
+        if licensing_configs is not None:
+            pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
@@ -7551,6 +7565,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
         pulumi.set(self, "launch_options", value)
 
     @property
+    @pulumi.getter(name="licensingConfigs")
+    def licensing_configs(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs']]:
+        """
+        List of licensing configurations associated with target launch values.
+        """
+        return pulumi.get(self, "licensing_configs")
+
+    @licensing_configs.setter
+    def licensing_configs(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs']]):
+        pulumi.set(self, "licensing_configs", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -7632,7 +7658,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -7932,7 +7958,7 @@ if not MYPY:
         """
         security_attributes: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         skip_source_dest_check: NotRequired[pulumi.Input[bool]]
         """
@@ -7972,7 +7998,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -8127,7 +8153,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -8419,6 +8445,63 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
     @remote_data_volume_type.setter
     def remote_data_volume_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "remote_data_volume_type", value)
+
+
+if not MYPY:
+    class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        license_type: NotRequired[pulumi.Input[str]]
+        """
+        License Type for the OS license.
+        * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+        * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+elif False:
+    InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 license_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] license_type: License Type for the OS license.
+               * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+               * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+        pulumi.set(__self__, "type", type)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        License Type for the OS license.
+        * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+        * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+        return pulumi.get(self, "license_type")
+
+    @license_type.setter
+    def license_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_type", value)
 
 
 if not MYPY:
@@ -9986,6 +10069,10 @@ if not MYPY:
         """
         Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         """
+        licensing_configs: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgsDict']]
+        """
+        List of licensing configurations associated with target launch values.
+        """
         metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
@@ -10006,7 +10093,7 @@ if not MYPY:
         """
         security_attributes: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         shape: NotRequired[pulumi.Input[str]]
         """
@@ -10041,6 +10128,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']] = None,
+                 licensing_configs: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
@@ -10072,13 +10160,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[str] preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs'] shape_config: The shape configuration requested for the instance.
         """
@@ -10118,6 +10207,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
             pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
             pulumi.set(__self__, "launch_options", launch_options)
+        if licensing_configs is not None:
+            pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
@@ -10356,6 +10447,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
         pulumi.set(self, "launch_options", value)
 
     @property
+    @pulumi.getter(name="licensingConfigs")
+    def licensing_configs(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs']]:
+        """
+        List of licensing configurations associated with target launch values.
+        """
+        return pulumi.get(self, "licensing_configs")
+
+    @licensing_configs.setter
+    def licensing_configs(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs']]):
+        pulumi.set(self, "licensing_configs", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -10409,7 +10512,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -10742,7 +10845,7 @@ if not MYPY:
         """
         security_attributes: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         skip_source_dest_check: NotRequired[pulumi.Input[bool]]
         """
@@ -10781,7 +10884,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
         :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -10933,7 +11036,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -11209,6 +11312,63 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
     @remote_data_volume_type.setter
     def remote_data_volume_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "remote_data_volume_type", value)
+
+
+if not MYPY:
+    class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        license_type: NotRequired[pulumi.Input[str]]
+        """
+        License Type for the OS license.
+        * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+        * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+elif False:
+    InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 license_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] license_type: License Type for the OS license.
+               * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+               * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+        pulumi.set(__self__, "type", type)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        License Type for the OS license.
+        * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+        * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+        return pulumi.get(self, "license_type")
+
+    @license_type.setter
+    def license_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_type", value)
 
 
 if not MYPY:
@@ -13621,6 +13781,83 @@ class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs:
     @vpus_per_gb.setter
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
+
+
+if not MYPY:
+    class InstanceLicensingConfigsArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Operating System type of the Configuration.
+        """
+        license_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) License Type for the OS license.
+        * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+        * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+        os_version: NotRequired[pulumi.Input[str]]
+        """
+        The Operating System version of the license config.
+        """
+elif False:
+    InstanceLicensingConfigsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceLicensingConfigsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 license_type: Optional[pulumi.Input[str]] = None,
+                 os_version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) Operating System type of the Configuration.
+        :param pulumi.Input[str] license_type: (Updatable) License Type for the OS license.
+               * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+               * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        :param pulumi.Input[str] os_version: The Operating System version of the license config.
+        """
+        pulumi.set(__self__, "type", type)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Operating System type of the Configuration.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) License Type for the OS license.
+        * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+        * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        """
+        return pulumi.get(self, "license_type")
+
+    @license_type.setter
+    def license_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_type", value)
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Operating System version of the license config.
+        """
+        return pulumi.get(self, "os_version")
+
+    @os_version.setter
+    def os_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_version", value)
 
 
 if not MYPY:
@@ -17942,15 +18179,15 @@ if not MYPY:
     class VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict(TypedDict):
         configured_redundancy_level: NotRequired[pulumi.Input[str]]
         """
-        The configured redundancy level of the virtual circuit
+        The configured redundancy level of the virtual circuit.
         """
         ipv4bgp_session_redundancy_status: NotRequired[pulumi.Input[str]]
         """
-        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        Indicates if the configured level is met for IPv4 BGP redundancy.
         """
         ipv6bgp_session_redundancy_status: NotRequired[pulumi.Input[str]]
         """
-        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        Indicates if the configured level is met for IPv6 BGP redundancy.
         """
 elif False:
     VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict: TypeAlias = Mapping[str, Any]
@@ -17962,9 +18199,9 @@ class VirtualCircuitVirtualCircuitRedundancyMetadataArgs:
                  ipv4bgp_session_redundancy_status: Optional[pulumi.Input[str]] = None,
                  ipv6bgp_session_redundancy_status: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] configured_redundancy_level: The configured redundancy level of the virtual circuit
-        :param pulumi.Input[str] ipv4bgp_session_redundancy_status: IPV4 BGP redundancy status indicates if the configured redundancy level is met
-        :param pulumi.Input[str] ipv6bgp_session_redundancy_status: IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        :param pulumi.Input[str] configured_redundancy_level: The configured redundancy level of the virtual circuit.
+        :param pulumi.Input[str] ipv4bgp_session_redundancy_status: Indicates if the configured level is met for IPv4 BGP redundancy.
+        :param pulumi.Input[str] ipv6bgp_session_redundancy_status: Indicates if the configured level is met for IPv6 BGP redundancy.
         """
         if configured_redundancy_level is not None:
             pulumi.set(__self__, "configured_redundancy_level", configured_redundancy_level)
@@ -17977,7 +18214,7 @@ class VirtualCircuitVirtualCircuitRedundancyMetadataArgs:
     @pulumi.getter(name="configuredRedundancyLevel")
     def configured_redundancy_level(self) -> Optional[pulumi.Input[str]]:
         """
-        The configured redundancy level of the virtual circuit
+        The configured redundancy level of the virtual circuit.
         """
         return pulumi.get(self, "configured_redundancy_level")
 
@@ -17989,7 +18226,7 @@ class VirtualCircuitVirtualCircuitRedundancyMetadataArgs:
     @pulumi.getter(name="ipv4bgpSessionRedundancyStatus")
     def ipv4bgp_session_redundancy_status(self) -> Optional[pulumi.Input[str]]:
         """
-        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        Indicates if the configured level is met for IPv4 BGP redundancy.
         """
         return pulumi.get(self, "ipv4bgp_session_redundancy_status")
 
@@ -18001,7 +18238,7 @@ class VirtualCircuitVirtualCircuitRedundancyMetadataArgs:
     @pulumi.getter(name="ipv6bgpSessionRedundancyStatus")
     def ipv6bgp_session_redundancy_status(self) -> Optional[pulumi.Input[str]]:
         """
-        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        Indicates if the configured level is met for IPv6 BGP redundancy.
         """
         return pulumi.get(self, "ipv6bgp_session_redundancy_status")
 
@@ -18110,6 +18347,7 @@ if not MYPY:
 
         Example: `10.0.3.3`
         """
+        route_table_id: NotRequired[pulumi.Input[str]]
         security_attributes: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
@@ -18150,6 +18388,7 @@ class VnicAttachmentCreateVnicDetailsArgs:
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
+                 route_table_id: Optional[pulumi.Input[str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -18222,6 +18461,8 @@ class VnicAttachmentCreateVnicDetailsArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if route_table_id is not None:
+            pulumi.set(__self__, "route_table_id", route_table_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
@@ -18374,6 +18615,15 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @private_ip.setter
     def private_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "private_ip", value)
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "route_table_id")
+
+    @route_table_id.setter
+    def route_table_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "route_table_id", value)
 
     @property
     @pulumi.getter(name="securityAttributes")

@@ -77,6 +77,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// Example: `10.0.3.3`
         /// </summary>
         public readonly string? PrivateIp;
+        public readonly string? RouteTableId;
         /// <summary>
         /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
@@ -124,6 +125,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? privateIp,
 
+            string? routeTableId,
+
             ImmutableDictionary<string, string>? securityAttributes,
 
             bool? skipSourceDestCheck,
@@ -142,6 +145,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            RouteTableId = routeTableId;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             SubnetId = subnetId;

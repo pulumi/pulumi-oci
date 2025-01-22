@@ -26,7 +26,7 @@ class GetPrivateIpResult:
     """
     A collection of values returned by getPrivateIp.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, is_primary=None, is_reserved=None, private_ip_id=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, is_primary=None, is_reserved=None, private_ip_id=None, route_table_id=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -60,6 +60,9 @@ class GetPrivateIpResult:
         if private_ip_id and not isinstance(private_ip_id, str):
             raise TypeError("Expected argument 'private_ip_id' to be a str")
         pulumi.set(__self__, "private_ip_id", private_ip_id)
+        if route_table_id and not isinstance(route_table_id, str):
+            raise TypeError("Expected argument 'route_table_id' to be a str")
+        pulumi.set(__self__, "route_table_id", route_table_id)
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -159,6 +162,11 @@ class GetPrivateIpResult:
         return pulumi.get(self, "private_ip_id")
 
     @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> str:
+        return pulumi.get(self, "route_table_id")
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
@@ -208,6 +216,7 @@ class AwaitableGetPrivateIpResult(GetPrivateIpResult):
             is_primary=self.is_primary,
             is_reserved=self.is_reserved,
             private_ip_id=self.private_ip_id,
+            route_table_id=self.route_table_id,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
             vlan_id=self.vlan_id,
@@ -253,6 +262,7 @@ def get_private_ip(private_ip_id: Optional[str] = None,
         is_primary=pulumi.get(__ret__, 'is_primary'),
         is_reserved=pulumi.get(__ret__, 'is_reserved'),
         private_ip_id=pulumi.get(__ret__, 'private_ip_id'),
+        route_table_id=pulumi.get(__ret__, 'route_table_id'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
@@ -295,6 +305,7 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
         is_primary=pulumi.get(__response__, 'is_primary'),
         is_reserved=pulumi.get(__response__, 'is_reserved'),
         private_ip_id=pulumi.get(__response__, 'private_ip_id'),
+        route_table_id=pulumi.get(__response__, 'route_table_id'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         vlan_id=pulumi.get(__response__, 'vlan_id'),

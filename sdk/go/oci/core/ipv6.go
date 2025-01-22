@@ -41,6 +41,7 @@ import (
 //				},
 //				IpAddress:      pulumi.Any(ipv6IpAddress),
 //				Ipv6subnetCidr: pulumi.Any(ipv6Ipv6subnetCidr),
+//				RouteTableId:   pulumi.Any(testRouteTable.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -73,6 +74,8 @@ type Ipv6 struct {
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringOutput `pulumi:"ipv6subnetCidr"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -131,6 +134,8 @@ type ipv6State struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId *string `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -157,6 +162,8 @@ type Ipv6State struct {
 	IpAddress pulumi.StringPtrInput
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId pulumi.StringPtrInput
 	// The IPv6's current state.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -185,6 +192,8 @@ type ipv6Args struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId *string `pulumi:"routeTableId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
 	// ** IMPORTANT **
@@ -204,6 +213,8 @@ type Ipv6Args struct {
 	IpAddress pulumi.StringPtrInput
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
 	// ** IMPORTANT **
@@ -326,6 +337,11 @@ func (o Ipv6Output) IpAddress() pulumi.StringOutput {
 // The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 func (o Ipv6Output) Ipv6subnetCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+func (o Ipv6Output) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The IPv6's current state.

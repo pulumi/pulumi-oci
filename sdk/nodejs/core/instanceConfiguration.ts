@@ -135,6 +135,10 @@ import * as utilities from "../utilities";
  *                 networkType: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType,
  *                 remoteDataVolumeType: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
  *             },
+ *             licensingConfigs: {
+ *                 type: instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsType,
+ *                 licenseType: instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsLicenseType,
+ *             },
  *             metadata: instanceConfigurationInstanceDetailsLaunchDetailsMetadata,
  *             platformConfig: {
  *                 type: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigType,
@@ -281,6 +285,10 @@ import * as utilities from "../utilities";
  *                     isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled,
  *                     networkType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType,
  *                     remoteDataVolumeType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
+ *                 },
+ *                 licensingConfigs: {
+ *                     type: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsType,
+ *                     licenseType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsLicenseType,
  *                 },
  *                 metadata: instanceConfigurationInstanceDetailsOptionsLaunchDetailsMetadata,
  *                 platformConfig: {

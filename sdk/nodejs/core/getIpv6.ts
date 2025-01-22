@@ -71,6 +71,10 @@ export interface GetIpv6Result {
     readonly ipv6id: string;
     readonly ipv6subnetCidr: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    readonly routeTableId: string;
+    /**
      * The IPv6's current state.
      */
     readonly state: string;

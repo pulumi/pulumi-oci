@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetInstancesInstanceLaunchOptionResult> LaunchOptions;
         public readonly ImmutableArray<Outputs.GetInstancesInstanceLaunchVolumeAttachmentResult> LaunchVolumeAttachments;
         /// <summary>
+        /// List of licensing configurations associated with the instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstancesInstanceLicensingConfigResult> LicensingConfigs;
+        /// <summary>
         /// Custom metadata that you provide.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
@@ -228,6 +232,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstancesInstanceLaunchVolumeAttachmentResult> launchVolumeAttachments,
 
+            ImmutableArray<Outputs.GetInstancesInstanceLicensingConfigResult> licensingConfigs,
+
             ImmutableDictionary<string, string> metadata,
 
             ImmutableArray<Outputs.GetInstancesInstancePlatformConfigResult> platformConfigs,
@@ -293,6 +299,7 @@ namespace Pulumi.Oci.Core.Outputs
             LaunchMode = launchMode;
             LaunchOptions = launchOptions;
             LaunchVolumeAttachments = launchVolumeAttachments;
+            LicensingConfigs = licensingConfigs;
             Metadata = metadata;
             PlatformConfigs = platformConfigs;
             PreemptibleInstanceConfigs = preemptibleInstanceConfigs;

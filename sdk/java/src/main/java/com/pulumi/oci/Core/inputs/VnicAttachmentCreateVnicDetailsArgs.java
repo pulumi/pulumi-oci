@@ -217,6 +217,13 @@ public final class VnicAttachmentCreateVnicDetailsArgs extends com.pulumi.resour
         return Optional.ofNullable(this.privateIp);
     }
 
+    @Import(name="routeTableId")
+    private @Nullable Output<String> routeTableId;
+
+    public Optional<Output<String>> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
+    }
+
     /**
      * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -306,6 +313,7 @@ public final class VnicAttachmentCreateVnicDetailsArgs extends com.pulumi.resour
         this.ipv6addressIpv6subnetCidrPairDetails = $.ipv6addressIpv6subnetCidrPairDetails;
         this.nsgIds = $.nsgIds;
         this.privateIp = $.privateIp;
+        this.routeTableId = $.routeTableId;
         this.securityAttributes = $.securityAttributes;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
         this.subnetId = $.subnetId;
@@ -608,6 +616,15 @@ public final class VnicAttachmentCreateVnicDetailsArgs extends com.pulumi.resour
          */
         public Builder privateIp(String privateIp) {
             return privateIp(Output.of(privateIp));
+        }
+
+        public Builder routeTableId(@Nullable Output<String> routeTableId) {
+            $.routeTableId = routeTableId;
+            return this;
+        }
+
+        public Builder routeTableId(String routeTableId) {
+            return routeTableId(Output.of(routeTableId));
         }
 
         /**

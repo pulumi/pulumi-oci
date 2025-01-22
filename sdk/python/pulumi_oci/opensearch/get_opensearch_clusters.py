@@ -60,7 +60,7 @@ class GetOpensearchClustersResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The name of the cluster. Avoid entering confidential information.
+        Name of the Outbound cluster. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 

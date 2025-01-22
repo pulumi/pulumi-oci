@@ -176,6 +176,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly bool IsReserved;
         public readonly string PrivateIpId;
+        public readonly string RouteTableId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
         /// </summary>
@@ -217,6 +218,8 @@ namespace Pulumi.Oci.Core
 
             string privateIpId,
 
+            string routeTableId,
+
             string subnetId,
 
             string timeCreated,
@@ -236,6 +239,7 @@ namespace Pulumi.Oci.Core
             IsPrimary = isPrimary;
             IsReserved = isReserved;
             PrivateIpId = privateIpId;
+            RouteTableId = routeTableId;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
             VlanId = vlanId;

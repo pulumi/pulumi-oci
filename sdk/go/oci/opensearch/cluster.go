@@ -25,62 +25,6 @@ import (
 // For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
 // Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opensearch"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := opensearch.NewCluster(ctx, "test_opensearch_cluster", &opensearch.ClusterArgs{
-//				CompartmentId:                  pulumi.Any(compartmentId),
-//				DataNodeCount:                  pulumi.Any(opensearchClusterDataNodeCount),
-//				DataNodeHostMemoryGb:           pulumi.Any(opensearchClusterDataNodeHostMemoryGb),
-//				DataNodeHostOcpuCount:          pulumi.Any(opensearchClusterDataNodeHostOcpuCount),
-//				DataNodeHostType:               pulumi.Any(opensearchClusterDataNodeHostType),
-//				DataNodeStorageGb:              pulumi.Any(opensearchClusterDataNodeStorageGb),
-//				DisplayName:                    pulumi.Any(opensearchClusterDisplayName),
-//				MasterNodeCount:                pulumi.Any(opensearchClusterMasterNodeCount),
-//				MasterNodeHostMemoryGb:         pulumi.Any(opensearchClusterMasterNodeHostMemoryGb),
-//				MasterNodeHostOcpuCount:        pulumi.Any(opensearchClusterMasterNodeHostOcpuCount),
-//				MasterNodeHostType:             pulumi.Any(opensearchClusterMasterNodeHostType),
-//				OpendashboardNodeCount:         pulumi.Any(opensearchClusterOpendashboardNodeCount),
-//				OpendashboardNodeHostMemoryGb:  pulumi.Any(opensearchClusterOpendashboardNodeHostMemoryGb),
-//				OpendashboardNodeHostOcpuCount: pulumi.Any(opensearchClusterOpendashboardNodeHostOcpuCount),
-//				SoftwareVersion:                pulumi.Any(opensearchClusterSoftwareVersion),
-//				SubnetCompartmentId:            pulumi.Any(testCompartment.Id),
-//				SubnetId:                       pulumi.Any(testSubnet.Id),
-//				VcnCompartmentId:               pulumi.Any(testCompartment.Id),
-//				VcnId:                          pulumi.Any(testVcn.Id),
-//				DataNodeHostBareMetalShape:     pulumi.Any(opensearchClusterDataNodeHostBareMetalShape),
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
-//				MasterNodeHostBareMetalShape:   pulumi.Any(opensearchClusterMasterNodeHostBareMetalShape),
-//				SecurityMasterUserName:         pulumi.Any(testUser.Name),
-//				SecurityMasterUserPasswordHash: pulumi.Any(opensearchClusterSecurityMasterUserPasswordHash),
-//				SecurityMode:                   pulumi.Any(opensearchClusterSecurityMode),
-//				SystemTags:                     pulumi.Any(opensearchClusterSystemTags),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // OpensearchClusters can be imported using the `id`, e.g.
@@ -95,6 +39,11 @@ type Cluster struct {
 	AvailabilityDomains pulumi.StringArrayOutput `pulumi:"availabilityDomains"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConfigureOutboundClusterTrigger pulumi.IntPtrOutput `pulumi:"configureOutboundClusterTrigger"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntOutput `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -115,8 +64,12 @@ type Cluster struct {
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// List of inbound clusters that will be queried using cross cluster search
+	InboundClusterIds pulumi.StringArrayOutput `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Details for creation of maintenance details
+	MaintenanceDetails ClusterMaintenanceDetailsOutput `pulumi:"maintenanceDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntOutput `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -141,6 +94,12 @@ type Cluster struct {
 	OpensearchFqdn pulumi.StringOutput `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp pulumi.StringOutput `pulumi:"opensearchPrivateIp"`
+	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfig ClusterOutboundClusterConfigOutput `pulumi:"outboundClusterConfig"`
+	// (Updatable) The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps pulumi.StringArrayOutput `pulumi:"reverseConnectionEndpointCustomerIps"`
+	// The list of reverse connection endpoints.
+	ReverseConnectionEndpoints ClusterReverseConnectionEndpointArrayOutput `pulumi:"reverseConnectionEndpoints"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringOutput `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -168,9 +127,6 @@ type Cluster struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringOutput `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -272,6 +228,11 @@ type clusterState struct {
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConfigureOutboundClusterTrigger *int `pulumi:"configureOutboundClusterTrigger"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount *int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -292,8 +253,12 @@ type clusterState struct {
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// List of inbound clusters that will be queried using cross cluster search
+	InboundClusterIds []string `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Details for creation of maintenance details
+	MaintenanceDetails *ClusterMaintenanceDetails `pulumi:"maintenanceDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount *int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -318,6 +283,12 @@ type clusterState struct {
 	OpensearchFqdn *string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp *string `pulumi:"opensearchPrivateIp"`
+	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfig *ClusterOutboundClusterConfig `pulumi:"outboundClusterConfig"`
+	// (Updatable) The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
+	// The list of reverse connection endpoints.
+	ReverseConnectionEndpoints []ClusterReverseConnectionEndpoint `pulumi:"reverseConnectionEndpoints"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -345,9 +316,6 @@ type clusterState struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId *string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -356,6 +324,11 @@ type ClusterState struct {
 	AvailabilityDomains pulumi.StringArrayInput
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConfigureOutboundClusterTrigger pulumi.IntPtrInput
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntPtrInput
 	// The bare metal shape for the cluster's data nodes.
@@ -376,8 +349,12 @@ type ClusterState struct {
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// List of inbound clusters that will be queried using cross cluster search
+	InboundClusterIds pulumi.StringArrayInput
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Details for creation of maintenance details
+	MaintenanceDetails ClusterMaintenanceDetailsPtrInput
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntPtrInput
 	// The bare metal shape for the cluster's master nodes.
@@ -402,6 +379,12 @@ type ClusterState struct {
 	OpensearchFqdn pulumi.StringPtrInput
 	// The cluster's private IP address.
 	OpensearchPrivateIp pulumi.StringPtrInput
+	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfig ClusterOutboundClusterConfigPtrInput
+	// (Updatable) The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput
+	// The list of reverse connection endpoints.
+	ReverseConnectionEndpoints ClusterReverseConnectionEndpointArrayInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -429,9 +412,6 @@ type ClusterState struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringPtrInput
 	// The OCID of the cluster's VCN.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -442,6 +422,11 @@ func (ClusterState) ElementType() reflect.Type {
 type clusterArgs struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConfigureOutboundClusterTrigger *int `pulumi:"configureOutboundClusterTrigger"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -460,6 +445,10 @@ type clusterArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// List of inbound clusters that will be queried using cross cluster search
+	InboundClusterIds []string `pulumi:"inboundClusterIds"`
+	// (Updatable) Details for creation of maintenance details
+	MaintenanceDetails *ClusterMaintenanceDetails `pulumi:"maintenanceDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -476,6 +465,10 @@ type clusterArgs struct {
 	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
 	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
+	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfig *ClusterOutboundClusterConfig `pulumi:"outboundClusterConfig"`
+	// (Updatable) The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -493,9 +486,6 @@ type clusterArgs struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -503,6 +493,11 @@ type clusterArgs struct {
 type ClusterArgs struct {
 	// The OCID of the compartment to create the cluster in.
 	CompartmentId pulumi.StringInput
+	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ConfigureOutboundClusterTrigger pulumi.IntPtrInput
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntInput
 	// The bare metal shape for the cluster's data nodes.
@@ -521,6 +516,10 @@ type ClusterArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// List of inbound clusters that will be queried using cross cluster search
+	InboundClusterIds pulumi.StringArrayInput
+	// (Updatable) Details for creation of maintenance details
+	MaintenanceDetails ClusterMaintenanceDetailsPtrInput
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntInput
 	// The bare metal shape for the cluster's master nodes.
@@ -537,6 +536,10 @@ type ClusterArgs struct {
 	OpendashboardNodeHostMemoryGb pulumi.IntInput
 	// (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount pulumi.IntInput
+	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfig ClusterOutboundClusterConfigPtrInput
+	// (Updatable) The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -554,9 +557,6 @@ type ClusterArgs struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringInput
 	// The OCID of the cluster's VCN.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringInput
 }
 
@@ -657,6 +657,14 @@ func (o ClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ClusterOutput) ConfigureOutboundClusterTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntPtrOutput { return v.ConfigureOutboundClusterTrigger }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) The number of data nodes to configure for the cluster.
 func (o ClusterOutput) DataNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.DataNodeCount }).(pulumi.IntOutput)
@@ -707,9 +715,19 @@ func (o ClusterOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// List of inbound clusters that will be queried using cross cluster search
+func (o ClusterOutput) InboundClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.InboundClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Additional information about the current lifecycle state of the cluster.
 func (o ClusterOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details for creation of maintenance details
+func (o ClusterOutput) MaintenanceDetails() ClusterMaintenanceDetailsOutput {
+	return o.ApplyT(func(v *Cluster) ClusterMaintenanceDetailsOutput { return v.MaintenanceDetails }).(ClusterMaintenanceDetailsOutput)
 }
 
 // (Updatable) The number of master nodes to configure for the cluster.
@@ -770,6 +788,21 @@ func (o ClusterOutput) OpensearchFqdn() pulumi.StringOutput {
 // The cluster's private IP address.
 func (o ClusterOutput) OpensearchPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+}
+
+// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+func (o ClusterOutput) OutboundClusterConfig() ClusterOutboundClusterConfigOutput {
+	return o.ApplyT(func(v *Cluster) ClusterOutboundClusterConfigOutput { return v.OutboundClusterConfig }).(ClusterOutboundClusterConfigOutput)
+}
+
+// (Updatable) The customer IP addresses of the endpoint in customer VCN
+func (o ClusterOutput) ReverseConnectionEndpointCustomerIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.ReverseConnectionEndpointCustomerIps }).(pulumi.StringArrayOutput)
+}
+
+// The list of reverse connection endpoints.
+func (o ClusterOutput) ReverseConnectionEndpoints() ClusterReverseConnectionEndpointArrayOutput {
+	return o.ApplyT(func(v *Cluster) ClusterReverseConnectionEndpointArrayOutput { return v.ReverseConnectionEndpoints }).(ClusterReverseConnectionEndpointArrayOutput)
 }
 
 // (Updatable) The name of the master user that are used to manage security config
@@ -838,9 +871,6 @@ func (o ClusterOutput) VcnCompartmentId() pulumi.StringOutput {
 }
 
 // The OCID of the cluster's VCN.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ClusterOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

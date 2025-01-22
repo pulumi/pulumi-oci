@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         HostnameLabel = privateIpHostnameLabel,
     ///         IpAddress = privateIpIpAddress,
+    ///         RouteTableId = testRouteTable.Id,
     ///         VlanId = testVlan.Id,
     ///         VnicId = testVnicAttachment.VnicId,
     ///     });
@@ -114,6 +115,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("isReserved")]
         public Output<bool> IsReserved { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        [Output("routeTableId")]
+        public Output<string?> RouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -238,6 +245,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
+
+        /// <summary>
         /// Use this attribute only with the Oracle Cloud VMware Solution.
         /// 
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -332,6 +345,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isReserved")]
         public Input<bool>? IsReserved { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.

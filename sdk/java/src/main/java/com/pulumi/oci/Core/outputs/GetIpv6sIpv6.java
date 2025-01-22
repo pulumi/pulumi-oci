@@ -42,6 +42,7 @@ public final class GetIpv6sIpv6 {
      */
     private String ipAddress;
     private String ipv6subnetCidr;
+    private String routeTableId;
     /**
      * @return The IPv6&#39;s current state.
      * 
@@ -109,6 +110,9 @@ public final class GetIpv6sIpv6 {
     public String ipv6subnetCidr() {
         return this.ipv6subnetCidr;
     }
+    public String routeTableId() {
+        return this.routeTableId;
+    }
     /**
      * @return The IPv6&#39;s current state.
      * 
@@ -154,6 +158,7 @@ public final class GetIpv6sIpv6 {
         private String id;
         private String ipAddress;
         private String ipv6subnetCidr;
+        private String routeTableId;
         private String state;
         private String subnetId;
         private String timeCreated;
@@ -168,6 +173,7 @@ public final class GetIpv6sIpv6 {
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
     	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -231,6 +237,14 @@ public final class GetIpv6sIpv6 {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(String routeTableId) {
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sIpv6", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetIpv6sIpv6", "state");
@@ -271,6 +285,7 @@ public final class GetIpv6sIpv6 {
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
             _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;

@@ -16,14 +16,14 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
     public static final VirtualCircuitVirtualCircuitRedundancyMetadataArgs Empty = new VirtualCircuitVirtualCircuitRedundancyMetadataArgs();
 
     /**
-     * The configured redundancy level of the virtual circuit
+     * The configured redundancy level of the virtual circuit.
      * 
      */
     @Import(name="configuredRedundancyLevel")
     private @Nullable Output<String> configuredRedundancyLevel;
 
     /**
-     * @return The configured redundancy level of the virtual circuit
+     * @return The configured redundancy level of the virtual circuit.
      * 
      */
     public Optional<Output<String>> configuredRedundancyLevel() {
@@ -31,14 +31,14 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
     }
 
     /**
-     * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv4 BGP redundancy.
      * 
      */
     @Import(name="ipv4bgpSessionRedundancyStatus")
     private @Nullable Output<String> ipv4bgpSessionRedundancyStatus;
 
     /**
-     * @return IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv4 BGP redundancy.
      * 
      */
     public Optional<Output<String>> ipv4bgpSessionRedundancyStatus() {
@@ -46,14 +46,14 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
     }
 
     /**
-     * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv6 BGP redundancy.
      * 
      */
     @Import(name="ipv6bgpSessionRedundancyStatus")
     private @Nullable Output<String> ipv6bgpSessionRedundancyStatus;
 
     /**
-     * @return IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * @return Indicates if the configured level is met for IPv6 BGP redundancy.
      * 
      */
     public Optional<Output<String>> ipv6bgpSessionRedundancyStatus() {
@@ -87,7 +87,7 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
         }
 
         /**
-         * @param configuredRedundancyLevel The configured redundancy level of the virtual circuit
+         * @param configuredRedundancyLevel The configured redundancy level of the virtual circuit.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
         }
 
         /**
-         * @param configuredRedundancyLevel The configured redundancy level of the virtual circuit
+         * @param configuredRedundancyLevel The configured redundancy level of the virtual circuit.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
         }
 
         /**
-         * @param ipv4bgpSessionRedundancyStatus IPV4 BGP redundancy status indicates if the configured redundancy level is met
+         * @param ipv4bgpSessionRedundancyStatus Indicates if the configured level is met for IPv4 BGP redundancy.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
         }
 
         /**
-         * @param ipv4bgpSessionRedundancyStatus IPV4 BGP redundancy status indicates if the configured redundancy level is met
+         * @param ipv4bgpSessionRedundancyStatus Indicates if the configured level is met for IPv4 BGP redundancy.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
         }
 
         /**
-         * @param ipv6bgpSessionRedundancyStatus IPV6 BGP redundancy status indicates if the configured redundancy level is met
+         * @param ipv6bgpSessionRedundancyStatus Indicates if the configured level is met for IPv6 BGP redundancy.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class VirtualCircuitVirtualCircuitRedundancyMetadataArgs extends co
         }
 
         /**
-         * @param ipv6bgpSessionRedundancyStatus IPV6 BGP redundancy status indicates if the configured redundancy level is met
+         * @param ipv6bgpSessionRedundancyStatus Indicates if the configured level is met for IPv6 BGP redundancy.
          * 
          * @return builder
          * 

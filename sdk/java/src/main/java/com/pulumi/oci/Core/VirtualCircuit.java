@@ -529,14 +529,14 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
         return this.type;
     }
     /**
-     * Redundancy level details of the virtual circuit
+     * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      * 
      */
     @Export(name="virtualCircuitRedundancyMetadatas", refs={List.class,VirtualCircuitVirtualCircuitRedundancyMetadata.class}, tree="[0,1]")
     private Output<List<VirtualCircuitVirtualCircuitRedundancyMetadata>> virtualCircuitRedundancyMetadatas;
 
     /**
-     * @return Redundancy level details of the virtual circuit
+     * @return This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      * 
      */
     public Output<List<VirtualCircuitVirtualCircuitRedundancyMetadata>> virtualCircuitRedundancyMetadatas() {

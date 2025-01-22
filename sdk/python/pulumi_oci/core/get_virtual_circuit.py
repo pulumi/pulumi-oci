@@ -365,7 +365,7 @@ class GetVirtualCircuitResult:
     @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
     def virtual_circuit_redundancy_metadatas(self) -> Sequence['outputs.GetVirtualCircuitVirtualCircuitRedundancyMetadataResult']:
         """
-        Redundancy level details of the virtual circuit
+        This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
 

@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     },
  *     hostnameLabel: privateIpHostnameLabel,
  *     ipAddress: privateIpIpAddress,
+ *     routeTableId: testRouteTable.id,
  *     vlanId: testVlan.id,
  *     vnicId: testVnicAttachment.vnicId,
  * });
@@ -109,6 +110,10 @@ export class PrivateIp extends pulumi.CustomResource {
      */
     public /*out*/ readonly isReserved!: pulumi.Output<boolean>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    public readonly routeTableId!: pulumi.Output<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      */
     public /*out*/ readonly subnetId!: pulumi.Output<string>;
@@ -153,6 +158,7 @@ export class PrivateIp extends pulumi.CustomResource {
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
             resourceInputs["isReserved"] = state ? state.isReserved : undefined;
+            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["vlanId"] = state ? state.vlanId : undefined;
@@ -164,6 +170,7 @@ export class PrivateIp extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
+            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
             resourceInputs["vlanId"] = args ? args.vlanId : undefined;
             resourceInputs["vnicId"] = args ? args.vnicId : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
@@ -223,6 +230,10 @@ export interface PrivateIpState {
      */
     isReserved?: pulumi.Input<boolean>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    routeTableId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      */
     subnetId?: pulumi.Input<string>;
@@ -274,6 +285,10 @@ export interface PrivateIpArgs {
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      */
     ipAddress?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     */
+    routeTableId?: pulumi.Input<string>;
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      *

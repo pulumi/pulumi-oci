@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ClusterArgs', 'Cluster']
 
@@ -38,10 +40,15 @@ class ClusterArgs:
                  subnet_id: pulumi.Input[str],
                  vcn_compartment_id: pulumi.Input[str],
                  vcn_id: pulumi.Input[str],
+                 configure_outbound_cluster_trigger: Optional[pulumi.Input[int]] = None,
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
+                 outbound_cluster_config: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']] = None,
+                 reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
                  security_mode: Optional[pulumi.Input[str]] = None,
@@ -67,6 +74,7 @@ class ClusterArgs:
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
+        :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -74,7 +82,11 @@ class ClusterArgs:
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
+        :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
+        :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
@@ -99,14 +111,24 @@ class ClusterArgs:
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        if configure_outbound_cluster_trigger is not None:
+            pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
         if data_node_host_bare_metal_shape is not None:
             pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if inbound_cluster_ids is not None:
+            pulumi.set(__self__, "inbound_cluster_ids", inbound_cluster_ids)
+        if maintenance_details is not None:
+            pulumi.set(__self__, "maintenance_details", maintenance_details)
         if master_node_host_bare_metal_shape is not None:
             pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+        if outbound_cluster_config is not None:
+            pulumi.set(__self__, "outbound_cluster_config", outbound_cluster_config)
+        if reverse_connection_endpoint_customer_ips is not None:
+            pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
@@ -337,16 +359,28 @@ class ClusterArgs:
     def vcn_id(self) -> pulumi.Input[str]:
         """
         The OCID of the cluster's VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
     def vcn_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "vcn_id", value)
+
+    @property
+    @pulumi.getter(name="configureOutboundClusterTrigger")
+    def configure_outbound_cluster_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "configure_outbound_cluster_trigger")
+
+    @configure_outbound_cluster_trigger.setter
+    def configure_outbound_cluster_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "configure_outbound_cluster_trigger", value)
 
     @property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
@@ -385,6 +419,30 @@ class ClusterArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="inboundClusterIds")
+    def inbound_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of inbound clusters that will be queried using cross cluster search
+        """
+        return pulumi.get(self, "inbound_cluster_ids")
+
+    @inbound_cluster_ids.setter
+    def inbound_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "inbound_cluster_ids", value)
+
+    @property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']]:
+        """
+        (Updatable) Details for creation of maintenance details
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @maintenance_details.setter
+    def maintenance_details(self, value: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']]):
+        pulumi.set(self, "maintenance_details", value)
+
+    @property
     @pulumi.getter(name="masterNodeHostBareMetalShape")
     def master_node_host_bare_metal_shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -395,6 +453,30 @@ class ClusterArgs:
     @master_node_host_bare_metal_shape.setter
     def master_node_host_bare_metal_shape(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "master_node_host_bare_metal_shape", value)
+
+    @property
+    @pulumi.getter(name="outboundClusterConfig")
+    def outbound_cluster_config(self) -> Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']]:
+        """
+        (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        """
+        return pulumi.get(self, "outbound_cluster_config")
+
+    @outbound_cluster_config.setter
+    def outbound_cluster_config(self, value: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']]):
+        pulumi.set(self, "outbound_cluster_config", value)
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
+    def reverse_connection_endpoint_customer_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The customer IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "reverse_connection_endpoint_customer_ips")
+
+    @reverse_connection_endpoint_customer_ips.setter
+    def reverse_connection_endpoint_customer_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "reverse_connection_endpoint_customer_ips", value)
 
     @property
     @pulumi.getter(name="securityMasterUserName")
@@ -450,6 +532,7 @@ class _ClusterState:
     def __init__(__self__, *,
                  availability_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 configure_outbound_cluster_trigger: Optional[pulumi.Input[int]] = None,
                  data_node_count: Optional[pulumi.Input[int]] = None,
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  data_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -460,7 +543,9 @@ class _ClusterState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_count: Optional[pulumi.Input[int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -473,6 +558,9 @@ class _ClusterState:
                  opendashboard_private_ip: Optional[pulumi.Input[str]] = None,
                  opensearch_fqdn: Optional[pulumi.Input[str]] = None,
                  opensearch_private_ip: Optional[pulumi.Input[str]] = None,
+                 outbound_cluster_config: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']] = None,
+                 reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 reverse_connection_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]]] = None,
                  security_master_user_name: Optional[pulumi.Input[str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
                  security_mode: Optional[pulumi.Input[str]] = None,
@@ -491,6 +579,11 @@ class _ClusterState:
         Input properties used for looking up and filtering Cluster resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
+        :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -501,7 +594,9 @@ class _ClusterState:
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
+        :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -514,6 +609,9 @@ class _ClusterState:
         :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
+        :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
@@ -528,15 +626,13 @@ class _ClusterState:
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if availability_domains is not None:
             pulumi.set(__self__, "availability_domains", availability_domains)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if configure_outbound_cluster_trigger is not None:
+            pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
         if data_node_count is not None:
             pulumi.set(__self__, "data_node_count", data_node_count)
         if data_node_host_bare_metal_shape is not None:
@@ -557,8 +653,12 @@ class _ClusterState:
             pulumi.set(__self__, "fqdn", fqdn)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if inbound_cluster_ids is not None:
+            pulumi.set(__self__, "inbound_cluster_ids", inbound_cluster_ids)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if maintenance_details is not None:
+            pulumi.set(__self__, "maintenance_details", maintenance_details)
         if master_node_count is not None:
             pulumi.set(__self__, "master_node_count", master_node_count)
         if master_node_host_bare_metal_shape is not None:
@@ -583,6 +683,12 @@ class _ClusterState:
             pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
         if opensearch_private_ip is not None:
             pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+        if outbound_cluster_config is not None:
+            pulumi.set(__self__, "outbound_cluster_config", outbound_cluster_config)
+        if reverse_connection_endpoint_customer_ips is not None:
+            pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
+        if reverse_connection_endpoints is not None:
+            pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
@@ -635,6 +741,22 @@ class _ClusterState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="configureOutboundClusterTrigger")
+    def configure_outbound_cluster_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "configure_outbound_cluster_trigger")
+
+    @configure_outbound_cluster_trigger.setter
+    def configure_outbound_cluster_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "configure_outbound_cluster_trigger", value)
 
     @property
     @pulumi.getter(name="dataNodeCount")
@@ -757,6 +879,18 @@ class _ClusterState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="inboundClusterIds")
+    def inbound_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of inbound clusters that will be queried using cross cluster search
+        """
+        return pulumi.get(self, "inbound_cluster_ids")
+
+    @inbound_cluster_ids.setter
+    def inbound_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "inbound_cluster_ids", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -767,6 +901,18 @@ class _ClusterState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']]:
+        """
+        (Updatable) Details for creation of maintenance details
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @maintenance_details.setter
+    def maintenance_details(self, value: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']]):
+        pulumi.set(self, "maintenance_details", value)
 
     @property
     @pulumi.getter(name="masterNodeCount")
@@ -911,6 +1057,42 @@ class _ClusterState:
     @opensearch_private_ip.setter
     def opensearch_private_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "opensearch_private_ip", value)
+
+    @property
+    @pulumi.getter(name="outboundClusterConfig")
+    def outbound_cluster_config(self) -> Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']]:
+        """
+        (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        """
+        return pulumi.get(self, "outbound_cluster_config")
+
+    @outbound_cluster_config.setter
+    def outbound_cluster_config(self, value: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']]):
+        pulumi.set(self, "outbound_cluster_config", value)
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
+    def reverse_connection_endpoint_customer_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The customer IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "reverse_connection_endpoint_customer_ips")
+
+    @reverse_connection_endpoint_customer_ips.setter
+    def reverse_connection_endpoint_customer_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "reverse_connection_endpoint_customer_ips", value)
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpoints")
+    def reverse_connection_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]]]:
+        """
+        The list of reverse connection endpoints.
+        """
+        return pulumi.get(self, "reverse_connection_endpoints")
+
+    @reverse_connection_endpoints.setter
+    def reverse_connection_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]]]):
+        pulumi.set(self, "reverse_connection_endpoints", value)
 
     @property
     @pulumi.getter(name="securityMasterUserName")
@@ -1073,10 +1255,6 @@ class _ClusterState:
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the cluster's VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 
@@ -1091,6 +1269,7 @@ class Cluster(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 configure_outbound_cluster_trigger: Optional[pulumi.Input[int]] = None,
                  data_node_count: Optional[pulumi.Input[int]] = None,
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  data_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1100,6 +1279,8 @@ class Cluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 maintenance_details: Optional[pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
                  master_node_count: Optional[pulumi.Input[int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1108,6 +1289,8 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_count: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 outbound_cluster_config: Optional[pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
+                 reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
                  security_mode: Optional[pulumi.Input[str]] = None,
@@ -1132,46 +1315,6 @@ class Cluster(pulumi.CustomResource):
         For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
         Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_opensearch_cluster = oci.opensearch.Cluster("test_opensearch_cluster",
-            compartment_id=compartment_id,
-            data_node_count=opensearch_cluster_data_node_count,
-            data_node_host_memory_gb=opensearch_cluster_data_node_host_memory_gb,
-            data_node_host_ocpu_count=opensearch_cluster_data_node_host_ocpu_count,
-            data_node_host_type=opensearch_cluster_data_node_host_type,
-            data_node_storage_gb=opensearch_cluster_data_node_storage_gb,
-            display_name=opensearch_cluster_display_name,
-            master_node_count=opensearch_cluster_master_node_count,
-            master_node_host_memory_gb=opensearch_cluster_master_node_host_memory_gb,
-            master_node_host_ocpu_count=opensearch_cluster_master_node_host_ocpu_count,
-            master_node_host_type=opensearch_cluster_master_node_host_type,
-            opendashboard_node_count=opensearch_cluster_opendashboard_node_count,
-            opendashboard_node_host_memory_gb=opensearch_cluster_opendashboard_node_host_memory_gb,
-            opendashboard_node_host_ocpu_count=opensearch_cluster_opendashboard_node_host_ocpu_count,
-            software_version=opensearch_cluster_software_version,
-            subnet_compartment_id=test_compartment["id"],
-            subnet_id=test_subnet["id"],
-            vcn_compartment_id=test_compartment["id"],
-            vcn_id=test_vcn["id"],
-            data_node_host_bare_metal_shape=opensearch_cluster_data_node_host_bare_metal_shape,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            master_node_host_bare_metal_shape=opensearch_cluster_master_node_host_bare_metal_shape,
-            security_master_user_name=test_user["name"],
-            security_master_user_password_hash=opensearch_cluster_security_master_user_password_hash,
-            security_mode=opensearch_cluster_security_mode,
-            system_tags=opensearch_cluster_system_tags)
-        ```
-
         ## Import
 
         OpensearchClusters can be imported using the `id`, e.g.
@@ -1183,6 +1326,11 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
+        :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -1192,6 +1340,8 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
+        :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -1200,6 +1350,8 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
@@ -1209,10 +1361,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1233,46 +1381,6 @@ class Cluster(pulumi.CustomResource):
 
         For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
         Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_opensearch_cluster = oci.opensearch.Cluster("test_opensearch_cluster",
-            compartment_id=compartment_id,
-            data_node_count=opensearch_cluster_data_node_count,
-            data_node_host_memory_gb=opensearch_cluster_data_node_host_memory_gb,
-            data_node_host_ocpu_count=opensearch_cluster_data_node_host_ocpu_count,
-            data_node_host_type=opensearch_cluster_data_node_host_type,
-            data_node_storage_gb=opensearch_cluster_data_node_storage_gb,
-            display_name=opensearch_cluster_display_name,
-            master_node_count=opensearch_cluster_master_node_count,
-            master_node_host_memory_gb=opensearch_cluster_master_node_host_memory_gb,
-            master_node_host_ocpu_count=opensearch_cluster_master_node_host_ocpu_count,
-            master_node_host_type=opensearch_cluster_master_node_host_type,
-            opendashboard_node_count=opensearch_cluster_opendashboard_node_count,
-            opendashboard_node_host_memory_gb=opensearch_cluster_opendashboard_node_host_memory_gb,
-            opendashboard_node_host_ocpu_count=opensearch_cluster_opendashboard_node_host_ocpu_count,
-            software_version=opensearch_cluster_software_version,
-            subnet_compartment_id=test_compartment["id"],
-            subnet_id=test_subnet["id"],
-            vcn_compartment_id=test_compartment["id"],
-            vcn_id=test_vcn["id"],
-            data_node_host_bare_metal_shape=opensearch_cluster_data_node_host_bare_metal_shape,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            master_node_host_bare_metal_shape=opensearch_cluster_master_node_host_bare_metal_shape,
-            security_master_user_name=test_user["name"],
-            security_master_user_password_hash=opensearch_cluster_security_master_user_password_hash,
-            security_mode=opensearch_cluster_security_mode,
-            system_tags=opensearch_cluster_system_tags)
-        ```
 
         ## Import
 
@@ -1298,6 +1406,7 @@ class Cluster(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 configure_outbound_cluster_trigger: Optional[pulumi.Input[int]] = None,
                  data_node_count: Optional[pulumi.Input[int]] = None,
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  data_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1307,6 +1416,8 @@ class Cluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 maintenance_details: Optional[pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
                  master_node_count: Optional[pulumi.Input[int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1315,6 +1426,8 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_count: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 outbound_cluster_config: Optional[pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
+                 reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
                  security_mode: Optional[pulumi.Input[str]] = None,
@@ -1336,6 +1449,7 @@ class Cluster(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["configure_outbound_cluster_trigger"] = configure_outbound_cluster_trigger
             if data_node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'data_node_count'")
             __props__.__dict__["data_node_count"] = data_node_count
@@ -1357,6 +1471,8 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["inbound_cluster_ids"] = inbound_cluster_ids
+            __props__.__dict__["maintenance_details"] = maintenance_details
             if master_node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node_count'")
             __props__.__dict__["master_node_count"] = master_node_count
@@ -1379,6 +1495,8 @@ class Cluster(pulumi.CustomResource):
             if opendashboard_node_host_ocpu_count is None and not opts.urn:
                 raise TypeError("Missing required property 'opendashboard_node_host_ocpu_count'")
             __props__.__dict__["opendashboard_node_host_ocpu_count"] = opendashboard_node_host_ocpu_count
+            __props__.__dict__["outbound_cluster_config"] = outbound_cluster_config
+            __props__.__dict__["reverse_connection_endpoint_customer_ips"] = reverse_connection_endpoint_customer_ips
             __props__.__dict__["security_master_user_name"] = security_master_user_name
             __props__.__dict__["security_master_user_password_hash"] = None if security_master_user_password_hash is None else pulumi.Output.secret(security_master_user_password_hash)
             __props__.__dict__["security_mode"] = security_mode
@@ -1405,6 +1523,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["opendashboard_private_ip"] = None
             __props__.__dict__["opensearch_fqdn"] = None
             __props__.__dict__["opensearch_private_ip"] = None
+            __props__.__dict__["reverse_connection_endpoints"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_deleted"] = None
@@ -1424,6 +1543,7 @@ class Cluster(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            configure_outbound_cluster_trigger: Optional[pulumi.Input[int]] = None,
             data_node_count: Optional[pulumi.Input[int]] = None,
             data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
             data_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1434,7 +1554,9 @@ class Cluster(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             fqdn: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            maintenance_details: Optional[pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
             master_node_count: Optional[pulumi.Input[int]] = None,
             master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
             master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1447,6 +1569,9 @@ class Cluster(pulumi.CustomResource):
             opendashboard_private_ip: Optional[pulumi.Input[str]] = None,
             opensearch_fqdn: Optional[pulumi.Input[str]] = None,
             opensearch_private_ip: Optional[pulumi.Input[str]] = None,
+            outbound_cluster_config: Optional[pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
+            reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            reverse_connection_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict']]]]] = None,
             security_master_user_name: Optional[pulumi.Input[str]] = None,
             security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
             security_mode: Optional[pulumi.Input[str]] = None,
@@ -1470,6 +1595,11 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
+        :param pulumi.Input[int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -1480,7 +1610,9 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
+        :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -1493,6 +1625,9 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[str] opensearch_private_ip: The cluster's private IP address.
+        :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict']]]] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
@@ -1507,10 +1642,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1518,6 +1649,7 @@ class Cluster(pulumi.CustomResource):
 
         __props__.__dict__["availability_domains"] = availability_domains
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["configure_outbound_cluster_trigger"] = configure_outbound_cluster_trigger
         __props__.__dict__["data_node_count"] = data_node_count
         __props__.__dict__["data_node_host_bare_metal_shape"] = data_node_host_bare_metal_shape
         __props__.__dict__["data_node_host_memory_gb"] = data_node_host_memory_gb
@@ -1528,7 +1660,9 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fqdn"] = fqdn
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["inbound_cluster_ids"] = inbound_cluster_ids
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["maintenance_details"] = maintenance_details
         __props__.__dict__["master_node_count"] = master_node_count
         __props__.__dict__["master_node_host_bare_metal_shape"] = master_node_host_bare_metal_shape
         __props__.__dict__["master_node_host_memory_gb"] = master_node_host_memory_gb
@@ -1541,6 +1675,9 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["opendashboard_private_ip"] = opendashboard_private_ip
         __props__.__dict__["opensearch_fqdn"] = opensearch_fqdn
         __props__.__dict__["opensearch_private_ip"] = opensearch_private_ip
+        __props__.__dict__["outbound_cluster_config"] = outbound_cluster_config
+        __props__.__dict__["reverse_connection_endpoint_customer_ips"] = reverse_connection_endpoint_customer_ips
+        __props__.__dict__["reverse_connection_endpoints"] = reverse_connection_endpoints
         __props__.__dict__["security_master_user_name"] = security_master_user_name
         __props__.__dict__["security_master_user_password_hash"] = security_master_user_password_hash
         __props__.__dict__["security_mode"] = security_mode
@@ -1572,6 +1709,18 @@ class Cluster(pulumi.CustomResource):
         The OCID of the compartment to create the cluster in.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configureOutboundClusterTrigger")
+    def configure_outbound_cluster_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "configure_outbound_cluster_trigger")
 
     @property
     @pulumi.getter(name="dataNodeCount")
@@ -1654,12 +1803,28 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="inboundClusterIds")
+    def inbound_cluster_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        List of inbound clusters that will be queried using cross cluster search
+        """
+        return pulumi.get(self, "inbound_cluster_ids")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
         Additional information about the current lifecycle state of the cluster.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> pulumi.Output['outputs.ClusterMaintenanceDetails']:
+        """
+        (Updatable) Details for creation of maintenance details
+        """
+        return pulumi.get(self, "maintenance_details")
 
     @property
     @pulumi.getter(name="masterNodeCount")
@@ -1756,6 +1921,30 @@ class Cluster(pulumi.CustomResource):
         The cluster's private IP address.
         """
         return pulumi.get(self, "opensearch_private_ip")
+
+    @property
+    @pulumi.getter(name="outboundClusterConfig")
+    def outbound_cluster_config(self) -> pulumi.Output['outputs.ClusterOutboundClusterConfig']:
+        """
+        (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        """
+        return pulumi.get(self, "outbound_cluster_config")
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
+    def reverse_connection_endpoint_customer_ips(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) The customer IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "reverse_connection_endpoint_customer_ips")
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpoints")
+    def reverse_connection_endpoints(self) -> pulumi.Output[Sequence['outputs.ClusterReverseConnectionEndpoint']]:
+        """
+        The list of reverse connection endpoints.
+        """
+        return pulumi.get(self, "reverse_connection_endpoints")
 
     @property
     @pulumi.getter(name="securityMasterUserName")
@@ -1866,10 +2055,6 @@ class Cluster(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[str]:
         """
         The OCID of the cluster's VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 

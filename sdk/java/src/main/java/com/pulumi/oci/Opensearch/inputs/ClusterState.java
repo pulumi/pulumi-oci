@@ -5,6 +5,9 @@ package com.pulumi.oci.Opensearch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterReverseConnectionEndpointArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -46,6 +49,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="configureOutboundClusterTrigger")
+    private @Nullable Output<Integer> configureOutboundClusterTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> configureOutboundClusterTrigger() {
+        return Optional.ofNullable(this.configureOutboundClusterTrigger);
     }
 
     /**
@@ -199,6 +223,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * List of inbound clusters that will be queried using cross cluster search
+     * 
+     */
+    @Import(name="inboundClusterIds")
+    private @Nullable Output<List<String>> inboundClusterIds;
+
+    /**
+     * @return List of inbound clusters that will be queried using cross cluster search
+     * 
+     */
+    public Optional<Output<List<String>>> inboundClusterIds() {
+        return Optional.ofNullable(this.inboundClusterIds);
+    }
+
+    /**
      * Additional information about the current lifecycle state of the cluster.
      * 
      */
@@ -211,6 +250,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * (Updatable) Details for creation of maintenance details
+     * 
+     */
+    @Import(name="maintenanceDetails")
+    private @Nullable Output<ClusterMaintenanceDetailsArgs> maintenanceDetails;
+
+    /**
+     * @return (Updatable) Details for creation of maintenance details
+     * 
+     */
+    public Optional<Output<ClusterMaintenanceDetailsArgs>> maintenanceDetails() {
+        return Optional.ofNullable(this.maintenanceDetails);
     }
 
     /**
@@ -391,6 +445,51 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> opensearchPrivateIp() {
         return Optional.ofNullable(this.opensearchPrivateIp);
+    }
+
+    /**
+     * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    @Import(name="outboundClusterConfig")
+    private @Nullable Output<ClusterOutboundClusterConfigArgs> outboundClusterConfig;
+
+    /**
+     * @return (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    public Optional<Output<ClusterOutboundClusterConfigArgs>> outboundClusterConfig() {
+        return Optional.ofNullable(this.outboundClusterConfig);
+    }
+
+    /**
+     * (Updatable) The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    @Import(name="reverseConnectionEndpointCustomerIps")
+    private @Nullable Output<List<String>> reverseConnectionEndpointCustomerIps;
+
+    /**
+     * @return (Updatable) The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    public Optional<Output<List<String>>> reverseConnectionEndpointCustomerIps() {
+        return Optional.ofNullable(this.reverseConnectionEndpointCustomerIps);
+    }
+
+    /**
+     * The list of reverse connection endpoints.
+     * 
+     */
+    @Import(name="reverseConnectionEndpoints")
+    private @Nullable Output<List<ClusterReverseConnectionEndpointArgs>> reverseConnectionEndpoints;
+
+    /**
+     * @return The list of reverse connection endpoints.
+     * 
+     */
+    public Optional<Output<List<ClusterReverseConnectionEndpointArgs>>> reverseConnectionEndpoints() {
+        return Optional.ofNullable(this.reverseConnectionEndpoints);
     }
 
     /**
@@ -591,18 +690,12 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the cluster&#39;s VCN.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="vcnId")
     private @Nullable Output<String> vcnId;
 
     /**
      * @return The OCID of the cluster&#39;s VCN.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vcnId() {
@@ -614,6 +707,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     private ClusterState(ClusterState $) {
         this.availabilityDomains = $.availabilityDomains;
         this.compartmentId = $.compartmentId;
+        this.configureOutboundClusterTrigger = $.configureOutboundClusterTrigger;
         this.dataNodeCount = $.dataNodeCount;
         this.dataNodeHostBareMetalShape = $.dataNodeHostBareMetalShape;
         this.dataNodeHostMemoryGb = $.dataNodeHostMemoryGb;
@@ -624,7 +718,9 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.fqdn = $.fqdn;
         this.freeformTags = $.freeformTags;
+        this.inboundClusterIds = $.inboundClusterIds;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.maintenanceDetails = $.maintenanceDetails;
         this.masterNodeCount = $.masterNodeCount;
         this.masterNodeHostBareMetalShape = $.masterNodeHostBareMetalShape;
         this.masterNodeHostMemoryGb = $.masterNodeHostMemoryGb;
@@ -637,6 +733,9 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.opendashboardPrivateIp = $.opendashboardPrivateIp;
         this.opensearchFqdn = $.opensearchFqdn;
         this.opensearchPrivateIp = $.opensearchPrivateIp;
+        this.outboundClusterConfig = $.outboundClusterConfig;
+        this.reverseConnectionEndpointCustomerIps = $.reverseConnectionEndpointCustomerIps;
+        this.reverseConnectionEndpoints = $.reverseConnectionEndpoints;
         this.securityMasterUserName = $.securityMasterUserName;
         this.securityMasterUserPasswordHash = $.securityMasterUserPasswordHash;
         this.securityMode = $.securityMode;
@@ -721,6 +820,33 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param configureOutboundClusterTrigger (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configureOutboundClusterTrigger(@Nullable Output<Integer> configureOutboundClusterTrigger) {
+            $.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
+            return this;
+        }
+
+        /**
+         * @param configureOutboundClusterTrigger (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configureOutboundClusterTrigger(Integer configureOutboundClusterTrigger) {
+            return configureOutboundClusterTrigger(Output.of(configureOutboundClusterTrigger));
         }
 
         /**
@@ -934,6 +1060,37 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param inboundClusterIds List of inbound clusters that will be queried using cross cluster search
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inboundClusterIds(@Nullable Output<List<String>> inboundClusterIds) {
+            $.inboundClusterIds = inboundClusterIds;
+            return this;
+        }
+
+        /**
+         * @param inboundClusterIds List of inbound clusters that will be queried using cross cluster search
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inboundClusterIds(List<String> inboundClusterIds) {
+            return inboundClusterIds(Output.of(inboundClusterIds));
+        }
+
+        /**
+         * @param inboundClusterIds List of inbound clusters that will be queried using cross cluster search
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inboundClusterIds(String... inboundClusterIds) {
+            return inboundClusterIds(List.of(inboundClusterIds));
+        }
+
+        /**
          * @param lifecycleDetails Additional information about the current lifecycle state of the cluster.
          * 
          * @return builder
@@ -952,6 +1109,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param maintenanceDetails (Updatable) Details for creation of maintenance details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDetails(@Nullable Output<ClusterMaintenanceDetailsArgs> maintenanceDetails) {
+            $.maintenanceDetails = maintenanceDetails;
+            return this;
+        }
+
+        /**
+         * @param maintenanceDetails (Updatable) Details for creation of maintenance details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDetails(ClusterMaintenanceDetailsArgs maintenanceDetails) {
+            return maintenanceDetails(Output.of(maintenanceDetails));
         }
 
         /**
@@ -1204,6 +1382,89 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder opensearchPrivateIp(String opensearchPrivateIp) {
             return opensearchPrivateIp(Output.of(opensearchPrivateIp));
+        }
+
+        /**
+         * @param outboundClusterConfig (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outboundClusterConfig(@Nullable Output<ClusterOutboundClusterConfigArgs> outboundClusterConfig) {
+            $.outboundClusterConfig = outboundClusterConfig;
+            return this;
+        }
+
+        /**
+         * @param outboundClusterConfig (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outboundClusterConfig(ClusterOutboundClusterConfigArgs outboundClusterConfig) {
+            return outboundClusterConfig(Output.of(outboundClusterConfig));
+        }
+
+        /**
+         * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpointCustomerIps(@Nullable Output<List<String>> reverseConnectionEndpointCustomerIps) {
+            $.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            return this;
+        }
+
+        /**
+         * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpointCustomerIps(List<String> reverseConnectionEndpointCustomerIps) {
+            return reverseConnectionEndpointCustomerIps(Output.of(reverseConnectionEndpointCustomerIps));
+        }
+
+        /**
+         * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpointCustomerIps(String... reverseConnectionEndpointCustomerIps) {
+            return reverseConnectionEndpointCustomerIps(List.of(reverseConnectionEndpointCustomerIps));
+        }
+
+        /**
+         * @param reverseConnectionEndpoints The list of reverse connection endpoints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpoints(@Nullable Output<List<ClusterReverseConnectionEndpointArgs>> reverseConnectionEndpoints) {
+            $.reverseConnectionEndpoints = reverseConnectionEndpoints;
+            return this;
+        }
+
+        /**
+         * @param reverseConnectionEndpoints The list of reverse connection endpoints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpoints(List<ClusterReverseConnectionEndpointArgs> reverseConnectionEndpoints) {
+            return reverseConnectionEndpoints(Output.of(reverseConnectionEndpoints));
+        }
+
+        /**
+         * @param reverseConnectionEndpoints The list of reverse connection endpoints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reverseConnectionEndpoints(ClusterReverseConnectionEndpointArgs... reverseConnectionEndpoints) {
+            return reverseConnectionEndpoints(List.of(reverseConnectionEndpoints));
         }
 
         /**
@@ -1482,9 +1743,6 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vcnId The OCID of the cluster&#39;s VCN.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1495,9 +1753,6 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vcnId The OCID of the cluster&#39;s VCN.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

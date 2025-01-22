@@ -187,6 +187,7 @@ namespace Pulumi.Oci.Core
         /// The public IP address of the VNIC, if one is assigned.
         /// </summary>
         public readonly string PublicIpAddress;
+        public readonly string RouteTableId;
         /// <summary>
         /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
@@ -241,6 +242,8 @@ namespace Pulumi.Oci.Core
 
             string publicIpAddress,
 
+            string routeTableId,
+
             ImmutableDictionary<string, string> securityAttributes,
 
             bool skipSourceDestCheck,
@@ -268,6 +271,7 @@ namespace Pulumi.Oci.Core
             NsgIds = nsgIds;
             PrivateIpAddress = privateIpAddress;
             PublicIpAddress = publicIpAddress;
+            RouteTableId = routeTableId;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             State = state;

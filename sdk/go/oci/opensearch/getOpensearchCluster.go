@@ -70,7 +70,8 @@ type GetOpensearchClusterResult struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
 	// The OCID of the compartment where the cluster is located.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId                   string `pulumi:"compartmentId"`
+	ConfigureOutboundClusterTrigger int    `pulumi:"configureOutboundClusterTrigger"`
 	// The number of data nodes configured for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -85,7 +86,7 @@ type GetOpensearchClusterResult struct {
 	DataNodeStorageGb int `pulumi:"dataNodeStorageGb"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The name of the cluster. Avoid entering confidential information.
+	// Name of the Outbound cluster. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
 	Fqdn string `pulumi:"fqdn"`
@@ -93,8 +94,12 @@ type GetOpensearchClusterResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the cluster.
 	Id string `pulumi:"id"`
+	// List of inbound clusters for which this cluster is an outbound cluster
+	InboundClusterIds []string `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details for the maintenance activity.
+	MaintenanceDetails []GetOpensearchClusterMaintenanceDetail `pulumi:"maintenanceDetails"`
 	// The number of master nodes configured for the cluster.
 	MasterNodeCount int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -120,6 +125,12 @@ type GetOpensearchClusterResult struct {
 	OpensearchFqdn string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp string `pulumi:"opensearchPrivateIp"`
+	// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfigs []GetOpensearchClusterOutboundClusterConfig `pulumi:"outboundClusterConfigs"`
+	// The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
+	// The list of reverse connection endpoints.
+	ReverseConnectionEndpoints []GetOpensearchClusterReverseConnectionEndpoint `pulumi:"reverseConnectionEndpoints"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -194,6 +205,10 @@ func (o GetOpensearchClusterResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+func (o GetOpensearchClusterResultOutput) ConfigureOutboundClusterTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.ConfigureOutboundClusterTrigger }).(pulumi.IntOutput)
+}
+
 // The number of data nodes configured for the cluster.
 func (o GetOpensearchClusterResultOutput) DataNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.DataNodeCount }).(pulumi.IntOutput)
@@ -229,7 +244,7 @@ func (o GetOpensearchClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// The name of the cluster. Avoid entering confidential information.
+// Name of the Outbound cluster. Avoid entering confidential information.
 func (o GetOpensearchClusterResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -249,9 +264,21 @@ func (o GetOpensearchClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of inbound clusters for which this cluster is an outbound cluster
+func (o GetOpensearchClusterResultOutput) InboundClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []string { return v.InboundClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Additional information about the current lifecycle state of the cluster.
 func (o GetOpensearchClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Details for the maintenance activity.
+func (o GetOpensearchClusterResultOutput) MaintenanceDetails() GetOpensearchClusterMaintenanceDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []GetOpensearchClusterMaintenanceDetail {
+		return v.MaintenanceDetails
+	}).(GetOpensearchClusterMaintenanceDetailArrayOutput)
 }
 
 // The number of master nodes configured for the cluster.
@@ -316,6 +343,25 @@ func (o GetOpensearchClusterResultOutput) OpensearchFqdn() pulumi.StringOutput {
 // The cluster's private IP address.
 func (o GetOpensearchClusterResultOutput) OpensearchPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+}
+
+// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+func (o GetOpensearchClusterResultOutput) OutboundClusterConfigs() GetOpensearchClusterOutboundClusterConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []GetOpensearchClusterOutboundClusterConfig {
+		return v.OutboundClusterConfigs
+	}).(GetOpensearchClusterOutboundClusterConfigArrayOutput)
+}
+
+// The customer IP addresses of the endpoint in customer VCN
+func (o GetOpensearchClusterResultOutput) ReverseConnectionEndpointCustomerIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []string { return v.ReverseConnectionEndpointCustomerIps }).(pulumi.StringArrayOutput)
+}
+
+// The list of reverse connection endpoints.
+func (o GetOpensearchClusterResultOutput) ReverseConnectionEndpoints() GetOpensearchClusterReverseConnectionEndpointArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []GetOpensearchClusterReverseConnectionEndpoint {
+		return v.ReverseConnectionEndpoints
+	}).(GetOpensearchClusterReverseConnectionEndpointArrayOutput)
 }
 
 // The name of the master user that are used to manage security config

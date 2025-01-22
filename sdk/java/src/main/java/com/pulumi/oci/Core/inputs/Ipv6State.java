@@ -107,6 +107,21 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    @Import(name="routeTableId")
+    private @Nullable Output<String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    public Optional<Output<String>> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
+    }
+
+    /**
      * The IPv6&#39;s current state.
      * 
      */
@@ -181,6 +196,7 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
+        this.routeTableId = $.routeTableId;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
@@ -329,6 +345,27 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipv6subnetCidr(String ipv6subnetCidr) {
             return ipv6subnetCidr(Output.of(ipv6subnetCidr));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(@Nullable Output<String> routeTableId) {
+            $.routeTableId = routeTableId;
+            return this;
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(String routeTableId) {
+            return routeTableId(Output.of(routeTableId));
         }
 
         /**

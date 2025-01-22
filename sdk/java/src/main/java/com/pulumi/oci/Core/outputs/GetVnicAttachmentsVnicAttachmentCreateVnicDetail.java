@@ -28,6 +28,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
     private List<String> nsgIds;
     private String privateIp;
+    private String routeTableId;
     private Map<String,String> securityAttributes;
     private Boolean skipSourceDestCheck;
     /**
@@ -76,6 +77,9 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     public String privateIp() {
         return this.privateIp;
     }
+    public String routeTableId() {
+        return this.routeTableId;
+    }
     public Map<String,String> securityAttributes() {
         return this.securityAttributes;
     }
@@ -116,6 +120,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
         private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
         private String privateIp;
+        private String routeTableId;
         private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String subnetId;
@@ -133,6 +138,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
@@ -226,6 +232,14 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(String routeTableId) {
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetail", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             if (securityAttributes == null) {
               throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetail", "securityAttributes");
@@ -269,6 +283,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetId = subnetId;

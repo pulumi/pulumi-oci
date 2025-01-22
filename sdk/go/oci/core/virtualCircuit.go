@@ -171,7 +171,7 @@ type VirtualCircuit struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
-	// Redundancy level details of the virtual circuit
+	// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
 	VirtualCircuitRedundancyMetadatas VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
@@ -274,7 +274,7 @@ type virtualCircuitState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
-	// Redundancy level details of the virtual circuit
+	// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
 	VirtualCircuitRedundancyMetadatas []VirtualCircuitVirtualCircuitRedundancyMetadata `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
@@ -342,7 +342,7 @@ type VirtualCircuitState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
-	// Redundancy level details of the virtual circuit
+	// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
 	VirtualCircuitRedundancyMetadatas VirtualCircuitVirtualCircuitRedundancyMetadataArrayInput
 }
 
@@ -677,7 +677,7 @@ func (o VirtualCircuitOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// Redundancy level details of the virtual circuit
+// This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
 func (o VirtualCircuitOutput) VirtualCircuitRedundancyMetadatas() VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
 	return o.ApplyT(func(v *VirtualCircuit) VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
 		return v.VirtualCircuitRedundancyMetadatas

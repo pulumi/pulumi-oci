@@ -21,7 +21,7 @@ public final class GetOpensearchClustersResult {
      */
     private String compartmentId;
     /**
-     * @return The name of the cluster. Avoid entering confidential information.
+     * @return Name of the Outbound cluster. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -51,7 +51,7 @@ public final class GetOpensearchClustersResult {
         return this.compartmentId;
     }
     /**
-     * @return The name of the cluster. Avoid entering confidential information.
+     * @return Name of the Outbound cluster. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

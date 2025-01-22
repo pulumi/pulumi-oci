@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -53,6 +54,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .hostnameLabel(privateIpHostnameLabel)
  *             .ipAddress(privateIpIpAddress)
+ *             .routeTableId(testRouteTable.id())
  *             .vlanId(testVlan.id())
  *             .vnicId(testVnicAttachment.vnicId())
  *             .build());
@@ -207,6 +209,20 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isReserved() {
         return this.isReserved;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    @Export(name="routeTableId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    public Output<Optional<String>> routeTableId() {
+        return Codegen.optional(this.routeTableId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.

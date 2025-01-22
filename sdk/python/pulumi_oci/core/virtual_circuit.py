@@ -406,7 +406,7 @@ class _VirtualCircuitState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]] virtual_circuit_redundancy_metadatas: Redundancy level details of the virtual circuit
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]] virtual_circuit_redundancy_metadatas: This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         if bandwidth_shape_name is not None:
             pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
@@ -819,7 +819,7 @@ class _VirtualCircuitState:
     @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
     def virtual_circuit_redundancy_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]:
         """
-        Redundancy level details of the virtual circuit
+        This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
 
@@ -1189,7 +1189,7 @@ class VirtualCircuit(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]] virtual_circuit_redundancy_metadatas: Redundancy level details of the virtual circuit
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]] virtual_circuit_redundancy_metadatas: This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1460,7 +1460,7 @@ class VirtualCircuit(pulumi.CustomResource):
     @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
     def virtual_circuit_redundancy_metadatas(self) -> pulumi.Output[Sequence['outputs.VirtualCircuitVirtualCircuitRedundancyMetadata']]:
         """
-        Redundancy level details of the virtual circuit
+        This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
 

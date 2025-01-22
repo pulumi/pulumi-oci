@@ -16,14 +16,459 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ClusterMaintenanceDetails',
+    'ClusterOutboundClusterConfig',
+    'ClusterOutboundClusterConfigOutboundCluster',
+    'ClusterReverseConnectionEndpoint',
+    'GetOpensearchClusterMaintenanceDetailResult',
+    'GetOpensearchClusterOutboundClusterConfigResult',
+    'GetOpensearchClusterOutboundClusterConfigOutboundClusterResult',
+    'GetOpensearchClusterReverseConnectionEndpointResult',
     'GetOpensearchClustersFilterResult',
     'GetOpensearchClustersOpensearchClusterCollectionResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult',
     'GetOpensearchVersionItemResult',
     'GetOpensearchVersionsFilterResult',
     'GetOpensearchVersionsOpensearchVersionsCollectionResult',
     'GetOpensearchVersionsOpensearchVersionsCollectionItemResult',
 ]
+
+@pulumi.output_type
+class ClusterMaintenanceDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endTime":
+            suggest = "end_time"
+        elif key == "notificationEmailIds":
+            suggest = "notification_email_ids"
+        elif key == "startTime":
+            suggest = "start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterMaintenanceDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterMaintenanceDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterMaintenanceDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_time: Optional[str] = None,
+                 notification_email_ids: Optional[Sequence[str]] = None,
+                 start_time: Optional[str] = None,
+                 state: Optional[str] = None):
+        """
+        :param str end_time: End time of the maintenance activity
+        :param Sequence[str] notification_email_ids: (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+        :param str start_time: Start time of the maintenance activity
+        :param str state: The current state of the cluster.
+        """
+        if end_time is not None:
+            pulumi.set(__self__, "end_time", end_time)
+        if notification_email_ids is not None:
+            pulumi.set(__self__, "notification_email_ids", notification_email_ids)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> Optional[str]:
+        """
+        End time of the maintenance activity
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="notificationEmailIds")
+    def notification_email_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+        """
+        return pulumi.get(self, "notification_email_ids")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> Optional[str]:
+        """
+        Start time of the maintenance activity
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the cluster.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class ClusterOutboundClusterConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnabled":
+            suggest = "is_enabled"
+        elif key == "outboundClusters":
+            suggest = "outbound_clusters"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterOutboundClusterConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterOutboundClusterConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterOutboundClusterConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 outbound_clusters: Sequence['outputs.ClusterOutboundClusterConfigOutboundCluster']):
+        """
+        :param bool is_enabled: (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+        :param Sequence['ClusterOutboundClusterConfigOutboundClusterArgs'] outbound_clusters: (Updatable) List of outbound clusters to be connected to the inbound cluster
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "outbound_clusters", outbound_clusters)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="outboundClusters")
+    def outbound_clusters(self) -> Sequence['outputs.ClusterOutboundClusterConfigOutboundCluster']:
+        """
+        (Updatable) List of outbound clusters to be connected to the inbound cluster
+        """
+        return pulumi.get(self, "outbound_clusters")
+
+
+@pulumi.output_type
+class ClusterOutboundClusterConfigOutboundCluster(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "seedClusterId":
+            suggest = "seed_cluster_id"
+        elif key == "isSkipUnavailable":
+            suggest = "is_skip_unavailable"
+        elif key == "pingSchedule":
+            suggest = "ping_schedule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterOutboundClusterConfigOutboundCluster. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterOutboundClusterConfigOutboundCluster.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterOutboundClusterConfigOutboundCluster.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: str,
+                 seed_cluster_id: str,
+                 is_skip_unavailable: Optional[bool] = None,
+                 mode: Optional[str] = None,
+                 ping_schedule: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+        :param str seed_cluster_id: (Updatable) OCID of the Outbound cluster
+        :param bool is_skip_unavailable: (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+        :param str mode: (Updatable) Mode for the cross cluster connection
+        :param str ping_schedule: (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "seed_cluster_id", seed_cluster_id)
+        if is_skip_unavailable is not None:
+            pulumi.set(__self__, "is_skip_unavailable", is_skip_unavailable)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if ping_schedule is not None:
+            pulumi.set(__self__, "ping_schedule", ping_schedule)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="seedClusterId")
+    def seed_cluster_id(self) -> str:
+        """
+        (Updatable) OCID of the Outbound cluster
+        """
+        return pulumi.get(self, "seed_cluster_id")
+
+    @property
+    @pulumi.getter(name="isSkipUnavailable")
+    def is_skip_unavailable(self) -> Optional[bool]:
+        """
+        (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+        """
+        return pulumi.get(self, "is_skip_unavailable")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional[str]:
+        """
+        (Updatable) Mode for the cross cluster connection
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter(name="pingSchedule")
+    def ping_schedule(self) -> Optional[str]:
+        """
+        (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+        """
+        return pulumi.get(self, "ping_schedule")
+
+
+@pulumi.output_type
+class ClusterReverseConnectionEndpoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customerIp":
+            suggest = "customer_ip"
+        elif key == "natIp":
+            suggest = "nat_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterReverseConnectionEndpoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterReverseConnectionEndpoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterReverseConnectionEndpoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 customer_ip: Optional[str] = None,
+                 nat_ip: Optional[str] = None):
+        """
+        :param str customer_ip: The IP addresses of the endpoint in customer VCN
+        :param str nat_ip: The NAT IP addresses of the endpoint in service VCN
+        """
+        if customer_ip is not None:
+            pulumi.set(__self__, "customer_ip", customer_ip)
+        if nat_ip is not None:
+            pulumi.set(__self__, "nat_ip", nat_ip)
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> Optional[str]:
+        """
+        The IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+    @property
+    @pulumi.getter(name="natIp")
+    def nat_ip(self) -> Optional[str]:
+        """
+        The NAT IP addresses of the endpoint in service VCN
+        """
+        return pulumi.get(self, "nat_ip")
+
+
+@pulumi.output_type
+class GetOpensearchClusterMaintenanceDetailResult(dict):
+    def __init__(__self__, *,
+                 end_time: str,
+                 notification_email_ids: Sequence[str],
+                 start_time: str,
+                 state: str):
+        """
+        :param str end_time: End time of the maintenance activity
+        :param Sequence[str] notification_email_ids: The Email Ids given the by customer to get notified about maintenance activities
+        :param str start_time: Start time of the maintenance activity
+        :param str state: The current state of the cluster.
+        """
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "notification_email_ids", notification_email_ids)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        """
+        End time of the maintenance activity
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="notificationEmailIds")
+    def notification_email_ids(self) -> Sequence[str]:
+        """
+        The Email Ids given the by customer to get notified about maintenance activities
+        """
+        return pulumi.get(self, "notification_email_ids")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        """
+        Start time of the maintenance activity
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the cluster.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetOpensearchClusterOutboundClusterConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 outbound_clusters: Sequence['outputs.GetOpensearchClusterOutboundClusterConfigOutboundClusterResult']):
+        """
+        :param bool is_enabled: Flag to indicate whether outbound cluster configuration is enabled
+        :param Sequence['GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs'] outbound_clusters: List of outbound clusters to be connected to the inbound cluster
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "outbound_clusters", outbound_clusters)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Flag to indicate whether outbound cluster configuration is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="outboundClusters")
+    def outbound_clusters(self) -> Sequence['outputs.GetOpensearchClusterOutboundClusterConfigOutboundClusterResult']:
+        """
+        List of outbound clusters to be connected to the inbound cluster
+        """
+        return pulumi.get(self, "outbound_clusters")
+
+
+@pulumi.output_type
+class GetOpensearchClusterOutboundClusterConfigOutboundClusterResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 is_skip_unavailable: bool,
+                 mode: str,
+                 ping_schedule: str,
+                 seed_cluster_id: str):
+        """
+        :param str display_name: Name of the Outbound cluster. Avoid entering confidential information.
+        :param bool is_skip_unavailable: Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+        :param str mode: Mode for the cross cluster connection
+        :param str ping_schedule: Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+        :param str seed_cluster_id: OCID of the Outbound cluster
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_skip_unavailable", is_skip_unavailable)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "ping_schedule", ping_schedule)
+        pulumi.set(__self__, "seed_cluster_id", seed_cluster_id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Name of the Outbound cluster. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isSkipUnavailable")
+    def is_skip_unavailable(self) -> bool:
+        """
+        Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+        """
+        return pulumi.get(self, "is_skip_unavailable")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> str:
+        """
+        Mode for the cross cluster connection
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter(name="pingSchedule")
+    def ping_schedule(self) -> str:
+        """
+        Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+        """
+        return pulumi.get(self, "ping_schedule")
+
+    @property
+    @pulumi.getter(name="seedClusterId")
+    def seed_cluster_id(self) -> str:
+        """
+        OCID of the Outbound cluster
+        """
+        return pulumi.get(self, "seed_cluster_id")
+
+
+@pulumi.output_type
+class GetOpensearchClusterReverseConnectionEndpointResult(dict):
+    def __init__(__self__, *,
+                 customer_ip: str,
+                 nat_ip: str):
+        """
+        :param str customer_ip: The IP addresses of the endpoint in customer VCN
+        :param str nat_ip: The NAT IP addresses of the endpoint in service VCN
+        """
+        pulumi.set(__self__, "customer_ip", customer_ip)
+        pulumi.set(__self__, "nat_ip", nat_ip)
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> str:
+        """
+        The IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+    @property
+    @pulumi.getter(name="natIp")
+    def nat_ip(self) -> str:
+        """
+        The NAT IP addresses of the endpoint in service VCN
+        """
+        return pulumi.get(self, "nat_ip")
+
 
 @pulumi.output_type
 class GetOpensearchClustersFilterResult(dict):
@@ -69,6 +514,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
     def __init__(__self__, *,
                  availability_domains: Sequence[str],
                  compartment_id: str,
+                 configure_outbound_cluster_trigger: int,
                  data_node_count: int,
                  data_node_host_bare_metal_shape: str,
                  data_node_host_memory_gb: int,
@@ -80,7 +526,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  fqdn: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 inbound_cluster_ids: Sequence[str],
                  lifecycle_details: str,
+                 maintenance_details: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult'],
                  master_node_count: int,
                  master_node_host_bare_metal_shape: str,
                  master_node_host_memory_gb: int,
@@ -93,6 +541,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  opendashboard_private_ip: str,
                  opensearch_fqdn: str,
                  opensearch_private_ip: str,
+                 outbound_cluster_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult'],
+                 reverse_connection_endpoint_customer_ips: Sequence[str],
+                 reverse_connection_endpoints: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult'],
                  security_master_user_name: str,
                  security_master_user_password_hash: str,
                  security_mode: str,
@@ -121,7 +572,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param str fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: unique OpensearchCluster identifier
+        :param Sequence[str] inbound_cluster_ids: List of inbound clusters for which this cluster is an outbound cluster
         :param str lifecycle_details: Additional information about the current lifecycle state of the cluster.
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs'] maintenance_details: Details for the maintenance activity.
         :param int master_node_count: The number of master nodes configured for the cluster.
         :param str master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param int master_node_host_memory_gb: The amount of memory in GB, for the cluster's master nodes.
@@ -134,6 +587,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param str opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param str opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param str opensearch_private_ip: The cluster's private IP address.
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs'] outbound_cluster_configs: This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param Sequence[str] reverse_connection_endpoint_customer_ips: The customer IP addresses of the endpoint in customer VCN
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs'] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param str security_master_user_name: The name of the master user that are used to manage security config
         :param str security_master_user_password_hash: The password hash of the master user that are used to manage security config
         :param str security_mode: The security mode of the cluster.
@@ -151,6 +607,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         """
         pulumi.set(__self__, "availability_domains", availability_domains)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
         pulumi.set(__self__, "data_node_count", data_node_count)
         pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
@@ -162,7 +619,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "fqdn", fqdn)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inbound_cluster_ids", inbound_cluster_ids)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "maintenance_details", maintenance_details)
         pulumi.set(__self__, "master_node_count", master_node_count)
         pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
         pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
@@ -175,6 +634,9 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
         pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
         pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+        pulumi.set(__self__, "outbound_cluster_configs", outbound_cluster_configs)
+        pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
+        pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
         pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
         pulumi.set(__self__, "security_mode", security_mode)
@@ -205,6 +667,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configureOutboundClusterTrigger")
+    def configure_outbound_cluster_trigger(self) -> int:
+        return pulumi.get(self, "configure_outbound_cluster_trigger")
 
     @property
     @pulumi.getter(name="dataNodeCount")
@@ -295,12 +762,28 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="inboundClusterIds")
+    def inbound_cluster_ids(self) -> Sequence[str]:
+        """
+        List of inbound clusters for which this cluster is an outbound cluster
+        """
+        return pulumi.get(self, "inbound_cluster_ids")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Additional information about the current lifecycle state of the cluster.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult']:
+        """
+        Details for the maintenance activity.
+        """
+        return pulumi.get(self, "maintenance_details")
 
     @property
     @pulumi.getter(name="masterNodeCount")
@@ -397,6 +880,30 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The cluster's private IP address.
         """
         return pulumi.get(self, "opensearch_private_ip")
+
+    @property
+    @pulumi.getter(name="outboundClusterConfigs")
+    def outbound_cluster_configs(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult']:
+        """
+        This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        """
+        return pulumi.get(self, "outbound_cluster_configs")
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
+    def reverse_connection_endpoint_customer_ips(self) -> Sequence[str]:
+        """
+        The customer IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "reverse_connection_endpoint_customer_ips")
+
+    @property
+    @pulumi.getter(name="reverseConnectionEndpoints")
+    def reverse_connection_endpoints(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult']:
+        """
+        The list of reverse connection endpoints.
+        """
+        return pulumi.get(self, "reverse_connection_endpoints")
 
     @property
     @pulumi.getter(name="securityMasterUserName")
@@ -509,6 +1016,177 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The OCID of the cluster's VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult(dict):
+    def __init__(__self__, *,
+                 end_time: str,
+                 notification_email_ids: Sequence[str],
+                 start_time: str,
+                 state: str):
+        """
+        :param str end_time: End time of the maintenance activity
+        :param Sequence[str] notification_email_ids: The Email Ids given the by customer to get notified about maintenance activities
+        :param str start_time: Start time of the maintenance activity
+        :param str state: A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+        """
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "notification_email_ids", notification_email_ids)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        """
+        End time of the maintenance activity
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="notificationEmailIds")
+    def notification_email_ids(self) -> Sequence[str]:
+        """
+        The Email Ids given the by customer to get notified about maintenance activities
+        """
+        return pulumi.get(self, "notification_email_ids")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        """
+        Start time of the maintenance activity
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 outbound_clusters: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult']):
+        """
+        :param bool is_enabled: Flag to indicate whether outbound cluster configuration is enabled
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs'] outbound_clusters: List of outbound clusters to be connected to the inbound cluster
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "outbound_clusters", outbound_clusters)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Flag to indicate whether outbound cluster configuration is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="outboundClusters")
+    def outbound_clusters(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult']:
+        """
+        List of outbound clusters to be connected to the inbound cluster
+        """
+        return pulumi.get(self, "outbound_clusters")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 is_skip_unavailable: bool,
+                 mode: str,
+                 ping_schedule: str,
+                 seed_cluster_id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param bool is_skip_unavailable: Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+        :param str mode: Mode for the cross cluster connection
+        :param str ping_schedule: Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+        :param str seed_cluster_id: OCID of the Outbound cluster
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_skip_unavailable", is_skip_unavailable)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "ping_schedule", ping_schedule)
+        pulumi.set(__self__, "seed_cluster_id", seed_cluster_id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isSkipUnavailable")
+    def is_skip_unavailable(self) -> bool:
+        """
+        Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+        """
+        return pulumi.get(self, "is_skip_unavailable")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> str:
+        """
+        Mode for the cross cluster connection
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter(name="pingSchedule")
+    def ping_schedule(self) -> str:
+        """
+        Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+        """
+        return pulumi.get(self, "ping_schedule")
+
+    @property
+    @pulumi.getter(name="seedClusterId")
+    def seed_cluster_id(self) -> str:
+        """
+        OCID of the Outbound cluster
+        """
+        return pulumi.get(self, "seed_cluster_id")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult(dict):
+    def __init__(__self__, *,
+                 customer_ip: str,
+                 nat_ip: str):
+        """
+        :param str customer_ip: The IP addresses of the endpoint in customer VCN
+        :param str nat_ip: The NAT IP addresses of the endpoint in service VCN
+        """
+        pulumi.set(__self__, "customer_ip", customer_ip)
+        pulumi.set(__self__, "nat_ip", nat_ip)
+
+    @property
+    @pulumi.getter(name="customerIp")
+    def customer_ip(self) -> str:
+        """
+        The IP addresses of the endpoint in customer VCN
+        """
+        return pulumi.get(self, "customer_ip")
+
+    @property
+    @pulumi.getter(name="natIp")
+    def nat_ip(self) -> str:
+        """
+        The NAT IP addresses of the endpoint in service VCN
+        """
+        return pulumi.get(self, "nat_ip")
 
 
 @pulumi.output_type

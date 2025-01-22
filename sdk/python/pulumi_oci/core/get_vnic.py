@@ -26,7 +26,7 @@ class GetVnicResult:
     """
     A collection of values returned by getVnic.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ipv6addresses=None, is_primary=None, mac_address=None, nsg_ids=None, private_ip_address=None, public_ip_address=None, security_attributes=None, skip_source_dest_check=None, state=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ipv6addresses=None, is_primary=None, mac_address=None, nsg_ids=None, private_ip_address=None, public_ip_address=None, route_table_id=None, security_attributes=None, skip_source_dest_check=None, state=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -66,6 +66,9 @@ class GetVnicResult:
         if public_ip_address and not isinstance(public_ip_address, str):
             raise TypeError("Expected argument 'public_ip_address' to be a str")
         pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if route_table_id and not isinstance(route_table_id, str):
+            raise TypeError("Expected argument 'route_table_id' to be a str")
+        pulumi.set(__self__, "route_table_id", route_table_id)
         if security_attributes and not isinstance(security_attributes, dict):
             raise TypeError("Expected argument 'security_attributes' to be a dict")
         pulumi.set(__self__, "security_attributes", security_attributes)
@@ -193,6 +196,11 @@ class GetVnicResult:
         return pulumi.get(self, "public_ip_address")
 
     @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> str:
+        return pulumi.get(self, "route_table_id")
+
+    @property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, str]:
         """
@@ -265,6 +273,7 @@ class AwaitableGetVnicResult(GetVnicResult):
             nsg_ids=self.nsg_ids,
             private_ip_address=self.private_ip_address,
             public_ip_address=self.public_ip_address,
+            route_table_id=self.route_table_id,
             security_attributes=self.security_attributes,
             skip_source_dest_check=self.skip_source_dest_check,
             state=self.state,
@@ -315,6 +324,7 @@ def get_vnic(vnic_id: Optional[str] = None,
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_ip_address=pulumi.get(__ret__, 'private_ip_address'),
         public_ip_address=pulumi.get(__ret__, 'public_ip_address'),
+        route_table_id=pulumi.get(__ret__, 'route_table_id'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         skip_source_dest_check=pulumi.get(__ret__, 'skip_source_dest_check'),
         state=pulumi.get(__ret__, 'state'),
@@ -362,6 +372,7 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         private_ip_address=pulumi.get(__response__, 'private_ip_address'),
         public_ip_address=pulumi.get(__response__, 'public_ip_address'),
+        route_table_id=pulumi.get(__response__, 'route_table_id'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
         skip_source_dest_check=pulumi.get(__response__, 'skip_source_dest_check'),
         state=pulumi.get(__response__, 'state'),

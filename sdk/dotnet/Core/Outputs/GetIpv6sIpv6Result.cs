@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpAddress;
         public readonly string Ipv6subnetCidr;
+        public readonly string RouteTableId;
         /// <summary>
         /// The IPv6's current state.
         /// </summary>
@@ -71,6 +72,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string ipv6subnetCidr,
 
+            string routeTableId,
+
             string state,
 
             string subnetId,
@@ -86,6 +89,7 @@ namespace Pulumi.Oci.Core.Outputs
             Id = id;
             IpAddress = ipAddress;
             Ipv6subnetCidr = ipv6subnetCidr;
+            RouteTableId = routeTableId;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

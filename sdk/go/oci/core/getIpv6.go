@@ -75,6 +75,8 @@ type LookupIpv6Result struct {
 	IpAddress      string `pulumi:"ipAddress"`
 	Ipv6id         string `pulumi:"ipv6id"`
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId string `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -155,6 +157,11 @@ func (o LookupIpv6ResultOutput) Ipv6id() pulumi.StringOutput {
 
 func (o LookupIpv6ResultOutput) Ipv6subnetCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+func (o LookupIpv6ResultOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIpv6Result) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
 // The IPv6's current state.

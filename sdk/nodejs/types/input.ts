@@ -14565,6 +14565,10 @@ export namespace Core {
          */
         launchOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions>;
         /**
+         * List of licensing configurations associated with target launch values.
+         */
+        licensingConfigs?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs>;
+        /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          *
          * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -14611,7 +14615,7 @@ export namespace Core {
          */
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
          */
         securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -14718,7 +14722,7 @@ export namespace Core {
          */
         privateIp?: pulumi.Input<string>;
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
          */
         securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -14789,6 +14793,19 @@ export namespace Core {
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs {
+        /**
+         * License Type for the OS license.
+         * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+         * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         */
+        licenseType?: pulumi.Input<string>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig {
@@ -15180,6 +15197,10 @@ export namespace Core {
          */
         launchOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions>;
         /**
+         * List of licensing configurations associated with target launch values.
+         */
+        licensingConfigs?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs>;
+        /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          */
         metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -15198,7 +15219,7 @@ export namespace Core {
          */
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
          */
         securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -15310,7 +15331,7 @@ export namespace Core {
          */
         privateIp?: pulumi.Input<string>;
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
          */
         securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -15375,6 +15396,19 @@ export namespace Core {
          * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs {
+        /**
+         * License Type for the OS license.
+         * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+         * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         */
+        licenseType?: pulumi.Input<string>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig {
@@ -15877,6 +15911,23 @@ export namespace Core {
          * Allowed values:
          */
         vpusPerGb?: pulumi.Input<string>;
+    }
+
+    export interface InstanceLicensingConfigs {
+        /**
+         * (Updatable) License Type for the OS license.
+         * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+         * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         */
+        licenseType?: pulumi.Input<string>;
+        /**
+         * The Operating System version of the license config.
+         */
+        osVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Operating System type of the Configuration.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface InstancePlatformConfig {
@@ -16816,15 +16867,15 @@ export namespace Core {
 
     export interface VirtualCircuitVirtualCircuitRedundancyMetadata {
         /**
-         * The configured redundancy level of the virtual circuit
+         * The configured redundancy level of the virtual circuit.
          */
         configuredRedundancyLevel?: pulumi.Input<string>;
         /**
-         * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+         * Indicates if the configured level is met for IPv4 BGP redundancy.
          */
         ipv4bgpSessionRedundancyStatus?: pulumi.Input<string>;
         /**
-         * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+         * Indicates if the configured level is met for IPv6 BGP redundancy.
          */
         ipv6bgpSessionRedundancyStatus?: pulumi.Input<string>;
     }
@@ -16899,6 +16950,7 @@ export namespace Core {
          * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
+        routeTableId?: pulumi.Input<string>;
         /**
          * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
          */
@@ -75660,6 +75712,70 @@ export namespace Opa {
 }
 
 export namespace Opensearch {
+    export interface ClusterMaintenanceDetails {
+        /**
+         * End time of the maintenance activity
+         */
+        endTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+         */
+        notificationEmailIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Start time of the maintenance activity
+         */
+        startTime?: pulumi.Input<string>;
+        /**
+         * The current state of the cluster.
+         */
+        state?: pulumi.Input<string>;
+    }
+
+    export interface ClusterOutboundClusterConfig {
+        /**
+         * (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+         */
+        isEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) List of outbound clusters to be connected to the inbound cluster
+         */
+        outboundClusters: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfigOutboundCluster>[]>;
+    }
+
+    export interface ClusterOutboundClusterConfigOutboundCluster {
+        /**
+         * (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+         */
+        displayName: pulumi.Input<string>;
+        /**
+         * (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+         */
+        isSkipUnavailable?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Mode for the cross cluster connection
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+         */
+        pingSchedule?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the Outbound cluster
+         */
+        seedClusterId: pulumi.Input<string>;
+    }
+
+    export interface ClusterReverseConnectionEndpoint {
+        /**
+         * The IP addresses of the endpoint in customer VCN
+         */
+        customerIp?: pulumi.Input<string>;
+        /**
+         * The NAT IP addresses of the endpoint in service VCN
+         */
+        natIp?: pulumi.Input<string>;
+    }
+
     export interface GetOpensearchClustersFilter {
         name: string;
         regex?: boolean;

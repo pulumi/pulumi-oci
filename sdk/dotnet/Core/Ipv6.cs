@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         IpAddress = ipv6IpAddress,
     ///         Ipv6subnetCidr = ipv6Ipv6subnetCidr,
+    ///         RouteTableId = testRouteTable.Id,
     ///     });
     /// 
     /// });
@@ -89,6 +90,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("ipv6subnetCidr")]
         public Output<string> Ipv6subnetCidr { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        [Output("routeTableId")]
+        public Output<string?> RouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// The IPv6's current state.
@@ -207,6 +214,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? Ipv6subnetCidr { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
         /// 
         /// 
@@ -271,6 +284,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("ipv6subnetCidr")]
         public Input<string>? Ipv6subnetCidr { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// </summary>
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
         /// The IPv6's current state.

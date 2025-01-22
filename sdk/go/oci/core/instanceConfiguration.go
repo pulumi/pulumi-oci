@@ -156,6 +156,10 @@ import (
 //							NetworkType:                     pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType),
 //							RemoteDataVolumeType:            pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType),
 //						},
+//						LicensingConfigs: &core.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs{
+//							Type:        pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsType),
+//							LicenseType: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsLicenseType),
+//						},
 //						Metadata: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsMetadata),
 //						PlatformConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs{
 //							Type:                                     pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigType),
@@ -311,6 +315,10 @@ import (
 //									IsPvEncryptionInTransitEnabled:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled),
 //									NetworkType:                     pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType),
 //									RemoteDataVolumeType:            pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType),
+//								},
+//								LicensingConfigs: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs{
+//									Type:        pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsType),
+//									LicenseType: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsLicenseType),
 //								},
 //								Metadata: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsMetadata),
 //								PlatformConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs{

@@ -152,6 +152,8 @@ type Instance struct {
 	//
 	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
 	LaunchVolumeAttachments InstanceLaunchVolumeAttachmentArrayOutput `pulumi:"launchVolumeAttachments"`
+	// (Updatable) List of licensing configurations associated with target launch values.
+	LicensingConfigs InstanceLicensingConfigsOutput `pulumi:"licensingConfigs"`
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -347,6 +349,8 @@ type instanceState struct {
 	//
 	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
 	LaunchVolumeAttachments []InstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
+	// (Updatable) List of licensing configurations associated with target launch values.
+	LicensingConfigs *InstanceLicensingConfigs `pulumi:"licensingConfigs"`
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -507,6 +511,8 @@ type InstanceState struct {
 	//
 	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
 	LaunchVolumeAttachments InstanceLaunchVolumeAttachmentArrayInput
+	// (Updatable) List of licensing configurations associated with target launch values.
+	LicensingConfigs InstanceLicensingConfigsPtrInput
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -661,6 +667,8 @@ type instanceArgs struct {
 	//
 	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
 	LaunchVolumeAttachments []InstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
+	// (Updatable) List of licensing configurations associated with target launch values.
+	LicensingConfigs *InstanceLicensingConfigs `pulumi:"licensingConfigs"`
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -798,6 +806,8 @@ type InstanceArgs struct {
 	//
 	// **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
 	LaunchVolumeAttachments InstanceLaunchVolumeAttachmentArrayInput
+	// (Updatable) List of licensing configurations associated with target launch values.
+	LicensingConfigs InstanceLicensingConfigsPtrInput
 	// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 	//
 	// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1106,6 +1116,11 @@ func (o InstanceOutput) LaunchOptions() InstanceLaunchOptionsOutput {
 // **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
 func (o InstanceOutput) LaunchVolumeAttachments() InstanceLaunchVolumeAttachmentArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceLaunchVolumeAttachmentArrayOutput { return v.LaunchVolumeAttachments }).(InstanceLaunchVolumeAttachmentArrayOutput)
+}
+
+// (Updatable) List of licensing configurations associated with target launch values.
+func (o InstanceOutput) LicensingConfigs() InstanceLicensingConfigsOutput {
+	return o.ApplyT(func(v *Instance) InstanceLicensingConfigsOutput { return v.LicensingConfigs }).(InstanceLicensingConfigsOutput)
 }
 
 // (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.

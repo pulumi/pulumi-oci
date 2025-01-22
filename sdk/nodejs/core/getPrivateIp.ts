@@ -85,6 +85,7 @@ export interface GetPrivateIpResult {
      */
     readonly isReserved: boolean;
     readonly privateIpId: string;
+    readonly routeTableId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      */

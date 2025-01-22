@@ -176,6 +176,7 @@ namespace Pulumi.Oci.Opensearch
         /// The OCID of the compartment where the cluster is located.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly int ConfigureOutboundClusterTrigger;
         /// <summary>
         /// The number of data nodes configured for the cluster.
         /// </summary>
@@ -205,7 +206,7 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// The name of the cluster. Avoid entering confidential information.
+        /// Name of the Outbound cluster. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -221,9 +222,17 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// List of inbound clusters for which this cluster is an outbound cluster
+        /// </summary>
+        public readonly ImmutableArray<string> InboundClusterIds;
+        /// <summary>
         /// Additional information about the current lifecycle state of the cluster.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Details for the maintenance activity.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterMaintenanceDetailResult> MaintenanceDetails;
         /// <summary>
         /// The number of master nodes configured for the cluster.
         /// </summary>
@@ -273,6 +282,18 @@ namespace Pulumi.Oci.Opensearch
         /// The cluster's private IP address.
         /// </summary>
         public readonly string OpensearchPrivateIp;
+        /// <summary>
+        /// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterOutboundClusterConfigResult> OutboundClusterConfigs;
+        /// <summary>
+        /// The customer IP addresses of the endpoint in customer VCN
+        /// </summary>
+        public readonly ImmutableArray<string> ReverseConnectionEndpointCustomerIps;
+        /// <summary>
+        /// The list of reverse connection endpoints.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterReverseConnectionEndpointResult> ReverseConnectionEndpoints;
         /// <summary>
         /// The name of the master user that are used to manage security config
         /// </summary>
@@ -336,6 +357,8 @@ namespace Pulumi.Oci.Opensearch
 
             string compartmentId,
 
+            int configureOutboundClusterTrigger,
+
             int dataNodeCount,
 
             string dataNodeHostBareMetalShape,
@@ -358,7 +381,11 @@ namespace Pulumi.Oci.Opensearch
 
             string id,
 
+            ImmutableArray<string> inboundClusterIds,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetOpensearchClusterMaintenanceDetailResult> maintenanceDetails,
 
             int masterNodeCount,
 
@@ -385,6 +412,12 @@ namespace Pulumi.Oci.Opensearch
             string opensearchFqdn,
 
             string opensearchPrivateIp,
+
+            ImmutableArray<Outputs.GetOpensearchClusterOutboundClusterConfigResult> outboundClusterConfigs,
+
+            ImmutableArray<string> reverseConnectionEndpointCustomerIps,
+
+            ImmutableArray<Outputs.GetOpensearchClusterReverseConnectionEndpointResult> reverseConnectionEndpoints,
 
             string securityMasterUserName,
 
@@ -416,6 +449,7 @@ namespace Pulumi.Oci.Opensearch
         {
             AvailabilityDomains = availabilityDomains;
             CompartmentId = compartmentId;
+            ConfigureOutboundClusterTrigger = configureOutboundClusterTrigger;
             DataNodeCount = dataNodeCount;
             DataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             DataNodeHostMemoryGb = dataNodeHostMemoryGb;
@@ -427,7 +461,9 @@ namespace Pulumi.Oci.Opensearch
             Fqdn = fqdn;
             FreeformTags = freeformTags;
             Id = id;
+            InboundClusterIds = inboundClusterIds;
             LifecycleDetails = lifecycleDetails;
+            MaintenanceDetails = maintenanceDetails;
             MasterNodeCount = masterNodeCount;
             MasterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             MasterNodeHostMemoryGb = masterNodeHostMemoryGb;
@@ -441,6 +477,9 @@ namespace Pulumi.Oci.Opensearch
             OpensearchClusterId = opensearchClusterId;
             OpensearchFqdn = opensearchFqdn;
             OpensearchPrivateIp = opensearchPrivateIp;
+            OutboundClusterConfigs = outboundClusterConfigs;
+            ReverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            ReverseConnectionEndpoints = reverseConnectionEndpoints;
             SecurityMasterUserName = securityMasterUserName;
             SecurityMasterUserPasswordHash = securityMasterUserPasswordHash;
             SecurityMode = securityMode;

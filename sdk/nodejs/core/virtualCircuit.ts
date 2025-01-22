@@ -231,7 +231,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * Redundancy level details of the virtual circuit
+     * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      */
     public /*out*/ readonly virtualCircuitRedundancyMetadatas!: pulumi.Output<outputs.Core.VirtualCircuitVirtualCircuitRedundancyMetadata[]>;
 
@@ -445,7 +445,7 @@ export interface VirtualCircuitState {
      */
     type?: pulumi.Input<string>;
     /**
-     * Redundancy level details of the virtual circuit
+     * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      */
     virtualCircuitRedundancyMetadatas?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitVirtualCircuitRedundancyMetadata>[]>;
 }

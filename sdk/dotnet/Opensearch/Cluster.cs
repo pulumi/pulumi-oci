@@ -23,56 +23,6 @@ namespace Pulumi.Oci.Opensearch
     /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
     /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testOpensearchCluster = new Oci.Opensearch.Cluster("test_opensearch_cluster", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         DataNodeCount = opensearchClusterDataNodeCount,
-    ///         DataNodeHostMemoryGb = opensearchClusterDataNodeHostMemoryGb,
-    ///         DataNodeHostOcpuCount = opensearchClusterDataNodeHostOcpuCount,
-    ///         DataNodeHostType = opensearchClusterDataNodeHostType,
-    ///         DataNodeStorageGb = opensearchClusterDataNodeStorageGb,
-    ///         DisplayName = opensearchClusterDisplayName,
-    ///         MasterNodeCount = opensearchClusterMasterNodeCount,
-    ///         MasterNodeHostMemoryGb = opensearchClusterMasterNodeHostMemoryGb,
-    ///         MasterNodeHostOcpuCount = opensearchClusterMasterNodeHostOcpuCount,
-    ///         MasterNodeHostType = opensearchClusterMasterNodeHostType,
-    ///         OpendashboardNodeCount = opensearchClusterOpendashboardNodeCount,
-    ///         OpendashboardNodeHostMemoryGb = opensearchClusterOpendashboardNodeHostMemoryGb,
-    ///         OpendashboardNodeHostOcpuCount = opensearchClusterOpendashboardNodeHostOcpuCount,
-    ///         SoftwareVersion = opensearchClusterSoftwareVersion,
-    ///         SubnetCompartmentId = testCompartment.Id,
-    ///         SubnetId = testSubnet.Id,
-    ///         VcnCompartmentId = testCompartment.Id,
-    ///         VcnId = testVcn.Id,
-    ///         DataNodeHostBareMetalShape = opensearchClusterDataNodeHostBareMetalShape,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         MasterNodeHostBareMetalShape = opensearchClusterMasterNodeHostBareMetalShape,
-    ///         SecurityMasterUserName = testUser.Name,
-    ///         SecurityMasterUserPasswordHash = opensearchClusterSecurityMasterUserPasswordHash,
-    ///         SecurityMode = opensearchClusterSecurityMode,
-    ///         SystemTags = opensearchClusterSystemTags,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// OpensearchClusters can be imported using the `id`, e.g.
@@ -95,6 +45,16 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("configureOutboundClusterTrigger")]
+        public Output<int?> ConfigureOutboundClusterTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of data nodes to configure for the cluster.
@@ -157,10 +117,22 @@ namespace Pulumi.Oci.Opensearch
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// List of inbound clusters that will be queried using cross cluster search
+        /// </summary>
+        [Output("inboundClusterIds")]
+        public Output<ImmutableArray<string>> InboundClusterIds { get; private set; } = null!;
+
+        /// <summary>
         /// Additional information about the current lifecycle state of the cluster.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details for creation of maintenance details
+        /// </summary>
+        [Output("maintenanceDetails")]
+        public Output<Outputs.ClusterMaintenanceDetails> MaintenanceDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of master nodes to configure for the cluster.
@@ -233,6 +205,24 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("opensearchPrivateIp")]
         public Output<string> OpensearchPrivateIp { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        /// </summary>
+        [Output("outboundClusterConfig")]
+        public Output<Outputs.ClusterOutboundClusterConfig> OutboundClusterConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The customer IP addresses of the endpoint in customer VCN
+        /// </summary>
+        [Output("reverseConnectionEndpointCustomerIps")]
+        public Output<ImmutableArray<string>> ReverseConnectionEndpointCustomerIps { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of reverse connection endpoints.
+        /// </summary>
+        [Output("reverseConnectionEndpoints")]
+        public Output<ImmutableArray<Outputs.ClusterReverseConnectionEndpoint>> ReverseConnectionEndpoints { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -314,10 +304,6 @@ namespace Pulumi.Oci.Opensearch
 
         /// <summary>
         /// The OCID of the cluster's VCN.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vcnId")]
         public Output<string> VcnId { get; private set; } = null!;
@@ -377,6 +363,16 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("configureOutboundClusterTrigger")]
+        public Input<int>? ConfigureOutboundClusterTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) The number of data nodes to configure for the cluster.
@@ -444,6 +440,24 @@ namespace Pulumi.Oci.Opensearch
             set => _freeformTags = value;
         }
 
+        [Input("inboundClusterIds")]
+        private InputList<string>? _inboundClusterIds;
+
+        /// <summary>
+        /// List of inbound clusters that will be queried using cross cluster search
+        /// </summary>
+        public InputList<string> InboundClusterIds
+        {
+            get => _inboundClusterIds ?? (_inboundClusterIds = new InputList<string>());
+            set => _inboundClusterIds = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Details for creation of maintenance details
+        /// </summary>
+        [Input("maintenanceDetails")]
+        public Input<Inputs.ClusterMaintenanceDetailsArgs>? MaintenanceDetails { get; set; }
+
         /// <summary>
         /// (Updatable) The number of master nodes to configure for the cluster.
         /// </summary>
@@ -491,6 +505,24 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("opendashboardNodeHostOcpuCount", required: true)]
         public Input<int> OpendashboardNodeHostOcpuCount { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        /// </summary>
+        [Input("outboundClusterConfig")]
+        public Input<Inputs.ClusterOutboundClusterConfigArgs>? OutboundClusterConfig { get; set; }
+
+        [Input("reverseConnectionEndpointCustomerIps")]
+        private InputList<string>? _reverseConnectionEndpointCustomerIps;
+
+        /// <summary>
+        /// (Updatable) The customer IP addresses of the endpoint in customer VCN
+        /// </summary>
+        public InputList<string> ReverseConnectionEndpointCustomerIps
+        {
+            get => _reverseConnectionEndpointCustomerIps ?? (_reverseConnectionEndpointCustomerIps = new InputList<string>());
+            set => _reverseConnectionEndpointCustomerIps = value;
+        }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -558,10 +590,6 @@ namespace Pulumi.Oci.Opensearch
 
         /// <summary>
         /// The OCID of the cluster's VCN.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId", required: true)]
         public Input<string> VcnId { get; set; } = null!;
@@ -591,6 +619,16 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("configureOutboundClusterTrigger")]
+        public Input<int>? ConfigureOutboundClusterTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) The number of data nodes to configure for the cluster.
@@ -664,11 +702,29 @@ namespace Pulumi.Oci.Opensearch
             set => _freeformTags = value;
         }
 
+        [Input("inboundClusterIds")]
+        private InputList<string>? _inboundClusterIds;
+
+        /// <summary>
+        /// List of inbound clusters that will be queried using cross cluster search
+        /// </summary>
+        public InputList<string> InboundClusterIds
+        {
+            get => _inboundClusterIds ?? (_inboundClusterIds = new InputList<string>());
+            set => _inboundClusterIds = value;
+        }
+
         /// <summary>
         /// Additional information about the current lifecycle state of the cluster.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details for creation of maintenance details
+        /// </summary>
+        [Input("maintenanceDetails")]
+        public Input<Inputs.ClusterMaintenanceDetailsGetArgs>? MaintenanceDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The number of master nodes to configure for the cluster.
@@ -741,6 +797,36 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("opensearchPrivateIp")]
         public Input<string>? OpensearchPrivateIp { get; set; }
+
+        /// <summary>
+        /// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        /// </summary>
+        [Input("outboundClusterConfig")]
+        public Input<Inputs.ClusterOutboundClusterConfigGetArgs>? OutboundClusterConfig { get; set; }
+
+        [Input("reverseConnectionEndpointCustomerIps")]
+        private InputList<string>? _reverseConnectionEndpointCustomerIps;
+
+        /// <summary>
+        /// (Updatable) The customer IP addresses of the endpoint in customer VCN
+        /// </summary>
+        public InputList<string> ReverseConnectionEndpointCustomerIps
+        {
+            get => _reverseConnectionEndpointCustomerIps ?? (_reverseConnectionEndpointCustomerIps = new InputList<string>());
+            set => _reverseConnectionEndpointCustomerIps = value;
+        }
+
+        [Input("reverseConnectionEndpoints")]
+        private InputList<Inputs.ClusterReverseConnectionEndpointGetArgs>? _reverseConnectionEndpoints;
+
+        /// <summary>
+        /// The list of reverse connection endpoints.
+        /// </summary>
+        public InputList<Inputs.ClusterReverseConnectionEndpointGetArgs> ReverseConnectionEndpoints
+        {
+            get => _reverseConnectionEndpoints ?? (_reverseConnectionEndpoints = new InputList<Inputs.ClusterReverseConnectionEndpointGetArgs>());
+            set => _reverseConnectionEndpoints = value;
+        }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -838,10 +924,6 @@ namespace Pulumi.Oci.Opensearch
 
         /// <summary>
         /// The OCID of the cluster's VCN.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId")]
         public Input<string>? VcnId { get; set; }

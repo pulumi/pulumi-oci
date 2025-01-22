@@ -172,7 +172,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
     private String type;
     private String virtualCircuitId;
     /**
-     * @return Redundancy level details of the virtual circuit
+     * @return This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      * 
      */
     private List<GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas;
@@ -393,7 +393,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
         return this.virtualCircuitId;
     }
     /**
-     * @return Redundancy level details of the virtual circuit
+     * @return This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      * 
      */
     public List<GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas() {

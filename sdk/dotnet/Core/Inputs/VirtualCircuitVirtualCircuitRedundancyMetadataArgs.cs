@@ -13,19 +13,19 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class VirtualCircuitVirtualCircuitRedundancyMetadataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configured redundancy level of the virtual circuit
+        /// The configured redundancy level of the virtual circuit.
         /// </summary>
         [Input("configuredRedundancyLevel")]
         public Input<string>? ConfiguredRedundancyLevel { get; set; }
 
         /// <summary>
-        /// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        /// Indicates if the configured level is met for IPv4 BGP redundancy.
         /// </summary>
         [Input("ipv4bgpSessionRedundancyStatus")]
         public Input<string>? Ipv4bgpSessionRedundancyStatus { get; set; }
 
         /// <summary>
-        /// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        /// Indicates if the configured level is met for IPv6 BGP redundancy.
         /// </summary>
         [Input("ipv6bgpSessionRedundancyStatus")]
         public Input<string>? Ipv6bgpSessionRedundancyStatus { get; set; }

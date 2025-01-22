@@ -112,6 +112,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions? LaunchOptions;
         /// <summary>
+        /// List of licensing configurations associated with target launch values.
+        /// </summary>
+        public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs? LicensingConfigs;
+        /// <summary>
         /// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         /// 
         /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -158,7 +162,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? PreferredMaintenanceAction;
         /// <summary>
-        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? SecurityAttributes;
         /// <summary>
@@ -215,6 +219,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions? launchOptions,
 
+            Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs? licensingConfigs,
+
             ImmutableDictionary<string, string>? metadata,
 
             Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig? platformConfig,
@@ -249,6 +255,7 @@ namespace Pulumi.Oci.Core.Outputs
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             LaunchMode = launchMode;
             LaunchOptions = launchOptions;
+            LicensingConfigs = licensingConfigs;
             Metadata = metadata;
             PlatformConfig = platformConfig;
             PreemptibleInstanceConfig = preemptibleInstanceConfig;

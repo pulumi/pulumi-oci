@@ -41,6 +41,7 @@ import (
 //				},
 //				HostnameLabel: pulumi.Any(privateIpHostnameLabel),
 //				IpAddress:     pulumi.Any(privateIpIpAddress),
+//				RouteTableId:  pulumi.Any(testRouteTable.Id),
 //				VlanId:        pulumi.Any(testVlan.Id),
 //				VnicId:        pulumi.Any(testVnicAttachment.VnicId),
 //			})
@@ -85,6 +86,8 @@ type PrivateIp struct {
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
 	// true if the IP is reserved and can exist detached from vnic
 	IsReserved pulumi.BoolOutput `pulumi:"isReserved"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -152,6 +155,8 @@ type privateIpState struct {
 	IsPrimary *bool `pulumi:"isPrimary"`
 	// true if the IP is reserved and can exist detached from vnic
 	IsReserved *bool `pulumi:"isReserved"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId *string `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -190,6 +195,8 @@ type PrivateIpState struct {
 	IsPrimary pulumi.BoolPtrInput
 	// true if the IP is reserved and can exist detached from vnic
 	IsReserved pulumi.BoolPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
 	SubnetId pulumi.StringPtrInput
 	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -224,6 +231,8 @@ type privateIpArgs struct {
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId *string `pulumi:"routeTableId"`
 	// Use this attribute only with the Oracle Cloud VMware Solution.
 	//
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -251,6 +260,8 @@ type PrivateIpArgs struct {
 	HostnameLabel pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	RouteTableId pulumi.StringPtrInput
 	// Use this attribute only with the Oracle Cloud VMware Solution.
 	//
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -396,6 +407,11 @@ func (o PrivateIpOutput) IsPrimary() pulumi.BoolOutput {
 // true if the IP is reserved and can exist detached from vnic
 func (o PrivateIpOutput) IsReserved() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PrivateIp) pulumi.BoolOutput { return v.IsReserved }).(pulumi.BoolOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+func (o PrivateIpOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateIp) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.

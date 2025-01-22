@@ -248,6 +248,12 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<Outputs.InstanceLaunchVolumeAttachment>> LaunchVolumeAttachments { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) List of licensing configurations associated with target launch values.
+        /// </summary>
+        [Output("licensingConfigs")]
+        public Output<Outputs.InstanceLicensingConfigs> LicensingConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         /// 
         /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -627,6 +633,12 @@ namespace Pulumi.Oci.Core
             set => _launchVolumeAttachments = value;
         }
 
+        /// <summary>
+        /// (Updatable) List of licensing configurations associated with target launch values.
+        /// </summary>
+        [Input("licensingConfigs")]
+        public Input<Inputs.InstanceLicensingConfigsArgs>? LicensingConfigs { get; set; }
+
         [Input("metadata")]
         private InputMap<string>? _metadata;
 
@@ -960,6 +972,12 @@ namespace Pulumi.Oci.Core
             get => _launchVolumeAttachments ?? (_launchVolumeAttachments = new InputList<Inputs.InstanceLaunchVolumeAttachmentGetArgs>());
             set => _launchVolumeAttachments = value;
         }
+
+        /// <summary>
+        /// (Updatable) List of licensing configurations associated with target launch values.
+        /// </summary>
+        [Input("licensingConfigs")]
+        public Input<Inputs.InstanceLicensingConfigsGetArgs>? LicensingConfigs { get; set; }
 
         [Input("metadata")]
         private InputMap<string>? _metadata;

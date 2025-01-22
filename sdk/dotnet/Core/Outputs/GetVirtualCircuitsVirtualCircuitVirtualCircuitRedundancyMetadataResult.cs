@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult
     {
         /// <summary>
-        /// The configured redundancy level of the virtual circuit
+        /// The configured redundancy level of the virtual circuit.
         /// </summary>
         public readonly string ConfiguredRedundancyLevel;
         /// <summary>
-        /// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        /// Indicates if the configured level is met for IPv4 BGP redundancy.
         /// </summary>
         public readonly string Ipv4bgpSessionRedundancyStatus;
         /// <summary>
-        /// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        /// Indicates if the configured level is met for IPv6 BGP redundancy.
         /// </summary>
         public readonly string Ipv6bgpSessionRedundancyStatus;
 

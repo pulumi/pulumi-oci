@@ -10,6 +10,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfiguratio
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption;
+import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig;
@@ -117,6 +118,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption> launchOptions;
     /**
+     * @return List of licensing configurations associated with target launch values.
+     * 
+     */
+    private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig> licensingConfigs;
+    /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
@@ -139,7 +145,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private String preferredMaintenanceAction;
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     private Map<String,String> securityAttributes;
@@ -287,6 +293,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         return this.launchOptions;
     }
     /**
+     * @return List of licensing configurations associated with target launch values.
+     * 
+     */
+    public List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig> licensingConfigs() {
+        return this.licensingConfigs;
+    }
+    /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
@@ -317,7 +330,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         return this.preferredMaintenanceAction;
     }
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     public Map<String,String> securityAttributes() {
@@ -368,6 +381,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private Boolean isPvEncryptionInTransitEnabled;
         private String launchMode;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption> launchOptions;
+        private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig> licensingConfigs;
         private Map<String,String> metadata;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig> platformConfigs;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
@@ -397,6 +411,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
+    	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
@@ -567,6 +582,17 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return launchOptions(List.of(launchOptions));
         }
         @CustomType.Setter
+        public Builder licensingConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig> licensingConfigs) {
+            if (licensingConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "licensingConfigs");
+            }
+            this.licensingConfigs = licensingConfigs;
+            return this;
+        }
+        public Builder licensingConfigs(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig... licensingConfigs) {
+            return licensingConfigs(List.of(licensingConfigs));
+        }
+        @CustomType.Setter
         public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "metadata");
@@ -662,6 +688,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;
+            _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;

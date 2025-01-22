@@ -465,14 +465,14 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Redundancy level details of the virtual circuit
+     * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      * 
      */
     @Import(name="virtualCircuitRedundancyMetadatas")
     private @Nullable Output<List<VirtualCircuitVirtualCircuitRedundancyMetadataArgs>> virtualCircuitRedundancyMetadatas;
 
     /**
-     * @return Redundancy level details of the virtual circuit
+     * @return This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      * 
      */
     public Optional<Output<List<VirtualCircuitVirtualCircuitRedundancyMetadataArgs>>> virtualCircuitRedundancyMetadatas() {
@@ -1172,7 +1172,7 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param virtualCircuitRedundancyMetadatas Redundancy level details of the virtual circuit
+         * @param virtualCircuitRedundancyMetadatas This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
          * 
          * @return builder
          * 
@@ -1183,7 +1183,7 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param virtualCircuitRedundancyMetadatas Redundancy level details of the virtual circuit
+         * @param virtualCircuitRedundancyMetadatas This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
          * 
          * @return builder
          * 
@@ -1193,7 +1193,7 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param virtualCircuitRedundancyMetadatas Redundancy level details of the virtual circuit
+         * @param virtualCircuitRedundancyMetadatas This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
          * 
          * @return builder
          * 

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -58,6 +60,7 @@ export interface GetOpensearchClusterResult {
      * The OCID of the compartment where the cluster is located.
      */
     readonly compartmentId: string;
+    readonly configureOutboundClusterTrigger: number;
     /**
      * The number of data nodes configured for the cluster.
      */
@@ -87,7 +90,7 @@ export interface GetOpensearchClusterResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * The name of the cluster. Avoid entering confidential information.
+     * Name of the Outbound cluster. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
@@ -103,9 +106,17 @@ export interface GetOpensearchClusterResult {
      */
     readonly id: string;
     /**
+     * List of inbound clusters for which this cluster is an outbound cluster
+     */
+    readonly inboundClusterIds: string[];
+    /**
      * Additional information about the current lifecycle state of the cluster.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Details for the maintenance activity.
+     */
+    readonly maintenanceDetails: outputs.Opensearch.GetOpensearchClusterMaintenanceDetail[];
     /**
      * The number of master nodes configured for the cluster.
      */
@@ -155,6 +166,18 @@ export interface GetOpensearchClusterResult {
      * The cluster's private IP address.
      */
     readonly opensearchPrivateIp: string;
+    /**
+     * This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     */
+    readonly outboundClusterConfigs: outputs.Opensearch.GetOpensearchClusterOutboundClusterConfig[];
+    /**
+     * The customer IP addresses of the endpoint in customer VCN
+     */
+    readonly reverseConnectionEndpointCustomerIps: string[];
+    /**
+     * The list of reverse connection endpoints.
+     */
+    readonly reverseConnectionEndpoints: outputs.Opensearch.GetOpensearchClusterReverseConnectionEndpoint[];
     /**
      * The name of the master user that are used to manage security config
      */

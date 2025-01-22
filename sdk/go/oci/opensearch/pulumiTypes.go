@@ -13,6 +13,1068 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ClusterMaintenanceDetails struct {
+	// End time of the maintenance activity
+	EndTime *string `pulumi:"endTime"`
+	// (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+	NotificationEmailIds []string `pulumi:"notificationEmailIds"`
+	// Start time of the maintenance activity
+	StartTime *string `pulumi:"startTime"`
+	// The current state of the cluster.
+	State *string `pulumi:"state"`
+}
+
+// ClusterMaintenanceDetailsInput is an input type that accepts ClusterMaintenanceDetailsArgs and ClusterMaintenanceDetailsOutput values.
+// You can construct a concrete instance of `ClusterMaintenanceDetailsInput` via:
+//
+//	ClusterMaintenanceDetailsArgs{...}
+type ClusterMaintenanceDetailsInput interface {
+	pulumi.Input
+
+	ToClusterMaintenanceDetailsOutput() ClusterMaintenanceDetailsOutput
+	ToClusterMaintenanceDetailsOutputWithContext(context.Context) ClusterMaintenanceDetailsOutput
+}
+
+type ClusterMaintenanceDetailsArgs struct {
+	// End time of the maintenance activity
+	EndTime pulumi.StringPtrInput `pulumi:"endTime"`
+	// (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+	NotificationEmailIds pulumi.StringArrayInput `pulumi:"notificationEmailIds"`
+	// Start time of the maintenance activity
+	StartTime pulumi.StringPtrInput `pulumi:"startTime"`
+	// The current state of the cluster.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (ClusterMaintenanceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterMaintenanceDetails)(nil)).Elem()
+}
+
+func (i ClusterMaintenanceDetailsArgs) ToClusterMaintenanceDetailsOutput() ClusterMaintenanceDetailsOutput {
+	return i.ToClusterMaintenanceDetailsOutputWithContext(context.Background())
+}
+
+func (i ClusterMaintenanceDetailsArgs) ToClusterMaintenanceDetailsOutputWithContext(ctx context.Context) ClusterMaintenanceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterMaintenanceDetailsOutput)
+}
+
+func (i ClusterMaintenanceDetailsArgs) ToClusterMaintenanceDetailsPtrOutput() ClusterMaintenanceDetailsPtrOutput {
+	return i.ToClusterMaintenanceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterMaintenanceDetailsArgs) ToClusterMaintenanceDetailsPtrOutputWithContext(ctx context.Context) ClusterMaintenanceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterMaintenanceDetailsOutput).ToClusterMaintenanceDetailsPtrOutputWithContext(ctx)
+}
+
+// ClusterMaintenanceDetailsPtrInput is an input type that accepts ClusterMaintenanceDetailsArgs, ClusterMaintenanceDetailsPtr and ClusterMaintenanceDetailsPtrOutput values.
+// You can construct a concrete instance of `ClusterMaintenanceDetailsPtrInput` via:
+//
+//	        ClusterMaintenanceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterMaintenanceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToClusterMaintenanceDetailsPtrOutput() ClusterMaintenanceDetailsPtrOutput
+	ToClusterMaintenanceDetailsPtrOutputWithContext(context.Context) ClusterMaintenanceDetailsPtrOutput
+}
+
+type clusterMaintenanceDetailsPtrType ClusterMaintenanceDetailsArgs
+
+func ClusterMaintenanceDetailsPtr(v *ClusterMaintenanceDetailsArgs) ClusterMaintenanceDetailsPtrInput {
+	return (*clusterMaintenanceDetailsPtrType)(v)
+}
+
+func (*clusterMaintenanceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterMaintenanceDetails)(nil)).Elem()
+}
+
+func (i *clusterMaintenanceDetailsPtrType) ToClusterMaintenanceDetailsPtrOutput() ClusterMaintenanceDetailsPtrOutput {
+	return i.ToClusterMaintenanceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterMaintenanceDetailsPtrType) ToClusterMaintenanceDetailsPtrOutputWithContext(ctx context.Context) ClusterMaintenanceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterMaintenanceDetailsPtrOutput)
+}
+
+type ClusterMaintenanceDetailsOutput struct{ *pulumi.OutputState }
+
+func (ClusterMaintenanceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterMaintenanceDetails)(nil)).Elem()
+}
+
+func (o ClusterMaintenanceDetailsOutput) ToClusterMaintenanceDetailsOutput() ClusterMaintenanceDetailsOutput {
+	return o
+}
+
+func (o ClusterMaintenanceDetailsOutput) ToClusterMaintenanceDetailsOutputWithContext(ctx context.Context) ClusterMaintenanceDetailsOutput {
+	return o
+}
+
+func (o ClusterMaintenanceDetailsOutput) ToClusterMaintenanceDetailsPtrOutput() ClusterMaintenanceDetailsPtrOutput {
+	return o.ToClusterMaintenanceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterMaintenanceDetailsOutput) ToClusterMaintenanceDetailsPtrOutputWithContext(ctx context.Context) ClusterMaintenanceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterMaintenanceDetails) *ClusterMaintenanceDetails {
+		return &v
+	}).(ClusterMaintenanceDetailsPtrOutput)
+}
+
+// End time of the maintenance activity
+func (o ClusterMaintenanceDetailsOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterMaintenanceDetails) *string { return v.EndTime }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+func (o ClusterMaintenanceDetailsOutput) NotificationEmailIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterMaintenanceDetails) []string { return v.NotificationEmailIds }).(pulumi.StringArrayOutput)
+}
+
+// Start time of the maintenance activity
+func (o ClusterMaintenanceDetailsOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterMaintenanceDetails) *string { return v.StartTime }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the cluster.
+func (o ClusterMaintenanceDetailsOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterMaintenanceDetails) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type ClusterMaintenanceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterMaintenanceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterMaintenanceDetails)(nil)).Elem()
+}
+
+func (o ClusterMaintenanceDetailsPtrOutput) ToClusterMaintenanceDetailsPtrOutput() ClusterMaintenanceDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterMaintenanceDetailsPtrOutput) ToClusterMaintenanceDetailsPtrOutputWithContext(ctx context.Context) ClusterMaintenanceDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterMaintenanceDetailsPtrOutput) Elem() ClusterMaintenanceDetailsOutput {
+	return o.ApplyT(func(v *ClusterMaintenanceDetails) ClusterMaintenanceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterMaintenanceDetails
+		return ret
+	}).(ClusterMaintenanceDetailsOutput)
+}
+
+// End time of the maintenance activity
+func (o ClusterMaintenanceDetailsPtrOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterMaintenanceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+func (o ClusterMaintenanceDetailsPtrOutput) NotificationEmailIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ClusterMaintenanceDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NotificationEmailIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// Start time of the maintenance activity
+func (o ClusterMaintenanceDetailsPtrOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterMaintenanceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current state of the cluster.
+func (o ClusterMaintenanceDetailsPtrOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterMaintenanceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.State
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClusterOutboundClusterConfig struct {
+	// (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled bool `pulumi:"isEnabled"`
+	// (Updatable) List of outbound clusters to be connected to the inbound cluster
+	OutboundClusters []ClusterOutboundClusterConfigOutboundCluster `pulumi:"outboundClusters"`
+}
+
+// ClusterOutboundClusterConfigInput is an input type that accepts ClusterOutboundClusterConfigArgs and ClusterOutboundClusterConfigOutput values.
+// You can construct a concrete instance of `ClusterOutboundClusterConfigInput` via:
+//
+//	ClusterOutboundClusterConfigArgs{...}
+type ClusterOutboundClusterConfigInput interface {
+	pulumi.Input
+
+	ToClusterOutboundClusterConfigOutput() ClusterOutboundClusterConfigOutput
+	ToClusterOutboundClusterConfigOutputWithContext(context.Context) ClusterOutboundClusterConfigOutput
+}
+
+type ClusterOutboundClusterConfigArgs struct {
+	// (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// (Updatable) List of outbound clusters to be connected to the inbound cluster
+	OutboundClusters ClusterOutboundClusterConfigOutboundClusterArrayInput `pulumi:"outboundClusters"`
+}
+
+func (ClusterOutboundClusterConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (i ClusterOutboundClusterConfigArgs) ToClusterOutboundClusterConfigOutput() ClusterOutboundClusterConfigOutput {
+	return i.ToClusterOutboundClusterConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterOutboundClusterConfigArgs) ToClusterOutboundClusterConfigOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOutboundClusterConfigOutput)
+}
+
+func (i ClusterOutboundClusterConfigArgs) ToClusterOutboundClusterConfigPtrOutput() ClusterOutboundClusterConfigPtrOutput {
+	return i.ToClusterOutboundClusterConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterOutboundClusterConfigArgs) ToClusterOutboundClusterConfigPtrOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOutboundClusterConfigOutput).ToClusterOutboundClusterConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterOutboundClusterConfigPtrInput is an input type that accepts ClusterOutboundClusterConfigArgs, ClusterOutboundClusterConfigPtr and ClusterOutboundClusterConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterOutboundClusterConfigPtrInput` via:
+//
+//	        ClusterOutboundClusterConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterOutboundClusterConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterOutboundClusterConfigPtrOutput() ClusterOutboundClusterConfigPtrOutput
+	ToClusterOutboundClusterConfigPtrOutputWithContext(context.Context) ClusterOutboundClusterConfigPtrOutput
+}
+
+type clusterOutboundClusterConfigPtrType ClusterOutboundClusterConfigArgs
+
+func ClusterOutboundClusterConfigPtr(v *ClusterOutboundClusterConfigArgs) ClusterOutboundClusterConfigPtrInput {
+	return (*clusterOutboundClusterConfigPtrType)(v)
+}
+
+func (*clusterOutboundClusterConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (i *clusterOutboundClusterConfigPtrType) ToClusterOutboundClusterConfigPtrOutput() ClusterOutboundClusterConfigPtrOutput {
+	return i.ToClusterOutboundClusterConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterOutboundClusterConfigPtrType) ToClusterOutboundClusterConfigPtrOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOutboundClusterConfigPtrOutput)
+}
+
+type ClusterOutboundClusterConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterOutboundClusterConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (o ClusterOutboundClusterConfigOutput) ToClusterOutboundClusterConfigOutput() ClusterOutboundClusterConfigOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigOutput) ToClusterOutboundClusterConfigOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigOutput) ToClusterOutboundClusterConfigPtrOutput() ClusterOutboundClusterConfigPtrOutput {
+	return o.ToClusterOutboundClusterConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterOutboundClusterConfigOutput) ToClusterOutboundClusterConfigPtrOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterOutboundClusterConfig) *ClusterOutboundClusterConfig {
+		return &v
+	}).(ClusterOutboundClusterConfigPtrOutput)
+}
+
+// (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+func (o ClusterOutboundClusterConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) List of outbound clusters to be connected to the inbound cluster
+func (o ClusterOutboundClusterConfigOutput) OutboundClusters() ClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfig) []ClusterOutboundClusterConfigOutboundCluster {
+		return v.OutboundClusters
+	}).(ClusterOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type ClusterOutboundClusterConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterOutboundClusterConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (o ClusterOutboundClusterConfigPtrOutput) ToClusterOutboundClusterConfigPtrOutput() ClusterOutboundClusterConfigPtrOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigPtrOutput) ToClusterOutboundClusterConfigPtrOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigPtrOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigPtrOutput) Elem() ClusterOutboundClusterConfigOutput {
+	return o.ApplyT(func(v *ClusterOutboundClusterConfig) ClusterOutboundClusterConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterOutboundClusterConfig
+		return ret
+	}).(ClusterOutboundClusterConfigOutput)
+}
+
+// (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+func (o ClusterOutboundClusterConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClusterOutboundClusterConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of outbound clusters to be connected to the inbound cluster
+func (o ClusterOutboundClusterConfigPtrOutput) OutboundClusters() ClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o.ApplyT(func(v *ClusterOutboundClusterConfig) []ClusterOutboundClusterConfigOutboundCluster {
+		if v == nil {
+			return nil
+		}
+		return v.OutboundClusters
+	}).(ClusterOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type ClusterOutboundClusterConfigOutboundCluster struct {
+	// (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+	IsSkipUnavailable *bool `pulumi:"isSkipUnavailable"`
+	// (Updatable) Mode for the cross cluster connection
+	Mode *string `pulumi:"mode"`
+	// (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+	PingSchedule *string `pulumi:"pingSchedule"`
+	// (Updatable) OCID of the Outbound cluster
+	SeedClusterId string `pulumi:"seedClusterId"`
+}
+
+// ClusterOutboundClusterConfigOutboundClusterInput is an input type that accepts ClusterOutboundClusterConfigOutboundClusterArgs and ClusterOutboundClusterConfigOutboundClusterOutput values.
+// You can construct a concrete instance of `ClusterOutboundClusterConfigOutboundClusterInput` via:
+//
+//	ClusterOutboundClusterConfigOutboundClusterArgs{...}
+type ClusterOutboundClusterConfigOutboundClusterInput interface {
+	pulumi.Input
+
+	ToClusterOutboundClusterConfigOutboundClusterOutput() ClusterOutboundClusterConfigOutboundClusterOutput
+	ToClusterOutboundClusterConfigOutboundClusterOutputWithContext(context.Context) ClusterOutboundClusterConfigOutboundClusterOutput
+}
+
+type ClusterOutboundClusterConfigOutboundClusterArgs struct {
+	// (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+	IsSkipUnavailable pulumi.BoolPtrInput `pulumi:"isSkipUnavailable"`
+	// (Updatable) Mode for the cross cluster connection
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+	PingSchedule pulumi.StringPtrInput `pulumi:"pingSchedule"`
+	// (Updatable) OCID of the Outbound cluster
+	SeedClusterId pulumi.StringInput `pulumi:"seedClusterId"`
+}
+
+func (ClusterOutboundClusterConfigOutboundClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (i ClusterOutboundClusterConfigOutboundClusterArgs) ToClusterOutboundClusterConfigOutboundClusterOutput() ClusterOutboundClusterConfigOutboundClusterOutput {
+	return i.ToClusterOutboundClusterConfigOutboundClusterOutputWithContext(context.Background())
+}
+
+func (i ClusterOutboundClusterConfigOutboundClusterArgs) ToClusterOutboundClusterConfigOutboundClusterOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigOutboundClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOutboundClusterConfigOutboundClusterOutput)
+}
+
+// ClusterOutboundClusterConfigOutboundClusterArrayInput is an input type that accepts ClusterOutboundClusterConfigOutboundClusterArray and ClusterOutboundClusterConfigOutboundClusterArrayOutput values.
+// You can construct a concrete instance of `ClusterOutboundClusterConfigOutboundClusterArrayInput` via:
+//
+//	ClusterOutboundClusterConfigOutboundClusterArray{ ClusterOutboundClusterConfigOutboundClusterArgs{...} }
+type ClusterOutboundClusterConfigOutboundClusterArrayInput interface {
+	pulumi.Input
+
+	ToClusterOutboundClusterConfigOutboundClusterArrayOutput() ClusterOutboundClusterConfigOutboundClusterArrayOutput
+	ToClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(context.Context) ClusterOutboundClusterConfigOutboundClusterArrayOutput
+}
+
+type ClusterOutboundClusterConfigOutboundClusterArray []ClusterOutboundClusterConfigOutboundClusterInput
+
+func (ClusterOutboundClusterConfigOutboundClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (i ClusterOutboundClusterConfigOutboundClusterArray) ToClusterOutboundClusterConfigOutboundClusterArrayOutput() ClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return i.ToClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterOutboundClusterConfigOutboundClusterArray) ToClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type ClusterOutboundClusterConfigOutboundClusterOutput struct{ *pulumi.OutputState }
+
+func (ClusterOutboundClusterConfigOutboundClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) ToClusterOutboundClusterConfigOutboundClusterOutput() ClusterOutboundClusterConfigOutboundClusterOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) ToClusterOutboundClusterConfigOutboundClusterOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigOutboundClusterOutput {
+	return o
+}
+
+// (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfigOutboundCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) IsSkipUnavailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfigOutboundCluster) *bool { return v.IsSkipUnavailable }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Mode for the cross cluster connection
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfigOutboundCluster) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) PingSchedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfigOutboundCluster) *string { return v.PingSchedule }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the Outbound cluster
+func (o ClusterOutboundClusterConfigOutboundClusterOutput) SeedClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterOutboundClusterConfigOutboundCluster) string { return v.SeedClusterId }).(pulumi.StringOutput)
+}
+
+type ClusterOutboundClusterConfigOutboundClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterOutboundClusterConfigOutboundClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (o ClusterOutboundClusterConfigOutboundClusterArrayOutput) ToClusterOutboundClusterConfigOutboundClusterArrayOutput() ClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigOutboundClusterArrayOutput) ToClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(ctx context.Context) ClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o
+}
+
+func (o ClusterOutboundClusterConfigOutboundClusterArrayOutput) Index(i pulumi.IntInput) ClusterOutboundClusterConfigOutboundClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterOutboundClusterConfigOutboundCluster {
+		return vs[0].([]ClusterOutboundClusterConfigOutboundCluster)[vs[1].(int)]
+	}).(ClusterOutboundClusterConfigOutboundClusterOutput)
+}
+
+type ClusterReverseConnectionEndpoint struct {
+	// The IP addresses of the endpoint in customer VCN
+	CustomerIp *string `pulumi:"customerIp"`
+	// The NAT IP addresses of the endpoint in service VCN
+	NatIp *string `pulumi:"natIp"`
+}
+
+// ClusterReverseConnectionEndpointInput is an input type that accepts ClusterReverseConnectionEndpointArgs and ClusterReverseConnectionEndpointOutput values.
+// You can construct a concrete instance of `ClusterReverseConnectionEndpointInput` via:
+//
+//	ClusterReverseConnectionEndpointArgs{...}
+type ClusterReverseConnectionEndpointInput interface {
+	pulumi.Input
+
+	ToClusterReverseConnectionEndpointOutput() ClusterReverseConnectionEndpointOutput
+	ToClusterReverseConnectionEndpointOutputWithContext(context.Context) ClusterReverseConnectionEndpointOutput
+}
+
+type ClusterReverseConnectionEndpointArgs struct {
+	// The IP addresses of the endpoint in customer VCN
+	CustomerIp pulumi.StringPtrInput `pulumi:"customerIp"`
+	// The NAT IP addresses of the endpoint in service VCN
+	NatIp pulumi.StringPtrInput `pulumi:"natIp"`
+}
+
+func (ClusterReverseConnectionEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i ClusterReverseConnectionEndpointArgs) ToClusterReverseConnectionEndpointOutput() ClusterReverseConnectionEndpointOutput {
+	return i.ToClusterReverseConnectionEndpointOutputWithContext(context.Background())
+}
+
+func (i ClusterReverseConnectionEndpointArgs) ToClusterReverseConnectionEndpointOutputWithContext(ctx context.Context) ClusterReverseConnectionEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterReverseConnectionEndpointOutput)
+}
+
+// ClusterReverseConnectionEndpointArrayInput is an input type that accepts ClusterReverseConnectionEndpointArray and ClusterReverseConnectionEndpointArrayOutput values.
+// You can construct a concrete instance of `ClusterReverseConnectionEndpointArrayInput` via:
+//
+//	ClusterReverseConnectionEndpointArray{ ClusterReverseConnectionEndpointArgs{...} }
+type ClusterReverseConnectionEndpointArrayInput interface {
+	pulumi.Input
+
+	ToClusterReverseConnectionEndpointArrayOutput() ClusterReverseConnectionEndpointArrayOutput
+	ToClusterReverseConnectionEndpointArrayOutputWithContext(context.Context) ClusterReverseConnectionEndpointArrayOutput
+}
+
+type ClusterReverseConnectionEndpointArray []ClusterReverseConnectionEndpointInput
+
+func (ClusterReverseConnectionEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i ClusterReverseConnectionEndpointArray) ToClusterReverseConnectionEndpointArrayOutput() ClusterReverseConnectionEndpointArrayOutput {
+	return i.ToClusterReverseConnectionEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterReverseConnectionEndpointArray) ToClusterReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) ClusterReverseConnectionEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterReverseConnectionEndpointArrayOutput)
+}
+
+type ClusterReverseConnectionEndpointOutput struct{ *pulumi.OutputState }
+
+func (ClusterReverseConnectionEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o ClusterReverseConnectionEndpointOutput) ToClusterReverseConnectionEndpointOutput() ClusterReverseConnectionEndpointOutput {
+	return o
+}
+
+func (o ClusterReverseConnectionEndpointOutput) ToClusterReverseConnectionEndpointOutputWithContext(ctx context.Context) ClusterReverseConnectionEndpointOutput {
+	return o
+}
+
+// The IP addresses of the endpoint in customer VCN
+func (o ClusterReverseConnectionEndpointOutput) CustomerIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterReverseConnectionEndpoint) *string { return v.CustomerIp }).(pulumi.StringPtrOutput)
+}
+
+// The NAT IP addresses of the endpoint in service VCN
+func (o ClusterReverseConnectionEndpointOutput) NatIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterReverseConnectionEndpoint) *string { return v.NatIp }).(pulumi.StringPtrOutput)
+}
+
+type ClusterReverseConnectionEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterReverseConnectionEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o ClusterReverseConnectionEndpointArrayOutput) ToClusterReverseConnectionEndpointArrayOutput() ClusterReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o ClusterReverseConnectionEndpointArrayOutput) ToClusterReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) ClusterReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o ClusterReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) ClusterReverseConnectionEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterReverseConnectionEndpoint {
+		return vs[0].([]ClusterReverseConnectionEndpoint)[vs[1].(int)]
+	}).(ClusterReverseConnectionEndpointOutput)
+}
+
+type GetOpensearchClusterMaintenanceDetail struct {
+	// End time of the maintenance activity
+	EndTime string `pulumi:"endTime"`
+	// The Email Ids given the by customer to get notified about maintenance activities
+	NotificationEmailIds []string `pulumi:"notificationEmailIds"`
+	// Start time of the maintenance activity
+	StartTime string `pulumi:"startTime"`
+	// The current state of the cluster.
+	State string `pulumi:"state"`
+}
+
+// GetOpensearchClusterMaintenanceDetailInput is an input type that accepts GetOpensearchClusterMaintenanceDetailArgs and GetOpensearchClusterMaintenanceDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterMaintenanceDetailInput` via:
+//
+//	GetOpensearchClusterMaintenanceDetailArgs{...}
+type GetOpensearchClusterMaintenanceDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterMaintenanceDetailOutput() GetOpensearchClusterMaintenanceDetailOutput
+	ToGetOpensearchClusterMaintenanceDetailOutputWithContext(context.Context) GetOpensearchClusterMaintenanceDetailOutput
+}
+
+type GetOpensearchClusterMaintenanceDetailArgs struct {
+	// End time of the maintenance activity
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// The Email Ids given the by customer to get notified about maintenance activities
+	NotificationEmailIds pulumi.StringArrayInput `pulumi:"notificationEmailIds"`
+	// Start time of the maintenance activity
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// The current state of the cluster.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetOpensearchClusterMaintenanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterMaintenanceDetailArgs) ToGetOpensearchClusterMaintenanceDetailOutput() GetOpensearchClusterMaintenanceDetailOutput {
+	return i.ToGetOpensearchClusterMaintenanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterMaintenanceDetailArgs) ToGetOpensearchClusterMaintenanceDetailOutputWithContext(ctx context.Context) GetOpensearchClusterMaintenanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterMaintenanceDetailOutput)
+}
+
+// GetOpensearchClusterMaintenanceDetailArrayInput is an input type that accepts GetOpensearchClusterMaintenanceDetailArray and GetOpensearchClusterMaintenanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterMaintenanceDetailArrayInput` via:
+//
+//	GetOpensearchClusterMaintenanceDetailArray{ GetOpensearchClusterMaintenanceDetailArgs{...} }
+type GetOpensearchClusterMaintenanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterMaintenanceDetailArrayOutput() GetOpensearchClusterMaintenanceDetailArrayOutput
+	ToGetOpensearchClusterMaintenanceDetailArrayOutputWithContext(context.Context) GetOpensearchClusterMaintenanceDetailArrayOutput
+}
+
+type GetOpensearchClusterMaintenanceDetailArray []GetOpensearchClusterMaintenanceDetailInput
+
+func (GetOpensearchClusterMaintenanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterMaintenanceDetailArray) ToGetOpensearchClusterMaintenanceDetailArrayOutput() GetOpensearchClusterMaintenanceDetailArrayOutput {
+	return i.ToGetOpensearchClusterMaintenanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterMaintenanceDetailArray) ToGetOpensearchClusterMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterMaintenanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterMaintenanceDetailArrayOutput)
+}
+
+type GetOpensearchClusterMaintenanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterMaintenanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterMaintenanceDetailOutput) ToGetOpensearchClusterMaintenanceDetailOutput() GetOpensearchClusterMaintenanceDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterMaintenanceDetailOutput) ToGetOpensearchClusterMaintenanceDetailOutputWithContext(ctx context.Context) GetOpensearchClusterMaintenanceDetailOutput {
+	return o
+}
+
+// End time of the maintenance activity
+func (o GetOpensearchClusterMaintenanceDetailOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterMaintenanceDetail) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+// The Email Ids given the by customer to get notified about maintenance activities
+func (o GetOpensearchClusterMaintenanceDetailOutput) NotificationEmailIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterMaintenanceDetail) []string { return v.NotificationEmailIds }).(pulumi.StringArrayOutput)
+}
+
+// Start time of the maintenance activity
+func (o GetOpensearchClusterMaintenanceDetailOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterMaintenanceDetail) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+// The current state of the cluster.
+func (o GetOpensearchClusterMaintenanceDetailOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterMaintenanceDetail) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterMaintenanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterMaintenanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterMaintenanceDetailArrayOutput) ToGetOpensearchClusterMaintenanceDetailArrayOutput() GetOpensearchClusterMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterMaintenanceDetailArrayOutput) ToGetOpensearchClusterMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterMaintenanceDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterMaintenanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterMaintenanceDetail {
+		return vs[0].([]GetOpensearchClusterMaintenanceDetail)[vs[1].(int)]
+	}).(GetOpensearchClusterMaintenanceDetailOutput)
+}
+
+type GetOpensearchClusterOutboundClusterConfig struct {
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled bool `pulumi:"isEnabled"`
+	// List of outbound clusters to be connected to the inbound cluster
+	OutboundClusters []GetOpensearchClusterOutboundClusterConfigOutboundCluster `pulumi:"outboundClusters"`
+}
+
+// GetOpensearchClusterOutboundClusterConfigInput is an input type that accepts GetOpensearchClusterOutboundClusterConfigArgs and GetOpensearchClusterOutboundClusterConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterOutboundClusterConfigInput` via:
+//
+//	GetOpensearchClusterOutboundClusterConfigArgs{...}
+type GetOpensearchClusterOutboundClusterConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterOutboundClusterConfigOutput() GetOpensearchClusterOutboundClusterConfigOutput
+	ToGetOpensearchClusterOutboundClusterConfigOutputWithContext(context.Context) GetOpensearchClusterOutboundClusterConfigOutput
+}
+
+type GetOpensearchClusterOutboundClusterConfigArgs struct {
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// List of outbound clusters to be connected to the inbound cluster
+	OutboundClusters GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayInput `pulumi:"outboundClusters"`
+}
+
+func (GetOpensearchClusterOutboundClusterConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigArgs) ToGetOpensearchClusterOutboundClusterConfigOutput() GetOpensearchClusterOutboundClusterConfigOutput {
+	return i.ToGetOpensearchClusterOutboundClusterConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigArgs) ToGetOpensearchClusterOutboundClusterConfigOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterOutboundClusterConfigOutput)
+}
+
+// GetOpensearchClusterOutboundClusterConfigArrayInput is an input type that accepts GetOpensearchClusterOutboundClusterConfigArray and GetOpensearchClusterOutboundClusterConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterOutboundClusterConfigArrayInput` via:
+//
+//	GetOpensearchClusterOutboundClusterConfigArray{ GetOpensearchClusterOutboundClusterConfigArgs{...} }
+type GetOpensearchClusterOutboundClusterConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterOutboundClusterConfigArrayOutput() GetOpensearchClusterOutboundClusterConfigArrayOutput
+	ToGetOpensearchClusterOutboundClusterConfigArrayOutputWithContext(context.Context) GetOpensearchClusterOutboundClusterConfigArrayOutput
+}
+
+type GetOpensearchClusterOutboundClusterConfigArray []GetOpensearchClusterOutboundClusterConfigInput
+
+func (GetOpensearchClusterOutboundClusterConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigArray) ToGetOpensearchClusterOutboundClusterConfigArrayOutput() GetOpensearchClusterOutboundClusterConfigArrayOutput {
+	return i.ToGetOpensearchClusterOutboundClusterConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigArray) ToGetOpensearchClusterOutboundClusterConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterOutboundClusterConfigArrayOutput)
+}
+
+type GetOpensearchClusterOutboundClusterConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterOutboundClusterConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutput) ToGetOpensearchClusterOutboundClusterConfigOutput() GetOpensearchClusterOutboundClusterConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutput) ToGetOpensearchClusterOutboundClusterConfigOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigOutput {
+	return o
+}
+
+// Flag to indicate whether outbound cluster configuration is enabled
+func (o GetOpensearchClusterOutboundClusterConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// List of outbound clusters to be connected to the inbound cluster
+func (o GetOpensearchClusterOutboundClusterConfigOutput) OutboundClusters() GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfig) []GetOpensearchClusterOutboundClusterConfigOutboundCluster {
+		return v.OutboundClusters
+	}).(GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type GetOpensearchClusterOutboundClusterConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterOutboundClusterConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterOutboundClusterConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigArrayOutput) ToGetOpensearchClusterOutboundClusterConfigArrayOutput() GetOpensearchClusterOutboundClusterConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigArrayOutput) ToGetOpensearchClusterOutboundClusterConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterOutboundClusterConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterOutboundClusterConfig {
+		return vs[0].([]GetOpensearchClusterOutboundClusterConfig)[vs[1].(int)]
+	}).(GetOpensearchClusterOutboundClusterConfigOutput)
+}
+
+type GetOpensearchClusterOutboundClusterConfigOutboundCluster struct {
+	// Name of the Outbound cluster. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+	IsSkipUnavailable bool `pulumi:"isSkipUnavailable"`
+	// Mode for the cross cluster connection
+	Mode string `pulumi:"mode"`
+	// Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+	PingSchedule string `pulumi:"pingSchedule"`
+	// OCID of the Outbound cluster
+	SeedClusterId string `pulumi:"seedClusterId"`
+}
+
+// GetOpensearchClusterOutboundClusterConfigOutboundClusterInput is an input type that accepts GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs and GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterOutboundClusterConfigOutboundClusterInput` via:
+//
+//	GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs{...}
+type GetOpensearchClusterOutboundClusterConfigOutboundClusterInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutput() GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput
+	ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutputWithContext(context.Context) GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput
+}
+
+type GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs struct {
+	// Name of the Outbound cluster. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+	IsSkipUnavailable pulumi.BoolInput `pulumi:"isSkipUnavailable"`
+	// Mode for the cross cluster connection
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+	PingSchedule pulumi.StringInput `pulumi:"pingSchedule"`
+	// OCID of the Outbound cluster
+	SeedClusterId pulumi.StringInput `pulumi:"seedClusterId"`
+}
+
+func (GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutput() GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput {
+	return i.ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput)
+}
+
+// GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayInput is an input type that accepts GetOpensearchClusterOutboundClusterConfigOutboundClusterArray and GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayInput` via:
+//
+//	GetOpensearchClusterOutboundClusterConfigOutboundClusterArray{ GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs{...} }
+type GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput() GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput
+	ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(context.Context) GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput
+}
+
+type GetOpensearchClusterOutboundClusterConfigOutboundClusterArray []GetOpensearchClusterOutboundClusterConfigOutboundClusterInput
+
+func (GetOpensearchClusterOutboundClusterConfigOutboundClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigOutboundClusterArray) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput() GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return i.ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterOutboundClusterConfigOutboundClusterArray) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutput() GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput {
+	return o
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput {
+	return o
+}
+
+// Name of the Outbound cluster. Avoid entering confidential information.
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfigOutboundCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) IsSkipUnavailable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfigOutboundCluster) bool { return v.IsSkipUnavailable }).(pulumi.BoolOutput)
+}
+
+// Mode for the cross cluster connection
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfigOutboundCluster) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) PingSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfigOutboundCluster) string { return v.PingSchedule }).(pulumi.StringOutput)
+}
+
+// OCID of the Outbound cluster
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput) SeedClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterOutboundClusterConfigOutboundCluster) string { return v.SeedClusterId }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput() GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput) ToGetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutputWithContext(ctx context.Context) GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterOutboundClusterConfigOutboundCluster {
+		return vs[0].([]GetOpensearchClusterOutboundClusterConfigOutboundCluster)[vs[1].(int)]
+	}).(GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput)
+}
+
+type GetOpensearchClusterReverseConnectionEndpoint struct {
+	// The IP addresses of the endpoint in customer VCN
+	CustomerIp string `pulumi:"customerIp"`
+	// The NAT IP addresses of the endpoint in service VCN
+	NatIp string `pulumi:"natIp"`
+}
+
+// GetOpensearchClusterReverseConnectionEndpointInput is an input type that accepts GetOpensearchClusterReverseConnectionEndpointArgs and GetOpensearchClusterReverseConnectionEndpointOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterReverseConnectionEndpointInput` via:
+//
+//	GetOpensearchClusterReverseConnectionEndpointArgs{...}
+type GetOpensearchClusterReverseConnectionEndpointInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterReverseConnectionEndpointOutput() GetOpensearchClusterReverseConnectionEndpointOutput
+	ToGetOpensearchClusterReverseConnectionEndpointOutputWithContext(context.Context) GetOpensearchClusterReverseConnectionEndpointOutput
+}
+
+type GetOpensearchClusterReverseConnectionEndpointArgs struct {
+	// The IP addresses of the endpoint in customer VCN
+	CustomerIp pulumi.StringInput `pulumi:"customerIp"`
+	// The NAT IP addresses of the endpoint in service VCN
+	NatIp pulumi.StringInput `pulumi:"natIp"`
+}
+
+func (GetOpensearchClusterReverseConnectionEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterReverseConnectionEndpointArgs) ToGetOpensearchClusterReverseConnectionEndpointOutput() GetOpensearchClusterReverseConnectionEndpointOutput {
+	return i.ToGetOpensearchClusterReverseConnectionEndpointOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterReverseConnectionEndpointArgs) ToGetOpensearchClusterReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClusterReverseConnectionEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterReverseConnectionEndpointOutput)
+}
+
+// GetOpensearchClusterReverseConnectionEndpointArrayInput is an input type that accepts GetOpensearchClusterReverseConnectionEndpointArray and GetOpensearchClusterReverseConnectionEndpointArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterReverseConnectionEndpointArrayInput` via:
+//
+//	GetOpensearchClusterReverseConnectionEndpointArray{ GetOpensearchClusterReverseConnectionEndpointArgs{...} }
+type GetOpensearchClusterReverseConnectionEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterReverseConnectionEndpointArrayOutput() GetOpensearchClusterReverseConnectionEndpointArrayOutput
+	ToGetOpensearchClusterReverseConnectionEndpointArrayOutputWithContext(context.Context) GetOpensearchClusterReverseConnectionEndpointArrayOutput
+}
+
+type GetOpensearchClusterReverseConnectionEndpointArray []GetOpensearchClusterReverseConnectionEndpointInput
+
+func (GetOpensearchClusterReverseConnectionEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterReverseConnectionEndpointArray) ToGetOpensearchClusterReverseConnectionEndpointArrayOutput() GetOpensearchClusterReverseConnectionEndpointArrayOutput {
+	return i.ToGetOpensearchClusterReverseConnectionEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterReverseConnectionEndpointArray) ToGetOpensearchClusterReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClusterReverseConnectionEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterReverseConnectionEndpointArrayOutput)
+}
+
+type GetOpensearchClusterReverseConnectionEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterReverseConnectionEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterReverseConnectionEndpointOutput) ToGetOpensearchClusterReverseConnectionEndpointOutput() GetOpensearchClusterReverseConnectionEndpointOutput {
+	return o
+}
+
+func (o GetOpensearchClusterReverseConnectionEndpointOutput) ToGetOpensearchClusterReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClusterReverseConnectionEndpointOutput {
+	return o
+}
+
+// The IP addresses of the endpoint in customer VCN
+func (o GetOpensearchClusterReverseConnectionEndpointOutput) CustomerIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterReverseConnectionEndpoint) string { return v.CustomerIp }).(pulumi.StringOutput)
+}
+
+// The NAT IP addresses of the endpoint in service VCN
+func (o GetOpensearchClusterReverseConnectionEndpointOutput) NatIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterReverseConnectionEndpoint) string { return v.NatIp }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterReverseConnectionEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterReverseConnectionEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterReverseConnectionEndpointArrayOutput) ToGetOpensearchClusterReverseConnectionEndpointArrayOutput() GetOpensearchClusterReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterReverseConnectionEndpointArrayOutput) ToGetOpensearchClusterReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClusterReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterReverseConnectionEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterReverseConnectionEndpoint {
+		return vs[0].([]GetOpensearchClusterReverseConnectionEndpoint)[vs[1].(int)]
+	}).(GetOpensearchClusterReverseConnectionEndpointOutput)
+}
+
 type GetOpensearchClustersFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -219,7 +1281,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId                   string `pulumi:"compartmentId"`
+	ConfigureOutboundClusterTrigger int    `pulumi:"configureOutboundClusterTrigger"`
 	// The number of data nodes configured for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -242,8 +1305,12 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique OpensearchCluster identifier
 	Id string `pulumi:"id"`
+	// List of inbound clusters for which this cluster is an outbound cluster
+	InboundClusterIds []string `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details for the maintenance activity.
+	MaintenanceDetails []GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail `pulumi:"maintenanceDetails"`
 	// The number of master nodes configured for the cluster.
 	MasterNodeCount int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -268,6 +1335,12 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	OpensearchFqdn string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp string `pulumi:"opensearchPrivateIp"`
+	// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfigs []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig `pulumi:"outboundClusterConfigs"`
+	// The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
+	// The list of reverse connection endpoints.
+	ReverseConnectionEndpoints []GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint `pulumi:"reverseConnectionEndpoints"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -313,7 +1386,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains pulumi.StringArrayInput `pulumi:"availabilityDomains"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId                   pulumi.StringInput `pulumi:"compartmentId"`
+	ConfigureOutboundClusterTrigger pulumi.IntInput    `pulumi:"configureOutboundClusterTrigger"`
 	// The number of data nodes configured for the cluster.
 	DataNodeCount pulumi.IntInput `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -336,8 +1410,12 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique OpensearchCluster identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// List of inbound clusters for which this cluster is an outbound cluster
+	InboundClusterIds pulumi.StringArrayInput `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Details for the maintenance activity.
+	MaintenanceDetails GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput `pulumi:"maintenanceDetails"`
 	// The number of master nodes configured for the cluster.
 	MasterNodeCount pulumi.IntInput `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -362,6 +1440,12 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	OpensearchFqdn pulumi.StringInput `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
 	OpensearchPrivateIp pulumi.StringInput `pulumi:"opensearchPrivateIp"`
+	// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+	OutboundClusterConfigs GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput `pulumi:"outboundClusterConfigs"`
+	// The customer IP addresses of the endpoint in customer VCN
+	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput `pulumi:"reverseConnectionEndpointCustomerIps"`
+	// The list of reverse connection endpoints.
+	ReverseConnectionEndpoints GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput `pulumi:"reverseConnectionEndpoints"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringInput `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -453,6 +1537,12 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) CompartmentI
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ConfigureOutboundClusterTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int {
+		return v.ConfigureOutboundClusterTrigger
+	}).(pulumi.IntOutput)
+}
+
 // The number of data nodes configured for the cluster.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.DataNodeCount }).(pulumi.IntOutput)
@@ -510,9 +1600,21 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Id() pulumi.
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of inbound clusters for which this cluster is an outbound cluster
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) InboundClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []string { return v.InboundClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Additional information about the current lifecycle state of the cluster.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Details for the maintenance activity.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MaintenanceDetails() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail {
+		return v.MaintenanceDetails
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput)
 }
 
 // The number of master nodes configured for the cluster.
@@ -579,6 +1681,27 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchFq
 // The cluster's private IP address.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchPrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+}
+
+// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OutboundClusterConfigs() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig {
+		return v.OutboundClusterConfigs
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput)
+}
+
+// The customer IP addresses of the endpoint in customer VCN
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ReverseConnectionEndpointCustomerIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []string {
+		return v.ReverseConnectionEndpointCustomerIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The list of reverse connection endpoints.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ReverseConnectionEndpoints() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint {
+		return v.ReverseConnectionEndpoints
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput)
 }
 
 // The name of the master user that are used to manage security config
@@ -671,6 +1794,497 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItem {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItem)[vs[1].(int)]
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail struct {
+	// End time of the maintenance activity
+	EndTime string `pulumi:"endTime"`
+	// The Email Ids given the by customer to get notified about maintenance activities
+	NotificationEmailIds []string `pulumi:"notificationEmailIds"`
+	// Start time of the maintenance activity
+	StartTime string `pulumi:"startTime"`
+	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs and GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs struct {
+	// End time of the maintenance activity
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// The Email Ids given the by customer to get notified about maintenance activities
+	NotificationEmailIds pulumi.StringArrayInput `pulumi:"notificationEmailIds"`
+	// Start time of the maintenance activity
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray and GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray{ GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray []GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput {
+	return o
+}
+
+// End time of the maintenance activity
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+// The Email Ids given the by customer to get notified about maintenance activities
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) NotificationEmailIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail) []string {
+		return v.NotificationEmailIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// Start time of the maintenance activity
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail) string {
+		return v.StartTime
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig struct {
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled bool `pulumi:"isEnabled"`
+	// List of outbound clusters to be connected to the inbound cluster
+	OutboundClusters []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster `pulumi:"outboundClusters"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs and GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs struct {
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// List of outbound clusters to be connected to the inbound cluster
+	OutboundClusters GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput `pulumi:"outboundClusters"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray and GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray{ GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput {
+	return o
+}
+
+// Flag to indicate whether outbound cluster configuration is enabled
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// List of outbound clusters to be connected to the inbound cluster
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput) OutboundClusters() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig) []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster {
+		return v.OutboundClusters
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+	IsSkipUnavailable bool `pulumi:"isSkipUnavailable"`
+	// Mode for the cross cluster connection
+	Mode string `pulumi:"mode"`
+	// Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+	PingSchedule string `pulumi:"pingSchedule"`
+	// OCID of the Outbound cluster
+	SeedClusterId string `pulumi:"seedClusterId"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs and GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+	IsSkipUnavailable pulumi.BoolInput `pulumi:"isSkipUnavailable"`
+	// Mode for the cross cluster connection
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+	PingSchedule pulumi.StringInput `pulumi:"pingSchedule"`
+	// OCID of the Outbound cluster
+	SeedClusterId pulumi.StringInput `pulumi:"seedClusterId"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray and GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray{ GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) IsSkipUnavailable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster) bool {
+		return v.IsSkipUnavailable
+	}).(pulumi.BoolOutput)
+}
+
+// Mode for the cross cluster connection
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster) string {
+		return v.Mode
+	}).(pulumi.StringOutput)
+}
+
+// Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) PingSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster) string {
+		return v.PingSchedule
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the Outbound cluster
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput) SeedClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster) string {
+		return v.SeedClusterId
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundCluster)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint struct {
+	// The IP addresses of the endpoint in customer VCN
+	CustomerIp string `pulumi:"customerIp"`
+	// The NAT IP addresses of the endpoint in service VCN
+	NatIp string `pulumi:"natIp"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs and GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs struct {
+	// The IP addresses of the endpoint in customer VCN
+	CustomerIp pulumi.StringInput `pulumi:"customerIp"`
+	// The NAT IP addresses of the endpoint in service VCN
+	NatIp pulumi.StringInput `pulumi:"natIp"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray and GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray{ GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray []GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput {
+	return o
+}
+
+// The IP addresses of the endpoint in customer VCN
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput) CustomerIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint) string {
+		return v.CustomerIp
+	}).(pulumi.StringOutput)
+}
+
+// The NAT IP addresses of the endpoint in service VCN
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput) NatIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint) string {
+		return v.NatIp
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput)
 }
 
 type GetOpensearchVersionItem struct {
@@ -1073,12 +2687,36 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterMaintenanceDetailsInput)(nil)).Elem(), ClusterMaintenanceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterMaintenanceDetailsPtrInput)(nil)).Elem(), ClusterMaintenanceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigInput)(nil)).Elem(), ClusterOutboundClusterConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigPtrInput)(nil)).Elem(), ClusterOutboundClusterConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigOutboundClusterInput)(nil)).Elem(), ClusterOutboundClusterConfigOutboundClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), ClusterOutboundClusterConfigOutboundClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointInput)(nil)).Elem(), ClusterReverseConnectionEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), ClusterReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigArrayInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigOutboundClusterInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigOutboundClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigOutboundClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersFilterInput)(nil)).Elem(), GetOpensearchClustersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersFilterArrayInput)(nil)).Elem(), GetOpensearchClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionItemInput)(nil)).Elem(), GetOpensearchVersionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionItemArrayInput)(nil)).Elem(), GetOpensearchVersionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsFilterInput)(nil)).Elem(), GetOpensearchVersionsFilterArgs{})
@@ -1087,12 +2725,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionArrayInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionItemInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionItemArrayInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionItemArray{})
+	pulumi.RegisterOutputType(ClusterMaintenanceDetailsOutput{})
+	pulumi.RegisterOutputType(ClusterMaintenanceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutput{})
+	pulumi.RegisterOutputType(ClusterOutboundClusterConfigPtrOutput{})
+	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutboundClusterOutput{})
+	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutboundClusterArrayOutput{})
+	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointOutput{})
+	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutboundClusterOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutboundClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersFilterOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionItemOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionsFilterOutput{})

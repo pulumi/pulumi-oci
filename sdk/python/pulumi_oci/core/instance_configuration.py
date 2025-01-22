@@ -479,6 +479,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "network_type": instance_configuration_instance_details_launch_details_launch_options_network_type,
                         "remote_data_volume_type": instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
                     },
+                    "licensing_configs": {
+                        "type": instance_configuration_instance_details_launch_details_licensing_configs_type,
+                        "license_type": instance_configuration_instance_details_launch_details_licensing_configs_license_type,
+                    },
                     "metadata": instance_configuration_instance_details_launch_details_metadata,
                     "platform_config": {
                         "type": instance_configuration_instance_details_launch_details_platform_config_type,
@@ -625,6 +629,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
                             "network_type": instance_configuration_instance_details_options_launch_details_launch_options_network_type,
                             "remote_data_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
+                        },
+                        "licensing_configs": {
+                            "type": instance_configuration_instance_details_options_launch_details_licensing_configs_type,
+                            "license_type": instance_configuration_instance_details_options_launch_details_licensing_configs_license_type,
                         },
                         "metadata": instance_configuration_instance_details_options_launch_details_metadata,
                         "platform_config": {
@@ -889,6 +897,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "network_type": instance_configuration_instance_details_launch_details_launch_options_network_type,
                         "remote_data_volume_type": instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
                     },
+                    "licensing_configs": {
+                        "type": instance_configuration_instance_details_launch_details_licensing_configs_type,
+                        "license_type": instance_configuration_instance_details_launch_details_licensing_configs_license_type,
+                    },
                     "metadata": instance_configuration_instance_details_launch_details_metadata,
                     "platform_config": {
                         "type": instance_configuration_instance_details_launch_details_platform_config_type,
@@ -1035,6 +1047,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
                             "network_type": instance_configuration_instance_details_options_launch_details_launch_options_network_type,
                             "remote_data_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
+                        },
+                        "licensing_configs": {
+                            "type": instance_configuration_instance_details_options_launch_details_licensing_configs_type,
+                            "license_type": instance_configuration_instance_details_options_launch_details_licensing_configs_license_type,
                         },
                         "metadata": instance_configuration_instance_details_options_launch_details_metadata,
                         "platform_config": {

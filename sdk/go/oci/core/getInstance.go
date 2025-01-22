@@ -120,6 +120,8 @@ type LookupInstanceResult struct {
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions           []GetInstanceLaunchOption           `pulumi:"launchOptions"`
 	LaunchVolumeAttachments []GetInstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
+	// List of licensing configurations associated with the instance.
+	LicensingConfigs []GetInstanceLicensingConfig `pulumi:"licensingConfigs"`
 	// Custom metadata that you provide.
 	Metadata map[string]string `pulumi:"metadata"`
 	// The platform configuration for the instance.
@@ -332,6 +334,11 @@ func (o LookupInstanceResultOutput) LaunchOptions() GetInstanceLaunchOptionArray
 
 func (o LookupInstanceResultOutput) LaunchVolumeAttachments() GetInstanceLaunchVolumeAttachmentArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceLaunchVolumeAttachment { return v.LaunchVolumeAttachments }).(GetInstanceLaunchVolumeAttachmentArrayOutput)
+}
+
+// List of licensing configurations associated with the instance.
+func (o LookupInstanceResultOutput) LicensingConfigs() GetInstanceLicensingConfigArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceLicensingConfig { return v.LicensingConfigs }).(GetInstanceLicensingConfigArrayOutput)
 }
 
 // Custom metadata that you provide.

@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.inputs.InstanceCreateVnicDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstanceInstanceOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceLaunchOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceLaunchVolumeAttachmentArgs;
+import com.pulumi.oci.Core.inputs.InstanceLicensingConfigsArgs;
 import com.pulumi.oci.Core.inputs.InstancePlatformConfigArgs;
 import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceShapeConfigArgs;
@@ -415,6 +416,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) List of licensing configurations associated with target launch values.
+     * 
+     */
+    @Import(name="licensingConfigs")
+    private @Nullable Output<InstanceLicensingConfigsArgs> licensingConfigs;
+
+    /**
+     * @return (Updatable) List of licensing configurations associated with target launch values.
+     * 
+     */
+    public Optional<Output<InstanceLicensingConfigsArgs>> licensingConfigs() {
+        return Optional.ofNullable(this.licensingConfigs);
+    }
+
+    /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -694,6 +710,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchOptions = $.launchOptions;
         this.launchVolumeAttachments = $.launchVolumeAttachments;
+        this.licensingConfigs = $.licensingConfigs;
         this.metadata = $.metadata;
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
@@ -1251,6 +1268,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder launchVolumeAttachments(InstanceLaunchVolumeAttachmentArgs... launchVolumeAttachments) {
             return launchVolumeAttachments(List.of(launchVolumeAttachments));
+        }
+
+        /**
+         * @param licensingConfigs (Updatable) List of licensing configurations associated with target launch values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licensingConfigs(@Nullable Output<InstanceLicensingConfigsArgs> licensingConfigs) {
+            $.licensingConfigs = licensingConfigs;
+            return this;
+        }
+
+        /**
+         * @param licensingConfigs (Updatable) List of licensing configurations associated with target launch values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licensingConfigs(InstanceLicensingConfigsArgs licensingConfigs) {
+            return licensingConfigs(Output.of(licensingConfigs));
         }
 
         /**

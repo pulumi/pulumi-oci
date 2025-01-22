@@ -44,6 +44,11 @@ public final class GetIpv6Result {
     private String ipv6id;
     private String ipv6subnetCidr;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    private String routeTableId;
+    /**
      * @return The IPv6&#39;s current state.
      * 
      */
@@ -114,6 +119,13 @@ public final class GetIpv6Result {
         return this.ipv6subnetCidr;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * 
+     */
+    public String routeTableId() {
+        return this.routeTableId;
+    }
+    /**
      * @return The IPv6&#39;s current state.
      * 
      */
@@ -159,6 +171,7 @@ public final class GetIpv6Result {
         private String ipAddress;
         private String ipv6id;
         private String ipv6subnetCidr;
+        private String routeTableId;
         private String state;
         private String subnetId;
         private String timeCreated;
@@ -174,6 +187,7 @@ public final class GetIpv6Result {
     	      this.ipAddress = defaults.ipAddress;
     	      this.ipv6id = defaults.ipv6id;
     	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -245,6 +259,14 @@ public final class GetIpv6Result {
             return this;
         }
         @CustomType.Setter
+        public Builder routeTableId(String routeTableId) {
+            if (routeTableId == null) {
+              throw new MissingRequiredPropertyException("GetIpv6Result", "routeTableId");
+            }
+            this.routeTableId = routeTableId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetIpv6Result", "state");
@@ -286,6 +308,7 @@ public final class GetIpv6Result {
             _resultValue.ipAddress = ipAddress;
             _resultValue.ipv6id = ipv6id;
             _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            _resultValue.routeTableId = routeTableId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;

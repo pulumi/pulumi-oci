@@ -178,6 +178,11 @@ namespace Pulumi.Oci.Core
     ///                     NetworkType = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType,
     ///                     RemoteDataVolumeType = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
     ///                 },
+    ///                 LicensingConfigs = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs
+    ///                 {
+    ///                     Type = instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsType,
+    ///                     LicenseType = instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsLicenseType,
+    ///                 },
     ///                 Metadata = instanceConfigurationInstanceDetailsLaunchDetailsMetadata,
     ///                 PlatformConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs
     ///                 {
@@ -364,6 +369,11 @@ namespace Pulumi.Oci.Core
     ///                             IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled,
     ///                             NetworkType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType,
     ///                             RemoteDataVolumeType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
+    ///                         },
+    ///                         LicensingConfigs = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs
+    ///                         {
+    ///                             Type = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsType,
+    ///                             LicenseType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsLicenseType,
     ///                         },
     ///                         Metadata = instanceConfigurationInstanceDetailsOptionsLaunchDetailsMetadata,
     ///                         PlatformConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs

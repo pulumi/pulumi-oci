@@ -9,11 +9,15 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Opensearch.ClusterArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterState;
+import com.pulumi.oci.Opensearch.outputs.ClusterMaintenanceDetails;
+import com.pulumi.oci.Opensearch.outputs.ClusterOutboundClusterConfig;
+import com.pulumi.oci.Opensearch.outputs.ClusterReverseConnectionEndpoint;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -29,67 +33,6 @@ import javax.annotation.Nullable;
  * 
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
- * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Opensearch.Cluster;
- * import com.pulumi.oci.Opensearch.ClusterArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testOpensearchCluster = new Cluster("testOpensearchCluster", ClusterArgs.builder()
- *             .compartmentId(compartmentId)
- *             .dataNodeCount(opensearchClusterDataNodeCount)
- *             .dataNodeHostMemoryGb(opensearchClusterDataNodeHostMemoryGb)
- *             .dataNodeHostOcpuCount(opensearchClusterDataNodeHostOcpuCount)
- *             .dataNodeHostType(opensearchClusterDataNodeHostType)
- *             .dataNodeStorageGb(opensearchClusterDataNodeStorageGb)
- *             .displayName(opensearchClusterDisplayName)
- *             .masterNodeCount(opensearchClusterMasterNodeCount)
- *             .masterNodeHostMemoryGb(opensearchClusterMasterNodeHostMemoryGb)
- *             .masterNodeHostOcpuCount(opensearchClusterMasterNodeHostOcpuCount)
- *             .masterNodeHostType(opensearchClusterMasterNodeHostType)
- *             .opendashboardNodeCount(opensearchClusterOpendashboardNodeCount)
- *             .opendashboardNodeHostMemoryGb(opensearchClusterOpendashboardNodeHostMemoryGb)
- *             .opendashboardNodeHostOcpuCount(opensearchClusterOpendashboardNodeHostOcpuCount)
- *             .softwareVersion(opensearchClusterSoftwareVersion)
- *             .subnetCompartmentId(testCompartment.id())
- *             .subnetId(testSubnet.id())
- *             .vcnCompartmentId(testCompartment.id())
- *             .vcnId(testVcn.id())
- *             .dataNodeHostBareMetalShape(opensearchClusterDataNodeHostBareMetalShape)
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .masterNodeHostBareMetalShape(opensearchClusterMasterNodeHostBareMetalShape)
- *             .securityMasterUserName(testUser.name())
- *             .securityMasterUserPasswordHash(opensearchClusterSecurityMasterUserPasswordHash)
- *             .securityMode(opensearchClusterSecurityMode)
- *             .systemTags(opensearchClusterSystemTags)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
@@ -129,6 +72,26 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="configureOutboundClusterTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> configureOutboundClusterTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> configureOutboundClusterTrigger() {
+        return Codegen.optional(this.configureOutboundClusterTrigger);
     }
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
@@ -271,6 +234,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * List of inbound clusters that will be queried using cross cluster search
+     * 
+     */
+    @Export(name="inboundClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> inboundClusterIds;
+
+    /**
+     * @return List of inbound clusters that will be queried using cross cluster search
+     * 
+     */
+    public Output<List<String>> inboundClusterIds() {
+        return this.inboundClusterIds;
+    }
+    /**
      * Additional information about the current lifecycle state of the cluster.
      * 
      */
@@ -283,6 +260,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Details for creation of maintenance details
+     * 
+     */
+    @Export(name="maintenanceDetails", refs={ClusterMaintenanceDetails.class}, tree="[0]")
+    private Output<ClusterMaintenanceDetails> maintenanceDetails;
+
+    /**
+     * @return (Updatable) Details for creation of maintenance details
+     * 
+     */
+    public Output<ClusterMaintenanceDetails> maintenanceDetails() {
+        return this.maintenanceDetails;
     }
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
@@ -451,6 +442,48 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> opensearchPrivateIp() {
         return this.opensearchPrivateIp;
+    }
+    /**
+     * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    @Export(name="outboundClusterConfig", refs={ClusterOutboundClusterConfig.class}, tree="[0]")
+    private Output<ClusterOutboundClusterConfig> outboundClusterConfig;
+
+    /**
+     * @return (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+     * 
+     */
+    public Output<ClusterOutboundClusterConfig> outboundClusterConfig() {
+        return this.outboundClusterConfig;
+    }
+    /**
+     * (Updatable) The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    @Export(name="reverseConnectionEndpointCustomerIps", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> reverseConnectionEndpointCustomerIps;
+
+    /**
+     * @return (Updatable) The customer IP addresses of the endpoint in customer VCN
+     * 
+     */
+    public Output<List<String>> reverseConnectionEndpointCustomerIps() {
+        return this.reverseConnectionEndpointCustomerIps;
+    }
+    /**
+     * The list of reverse connection endpoints.
+     * 
+     */
+    @Export(name="reverseConnectionEndpoints", refs={List.class,ClusterReverseConnectionEndpoint.class}, tree="[0,1]")
+    private Output<List<ClusterReverseConnectionEndpoint>> reverseConnectionEndpoints;
+
+    /**
+     * @return The list of reverse connection endpoints.
+     * 
+     */
+    public Output<List<ClusterReverseConnectionEndpoint>> reverseConnectionEndpoints() {
+        return this.reverseConnectionEndpoints;
     }
     /**
      * (Updatable) The name of the master user that are used to manage security config
@@ -637,18 +670,12 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the cluster&#39;s VCN.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**
      * @return The OCID of the cluster&#39;s VCN.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcnId() {

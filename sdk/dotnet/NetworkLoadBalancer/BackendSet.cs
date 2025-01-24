@@ -50,9 +50,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         Name = backendSetName,
     ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
     ///         Policy = backendSetPolicy,
+    ///         AreOperationallyActiveBackendsPreferred = backendSetAreOperationallyActiveBackendsPreferred,
     ///         IpVersion = backendSetIpVersion,
     ///         IsFailOpen = backendSetIsFailOpen,
     ///         IsInstantFailoverEnabled = backendSetIsInstantFailoverEnabled,
+    ///         IsInstantFailoverTcpResetEnabled = backendSetIsInstantFailoverTcpResetEnabled,
     ///         IsPreserveSource = backendSetIsPreserveSource,
     ///     });
     /// 
@@ -71,13 +73,19 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public partial class BackendSet : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// </summary>
+        [Output("areOperationallyActiveBackendsPreferred")]
+        public Output<bool> AreOperationallyActiveBackendsPreferred { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) An array of backends to be associated with the backend set.
         /// </summary>
         [Output("backends")]
         public Output<ImmutableArray<Outputs.BackendSetBackend>> Backends { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         /// </summary>
         [Output("healthChecker")]
         public Output<Outputs.BackendSetHealthChecker> HealthChecker { get; private set; } = null!;
@@ -99,6 +107,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Output("isInstantFailoverEnabled")]
         public Output<bool> IsInstantFailoverEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// </summary>
+        [Output("isInstantFailoverTcpResetEnabled")]
+        public Output<bool> IsInstantFailoverTcpResetEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
@@ -179,7 +193,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class BackendSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// </summary>
+        [Input("areOperationallyActiveBackendsPreferred")]
+        public Input<bool>? AreOperationallyActiveBackendsPreferred { get; set; }
+
+        /// <summary>
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         /// </summary>
         [Input("healthChecker", required: true)]
         public Input<Inputs.BackendSetHealthCheckerArgs> HealthChecker { get; set; } = null!;
@@ -201,6 +221,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Input("isInstantFailoverEnabled")]
         public Input<bool>? IsInstantFailoverEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// </summary>
+        [Input("isInstantFailoverTcpResetEnabled")]
+        public Input<bool>? IsInstantFailoverTcpResetEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
@@ -242,6 +268,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
     public sealed class BackendSetState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// </summary>
+        [Input("areOperationallyActiveBackendsPreferred")]
+        public Input<bool>? AreOperationallyActiveBackendsPreferred { get; set; }
+
         [Input("backends")]
         private InputList<Inputs.BackendSetBackendGetArgs>? _backends;
 
@@ -255,7 +287,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         /// </summary>
         [Input("healthChecker")]
         public Input<Inputs.BackendSetHealthCheckerGetArgs>? HealthChecker { get; set; }
@@ -277,6 +309,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Input("isInstantFailoverEnabled")]
         public Input<bool>? IsInstantFailoverEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// </summary>
+        [Input("isInstantFailoverTcpResetEnabled")]
+        public Input<bool>? IsInstantFailoverTcpResetEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.

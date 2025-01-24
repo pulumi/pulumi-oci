@@ -14,6 +14,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackendSetResult {
+    /**
+     * @return If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * 
+     */
+    private Boolean areOperationallyActiveBackendsPreferred;
     private String backendSetName;
     /**
      * @return An array of backends.
@@ -21,7 +26,7 @@ public final class GetBackendSetResult {
      */
     private List<GetBackendSetBackend> backends;
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
      * 
      */
     private List<GetBackendSetHealthChecker> healthCheckers;
@@ -42,6 +47,11 @@ public final class GetBackendSetResult {
      */
     private Boolean isInstantFailoverEnabled;
     /**
+     * @return If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * 
+     */
+    private Boolean isInstantFailoverTcpResetEnabled;
+    /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
@@ -59,6 +69,13 @@ public final class GetBackendSetResult {
     private String policy;
 
     private GetBackendSetResult() {}
+    /**
+     * @return If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * 
+     */
+    public Boolean areOperationallyActiveBackendsPreferred() {
+        return this.areOperationallyActiveBackendsPreferred;
+    }
     public String backendSetName() {
         return this.backendSetName;
     }
@@ -70,7 +87,7 @@ public final class GetBackendSetResult {
         return this.backends;
     }
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
      * 
      */
     public List<GetBackendSetHealthChecker> healthCheckers() {
@@ -99,6 +116,13 @@ public final class GetBackendSetResult {
      */
     public Boolean isInstantFailoverEnabled() {
         return this.isInstantFailoverEnabled;
+    }
+    /**
+     * @return If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * 
+     */
+    public Boolean isInstantFailoverTcpResetEnabled() {
+        return this.isInstantFailoverTcpResetEnabled;
     }
     /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
@@ -134,6 +158,7 @@ public final class GetBackendSetResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean areOperationallyActiveBackendsPreferred;
         private String backendSetName;
         private List<GetBackendSetBackend> backends;
         private List<GetBackendSetHealthChecker> healthCheckers;
@@ -141,6 +166,7 @@ public final class GetBackendSetResult {
         private String ipVersion;
         private Boolean isFailOpen;
         private Boolean isInstantFailoverEnabled;
+        private Boolean isInstantFailoverTcpResetEnabled;
         private Boolean isPreserveSource;
         private String name;
         private String networkLoadBalancerId;
@@ -148,6 +174,7 @@ public final class GetBackendSetResult {
         public Builder() {}
         public Builder(GetBackendSetResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areOperationallyActiveBackendsPreferred = defaults.areOperationallyActiveBackendsPreferred;
     	      this.backendSetName = defaults.backendSetName;
     	      this.backends = defaults.backends;
     	      this.healthCheckers = defaults.healthCheckers;
@@ -155,12 +182,21 @@ public final class GetBackendSetResult {
     	      this.ipVersion = defaults.ipVersion;
     	      this.isFailOpen = defaults.isFailOpen;
     	      this.isInstantFailoverEnabled = defaults.isInstantFailoverEnabled;
+    	      this.isInstantFailoverTcpResetEnabled = defaults.isInstantFailoverTcpResetEnabled;
     	      this.isPreserveSource = defaults.isPreserveSource;
     	      this.name = defaults.name;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
     	      this.policy = defaults.policy;
         }
 
+        @CustomType.Setter
+        public Builder areOperationallyActiveBackendsPreferred(Boolean areOperationallyActiveBackendsPreferred) {
+            if (areOperationallyActiveBackendsPreferred == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetResult", "areOperationallyActiveBackendsPreferred");
+            }
+            this.areOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
+            return this;
+        }
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             if (backendSetName == null) {
@@ -224,6 +260,14 @@ public final class GetBackendSetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isInstantFailoverTcpResetEnabled(Boolean isInstantFailoverTcpResetEnabled) {
+            if (isInstantFailoverTcpResetEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetResult", "isInstantFailoverTcpResetEnabled");
+            }
+            this.isInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPreserveSource(Boolean isPreserveSource) {
             if (isPreserveSource == null) {
               throw new MissingRequiredPropertyException("GetBackendSetResult", "isPreserveSource");
@@ -257,6 +301,7 @@ public final class GetBackendSetResult {
         }
         public GetBackendSetResult build() {
             final var _resultValue = new GetBackendSetResult();
+            _resultValue.areOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
             _resultValue.backendSetName = backendSetName;
             _resultValue.backends = backends;
             _resultValue.healthCheckers = healthCheckers;
@@ -264,6 +309,7 @@ public final class GetBackendSetResult {
             _resultValue.ipVersion = ipVersion;
             _resultValue.isFailOpen = isFailOpen;
             _resultValue.isInstantFailoverEnabled = isInstantFailoverEnabled;
+            _resultValue.isInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
             _resultValue.isPreserveSource = isPreserveSource;
             _resultValue.name = name;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;

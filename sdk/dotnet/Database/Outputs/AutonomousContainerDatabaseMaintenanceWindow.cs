@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Preference;
         /// <summary>
-        /// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        /// (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         /// </summary>
         public readonly ImmutableArray<bool> SkipRus;
         /// <summary>

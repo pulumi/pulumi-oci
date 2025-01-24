@@ -123,6 +123,7 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetDatabaseResult
     {
+        public readonly int ActionTrigger;
         /// <summary>
         /// The character set for the database.
         /// </summary>
@@ -135,6 +136,14 @@ namespace Pulumi.Oci.Database
         /// The Connection strings used to connect to the Oracle Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseConnectionStringResult> ConnectionStrings;
+        public readonly string DataGuardAction;
+        /// <summary>
+        /// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseDataGuardGroupResult> DataGuardGroups;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        /// </summary>
         public readonly string DatabaseId;
         /// <summary>
         /// The configuration of the Database Management service.
@@ -256,11 +265,17 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetDatabaseResult(
+            int actionTrigger,
+
             string characterSet,
 
             string compartmentId,
 
             ImmutableArray<Outputs.GetDatabaseConnectionStringResult> connectionStrings,
+
+            string dataGuardAction,
+
+            ImmutableArray<Outputs.GetDatabaseDataGuardGroupResult> dataGuardGroups,
 
             string databaseId,
 
@@ -330,9 +345,12 @@ namespace Pulumi.Oci.Database
 
             string vmClusterId)
         {
+            ActionTrigger = actionTrigger;
             CharacterSet = characterSet;
             CompartmentId = compartmentId;
             ConnectionStrings = connectionStrings;
+            DataGuardAction = dataGuardAction;
+            DataGuardGroups = dataGuardGroups;
             DatabaseId = databaseId;
             DatabaseManagementConfigs = databaseManagementConfigs;
             DatabaseSoftwareImageId = databaseSoftwareImageId;

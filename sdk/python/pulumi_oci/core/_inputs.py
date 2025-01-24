@@ -23,6 +23,8 @@ __all__ = [
     'BootVolumeBootVolumeReplicaArgsDict',
     'BootVolumeSourceDetailsArgs',
     'BootVolumeSourceDetailsArgsDict',
+    'ByoasnByoipRangeArgs',
+    'ByoasnByoipRangeArgsDict',
     'CaptureFilterFlowLogCaptureFilterRuleArgs',
     'CaptureFilterFlowLogCaptureFilterRuleArgsDict',
     'CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs',
@@ -395,6 +397,8 @@ __all__ = [
     'GetBootVolumeReplicasFilterArgsDict',
     'GetBootVolumesFilterArgs',
     'GetBootVolumesFilterArgsDict',
+    'GetByoasnsFilterArgs',
+    'GetByoasnsFilterArgsDict',
     'GetByoipAllocatedRangesFilterArgs',
     'GetByoipAllocatedRangesFilterArgsDict',
     'GetByoipRangesFilterArgs',
@@ -909,6 +913,98 @@ class BootVolumeSourceDetailsArgs:
     @second_backup_id.setter
     def second_backup_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "second_backup_id", value)
+
+
+if not MYPY:
+    class ByoasnByoipRangeArgsDict(TypedDict):
+        as_path_prepend_length: NotRequired[pulumi.Input[int]]
+        """
+        The as path prepend length.
+        """
+        byoip_range_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        """
+        cidr_block: NotRequired[pulumi.Input[str]]
+        """
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        """
+        ipv6cidr_block: NotRequired[pulumi.Input[str]]
+        """
+        The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+elif False:
+    ByoasnByoipRangeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ByoasnByoipRangeArgs:
+    def __init__(__self__, *,
+                 as_path_prepend_length: Optional[pulumi.Input[int]] = None,
+                 byoip_range_id: Optional[pulumi.Input[str]] = None,
+                 cidr_block: Optional[pulumi.Input[str]] = None,
+                 ipv6cidr_block: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] as_path_prepend_length: The as path prepend length.
+        :param pulumi.Input[str] byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        :param pulumi.Input[str] cidr_block: The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        :param pulumi.Input[str] ipv6cidr_block: The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        if as_path_prepend_length is not None:
+            pulumi.set(__self__, "as_path_prepend_length", as_path_prepend_length)
+        if byoip_range_id is not None:
+            pulumi.set(__self__, "byoip_range_id", byoip_range_id)
+        if cidr_block is not None:
+            pulumi.set(__self__, "cidr_block", cidr_block)
+        if ipv6cidr_block is not None:
+            pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
+
+    @property
+    @pulumi.getter(name="asPathPrependLength")
+    def as_path_prepend_length(self) -> Optional[pulumi.Input[int]]:
+        """
+        The as path prepend length.
+        """
+        return pulumi.get(self, "as_path_prepend_length")
+
+    @as_path_prepend_length.setter
+    def as_path_prepend_length(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "as_path_prepend_length", value)
+
+    @property
+    @pulumi.getter(name="byoipRangeId")
+    def byoip_range_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        """
+        return pulumi.get(self, "byoip_range_id")
+
+    @byoip_range_id.setter
+    def byoip_range_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "byoip_range_id", value)
+
+    @property
+    @pulumi.getter(name="cidrBlock")
+    def cidr_block(self) -> Optional[pulumi.Input[str]]:
+        """
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        """
+        return pulumi.get(self, "cidr_block")
+
+    @cidr_block.setter
+    def cidr_block(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cidr_block", value)
+
+    @property
+    @pulumi.getter(name="ipv6cidrBlock")
+    def ipv6cidr_block(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        return pulumi.get(self, "ipv6cidr_block")
+
+    @ipv6cidr_block.setter
+    def ipv6cidr_block(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6cidr_block", value)
 
 
 if not MYPY:
@@ -20043,6 +20139,53 @@ elif False:
 
 @pulumi.input_type
 class GetBootVolumesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetByoasnsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetByoasnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetByoasnsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

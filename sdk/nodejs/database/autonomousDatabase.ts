@@ -292,6 +292,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly isDevTier!: pulumi.Output<boolean>;
     /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     */
+    public readonly isDisconnectPeer!: pulumi.Output<boolean | undefined>;
+    /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `dbWorkload` is `AJD` or `APEX` it cannot be `true`.
      */
     public readonly isFreeTier!: pulumi.Output<boolean>;
@@ -435,6 +439,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
      */
     public readonly operationsInsightsStatus!: pulumi.Output<string>;
+    /**
+     * The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     */
+    public readonly peerDbId!: pulumi.Output<string>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      */
@@ -672,7 +680,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly usedDataStorageSizeInGbs!: pulumi.Output<number>;
     /**
-     * The amount of storage that has been used, in terabytes.
+     * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      */
     public /*out*/ readonly usedDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
@@ -757,6 +765,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isDataGuardEnabled"] = state ? state.isDataGuardEnabled : undefined;
             resourceInputs["isDedicated"] = state ? state.isDedicated : undefined;
             resourceInputs["isDevTier"] = state ? state.isDevTier : undefined;
+            resourceInputs["isDisconnectPeer"] = state ? state.isDisconnectPeer : undefined;
             resourceInputs["isFreeTier"] = state ? state.isFreeTier : undefined;
             resourceInputs["isLocalDataGuardEnabled"] = state ? state.isLocalDataGuardEnabled : undefined;
             resourceInputs["isMtlsConnectionRequired"] = state ? state.isMtlsConnectionRequired : undefined;
@@ -789,6 +798,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
             resourceInputs["openMode"] = state ? state.openMode : undefined;
             resourceInputs["operationsInsightsStatus"] = state ? state.operationsInsightsStatus : undefined;
+            resourceInputs["peerDbId"] = state ? state.peerDbId : undefined;
             resourceInputs["peerDbIds"] = state ? state.peerDbIds : undefined;
             resourceInputs["permissionLevel"] = state ? state.permissionLevel : undefined;
             resourceInputs["privateEndpoint"] = state ? state.privateEndpoint : undefined;
@@ -893,6 +903,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isDataGuardEnabled"] = args ? args.isDataGuardEnabled : undefined;
             resourceInputs["isDedicated"] = args ? args.isDedicated : undefined;
             resourceInputs["isDevTier"] = args ? args.isDevTier : undefined;
+            resourceInputs["isDisconnectPeer"] = args ? args.isDisconnectPeer : undefined;
             resourceInputs["isFreeTier"] = args ? args.isFreeTier : undefined;
             resourceInputs["isLocalDataGuardEnabled"] = args ? args.isLocalDataGuardEnabled : undefined;
             resourceInputs["isMtlsConnectionRequired"] = args ? args.isMtlsConnectionRequired : undefined;
@@ -911,6 +922,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
             resourceInputs["openMode"] = args ? args.openMode : undefined;
             resourceInputs["operationsInsightsStatus"] = args ? args.operationsInsightsStatus : undefined;
+            resourceInputs["peerDbId"] = args ? args.peerDbId : undefined;
             resourceInputs["permissionLevel"] = args ? args.permissionLevel : undefined;
             resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
             resourceInputs["privateEndpointLabel"] = args ? args.privateEndpointLabel : undefined;
@@ -1252,6 +1264,10 @@ export interface AutonomousDatabaseState {
      */
     isDevTier?: pulumi.Input<boolean>;
     /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     */
+    isDisconnectPeer?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `dbWorkload` is `AJD` or `APEX` it cannot be `true`.
      */
     isFreeTier?: pulumi.Input<boolean>;
@@ -1395,6 +1411,10 @@ export interface AutonomousDatabaseState {
      * (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
      */
     operationsInsightsStatus?: pulumi.Input<string>;
+    /**
+     * The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     */
+    peerDbId?: pulumi.Input<string>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      */
@@ -1632,7 +1652,7 @@ export interface AutonomousDatabaseState {
      */
     usedDataStorageSizeInGbs?: pulumi.Input<number>;
     /**
-     * The amount of storage that has been used, in terabytes.
+     * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      */
     usedDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
@@ -1838,6 +1858,10 @@ export interface AutonomousDatabaseArgs {
      */
     isDevTier?: pulumi.Input<boolean>;
     /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     */
+    isDisconnectPeer?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `dbWorkload` is `AJD` or `APEX` it cannot be `true`.
      */
     isFreeTier?: pulumi.Input<boolean>;
@@ -1925,6 +1949,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
      */
     operationsInsightsStatus?: pulumi.Input<string>;
+    /**
+     * The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     */
+    peerDbId?: pulumi.Input<string>;
     /**
      * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */

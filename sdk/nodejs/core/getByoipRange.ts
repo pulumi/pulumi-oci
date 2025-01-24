@@ -84,6 +84,10 @@ export interface GetByoipRangeResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Information about the origin asn.
+     */
+    readonly originAsns: outputs.Core.GetByoipRangeOriginAsn[];
+    /**
      * The `ByoipRange` resource's current state.
      */
     readonly state: string;

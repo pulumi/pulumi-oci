@@ -20,6 +20,7 @@ __all__ = [
     'BootVolumeBackupSourceDetails',
     'BootVolumeBootVolumeReplica',
     'BootVolumeSourceDetails',
+    'ByoasnByoipRange',
     'CaptureFilterFlowLogCaptureFilterRule',
     'CaptureFilterFlowLogCaptureFilterRuleIcmpOptions',
     'CaptureFilterFlowLogCaptureFilterRuleTcpOptions',
@@ -222,13 +223,20 @@ __all__ = [
     'GetBootVolumesBootVolumeBootVolumeReplicaResult',
     'GetBootVolumesBootVolumeSourceDetailResult',
     'GetBootVolumesFilterResult',
+    'GetByoasnByoipRangeResult',
+    'GetByoasnsByoasnCollectionResult',
+    'GetByoasnsByoasnCollectionItemResult',
+    'GetByoasnsByoasnCollectionItemByoipRangeResult',
+    'GetByoasnsFilterResult',
     'GetByoipAllocatedRangesByoipAllocatedRangeCollectionResult',
     'GetByoipAllocatedRangesByoipAllocatedRangeCollectionItemResult',
     'GetByoipAllocatedRangesFilterResult',
     'GetByoipRangeByoipRangeVcnIpv6allocationResult',
+    'GetByoipRangeOriginAsnResult',
     'GetByoipRangesByoipRangeCollectionResult',
     'GetByoipRangesByoipRangeCollectionItemResult',
     'GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationResult',
+    'GetByoipRangesByoipRangeCollectionItemOriginAsnResult',
     'GetByoipRangesFilterResult',
     'GetCaptureFilterFlowLogCaptureFilterRuleResult',
     'GetCaptureFilterFlowLogCaptureFilterRuleIcmpOptionResult',
@@ -1027,6 +1035,84 @@ class BootVolumeSourceDetails(dict):
         The OCID of the second boot volume backup.
         """
         return pulumi.get(self, "second_backup_id")
+
+
+@pulumi.output_type
+class ByoasnByoipRange(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "asPathPrependLength":
+            suggest = "as_path_prepend_length"
+        elif key == "byoipRangeId":
+            suggest = "byoip_range_id"
+        elif key == "cidrBlock":
+            suggest = "cidr_block"
+        elif key == "ipv6cidrBlock":
+            suggest = "ipv6cidr_block"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ByoasnByoipRange. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ByoasnByoipRange.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ByoasnByoipRange.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 as_path_prepend_length: Optional[int] = None,
+                 byoip_range_id: Optional[str] = None,
+                 cidr_block: Optional[str] = None,
+                 ipv6cidr_block: Optional[str] = None):
+        """
+        :param int as_path_prepend_length: The as path prepend length.
+        :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        :param str cidr_block: The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        :param str ipv6cidr_block: The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        if as_path_prepend_length is not None:
+            pulumi.set(__self__, "as_path_prepend_length", as_path_prepend_length)
+        if byoip_range_id is not None:
+            pulumi.set(__self__, "byoip_range_id", byoip_range_id)
+        if cidr_block is not None:
+            pulumi.set(__self__, "cidr_block", cidr_block)
+        if ipv6cidr_block is not None:
+            pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
+
+    @property
+    @pulumi.getter(name="asPathPrependLength")
+    def as_path_prepend_length(self) -> Optional[int]:
+        """
+        The as path prepend length.
+        """
+        return pulumi.get(self, "as_path_prepend_length")
+
+    @property
+    @pulumi.getter(name="byoipRangeId")
+    def byoip_range_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        """
+        return pulumi.get(self, "byoip_range_id")
+
+    @property
+    @pulumi.getter(name="cidrBlock")
+    def cidr_block(self) -> Optional[str]:
+        """
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        """
+        return pulumi.get(self, "cidr_block")
+
+    @property
+    @pulumi.getter(name="ipv6cidrBlock")
+    def ipv6cidr_block(self) -> Optional[str]:
+        """
+        The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        return pulumi.get(self, "ipv6cidr_block")
 
 
 @pulumi.output_type
@@ -17568,6 +17654,286 @@ class GetBootVolumesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetByoasnByoipRangeResult(dict):
+    def __init__(__self__, *,
+                 as_path_prepend_length: int,
+                 byoip_range_id: str,
+                 cidr_block: str,
+                 ipv6cidr_block: str):
+        """
+        :param int as_path_prepend_length: The as path prepend length.
+        :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        :param str cidr_block: The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        :param str ipv6cidr_block: The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        pulumi.set(__self__, "as_path_prepend_length", as_path_prepend_length)
+        pulumi.set(__self__, "byoip_range_id", byoip_range_id)
+        pulumi.set(__self__, "cidr_block", cidr_block)
+        pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
+
+    @property
+    @pulumi.getter(name="asPathPrependLength")
+    def as_path_prepend_length(self) -> int:
+        """
+        The as path prepend length.
+        """
+        return pulumi.get(self, "as_path_prepend_length")
+
+    @property
+    @pulumi.getter(name="byoipRangeId")
+    def byoip_range_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        """
+        return pulumi.get(self, "byoip_range_id")
+
+    @property
+    @pulumi.getter(name="cidrBlock")
+    def cidr_block(self) -> str:
+        """
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        """
+        return pulumi.get(self, "cidr_block")
+
+    @property
+    @pulumi.getter(name="ipv6cidrBlock")
+    def ipv6cidr_block(self) -> str:
+        """
+        The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        return pulumi.get(self, "ipv6cidr_block")
+
+
+@pulumi.output_type
+class GetByoasnsByoasnCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetByoasnsByoasnCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetByoasnsByoasnCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetByoasnsByoasnCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 asn: str,
+                 byoip_ranges: Sequence['outputs.GetByoasnsByoasnCollectionItemByoipRangeResult'],
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 time_validated: str,
+                 validation_token: str):
+        """
+        :param str asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
+        :param Sequence['GetByoasnsByoasnCollectionItemByoipRangeArgs'] byoip_ranges: The BYOIP Ranges that has the `Byoasn` as origin.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Byoasn` resource.
+        :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+        :param str time_created: The date and time the `Byoasn` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_updated: The date and time the `Byoasn` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_validated: The date and time the `Byoasn` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param str validation_token: The validation token is an internally-generated ASCII string used in the validation process. See [Importing a Byoasn](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
+        """
+        pulumi.set(__self__, "asn", asn)
+        pulumi.set(__self__, "byoip_ranges", byoip_ranges)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_validated", time_validated)
+        pulumi.set(__self__, "validation_token", validation_token)
+
+    @property
+    @pulumi.getter
+    def asn(self) -> str:
+        """
+        The Autonomous System Number (ASN) you are importing to the Oracle cloud.
+        """
+        return pulumi.get(self, "asn")
+
+    @property
+    @pulumi.getter(name="byoipRanges")
+    def byoip_ranges(self) -> Sequence['outputs.GetByoasnsByoasnCollectionItemByoipRangeResult']:
+        """
+        The BYOIP Ranges that has the `Byoasn` as origin.
+        """
+        return pulumi.get(self, "byoip_ranges")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Byoasn` resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state name exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the `Byoasn` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the `Byoasn` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="timeValidated")
+    def time_validated(self) -> str:
+        """
+        The date and time the `Byoasn` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_validated")
+
+    @property
+    @pulumi.getter(name="validationToken")
+    def validation_token(self) -> str:
+        """
+        The validation token is an internally-generated ASCII string used in the validation process. See [Importing a Byoasn](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
+        """
+        return pulumi.get(self, "validation_token")
+
+
+@pulumi.output_type
+class GetByoasnsByoasnCollectionItemByoipRangeResult(dict):
+    def __init__(__self__, *,
+                 as_path_prepend_length: int,
+                 byoip_range_id: str,
+                 cidr_block: str,
+                 ipv6cidr_block: str):
+        """
+        :param int as_path_prepend_length: The as path prepend length.
+        :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        :param str cidr_block: The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        :param str ipv6cidr_block: The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        pulumi.set(__self__, "as_path_prepend_length", as_path_prepend_length)
+        pulumi.set(__self__, "byoip_range_id", byoip_range_id)
+        pulumi.set(__self__, "cidr_block", cidr_block)
+        pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
+
+    @property
+    @pulumi.getter(name="asPathPrependLength")
+    def as_path_prepend_length(self) -> int:
+        """
+        The as path prepend length.
+        """
+        return pulumi.get(self, "as_path_prepend_length")
+
+    @property
+    @pulumi.getter(name="byoipRangeId")
+    def byoip_range_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        """
+        return pulumi.get(self, "byoip_range_id")
+
+    @property
+    @pulumi.getter(name="cidrBlock")
+    def cidr_block(self) -> str:
+        """
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+        """
+        return pulumi.get(self, "cidr_block")
+
+    @property
+    @pulumi.getter(name="ipv6cidrBlock")
+    def ipv6cidr_block(self) -> str:
+        """
+        The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+        """
+        return pulumi.get(self, "ipv6cidr_block")
+
+
+@pulumi.output_type
+class GetByoasnsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetByoipAllocatedRangesByoipAllocatedRangeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetByoipAllocatedRangesByoipAllocatedRangeCollectionItemResult']):
@@ -17693,6 +18059,46 @@ class GetByoipRangeByoipRangeVcnIpv6allocationResult(dict):
 
 
 @pulumi.output_type
+class GetByoipRangeOriginAsnResult(dict):
+    def __init__(__self__, *,
+                 as_path_prepend_length: int,
+                 asn: str,
+                 byoasn_id: str):
+        """
+        :param int as_path_prepend_length: The as path prepend length.
+        :param str asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
+        :param str byoasn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Byoasn` resource.
+        """
+        pulumi.set(__self__, "as_path_prepend_length", as_path_prepend_length)
+        pulumi.set(__self__, "asn", asn)
+        pulumi.set(__self__, "byoasn_id", byoasn_id)
+
+    @property
+    @pulumi.getter(name="asPathPrependLength")
+    def as_path_prepend_length(self) -> int:
+        """
+        The as path prepend length.
+        """
+        return pulumi.get(self, "as_path_prepend_length")
+
+    @property
+    @pulumi.getter
+    def asn(self) -> str:
+        """
+        The Autonomous System Number (ASN) you are importing to the Oracle cloud.
+        """
+        return pulumi.get(self, "asn")
+
+    @property
+    @pulumi.getter(name="byoasnId")
+    def byoasn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Byoasn` resource.
+        """
+        return pulumi.get(self, "byoasn_id")
+
+
+@pulumi.output_type
 class GetByoipRangesByoipRangeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetByoipRangesByoipRangeCollectionItemResult']):
@@ -17714,6 +18120,7 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
                  id: str,
                  ipv6cidr_block: str,
                  lifecycle_details: str,
+                 origin_asns: Sequence['outputs.GetByoipRangesByoipRangeCollectionItemOriginAsnResult'],
                  state: str,
                  time_advertised: str,
                  time_created: str,
@@ -17730,6 +18137,7 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
         :param str ipv6cidr_block: The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
         :param str lifecycle_details: The `ByoipRange` resource's current status.
+        :param Sequence['GetByoipRangesByoipRangeCollectionItemOriginAsnArgs'] origin_asns: Information about the origin asn.
         :param str state: A filter to return only resources that match the given lifecycle state name exactly.
         :param str time_advertised: The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_created: The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -17746,6 +18154,7 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "origin_asns", origin_asns)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_advertised", time_advertised)
         pulumi.set(__self__, "time_created", time_created)
@@ -17812,6 +18221,14 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
         The `ByoipRange` resource's current status.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="originAsns")
+    def origin_asns(self) -> Sequence['outputs.GetByoipRangesByoipRangeCollectionItemOriginAsnResult']:
+        """
+        Information about the origin asn.
+        """
+        return pulumi.get(self, "origin_asns")
 
     @property
     @pulumi.getter
@@ -17927,6 +18344,46 @@ class GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationResult(di
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Vcn` resource to which the ByoipRange belongs.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetByoipRangesByoipRangeCollectionItemOriginAsnResult(dict):
+    def __init__(__self__, *,
+                 as_path_prepend_length: int,
+                 asn: str,
+                 byoasn_id: str):
+        """
+        :param int as_path_prepend_length: The as path prepend length.
+        :param str asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
+        :param str byoasn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Byoasn` resource.
+        """
+        pulumi.set(__self__, "as_path_prepend_length", as_path_prepend_length)
+        pulumi.set(__self__, "asn", asn)
+        pulumi.set(__self__, "byoasn_id", byoasn_id)
+
+    @property
+    @pulumi.getter(name="asPathPrependLength")
+    def as_path_prepend_length(self) -> int:
+        """
+        The as path prepend length.
+        """
+        return pulumi.get(self, "as_path_prepend_length")
+
+    @property
+    @pulumi.getter
+    def asn(self) -> str:
+        """
+        The Autonomous System Number (ASN) you are importing to the Oracle cloud.
+        """
+        return pulumi.get(self, "asn")
+
+    @property
+    @pulumi.getter(name="byoasnId")
+    def byoasn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Byoasn` resource.
+        """
+        return pulumi.get(self, "byoasn_id")
 
 
 @pulumi.output_type

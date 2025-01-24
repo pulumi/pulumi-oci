@@ -167,6 +167,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Information about the origin asn.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetByoipRangeOriginAsnResult> OriginAsns;
+        /// <summary>
         /// The `ByoipRange` resource's current state.
         /// </summary>
         public readonly string State;
@@ -213,6 +217,8 @@ namespace Pulumi.Oci.Core
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetByoipRangeOriginAsnResult> originAsns,
+
             string state,
 
             string timeAdvertised,
@@ -235,6 +241,7 @@ namespace Pulumi.Oci.Core
             Id = id;
             Ipv6cidrBlock = ipv6cidrBlock;
             LifecycleDetails = lifecycleDetails;
+            OriginAsns = originAsns;
             State = state;
             TimeAdvertised = timeAdvertised;
             TimeCreated = timeCreated;

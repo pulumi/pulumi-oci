@@ -860,6 +860,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isDevTier;
     }
     /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     * 
+     */
+    @Export(name="isDisconnectPeer", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> isDisconnectPeer;
+
+    /**
+     * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     * 
+     */
+    public Output<Optional<Boolean>> isDisconnectPeer() {
+        return Codegen.optional(this.isDisconnectPeer);
+    }
+    /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
      * 
      */
@@ -1336,6 +1350,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> operationsInsightsStatus() {
         return this.operationsInsightsStatus;
+    }
+    /**
+     * The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     * 
+     */
+    @Export(name="peerDbId", refs={String.class}, tree="[0]")
+    private Output<String> peerDbId;
+
+    /**
+     * @return The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     * 
+     */
+    public Output<String> peerDbId() {
+        return this.peerDbId;
     }
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
@@ -2128,14 +2156,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.usedDataStorageSizeInGbs;
     }
     /**
-     * The amount of storage that has been used, in terabytes.
+     * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * 
      */
     @Export(name="usedDataStorageSizeInTbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedDataStorageSizeInTbs;
 
     /**
-     * @return The amount of storage that has been used, in terabytes.
+     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * 
      */
     public Output<Integer> usedDataStorageSizeInTbs() {

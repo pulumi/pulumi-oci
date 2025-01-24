@@ -9,6 +9,7 @@ from .app_catalog_listing_resource_version_agreement import *
 from .app_catalog_subscription import *
 from .boot_volume import *
 from .boot_volume_backup import *
+from .byoasn import *
 from .capture_filter import *
 from .cluster_network import *
 from .compute_capacity_report import *
@@ -47,6 +48,8 @@ from .get_boot_volume_backups import *
 from .get_boot_volume_replica import *
 from .get_boot_volume_replicas import *
 from .get_boot_volumes import *
+from .get_byoasn import *
+from .get_byoasns import *
 from .get_byoip_allocated_ranges import *
 from .get_byoip_range import *
 from .get_byoip_ranges import *

@@ -98,7 +98,6 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .patchingMode(exadataInfrastructureMaintenanceWindowPatchingMode)
  *                 .preference(exadataInfrastructureMaintenanceWindowPreference)
- *                 .skipRus(exadataInfrastructureMaintenanceWindowSkipRu)
  *                 .weeksOfMonths(exadataInfrastructureMaintenanceWindowWeeksOfMonth)
  *                 .build())
  *             .multiRackConfigurationFile(exadataInfrastructureMultiRackConfigurationFile)

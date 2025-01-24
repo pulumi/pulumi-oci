@@ -83,7 +83,6 @@ namespace Pulumi.Oci.Database
     ///             },
     ///             PatchingMode = exadataInfrastructureMaintenanceWindowPatchingMode,
     ///             Preference = exadataInfrastructureMaintenanceWindowPreference,
-    ///             SkipRus = exadataInfrastructureMaintenanceWindowSkipRu,
     ///             WeeksOfMonths = exadataInfrastructureMaintenanceWindowWeeksOfMonth,
     ///         },
     ///         MultiRackConfigurationFile = exadataInfrastructureMultiRackConfigurationFile,

@@ -336,6 +336,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsDevTier;
         /// <summary>
+        /// If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        /// </summary>
+        public readonly bool IsDisconnectPeer;
+        /// <summary>
         /// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         /// </summary>
         public readonly bool IsFreeTier;
@@ -458,6 +462,10 @@ namespace Pulumi.Oci.Database
         /// Status of Operations Insights for this Autonomous Database.
         /// </summary>
         public readonly string OperationsInsightsStatus;
+        /// <summary>
+        /// The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        /// </summary>
+        public readonly string PeerDbId;
         /// <summary>
         /// The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         /// </summary>
@@ -646,7 +654,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int UsedDataStorageSizeInGbs;
         /// <summary>
-        /// The amount of storage that has been used, in terabytes.
+        /// The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         /// </summary>
         public readonly int UsedDataStorageSizeInTbs;
         /// <summary>
@@ -770,6 +778,8 @@ namespace Pulumi.Oci.Database
 
             bool isDevTier,
 
+            bool isDisconnectPeer,
+
             bool isFreeTier,
 
             bool isLocalDataGuardEnabled,
@@ -833,6 +843,8 @@ namespace Pulumi.Oci.Database
             string openMode,
 
             string operationsInsightsStatus,
+
+            string peerDbId,
 
             ImmutableArray<string> peerDbIds,
 
@@ -1003,6 +1015,7 @@ namespace Pulumi.Oci.Database
             IsDataGuardEnabled = isDataGuardEnabled;
             IsDedicated = isDedicated;
             IsDevTier = isDevTier;
+            IsDisconnectPeer = isDisconnectPeer;
             IsFreeTier = isFreeTier;
             IsLocalDataGuardEnabled = isLocalDataGuardEnabled;
             IsMtlsConnectionRequired = isMtlsConnectionRequired;
@@ -1035,6 +1048,7 @@ namespace Pulumi.Oci.Database
             OcpuCount = ocpuCount;
             OpenMode = openMode;
             OperationsInsightsStatus = operationsInsightsStatus;
+            PeerDbId = peerDbId;
             PeerDbIds = peerDbIds;
             PermissionLevel = permissionLevel;
             PrivateEndpoint = privateEndpoint;

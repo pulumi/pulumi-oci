@@ -24,6 +24,8 @@ class DatabaseArgs:
                  database: pulumi.Input['DatabaseDatabaseArgs'],
                  db_home_id: pulumi.Input[str],
                  source: pulumi.Input[str],
+                 action_trigger: Optional[pulumi.Input[int]] = None,
+                 data_guard_action: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -37,8 +39,9 @@ class DatabaseArgs:
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
+        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        :param pulumi.Input[int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        :param pulumi.Input[str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -55,6 +58,10 @@ class DatabaseArgs:
         pulumi.set(__self__, "database", database)
         pulumi.set(__self__, "db_home_id", db_home_id)
         pulumi.set(__self__, "source", source)
+        if action_trigger is not None:
+            pulumi.set(__self__, "action_trigger", action_trigger)
+        if data_guard_action is not None:
+            pulumi.set(__self__, "data_guard_action", data_guard_action)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if key_store_id is not None:
@@ -100,17 +107,40 @@ class DatabaseArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
         """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
     @source.setter
     def source(self, value: pulumi.Input[str]):
         pulumi.set(self, "source", value)
+
+    @property
+    @pulumi.getter(name="actionTrigger")
+    def action_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        """
+        return pulumi.get(self, "action_trigger")
+
+    @action_trigger.setter
+    def action_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_trigger", value)
+
+    @property
+    @pulumi.getter(name="dataGuardAction")
+    def data_guard_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "data_guard_action")
+
+    @data_guard_action.setter
+    def data_guard_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_guard_action", value)
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -202,9 +232,12 @@ class DatabaseArgs:
 @pulumi.input_type
 class _DatabaseState:
     def __init__(__self__, *,
+                 action_trigger: Optional[pulumi.Input[int]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]]] = None,
+                 data_guard_action: Optional[pulumi.Input[str]] = None,
+                 data_guard_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupArgs']]]] = None,
                  database: Optional[pulumi.Input['DatabaseDatabaseArgs']] = None,
                  database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseManagementConfigArgs']]]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
@@ -239,9 +272,15 @@ class _DatabaseState:
                  vm_cluster_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Database resources.
+        :param pulumi.Input[int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
         :param pulumi.Input[str] character_set: The character set for the database.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupArgs']]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input['DatabaseDatabaseArgs'] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -272,23 +311,25 @@ class _DatabaseState:
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         :param pulumi.Input[str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[str] state: The current state of the database.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
+        if action_trigger is not None:
+            pulumi.set(__self__, "action_trigger", action_trigger)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if data_guard_action is not None:
+            pulumi.set(__self__, "data_guard_action", data_guard_action)
+        if data_guard_groups is not None:
+            pulumi.set(__self__, "data_guard_groups", data_guard_groups)
         if database is not None:
             pulumi.set(__self__, "database", database)
         if database_management_configs is not None:
@@ -355,6 +396,18 @@ class _DatabaseState:
             pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
+    @pulumi.getter(name="actionTrigger")
+    def action_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        """
+        return pulumi.get(self, "action_trigger")
+
+    @action_trigger.setter
+    def action_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_trigger", value)
+
+    @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
         """
@@ -389,6 +442,33 @@ class _DatabaseState:
     @connection_strings.setter
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
+
+    @property
+    @pulumi.getter(name="dataGuardAction")
+    def data_guard_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "data_guard_action")
+
+    @data_guard_action.setter
+    def data_guard_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_guard_action", value)
+
+    @property
+    @pulumi.getter(name="dataGuardGroups")
+    def data_guard_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupArgs']]]]:
+        """
+        Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        """
+        return pulumi.get(self, "data_guard_groups")
+
+    @data_guard_groups.setter
+    def data_guard_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupArgs']]]]):
+        pulumi.set(self, "data_guard_groups", value)
 
     @property
     @pulumi.getter
@@ -710,11 +790,7 @@ class _DatabaseState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
         """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
@@ -788,6 +864,8 @@ class Database(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action_trigger: Optional[pulumi.Input[int]] = None,
+                 data_guard_action: Optional[pulumi.Input[str]] = None,
                  database: Optional[pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
                  db_home_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -816,6 +894,11 @@ class Database(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        :param pulumi.Input[str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -828,11 +911,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         ...
@@ -871,6 +950,8 @@ class Database(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action_trigger: Optional[pulumi.Input[int]] = None,
+                 data_guard_action: Optional[pulumi.Input[str]] = None,
                  database: Optional[pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
                  db_home_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -890,6 +971,8 @@ class Database(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DatabaseArgs.__new__(DatabaseArgs)
 
+            __props__.__dict__["action_trigger"] = action_trigger
+            __props__.__dict__["data_guard_action"] = data_guard_action
             if database is None and not opts.urn:
                 raise TypeError("Missing required property 'database'")
             __props__.__dict__["database"] = database
@@ -909,6 +992,7 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["character_set"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_strings"] = None
+            __props__.__dict__["data_guard_groups"] = None
             __props__.__dict__["database_management_configs"] = None
             __props__.__dict__["database_software_image_id"] = None
             __props__.__dict__["db_backup_configs"] = None
@@ -941,9 +1025,12 @@ class Database(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            action_trigger: Optional[pulumi.Input[int]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]]] = None,
+            data_guard_action: Optional[pulumi.Input[str]] = None,
+            data_guard_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict']]]]] = None,
             database: Optional[pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
             database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict']]]]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
@@ -983,9 +1070,15 @@ class Database(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
         :param pulumi.Input[str] character_set: The character set for the database.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -1016,11 +1109,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         :param pulumi.Input[str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[str] state: The current state of the database.
         :param pulumi.Input[str] time_created: The date and time the database was created.
@@ -1031,9 +1120,12 @@ class Database(pulumi.CustomResource):
 
         __props__ = _DatabaseState.__new__(_DatabaseState)
 
+        __props__.__dict__["action_trigger"] = action_trigger
         __props__.__dict__["character_set"] = character_set
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_strings"] = connection_strings
+        __props__.__dict__["data_guard_action"] = data_guard_action
+        __props__.__dict__["data_guard_groups"] = data_guard_groups
         __props__.__dict__["database"] = database
         __props__.__dict__["database_management_configs"] = database_management_configs
         __props__.__dict__["database_software_image_id"] = database_software_image_id
@@ -1069,6 +1161,14 @@ class Database(pulumi.CustomResource):
         return Database(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="actionTrigger")
+    def action_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        """
+        return pulumi.get(self, "action_trigger")
+
+    @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> pulumi.Output[str]:
         """
@@ -1091,6 +1191,25 @@ class Database(pulumi.CustomResource):
         The Connection strings used to connect to the Oracle Database.
         """
         return pulumi.get(self, "connection_strings")
+
+    @property
+    @pulumi.getter(name="dataGuardAction")
+    def data_guard_action(self) -> pulumi.Output[Optional[str]]:
+        """
+        Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "data_guard_action")
+
+    @property
+    @pulumi.getter(name="dataGuardGroups")
+    def data_guard_groups(self) -> pulumi.Output[Sequence['outputs.DatabaseDataGuardGroup']]:
+        """
+        Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        """
+        return pulumi.get(self, "data_guard_groups")
 
     @property
     @pulumi.getter
@@ -1308,11 +1427,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output[str]:
         """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 

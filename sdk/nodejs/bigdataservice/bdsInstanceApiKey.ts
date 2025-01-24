@@ -63,7 +63,6 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
 
     /**
      * The OCID of the cluster.
-     * <<<<<<< ours
      */
     public readonly bdsInstanceId!: pulumi.Output<string>;
     /**
@@ -80,7 +79,6 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
     public /*out*/ readonly fingerprint!: pulumi.Output<string>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * >>>>>>> theirs
      */
     public readonly keyAlias!: pulumi.Output<string>;
     /**
@@ -175,7 +173,6 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
 export interface BdsInstanceApiKeyState {
     /**
      * The OCID of the cluster.
-     * <<<<<<< ours
      */
     bdsInstanceId?: pulumi.Input<string>;
     /**
@@ -192,7 +189,6 @@ export interface BdsInstanceApiKeyState {
     fingerprint?: pulumi.Input<string>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * >>>>>>> theirs
      */
     keyAlias?: pulumi.Input<string>;
     /**
@@ -231,7 +227,6 @@ export interface BdsInstanceApiKeyState {
 export interface BdsInstanceApiKeyArgs {
     /**
      * The OCID of the cluster.
-     * <<<<<<< ours
      */
     bdsInstanceId: pulumi.Input<string>;
     /**
@@ -244,7 +239,6 @@ export interface BdsInstanceApiKeyArgs {
     domainOcid?: pulumi.Input<string>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * >>>>>>> theirs
      */
     keyAlias: pulumi.Input<string>;
     /**

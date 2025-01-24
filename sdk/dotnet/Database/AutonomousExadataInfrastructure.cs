@@ -64,7 +64,6 @@ namespace Pulumi.Oci.Database
     ///             },
     ///             PatchingMode = autonomousExadataInfrastructureMaintenanceWindowDetailsPatchingMode,
     ///             Preference = autonomousExadataInfrastructureMaintenanceWindowDetailsPreference,
-    ///             SkipRus = autonomousExadataInfrastructureMaintenanceWindowDetailsSkipRu,
     ///             WeeksOfMonths = autonomousExadataInfrastructureMaintenanceWindowDetailsWeeksOfMonth,
     ///         },
     ///         NsgIds = autonomousExadataInfrastructureNsgIds,

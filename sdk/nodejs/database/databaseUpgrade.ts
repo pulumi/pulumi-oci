@@ -66,6 +66,10 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
      */
     public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.DatabaseUpgradeConnectionString[]>;
     /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     */
+    public /*out*/ readonly dataGuardGroups!: pulumi.Output<outputs.Database.DatabaseUpgradeDataGuardGroup[]>;
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly databaseId!: pulumi.Output<string>;
@@ -195,6 +199,7 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
             resourceInputs["characterSet"] = state ? state.characterSet : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
+            resourceInputs["dataGuardGroups"] = state ? state.dataGuardGroups : undefined;
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
             resourceInputs["databaseUpgradeSourceDetails"] = state ? state.databaseUpgradeSourceDetails : undefined;
@@ -237,6 +242,7 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
             resourceInputs["characterSet"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
+            resourceInputs["dataGuardGroups"] = undefined /*out*/;
             resourceInputs["databaseSoftwareImageId"] = undefined /*out*/;
             resourceInputs["dbBackupConfigs"] = undefined /*out*/;
             resourceInputs["dbHomeId"] = undefined /*out*/;
@@ -289,6 +295,10 @@ export interface DatabaseUpgradeState {
      * The Connection strings used to connect to the Oracle Database.
      */
     connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseUpgradeConnectionString>[]>;
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     */
+    dataGuardGroups?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseUpgradeDataGuardGroup>[]>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

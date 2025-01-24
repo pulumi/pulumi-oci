@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation;
+import com.pulumi.oci.Core.outputs.GetByoipRangesByoipRangeCollectionItemOriginAsn;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +61,11 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Information about the origin asn.
+     * 
+     */
+    private List<GetByoipRangesByoipRangeCollectionItemOriginAsn> originAsns;
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
@@ -156,6 +162,13 @@ public final class GetByoipRangesByoipRangeCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return Information about the origin asn.
+     * 
+     */
+    public List<GetByoipRangesByoipRangeCollectionItemOriginAsn> originAsns() {
+        return this.originAsns;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
@@ -216,6 +229,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
         private String id;
         private String ipv6cidrBlock;
         private String lifecycleDetails;
+        private List<GetByoipRangesByoipRangeCollectionItemOriginAsn> originAsns;
         private String state;
         private String timeAdvertised;
         private String timeCreated;
@@ -234,6 +248,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
     	      this.id = defaults.id;
     	      this.ipv6cidrBlock = defaults.ipv6cidrBlock;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.originAsns = defaults.originAsns;
     	      this.state = defaults.state;
     	      this.timeAdvertised = defaults.timeAdvertised;
     	      this.timeCreated = defaults.timeCreated;
@@ -314,6 +329,17 @@ public final class GetByoipRangesByoipRangeCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder originAsns(List<GetByoipRangesByoipRangeCollectionItemOriginAsn> originAsns) {
+            if (originAsns == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "originAsns");
+            }
+            this.originAsns = originAsns;
+            return this;
+        }
+        public Builder originAsns(GetByoipRangesByoipRangeCollectionItemOriginAsn... originAsns) {
+            return originAsns(List.of(originAsns));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "state");
@@ -372,6 +398,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
             _resultValue.id = id;
             _resultValue.ipv6cidrBlock = ipv6cidrBlock;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.originAsns = originAsns;
             _resultValue.state = state;
             _resultValue.timeAdvertised = timeAdvertised;
             _resultValue.timeCreated = timeCreated;

@@ -663,6 +663,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     * 
+     */
+    @Import(name="isDisconnectPeer")
+    private @Nullable Output<Boolean> isDisconnectPeer;
+
+    /**
+     * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     * 
+     */
+    public Optional<Output<Boolean>> isDisconnectPeer() {
+        return Optional.ofNullable(this.isDisconnectPeer);
+    }
+
+    /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
      * 
      */
@@ -964,6 +979,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> operationsInsightsStatus() {
         return Optional.ofNullable(this.operationsInsightsStatus);
+    }
+
+    /**
+     * The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     * 
+     */
+    @Import(name="peerDbId")
+    private @Nullable Output<String> peerDbId;
+
+    /**
+     * @return The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     * 
+     */
+    public Optional<Output<String>> peerDbId() {
+        return Optional.ofNullable(this.peerDbId);
     }
 
     /**
@@ -1460,6 +1490,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.isDataGuardEnabled = $.isDataGuardEnabled;
         this.isDedicated = $.isDedicated;
         this.isDevTier = $.isDevTier;
+        this.isDisconnectPeer = $.isDisconnectPeer;
         this.isFreeTier = $.isFreeTier;
         this.isLocalDataGuardEnabled = $.isLocalDataGuardEnabled;
         this.isMtlsConnectionRequired = $.isMtlsConnectionRequired;
@@ -1478,6 +1509,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.ocpuCount = $.ocpuCount;
         this.openMode = $.openMode;
         this.operationsInsightsStatus = $.operationsInsightsStatus;
+        this.peerDbId = $.peerDbId;
         this.permissionLevel = $.permissionLevel;
         this.privateEndpointIp = $.privateEndpointIp;
         this.privateEndpointLabel = $.privateEndpointLabel;
@@ -2412,6 +2444,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param isDisconnectPeer If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDisconnectPeer(@Nullable Output<Boolean> isDisconnectPeer) {
+            $.isDisconnectPeer = isDisconnectPeer;
+            return this;
+        }
+
+        /**
+         * @param isDisconnectPeer If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDisconnectPeer(Boolean isDisconnectPeer) {
+            return isDisconnectPeer(Output.of(isDisconnectPeer));
+        }
+
+        /**
          * @param isFreeTier (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
          * 
          * @return builder
@@ -2842,6 +2895,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder operationsInsightsStatus(String operationsInsightsStatus) {
             return operationsInsightsStatus(Output.of(operationsInsightsStatus));
+        }
+
+        /**
+         * @param peerDbId The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbId(@Nullable Output<String> peerDbId) {
+            $.peerDbId = peerDbId;
+            return this;
+        }
+
+        /**
+         * @param peerDbId The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbId(String peerDbId) {
+            return peerDbId(Output.of(peerDbId));
         }
 
         /**

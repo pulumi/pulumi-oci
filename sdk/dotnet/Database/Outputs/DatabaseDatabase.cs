@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
-        public readonly string AdminPassword;
+        public readonly string? AdminPassword;
         /// <summary>
         /// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -32,6 +32,12 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? CharacterSet;
         /// <summary>
+        /// The administrator password of the primary database in this Data Guard association.
+        /// 
+        /// **The password MUST be the same as the primary admin password.**
+        /// </summary>
+        public readonly string? DatabaseAdminPassword;
+        /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         public readonly string? DatabaseSoftwareImageId;
@@ -42,9 +48,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
-        /// The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        /// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         /// </summary>
         public readonly string? DbUniqueName;
         /// <summary>
@@ -61,6 +67,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? FreeformTags;
+        /// <summary>
+        /// True if active Data Guard is enabled.
+        /// </summary>
+        public readonly bool? IsActiveDataGuardEnabled;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
@@ -82,13 +92,36 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
+        /// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
+        public readonly string? ProtectionMode;
+        /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string? SidPrefix;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        /// </summary>
+        public readonly string? SourceDatabaseId;
+        /// <summary>
+        /// The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+        /// </summary>
+        public readonly string? SourceTdeWalletPassword;
+        /// <summary>
         /// The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
         public readonly string? TdeWalletPassword;
+        /// <summary>
+        /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        /// * MAXIMUM_PERFORMANCE - ASYNC
+        /// * MAXIMUM_PROTECTION - SYNC
+        /// 
+        /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+        /// 
+        /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        /// </summary>
+        public readonly string? TransportType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
@@ -96,7 +129,7 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private DatabaseDatabase(
-            string adminPassword,
+            string? adminPassword,
 
             string? backupId,
 
@@ -104,11 +137,13 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? characterSet,
 
+            string? databaseAdminPassword,
+
             string? databaseSoftwareImageId,
 
             Outputs.DatabaseDatabaseDbBackupConfig? dbBackupConfig,
 
-            string dbName,
+            string? dbName,
 
             string? dbUniqueName,
 
@@ -117,6 +152,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableDictionary<string, string>? definedTags,
 
             ImmutableDictionary<string, string>? freeformTags,
+
+            bool? isActiveDataGuardEnabled,
 
             string? kmsKeyId,
 
@@ -128,9 +165,17 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> pluggableDatabases,
 
+            string? protectionMode,
+
             string? sidPrefix,
 
+            string? sourceDatabaseId,
+
+            string? sourceTdeWalletPassword,
+
             string? tdeWalletPassword,
+
+            string? transportType,
 
             string? vaultId)
         {
@@ -138,6 +183,7 @@ namespace Pulumi.Oci.Database.Outputs
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;
+            DatabaseAdminPassword = databaseAdminPassword;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbBackupConfig = dbBackupConfig;
             DbName = dbName;
@@ -145,13 +191,18 @@ namespace Pulumi.Oci.Database.Outputs
             DbWorkload = dbWorkload;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
+            IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             NcharacterSet = ncharacterSet;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
+            ProtectionMode = protectionMode;
             SidPrefix = sidPrefix;
+            SourceDatabaseId = sourceDatabaseId;
+            SourceTdeWalletPassword = sourceTdeWalletPassword;
             TdeWalletPassword = tdeWalletPassword;
+            TransportType = transportType;
             VaultId = vaultId;
         }
     }

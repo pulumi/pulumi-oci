@@ -36,6 +36,10 @@ import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
 import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasPlainArgs;
 import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
 import com.pulumi.oci.Core.inputs.GetBootVolumesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetByoasnArgs;
+import com.pulumi.oci.Core.inputs.GetByoasnPlainArgs;
+import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+import com.pulumi.oci.Core.inputs.GetByoasnsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
 import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesPlainArgs;
 import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
@@ -326,6 +330,8 @@ import com.pulumi.oci.Core.outputs.GetBootVolumeReplicaResult;
 import com.pulumi.oci.Core.outputs.GetBootVolumeReplicasResult;
 import com.pulumi.oci.Core.outputs.GetBootVolumeResult;
 import com.pulumi.oci.Core.outputs.GetBootVolumesResult;
+import com.pulumi.oci.Core.outputs.GetByoasnResult;
+import com.pulumi.oci.Core.outputs.GetByoasnsResult;
 import com.pulumi.oci.Core.outputs.GetByoipAllocatedRangesResult;
 import com.pulumi.oci.Core.outputs.GetByoipRangeResult;
 import com.pulumi.oci.Core.outputs.GetByoipRangesResult;
@@ -4040,6 +4046,461 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain(GetBootVolumesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumes:getBootVolumes", TypeShape.of(GetBootVolumesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byoasn resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the `Byoasn` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
+     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoasnResult> getByoasn(GetByoasnArgs args) {
+        return getByoasn(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Byoasn resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the `Byoasn` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
+     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetByoasnResult> getByoasnPlain(GetByoasnPlainArgs args) {
+        return getByoasnPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Byoasn resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the `Byoasn` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
+     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoasnResult> getByoasn(GetByoasnArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoasn:getByoasn", TypeShape.of(GetByoasnResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byoasn resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the `Byoasn` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
+     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoasnResult> getByoasn(GetByoasnArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoasn:getByoasn", TypeShape.of(GetByoasnResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byoasn resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the `Byoasn` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasn = CoreFunctions.getByoasn(GetByoasnArgs.builder()
+     *             .byoasnId(testByoasnOciCoreByoasn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetByoasnResult> getByoasnPlain(GetByoasnPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getByoasn:getByoasn", TypeShape.of(GetByoasnResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `Byoasn` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args) {
+        return getByoasns(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `Byoasn` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetByoasnsResult> getByoasnsPlain(GetByoasnsPlainArgs args) {
+        return getByoasnsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `Byoasn` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `Byoasn` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the `Byoasn` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetByoasnsResult> getByoasnsPlain(GetByoasnsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.

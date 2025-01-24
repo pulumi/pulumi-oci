@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetByoipRangeByoipRangeVcnIpv6allocation;
+import com.pulumi.oci.Core.outputs.GetByoipRangeOriginAsn;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -63,6 +64,11 @@ public final class GetByoipRangeResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Information about the origin asn.
+     * 
+     */
+    private List<GetByoipRangeOriginAsn> originAsns;
     /**
      * @return The `ByoipRange` resource&#39;s current state.
      * 
@@ -166,6 +172,13 @@ public final class GetByoipRangeResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Information about the origin asn.
+     * 
+     */
+    public List<GetByoipRangeOriginAsn> originAsns() {
+        return this.originAsns;
+    }
+    /**
      * @return The `ByoipRange` resource&#39;s current state.
      * 
      */
@@ -227,6 +240,7 @@ public final class GetByoipRangeResult {
         private String id;
         private String ipv6cidrBlock;
         private String lifecycleDetails;
+        private List<GetByoipRangeOriginAsn> originAsns;
         private String state;
         private String timeAdvertised;
         private String timeCreated;
@@ -246,6 +260,7 @@ public final class GetByoipRangeResult {
     	      this.id = defaults.id;
     	      this.ipv6cidrBlock = defaults.ipv6cidrBlock;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.originAsns = defaults.originAsns;
     	      this.state = defaults.state;
     	      this.timeAdvertised = defaults.timeAdvertised;
     	      this.timeCreated = defaults.timeCreated;
@@ -338,6 +353,17 @@ public final class GetByoipRangeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder originAsns(List<GetByoipRangeOriginAsn> originAsns) {
+            if (originAsns == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "originAsns");
+            }
+            this.originAsns = originAsns;
+            return this;
+        }
+        public Builder originAsns(GetByoipRangeOriginAsn... originAsns) {
+            return originAsns(List.of(originAsns));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetByoipRangeResult", "state");
@@ -397,6 +423,7 @@ public final class GetByoipRangeResult {
             _resultValue.id = id;
             _resultValue.ipv6cidrBlock = ipv6cidrBlock;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.originAsns = originAsns;
             _resultValue.state = state;
             _resultValue.timeAdvertised = timeAdvertised;
             _resultValue.timeCreated = timeCreated;

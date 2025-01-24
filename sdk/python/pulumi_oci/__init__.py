@@ -1238,6 +1238,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Core/byoasn",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/byoasn:Byoasn": "Byoasn"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Core/captureFilter",
   "fqn": "pulumi_oci.core",
   "classes": {

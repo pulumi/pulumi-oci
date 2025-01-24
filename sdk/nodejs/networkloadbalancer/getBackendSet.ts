@@ -37,13 +37,17 @@ export interface GetBackendSetArgs {
  * A collection of values returned by getBackendSet.
  */
 export interface GetBackendSetResult {
+    /**
+     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     */
+    readonly areOperationallyActiveBackendsPreferred: boolean;
     readonly backendSetName: string;
     /**
      * An array of backends.
      */
     readonly backends: outputs.NetworkLoadBalancer.GetBackendSetBackend[];
     /**
-     * The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
      */
     readonly healthCheckers: outputs.NetworkLoadBalancer.GetBackendSetHealthChecker[];
     readonly id: string;
@@ -59,6 +63,10 @@ export interface GetBackendSetResult {
      * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
      */
     readonly isInstantFailoverEnabled: boolean;
+    /**
+     * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     */
+    readonly isInstantFailoverTcpResetEnabled: boolean;
     /**
      * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */

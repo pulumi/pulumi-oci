@@ -72,7 +72,6 @@ import javax.annotation.Nullable;
 public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the cluster.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
@@ -80,7 +79,6 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The OCID of the cluster.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> bdsInstanceId() {
@@ -130,7 +128,6 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
     }
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Export(name="keyAlias", refs={String.class}, tree="[0]")
@@ -138,7 +135,6 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
 
     /**
      * @return User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<String> keyAlias() {

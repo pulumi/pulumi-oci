@@ -56,6 +56,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly int MigrateTrigger;
         public readonly int NodeCount;
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
@@ -159,6 +160,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            int migrateTrigger,
+
             int nodeCount,
 
             ImmutableArray<string> nsgIds,
@@ -224,6 +227,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            MigrateTrigger = migrateTrigger;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
             PeerDataGuardAssociationId = peerDataGuardAssociationId;

@@ -12010,6 +12010,25 @@ export namespace Core {
         type: pulumi.Input<string>;
     }
 
+    export interface ByoasnByoipRange {
+        /**
+         * The as path prepend length.
+         */
+        asPathPrependLength?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+         */
+        byoipRangeId?: pulumi.Input<string>;
+        /**
+         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+         */
+        cidrBlock?: pulumi.Input<string>;
+        /**
+         * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+         */
+        ipv6cidrBlock?: pulumi.Input<string>;
+    }
+
     export interface CaptureFilterFlowLogCaptureFilterRule {
         /**
          * (Updatable) Traffic to this CIDR will be captured in the flow log.
@@ -13018,6 +13037,18 @@ export namespace Core {
     }
 
     export interface GetBootVolumesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetByoasnsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetByoasnsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -24317,7 +24348,7 @@ export namespace Database {
          */
         preference?: pulumi.Input<string>;
         /**
-         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
          */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
@@ -24378,7 +24409,7 @@ export namespace Database {
          */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
-         * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
         weeksOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
     }
@@ -24956,9 +24987,6 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25013,9 +25041,6 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25075,9 +25100,6 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25123,9 +25145,6 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25387,9 +25406,6 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25557,11 +25573,64 @@ export namespace Database {
         cdbIpDefault?: pulumi.Input<string>;
     }
 
+    export interface DatabaseDataGuardGroup {
+        /**
+         * List of Data Guard members, representing each database that is part of Data Guard.
+         */
+        members?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDataGuardGroupMember>[]>;
+        /**
+         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseDataGuardGroupMember {
+        /**
+         * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+         */
+        databaseId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+         */
+        dbSystemId?: pulumi.Input<string>;
+        /**
+         * True if active Data Guard is enabled.
+         */
+        isActiveDataGuardEnabled?: pulumi.Input<boolean>;
+        /**
+         * The role of the reporting database in this Data Guard association.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+         */
+        transportLag?: pulumi.Input<string>;
+        /**
+         * The date and time when last redo transport has been done.
+         */
+        transportLagRefresh?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         */
+        transportType?: pulumi.Input<string>;
+    }
+
     export interface DatabaseDatabase {
         /**
          * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
          */
-        adminPassword: pulumi.Input<string>;
+        adminPassword?: pulumi.Input<string>;
         /**
          * The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -25577,6 +25646,12 @@ export namespace Database {
          */
         characterSet?: pulumi.Input<string>;
         /**
+         * The administrator password of the primary database in this Data Guard association.
+         *
+         * **The password MUST be the same as the primary admin password.**
+         */
+        databaseAdminPassword?: pulumi.Input<string>;
+        /**
          * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         databaseSoftwareImageId?: pulumi.Input<string>;
@@ -25587,9 +25662,9 @@ export namespace Database {
         /**
          * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          */
-        dbName: pulumi.Input<string>;
+        dbName?: pulumi.Input<string>;
         /**
-         * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+         * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
          */
         dbUniqueName?: pulumi.Input<string>;
         /**
@@ -25606,6 +25681,10 @@ export namespace Database {
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * True if active Data Guard is enabled.
+         */
+        isActiveDataGuardEnabled?: pulumi.Input<boolean>;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -25627,13 +25706,36 @@ export namespace Database {
          */
         pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix?: pulumi.Input<string>;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+         */
+        sourceDatabaseId?: pulumi.Input<string>;
+        /**
+         * The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+         */
+        sourceTdeWalletPassword?: pulumi.Input<string>;
+        /**
          * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
          */
         tdeWalletPassword?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         *
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         *
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         */
+        transportType?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
@@ -25766,6 +25868,59 @@ export namespace Database {
          * IP based CDB Connection String.
          */
         cdbIpDefault?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseUpgradeDataGuardGroup {
+        /**
+         * List of Data Guard members, representing each database that is part of Data Guard.
+         */
+        members?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseUpgradeDataGuardGroupMember>[]>;
+        /**
+         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseUpgradeDataGuardGroupMember {
+        /**
+         * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        databaseId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+         */
+        dbSystemId?: pulumi.Input<string>;
+        /**
+         * True if active Data Guard is enabled.
+         */
+        isActiveDataGuardEnabled?: pulumi.Input<boolean>;
+        /**
+         * The role of the reporting database in this Data Guard association.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+         */
+        transportLag?: pulumi.Input<string>;
+        /**
+         * The date and time when last redo transport has been done.
+         */
+        transportLagRefresh?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         */
+        transportType?: pulumi.Input<string>;
     }
 
     export interface DatabaseUpgradeDatabaseUpgradeSourceDetails {
@@ -26342,9 +26497,6 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -26399,9 +26551,6 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -26676,9 +26825,6 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
-        /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -74187,7 +74333,7 @@ export namespace NetworkLoadBalancer {
          */
         targetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }
@@ -74429,7 +74575,7 @@ export namespace NetworkLoadBalancer {
          */
         targetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }

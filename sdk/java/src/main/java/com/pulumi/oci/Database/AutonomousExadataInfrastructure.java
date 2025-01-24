@@ -74,7 +74,6 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .patchingMode(autonomousExadataInfrastructureMaintenanceWindowDetailsPatchingMode)
  *                 .preference(autonomousExadataInfrastructureMaintenanceWindowDetailsPreference)
- *                 .skipRus(autonomousExadataInfrastructureMaintenanceWindowDetailsSkipRu)
  *                 .weeksOfMonths(autonomousExadataInfrastructureMaintenanceWindowDetailsWeeksOfMonth)
  *                 .build())
  *             .nsgIds(autonomousExadataInfrastructureNsgIds)

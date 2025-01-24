@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DatabaseArgs;
 import com.pulumi.oci.Database.inputs.DatabaseState;
 import com.pulumi.oci.Database.outputs.DatabaseConnectionString;
+import com.pulumi.oci.Database.outputs.DatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.DatabaseDatabase;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDbBackupConfig;
@@ -29,82 +30,6 @@ import javax.annotation.Nullable;
  * 
  * **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Database.Database;
- * import com.pulumi.oci.Database.DatabaseArgs;
- * import com.pulumi.oci.Database.inputs.DatabaseDatabaseArgs;
- * import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testDatabase = new Database("testDatabase", DatabaseArgs.builder()
- *             .database(DatabaseDatabaseArgs.builder()
- *                 .adminPassword(databaseDatabaseAdminPassword)
- *                 .dbName(databaseDatabaseDbName)
- *                 .backupId(testBackup.id())
- *                 .backupTdePassword(databaseDatabaseBackupTdePassword)
- *                 .characterSet(databaseDatabaseCharacterSet)
- *                 .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
- *                 .dbBackupConfig(DatabaseDatabaseDbBackupConfigArgs.builder()
- *                     .autoBackupEnabled(databaseDatabaseDbBackupConfigAutoBackupEnabled)
- *                     .autoBackupWindow(databaseDatabaseDbBackupConfigAutoBackupWindow)
- *                     .autoFullBackupDay(databaseDatabaseDbBackupConfigAutoFullBackupDay)
- *                     .autoFullBackupWindow(databaseDatabaseDbBackupConfigAutoFullBackupWindow)
- *                     .backupDeletionPolicy(databaseDatabaseDbBackupConfigBackupDeletionPolicy)
- *                     .backupDestinationDetails(DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs.builder()
- *                         .dbrsPolicyId(testPolicy.id())
- *                         .id(databaseDatabaseDbBackupConfigBackupDestinationDetailsId)
- *                         .type(databaseDatabaseDbBackupConfigBackupDestinationDetailsType)
- *                         .build())
- *                     .recoveryWindowInDays(databaseDatabaseDbBackupConfigRecoveryWindowInDays)
- *                     .runImmediateFullBackup(databaseDatabaseDbBackupConfigRunImmediateFullBackup)
- *                     .build())
- *                 .dbUniqueName(databaseDatabaseDbUniqueName)
- *                 .dbWorkload(databaseDatabaseDbWorkload)
- *                 .definedTags(databaseDatabaseDefinedTags)
- *                 .freeformTags(databaseDatabaseFreeformTags)
- *                 .keyStoreId(testKeyStore.id())
- *                 .kmsKeyId(testKey.id())
- *                 .kmsKeyVersionId(testKeyVersion.id())
- *                 .ncharacterSet(databaseDatabaseNcharacterSet)
- *                 .pdbName(databaseDatabasePdbName)
- *                 .pluggableDatabases(databaseDatabasePluggableDatabases)
- *                 .sidPrefix(databaseDatabaseSidPrefix)
- *                 .tdeWalletPassword(databaseDatabaseTdeWalletPassword)
- *                 .vaultId(testVault.id())
- *                 .build())
- *             .dbHomeId(testDbHome.id())
- *             .source(databaseSource)
- *             .dbVersion(databaseDbVersion)
- *             .kmsKeyId(testKey.id())
- *             .kmsKeyVersionId(testKeyVersion.id())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * Databases can be imported using the `id`, e.g.
@@ -116,6 +41,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
+    /**
+     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     * 
+     */
+    @Export(name="actionTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> actionTrigger;
+
+    /**
+     * @return (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> actionTrigger() {
+        return Codegen.optional(this.actionTrigger);
+    }
     /**
      * The character set for the database.
      * 
@@ -157,6 +96,40 @@ public class Database extends com.pulumi.resources.CustomResource {
      */
     public Output<List<DatabaseConnectionString>> connectionStrings() {
         return this.connectionStrings;
+    }
+    /**
+     * Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="dataGuardAction", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> dataGuardAction;
+
+    /**
+     * @return Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<String>> dataGuardAction() {
+        return Codegen.optional(this.dataGuardAction);
+    }
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    @Export(name="dataGuardGroups", refs={List.class,DatabaseDataGuardGroup.class}, tree="[0,1]")
+    private Output<List<DatabaseDataGuardGroup>> dataGuardGroups;
+
+    /**
+     * @return Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    public Output<List<DatabaseDataGuardGroup>> dataGuardGroups() {
+        return this.dataGuardGroups;
     }
     /**
      * (Updatable) Details for creating a database.
@@ -531,20 +504,14 @@ public class Database extends com.pulumi.resources.CustomResource {
         return this.sidPrefix;
     }
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
-     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      * 
      */
     public Output<String> source() {

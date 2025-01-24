@@ -13,6 +13,1248 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstanceDevicesFilter struct {
+	// A filter to return only devices that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInstanceDevicesFilterInput is an input type that accepts GetInstanceDevicesFilterArgs and GetInstanceDevicesFilterOutput values.
+// You can construct a concrete instance of `GetInstanceDevicesFilterInput` via:
+//
+//	GetInstanceDevicesFilterArgs{...}
+type GetInstanceDevicesFilterInput interface {
+	pulumi.Input
+
+	ToGetInstanceDevicesFilterOutput() GetInstanceDevicesFilterOutput
+	ToGetInstanceDevicesFilterOutputWithContext(context.Context) GetInstanceDevicesFilterOutput
+}
+
+type GetInstanceDevicesFilterArgs struct {
+	// A filter to return only devices that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInstanceDevicesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceDevicesFilter)(nil)).Elem()
+}
+
+func (i GetInstanceDevicesFilterArgs) ToGetInstanceDevicesFilterOutput() GetInstanceDevicesFilterOutput {
+	return i.ToGetInstanceDevicesFilterOutputWithContext(context.Background())
+}
+
+func (i GetInstanceDevicesFilterArgs) ToGetInstanceDevicesFilterOutputWithContext(ctx context.Context) GetInstanceDevicesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceDevicesFilterOutput)
+}
+
+// GetInstanceDevicesFilterArrayInput is an input type that accepts GetInstanceDevicesFilterArray and GetInstanceDevicesFilterArrayOutput values.
+// You can construct a concrete instance of `GetInstanceDevicesFilterArrayInput` via:
+//
+//	GetInstanceDevicesFilterArray{ GetInstanceDevicesFilterArgs{...} }
+type GetInstanceDevicesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceDevicesFilterArrayOutput() GetInstanceDevicesFilterArrayOutput
+	ToGetInstanceDevicesFilterArrayOutputWithContext(context.Context) GetInstanceDevicesFilterArrayOutput
+}
+
+type GetInstanceDevicesFilterArray []GetInstanceDevicesFilterInput
+
+func (GetInstanceDevicesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceDevicesFilter)(nil)).Elem()
+}
+
+func (i GetInstanceDevicesFilterArray) ToGetInstanceDevicesFilterArrayOutput() GetInstanceDevicesFilterArrayOutput {
+	return i.ToGetInstanceDevicesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceDevicesFilterArray) ToGetInstanceDevicesFilterArrayOutputWithContext(ctx context.Context) GetInstanceDevicesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceDevicesFilterArrayOutput)
+}
+
+type GetInstanceDevicesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceDevicesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceDevicesFilter)(nil)).Elem()
+}
+
+func (o GetInstanceDevicesFilterOutput) ToGetInstanceDevicesFilterOutput() GetInstanceDevicesFilterOutput {
+	return o
+}
+
+func (o GetInstanceDevicesFilterOutput) ToGetInstanceDevicesFilterOutputWithContext(ctx context.Context) GetInstanceDevicesFilterOutput {
+	return o
+}
+
+// A filter to return only devices that match the given name exactly.
+func (o GetInstanceDevicesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDevicesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceDevicesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstanceDevicesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInstanceDevicesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceDevicesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInstanceDevicesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceDevicesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceDevicesFilter)(nil)).Elem()
+}
+
+func (o GetInstanceDevicesFilterArrayOutput) ToGetInstanceDevicesFilterArrayOutput() GetInstanceDevicesFilterArrayOutput {
+	return o
+}
+
+func (o GetInstanceDevicesFilterArrayOutput) ToGetInstanceDevicesFilterArrayOutputWithContext(ctx context.Context) GetInstanceDevicesFilterArrayOutput {
+	return o
+}
+
+func (o GetInstanceDevicesFilterArrayOutput) Index(i pulumi.IntInput) GetInstanceDevicesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceDevicesFilter {
+		return vs[0].([]GetInstanceDevicesFilter)[vs[1].(int)]
+	}).(GetInstanceDevicesFilterOutput)
+}
+
+type GetInstanceInstanceOption struct {
+	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+	AreLegacyImdsEndpointsDisabled bool `pulumi:"areLegacyImdsEndpointsDisabled"`
+}
+
+// GetInstanceInstanceOptionInput is an input type that accepts GetInstanceInstanceOptionArgs and GetInstanceInstanceOptionOutput values.
+// You can construct a concrete instance of `GetInstanceInstanceOptionInput` via:
+//
+//	GetInstanceInstanceOptionArgs{...}
+type GetInstanceInstanceOptionInput interface {
+	pulumi.Input
+
+	ToGetInstanceInstanceOptionOutput() GetInstanceInstanceOptionOutput
+	ToGetInstanceInstanceOptionOutputWithContext(context.Context) GetInstanceInstanceOptionOutput
+}
+
+type GetInstanceInstanceOptionArgs struct {
+	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+	AreLegacyImdsEndpointsDisabled pulumi.BoolInput `pulumi:"areLegacyImdsEndpointsDisabled"`
+}
+
+func (GetInstanceInstanceOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceInstanceOption)(nil)).Elem()
+}
+
+func (i GetInstanceInstanceOptionArgs) ToGetInstanceInstanceOptionOutput() GetInstanceInstanceOptionOutput {
+	return i.ToGetInstanceInstanceOptionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceInstanceOptionArgs) ToGetInstanceInstanceOptionOutputWithContext(ctx context.Context) GetInstanceInstanceOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceInstanceOptionOutput)
+}
+
+// GetInstanceInstanceOptionArrayInput is an input type that accepts GetInstanceInstanceOptionArray and GetInstanceInstanceOptionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceInstanceOptionArrayInput` via:
+//
+//	GetInstanceInstanceOptionArray{ GetInstanceInstanceOptionArgs{...} }
+type GetInstanceInstanceOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceInstanceOptionArrayOutput() GetInstanceInstanceOptionArrayOutput
+	ToGetInstanceInstanceOptionArrayOutputWithContext(context.Context) GetInstanceInstanceOptionArrayOutput
+}
+
+type GetInstanceInstanceOptionArray []GetInstanceInstanceOptionInput
+
+func (GetInstanceInstanceOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceInstanceOption)(nil)).Elem()
+}
+
+func (i GetInstanceInstanceOptionArray) ToGetInstanceInstanceOptionArrayOutput() GetInstanceInstanceOptionArrayOutput {
+	return i.ToGetInstanceInstanceOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceInstanceOptionArray) ToGetInstanceInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceInstanceOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceInstanceOptionArrayOutput)
+}
+
+type GetInstanceInstanceOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceInstanceOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceInstanceOption)(nil)).Elem()
+}
+
+func (o GetInstanceInstanceOptionOutput) ToGetInstanceInstanceOptionOutput() GetInstanceInstanceOptionOutput {
+	return o
+}
+
+func (o GetInstanceInstanceOptionOutput) ToGetInstanceInstanceOptionOutputWithContext(ctx context.Context) GetInstanceInstanceOptionOutput {
+	return o
+}
+
+// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+func (o GetInstanceInstanceOptionOutput) AreLegacyImdsEndpointsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceInstanceOption) bool { return v.AreLegacyImdsEndpointsDisabled }).(pulumi.BoolOutput)
+}
+
+type GetInstanceInstanceOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceInstanceOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceInstanceOption)(nil)).Elem()
+}
+
+func (o GetInstanceInstanceOptionArrayOutput) ToGetInstanceInstanceOptionArrayOutput() GetInstanceInstanceOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceInstanceOptionArrayOutput) ToGetInstanceInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceInstanceOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceInstanceOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceInstanceOption {
+		return vs[0].([]GetInstanceInstanceOption)[vs[1].(int)]
+	}).(GetInstanceInstanceOptionOutput)
+}
+
+type GetInstanceLaunchOption struct {
+	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	BootVolumeType string `pulumi:"bootVolumeType"`
+	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+	Firmware string `pulumi:"firmware"`
+	// Whether to enable consistent volume naming feature. Defaults to false.
+	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	NetworkType string `pulumi:"networkType"`
+	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
+}
+
+// GetInstanceLaunchOptionInput is an input type that accepts GetInstanceLaunchOptionArgs and GetInstanceLaunchOptionOutput values.
+// You can construct a concrete instance of `GetInstanceLaunchOptionInput` via:
+//
+//	GetInstanceLaunchOptionArgs{...}
+type GetInstanceLaunchOptionInput interface {
+	pulumi.Input
+
+	ToGetInstanceLaunchOptionOutput() GetInstanceLaunchOptionOutput
+	ToGetInstanceLaunchOptionOutputWithContext(context.Context) GetInstanceLaunchOptionOutput
+}
+
+type GetInstanceLaunchOptionArgs struct {
+	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
+	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+	Firmware pulumi.StringInput `pulumi:"firmware"`
+	// Whether to enable consistent volume naming feature. Defaults to false.
+	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
+}
+
+func (GetInstanceLaunchOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLaunchOption)(nil)).Elem()
+}
+
+func (i GetInstanceLaunchOptionArgs) ToGetInstanceLaunchOptionOutput() GetInstanceLaunchOptionOutput {
+	return i.ToGetInstanceLaunchOptionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLaunchOptionArgs) ToGetInstanceLaunchOptionOutputWithContext(ctx context.Context) GetInstanceLaunchOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLaunchOptionOutput)
+}
+
+// GetInstanceLaunchOptionArrayInput is an input type that accepts GetInstanceLaunchOptionArray and GetInstanceLaunchOptionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceLaunchOptionArrayInput` via:
+//
+//	GetInstanceLaunchOptionArray{ GetInstanceLaunchOptionArgs{...} }
+type GetInstanceLaunchOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceLaunchOptionArrayOutput() GetInstanceLaunchOptionArrayOutput
+	ToGetInstanceLaunchOptionArrayOutputWithContext(context.Context) GetInstanceLaunchOptionArrayOutput
+}
+
+type GetInstanceLaunchOptionArray []GetInstanceLaunchOptionInput
+
+func (GetInstanceLaunchOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLaunchOption)(nil)).Elem()
+}
+
+func (i GetInstanceLaunchOptionArray) ToGetInstanceLaunchOptionArrayOutput() GetInstanceLaunchOptionArrayOutput {
+	return i.ToGetInstanceLaunchOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLaunchOptionArray) ToGetInstanceLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceLaunchOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLaunchOptionArrayOutput)
+}
+
+type GetInstanceLaunchOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLaunchOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLaunchOption)(nil)).Elem()
+}
+
+func (o GetInstanceLaunchOptionOutput) ToGetInstanceLaunchOptionOutput() GetInstanceLaunchOptionOutput {
+	return o
+}
+
+func (o GetInstanceLaunchOptionOutput) ToGetInstanceLaunchOptionOutputWithContext(ctx context.Context) GetInstanceLaunchOptionOutput {
+	return o
+}
+
+// Emulation type for the boot volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+func (o GetInstanceLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.BootVolumeType }).(pulumi.StringOutput)
+}
+
+// Firmware used to boot VM. Select the option that matches your operating system.
+// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+func (o GetInstanceLaunchOptionOutput) Firmware() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.Firmware }).(pulumi.StringOutput)
+}
+
+// Whether to enable consistent volume naming feature. Defaults to false.
+func (o GetInstanceLaunchOptionOutput) IsConsistentVolumeNamingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) bool { return v.IsConsistentVolumeNamingEnabled }).(pulumi.BoolOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+func (o GetInstanceLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
+// Emulation type for the physical network interface card (NIC).
+// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+func (o GetInstanceLaunchOptionOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Emulation type for volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+func (o GetInstanceLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.RemoteDataVolumeType }).(pulumi.StringOutput)
+}
+
+type GetInstanceLaunchOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLaunchOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLaunchOption)(nil)).Elem()
+}
+
+func (o GetInstanceLaunchOptionArrayOutput) ToGetInstanceLaunchOptionArrayOutput() GetInstanceLaunchOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceLaunchOptionArrayOutput) ToGetInstanceLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceLaunchOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceLaunchOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceLaunchOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceLaunchOption {
+		return vs[0].([]GetInstanceLaunchOption)[vs[1].(int)]
+	}).(GetInstanceLaunchOptionOutput)
+}
+
+type GetInstanceLaunchVolumeAttachment struct {
+	Device string `pulumi:"device"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName                  string `pulumi:"displayName"`
+	EncryptionInTransitType      string `pulumi:"encryptionInTransitType"`
+	IsAgentAutoIscsiLoginEnabled bool   `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool                                                        `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsReadOnly                     bool                                                        `pulumi:"isReadOnly"`
+	IsShareable                    bool                                                        `pulumi:"isShareable"`
+	LaunchCreateVolumeDetails      []GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail `pulumi:"launchCreateVolumeDetails"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type     string `pulumi:"type"`
+	UseChap  bool   `pulumi:"useChap"`
+	VolumeId string `pulumi:"volumeId"`
+}
+
+// GetInstanceLaunchVolumeAttachmentInput is an input type that accepts GetInstanceLaunchVolumeAttachmentArgs and GetInstanceLaunchVolumeAttachmentOutput values.
+// You can construct a concrete instance of `GetInstanceLaunchVolumeAttachmentInput` via:
+//
+//	GetInstanceLaunchVolumeAttachmentArgs{...}
+type GetInstanceLaunchVolumeAttachmentInput interface {
+	pulumi.Input
+
+	ToGetInstanceLaunchVolumeAttachmentOutput() GetInstanceLaunchVolumeAttachmentOutput
+	ToGetInstanceLaunchVolumeAttachmentOutputWithContext(context.Context) GetInstanceLaunchVolumeAttachmentOutput
+}
+
+type GetInstanceLaunchVolumeAttachmentArgs struct {
+	Device pulumi.StringInput `pulumi:"device"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName                  pulumi.StringInput `pulumi:"displayName"`
+	EncryptionInTransitType      pulumi.StringInput `pulumi:"encryptionInTransitType"`
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolInput   `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput                                                    `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsReadOnly                     pulumi.BoolInput                                                    `pulumi:"isReadOnly"`
+	IsShareable                    pulumi.BoolInput                                                    `pulumi:"isShareable"`
+	LaunchCreateVolumeDetails      GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput `pulumi:"launchCreateVolumeDetails"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type     pulumi.StringInput `pulumi:"type"`
+	UseChap  pulumi.BoolInput   `pulumi:"useChap"`
+	VolumeId pulumi.StringInput `pulumi:"volumeId"`
+}
+
+func (GetInstanceLaunchVolumeAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (i GetInstanceLaunchVolumeAttachmentArgs) ToGetInstanceLaunchVolumeAttachmentOutput() GetInstanceLaunchVolumeAttachmentOutput {
+	return i.ToGetInstanceLaunchVolumeAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLaunchVolumeAttachmentArgs) ToGetInstanceLaunchVolumeAttachmentOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLaunchVolumeAttachmentOutput)
+}
+
+// GetInstanceLaunchVolumeAttachmentArrayInput is an input type that accepts GetInstanceLaunchVolumeAttachmentArray and GetInstanceLaunchVolumeAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetInstanceLaunchVolumeAttachmentArrayInput` via:
+//
+//	GetInstanceLaunchVolumeAttachmentArray{ GetInstanceLaunchVolumeAttachmentArgs{...} }
+type GetInstanceLaunchVolumeAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceLaunchVolumeAttachmentArrayOutput() GetInstanceLaunchVolumeAttachmentArrayOutput
+	ToGetInstanceLaunchVolumeAttachmentArrayOutputWithContext(context.Context) GetInstanceLaunchVolumeAttachmentArrayOutput
+}
+
+type GetInstanceLaunchVolumeAttachmentArray []GetInstanceLaunchVolumeAttachmentInput
+
+func (GetInstanceLaunchVolumeAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (i GetInstanceLaunchVolumeAttachmentArray) ToGetInstanceLaunchVolumeAttachmentArrayOutput() GetInstanceLaunchVolumeAttachmentArrayOutput {
+	return i.ToGetInstanceLaunchVolumeAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLaunchVolumeAttachmentArray) ToGetInstanceLaunchVolumeAttachmentArrayOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLaunchVolumeAttachmentArrayOutput)
+}
+
+type GetInstanceLaunchVolumeAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLaunchVolumeAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) ToGetInstanceLaunchVolumeAttachmentOutput() GetInstanceLaunchVolumeAttachmentOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) ToGetInstanceLaunchVolumeAttachmentOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) Device() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) string { return v.Device }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceLaunchVolumeAttachmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) EncryptionInTransitType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) string { return v.EncryptionInTransitType }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+func (o GetInstanceLaunchVolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.IsShareable }).(pulumi.BoolOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) LaunchCreateVolumeDetails() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) []GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail {
+		return v.LaunchCreateVolumeDetails
+	}).(GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput)
+}
+
+// (Required) The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceLaunchVolumeAttachmentOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) UseChap() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) bool { return v.UseChap }).(pulumi.BoolOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentOutput) VolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachment) string { return v.VolumeId }).(pulumi.StringOutput)
+}
+
+type GetInstanceLaunchVolumeAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLaunchVolumeAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLaunchVolumeAttachment)(nil)).Elem()
+}
+
+func (o GetInstanceLaunchVolumeAttachmentArrayOutput) ToGetInstanceLaunchVolumeAttachmentArrayOutput() GetInstanceLaunchVolumeAttachmentArrayOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentArrayOutput) ToGetInstanceLaunchVolumeAttachmentArrayOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentArrayOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentArrayOutput) Index(i pulumi.IntInput) GetInstanceLaunchVolumeAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceLaunchVolumeAttachment {
+		return vs[0].([]GetInstanceLaunchVolumeAttachment)[vs[1].(int)]
+	}).(GetInstanceLaunchVolumeAttachmentOutput)
+}
+
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail struct {
+	// The OCID of the compartment containing images to search
+	CompartmentId string `pulumi:"compartmentId"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+	KmsKeyId           string `pulumi:"kmsKeyId"`
+	SizeInGbs          string `pulumi:"sizeInGbs"`
+	VolumeCreationType string `pulumi:"volumeCreationType"`
+	VpusPerGb          string `pulumi:"vpusPerGb"`
+}
+
+// GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput is an input type that accepts GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs and GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput values.
+// You can construct a concrete instance of `GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput` via:
+//
+//	GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs{...}
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput
+	ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(context.Context) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput
+}
+
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs struct {
+	// The OCID of the compartment containing images to search
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+	KmsKeyId           pulumi.StringInput `pulumi:"kmsKeyId"`
+	SizeInGbs          pulumi.StringInput `pulumi:"sizeInGbs"`
+	VolumeCreationType pulumi.StringInput `pulumi:"volumeCreationType"`
+	VpusPerGb          pulumi.StringInput `pulumi:"vpusPerGb"`
+}
+
+func (GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (i GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return i.ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput)
+}
+
+// GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput is an input type that accepts GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray and GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput` via:
+//
+//	GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray{ GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs{...} }
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput
+	ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(context.Context) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput
+}
+
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray []GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput
+
+func (GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (i GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return i.ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput)
+}
+
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return o
+}
+
+// The OCID of the compartment containing images to search
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) SizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.SizeInGbs }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) VolumeCreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.VolumeCreationType }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput) VpusPerGb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail) string { return v.VpusPerGb }).(pulumi.StringOutput)
+}
+
+type GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)(nil)).Elem()
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput() GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) ToGetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutputWithContext(ctx context.Context) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail {
+		return vs[0].([]GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail)[vs[1].(int)]
+	}).(GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput)
+}
+
+type GetInstanceLicensingConfig struct {
+	// License Type for the OS license.
+	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	LicenseType string `pulumi:"licenseType"`
+	// The Operating System version of the license config.
+	OsVersion string `pulumi:"osVersion"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceLicensingConfigInput is an input type that accepts GetInstanceLicensingConfigArgs and GetInstanceLicensingConfigOutput values.
+// You can construct a concrete instance of `GetInstanceLicensingConfigInput` via:
+//
+//	GetInstanceLicensingConfigArgs{...}
+type GetInstanceLicensingConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceLicensingConfigOutput() GetInstanceLicensingConfigOutput
+	ToGetInstanceLicensingConfigOutputWithContext(context.Context) GetInstanceLicensingConfigOutput
+}
+
+type GetInstanceLicensingConfigArgs struct {
+	// License Type for the OS license.
+	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// The Operating System version of the license config.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceLicensingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLicensingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceLicensingConfigArgs) ToGetInstanceLicensingConfigOutput() GetInstanceLicensingConfigOutput {
+	return i.ToGetInstanceLicensingConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLicensingConfigArgs) ToGetInstanceLicensingConfigOutputWithContext(ctx context.Context) GetInstanceLicensingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLicensingConfigOutput)
+}
+
+// GetInstanceLicensingConfigArrayInput is an input type that accepts GetInstanceLicensingConfigArray and GetInstanceLicensingConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceLicensingConfigArrayInput` via:
+//
+//	GetInstanceLicensingConfigArray{ GetInstanceLicensingConfigArgs{...} }
+type GetInstanceLicensingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceLicensingConfigArrayOutput() GetInstanceLicensingConfigArrayOutput
+	ToGetInstanceLicensingConfigArrayOutputWithContext(context.Context) GetInstanceLicensingConfigArrayOutput
+}
+
+type GetInstanceLicensingConfigArray []GetInstanceLicensingConfigInput
+
+func (GetInstanceLicensingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLicensingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceLicensingConfigArray) ToGetInstanceLicensingConfigArrayOutput() GetInstanceLicensingConfigArrayOutput {
+	return i.ToGetInstanceLicensingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLicensingConfigArray) ToGetInstanceLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceLicensingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLicensingConfigArrayOutput)
+}
+
+type GetInstanceLicensingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLicensingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLicensingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceLicensingConfigOutput) ToGetInstanceLicensingConfigOutput() GetInstanceLicensingConfigOutput {
+	return o
+}
+
+func (o GetInstanceLicensingConfigOutput) ToGetInstanceLicensingConfigOutputWithContext(ctx context.Context) GetInstanceLicensingConfigOutput {
+	return o
+}
+
+// License Type for the OS license.
+// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+func (o GetInstanceLicensingConfigOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLicensingConfig) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// The Operating System version of the license config.
+func (o GetInstanceLicensingConfigOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLicensingConfig) string { return v.OsVersion }).(pulumi.StringOutput)
+}
+
+// (Required) The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceLicensingConfigOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLicensingConfig) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetInstanceLicensingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLicensingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLicensingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceLicensingConfigArrayOutput) ToGetInstanceLicensingConfigArrayOutput() GetInstanceLicensingConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceLicensingConfigArrayOutput) ToGetInstanceLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceLicensingConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceLicensingConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceLicensingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceLicensingConfig {
+		return vs[0].([]GetInstanceLicensingConfig)[vs[1].(int)]
+	}).(GetInstanceLicensingConfigOutput)
+}
+
+type GetInstanceMaintenanceEventsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInstanceMaintenanceEventsFilterInput is an input type that accepts GetInstanceMaintenanceEventsFilterArgs and GetInstanceMaintenanceEventsFilterOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceEventsFilterInput` via:
+//
+//	GetInstanceMaintenanceEventsFilterArgs{...}
+type GetInstanceMaintenanceEventsFilterInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceEventsFilterOutput() GetInstanceMaintenanceEventsFilterOutput
+	ToGetInstanceMaintenanceEventsFilterOutputWithContext(context.Context) GetInstanceMaintenanceEventsFilterOutput
+}
+
+type GetInstanceMaintenanceEventsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInstanceMaintenanceEventsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceEventsFilterArgs) ToGetInstanceMaintenanceEventsFilterOutput() GetInstanceMaintenanceEventsFilterOutput {
+	return i.ToGetInstanceMaintenanceEventsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceEventsFilterArgs) ToGetInstanceMaintenanceEventsFilterOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceEventsFilterOutput)
+}
+
+// GetInstanceMaintenanceEventsFilterArrayInput is an input type that accepts GetInstanceMaintenanceEventsFilterArray and GetInstanceMaintenanceEventsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceEventsFilterArrayInput` via:
+//
+//	GetInstanceMaintenanceEventsFilterArray{ GetInstanceMaintenanceEventsFilterArgs{...} }
+type GetInstanceMaintenanceEventsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceEventsFilterArrayOutput() GetInstanceMaintenanceEventsFilterArrayOutput
+	ToGetInstanceMaintenanceEventsFilterArrayOutputWithContext(context.Context) GetInstanceMaintenanceEventsFilterArrayOutput
+}
+
+type GetInstanceMaintenanceEventsFilterArray []GetInstanceMaintenanceEventsFilterInput
+
+func (GetInstanceMaintenanceEventsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceEventsFilterArray) ToGetInstanceMaintenanceEventsFilterArrayOutput() GetInstanceMaintenanceEventsFilterArrayOutput {
+	return i.ToGetInstanceMaintenanceEventsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceEventsFilterArray) ToGetInstanceMaintenanceEventsFilterArrayOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceEventsFilterArrayOutput)
+}
+
+type GetInstanceMaintenanceEventsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceEventsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceEventsFilterOutput) ToGetInstanceMaintenanceEventsFilterOutput() GetInstanceMaintenanceEventsFilterOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsFilterOutput) ToGetInstanceMaintenanceEventsFilterOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsFilterOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceMaintenanceEventsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInstanceMaintenanceEventsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInstanceMaintenanceEventsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceEventsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceEventsFilterArrayOutput) ToGetInstanceMaintenanceEventsFilterArrayOutput() GetInstanceMaintenanceEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsFilterArrayOutput) ToGetInstanceMaintenanceEventsFilterArrayOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsFilterArrayOutput) Index(i pulumi.IntInput) GetInstanceMaintenanceEventsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceMaintenanceEventsFilter {
+		return vs[0].([]GetInstanceMaintenanceEventsFilter)[vs[1].(int)]
+	}).(GetInstanceMaintenanceEventsFilterOutput)
+}
+
+type GetInstanceMaintenanceEventsInstanceMaintenanceEvent struct {
+	// Additional details of the maintenance in the form of json.
+	AdditionalDetails           map[string]string `pulumi:"additionalDetails"`
+	AlternativeResolutionAction string            `pulumi:"alternativeResolutionAction"`
+	// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+	AlternativeResolutionActions []string `pulumi:"alternativeResolutionActions"`
+	// For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
+	CanDeleteLocalStorage bool `pulumi:"canDeleteLocalStorage"`
+	// Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
+	CanReschedule bool `pulumi:"canReschedule"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to only return resources that have a matching correlationToken.
+	CorrelationToken string `pulumi:"correlationToken"`
+	// The creator of the maintenance event.
+	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// It is the descriptive information about the maintenance taking place on the customer instance.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+	EstimatedDuration string `pulumi:"estimatedDuration"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+	Id string `pulumi:"id"`
+	// A filter to only return resources that match the given instance action.
+	InstanceAction string `pulumi:"instanceAction"`
+	// The OCID of the instance.
+	InstanceId                 string `pulumi:"instanceId"`
+	InstanceMaintenanceEventId string `pulumi:"instanceMaintenanceEventId"`
+	// This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+	MaintenanceCategory string `pulumi:"maintenanceCategory"`
+	// This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+	MaintenanceReason string `pulumi:"maintenanceReason"`
+	// The duration of the time window Maintenance is scheduled to begin within.
+	StartWindowDuration string `pulumi:"startWindowDuration"`
+	// A filter to only return resources that match the given lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time at which the Maintenance actually finished.
+	TimeFinished string `pulumi:"timeFinished"`
+	// It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
+	TimeHardDueDate string `pulumi:"timeHardDueDate"`
+	// The time at which the Maintenance actually started.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
+	TimeWindowStart string `pulumi:"timeWindowStart"`
+}
+
+// GetInstanceMaintenanceEventsInstanceMaintenanceEventInput is an input type that accepts GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs and GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceEventsInstanceMaintenanceEventInput` via:
+//
+//	GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs{...}
+type GetInstanceMaintenanceEventsInstanceMaintenanceEventInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutput() GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput
+	ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutputWithContext(context.Context) GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput
+}
+
+type GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs struct {
+	// Additional details of the maintenance in the form of json.
+	AdditionalDetails           pulumi.StringMapInput `pulumi:"additionalDetails"`
+	AlternativeResolutionAction pulumi.StringInput    `pulumi:"alternativeResolutionAction"`
+	// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+	AlternativeResolutionActions pulumi.StringArrayInput `pulumi:"alternativeResolutionActions"`
+	// For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
+	CanDeleteLocalStorage pulumi.BoolInput `pulumi:"canDeleteLocalStorage"`
+	// Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
+	CanReschedule pulumi.BoolInput `pulumi:"canReschedule"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to only return resources that have a matching correlationToken.
+	CorrelationToken pulumi.StringInput `pulumi:"correlationToken"`
+	// The creator of the maintenance event.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// It is the descriptive information about the maintenance taking place on the customer instance.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+	EstimatedDuration pulumi.StringInput `pulumi:"estimatedDuration"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to only return resources that match the given instance action.
+	InstanceAction pulumi.StringInput `pulumi:"instanceAction"`
+	// The OCID of the instance.
+	InstanceId                 pulumi.StringInput `pulumi:"instanceId"`
+	InstanceMaintenanceEventId pulumi.StringInput `pulumi:"instanceMaintenanceEventId"`
+	// This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+	MaintenanceCategory pulumi.StringInput `pulumi:"maintenanceCategory"`
+	// This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+	MaintenanceReason pulumi.StringInput `pulumi:"maintenanceReason"`
+	// The duration of the time window Maintenance is scheduled to begin within.
+	StartWindowDuration pulumi.StringInput `pulumi:"startWindowDuration"`
+	// A filter to only return resources that match the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time at which the Maintenance actually finished.
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
+	TimeHardDueDate pulumi.StringInput `pulumi:"timeHardDueDate"`
+	// The time at which the Maintenance actually started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
+	TimeWindowStart pulumi.StringInput `pulumi:"timeWindowStart"`
+}
+
+func (GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceEventsInstanceMaintenanceEvent)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutput() GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput {
+	return i.ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput)
+}
+
+// GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayInput is an input type that accepts GetInstanceMaintenanceEventsInstanceMaintenanceEventArray and GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayInput` via:
+//
+//	GetInstanceMaintenanceEventsInstanceMaintenanceEventArray{ GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs{...} }
+type GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput() GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput
+	ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutputWithContext(context.Context) GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput
+}
+
+type GetInstanceMaintenanceEventsInstanceMaintenanceEventArray []GetInstanceMaintenanceEventsInstanceMaintenanceEventInput
+
+func (GetInstanceMaintenanceEventsInstanceMaintenanceEventArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceMaintenanceEventsInstanceMaintenanceEvent)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceEventsInstanceMaintenanceEventArray) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput() GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput {
+	return i.ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceEventsInstanceMaintenanceEventArray) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput)
+}
+
+type GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceEventsInstanceMaintenanceEvent)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutput() GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput {
+	return o
+}
+
+// Additional details of the maintenance in the form of json.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) map[string]string {
+		return v.AdditionalDetails
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) AlternativeResolutionAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string {
+		return v.AlternativeResolutionAction
+	}).(pulumi.StringOutput)
+}
+
+// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) AlternativeResolutionActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) []string {
+		return v.AlternativeResolutionActions
+	}).(pulumi.StringArrayOutput)
+}
+
+// For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) CanDeleteLocalStorage() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) bool { return v.CanDeleteLocalStorage }).(pulumi.BoolOutput)
+}
+
+// Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) CanReschedule() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) bool { return v.CanReschedule }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that have a matching correlationToken.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) CorrelationToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.CorrelationToken }).(pulumi.StringOutput)
+}
+
+// The creator of the maintenance event.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// It is the descriptive information about the maintenance taking place on the customer instance.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) EstimatedDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.EstimatedDuration }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given instance action.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) InstanceAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.InstanceAction }).(pulumi.StringOutput)
+}
+
+// The OCID of the instance.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) InstanceMaintenanceEventId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string {
+		return v.InstanceMaintenanceEventId
+	}).(pulumi.StringOutput)
+}
+
+// This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) MaintenanceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.MaintenanceCategory }).(pulumi.StringOutput)
+}
+
+// This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) MaintenanceReason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.MaintenanceReason }).(pulumi.StringOutput)
+}
+
+// The duration of the time window Maintenance is scheduled to begin within.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) StartWindowDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.StartWindowDuration }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time at which the Maintenance actually finished.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) TimeHardDueDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.TimeHardDueDate }).(pulumi.StringOutput)
+}
+
+// The time at which the Maintenance actually started.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput) TimeWindowStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceEventsInstanceMaintenanceEvent) string { return v.TimeWindowStart }).(pulumi.StringOutput)
+}
+
+type GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceMaintenanceEventsInstanceMaintenanceEvent)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput() GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput) ToGetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutputWithContext(ctx context.Context) GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput) Index(i pulumi.IntInput) GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
+		return vs[0].([]GetInstanceMaintenanceEventsInstanceMaintenanceEvent)[vs[1].(int)]
+	}).(GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput)
+}
+
 type GetInstanceMeasuredBootReportMeasurement struct {
 	// The list of actual PCR entries measured during boot.
 	Actuals []GetInstanceMeasuredBootReportMeasurementActual `pulumi:"actuals"`
@@ -31540,6 +32782,22 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDevicesFilterInput)(nil)).Elem(), GetInstanceDevicesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDevicesFilterArrayInput)(nil)).Elem(), GetInstanceDevicesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceOptionInput)(nil)).Elem(), GetInstanceInstanceOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceOptionArrayInput)(nil)).Elem(), GetInstanceInstanceOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLaunchOptionInput)(nil)).Elem(), GetInstanceLaunchOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLaunchOptionArrayInput)(nil)).Elem(), GetInstanceLaunchOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLaunchVolumeAttachmentInput)(nil)).Elem(), GetInstanceLaunchVolumeAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLaunchVolumeAttachmentArrayInput)(nil)).Elem(), GetInstanceLaunchVolumeAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailInput)(nil)).Elem(), GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayInput)(nil)).Elem(), GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLicensingConfigInput)(nil)).Elem(), GetInstanceLicensingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLicensingConfigArrayInput)(nil)).Elem(), GetInstanceLicensingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceEventsFilterInput)(nil)).Elem(), GetInstanceMaintenanceEventsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceEventsFilterArrayInput)(nil)).Elem(), GetInstanceMaintenanceEventsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceEventsInstanceMaintenanceEventInput)(nil)).Elem(), GetInstanceMaintenanceEventsInstanceMaintenanceEventArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayInput)(nil)).Elem(), GetInstanceMaintenanceEventsInstanceMaintenanceEventArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMeasuredBootReportMeasurementInput)(nil)).Elem(), GetInstanceMeasuredBootReportMeasurementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMeasuredBootReportMeasurementArrayInput)(nil)).Elem(), GetInstanceMeasuredBootReportMeasurementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMeasuredBootReportMeasurementActualInput)(nil)).Elem(), GetInstanceMeasuredBootReportMeasurementActualArgs{})
@@ -31996,6 +33254,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstanceDevicesFilterOutput{})
+	pulumi.RegisterOutputType(GetInstanceDevicesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceInstanceOptionOutput{})
+	pulumi.RegisterOutputType(GetInstanceInstanceOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceLaunchOptionOutput{})
+	pulumi.RegisterOutputType(GetInstanceLaunchOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceLaunchVolumeAttachmentOutput{})
+	pulumi.RegisterOutputType(GetInstanceLaunchVolumeAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceLicensingConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceLicensingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceEventsFilterOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceEventsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceEventsInstanceMaintenanceEventOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceEventsInstanceMaintenanceEventArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceMeasuredBootReportMeasurementOutput{})
 	pulumi.RegisterOutputType(GetInstanceMeasuredBootReportMeasurementArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceMeasuredBootReportMeasurementActualOutput{})

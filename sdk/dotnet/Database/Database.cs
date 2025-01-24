@@ -28,6 +28,12 @@ namespace Pulumi.Oci.Database
     public partial class Database : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        /// </summary>
+        [Output("actionTrigger")]
+        public Output<int?> ActionTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The character set for the database.
         /// </summary>
         [Output("characterSet")]
@@ -44,6 +50,21 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("connectionStrings")]
         public Output<ImmutableArray<Outputs.DatabaseConnectionString>> ConnectionStrings { get; private set; } = null!;
+
+        /// <summary>
+        /// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("dataGuardAction")]
+        public Output<string?> DataGuardAction { get; private set; } = null!;
+
+        /// <summary>
+        /// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        /// </summary>
+        [Output("dataGuardGroups")]
+        public Output<ImmutableArray<Outputs.DatabaseDataGuardGroup>> DataGuardGroups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details for creating a database.
@@ -206,11 +227,7 @@ namespace Pulumi.Oci.Database
         public Output<string> SidPrefix { get; private set; } = null!;
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         /// </summary>
         [Output("source")]
         public Output<string> Source { get; private set; } = null!;
@@ -292,6 +309,21 @@ namespace Pulumi.Oci.Database
     public sealed class DatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        /// </summary>
+        [Input("actionTrigger")]
+        public Input<int>? ActionTrigger { get; set; }
+
+        /// <summary>
+        /// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("dataGuardAction")]
+        public Input<string>? DataGuardAction { get; set; }
+
+        /// <summary>
         /// (Updatable) Details for creating a database.
         /// 
         /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -344,11 +376,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyVersionId { get; set; }
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
@@ -367,6 +395,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class DatabaseState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+        /// </summary>
+        [Input("actionTrigger")]
+        public Input<int>? ActionTrigger { get; set; }
+
         /// <summary>
         /// The character set for the database.
         /// </summary>
@@ -389,6 +423,27 @@ namespace Pulumi.Oci.Database
         {
             get => _connectionStrings ?? (_connectionStrings = new InputList<Inputs.DatabaseConnectionStringGetArgs>());
             set => _connectionStrings = value;
+        }
+
+        /// <summary>
+        /// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("dataGuardAction")]
+        public Input<string>? DataGuardAction { get; set; }
+
+        [Input("dataGuardGroups")]
+        private InputList<Inputs.DatabaseDataGuardGroupGetArgs>? _dataGuardGroups;
+
+        /// <summary>
+        /// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        /// </summary>
+        public InputList<Inputs.DatabaseDataGuardGroupGetArgs> DataGuardGroups
+        {
+            get => _dataGuardGroups ?? (_dataGuardGroups = new InputList<Inputs.DatabaseDataGuardGroupGetArgs>());
+            set => _dataGuardGroups = value;
         }
 
         /// <summary>
@@ -576,11 +631,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? SidPrefix { get; set; }
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DatabaseDatabaseArgs : global::Pulumi.ResourceArgs
     {
-        [Input("adminPassword", required: true)]
+        [Input("adminPassword")]
         private Input<string>? _adminPassword;
 
         /// <summary>
@@ -58,6 +58,24 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("characterSet")]
         public Input<string>? CharacterSet { get; set; }
 
+        [Input("databaseAdminPassword")]
+        private Input<string>? _databaseAdminPassword;
+
+        /// <summary>
+        /// The administrator password of the primary database in this Data Guard association.
+        /// 
+        /// **The password MUST be the same as the primary admin password.**
+        /// </summary>
+        public Input<string>? DatabaseAdminPassword
+        {
+            get => _databaseAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _databaseAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
@@ -73,11 +91,11 @@ namespace Pulumi.Oci.Database.Inputs
         /// <summary>
         /// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         /// </summary>
-        [Input("dbName", required: true)]
-        public Input<string> DbName { get; set; } = null!;
+        [Input("dbName")]
+        public Input<string>? DbName { get; set; }
 
         /// <summary>
-        /// The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        /// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         /// </summary>
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
@@ -113,6 +131,12 @@ namespace Pulumi.Oci.Database.Inputs
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// True if active Data Guard is enabled.
+        /// </summary>
+        [Input("isActiveDataGuardEnabled")]
+        public Input<bool>? IsActiveDataGuardEnabled { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -151,10 +175,38 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
+        /// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
+        [Input("protectionMode")]
+        public Input<string>? ProtectionMode { get; set; }
+
+        /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         [Input("sidPrefix")]
         public Input<string>? SidPrefix { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        /// </summary>
+        [Input("sourceDatabaseId")]
+        public Input<string>? SourceDatabaseId { get; set; }
+
+        [Input("sourceTdeWalletPassword")]
+        private Input<string>? _sourceTdeWalletPassword;
+
+        /// <summary>
+        /// The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+        /// </summary>
+        public Input<string>? SourceTdeWalletPassword
+        {
+            get => _sourceTdeWalletPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sourceTdeWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("tdeWalletPassword")]
         private Input<string>? _tdeWalletPassword;
@@ -171,6 +223,19 @@ namespace Pulumi.Oci.Database.Inputs
                 _tdeWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
         }
+
+        /// <summary>
+        /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        /// * MAXIMUM_PERFORMANCE - ASYNC
+        /// * MAXIMUM_PROTECTION - SYNC
+        /// 
+        /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+        /// 
+        /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        /// </summary>
+        [Input("transportType")]
+        public Input<string>? TransportType { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.

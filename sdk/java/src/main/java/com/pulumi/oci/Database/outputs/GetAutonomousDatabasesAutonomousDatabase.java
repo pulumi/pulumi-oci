@@ -288,6 +288,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isDevTier;
     /**
+     * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     * 
+     */
+    private Boolean isDisconnectPeer;
+    /**
      * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      * 
      */
@@ -442,6 +447,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String operationsInsightsStatus;
+    /**
+     * @return The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     * 
+     */
+    private String peerDbId;
     /**
      * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
@@ -674,7 +684,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer usedDataStorageSizeInGbs;
     /**
-     * @return The amount of storage that has been used, in terabytes.
+     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * 
      */
     private Integer usedDataStorageSizeInTbs;
@@ -1057,6 +1067,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isDevTier;
     }
     /**
+     * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+     * 
+     */
+    public Boolean isDisconnectPeer() {
+        return this.isDisconnectPeer;
+    }
+    /**
      * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      * 
      */
@@ -1274,6 +1291,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String operationsInsightsStatus() {
         return this.operationsInsightsStatus;
+    }
+    /**
+     * @return The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+     * 
+     */
+    public String peerDbId() {
+        return this.peerDbId;
     }
     /**
      * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
@@ -1615,7 +1639,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.usedDataStorageSizeInGbs;
     }
     /**
-     * @return The amount of storage that has been used, in terabytes.
+     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * 
      */
     public Integer usedDataStorageSizeInTbs() {
@@ -1700,6 +1724,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isDevTier;
+        private Boolean isDisconnectPeer;
         private Boolean isFreeTier;
         private Boolean isLocalDataGuardEnabled;
         private Boolean isMtlsConnectionRequired;
@@ -1732,6 +1757,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Double ocpuCount;
         private String openMode;
         private String operationsInsightsStatus;
+        private String peerDbId;
         private List<String> peerDbIds;
         private String permissionLevel;
         private String privateEndpoint;
@@ -1847,6 +1873,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isDevTier = defaults.isDevTier;
+    	      this.isDisconnectPeer = defaults.isDisconnectPeer;
     	      this.isFreeTier = defaults.isFreeTier;
     	      this.isLocalDataGuardEnabled = defaults.isLocalDataGuardEnabled;
     	      this.isMtlsConnectionRequired = defaults.isMtlsConnectionRequired;
@@ -1879,6 +1906,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.openMode = defaults.openMode;
     	      this.operationsInsightsStatus = defaults.operationsInsightsStatus;
+    	      this.peerDbId = defaults.peerDbId;
     	      this.peerDbIds = defaults.peerDbIds;
     	      this.permissionLevel = defaults.permissionLevel;
     	      this.privateEndpoint = defaults.privateEndpoint;
@@ -2406,6 +2434,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isDisconnectPeer(Boolean isDisconnectPeer) {
+            if (isDisconnectPeer == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isDisconnectPeer");
+            }
+            this.isDisconnectPeer = isDisconnectPeer;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isFreeTier(Boolean isFreeTier) {
             if (isFreeTier == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isFreeTier");
@@ -2671,6 +2707,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "operationsInsightsStatus");
             }
             this.operationsInsightsStatus = operationsInsightsStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder peerDbId(String peerDbId) {
+            if (peerDbId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "peerDbId");
+            }
+            this.peerDbId = peerDbId;
             return this;
         }
         @CustomType.Setter
@@ -3216,6 +3260,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
             _resultValue.isDevTier = isDevTier;
+            _resultValue.isDisconnectPeer = isDisconnectPeer;
             _resultValue.isFreeTier = isFreeTier;
             _resultValue.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
             _resultValue.isMtlsConnectionRequired = isMtlsConnectionRequired;
@@ -3248,6 +3293,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.openMode = openMode;
             _resultValue.operationsInsightsStatus = operationsInsightsStatus;
+            _resultValue.peerDbId = peerDbId;
             _resultValue.peerDbIds = peerDbIds;
             _resultValue.permissionLevel = permissionLevel;
             _resultValue.privateEndpoint = privateEndpoint;

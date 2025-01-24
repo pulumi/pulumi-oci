@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Information about the origin asn.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetByoipRangesByoipRangeCollectionItemOriginAsnResult> OriginAsns;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state name exactly.
         /// </summary>
         public readonly string State;
@@ -94,6 +98,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetByoipRangesByoipRangeCollectionItemOriginAsnResult> originAsns,
+
             string state,
 
             string timeAdvertised,
@@ -115,6 +121,7 @@ namespace Pulumi.Oci.Core.Outputs
             Id = id;
             Ipv6cidrBlock = ipv6cidrBlock;
             LifecycleDetails = lifecycleDetails;
+            OriginAsns = originAsns;
             State = state;
             TimeAdvertised = timeAdvertised;
             TimeCreated = timeCreated;

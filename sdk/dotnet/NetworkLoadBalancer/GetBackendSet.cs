@@ -81,13 +81,17 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     [OutputType]
     public sealed class GetBackendSetResult
     {
+        /// <summary>
+        /// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// </summary>
+        public readonly bool AreOperationallyActiveBackendsPreferred;
         public readonly string BackendSetName;
         /// <summary>
         /// An array of backends.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetBackendResult> Backends;
         /// <summary>
-        /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetHealthCheckerResult> HealthCheckers;
         public readonly string Id;
@@ -104,6 +108,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public readonly bool IsInstantFailoverEnabled;
         /// <summary>
+        /// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// </summary>
+        public readonly bool IsInstantFailoverTcpResetEnabled;
+        /// <summary>
         /// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         /// </summary>
         public readonly bool IsPreserveSource;
@@ -119,6 +127,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         [OutputConstructor]
         private GetBackendSetResult(
+            bool areOperationallyActiveBackendsPreferred,
+
             string backendSetName,
 
             ImmutableArray<Outputs.GetBackendSetBackendResult> backends,
@@ -133,6 +143,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             bool isInstantFailoverEnabled,
 
+            bool isInstantFailoverTcpResetEnabled,
+
             bool isPreserveSource,
 
             string name,
@@ -141,6 +153,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             string policy)
         {
+            AreOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
             BackendSetName = backendSetName;
             Backends = backends;
             HealthCheckers = healthCheckers;
@@ -148,6 +161,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
             IpVersion = ipVersion;
             IsFailOpen = isFailOpen;
             IsInstantFailoverEnabled = isInstantFailoverEnabled;
+            IsInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
             IsPreserveSource = isPreserveSource;
             Name = name;
             NetworkLoadBalancerId = networkLoadBalancerId;

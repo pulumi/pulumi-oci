@@ -4,8 +4,8 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +19,7 @@ public final class DatabaseDatabase {
      * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    private String adminPassword;
+    private @Nullable String adminPassword;
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -38,6 +38,13 @@ public final class DatabaseDatabase {
      */
     private @Nullable String characterSet;
     /**
+     * @return The administrator password of the primary database in this Data Guard association.
+     * 
+     * **The password MUST be the same as the primary admin password.**
+     * 
+     */
+    private @Nullable String databaseAdminPassword;
+    /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
@@ -51,9 +58,9 @@ public final class DatabaseDatabase {
      * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
-    private String dbName;
+    private @Nullable String dbName;
     /**
-     * @return The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     * @return Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      * 
      */
     private @Nullable String dbUniqueName;
@@ -74,6 +81,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable Map<String,String> freeformTags;
+    /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    private @Nullable Boolean isActiveDataGuardEnabled;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -100,15 +112,42 @@ public final class DatabaseDatabase {
      */
     private @Nullable List<String> pluggableDatabases;
     /**
+     * @return The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    private @Nullable String protectionMode;
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
     private @Nullable String sidPrefix;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+     * 
+     */
+    private @Nullable String sourceDatabaseId;
+    /**
+     * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+     * 
+     */
+    private @Nullable String sourceTdeWalletPassword;
+    /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
     private @Nullable String tdeWalletPassword;
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    private @Nullable String transportType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
@@ -120,8 +159,8 @@ public final class DatabaseDatabase {
      * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    public String adminPassword() {
-        return this.adminPassword;
+    public Optional<String> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -147,6 +186,15 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.characterSet);
     }
     /**
+     * @return The administrator password of the primary database in this Data Guard association.
+     * 
+     * **The password MUST be the same as the primary admin password.**
+     * 
+     */
+    public Optional<String> databaseAdminPassword() {
+        return Optional.ofNullable(this.databaseAdminPassword);
+    }
+    /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
@@ -164,11 +212,11 @@ public final class DatabaseDatabase {
      * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
     /**
-     * @return The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     * @return Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      * 
      */
     public Optional<String> dbUniqueName() {
@@ -196,6 +244,13 @@ public final class DatabaseDatabase {
      */
     public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
+    }
+    /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    public Optional<Boolean> isActiveDataGuardEnabled() {
+        return Optional.ofNullable(this.isActiveDataGuardEnabled);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -233,6 +288,13 @@ public final class DatabaseDatabase {
         return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
     }
     /**
+     * @return The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    public Optional<String> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
+    }
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -240,11 +302,39 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.sidPrefix);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+     * 
+     */
+    public Optional<String> sourceDatabaseId() {
+        return Optional.ofNullable(this.sourceDatabaseId);
+    }
+    /**
+     * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+     * 
+     */
+    public Optional<String> sourceTdeWalletPassword() {
+        return Optional.ofNullable(this.sourceTdeWalletPassword);
+    }
+    /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
     public Optional<String> tdeWalletPassword() {
         return Optional.ofNullable(this.tdeWalletPassword);
+    }
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    public Optional<String> transportType() {
+        return Optional.ofNullable(this.transportType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -263,24 +353,30 @@ public final class DatabaseDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminPassword;
+        private @Nullable String adminPassword;
         private @Nullable String backupId;
         private @Nullable String backupTdePassword;
         private @Nullable String characterSet;
+        private @Nullable String databaseAdminPassword;
         private @Nullable String databaseSoftwareImageId;
         private @Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig;
-        private String dbName;
+        private @Nullable String dbName;
         private @Nullable String dbUniqueName;
         private @Nullable String dbWorkload;
         private @Nullable Map<String,String> definedTags;
         private @Nullable Map<String,String> freeformTags;
+        private @Nullable Boolean isActiveDataGuardEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
         private @Nullable String ncharacterSet;
         private @Nullable String pdbName;
         private @Nullable List<String> pluggableDatabases;
+        private @Nullable String protectionMode;
         private @Nullable String sidPrefix;
+        private @Nullable String sourceDatabaseId;
+        private @Nullable String sourceTdeWalletPassword;
         private @Nullable String tdeWalletPassword;
+        private @Nullable String transportType;
         private @Nullable String vaultId;
         public Builder() {}
         public Builder(DatabaseDatabase defaults) {
@@ -289,6 +385,7 @@ public final class DatabaseDatabase {
     	      this.backupId = defaults.backupId;
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
+    	      this.databaseAdminPassword = defaults.databaseAdminPassword;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbBackupConfig = defaults.dbBackupConfig;
     	      this.dbName = defaults.dbName;
@@ -296,21 +393,24 @@ public final class DatabaseDatabase {
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
+    	      this.protectionMode = defaults.protectionMode;
     	      this.sidPrefix = defaults.sidPrefix;
+    	      this.sourceDatabaseId = defaults.sourceDatabaseId;
+    	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
+    	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
         }
 
         @CustomType.Setter
-        public Builder adminPassword(String adminPassword) {
-            if (adminPassword == null) {
-              throw new MissingRequiredPropertyException("DatabaseDatabase", "adminPassword");
-            }
+        public Builder adminPassword(@Nullable String adminPassword) {
+
             this.adminPassword = adminPassword;
             return this;
         }
@@ -333,6 +433,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder databaseAdminPassword(@Nullable String databaseAdminPassword) {
+
+            this.databaseAdminPassword = databaseAdminPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
 
             this.databaseSoftwareImageId = databaseSoftwareImageId;
@@ -345,10 +451,8 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            if (dbName == null) {
-              throw new MissingRequiredPropertyException("DatabaseDatabase", "dbName");
-            }
+        public Builder dbName(@Nullable String dbName) {
+
             this.dbName = dbName;
             return this;
         }
@@ -374,6 +478,12 @@ public final class DatabaseDatabase {
         public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isActiveDataGuardEnabled(@Nullable Boolean isActiveDataGuardEnabled) {
+
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
@@ -410,15 +520,39 @@ public final class DatabaseDatabase {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
+        public Builder protectionMode(@Nullable String protectionMode) {
+
+            this.protectionMode = protectionMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
 
             this.sidPrefix = sidPrefix;
             return this;
         }
         @CustomType.Setter
+        public Builder sourceDatabaseId(@Nullable String sourceDatabaseId) {
+
+            this.sourceDatabaseId = sourceDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceTdeWalletPassword(@Nullable String sourceTdeWalletPassword) {
+
+            this.sourceTdeWalletPassword = sourceTdeWalletPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
 
             this.tdeWalletPassword = tdeWalletPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder transportType(@Nullable String transportType) {
+
+            this.transportType = transportType;
             return this;
         }
         @CustomType.Setter
@@ -433,6 +567,7 @@ public final class DatabaseDatabase {
             _resultValue.backupId = backupId;
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
+            _resultValue.databaseAdminPassword = databaseAdminPassword;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbBackupConfig = dbBackupConfig;
             _resultValue.dbName = dbName;
@@ -440,13 +575,18 @@ public final class DatabaseDatabase {
             _resultValue.dbWorkload = dbWorkload;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.protectionMode = protectionMode;
             _resultValue.sidPrefix = sidPrefix;
+            _resultValue.sourceDatabaseId = sourceDatabaseId;
+            _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;
             return _resultValue;
         }

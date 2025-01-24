@@ -28,7 +28,7 @@ type BackendSetBackend struct {
 	Port int `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId *string `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight *int `pulumi:"weight"`
 }
 
@@ -58,7 +58,7 @@ type BackendSetBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -148,7 +148,7 @@ func (o BackendSetBackendOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 func (o BackendSetBackendOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -1070,7 +1070,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
 	Port int `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId *string `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight *int `pulumi:"weight"`
 }
 
@@ -1100,7 +1100,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -1190,7 +1190,7 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) TargetId() pulumi.S
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -1878,7 +1878,7 @@ type GetBackendSetBackend struct {
 	Port int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId string `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight int `pulumi:"weight"`
 }
 
@@ -1908,7 +1908,7 @@ type GetBackendSetBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -1998,7 +1998,7 @@ func (o GetBackendSetBackendOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 func (o GetBackendSetBackendOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -2438,9 +2438,11 @@ func (o GetBackendSetsBackendSetCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetBackendSetsBackendSetCollectionItem struct {
+	// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	AreOperationallyActiveBackendsPreferred bool `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// An array of backends.
 	Backends []GetBackendSetsBackendSetCollectionItemBackend `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
 	HealthCheckers []GetBackendSetsBackendSetCollectionItemHealthChecker `pulumi:"healthCheckers"`
 	Id             string                                                `pulumi:"id"`
 	// IP version associated with the backend set.
@@ -2449,6 +2451,8 @@ type GetBackendSetsBackendSetCollectionItem struct {
 	IsFailOpen bool `pulumi:"isFailOpen"`
 	// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled bool `pulumi:"isInstantFailoverEnabled"`
+	// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	IsInstantFailoverTcpResetEnabled bool `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -2471,9 +2475,11 @@ type GetBackendSetsBackendSetCollectionItemInput interface {
 }
 
 type GetBackendSetsBackendSetCollectionItemArgs struct {
+	// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	AreOperationallyActiveBackendsPreferred pulumi.BoolInput `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// An array of backends.
 	Backends GetBackendSetsBackendSetCollectionItemBackendArrayInput `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
 	HealthCheckers GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput `pulumi:"healthCheckers"`
 	Id             pulumi.StringInput                                            `pulumi:"id"`
 	// IP version associated with the backend set.
@@ -2482,6 +2488,8 @@ type GetBackendSetsBackendSetCollectionItemArgs struct {
 	IsFailOpen pulumi.BoolInput `pulumi:"isFailOpen"`
 	// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled pulumi.BoolInput `pulumi:"isInstantFailoverEnabled"`
+	// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	IsInstantFailoverTcpResetEnabled pulumi.BoolInput `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolInput `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -2543,6 +2551,11 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) ToGetBackendSetsBackendSet
 	return o
 }
 
+// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+func (o GetBackendSetsBackendSetCollectionItemOutput) AreOperationallyActiveBackendsPreferred() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.AreOperationallyActiveBackendsPreferred }).(pulumi.BoolOutput)
+}
+
 // An array of backends.
 func (o GetBackendSetsBackendSetCollectionItemOutput) Backends() GetBackendSetsBackendSetCollectionItemBackendArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) []GetBackendSetsBackendSetCollectionItemBackend {
@@ -2550,7 +2563,7 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) Backends() GetBackendSetsB
 	}).(GetBackendSetsBackendSetCollectionItemBackendArrayOutput)
 }
 
-// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
 func (o GetBackendSetsBackendSetCollectionItemOutput) HealthCheckers() GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) []GetBackendSetsBackendSetCollectionItemHealthChecker {
 		return v.HealthCheckers
@@ -2574,6 +2587,11 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) IsFailOpen() pulumi.BoolOu
 // If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 func (o GetBackendSetsBackendSetCollectionItemOutput) IsInstantFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.IsInstantFailoverEnabled }).(pulumi.BoolOutput)
+}
+
+// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+func (o GetBackendSetsBackendSetCollectionItemOutput) IsInstantFailoverTcpResetEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.IsInstantFailoverTcpResetEnabled }).(pulumi.BoolOutput)
 }
 
 // If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
@@ -2631,7 +2649,7 @@ type GetBackendSetsBackendSetCollectionItemBackend struct {
 	Port int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId string `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight int `pulumi:"weight"`
 }
 
@@ -2661,7 +2679,7 @@ type GetBackendSetsBackendSetCollectionItemBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -2751,7 +2769,7 @@ func (o GetBackendSetsBackendSetCollectionItemBackendOutput) TargetId() pulumi.S
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -3321,7 +3339,7 @@ type GetBackendsBackendCollectionItem struct {
 	Port int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId string `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight int `pulumi:"weight"`
 }
 
@@ -3356,7 +3374,7 @@ type GetBackendsBackendCollectionItemArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -3460,7 +3478,7 @@ func (o GetBackendsBackendCollectionItemOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
 func (o GetBackendsBackendCollectionItemOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendsBackendCollectionItem) int { return v.Weight }).(pulumi.IntOutput)
 }

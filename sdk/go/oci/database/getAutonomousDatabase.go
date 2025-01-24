@@ -167,6 +167,8 @@ type LookupAutonomousDatabaseResult struct {
 	IsDedicated bool `pulumi:"isDedicated"`
 	// Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
 	IsDevTier bool `pulumi:"isDevTier"`
+	// If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+	IsDisconnectPeer bool `pulumi:"isDisconnectPeer"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier bool `pulumi:"isFreeTier"`
 	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
@@ -231,6 +233,8 @@ type LookupAutonomousDatabaseResult struct {
 	OpenMode string `pulumi:"openMode"`
 	// Status of Operations Insights for this Autonomous Database.
 	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
+	// The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+	PeerDbId string `pulumi:"peerDbId"`
 	// The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
 	PeerDbIds []string `pulumi:"peerDbIds"`
 	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
@@ -330,7 +334,7 @@ type LookupAutonomousDatabaseResult struct {
 	UseLatestAvailableBackupTimeStamp bool    `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The storage space consumed by Autonomous Database in GBs.
 	UsedDataStorageSizeInGbs int `pulumi:"usedDataStorageSizeInGbs"`
-	// The amount of storage that has been used, in terabytes.
+	// The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
 	UsedDataStorageSizeInTbs int `pulumi:"usedDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId string `pulumi:"vaultId"`
@@ -652,6 +656,11 @@ func (o LookupAutonomousDatabaseResultOutput) IsDevTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDevTier }).(pulumi.BoolOutput)
 }
 
+// If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+func (o LookupAutonomousDatabaseResultOutput) IsDisconnectPeer() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDisconnectPeer }).(pulumi.BoolOutput)
+}
+
 // Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 func (o LookupAutonomousDatabaseResultOutput) IsFreeTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
@@ -814,6 +823,11 @@ func (o LookupAutonomousDatabaseResultOutput) OpenMode() pulumi.StringOutput {
 // Status of Operations Insights for this Autonomous Database.
 func (o LookupAutonomousDatabaseResultOutput) OperationsInsightsStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.OperationsInsightsStatus }).(pulumi.StringOutput)
+}
+
+// The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+func (o LookupAutonomousDatabaseResultOutput) PeerDbId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.PeerDbId }).(pulumi.StringOutput)
 }
 
 // The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
@@ -1085,7 +1099,7 @@ func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInGbs() pulumi.
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.UsedDataStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
-// The amount of storage that has been used, in terabytes.
+// The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
 func (o LookupAutonomousDatabaseResultOutput) UsedDataStorageSizeInTbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.UsedDataStorageSizeInTbs }).(pulumi.IntOutput)
 }

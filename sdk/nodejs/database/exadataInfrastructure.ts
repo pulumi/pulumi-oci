@@ -61,7 +61,6 @@ import * as utilities from "../utilities";
  *         }],
  *         patchingMode: exadataInfrastructureMaintenanceWindowPatchingMode,
  *         preference: exadataInfrastructureMaintenanceWindowPreference,
- *         skipRus: exadataInfrastructureMaintenanceWindowSkipRu,
  *         weeksOfMonths: exadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
  *     multiRackConfigurationFile: exadataInfrastructureMultiRackConfigurationFile,

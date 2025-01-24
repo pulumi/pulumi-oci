@@ -44,7 +44,6 @@ import * as utilities from "../utilities";
  *         }],
  *         patchingMode: autonomousVmClusterMaintenanceWindowDetailsPatchingMode,
  *         preference: autonomousVmClusterMaintenanceWindowDetailsPreference,
- *         skipRus: autonomousVmClusterMaintenanceWindowDetailsSkipRu,
  *         weeksOfMonths: autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
  *     }],
  *     memoryPerOracleComputeUnitInGbs: autonomousVmClusterMemoryPerOracleComputeUnitInGbs,

@@ -64,10 +64,8 @@ type LookupBdsInstanceApiKeyResult struct {
 	ApiKeyId      string `pulumi:"apiKeyId"`
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-	// > > > > > > > theirs
 	DefaultRegion string `pulumi:"defaultRegion"`
 	// Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-	// ===
 	DomainOcid string `pulumi:"domainOcid"`
 	// The fingerprint that corresponds to the public API key requested.
 	Fingerprint string `pulumi:"fingerprint"`
@@ -133,13 +131,11 @@ func (o LookupBdsInstanceApiKeyResultOutput) BdsInstanceId() pulumi.StringOutput
 }
 
 // The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-// > > > > > > > theirs
 func (o LookupBdsInstanceApiKeyResultOutput) DefaultRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.DefaultRegion }).(pulumi.StringOutput)
 }
 
 // Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-// ===
 func (o LookupBdsInstanceApiKeyResultOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.DomainOcid }).(pulumi.StringOutput)
 }

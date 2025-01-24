@@ -79,7 +79,6 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .patchingMode(cloudExadataInfrastructureMaintenanceWindowPatchingMode)
  *                 .preference(cloudExadataInfrastructureMaintenanceWindowPreference)
- *                 .skipRus(cloudExadataInfrastructureMaintenanceWindowSkipRu)
  *                 .weeksOfMonths(cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth)
  *                 .build())
  *             .storageCount(cloudExadataInfrastructureStorageCount)

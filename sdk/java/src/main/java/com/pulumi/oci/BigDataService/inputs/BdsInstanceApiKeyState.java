@@ -17,7 +17,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
     /**
      * The OCID of the cluster.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="bdsInstanceId")
@@ -25,7 +24,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
     /**
      * @return The OCID of the cluster.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<String>> bdsInstanceId() {
@@ -79,7 +77,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="keyAlias")
@@ -87,7 +84,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
     /**
      * @return User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<Output<String>> keyAlias() {
@@ -226,7 +222,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
         /**
          * @param bdsInstanceId The OCID of the cluster.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -238,7 +233,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
         /**
          * @param bdsInstanceId The OCID of the cluster.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -312,7 +306,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
         /**
          * @param keyAlias User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -324,7 +317,6 @@ public final class BdsInstanceApiKeyState extends com.pulumi.resources.ResourceA
 
         /**
          * @param keyAlias User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 

@@ -65,6 +65,7 @@ public final class GetDataGuardAssociationResult {
      * 
      */
     private String lifecycleDetails;
+    private Integer migrateTrigger;
     private Integer nodeCount;
     private List<String> nsgIds;
     /**
@@ -229,6 +230,9 @@ public final class GetDataGuardAssociationResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public Integer migrateTrigger() {
+        return this.migrateTrigger;
+    }
     public Integer nodeCount() {
         return this.nodeCount;
     }
@@ -365,6 +369,7 @@ public final class GetDataGuardAssociationResult {
         private Boolean isActiveDataGuardEnabled;
         private String licenseModel;
         private String lifecycleDetails;
+        private Integer migrateTrigger;
         private Integer nodeCount;
         private List<String> nsgIds;
         private String peerDataGuardAssociationId;
@@ -414,6 +419,7 @@ public final class GetDataGuardAssociationResult {
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.migrateTrigger = defaults.migrateTrigger;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
     	      this.peerDataGuardAssociationId = defaults.peerDataGuardAssociationId;
@@ -654,6 +660,14 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder migrateTrigger(Integer migrateTrigger) {
+            if (migrateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "migrateTrigger");
+            }
+            this.migrateTrigger = migrateTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
             if (nodeCount == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "nodeCount");
@@ -844,6 +858,7 @@ public final class GetDataGuardAssociationResult {
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrateTrigger = migrateTrigger;
             _resultValue.nodeCount = nodeCount;
             _resultValue.nsgIds = nsgIds;
             _resultValue.peerDataGuardAssociationId = peerDataGuardAssociationId;

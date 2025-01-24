@@ -25,6 +25,11 @@ export type BootVolumeBackup = import("./bootVolumeBackup").BootVolumeBackup;
 export const BootVolumeBackup: typeof import("./bootVolumeBackup").BootVolumeBackup = null as any;
 utilities.lazyLoad(exports, ["BootVolumeBackup"], () => require("./bootVolumeBackup"));
 
+export { ByoasnArgs, ByoasnState } from "./byoasn";
+export type Byoasn = import("./byoasn").Byoasn;
+export const Byoasn: typeof import("./byoasn").Byoasn = null as any;
+utilities.lazyLoad(exports, ["Byoasn"], () => require("./byoasn"));
+
 export { CaptureFilterArgs, CaptureFilterState } from "./captureFilter";
 export type CaptureFilter = import("./captureFilter").CaptureFilter;
 export const CaptureFilter: typeof import("./captureFilter").CaptureFilter = null as any;
@@ -214,6 +219,16 @@ export { GetBootVolumesArgs, GetBootVolumesResult, GetBootVolumesOutputArgs } fr
 export const getBootVolumes: typeof import("./getBootVolumes").getBootVolumes = null as any;
 export const getBootVolumesOutput: typeof import("./getBootVolumes").getBootVolumesOutput = null as any;
 utilities.lazyLoad(exports, ["getBootVolumes","getBootVolumesOutput"], () => require("./getBootVolumes"));
+
+export { GetByoasnArgs, GetByoasnResult, GetByoasnOutputArgs } from "./getByoasn";
+export const getByoasn: typeof import("./getByoasn").getByoasn = null as any;
+export const getByoasnOutput: typeof import("./getByoasn").getByoasnOutput = null as any;
+utilities.lazyLoad(exports, ["getByoasn","getByoasnOutput"], () => require("./getByoasn"));
+
+export { GetByoasnsArgs, GetByoasnsResult, GetByoasnsOutputArgs } from "./getByoasns";
+export const getByoasns: typeof import("./getByoasns").getByoasns = null as any;
+export const getByoasnsOutput: typeof import("./getByoasns").getByoasnsOutput = null as any;
+utilities.lazyLoad(exports, ["getByoasns","getByoasnsOutput"], () => require("./getByoasns"));
 
 export { GetByoipAllocatedRangesArgs, GetByoipAllocatedRangesResult, GetByoipAllocatedRangesOutputArgs } from "./getByoipAllocatedRanges";
 export const getByoipAllocatedRanges: typeof import("./getByoipAllocatedRanges").getByoipAllocatedRanges = null as any;
@@ -1123,6 +1138,8 @@ const _module = {
                 return new BootVolume(name, <any>undefined, { urn })
             case "oci:Core/bootVolumeBackup:BootVolumeBackup":
                 return new BootVolumeBackup(name, <any>undefined, { urn })
+            case "oci:Core/byoasn:Byoasn":
+                return new Byoasn(name, <any>undefined, { urn })
             case "oci:Core/captureFilter:CaptureFilter":
                 return new CaptureFilter(name, <any>undefined, { urn })
             case "oci:Core/clusterNetwork:ClusterNetwork":
@@ -1260,6 +1277,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/appCatalogListingResourceVers
 pulumi.runtime.registerResourceModule("oci", "Core/appCatalogSubscription", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/bootVolume", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/bootVolumeBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/byoasn", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/captureFilter", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/clusterNetwork", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReport", _module)

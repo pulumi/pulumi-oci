@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseDbBackupConfig;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,7 @@ public final class GetDatabaseDatabase {
      * 
      */
     private String characterSet;
+    private String databaseAdminPassword;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
@@ -57,6 +59,11 @@ public final class GetDatabaseDatabase {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    private Boolean isActiveDataGuardEnabled;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -78,11 +85,26 @@ public final class GetDatabaseDatabase {
     private String pdbName;
     private List<String> pluggableDatabases;
     /**
+     * @return The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    private String protectionMode;
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
     private String sidPrefix;
+    private String sourceDatabaseId;
+    private String sourceTdeWalletPassword;
     private String tdeWalletPassword;
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     */
+    private String transportType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
@@ -105,6 +127,9 @@ public final class GetDatabaseDatabase {
      */
     public String characterSet() {
         return this.characterSet;
+    }
+    public String databaseAdminPassword() {
+        return this.databaseAdminPassword;
     }
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -156,6 +181,13 @@ public final class GetDatabaseDatabase {
         return this.freeformTags;
     }
     /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    public Boolean isActiveDataGuardEnabled() {
+        return this.isActiveDataGuardEnabled;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -187,14 +219,37 @@ public final class GetDatabaseDatabase {
         return this.pluggableDatabases;
     }
     /**
+     * @return The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    public String protectionMode() {
+        return this.protectionMode;
+    }
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
     public String sidPrefix() {
         return this.sidPrefix;
     }
+    public String sourceDatabaseId() {
+        return this.sourceDatabaseId;
+    }
+    public String sourceTdeWalletPassword() {
+        return this.sourceTdeWalletPassword;
+    }
     public String tdeWalletPassword() {
         return this.tdeWalletPassword;
+    }
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     */
+    public String transportType() {
+        return this.transportType;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -217,6 +272,7 @@ public final class GetDatabaseDatabase {
         private String backupId;
         private String backupTdePassword;
         private String characterSet;
+        private String databaseAdminPassword;
         private String databaseSoftwareImageId;
         private List<GetDatabaseDatabaseDbBackupConfig> dbBackupConfigs;
         private String dbName;
@@ -224,13 +280,18 @@ public final class GetDatabaseDatabase {
         private String dbWorkload;
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
+        private Boolean isActiveDataGuardEnabled;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String ncharacterSet;
         private String pdbName;
         private List<String> pluggableDatabases;
+        private String protectionMode;
         private String sidPrefix;
+        private String sourceDatabaseId;
+        private String sourceTdeWalletPassword;
         private String tdeWalletPassword;
+        private String transportType;
         private String vaultId;
         public Builder() {}
         public Builder(GetDatabaseDatabase defaults) {
@@ -239,6 +300,7 @@ public final class GetDatabaseDatabase {
     	      this.backupId = defaults.backupId;
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
+    	      this.databaseAdminPassword = defaults.databaseAdminPassword;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbBackupConfigs = defaults.dbBackupConfigs;
     	      this.dbName = defaults.dbName;
@@ -246,13 +308,18 @@ public final class GetDatabaseDatabase {
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
+    	      this.protectionMode = defaults.protectionMode;
     	      this.sidPrefix = defaults.sidPrefix;
+    	      this.sourceDatabaseId = defaults.sourceDatabaseId;
+    	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
+    	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
         }
 
@@ -286,6 +353,14 @@ public final class GetDatabaseDatabase {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "characterSet");
             }
             this.characterSet = characterSet;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseAdminPassword(String databaseAdminPassword) {
+            if (databaseAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "databaseAdminPassword");
+            }
+            this.databaseAdminPassword = databaseAdminPassword;
             return this;
         }
         @CustomType.Setter
@@ -348,6 +423,14 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            if (isActiveDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "isActiveDataGuardEnabled");
+            }
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "kmsKeyId");
@@ -391,6 +474,14 @@ public final class GetDatabaseDatabase {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
+        public Builder protectionMode(String protectionMode) {
+            if (protectionMode == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "protectionMode");
+            }
+            this.protectionMode = protectionMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             if (sidPrefix == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "sidPrefix");
@@ -399,11 +490,35 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceDatabaseId(String sourceDatabaseId) {
+            if (sourceDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "sourceDatabaseId");
+            }
+            this.sourceDatabaseId = sourceDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
+            if (sourceTdeWalletPassword == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "sourceTdeWalletPassword");
+            }
+            this.sourceTdeWalletPassword = sourceTdeWalletPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             if (tdeWalletPassword == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "tdeWalletPassword");
             }
             this.tdeWalletPassword = tdeWalletPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder transportType(String transportType) {
+            if (transportType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "transportType");
+            }
+            this.transportType = transportType;
             return this;
         }
         @CustomType.Setter
@@ -420,6 +535,7 @@ public final class GetDatabaseDatabase {
             _resultValue.backupId = backupId;
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
+            _resultValue.databaseAdminPassword = databaseAdminPassword;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbBackupConfigs = dbBackupConfigs;
             _resultValue.dbName = dbName;
@@ -427,13 +543,18 @@ public final class GetDatabaseDatabase {
             _resultValue.dbWorkload = dbWorkload;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.protectionMode = protectionMode;
             _resultValue.sidPrefix = sidPrefix;
+            _resultValue.sourceDatabaseId = sourceDatabaseId;
+            _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;
             return _resultValue;
         }

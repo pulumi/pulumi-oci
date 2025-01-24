@@ -153,6 +153,10 @@ __all__ = [
     'DataGuardAssociationDataCollectionOptionsArgsDict',
     'DatabaseConnectionStringArgs',
     'DatabaseConnectionStringArgsDict',
+    'DatabaseDataGuardGroupArgs',
+    'DatabaseDataGuardGroupArgsDict',
+    'DatabaseDataGuardGroupMemberArgs',
+    'DatabaseDataGuardGroupMemberArgsDict',
     'DatabaseDatabaseArgs',
     'DatabaseDatabaseArgsDict',
     'DatabaseDatabaseDbBackupConfigArgs',
@@ -167,6 +171,10 @@ __all__ = [
     'DatabaseDbBackupConfigBackupDestinationDetailArgsDict',
     'DatabaseUpgradeConnectionStringArgs',
     'DatabaseUpgradeConnectionStringArgsDict',
+    'DatabaseUpgradeDataGuardGroupArgs',
+    'DatabaseUpgradeDataGuardGroupArgsDict',
+    'DatabaseUpgradeDataGuardGroupMemberArgs',
+    'DatabaseUpgradeDataGuardGroupMemberArgsDict',
     'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs',
     'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict',
     'DatabaseUpgradeDbBackupConfigArgs',
@@ -994,7 +1002,7 @@ if not MYPY:
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
         """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
@@ -1028,7 +1036,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -1167,7 +1175,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
         """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         return pulumi.get(self, "skip_rus")
 
@@ -1267,7 +1275,7 @@ if not MYPY:
         """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
 elif False:
     AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -1300,7 +1308,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -1452,7 +1460,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         return pulumi.get(self, "weeks_of_months")
 
@@ -4094,9 +4102,6 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4129,7 +4134,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4267,9 +4271,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4363,9 +4364,6 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4400,7 +4398,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4540,9 +4537,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4689,9 +4683,6 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4723,7 +4714,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4854,9 +4844,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4941,9 +4928,6 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4975,7 +4959,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -5106,9 +5089,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -6183,9 +6163,6 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -6220,7 +6197,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -6360,9 +6336,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -7143,14 +7116,263 @@ class DatabaseConnectionStringArgs:
 
 
 if not MYPY:
+    class DatabaseDataGuardGroupArgsDict(TypedDict):
+        members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgsDict']]]]
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        protection_mode: NotRequired[pulumi.Input[str]]
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+elif False:
+    DatabaseDataGuardGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDataGuardGroupArgs:
+    def __init__(__self__, *,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]] members: List of Data Guard members, representing each database that is part of Data Guard.
+        :param pulumi.Input[str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        if members is not None:
+            pulumi.set(__self__, "members", members)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @property
+    @pulumi.getter
+    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]]]:
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        return pulumi.get(self, "members")
+
+    @members.setter
+    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]]]):
+        pulumi.set(self, "members", value)
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protection_mode", value)
+
+
+if not MYPY:
+    class DatabaseDataGuardGroupMemberArgsDict(TypedDict):
+        apply_lag: NotRequired[pulumi.Input[str]]
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        apply_rate: NotRequired[pulumi.Input[str]]
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        database_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
+        db_system_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        is_active_data_guard_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        True if active Data Guard is enabled.
+        """
+        role: NotRequired[pulumi.Input[str]]
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        transport_lag: NotRequired[pulumi.Input[str]]
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        transport_lag_refresh: NotRequired[pulumi.Input[str]]
+        """
+        The date and time when last redo transport has been done.
+        """
+        transport_type: NotRequired[pulumi.Input[str]]
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+elif False:
+    DatabaseDataGuardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDataGuardGroupMemberArgs:
+    def __init__(__self__, *,
+                 apply_lag: Optional[pulumi.Input[str]] = None,
+                 apply_rate: Optional[pulumi.Input[str]] = None,
+                 database_id: Optional[pulumi.Input[str]] = None,
+                 db_system_id: Optional[pulumi.Input[str]] = None,
+                 is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 transport_lag: Optional[pulumi.Input[str]] = None,
+                 transport_lag_refresh: Optional[pulumi.Input[str]] = None,
+                 transport_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        :param pulumi.Input[str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param pulumi.Input[bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[str] role: The role of the reporting database in this Data Guard association.
+        :param pulumi.Input[str] transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        :param pulumi.Input[str] transport_lag_refresh: The date and time when last redo transport has been done.
+        :param pulumi.Input[str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+        if transport_lag_refresh is not None:
+            pulumi.set(__self__, "transport_lag_refresh", transport_lag_refresh)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[pulumi.Input[str]]:
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @apply_lag.setter
+    def apply_lag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_lag", value)
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[pulumi.Input[str]]:
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @apply_rate.setter
+    def apply_rate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_rate", value)
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_id", value)
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[pulumi.Input[str]]:
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        return pulumi.get(self, "transport_lag")
+
+    @transport_lag.setter
+    def transport_lag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_lag", value)
+
+    @property
+    @pulumi.getter(name="transportLagRefresh")
+    def transport_lag_refresh(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when last redo transport has been done.
+        """
+        return pulumi.get(self, "transport_lag_refresh")
+
+    @transport_lag_refresh.setter
+    def transport_lag_refresh(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_lag_refresh", value)
+
+    @property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_type", value)
+
+
+if not MYPY:
     class DatabaseDatabaseArgsDict(TypedDict):
-        admin_password: pulumi.Input[str]
+        admin_password: NotRequired[pulumi.Input[str]]
         """
         A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
-        db_name: pulumi.Input[str]
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         """
         backup_id: NotRequired[pulumi.Input[str]]
         """
@@ -7166,6 +7388,12 @@ if not MYPY:
 
         AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
+        database_admin_password: NotRequired[pulumi.Input[str]]
+        """
+        The administrator password of the primary database in this Data Guard association.
+
+        **The password MUST be the same as the primary admin password.**
+        """
         database_software_image_id: NotRequired[pulumi.Input[str]]
         """
         The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -7174,9 +7402,13 @@ if not MYPY:
         """
         (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         """
+        db_name: NotRequired[pulumi.Input[str]]
+        """
+        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        """
         db_unique_name: NotRequired[pulumi.Input[str]]
         """
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         """
         db_workload: NotRequired[pulumi.Input[str]]
         """
@@ -7191,6 +7423,10 @@ if not MYPY:
         freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        is_active_data_guard_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        True if active Data Guard is enabled.
         """
         kms_key_id: NotRequired[pulumi.Input[str]]
         """
@@ -7212,13 +7448,36 @@ if not MYPY:
         """
         The list of pluggable databases that needs to be restored into new database.
         """
+        protection_mode: NotRequired[pulumi.Input[str]]
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
         sid_prefix: NotRequired[pulumi.Input[str]]
         """
         Specifies a prefix for the `Oracle SID` of the database to be created.
         """
+        source_database_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        """
+        source_tde_wallet_password: NotRequired[pulumi.Input[str]]
+        """
+        The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+        """
         tde_wallet_password: NotRequired[pulumi.Input[str]]
         """
         The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+        """
+        transport_type: NotRequired[pulumi.Input[str]]
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+
+        For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         """
         vault_id: NotRequired[pulumi.Input[str]]
         """
@@ -7230,62 +7489,87 @@ elif False:
 @pulumi.input_type
 class DatabaseDatabaseArgs:
     def __init__(__self__, *,
-                 admin_password: pulumi.Input[str],
-                 db_name: pulumi.Input[str],
+                 admin_password: Optional[pulumi.Input[str]] = None,
                  backup_id: Optional[pulumi.Input[str]] = None,
                  backup_tde_password: Optional[pulumi.Input[str]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
+                 database_admin_password: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_backup_config: Optional[pulumi.Input['DatabaseDatabaseDbBackupConfigArgs']] = None,
+                 db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
                  pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 protection_mode: Optional[pulumi.Input[str]] = None,
                  sid_prefix: Optional[pulumi.Input[str]] = None,
+                 source_database_id: Optional[pulumi.Input[str]] = None,
+                 source_tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
+                 transport_type: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] backup_tde_password: The password to open the TDE wallet.
         :param pulumi.Input[str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
                
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param pulumi.Input[str] database_admin_password: The administrator password of the primary database in this Data Guard association.
+               
+               **The password MUST be the same as the primary admin password.**
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input['DatabaseDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        :param pulumi.Input[str] db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
+        :param pulumi.Input[str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
+        :param pulumi.Input[str] source_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        :param pulumi.Input[str] source_tde_wallet_password: The TDE wallet password of the source database specified by 'sourceDatabaseId'.
         :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+        :param pulumi.Input[str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+               
+               For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+               
+               **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "db_name", db_name)
+        if admin_password is not None:
+            pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
         if backup_tde_password is not None:
             pulumi.set(__self__, "backup_tde_password", backup_tde_password)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
+        if database_admin_password is not None:
+            pulumi.set(__self__, "database_admin_password", database_admin_password)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_backup_config is not None:
             pulumi.set(__self__, "db_backup_config", db_backup_config)
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
         if db_unique_name is not None:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
         if db_workload is not None:
@@ -7294,6 +7578,8 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -7304,36 +7590,32 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_databases is not None:
             pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
         if sid_prefix is not None:
             pulumi.set(__self__, "sid_prefix", sid_prefix)
+        if source_database_id is not None:
+            pulumi.set(__self__, "source_database_id", source_database_id)
+        if source_tde_wallet_password is not None:
+            pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> pulumi.Input[str]:
+    def admin_password(self) -> Optional[pulumi.Input[str]]:
         """
         A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
-    def admin_password(self, value: pulumi.Input[str]):
+    def admin_password(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "admin_password", value)
-
-    @property
-    @pulumi.getter(name="dbName")
-    def db_name(self) -> pulumi.Input[str]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
-        return pulumi.get(self, "db_name")
-
-    @db_name.setter
-    def db_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "db_name", value)
 
     @property
     @pulumi.getter(name="backupId")
@@ -7374,6 +7656,20 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "character_set", value)
 
     @property
+    @pulumi.getter(name="databaseAdminPassword")
+    def database_admin_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The administrator password of the primary database in this Data Guard association.
+
+        **The password MUST be the same as the primary admin password.**
+        """
+        return pulumi.get(self, "database_admin_password")
+
+    @database_admin_password.setter
+    def database_admin_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_admin_password", value)
+
+    @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -7398,10 +7694,22 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "db_backup_config", value)
 
     @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_name", value)
+
+    @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         """
         return pulumi.get(self, "db_unique_name")
 
@@ -7446,6 +7754,18 @@ class DatabaseDatabaseArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -7508,6 +7828,18 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "pluggable_databases", value)
 
     @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protection_mode", value)
+
+    @property
     @pulumi.getter(name="sidPrefix")
     def sid_prefix(self) -> Optional[pulumi.Input[str]]:
         """
@@ -7520,6 +7852,30 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "sid_prefix", value)
 
     @property
+    @pulumi.getter(name="sourceDatabaseId")
+    def source_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        """
+        return pulumi.get(self, "source_database_id")
+
+    @source_database_id.setter
+    def source_database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_database_id", value)
+
+    @property
+    @pulumi.getter(name="sourceTdeWalletPassword")
+    def source_tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+        """
+        return pulumi.get(self, "source_tde_wallet_password")
+
+    @source_tde_wallet_password.setter
+    def source_tde_wallet_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_tde_wallet_password", value)
+
+    @property
     @pulumi.getter(name="tdeWalletPassword")
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
@@ -7530,6 +7886,25 @@ class DatabaseDatabaseArgs:
     @tde_wallet_password.setter
     def tde_wallet_password(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "tde_wallet_password", value)
+
+    @property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+
+        For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_type", value)
 
     @property
     @pulumi.getter(name="vaultId")
@@ -8180,6 +8555,259 @@ class DatabaseUpgradeConnectionStringArgs:
     @cdb_ip_default.setter
     def cdb_ip_default(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "cdb_ip_default", value)
+
+
+if not MYPY:
+    class DatabaseUpgradeDataGuardGroupArgsDict(TypedDict):
+        members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgsDict']]]]
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        protection_mode: NotRequired[pulumi.Input[str]]
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+elif False:
+    DatabaseUpgradeDataGuardGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseUpgradeDataGuardGroupArgs:
+    def __init__(__self__, *,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]] members: List of Data Guard members, representing each database that is part of Data Guard.
+        :param pulumi.Input[str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        if members is not None:
+            pulumi.set(__self__, "members", members)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @property
+    @pulumi.getter
+    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]]]:
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        return pulumi.get(self, "members")
+
+    @members.setter
+    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]]]):
+        pulumi.set(self, "members", value)
+
+    @property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protection_mode", value)
+
+
+if not MYPY:
+    class DatabaseUpgradeDataGuardGroupMemberArgsDict(TypedDict):
+        apply_lag: NotRequired[pulumi.Input[str]]
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        apply_rate: NotRequired[pulumi.Input[str]]
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        database_id: NotRequired[pulumi.Input[str]]
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        db_system_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        is_active_data_guard_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        True if active Data Guard is enabled.
+        """
+        role: NotRequired[pulumi.Input[str]]
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        transport_lag: NotRequired[pulumi.Input[str]]
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        transport_lag_refresh: NotRequired[pulumi.Input[str]]
+        """
+        The date and time when last redo transport has been done.
+        """
+        transport_type: NotRequired[pulumi.Input[str]]
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+elif False:
+    DatabaseUpgradeDataGuardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseUpgradeDataGuardGroupMemberArgs:
+    def __init__(__self__, *,
+                 apply_lag: Optional[pulumi.Input[str]] = None,
+                 apply_rate: Optional[pulumi.Input[str]] = None,
+                 database_id: Optional[pulumi.Input[str]] = None,
+                 db_system_id: Optional[pulumi.Input[str]] = None,
+                 is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 transport_lag: Optional[pulumi.Input[str]] = None,
+                 transport_lag_refresh: Optional[pulumi.Input[str]] = None,
+                 transport_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        :param pulumi.Input[str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param pulumi.Input[bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[str] role: The role of the reporting database in this Data Guard association.
+        :param pulumi.Input[str] transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        :param pulumi.Input[str] transport_lag_refresh: The date and time when last redo transport has been done.
+        :param pulumi.Input[str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+        if transport_lag_refresh is not None:
+            pulumi.set(__self__, "transport_lag_refresh", transport_lag_refresh)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
+
+    @property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[pulumi.Input[str]]:
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @apply_lag.setter
+    def apply_lag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_lag", value)
+
+    @property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[pulumi.Input[str]]:
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @apply_rate.setter
+    def apply_rate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_rate", value)
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_id", value)
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[pulumi.Input[str]]:
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        return pulumi.get(self, "transport_lag")
+
+    @transport_lag.setter
+    def transport_lag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_lag", value)
+
+    @property
+    @pulumi.getter(name="transportLagRefresh")
+    def transport_lag_refresh(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time when last redo transport has been done.
+        """
+        return pulumi.get(self, "transport_lag_refresh")
+
+    @transport_lag_refresh.setter
+    def transport_lag_refresh(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_lag_refresh", value)
+
+    @property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transport_type", value)
 
 
 if not MYPY:
@@ -10903,9 +11531,6 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -10938,7 +11563,6 @@ class DbSystemMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -11076,9 +11700,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -11172,9 +11793,6 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -11209,7 +11827,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -11349,9 +11966,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -12496,9 +13110,6 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -12533,7 +13144,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -12673,9 +13283,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter

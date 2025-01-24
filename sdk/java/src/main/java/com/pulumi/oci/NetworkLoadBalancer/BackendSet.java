@@ -72,9 +72,11 @@ import javax.annotation.Nullable;
  *             .name(backendSetName)
  *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
  *             .policy(backendSetPolicy)
+ *             .areOperationallyActiveBackendsPreferred(backendSetAreOperationallyActiveBackendsPreferred)
  *             .ipVersion(backendSetIpVersion)
  *             .isFailOpen(backendSetIsFailOpen)
  *             .isInstantFailoverEnabled(backendSetIsInstantFailoverEnabled)
+ *             .isInstantFailoverTcpResetEnabled(backendSetIsInstantFailoverTcpResetEnabled)
  *             .isPreserveSource(backendSetIsPreserveSource)
  *             .build());
  * 
@@ -96,6 +98,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkLoadBalancer/backendSet:BackendSet")
 public class BackendSet extends com.pulumi.resources.CustomResource {
     /**
+     * (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * 
+     */
+    @Export(name="areOperationallyActiveBackendsPreferred", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> areOperationallyActiveBackendsPreferred;
+
+    /**
+     * @return (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * 
+     */
+    public Output<Boolean> areOperationallyActiveBackendsPreferred() {
+        return this.areOperationallyActiveBackendsPreferred;
+    }
+    /**
      * (Updatable) An array of backends to be associated with the backend set.
      * 
      */
@@ -110,14 +126,14 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
         return this.backends;
     }
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      * 
      */
     @Export(name="healthChecker", refs={BackendSetHealthChecker.class}, tree="[0]")
     private Output<BackendSetHealthChecker> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      * 
      */
     public Output<BackendSetHealthChecker> healthChecker() {
@@ -164,6 +180,20 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isInstantFailoverEnabled() {
         return this.isInstantFailoverEnabled;
+    }
+    /**
+     * (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * 
+     */
+    @Export(name="isInstantFailoverTcpResetEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isInstantFailoverTcpResetEnabled;
+
+    /**
+     * @return (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * 
+     */
+    public Output<Boolean> isInstantFailoverTcpResetEnabled() {
+        return this.isInstantFailoverTcpResetEnabled;
     }
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.

@@ -50,6 +50,10 @@ export class Database extends pulumi.CustomResource {
     }
 
     /**
+     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     */
+    public readonly actionTrigger!: pulumi.Output<number | undefined>;
+    /**
      * The character set for the database.
      */
     public /*out*/ readonly characterSet!: pulumi.Output<string>;
@@ -61,6 +65,17 @@ export class Database extends pulumi.CustomResource {
      * The Connection strings used to connect to the Oracle Database.
      */
     public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.DatabaseConnectionString[]>;
+    /**
+     * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly dataGuardAction!: pulumi.Output<string | undefined>;
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     */
+    public /*out*/ readonly dataGuardGroups!: pulumi.Output<outputs.Database.DatabaseDataGuardGroup[]>;
     /**
      * (Updatable) Details for creating a database.
      *
@@ -170,11 +185,7 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly sidPrefix!: pulumi.Output<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      */
     public readonly source!: pulumi.Output<string>;
     /**
@@ -211,9 +222,12 @@ export class Database extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseState | undefined;
+            resourceInputs["actionTrigger"] = state ? state.actionTrigger : undefined;
             resourceInputs["characterSet"] = state ? state.characterSet : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
+            resourceInputs["dataGuardAction"] = state ? state.dataGuardAction : undefined;
+            resourceInputs["dataGuardGroups"] = state ? state.dataGuardGroups : undefined;
             resourceInputs["database"] = state ? state.database : undefined;
             resourceInputs["databaseManagementConfigs"] = state ? state.databaseManagementConfigs : undefined;
             resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
@@ -257,6 +271,8 @@ export class Database extends pulumi.CustomResource {
             if ((!args || args.source === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
+            resourceInputs["actionTrigger"] = args ? args.actionTrigger : undefined;
+            resourceInputs["dataGuardAction"] = args ? args.dataGuardAction : undefined;
             resourceInputs["database"] = args ? args.database : undefined;
             resourceInputs["dbHomeId"] = args ? args.dbHomeId : undefined;
             resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
@@ -270,6 +286,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["characterSet"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
+            resourceInputs["dataGuardGroups"] = undefined /*out*/;
             resourceInputs["databaseManagementConfigs"] = undefined /*out*/;
             resourceInputs["databaseSoftwareImageId"] = undefined /*out*/;
             resourceInputs["dbBackupConfigs"] = undefined /*out*/;
@@ -303,6 +320,10 @@ export class Database extends pulumi.CustomResource {
  */
 export interface DatabaseState {
     /**
+     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     */
+    actionTrigger?: pulumi.Input<number>;
+    /**
      * The character set for the database.
      */
     characterSet?: pulumi.Input<string>;
@@ -314,6 +335,17 @@ export interface DatabaseState {
      * The Connection strings used to connect to the Oracle Database.
      */
     connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseConnectionString>[]>;
+    /**
+     * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    dataGuardAction?: pulumi.Input<string>;
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     */
+    dataGuardGroups?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDataGuardGroup>[]>;
     /**
      * (Updatable) Details for creating a database.
      *
@@ -423,11 +455,7 @@ export interface DatabaseState {
      */
     sidPrefix?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      */
     source?: pulumi.Input<string>;
     /**
@@ -456,6 +484,17 @@ export interface DatabaseState {
  * The set of arguments for constructing a Database resource.
  */
 export interface DatabaseArgs {
+    /**
+     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     */
+    actionTrigger?: pulumi.Input<number>;
+    /**
+     * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    dataGuardAction?: pulumi.Input<string>;
     /**
      * (Updatable) Details for creating a database.
      *
@@ -493,11 +532,7 @@ export interface DatabaseArgs {
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      */
     source: pulumi.Input<string>;
     /**

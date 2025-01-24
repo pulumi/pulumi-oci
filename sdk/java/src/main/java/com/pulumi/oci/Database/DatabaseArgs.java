@@ -20,6 +20,42 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     public static final DatabaseArgs Empty = new DatabaseArgs();
 
     /**
+     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     * 
+     */
+    @Import(name="actionTrigger")
+    private @Nullable Output<Integer> actionTrigger;
+
+    /**
+     * @return (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> actionTrigger() {
+        return Optional.ofNullable(this.actionTrigger);
+    }
+
+    /**
+     * Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="dataGuardAction")
+    private @Nullable Output<String> dataGuardAction;
+
+    /**
+     * @return Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> dataGuardAction() {
+        return Optional.ofNullable(this.dataGuardAction);
+    }
+
+    /**
      * (Updatable) Details for creating a database.
      * 
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -148,20 +184,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
-     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      * 
      */
     public Output<String> source() {
@@ -186,6 +216,8 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     private DatabaseArgs() {}
 
     private DatabaseArgs(DatabaseArgs $) {
+        this.actionTrigger = $.actionTrigger;
+        this.dataGuardAction = $.dataGuardAction;
         this.database = $.database;
         this.dbHomeId = $.dbHomeId;
         this.dbVersion = $.dbVersion;
@@ -214,6 +246,54 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DatabaseArgs defaults) {
             $ = new DatabaseArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param actionTrigger (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionTrigger(@Nullable Output<Integer> actionTrigger) {
+            $.actionTrigger = actionTrigger;
+            return this;
+        }
+
+        /**
+         * @param actionTrigger (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionTrigger(Integer actionTrigger) {
+            return actionTrigger(Output.of(actionTrigger));
+        }
+
+        /**
+         * @param dataGuardAction Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataGuardAction(@Nullable Output<String> dataGuardAction) {
+            $.dataGuardAction = dataGuardAction;
+            return this;
+        }
+
+        /**
+         * @param dataGuardAction Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataGuardAction(String dataGuardAction) {
+            return dataGuardAction(Output.of(dataGuardAction));
         }
 
         /**
@@ -393,10 +473,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
          * 
          * @return builder
          * 
@@ -407,10 +484,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
          * 
          * @return builder
          * 

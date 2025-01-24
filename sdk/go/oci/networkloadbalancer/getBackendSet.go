@@ -34,10 +34,12 @@ type LookupBackendSetArgs struct {
 
 // A collection of values returned by getBackendSet.
 type LookupBackendSetResult struct {
-	BackendSetName string `pulumi:"backendSetName"`
+	// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	AreOperationallyActiveBackendsPreferred bool   `pulumi:"areOperationallyActiveBackendsPreferred"`
+	BackendSetName                          string `pulumi:"backendSetName"`
 	// An array of backends.
 	Backends []GetBackendSetBackend `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
 	HealthCheckers []GetBackendSetHealthChecker `pulumi:"healthCheckers"`
 	Id             string                       `pulumi:"id"`
 	// IP version associated with the backend set.
@@ -46,6 +48,8 @@ type LookupBackendSetResult struct {
 	IsFailOpen bool `pulumi:"isFailOpen"`
 	// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled bool `pulumi:"isInstantFailoverEnabled"`
+	// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	IsInstantFailoverTcpResetEnabled bool `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -91,6 +95,11 @@ func (o LookupBackendSetResultOutput) ToLookupBackendSetResultOutputWithContext(
 	return o
 }
 
+// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+func (o LookupBackendSetResultOutput) AreOperationallyActiveBackendsPreferred() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) bool { return v.AreOperationallyActiveBackendsPreferred }).(pulumi.BoolOutput)
+}
+
 func (o LookupBackendSetResultOutput) BackendSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) string { return v.BackendSetName }).(pulumi.StringOutput)
 }
@@ -100,7 +109,7 @@ func (o LookupBackendSetResultOutput) Backends() GetBackendSetBackendArrayOutput
 	return o.ApplyT(func(v LookupBackendSetResult) []GetBackendSetBackend { return v.Backends }).(GetBackendSetBackendArrayOutput)
 }
 
-// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
 func (o LookupBackendSetResultOutput) HealthCheckers() GetBackendSetHealthCheckerArrayOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) []GetBackendSetHealthChecker { return v.HealthCheckers }).(GetBackendSetHealthCheckerArrayOutput)
 }
@@ -122,6 +131,11 @@ func (o LookupBackendSetResultOutput) IsFailOpen() pulumi.BoolOutput {
 // If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 func (o LookupBackendSetResultOutput) IsInstantFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) bool { return v.IsInstantFailoverEnabled }).(pulumi.BoolOutput)
+}
+
+// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+func (o LookupBackendSetResultOutput) IsInstantFailoverTcpResetEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) bool { return v.IsInstantFailoverTcpResetEnabled }).(pulumi.BoolOutput)
 }
 
 // If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.

@@ -62,7 +62,6 @@ import (
 //					},
 //					PatchingMode:  pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsPatchingMode),
 //					Preference:    pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsPreference),
-//					SkipRus:       pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsSkipRu),
 //					WeeksOfMonths: pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsWeeksOfMonth),
 //				},
 //				NsgIds: pulumi.Any(autonomousExadataInfrastructureNsgIds),

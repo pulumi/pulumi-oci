@@ -655,7 +655,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                 }],
                 "patching_mode": autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
                 "preference": autonomous_exadata_infrastructure_maintenance_window_details_preference,
-                "skip_rus": autonomous_exadata_infrastructure_maintenance_window_details_skip_ru,
                 "weeks_of_months": autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
             },
             nsg_ids=autonomous_exadata_infrastructure_nsg_ids)
@@ -738,7 +737,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                 }],
                 "patching_mode": autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
                 "preference": autonomous_exadata_infrastructure_maintenance_window_details_preference,
-                "skip_rus": autonomous_exadata_infrastructure_maintenance_window_details_skip_ru,
                 "weeks_of_months": autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
             },
             nsg_ids=autonomous_exadata_infrastructure_nsg_ids)

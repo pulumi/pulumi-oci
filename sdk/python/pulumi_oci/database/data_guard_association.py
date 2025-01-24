@@ -44,6 +44,7 @@ class DataGuardAssociationArgs:
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 migrate_trigger: Optional[pulumi.Input[int]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_db_home_id: Optional[pulumi.Input[str]] = None,
@@ -80,10 +81,6 @@ class DataGuardAssociationArgs:
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
@@ -108,6 +105,11 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+        :param pulumi.Input[int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -167,6 +169,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
+        if migrate_trigger is not None:
+            pulumi.set(__self__, "migrate_trigger", migrate_trigger)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
@@ -271,10 +275,6 @@ class DataGuardAssociationArgs:
         For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 
         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "transport_type")
 
@@ -492,6 +492,22 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "license_model", value)
 
     @property
+    @pulumi.getter(name="migrateTrigger")
+    def migrate_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "migrate_trigger")
+
+    @migrate_trigger.setter
+    def migrate_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "migrate_trigger", value)
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -669,6 +685,7 @@ class _DataGuardAssociationState:
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 migrate_trigger: Optional[pulumi.Input[int]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_data_guard_association_id: Optional[pulumi.Input[str]] = None,
@@ -729,6 +746,11 @@ class _DataGuardAssociationState:
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
+        :param pulumi.Input[int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -764,10 +786,6 @@ class _DataGuardAssociationState:
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if apply_lag is not None:
             pulumi.set(__self__, "apply_lag", apply_lag)
@@ -817,6 +835,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if migrate_trigger is not None:
+            pulumi.set(__self__, "migrate_trigger", migrate_trigger)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
@@ -1157,6 +1177,22 @@ class _DataGuardAssociationState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="migrateTrigger")
+    def migrate_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "migrate_trigger")
+
+    @migrate_trigger.setter
+    def migrate_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "migrate_trigger", value)
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -1404,10 +1440,6 @@ class _DataGuardAssociationState:
         For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 
         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "transport_type")
 
@@ -1442,6 +1474,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 migrate_trigger: Optional[pulumi.Input[int]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_db_home_id: Optional[pulumi.Input[str]] = None,
@@ -1557,6 +1590,11 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+        :param pulumi.Input[int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -1586,10 +1624,6 @@ class DataGuardAssociation(pulumi.CustomResource):
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1696,6 +1730,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 migrate_trigger: Optional[pulumi.Input[int]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_db_home_id: Optional[pulumi.Input[str]] = None,
@@ -1748,6 +1783,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
             __props__.__dict__["license_model"] = license_model
+            __props__.__dict__["migrate_trigger"] = migrate_trigger
             __props__.__dict__["node_count"] = node_count
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["peer_db_home_id"] = peer_db_home_id
@@ -1811,6 +1847,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            migrate_trigger: Optional[pulumi.Input[int]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             peer_data_guard_association_id: Optional[pulumi.Input[str]] = None,
@@ -1876,6 +1913,11 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
+        :param pulumi.Input[int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -1911,10 +1953,6 @@ class DataGuardAssociation(pulumi.CustomResource):
                For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1944,6 +1982,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["migrate_trigger"] = migrate_trigger
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["peer_data_guard_association_id"] = peer_data_guard_association_id
@@ -2169,6 +2208,18 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="migrateTrigger")
+    def migrate_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "migrate_trigger")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[Optional[int]]:
         """
@@ -2340,10 +2391,6 @@ class DataGuardAssociation(pulumi.CustomResource):
         For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 
         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "transport_type")
 

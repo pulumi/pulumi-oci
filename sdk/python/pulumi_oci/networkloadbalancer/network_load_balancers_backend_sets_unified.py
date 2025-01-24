@@ -24,25 +24,29 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
                  health_checker: pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'],
                  network_load_balancer_id: pulumi.Input[str],
                  policy: pulumi.Input[str],
+                 are_operationally_active_backends_preferred: Optional[pulumi.Input[bool]] = None,
                  backends: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_tcp_reset_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkLoadBalancersBackendSetsUnified resource.
-        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]] backends: (Updatable) An array of backends to be associated with the backend set.
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        :param pulumi.Input[bool] is_instant_failover_tcp_reset_enabled: (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -53,6 +57,8 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
         pulumi.set(__self__, "health_checker", health_checker)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         pulumi.set(__self__, "policy", policy)
+        if are_operationally_active_backends_preferred is not None:
+            pulumi.set(__self__, "are_operationally_active_backends_preferred", are_operationally_active_backends_preferred)
         if backends is not None:
             pulumi.set(__self__, "backends", backends)
         if ip_version is not None:
@@ -61,6 +67,8 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
             pulumi.set(__self__, "is_fail_open", is_fail_open)
         if is_instant_failover_enabled is not None:
             pulumi.set(__self__, "is_instant_failover_enabled", is_instant_failover_enabled)
+        if is_instant_failover_tcp_reset_enabled is not None:
+            pulumi.set(__self__, "is_instant_failover_tcp_reset_enabled", is_instant_failover_tcp_reset_enabled)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         if name is not None:
@@ -70,7 +78,7 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -105,6 +113,18 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
     @policy.setter
     def policy(self, value: pulumi.Input[str]):
         pulumi.set(self, "policy", value)
+
+    @property
+    @pulumi.getter(name="areOperationallyActiveBackendsPreferred")
+    def are_operationally_active_backends_preferred(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        """
+        return pulumi.get(self, "are_operationally_active_backends_preferred")
+
+    @are_operationally_active_backends_preferred.setter
+    def are_operationally_active_backends_preferred(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_operationally_active_backends_preferred", value)
 
     @property
     @pulumi.getter
@@ -155,6 +175,18 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
         pulumi.set(self, "is_instant_failover_enabled", value)
 
     @property
+    @pulumi.getter(name="isInstantFailoverTcpResetEnabled")
+    def is_instant_failover_tcp_reset_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        """
+        return pulumi.get(self, "is_instant_failover_tcp_reset_enabled")
+
+    @is_instant_failover_tcp_reset_enabled.setter
+    def is_instant_failover_tcp_reset_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_instant_failover_tcp_reset_enabled", value)
+
+    @property
     @pulumi.getter(name="isPreserveSource")
     def is_preserve_source(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -186,22 +218,26 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
 @pulumi.input_type
 class _NetworkLoadBalancersBackendSetsUnifiedState:
     def __init__(__self__, *,
+                 are_operationally_active_backends_preferred: Optional[pulumi.Input[bool]] = None,
                  backends: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] = None,
                  health_checker: Optional[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_tcp_reset_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  policy: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkLoadBalancersBackendSetsUnified resources.
+        :param pulumi.Input[bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        :param pulumi.Input[bool] is_instant_failover_tcp_reset_enabled: (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -215,6 +251,8 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if are_operationally_active_backends_preferred is not None:
+            pulumi.set(__self__, "are_operationally_active_backends_preferred", are_operationally_active_backends_preferred)
         if backends is not None:
             pulumi.set(__self__, "backends", backends)
         if health_checker is not None:
@@ -225,6 +263,8 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
             pulumi.set(__self__, "is_fail_open", is_fail_open)
         if is_instant_failover_enabled is not None:
             pulumi.set(__self__, "is_instant_failover_enabled", is_instant_failover_enabled)
+        if is_instant_failover_tcp_reset_enabled is not None:
+            pulumi.set(__self__, "is_instant_failover_tcp_reset_enabled", is_instant_failover_tcp_reset_enabled)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         if name is not None:
@@ -233,6 +273,18 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
             pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         if policy is not None:
             pulumi.set(__self__, "policy", policy)
+
+    @property
+    @pulumi.getter(name="areOperationallyActiveBackendsPreferred")
+    def are_operationally_active_backends_preferred(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        """
+        return pulumi.get(self, "are_operationally_active_backends_preferred")
+
+    @are_operationally_active_backends_preferred.setter
+    def are_operationally_active_backends_preferred(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_operationally_active_backends_preferred", value)
 
     @property
     @pulumi.getter
@@ -250,7 +302,7 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> Optional[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']]:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -293,6 +345,18 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
     @is_instant_failover_enabled.setter
     def is_instant_failover_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_instant_failover_enabled", value)
+
+    @property
+    @pulumi.getter(name="isInstantFailoverTcpResetEnabled")
+    def is_instant_failover_tcp_reset_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        """
+        return pulumi.get(self, "is_instant_failover_tcp_reset_enabled")
+
+    @is_instant_failover_tcp_reset_enabled.setter
+    def is_instant_failover_tcp_reset_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_instant_failover_tcp_reset_enabled", value)
 
     @property
     @pulumi.getter(name="isPreserveSource")
@@ -356,11 +420,13 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_operationally_active_backends_preferred: Optional[pulumi.Input[bool]] = None,
                  backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]]] = None,
                  health_checker: Optional[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_tcp_reset_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -400,6 +466,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             name=network_load_balancers_backend_sets_unified_name,
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=network_load_balancers_backend_sets_unified_policy,
+            are_operationally_active_backends_preferred=network_load_balancers_backend_sets_unified_are_operationally_active_backends_preferred,
             backends=[{
                 "port": network_load_balancers_backend_sets_unified_backends_port,
                 "ip_address": network_load_balancers_backend_sets_unified_backends_ip_address,
@@ -413,6 +480,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             ip_version=network_load_balancers_backend_sets_unified_ip_version,
             is_fail_open=network_load_balancers_backend_sets_unified_is_fail_open,
             is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
+            is_instant_failover_tcp_reset_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_tcp_reset_enabled,
             is_preserve_source=network_load_balancers_backend_sets_unified_is_preserve_source)
         ```
 
@@ -426,11 +494,13 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        :param pulumi.Input[bool] is_instant_failover_tcp_reset_enabled: (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -484,6 +554,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             name=network_load_balancers_backend_sets_unified_name,
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=network_load_balancers_backend_sets_unified_policy,
+            are_operationally_active_backends_preferred=network_load_balancers_backend_sets_unified_are_operationally_active_backends_preferred,
             backends=[{
                 "port": network_load_balancers_backend_sets_unified_backends_port,
                 "ip_address": network_load_balancers_backend_sets_unified_backends_ip_address,
@@ -497,6 +568,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             ip_version=network_load_balancers_backend_sets_unified_ip_version,
             is_fail_open=network_load_balancers_backend_sets_unified_is_fail_open,
             is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
+            is_instant_failover_tcp_reset_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_tcp_reset_enabled,
             is_preserve_source=network_load_balancers_backend_sets_unified_is_preserve_source)
         ```
 
@@ -523,11 +595,13 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 are_operationally_active_backends_preferred: Optional[pulumi.Input[bool]] = None,
                  backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]]] = None,
                  health_checker: Optional[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_tcp_reset_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -541,6 +615,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkLoadBalancersBackendSetsUnifiedArgs.__new__(NetworkLoadBalancersBackendSetsUnifiedArgs)
 
+            __props__.__dict__["are_operationally_active_backends_preferred"] = are_operationally_active_backends_preferred
             __props__.__dict__["backends"] = backends
             if health_checker is None and not opts.urn:
                 raise TypeError("Missing required property 'health_checker'")
@@ -548,6 +623,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             __props__.__dict__["ip_version"] = ip_version
             __props__.__dict__["is_fail_open"] = is_fail_open
             __props__.__dict__["is_instant_failover_enabled"] = is_instant_failover_enabled
+            __props__.__dict__["is_instant_failover_tcp_reset_enabled"] = is_instant_failover_tcp_reset_enabled
             __props__.__dict__["is_preserve_source"] = is_preserve_source
             __props__.__dict__["name"] = name
             if network_load_balancer_id is None and not opts.urn:
@@ -566,11 +642,13 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            are_operationally_active_backends_preferred: Optional[pulumi.Input[bool]] = None,
             backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]]] = None,
             health_checker: Optional[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']]] = None,
             ip_version: Optional[pulumi.Input[str]] = None,
             is_fail_open: Optional[pulumi.Input[bool]] = None,
             is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
+            is_instant_failover_tcp_reset_enabled: Optional[pulumi.Input[bool]] = None,
             is_preserve_source: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -582,11 +660,13 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        :param pulumi.Input[bool] is_instant_failover_tcp_reset_enabled: (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -604,16 +684,26 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         __props__ = _NetworkLoadBalancersBackendSetsUnifiedState.__new__(_NetworkLoadBalancersBackendSetsUnifiedState)
 
+        __props__.__dict__["are_operationally_active_backends_preferred"] = are_operationally_active_backends_preferred
         __props__.__dict__["backends"] = backends
         __props__.__dict__["health_checker"] = health_checker
         __props__.__dict__["ip_version"] = ip_version
         __props__.__dict__["is_fail_open"] = is_fail_open
         __props__.__dict__["is_instant_failover_enabled"] = is_instant_failover_enabled
+        __props__.__dict__["is_instant_failover_tcp_reset_enabled"] = is_instant_failover_tcp_reset_enabled
         __props__.__dict__["is_preserve_source"] = is_preserve_source
         __props__.__dict__["name"] = name
         __props__.__dict__["network_load_balancer_id"] = network_load_balancer_id
         __props__.__dict__["policy"] = policy
         return NetworkLoadBalancersBackendSetsUnified(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="areOperationallyActiveBackendsPreferred")
+    def are_operationally_active_backends_preferred(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        """
+        return pulumi.get(self, "are_operationally_active_backends_preferred")
 
     @property
     @pulumi.getter
@@ -627,7 +717,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Output['outputs.NetworkLoadBalancersBackendSetsUnifiedHealthChecker']:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -654,6 +744,14 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
         """
         return pulumi.get(self, "is_instant_failover_enabled")
+
+    @property
+    @pulumi.getter(name="isInstantFailoverTcpResetEnabled")
+    def is_instant_failover_tcp_reset_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        """
+        return pulumi.get(self, "is_instant_failover_tcp_reset_enabled")
 
     @property
     @pulumi.getter(name="isPreserveSource")

@@ -93,6 +93,7 @@ export interface GetDataGuardAssociationResult {
      * Additional information about the current lifecycleState, if available.
      */
     readonly lifecycleDetails: string;
+    readonly migrateTrigger: number;
     readonly nodeCount: number;
     readonly nsgIds: string[];
     /**

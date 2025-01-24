@@ -27,7 +27,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, auto_refresh_frequency_in_seconds=None, auto_refresh_point_lag_in_seconds=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, availability_domain=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, byol_compute_count_limit=None, character_set=None, clone_type=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, disaster_recovery_type=None, display_name=None, encryption_key_history_entries=None, encryption_keys=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_backup_retention_locked=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, public_connection_urls=None, public_endpoint=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, security_attributes=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, subscription_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_auto_refresh_start=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_undeleted=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, auto_refresh_frequency_in_seconds=None, auto_refresh_point_lag_in_seconds=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, availability_domain=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, byol_compute_count_limit=None, character_set=None, clone_type=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, disaster_recovery_type=None, display_name=None, encryption_key_history_entries=None, encryption_keys=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_backup_retention_locked=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_disconnect_peer=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_id=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, public_connection_urls=None, public_endpoint=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, security_attributes=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, subscription_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_auto_refresh_start=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_undeleted=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -193,6 +193,9 @@ class GetAutonomousDatabaseResult:
         if is_dev_tier and not isinstance(is_dev_tier, bool):
             raise TypeError("Expected argument 'is_dev_tier' to be a bool")
         pulumi.set(__self__, "is_dev_tier", is_dev_tier)
+        if is_disconnect_peer and not isinstance(is_disconnect_peer, bool):
+            raise TypeError("Expected argument 'is_disconnect_peer' to be a bool")
+        pulumi.set(__self__, "is_disconnect_peer", is_disconnect_peer)
         if is_free_tier and not isinstance(is_free_tier, bool):
             raise TypeError("Expected argument 'is_free_tier' to be a bool")
         pulumi.set(__self__, "is_free_tier", is_free_tier)
@@ -289,6 +292,9 @@ class GetAutonomousDatabaseResult:
         if operations_insights_status and not isinstance(operations_insights_status, str):
             raise TypeError("Expected argument 'operations_insights_status' to be a str")
         pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+        if peer_db_id and not isinstance(peer_db_id, str):
+            raise TypeError("Expected argument 'peer_db_id' to be a str")
+        pulumi.set(__self__, "peer_db_id", peer_db_id)
         if peer_db_ids and not isinstance(peer_db_ids, list):
             raise TypeError("Expected argument 'peer_db_ids' to be a list")
         pulumi.set(__self__, "peer_db_ids", peer_db_ids)
@@ -891,6 +897,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "is_dev_tier")
 
     @property
+    @pulumi.getter(name="isDisconnectPeer")
+    def is_disconnect_peer(self) -> bool:
+        """
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        """
+        return pulumi.get(self, "is_disconnect_peer")
+
+    @property
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> bool:
         """
@@ -1141,6 +1155,14 @@ class GetAutonomousDatabaseResult:
         Status of Operations Insights for this Autonomous Database.
         """
         return pulumi.get(self, "operations_insights_status")
+
+    @property
+    @pulumi.getter(name="peerDbId")
+    def peer_db_id(self) -> str:
+        """
+        The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        """
+        return pulumi.get(self, "peer_db_id")
 
     @property
     @pulumi.getter(name="peerDbIds")
@@ -1549,7 +1571,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> int:
         """
-        The amount of storage that has been used, in terabytes.
+        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         """
         return pulumi.get(self, "used_data_storage_size_in_tbs")
 
@@ -1631,6 +1653,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             is_data_guard_enabled=self.is_data_guard_enabled,
             is_dedicated=self.is_dedicated,
             is_dev_tier=self.is_dev_tier,
+            is_disconnect_peer=self.is_disconnect_peer,
             is_free_tier=self.is_free_tier,
             is_local_data_guard_enabled=self.is_local_data_guard_enabled,
             is_mtls_connection_required=self.is_mtls_connection_required,
@@ -1663,6 +1686,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             ocpu_count=self.ocpu_count,
             open_mode=self.open_mode,
             operations_insights_status=self.operations_insights_status,
+            peer_db_id=self.peer_db_id,
             peer_db_ids=self.peer_db_ids,
             permission_level=self.permission_level,
             private_endpoint=self.private_endpoint,
@@ -1802,6 +1826,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         is_data_guard_enabled=pulumi.get(__ret__, 'is_data_guard_enabled'),
         is_dedicated=pulumi.get(__ret__, 'is_dedicated'),
         is_dev_tier=pulumi.get(__ret__, 'is_dev_tier'),
+        is_disconnect_peer=pulumi.get(__ret__, 'is_disconnect_peer'),
         is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
         is_local_data_guard_enabled=pulumi.get(__ret__, 'is_local_data_guard_enabled'),
         is_mtls_connection_required=pulumi.get(__ret__, 'is_mtls_connection_required'),
@@ -1834,6 +1859,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),
         open_mode=pulumi.get(__ret__, 'open_mode'),
         operations_insights_status=pulumi.get(__ret__, 'operations_insights_status'),
+        peer_db_id=pulumi.get(__ret__, 'peer_db_id'),
         peer_db_ids=pulumi.get(__ret__, 'peer_db_ids'),
         permission_level=pulumi.get(__ret__, 'permission_level'),
         private_endpoint=pulumi.get(__ret__, 'private_endpoint'),
@@ -1970,6 +1996,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         is_data_guard_enabled=pulumi.get(__response__, 'is_data_guard_enabled'),
         is_dedicated=pulumi.get(__response__, 'is_dedicated'),
         is_dev_tier=pulumi.get(__response__, 'is_dev_tier'),
+        is_disconnect_peer=pulumi.get(__response__, 'is_disconnect_peer'),
         is_free_tier=pulumi.get(__response__, 'is_free_tier'),
         is_local_data_guard_enabled=pulumi.get(__response__, 'is_local_data_guard_enabled'),
         is_mtls_connection_required=pulumi.get(__response__, 'is_mtls_connection_required'),
@@ -2002,6 +2029,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         ocpu_count=pulumi.get(__response__, 'ocpu_count'),
         open_mode=pulumi.get(__response__, 'open_mode'),
         operations_insights_status=pulumi.get(__response__, 'operations_insights_status'),
+        peer_db_id=pulumi.get(__response__, 'peer_db_id'),
         peer_db_ids=pulumi.get(__response__, 'peer_db_ids'),
         permission_level=pulumi.get(__response__, 'permission_level'),
         private_endpoint=pulumi.get(__response__, 'private_endpoint'),

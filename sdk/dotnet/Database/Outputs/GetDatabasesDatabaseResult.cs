@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDatabasesDatabaseResult
     {
+        public readonly int ActionTrigger;
         /// <summary>
         /// The character set for the database.
         /// </summary>
@@ -25,6 +26,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// The Connection strings used to connect to the Oracle Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabasesDatabaseConnectionStringResult> ConnectionStrings;
+        public readonly string DataGuardAction;
+        /// <summary>
+        /// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabasesDatabaseDataGuardGroupResult> DataGuardGroups;
         /// <summary>
         /// The configuration of the Database Management service.
         /// </summary>
@@ -145,11 +151,17 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabasesDatabaseResult(
+            int actionTrigger,
+
             string characterSet,
 
             string compartmentId,
 
             ImmutableArray<Outputs.GetDatabasesDatabaseConnectionStringResult> connectionStrings,
+
+            string dataGuardAction,
+
+            ImmutableArray<Outputs.GetDatabasesDatabaseDataGuardGroupResult> dataGuardGroups,
 
             ImmutableArray<Outputs.GetDatabasesDatabaseDatabaseManagementConfigResult> databaseManagementConfigs,
 
@@ -217,9 +229,12 @@ namespace Pulumi.Oci.Database.Outputs
 
             string vmClusterId)
         {
+            ActionTrigger = actionTrigger;
             CharacterSet = characterSet;
             CompartmentId = compartmentId;
             ConnectionStrings = connectionStrings;
+            DataGuardAction = dataGuardAction;
+            DataGuardGroups = dataGuardGroups;
             DatabaseManagementConfigs = databaseManagementConfigs;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             Databases = databases;

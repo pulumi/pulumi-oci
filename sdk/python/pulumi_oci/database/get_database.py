@@ -27,7 +27,10 @@ class GetDatabaseResult:
     """
     A collection of values returned by getDatabase.
     """
-    def __init__(__self__, character_set=None, compartment_id=None, connection_strings=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, time_created=None, vault_id=None, vm_cluster_id=None):
+    def __init__(__self__, action_trigger=None, character_set=None, compartment_id=None, connection_strings=None, data_guard_action=None, data_guard_groups=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, time_created=None, vault_id=None, vm_cluster_id=None):
+        if action_trigger and not isinstance(action_trigger, int):
+            raise TypeError("Expected argument 'action_trigger' to be a int")
+        pulumi.set(__self__, "action_trigger", action_trigger)
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -37,6 +40,12 @@ class GetDatabaseResult:
         if connection_strings and not isinstance(connection_strings, list):
             raise TypeError("Expected argument 'connection_strings' to be a list")
         pulumi.set(__self__, "connection_strings", connection_strings)
+        if data_guard_action and not isinstance(data_guard_action, str):
+            raise TypeError("Expected argument 'data_guard_action' to be a str")
+        pulumi.set(__self__, "data_guard_action", data_guard_action)
+        if data_guard_groups and not isinstance(data_guard_groups, list):
+            raise TypeError("Expected argument 'data_guard_groups' to be a list")
+        pulumi.set(__self__, "data_guard_groups", data_guard_groups)
         if database_id and not isinstance(database_id, str):
             raise TypeError("Expected argument 'database_id' to be a str")
         pulumi.set(__self__, "database_id", database_id)
@@ -141,6 +150,11 @@ class GetDatabaseResult:
         pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
+    @pulumi.getter(name="actionTrigger")
+    def action_trigger(self) -> int:
+        return pulumi.get(self, "action_trigger")
+
+    @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> str:
         """
@@ -165,8 +179,24 @@ class GetDatabaseResult:
         return pulumi.get(self, "connection_strings")
 
     @property
+    @pulumi.getter(name="dataGuardAction")
+    def data_guard_action(self) -> str:
+        return pulumi.get(self, "data_guard_action")
+
+    @property
+    @pulumi.getter(name="dataGuardGroups")
+    def data_guard_groups(self) -> Sequence['outputs.GetDatabaseDataGuardGroupResult']:
+        """
+        Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        """
+        return pulumi.get(self, "data_guard_groups")
+
+    @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
         return pulumi.get(self, "database_id")
 
     @property
@@ -425,9 +455,12 @@ class AwaitableGetDatabaseResult(GetDatabaseResult):
         if False:
             yield self
         return GetDatabaseResult(
+            action_trigger=self.action_trigger,
             character_set=self.character_set,
             compartment_id=self.compartment_id,
             connection_strings=self.connection_strings,
+            data_guard_action=self.data_guard_action,
+            data_guard_groups=self.data_guard_groups,
             database_id=self.database_id,
             database_management_configs=self.database_management_configs,
             database_software_image_id=self.database_software_image_id,
@@ -489,9 +522,12 @@ def get_database(database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabase:getDatabase', __args__, opts=opts, typ=GetDatabaseResult).value
 
     return AwaitableGetDatabaseResult(
+        action_trigger=pulumi.get(__ret__, 'action_trigger'),
         character_set=pulumi.get(__ret__, 'character_set'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_strings=pulumi.get(__ret__, 'connection_strings'),
+        data_guard_action=pulumi.get(__ret__, 'data_guard_action'),
+        data_guard_groups=pulumi.get(__ret__, 'data_guard_groups'),
         database_id=pulumi.get(__ret__, 'database_id'),
         database_management_configs=pulumi.get(__ret__, 'database_management_configs'),
         database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
@@ -550,9 +586,12 @@ def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabase:getDatabase', __args__, opts=opts, typ=GetDatabaseResult)
     return __ret__.apply(lambda __response__: GetDatabaseResult(
+        action_trigger=pulumi.get(__response__, 'action_trigger'),
         character_set=pulumi.get(__response__, 'character_set'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_strings=pulumi.get(__response__, 'connection_strings'),
+        data_guard_action=pulumi.get(__response__, 'data_guard_action'),
+        data_guard_groups=pulumi.get(__response__, 'data_guard_groups'),
         database_id=pulumi.get(__response__, 'database_id'),
         database_management_configs=pulumi.get(__response__, 'database_management_configs'),
         database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),

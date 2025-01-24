@@ -52,6 +52,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.DatabaseUpgradeConnectionString>> ConnectionStrings { get; private set; } = null!;
 
         /// <summary>
+        /// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        /// </summary>
+        [Output("dataGuardGroups")]
+        public Output<ImmutableArray<Outputs.DatabaseUpgradeDataGuardGroup>> DataGuardGroups { get; private set; } = null!;
+
+        /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("databaseId")]
@@ -319,6 +325,18 @@ namespace Pulumi.Oci.Database
         {
             get => _connectionStrings ?? (_connectionStrings = new InputList<Inputs.DatabaseUpgradeConnectionStringGetArgs>());
             set => _connectionStrings = value;
+        }
+
+        [Input("dataGuardGroups")]
+        private InputList<Inputs.DatabaseUpgradeDataGuardGroupGetArgs>? _dataGuardGroups;
+
+        /// <summary>
+        /// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        /// </summary>
+        public InputList<Inputs.DatabaseUpgradeDataGuardGroupGetArgs> DataGuardGroups
+        {
+            get => _dataGuardGroups ?? (_dataGuardGroups = new InputList<Inputs.DatabaseUpgradeDataGuardGroupGetArgs>());
+            set => _dataGuardGroups = value;
         }
 
         /// <summary>

@@ -13,6 +13,1410 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetExadataInfrastructureMaintenanceWindow struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetExadataInfrastructureMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetExadataInfrastructureMaintenanceWindowMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	SkipRus    []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowArgs and GetExadataInfrastructureMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowInput` via:
+//
+//	GetExadataInfrastructureMaintenanceWindowArgs{...}
+type GetExadataInfrastructureMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceWindowOutput() GetExadataInfrastructureMaintenanceWindowOutput
+	ToGetExadataInfrastructureMaintenanceWindowOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceWindowOutput
+}
+
+type GetExadataInfrastructureMaintenanceWindowArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetExadataInfrastructureMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetExadataInfrastructureMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowArgs) ToGetExadataInfrastructureMaintenanceWindowOutput() GetExadataInfrastructureMaintenanceWindowOutput {
+	return i.ToGetExadataInfrastructureMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowArgs) ToGetExadataInfrastructureMaintenanceWindowOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceWindowOutput)
+}
+
+// GetExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowArray and GetExadataInfrastructureMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowArrayInput` via:
+//
+//	GetExadataInfrastructureMaintenanceWindowArray{ GetExadataInfrastructureMaintenanceWindowArgs{...} }
+type GetExadataInfrastructureMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceWindowArrayOutput() GetExadataInfrastructureMaintenanceWindowArrayOutput
+	ToGetExadataInfrastructureMaintenanceWindowArrayOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceWindowArrayOutput
+}
+
+type GetExadataInfrastructureMaintenanceWindowArray []GetExadataInfrastructureMaintenanceWindowInput
+
+func (GetExadataInfrastructureMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowArray) ToGetExadataInfrastructureMaintenanceWindowArrayOutput() GetExadataInfrastructureMaintenanceWindowArrayOutput {
+	return i.ToGetExadataInfrastructureMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowArray) ToGetExadataInfrastructureMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceWindowArrayOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowOutput) ToGetExadataInfrastructureMaintenanceWindowOutput() GetExadataInfrastructureMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowOutput) ToGetExadataInfrastructureMaintenanceWindowOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetExadataInfrastructureMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) DaysOfWeeks() GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) []GetExadataInfrastructureMaintenanceWindowDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetExadataInfrastructureMaintenanceWindowOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) Months() GetExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) []GetExadataInfrastructureMaintenanceWindowMonth {
+		return v.Months
+	}).(GetExadataInfrastructureMaintenanceWindowMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) string { return v.Preference }).(pulumi.StringOutput)
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetExadataInfrastructureMaintenanceWindowOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindow) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowArrayOutput) ToGetExadataInfrastructureMaintenanceWindowArrayOutput() GetExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowArrayOutput) ToGetExadataInfrastructureMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureMaintenanceWindow {
+		return vs[0].([]GetExadataInfrastructureMaintenanceWindow)[vs[1].(int)]
+	}).(GetExadataInfrastructureMaintenanceWindowOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
+//
+//	GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput
+	ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput
+}
+
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return i.ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput)
+}
+
+// GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
+//
+//	GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput
+	ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput
+}
+
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray []GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput
+
+func (GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return i.ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindowDaysOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ToGetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureMaintenanceWindowDaysOfWeek {
+		return vs[0].([]GetExadataInfrastructureMaintenanceWindowDaysOfWeek)[vs[1].(int)]
+	}).(GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowMonthArgs and GetExadataInfrastructureMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowMonthInput` via:
+//
+//	GetExadataInfrastructureMaintenanceWindowMonthArgs{...}
+type GetExadataInfrastructureMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceWindowMonthOutput() GetExadataInfrastructureMaintenanceWindowMonthOutput
+	ToGetExadataInfrastructureMaintenanceWindowMonthOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceWindowMonthOutput
+}
+
+type GetExadataInfrastructureMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetExadataInfrastructureMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowMonthArgs) ToGetExadataInfrastructureMaintenanceWindowMonthOutput() GetExadataInfrastructureMaintenanceWindowMonthOutput {
+	return i.ToGetExadataInfrastructureMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowMonthArgs) ToGetExadataInfrastructureMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+// GetExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowMonthArray and GetExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
+//
+//	GetExadataInfrastructureMaintenanceWindowMonthArray{ GetExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+type GetExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetExadataInfrastructureMaintenanceWindowMonthArrayOutput
+	ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceWindowMonthArrayOutput
+}
+
+type GetExadataInfrastructureMaintenanceWindowMonthArray []GetExadataInfrastructureMaintenanceWindowMonthInput
+
+func (GetExadataInfrastructureMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowMonthArray) ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return i.ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceWindowMonthArray) ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceWindowMonthArrayOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowMonthOutput) ToGetExadataInfrastructureMaintenanceWindowMonthOutput() GetExadataInfrastructureMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowMonthOutput) ToGetExadataInfrastructureMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetExadataInfrastructureMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceWindowMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructureMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowMonthArrayOutput) ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowMonthArrayOutput) ToGetExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureMaintenanceWindowMonth {
+		return vs[0].([]GetExadataInfrastructureMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+type GetExadataInfrastructureNetworkBondingModeDetail struct {
+	// The network bonding mode for the Exadata infrastructure.
+	BackupNetworkBondingMode string `pulumi:"backupNetworkBondingMode"`
+	// The network bonding mode for the Exadata infrastructure.
+	ClientNetworkBondingMode string `pulumi:"clientNetworkBondingMode"`
+	// The network bonding mode for the Exadata infrastructure.
+	DrNetworkBondingMode string `pulumi:"drNetworkBondingMode"`
+}
+
+// GetExadataInfrastructureNetworkBondingModeDetailInput is an input type that accepts GetExadataInfrastructureNetworkBondingModeDetailArgs and GetExadataInfrastructureNetworkBondingModeDetailOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureNetworkBondingModeDetailInput` via:
+//
+//	GetExadataInfrastructureNetworkBondingModeDetailArgs{...}
+type GetExadataInfrastructureNetworkBondingModeDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureNetworkBondingModeDetailOutput() GetExadataInfrastructureNetworkBondingModeDetailOutput
+	ToGetExadataInfrastructureNetworkBondingModeDetailOutputWithContext(context.Context) GetExadataInfrastructureNetworkBondingModeDetailOutput
+}
+
+type GetExadataInfrastructureNetworkBondingModeDetailArgs struct {
+	// The network bonding mode for the Exadata infrastructure.
+	BackupNetworkBondingMode pulumi.StringInput `pulumi:"backupNetworkBondingMode"`
+	// The network bonding mode for the Exadata infrastructure.
+	ClientNetworkBondingMode pulumi.StringInput `pulumi:"clientNetworkBondingMode"`
+	// The network bonding mode for the Exadata infrastructure.
+	DrNetworkBondingMode pulumi.StringInput `pulumi:"drNetworkBondingMode"`
+}
+
+func (GetExadataInfrastructureNetworkBondingModeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureNetworkBondingModeDetail)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureNetworkBondingModeDetailArgs) ToGetExadataInfrastructureNetworkBondingModeDetailOutput() GetExadataInfrastructureNetworkBondingModeDetailOutput {
+	return i.ToGetExadataInfrastructureNetworkBondingModeDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureNetworkBondingModeDetailArgs) ToGetExadataInfrastructureNetworkBondingModeDetailOutputWithContext(ctx context.Context) GetExadataInfrastructureNetworkBondingModeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureNetworkBondingModeDetailOutput)
+}
+
+// GetExadataInfrastructureNetworkBondingModeDetailArrayInput is an input type that accepts GetExadataInfrastructureNetworkBondingModeDetailArray and GetExadataInfrastructureNetworkBondingModeDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureNetworkBondingModeDetailArrayInput` via:
+//
+//	GetExadataInfrastructureNetworkBondingModeDetailArray{ GetExadataInfrastructureNetworkBondingModeDetailArgs{...} }
+type GetExadataInfrastructureNetworkBondingModeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutput() GetExadataInfrastructureNetworkBondingModeDetailArrayOutput
+	ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutputWithContext(context.Context) GetExadataInfrastructureNetworkBondingModeDetailArrayOutput
+}
+
+type GetExadataInfrastructureNetworkBondingModeDetailArray []GetExadataInfrastructureNetworkBondingModeDetailInput
+
+func (GetExadataInfrastructureNetworkBondingModeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureNetworkBondingModeDetail)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureNetworkBondingModeDetailArray) ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutput() GetExadataInfrastructureNetworkBondingModeDetailArrayOutput {
+	return i.ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureNetworkBondingModeDetailArray) ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureNetworkBondingModeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureNetworkBondingModeDetailArrayOutput)
+}
+
+type GetExadataInfrastructureNetworkBondingModeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureNetworkBondingModeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureNetworkBondingModeDetail)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureNetworkBondingModeDetailOutput) ToGetExadataInfrastructureNetworkBondingModeDetailOutput() GetExadataInfrastructureNetworkBondingModeDetailOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureNetworkBondingModeDetailOutput) ToGetExadataInfrastructureNetworkBondingModeDetailOutputWithContext(ctx context.Context) GetExadataInfrastructureNetworkBondingModeDetailOutput {
+	return o
+}
+
+// The network bonding mode for the Exadata infrastructure.
+func (o GetExadataInfrastructureNetworkBondingModeDetailOutput) BackupNetworkBondingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureNetworkBondingModeDetail) string { return v.BackupNetworkBondingMode }).(pulumi.StringOutput)
+}
+
+// The network bonding mode for the Exadata infrastructure.
+func (o GetExadataInfrastructureNetworkBondingModeDetailOutput) ClientNetworkBondingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureNetworkBondingModeDetail) string { return v.ClientNetworkBondingMode }).(pulumi.StringOutput)
+}
+
+// The network bonding mode for the Exadata infrastructure.
+func (o GetExadataInfrastructureNetworkBondingModeDetailOutput) DrNetworkBondingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureNetworkBondingModeDetail) string { return v.DrNetworkBondingMode }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructureNetworkBondingModeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureNetworkBondingModeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureNetworkBondingModeDetail)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureNetworkBondingModeDetailArrayOutput) ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutput() GetExadataInfrastructureNetworkBondingModeDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureNetworkBondingModeDetailArrayOutput) ToGetExadataInfrastructureNetworkBondingModeDetailArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureNetworkBondingModeDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureNetworkBondingModeDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureNetworkBondingModeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureNetworkBondingModeDetail {
+		return vs[0].([]GetExadataInfrastructureNetworkBondingModeDetail)[vs[1].(int)]
+	}).(GetExadataInfrastructureNetworkBondingModeDetailOutput)
+}
+
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	Id string `pulumi:"id"`
+	// Total unallocated autonomous data storage in the AVM in TBs.
+	UnAllocatedAdbStorageInTbs float64 `pulumi:"unAllocatedAdbStorageInTbs"`
+}
+
+// GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterInput is an input type that accepts GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs and GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterInput` via:
+//
+//	GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs{...}
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput
+	ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutputWithContext(context.Context) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput
+}
+
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Total unallocated autonomous data storage in the AVM in TBs.
+	UnAllocatedAdbStorageInTbs pulumi.Float64Input `pulumi:"unAllocatedAdbStorageInTbs"`
+}
+
+func (GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput {
+	return i.ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutputWithContext(ctx context.Context) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput)
+}
+
+// GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayInput is an input type that accepts GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray and GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayInput` via:
+//
+//	GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray{ GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs{...} }
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput
+	ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutputWithContext(context.Context) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput
+}
+
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray []GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterInput
+
+func (GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput {
+	return i.ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput)
+}
+
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutputWithContext(ctx context.Context) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Total unallocated autonomous data storage in the AVM in TBs.
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput) UnAllocatedAdbStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster) float64 {
+		return v.UnAllocatedAdbStorageInTbs
+	}).(pulumi.Float64Output)
+}
+
+type GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput) ToGetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster {
+		return vs[0].([]GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster)[vs[1].(int)]
+	}).(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructure struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount int    `pulumi:"activatedStorageCount"`
+	ActivationFile        string `pulumi:"activationFile"`
+	// The requested number of additional compute servers for the Exadata infrastructure.
+	AdditionalComputeCount int `pulumi:"additionalComputeCount"`
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	AdditionalComputeSystemModel string `pulumi:"additionalComputeSystemModel"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount int `pulumi:"additionalStorageCount"`
+	// The CIDR block for the Exadata administration network.
+	AdminNetworkCidr string `pulumi:"adminNetworkCidr"`
+	// The name of the availability domain that the Exadata infrastructure is located in.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The IP address for the first control plane server.
+	CloudControlPlaneServer1 string `pulumi:"cloudControlPlaneServer1"`
+	// The IP address for the second control plane server.
+	CloudControlPlaneServer2 string `pulumi:"cloudControlPlaneServer2"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The number of compute servers for the Exadata infrastructure.
+	ComputeCount int `pulumi:"computeCount"`
+	// The list of contacts for the Exadata infrastructure.
+	Contacts []GetExadataInfrastructuresExadataInfrastructureContact `pulumi:"contacts"`
+	// The corporate network proxy for access to the control plane network.
+	CorporateProxy string `pulumi:"corporateProxy"`
+	// The number of enabled CPU cores.
+	CpusEnabled int  `pulumi:"cpusEnabled"`
+	CreateAsync bool `pulumi:"createAsync"`
+	// The CSI Number of the Exadata infrastructure.
+	CsiNumber string `pulumi:"csiNumber"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The software version of the database servers (dom0) in the Exadata infrastructure.
+	DbServerVersion string `pulumi:"dbServerVersion"`
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations []GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The list of DNS server IP addresses. Maximum of 3 allowed.
+	DnsServers []string `pulumi:"dnsServers"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The gateway for the control plane network.
+	Gateway string `pulumi:"gateway"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	Id string `pulumi:"id"`
+	// The CIDR block for the Exadata InfiniBand interconnect.
+	InfiniBandNetworkCidr string `pulumi:"infiniBandNetworkCidr"`
+	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled bool `pulumi:"isCpsOfflineReportEnabled"`
+	// Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment bool `pulumi:"isMultiRackDeployment"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
+	MaintenanceSloStatus string `pulumi:"maintenanceSloStatus"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows []GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The total number of CPU cores available.
+	MaxCpuCount int `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs float64 `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs int `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion string `pulumi:"monthlyDbServerVersion"`
+	// The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile string `pulumi:"multiRackConfigurationFile"`
+	// The netmask for the control plane network.
+	Netmask string `pulumi:"netmask"`
+	// Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
+	NetworkBondingModeDetails []GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail `pulumi:"networkBondingModeDetails"`
+	// The list of NTP server IP addresses. Maximum of 3 allowed.
+	NtpServers []string `pulumi:"ntpServers"`
+	// The serial number for the Exadata infrastructure.
+	RackSerialNumber string `pulumi:"rackSerialNumber"`
+	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+	Shape string `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The number of Exadata storage servers for the Exadata infrastructure.
+	StorageCount int `pulumi:"storageCount"`
+	// The software version of the storage servers (cells) in the Exadata infrastructure.
+	StorageServerVersion string `pulumi:"storageServerVersion"`
+	// The date and time the Exadata infrastructure was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetExadataInfrastructuresExadataInfrastructureInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureArgs and GetExadataInfrastructuresExadataInfrastructureOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureArgs{...}
+type GetExadataInfrastructuresExadataInfrastructureInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureOutput() GetExadataInfrastructuresExadataInfrastructureOutput
+	ToGetExadataInfrastructuresExadataInfrastructureOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureArgs struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount pulumi.IntInput    `pulumi:"activatedStorageCount"`
+	ActivationFile        pulumi.StringInput `pulumi:"activationFile"`
+	// The requested number of additional compute servers for the Exadata infrastructure.
+	AdditionalComputeCount pulumi.IntInput `pulumi:"additionalComputeCount"`
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	AdditionalComputeSystemModel pulumi.StringInput `pulumi:"additionalComputeSystemModel"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount pulumi.IntInput `pulumi:"additionalStorageCount"`
+	// The CIDR block for the Exadata administration network.
+	AdminNetworkCidr pulumi.StringInput `pulumi:"adminNetworkCidr"`
+	// The name of the availability domain that the Exadata infrastructure is located in.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The IP address for the first control plane server.
+	CloudControlPlaneServer1 pulumi.StringInput `pulumi:"cloudControlPlaneServer1"`
+	// The IP address for the second control plane server.
+	CloudControlPlaneServer2 pulumi.StringInput `pulumi:"cloudControlPlaneServer2"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The number of compute servers for the Exadata infrastructure.
+	ComputeCount pulumi.IntInput `pulumi:"computeCount"`
+	// The list of contacts for the Exadata infrastructure.
+	Contacts GetExadataInfrastructuresExadataInfrastructureContactArrayInput `pulumi:"contacts"`
+	// The corporate network proxy for access to the control plane network.
+	CorporateProxy pulumi.StringInput `pulumi:"corporateProxy"`
+	// The number of enabled CPU cores.
+	CpusEnabled pulumi.IntInput  `pulumi:"cpusEnabled"`
+	CreateAsync pulumi.BoolInput `pulumi:"createAsync"`
+	// The CSI Number of the Exadata infrastructure.
+	CsiNumber pulumi.StringInput `pulumi:"csiNumber"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
+	// The software version of the database servers (dom0) in the Exadata infrastructure.
+	DbServerVersion pulumi.StringInput `pulumi:"dbServerVersion"`
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput `pulumi:"definedFileSystemConfigurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The list of DNS server IP addresses. Maximum of 3 allowed.
+	DnsServers pulumi.StringArrayInput `pulumi:"dnsServers"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The gateway for the control plane network.
+	Gateway pulumi.StringInput `pulumi:"gateway"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The CIDR block for the Exadata InfiniBand interconnect.
+	InfiniBandNetworkCidr pulumi.StringInput `pulumi:"infiniBandNetworkCidr"`
+	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled pulumi.BoolInput `pulumi:"isCpsOfflineReportEnabled"`
+	// Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment pulumi.BoolInput `pulumi:"isMultiRackDeployment"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
+	MaintenanceSloStatus pulumi.StringInput `pulumi:"maintenanceSloStatus"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
+	// The total number of CPU cores available.
+	MaxCpuCount pulumi.IntInput `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs pulumi.Float64Input `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs pulumi.IntInput `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs pulumi.IntInput `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion pulumi.StringInput `pulumi:"monthlyDbServerVersion"`
+	// The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile pulumi.StringInput `pulumi:"multiRackConfigurationFile"`
+	// The netmask for the control plane network.
+	Netmask pulumi.StringInput `pulumi:"netmask"`
+	// Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
+	NetworkBondingModeDetails GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArrayInput `pulumi:"networkBondingModeDetails"`
+	// The list of NTP server IP addresses. Maximum of 3 allowed.
+	NtpServers pulumi.StringArrayInput `pulumi:"ntpServers"`
+	// The serial number for the Exadata infrastructure.
+	RackSerialNumber pulumi.StringInput `pulumi:"rackSerialNumber"`
+	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The number of Exadata storage servers for the Exadata infrastructure.
+	StorageCount pulumi.IntInput `pulumi:"storageCount"`
+	// The software version of the storage servers (cells) in the Exadata infrastructure.
+	StorageServerVersion pulumi.StringInput `pulumi:"storageServerVersion"`
+	// The date and time the Exadata infrastructure was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetExadataInfrastructuresExadataInfrastructureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructure)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureArgs) ToGetExadataInfrastructuresExadataInfrastructureOutput() GetExadataInfrastructuresExadataInfrastructureOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureArgs) ToGetExadataInfrastructuresExadataInfrastructureOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureOutput)
+}
+
+// GetExadataInfrastructuresExadataInfrastructureArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureArray and GetExadataInfrastructuresExadataInfrastructureArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureArrayInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureArray{ GetExadataInfrastructuresExadataInfrastructureArgs{...} }
+type GetExadataInfrastructuresExadataInfrastructureArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureArrayOutput() GetExadataInfrastructuresExadataInfrastructureArrayOutput
+	ToGetExadataInfrastructuresExadataInfrastructureArrayOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureArrayOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureArray []GetExadataInfrastructuresExadataInfrastructureInput
+
+func (GetExadataInfrastructuresExadataInfrastructureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructure)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureArray) ToGetExadataInfrastructuresExadataInfrastructureArrayOutput() GetExadataInfrastructuresExadataInfrastructureArrayOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureArray) ToGetExadataInfrastructuresExadataInfrastructureArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureArrayOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructure)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ToGetExadataInfrastructuresExadataInfrastructureOutput() GetExadataInfrastructuresExadataInfrastructureOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ToGetExadataInfrastructuresExadataInfrastructureOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureOutput {
+	return o
+}
+
+// The requested number of additional storage servers activated for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ActivatedStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.ActivatedStorageCount }).(pulumi.IntOutput)
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ActivationFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.ActivationFile }).(pulumi.StringOutput)
+}
+
+// The requested number of additional compute servers for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) AdditionalComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.AdditionalComputeCount }).(pulumi.IntOutput)
+}
+
+// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) AdditionalComputeSystemModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.AdditionalComputeSystemModel }).(pulumi.StringOutput)
+}
+
+// The requested number of additional storage servers for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) AdditionalStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.AdditionalStorageCount }).(pulumi.IntOutput)
+}
+
+// The CIDR block for the Exadata administration network.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) AdminNetworkCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.AdminNetworkCidr }).(pulumi.StringOutput)
+}
+
+// The name of the availability domain that the Exadata infrastructure is located in.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The IP address for the first control plane server.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CloudControlPlaneServer1() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.CloudControlPlaneServer1 }).(pulumi.StringOutput)
+}
+
+// The IP address for the second control plane server.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CloudControlPlaneServer2() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.CloudControlPlaneServer2 }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The number of compute servers for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+// The list of contacts for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) Contacts() GetExadataInfrastructuresExadataInfrastructureContactArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureContact {
+		return v.Contacts
+	}).(GetExadataInfrastructuresExadataInfrastructureContactArrayOutput)
+}
+
+// The corporate network proxy for access to the control plane network.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CorporateProxy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.CorporateProxy }).(pulumi.StringOutput)
+}
+
+// The number of enabled CPU cores.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CpusEnabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.CpusEnabled }).(pulumi.IntOutput)
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CreateAsync() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) bool { return v.CreateAsync }).(pulumi.BoolOutput)
+}
+
+// The CSI Number of the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) CsiNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.CsiNumber }).(pulumi.StringOutput)
+}
+
+// Size, in terabytes, of the DATA disk group.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage allocated in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The software version of the database servers (dom0) in the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.DbServerVersion }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DefinedFileSystemConfigurations() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration {
+		return v.DefinedFileSystemConfigurations
+	}).(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The list of DNS server IP addresses. Maximum of 3 allowed.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) DnsServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []string { return v.DnsServers }).(pulumi.StringArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The gateway for the control plane network.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) Gateway() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.Gateway }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The CIDR block for the Exadata InfiniBand interconnect.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) InfiniBandNetworkCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.InfiniBandNetworkCidr }).(pulumi.StringOutput)
+}
+
+// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) IsCpsOfflineReportEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) bool { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if deployment is Multi-Rack or not.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) IsMultiRackDeployment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) bool { return v.IsMultiRackDeployment }).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaintenanceSloStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.MaintenanceSloStatus }).(pulumi.StringOutput)
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaintenanceWindows() GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow {
+		return v.MaintenanceWindows
+	}).(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayOutput)
+}
+
+// The total number of CPU cores available.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaxCpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.MaxCpuCount }).(pulumi.IntOutput)
+}
+
+// The total available DATA disk group size.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaxDataStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) float64 { return v.MaxDataStorageInTbs }).(pulumi.Float64Output)
+}
+
+// The total local node storage available in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The total memory available in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaxMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The memory allocated in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MonthlyDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
+}
+
+// The base64 encoded Multi-Rack configuration json file.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MultiRackConfigurationFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.MultiRackConfigurationFile }).(pulumi.StringOutput)
+}
+
+// The netmask for the control plane network.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) Netmask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) NetworkBondingModeDetails() GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail {
+		return v.NetworkBondingModeDetails
+	}).(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArrayOutput)
+}
+
+// The list of NTP server IP addresses. Maximum of 3 allowed.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) NtpServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []string { return v.NtpServers }).(pulumi.StringArrayOutput)
+}
+
+// The serial number for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) RackSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.RackSerialNumber }).(pulumi.StringOutput)
+}
+
+// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The number of Exadata storage servers for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The software version of the storage servers (cells) in the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) StorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.StorageServerVersion }).(pulumi.StringOutput)
+}
+
+// The date and time the Exadata infrastructure was created.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructure)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureArrayOutput() GetExadataInfrastructuresExadataInfrastructureArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructuresExadataInfrastructureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructure {
+		return vs[0].([]GetExadataInfrastructuresExadataInfrastructure)[vs[1].(int)]
+	}).(GetExadataInfrastructuresExadataInfrastructureOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureContact struct {
+	// The email for the Exadata Infrastructure contact.
+	Email string `pulumi:"email"`
+	// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+	IsContactMosValidated bool `pulumi:"isContactMosValidated"`
+	// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+	IsPrimary bool `pulumi:"isPrimary"`
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+	// The phone number for the Exadata Infrastructure contact.
+	PhoneNumber string `pulumi:"phoneNumber"`
+}
+
+// GetExadataInfrastructuresExadataInfrastructureContactInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureContactArgs and GetExadataInfrastructuresExadataInfrastructureContactOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureContactInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureContactArgs{...}
+type GetExadataInfrastructuresExadataInfrastructureContactInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureContactOutput() GetExadataInfrastructuresExadataInfrastructureContactOutput
+	ToGetExadataInfrastructuresExadataInfrastructureContactOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureContactOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureContactArgs struct {
+	// The email for the Exadata Infrastructure contact.
+	Email pulumi.StringInput `pulumi:"email"`
+	// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+	IsContactMosValidated pulumi.BoolInput `pulumi:"isContactMosValidated"`
+	// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The phone number for the Exadata Infrastructure contact.
+	PhoneNumber pulumi.StringInput `pulumi:"phoneNumber"`
+}
+
+func (GetExadataInfrastructuresExadataInfrastructureContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureContactArgs) ToGetExadataInfrastructuresExadataInfrastructureContactOutput() GetExadataInfrastructuresExadataInfrastructureContactOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureContactOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureContactArgs) ToGetExadataInfrastructuresExadataInfrastructureContactOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureContactOutput)
+}
+
+// GetExadataInfrastructuresExadataInfrastructureContactArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureContactArray and GetExadataInfrastructuresExadataInfrastructureContactArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureContactArrayInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureContactArray{ GetExadataInfrastructuresExadataInfrastructureContactArgs{...} }
+type GetExadataInfrastructuresExadataInfrastructureContactArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutput() GetExadataInfrastructuresExadataInfrastructureContactArrayOutput
+	ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureContactArrayOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureContactArray []GetExadataInfrastructuresExadataInfrastructureContactInput
+
+func (GetExadataInfrastructuresExadataInfrastructureContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureContactArray) ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutput() GetExadataInfrastructuresExadataInfrastructureContactArrayOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureContactArray) ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureContactArrayOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureContactOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) ToGetExadataInfrastructuresExadataInfrastructureContactOutput() GetExadataInfrastructuresExadataInfrastructureContactOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) ToGetExadataInfrastructuresExadataInfrastructureContactOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureContactOutput {
+	return o
+}
+
+// The email for the Exadata Infrastructure contact.
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) IsContactMosValidated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureContact) bool { return v.IsContactMosValidated }).(pulumi.BoolOutput)
+}
+
+// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) IsPrimary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureContact) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+// Name of the month of the year.
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureContact) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The phone number for the Exadata Infrastructure contact.
+func (o GetExadataInfrastructuresExadataInfrastructureContactOutput) PhoneNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureContact) string { return v.PhoneNumber }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureContactArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutput() GetExadataInfrastructuresExadataInfrastructureContactArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureContactArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureContactArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureContactArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureContactArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructuresExadataInfrastructureContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureContact {
+		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureContact)[vs[1].(int)]
+	}).(GetExadataInfrastructuresExadataInfrastructureContactOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition bool `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable bool `pulumi:"isResizable"`
+	// The minimum size of file system.
+	MinSizeGb int `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs and GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs{...}
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput
+	ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The minimum size of file system.
+	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+// GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray and GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray{ GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs{...} }
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+	ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray []GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationInput
+
+func (GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+// If true, the file system is used to create a backup prior to Exadata VM OS update.
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) IsBackupPartition() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration) bool {
+		return v.IsBackupPartition
+	}).(pulumi.BoolOutput)
+}
+
+// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) IsResizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration) bool {
+		return v.IsResizable
+	}).(pulumi.BoolOutput)
+}
+
+// The minimum size of file system.
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) MinSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration) int {
+		return v.MinSizeGb
+	}).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration) string {
+		return v.MountPoint
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration {
+		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration)[vs[1].(int)]
+	}).(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
@@ -33,8 +1437,7 @@ type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow struct {
 	PatchingMode string `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference string `pulumi:"preference"`
-	// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-	SkipRus []bool `pulumi:"skipRus"`
+	SkipRus    []bool `pulumi:"skipRus"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
 	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
 }
@@ -69,9 +1472,8 @@ type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs struct 
 	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
-	Preference pulumi.StringInput `pulumi:"preference"`
-	// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-	SkipRus pulumi.BoolArrayInput `pulumi:"skipRus"`
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
 	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
 }
@@ -183,7 +1585,6 @@ func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowOutput) P
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow) string { return v.Preference }).(pulumi.StringOutput)
 }
 
-// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
 func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowOutput) SkipRus() pulumi.BoolArrayOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
 }
@@ -17268,6 +18669,22 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowMonthInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureNetworkBondingModeDetailInput)(nil)).Elem(), GetExadataInfrastructureNetworkBondingModeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureNetworkBondingModeDetailArrayInput)(nil)).Elem(), GetExadataInfrastructureNetworkBondingModeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterInput)(nil)).Elem(), GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayInput)(nil)).Elem(), GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureContactInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureContactArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -17524,6 +18941,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureNetworkBondingModeDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureNetworkBondingModeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureContactOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureContactArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})

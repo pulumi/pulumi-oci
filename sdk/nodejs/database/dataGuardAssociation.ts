@@ -205,6 +205,14 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly migrateTrigger!: pulumi.Output<number | undefined>;
+    /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      */
     public readonly nodeCount!: pulumi.Output<number | undefined>;
@@ -297,10 +305,6 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly transportType!: pulumi.Output<string>;
 
@@ -341,6 +345,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["isActiveDataGuardEnabled"] = state ? state.isActiveDataGuardEnabled : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["migrateTrigger"] = state ? state.migrateTrigger : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["peerDataGuardAssociationId"] = state ? state.peerDataGuardAssociationId : undefined;
@@ -402,6 +407,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["hostname"] = args ? args.hostname : undefined;
             resourceInputs["isActiveDataGuardEnabled"] = args ? args.isActiveDataGuardEnabled : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["migrateTrigger"] = args ? args.migrateTrigger : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["peerDbHomeId"] = args ? args.peerDbHomeId : undefined;
@@ -544,6 +550,14 @@ export interface DataGuardAssociationState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    migrateTrigger?: pulumi.Input<number>;
+    /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      */
     nodeCount?: pulumi.Input<number>;
@@ -636,10 +650,6 @@ export interface DataGuardAssociationState {
      * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     transportType?: pulumi.Input<string>;
 }
@@ -743,6 +753,14 @@ export interface DataGuardAssociationArgs {
      */
     licenseModel?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    migrateTrigger?: pulumi.Input<number>;
+    /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      */
     nodeCount?: pulumi.Input<number>;
@@ -811,10 +829,6 @@ export interface DataGuardAssociationArgs {
      * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     transportType: pulumi.Input<string>;
 }

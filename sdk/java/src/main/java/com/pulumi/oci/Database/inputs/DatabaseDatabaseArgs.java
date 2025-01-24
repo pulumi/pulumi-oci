@@ -5,8 +5,8 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -23,15 +23,15 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    @Import(name="adminPassword", required=true)
-    private Output<String> adminPassword;
+    @Import(name="adminPassword")
+    private @Nullable Output<String> adminPassword;
 
     /**
      * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    public Output<String> adminPassword() {
-        return this.adminPassword;
+    public Optional<Output<String>> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
 
     /**
@@ -84,6 +84,25 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The administrator password of the primary database in this Data Guard association.
+     * 
+     * **The password MUST be the same as the primary admin password.**
+     * 
+     */
+    @Import(name="databaseAdminPassword")
+    private @Nullable Output<String> databaseAdminPassword;
+
+    /**
+     * @return The administrator password of the primary database in this Data Guard association.
+     * 
+     * **The password MUST be the same as the primary admin password.**
+     * 
+     */
+    public Optional<Output<String>> databaseAdminPassword() {
+        return Optional.ofNullable(this.databaseAdminPassword);
+    }
+
+    /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
@@ -117,26 +136,26 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
-    @Import(name="dbName", required=true)
-    private Output<String> dbName;
+    @Import(name="dbName")
+    private @Nullable Output<String> dbName;
 
     /**
      * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
-    public Output<String> dbName() {
-        return this.dbName;
+    public Optional<Output<String>> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
 
     /**
-     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      * 
      */
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
     /**
-     * @return The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     * @return Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      * 
      */
     public Optional<Output<String>> dbUniqueName() {
@@ -190,6 +209,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * True if active Data Guard is enabled.
+     * 
+     */
+    @Import(name="isActiveDataGuardEnabled")
+    private @Nullable Output<Boolean> isActiveDataGuardEnabled;
+
+    /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> isActiveDataGuardEnabled() {
+        return Optional.ofNullable(this.isActiveDataGuardEnabled);
     }
 
     /**
@@ -268,6 +302,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    @Import(name="protectionMode")
+    private @Nullable Output<String> protectionMode;
+
+    /**
+     * @return The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    public Optional<Output<String>> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
+    }
+
+    /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -283,6 +332,36 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+     * 
+     */
+    @Import(name="sourceDatabaseId")
+    private @Nullable Output<String> sourceDatabaseId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+     * 
+     */
+    public Optional<Output<String>> sourceDatabaseId() {
+        return Optional.ofNullable(this.sourceDatabaseId);
+    }
+
+    /**
+     * The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+     * 
+     */
+    @Import(name="sourceTdeWalletPassword")
+    private @Nullable Output<String> sourceTdeWalletPassword;
+
+    /**
+     * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+     * 
+     */
+    public Optional<Output<String>> sourceTdeWalletPassword() {
+        return Optional.ofNullable(this.sourceTdeWalletPassword);
+    }
+
+    /**
      * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
@@ -295,6 +374,35 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> tdeWalletPassword() {
         return Optional.ofNullable(this.tdeWalletPassword);
+    }
+
+    /**
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    @Import(name="transportType")
+    private @Nullable Output<String> transportType;
+
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    public Optional<Output<String>> transportType() {
+        return Optional.ofNullable(this.transportType);
     }
 
     /**
@@ -319,6 +427,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.backupId = $.backupId;
         this.backupTdePassword = $.backupTdePassword;
         this.characterSet = $.characterSet;
+        this.databaseAdminPassword = $.databaseAdminPassword;
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbBackupConfig = $.dbBackupConfig;
         this.dbName = $.dbName;
@@ -326,13 +435,18 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.dbWorkload = $.dbWorkload;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
+        this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.ncharacterSet = $.ncharacterSet;
         this.pdbName = $.pdbName;
         this.pluggableDatabases = $.pluggableDatabases;
+        this.protectionMode = $.protectionMode;
         this.sidPrefix = $.sidPrefix;
+        this.sourceDatabaseId = $.sourceDatabaseId;
+        this.sourceTdeWalletPassword = $.sourceTdeWalletPassword;
         this.tdeWalletPassword = $.tdeWalletPassword;
+        this.transportType = $.transportType;
         this.vaultId = $.vaultId;
     }
 
@@ -360,7 +474,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder adminPassword(Output<String> adminPassword) {
+        public Builder adminPassword(@Nullable Output<String> adminPassword) {
             $.adminPassword = adminPassword;
             return this;
         }
@@ -443,6 +557,31 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param databaseAdminPassword The administrator password of the primary database in this Data Guard association.
+         * 
+         * **The password MUST be the same as the primary admin password.**
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseAdminPassword(@Nullable Output<String> databaseAdminPassword) {
+            $.databaseAdminPassword = databaseAdminPassword;
+            return this;
+        }
+
+        /**
+         * @param databaseAdminPassword The administrator password of the primary database in this Data Guard association.
+         * 
+         * **The password MUST be the same as the primary admin password.**
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseAdminPassword(String databaseAdminPassword) {
+            return databaseAdminPassword(Output.of(databaseAdminPassword));
+        }
+
+        /**
          * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
@@ -490,7 +629,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder dbName(Output<String> dbName) {
+        public Builder dbName(@Nullable Output<String> dbName) {
             $.dbName = dbName;
             return this;
         }
@@ -506,7 +645,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbUniqueName The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+         * @param dbUniqueName Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
          * 
          * @return builder
          * 
@@ -517,7 +656,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbUniqueName The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+         * @param dbUniqueName Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
          * 
          * @return builder
          * 
@@ -591,6 +730,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isActiveDataGuardEnabled True if active Data Guard is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isActiveDataGuardEnabled(@Nullable Output<Boolean> isActiveDataGuardEnabled) {
+            $.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            return this;
+        }
+
+        /**
+         * @param isActiveDataGuardEnabled True if active Data Guard is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            return isActiveDataGuardEnabled(Output.of(isActiveDataGuardEnabled));
         }
 
         /**
@@ -709,6 +869,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param protectionMode The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protectionMode(@Nullable Output<String> protectionMode) {
+            $.protectionMode = protectionMode;
+            return this;
+        }
+
+        /**
+         * @param protectionMode The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protectionMode(String protectionMode) {
+            return protectionMode(Output.of(protectionMode));
+        }
+
+        /**
          * @param sidPrefix Specifies a prefix for the `Oracle SID` of the database to be created.
          * 
          * @return builder
@@ -727,6 +908,48 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder sidPrefix(String sidPrefix) {
             return sidPrefix(Output.of(sidPrefix));
+        }
+
+        /**
+         * @param sourceDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDatabaseId(@Nullable Output<String> sourceDatabaseId) {
+            $.sourceDatabaseId = sourceDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param sourceDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDatabaseId(String sourceDatabaseId) {
+            return sourceDatabaseId(Output.of(sourceDatabaseId));
+        }
+
+        /**
+         * @param sourceTdeWalletPassword The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceTdeWalletPassword(@Nullable Output<String> sourceTdeWalletPassword) {
+            $.sourceTdeWalletPassword = sourceTdeWalletPassword;
+            return this;
+        }
+
+        /**
+         * @param sourceTdeWalletPassword The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
+            return sourceTdeWalletPassword(Output.of(sourceTdeWalletPassword));
         }
 
         /**
@@ -751,6 +974,41 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param transportType The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * 
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportType(@Nullable Output<String> transportType) {
+            $.transportType = transportType;
+            return this;
+        }
+
+        /**
+         * @param transportType The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * 
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportType(String transportType) {
+            return transportType(Output.of(transportType));
+        }
+
+        /**
          * @param vaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          * 
          * @return builder
@@ -772,12 +1030,6 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DatabaseDatabaseArgs build() {
-            if ($.adminPassword == null) {
-                throw new MissingRequiredPropertyException("DatabaseDatabaseArgs", "adminPassword");
-            }
-            if ($.dbName == null) {
-                throw new MissingRequiredPropertyException("DatabaseDatabaseArgs", "dbName");
-            }
             return $;
         }
     }

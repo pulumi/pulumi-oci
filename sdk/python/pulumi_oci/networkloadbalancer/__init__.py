@@ -15,6 +15,7 @@ from .get_backends import *
 from .get_listener import *
 from .get_listeners import *
 from .get_network_load_balancer import *
+from .get_network_load_balancer_backend_set_backend_operational_status import *
 from .get_network_load_balancer_health import *
 from .get_network_load_balancers import *
 from .get_network_load_balancers_policies import *

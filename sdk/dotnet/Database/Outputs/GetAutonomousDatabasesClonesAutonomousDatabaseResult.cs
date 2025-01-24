@@ -493,7 +493,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int UsedDataStorageSizeInGbs;
         /// <summary>
-        /// The amount of storage that has been used, in terabytes.
+        /// The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         /// </summary>
         public readonly int UsedDataStorageSizeInTbs;
         /// <summary>

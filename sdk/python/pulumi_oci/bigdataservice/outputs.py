@@ -5396,9 +5396,7 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
         """
         :param str bds_instance_id: The OCID of the cluster.
         :param str default_region: The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-               >>>>>>> theirs
         :param str domain_ocid: Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-               =======
         :param str fingerprint: The fingerprint that corresponds to the public API key requested.
         :param str id: Identifier of the user's API key.
         :param str key_alias: User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
@@ -5434,7 +5432,6 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
     def default_region(self) -> str:
         """
         The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-        >>>>>>> theirs
         """
         return pulumi.get(self, "default_region")
 
@@ -5443,7 +5440,6 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
     def domain_ocid(self) -> str:
         """
         Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-        =======
         """
         return pulumi.get(self, "domain_ocid")
 

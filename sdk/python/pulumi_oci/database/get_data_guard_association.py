@@ -27,7 +27,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -106,6 +106,9 @@ class GetDataGuardAssociationResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if migrate_trigger and not isinstance(migrate_trigger, int):
+            raise TypeError("Expected argument 'migrate_trigger' to be a int")
+        pulumi.set(__self__, "migrate_trigger", migrate_trigger)
         if node_count and not isinstance(node_count, int):
             raise TypeError("Expected argument 'node_count' to be a int")
         pulumi.set(__self__, "node_count", node_count)
@@ -316,6 +319,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="migrateTrigger")
+    def migrate_trigger(self) -> int:
+        return pulumi.get(self, "migrate_trigger")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> int:
         return pulumi.get(self, "node_count")
@@ -478,6 +486,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             is_active_data_guard_enabled=self.is_active_data_guard_enabled,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            migrate_trigger=self.migrate_trigger,
             node_count=self.node_count,
             nsg_ids=self.nsg_ids,
             peer_data_guard_association_id=self.peer_data_guard_association_id,
@@ -555,6 +564,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         is_active_data_guard_enabled=pulumi.get(__ret__, 'is_active_data_guard_enabled'),
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        migrate_trigger=pulumi.get(__ret__, 'migrate_trigger'),
         node_count=pulumi.get(__ret__, 'node_count'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         peer_data_guard_association_id=pulumi.get(__ret__, 'peer_data_guard_association_id'),
@@ -629,6 +639,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
         is_active_data_guard_enabled=pulumi.get(__response__, 'is_active_data_guard_enabled'),
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migrate_trigger=pulumi.get(__response__, 'migrate_trigger'),
         node_count=pulumi.get(__response__, 'node_count'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         peer_data_guard_association_id=pulumi.get(__response__, 'peer_data_guard_association_id'),

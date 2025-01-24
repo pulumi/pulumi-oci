@@ -55,6 +55,11 @@ export const getNetworkLoadBalancer: typeof import("./getNetworkLoadBalancer").g
 export const getNetworkLoadBalancerOutput: typeof import("./getNetworkLoadBalancer").getNetworkLoadBalancerOutput = null as any;
 utilities.lazyLoad(exports, ["getNetworkLoadBalancer","getNetworkLoadBalancerOutput"], () => require("./getNetworkLoadBalancer"));
 
+export { GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs, GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult, GetNetworkLoadBalancerBackendSetBackendOperationalStatusOutputArgs } from "./getNetworkLoadBalancerBackendSetBackendOperationalStatus";
+export const getNetworkLoadBalancerBackendSetBackendOperationalStatus: typeof import("./getNetworkLoadBalancerBackendSetBackendOperationalStatus").getNetworkLoadBalancerBackendSetBackendOperationalStatus = null as any;
+export const getNetworkLoadBalancerBackendSetBackendOperationalStatusOutput: typeof import("./getNetworkLoadBalancerBackendSetBackendOperationalStatus").getNetworkLoadBalancerBackendSetBackendOperationalStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLoadBalancerBackendSetBackendOperationalStatus","getNetworkLoadBalancerBackendSetBackendOperationalStatusOutput"], () => require("./getNetworkLoadBalancerBackendSetBackendOperationalStatus"));
+
 export { GetNetworkLoadBalancerHealthArgs, GetNetworkLoadBalancerHealthResult, GetNetworkLoadBalancerHealthOutputArgs } from "./getNetworkLoadBalancerHealth";
 export const getNetworkLoadBalancerHealth: typeof import("./getNetworkLoadBalancerHealth").getNetworkLoadBalancerHealth = null as any;
 export const getNetworkLoadBalancerHealthOutput: typeof import("./getNetworkLoadBalancerHealth").getNetworkLoadBalancerHealthOutput = null as any;

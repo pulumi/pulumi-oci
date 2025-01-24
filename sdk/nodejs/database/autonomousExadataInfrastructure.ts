@@ -45,7 +45,6 @@ import * as utilities from "../utilities";
  *         }],
  *         patchingMode: autonomousExadataInfrastructureMaintenanceWindowDetailsPatchingMode,
  *         preference: autonomousExadataInfrastructureMaintenanceWindowDetailsPreference,
- *         skipRus: autonomousExadataInfrastructureMaintenanceWindowDetailsSkipRu,
  *         weeksOfMonths: autonomousExadataInfrastructureMaintenanceWindowDetailsWeeksOfMonth,
  *     },
  *     nsgIds: autonomousExadataInfrastructureNsgIds,

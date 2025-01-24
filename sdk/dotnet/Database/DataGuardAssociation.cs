@@ -239,6 +239,16 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("migrateTrigger")]
+        public Output<int?> MigrateTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         /// </summary>
         [Output("nodeCount")]
@@ -369,10 +379,6 @@ namespace Pulumi.Oci.Database
         /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
         /// 
         /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("transportType")]
         public Output<string> TransportType { get; private set; } = null!;
@@ -616,6 +622,16 @@ namespace Pulumi.Oci.Database
         public Input<string>? LicenseModel { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("migrateTrigger")]
+        public Input<int>? MigrateTrigger { get; set; }
+
+        /// <summary>
         /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         /// </summary>
         [Input("nodeCount")]
@@ -716,10 +732,6 @@ namespace Pulumi.Oci.Database
         /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
         /// 
         /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("transportType", required: true)]
         public Input<string> TransportType { get; set; } = null!;
@@ -939,6 +951,16 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("migrateTrigger")]
+        public Input<int>? MigrateTrigger { get; set; }
+
+        /// <summary>
         /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         /// </summary>
         [Input("nodeCount")]
@@ -1075,10 +1097,6 @@ namespace Pulumi.Oci.Database
         /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
         /// 
         /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("transportType")]
         public Input<string>? TransportType { get; set; }

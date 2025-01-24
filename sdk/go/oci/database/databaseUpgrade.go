@@ -37,6 +37,8 @@ type DatabaseUpgrade struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseUpgradeConnectionStringArrayOutput `pulumi:"connectionStrings"`
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups DatabaseUpgradeDataGuardGroupArrayOutput `pulumi:"dataGuardGroups"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -139,6 +141,8 @@ type databaseUpgradeState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings []DatabaseUpgradeConnectionString `pulumi:"connectionStrings"`
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups []DatabaseUpgradeDataGuardGroup `pulumi:"dataGuardGroups"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId *string `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -206,6 +210,8 @@ type DatabaseUpgradeState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseUpgradeConnectionStringArrayInput
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups DatabaseUpgradeDataGuardGroupArrayInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringPtrInput
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -392,6 +398,11 @@ func (o DatabaseUpgradeOutput) CompartmentId() pulumi.StringOutput {
 // The Connection strings used to connect to the Oracle Database.
 func (o DatabaseUpgradeOutput) ConnectionStrings() DatabaseUpgradeConnectionStringArrayOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) DatabaseUpgradeConnectionStringArrayOutput { return v.ConnectionStrings }).(DatabaseUpgradeConnectionStringArrayOutput)
+}
+
+// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+func (o DatabaseUpgradeOutput) DataGuardGroups() DatabaseUpgradeDataGuardGroupArrayOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) DatabaseUpgradeDataGuardGroupArrayOutput { return v.DataGuardGroups }).(DatabaseUpgradeDataGuardGroupArrayOutput)
 }
 
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

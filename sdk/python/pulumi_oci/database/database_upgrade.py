@@ -79,6 +79,7 @@ class _DatabaseUpgradeState:
                  character_set: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeConnectionStringArgs']]]] = None,
+                 data_guard_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupArgs']]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  database_upgrade_source_details: Optional[pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] = None,
@@ -113,6 +114,7 @@ class _DatabaseUpgradeState:
         :param pulumi.Input[str] character_set: The character set for the database.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeConnectionStringArgs']]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupArgs']]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs'] database_upgrade_source_details: Details for the database upgrade source.
@@ -150,6 +152,8 @@ class _DatabaseUpgradeState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if data_guard_groups is not None:
+            pulumi.set(__self__, "data_guard_groups", data_guard_groups)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id is not None:
@@ -254,6 +258,18 @@ class _DatabaseUpgradeState:
     @connection_strings.setter
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
+
+    @property
+    @pulumi.getter(name="dataGuardGroups")
+    def data_guard_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupArgs']]]]:
+        """
+        Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        """
+        return pulumi.get(self, "data_guard_groups")
+
+    @data_guard_groups.setter
+    def data_guard_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupArgs']]]]):
+        pulumi.set(self, "data_guard_groups", value)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -680,6 +696,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
             __props__.__dict__["character_set"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_strings"] = None
+            __props__.__dict__["data_guard_groups"] = None
             __props__.__dict__["database_software_image_id"] = None
             __props__.__dict__["db_backup_configs"] = None
             __props__.__dict__["db_home_id"] = None
@@ -720,6 +737,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
             character_set: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeConnectionStringArgs', 'DatabaseUpgradeConnectionStringArgsDict']]]]] = None,
+            data_guard_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeDataGuardGroupArgs', 'DatabaseUpgradeDataGuardGroupArgsDict']]]]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
             database_upgrade_source_details: Optional[pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']]] = None,
@@ -759,6 +777,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
         :param pulumi.Input[str] character_set: The character set for the database.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeConnectionStringArgs', 'DatabaseUpgradeConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeDataGuardGroupArgs', 'DatabaseUpgradeDataGuardGroupArgsDict']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']] database_upgrade_source_details: Details for the database upgrade source.
@@ -796,6 +815,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
         __props__.__dict__["character_set"] = character_set
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_strings"] = connection_strings
+        __props__.__dict__["data_guard_groups"] = data_guard_groups
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_software_image_id"] = database_software_image_id
         __props__.__dict__["database_upgrade_source_details"] = database_upgrade_source_details
@@ -857,6 +877,14 @@ class DatabaseUpgrade(pulumi.CustomResource):
         The Connection strings used to connect to the Oracle Database.
         """
         return pulumi.get(self, "connection_strings")
+
+    @property
+    @pulumi.getter(name="dataGuardGroups")
+    def data_guard_groups(self) -> pulumi.Output[Sequence['outputs.DatabaseUpgradeDataGuardGroup']]:
+        """
+        Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        """
+        return pulumi.get(self, "data_guard_groups")
 
     @property
     @pulumi.getter(name="databaseId")

@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BootVolume{}
 	case "oci:Core/bootVolumeBackup:BootVolumeBackup":
 		r = &BootVolumeBackup{}
+	case "oci:Core/byoasn:Byoasn":
+		r = &Byoasn{}
 	case "oci:Core/captureFilter:CaptureFilter":
 		r = &CaptureFilter{}
 	case "oci:Core/clusterNetwork:ClusterNetwork":
@@ -188,6 +190,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/bootVolumeBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/byoasn",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

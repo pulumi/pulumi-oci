@@ -93,6 +93,7 @@ type LookupDataGuardAssociationResult struct {
 	LicenseModel             string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	MigrateTrigger   int      `pulumi:"migrateTrigger"`
 	NodeCount        int      `pulumi:"nodeCount"`
 	NsgIds           []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
@@ -271,6 +272,10 @@ func (o LookupDataGuardAssociationResultOutput) LicenseModel() pulumi.StringOutp
 // Additional information about the current lifecycleState, if available.
 func (o LookupDataGuardAssociationResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) MigrateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) int { return v.MigrateTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) NodeCount() pulumi.IntOutput {

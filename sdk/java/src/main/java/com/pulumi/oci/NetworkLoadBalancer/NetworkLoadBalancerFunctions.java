@@ -23,6 +23,8 @@ import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenerPlainArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersPlainArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerArgs;
+import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs;
+import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusPlainArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthPlainArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerPlainArgs;
@@ -39,6 +41,7 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsResult;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendsResult;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetListenerResult;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetListenersResult;
+import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancerHealthResult;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancerResult;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersPoliciesResult;
@@ -1632,6 +1635,236 @@ public final class NetworkLoadBalancerFunctions {
      */
     public static CompletableFuture<GetNetworkLoadBalancerResult> getNetworkLoadBalancerPlain(GetNetworkLoadBalancerPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", TypeShape.of(GetNetworkLoadBalancerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer Backend Set Backend Operational Status resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the current operational status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult> getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs args) {
+        return getNetworkLoadBalancerBackendSetBackendOperationalStatus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer Backend Set Backend Operational Status resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the current operational status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult> getNetworkLoadBalancerBackendSetBackendOperationalStatusPlain(GetNetworkLoadBalancerBackendSetBackendOperationalStatusPlainArgs args) {
+        return getNetworkLoadBalancerBackendSetBackendOperationalStatusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer Backend Set Backend Operational Status resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the current operational status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult> getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancerBackendSetBackendOperationalStatus:getNetworkLoadBalancerBackendSetBackendOperationalStatus", TypeShape.of(GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer Backend Set Backend Operational Status resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the current operational status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult> getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancerBackendSetBackendOperationalStatus:getNetworkLoadBalancerBackendSetBackendOperationalStatus", TypeShape.of(GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Load Balancer Backend Set Backend Operational Status resource in Oracle Cloud Infrastructure Network Load Balancer service.
+     * 
+     * Retrieves the current operational status of the specified backend server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult> getNetworkLoadBalancerBackendSetBackendOperationalStatusPlain(GetNetworkLoadBalancerBackendSetBackendOperationalStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkLoadBalancer/getNetworkLoadBalancerBackendSetBackendOperationalStatus:getNetworkLoadBalancerBackendSetBackendOperationalStatus", TypeShape.of(GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.

@@ -60,6 +60,7 @@ class AutonomousDatabaseArgs:
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
+                 is_disconnect_peer: Optional[pulumi.Input[bool]] = None,
                  is_free_tier: Optional[pulumi.Input[bool]] = None,
                  is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
@@ -78,6 +79,7 @@ class AutonomousDatabaseArgs:
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
+                 peer_db_id: Optional[pulumi.Input[str]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
@@ -173,6 +175,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        :param pulumi.Input[bool] is_disconnect_peer: If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
         :param pulumi.Input[bool] is_free_tier: (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
         :param pulumi.Input[bool] is_local_data_guard_enabled: (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_mtls_connection_required: (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
@@ -205,6 +208,7 @@ class AutonomousDatabaseArgs:
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
+        :param pulumi.Input[str] peer_db_id: The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
         :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) (Optional) (Updatable) The resource's private endpoint label.
@@ -342,6 +346,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "is_dedicated", is_dedicated)
         if is_dev_tier is not None:
             pulumi.set(__self__, "is_dev_tier", is_dev_tier)
+        if is_disconnect_peer is not None:
+            pulumi.set(__self__, "is_disconnect_peer", is_disconnect_peer)
         if is_free_tier is not None:
             pulumi.set(__self__, "is_free_tier", is_free_tier)
         if is_local_data_guard_enabled is not None:
@@ -381,6 +387,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "open_mode", open_mode)
         if operations_insights_status is not None:
             pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+        if peer_db_id is not None:
+            pulumi.set(__self__, "peer_db_id", peer_db_id)
         if permission_level is not None:
             pulumi.set(__self__, "permission_level", permission_level)
         if private_endpoint_ip is not None:
@@ -929,6 +937,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "is_dev_tier", value)
 
     @property
+    @pulumi.getter(name="isDisconnectPeer")
+    def is_disconnect_peer(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        """
+        return pulumi.get(self, "is_disconnect_peer")
+
+    @is_disconnect_peer.setter
+    def is_disconnect_peer(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_disconnect_peer", value)
+
+    @property
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1158,6 +1178,18 @@ class AutonomousDatabaseArgs:
     @operations_insights_status.setter
     def operations_insights_status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "operations_insights_status", value)
+
+    @property
+    @pulumi.getter(name="peerDbId")
+    def peer_db_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        """
+        return pulumi.get(self, "peer_db_id")
+
+    @peer_db_id.setter
+    def peer_db_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_db_id", value)
 
     @property
     @pulumi.getter(name="permissionLevel")
@@ -1561,6 +1593,7 @@ class _AutonomousDatabaseState:
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
+                 is_disconnect_peer: Optional[pulumi.Input[bool]] = None,
                  is_free_tier: Optional[pulumi.Input[bool]] = None,
                  is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
@@ -1593,6 +1626,7 @@ class _AutonomousDatabaseState:
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
+                 peer_db_id: Optional[pulumi.Input[str]] = None,
                  peer_db_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
                  private_endpoint: Optional[pulumi.Input[str]] = None,
@@ -1734,6 +1768,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        :param pulumi.Input[bool] is_disconnect_peer: If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
         :param pulumi.Input[bool] is_free_tier: (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
         :param pulumi.Input[bool] is_local_data_guard_enabled: (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_mtls_connection_required: (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
@@ -1780,6 +1815,7 @@ class _AutonomousDatabaseState:
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
+        :param pulumi.Input[str] peer_db_id: The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint: The private endpoint for the resource. This parameter is not used in Autonomous Databases using Serverless infrastructure and Exadata Cloud@Customer infrastructure.
@@ -1860,7 +1896,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[float] total_backup_storage_size_in_gbs: The backup storage to the database.
         :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[int] used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
-        :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
+        :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
                
@@ -1978,6 +2014,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "is_dedicated", is_dedicated)
         if is_dev_tier is not None:
             pulumi.set(__self__, "is_dev_tier", is_dev_tier)
+        if is_disconnect_peer is not None:
+            pulumi.set(__self__, "is_disconnect_peer", is_disconnect_peer)
         if is_free_tier is not None:
             pulumi.set(__self__, "is_free_tier", is_free_tier)
         if is_local_data_guard_enabled is not None:
@@ -2045,6 +2083,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "open_mode", open_mode)
         if operations_insights_status is not None:
             pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+        if peer_db_id is not None:
+            pulumi.set(__self__, "peer_db_id", peer_db_id)
         if peer_db_ids is not None:
             pulumi.set(__self__, "peer_db_ids", peer_db_ids)
         if permission_level is not None:
@@ -2835,6 +2875,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "is_dev_tier", value)
 
     @property
+    @pulumi.getter(name="isDisconnectPeer")
+    def is_disconnect_peer(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        """
+        return pulumi.get(self, "is_disconnect_peer")
+
+    @is_disconnect_peer.setter
+    def is_disconnect_peer(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_disconnect_peer", value)
+
+    @property
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -3232,6 +3284,18 @@ class _AutonomousDatabaseState:
     @operations_insights_status.setter
     def operations_insights_status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "operations_insights_status", value)
+
+    @property
+    @pulumi.getter(name="peerDbId")
+    def peer_db_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        """
+        return pulumi.get(self, "peer_db_id")
+
+    @peer_db_id.setter
+    def peer_db_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_db_id", value)
 
     @property
     @pulumi.getter(name="peerDbIds")
@@ -3905,7 +3969,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of storage that has been used, in terabytes.
+        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         """
         return pulumi.get(self, "used_data_storage_size_in_tbs")
 
@@ -3988,6 +4052,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
+                 is_disconnect_peer: Optional[pulumi.Input[bool]] = None,
                  is_free_tier: Optional[pulumi.Input[bool]] = None,
                  is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
@@ -4006,6 +4071,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
+                 peer_db_id: Optional[pulumi.Input[str]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
@@ -4117,6 +4183,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        :param pulumi.Input[bool] is_disconnect_peer: If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
         :param pulumi.Input[bool] is_free_tier: (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
         :param pulumi.Input[bool] is_local_data_guard_enabled: (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_mtls_connection_required: (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
@@ -4149,6 +4216,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
+        :param pulumi.Input[str] peer_db_id: The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
         :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) (Optional) (Updatable) The resource's private endpoint label.
@@ -4285,6 +4353,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dedicated: Optional[pulumi.Input[bool]] = None,
                  is_dev_tier: Optional[pulumi.Input[bool]] = None,
+                 is_disconnect_peer: Optional[pulumi.Input[bool]] = None,
                  is_free_tier: Optional[pulumi.Input[bool]] = None,
                  is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
@@ -4303,6 +4372,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  ocpu_count: Optional[pulumi.Input[float]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None,
+                 peer_db_id: Optional[pulumi.Input[str]] = None,
                  permission_level: Optional[pulumi.Input[str]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
@@ -4381,6 +4451,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_data_guard_enabled"] = is_data_guard_enabled
             __props__.__dict__["is_dedicated"] = is_dedicated
             __props__.__dict__["is_dev_tier"] = is_dev_tier
+            __props__.__dict__["is_disconnect_peer"] = is_disconnect_peer
             __props__.__dict__["is_free_tier"] = is_free_tier
             __props__.__dict__["is_local_data_guard_enabled"] = is_local_data_guard_enabled
             __props__.__dict__["is_mtls_connection_required"] = is_mtls_connection_required
@@ -4399,6 +4470,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["ocpu_count"] = ocpu_count
             __props__.__dict__["open_mode"] = open_mode
             __props__.__dict__["operations_insights_status"] = operations_insights_status
+            __props__.__dict__["peer_db_id"] = peer_db_id
             __props__.__dict__["permission_level"] = permission_level
             __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
             __props__.__dict__["private_endpoint_label"] = private_endpoint_label
@@ -4551,6 +4623,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
             is_dedicated: Optional[pulumi.Input[bool]] = None,
             is_dev_tier: Optional[pulumi.Input[bool]] = None,
+            is_disconnect_peer: Optional[pulumi.Input[bool]] = None,
             is_free_tier: Optional[pulumi.Input[bool]] = None,
             is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
             is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
@@ -4583,6 +4656,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             ocpu_count: Optional[pulumi.Input[float]] = None,
             open_mode: Optional[pulumi.Input[str]] = None,
             operations_insights_status: Optional[pulumi.Input[str]] = None,
+            peer_db_id: Optional[pulumi.Input[str]] = None,
             peer_db_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             permission_level: Optional[pulumi.Input[str]] = None,
             private_endpoint: Optional[pulumi.Input[str]] = None,
@@ -4729,6 +4803,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_data_guard_enabled: (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_dedicated: True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         :param pulumi.Input[bool] is_dev_tier: (Updatable) Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        :param pulumi.Input[bool] is_disconnect_peer: If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
         :param pulumi.Input[bool] is_free_tier: (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
         :param pulumi.Input[bool] is_local_data_guard_enabled: (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. It takes boolean values. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[bool] is_mtls_connection_required: (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
@@ -4775,6 +4850,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
+        :param pulumi.Input[str] peer_db_id: The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint: The private endpoint for the resource. This parameter is not used in Autonomous Databases using Serverless infrastructure and Exadata Cloud@Customer infrastructure.
@@ -4855,7 +4931,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[float] total_backup_storage_size_in_gbs: The backup storage to the database.
         :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[int] used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
-        :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
+        :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
                
@@ -4923,6 +4999,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["is_data_guard_enabled"] = is_data_guard_enabled
         __props__.__dict__["is_dedicated"] = is_dedicated
         __props__.__dict__["is_dev_tier"] = is_dev_tier
+        __props__.__dict__["is_disconnect_peer"] = is_disconnect_peer
         __props__.__dict__["is_free_tier"] = is_free_tier
         __props__.__dict__["is_local_data_guard_enabled"] = is_local_data_guard_enabled
         __props__.__dict__["is_mtls_connection_required"] = is_mtls_connection_required
@@ -4955,6 +5032,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["ocpu_count"] = ocpu_count
         __props__.__dict__["open_mode"] = open_mode
         __props__.__dict__["operations_insights_status"] = operations_insights_status
+        __props__.__dict__["peer_db_id"] = peer_db_id
         __props__.__dict__["peer_db_ids"] = peer_db_ids
         __props__.__dict__["permission_level"] = permission_level
         __props__.__dict__["private_endpoint"] = private_endpoint
@@ -5473,6 +5551,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "is_dev_tier")
 
     @property
+    @pulumi.getter(name="isDisconnectPeer")
+    def is_disconnect_peer(self) -> pulumi.Output[Optional[bool]]:
+        """
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        """
+        return pulumi.get(self, "is_disconnect_peer")
+
+    @property
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> pulumi.Output[bool]:
         """
@@ -5742,6 +5828,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
         """
         return pulumi.get(self, "operations_insights_status")
+
+    @property
+    @pulumi.getter(name="peerDbId")
+    def peer_db_id(self) -> pulumi.Output[str]:
+        """
+        The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
+        """
+        return pulumi.get(self, "peer_db_id")
 
     @property
     @pulumi.getter(name="peerDbIds")
@@ -6199,7 +6293,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> pulumi.Output[int]:
         """
-        The amount of storage that has been used, in terabytes.
+        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
         """
         return pulumi.get(self, "used_data_storage_size_in_tbs")
 

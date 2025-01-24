@@ -43,6 +43,7 @@ export interface GetDatabaseArgs {
  * A collection of values returned by getDatabase.
  */
 export interface GetDatabaseResult {
+    readonly actionTrigger: number;
     /**
      * The character set for the database.
      */
@@ -55,6 +56,14 @@ export interface GetDatabaseResult {
      * The Connection strings used to connect to the Oracle Database.
      */
     readonly connectionStrings: outputs.Database.GetDatabaseConnectionString[];
+    readonly dataGuardAction: string;
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     */
+    readonly dataGuardGroups: outputs.Database.GetDatabaseDataGuardGroup[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+     */
     readonly databaseId: string;
     /**
      * The configuration of the Database Management service.

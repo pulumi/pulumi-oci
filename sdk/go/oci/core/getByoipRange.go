@@ -78,6 +78,8 @@ type GetByoipRangeResult struct {
 	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
 	// The `ByoipRange` resource's current status.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Information about the origin asn.
+	OriginAsns []GetByoipRangeOriginAsn `pulumi:"originAsns"`
 	// The `ByoipRange` resource's current state.
 	State string `pulumi:"state"`
 	// The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -176,6 +178,11 @@ func (o GetByoipRangeResultOutput) Ipv6cidrBlock() pulumi.StringOutput {
 // The `ByoipRange` resource's current status.
 func (o GetByoipRangeResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetByoipRangeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Information about the origin asn.
+func (o GetByoipRangeResultOutput) OriginAsns() GetByoipRangeOriginAsnArrayOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) []GetByoipRangeOriginAsn { return v.OriginAsns }).(GetByoipRangeOriginAsnArrayOutput)
 }
 
 // The `ByoipRange` resource's current state.

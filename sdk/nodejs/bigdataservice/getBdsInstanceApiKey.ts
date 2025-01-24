@@ -51,12 +51,10 @@ export interface GetBdsInstanceApiKeyResult {
     readonly bdsInstanceId: string;
     /**
      * The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-     * >>>>>>> theirs
      */
     readonly defaultRegion: string;
     /**
      * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-     * =======
      */
     readonly domainOcid: string;
     /**

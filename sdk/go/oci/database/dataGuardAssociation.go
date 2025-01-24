@@ -154,6 +154,11 @@ type DataGuardAssociation struct {
 	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MigrateTrigger pulumi.IntPtrOutput `pulumi:"migrateTrigger"`
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrOutput `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -208,9 +213,6 @@ type DataGuardAssociation struct {
 	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType pulumi.StringOutput `pulumi:"transportType"`
 }
 
@@ -331,6 +333,11 @@ type dataGuardAssociationState struct {
 	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MigrateTrigger *int `pulumi:"migrateTrigger"`
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount *int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -385,9 +392,6 @@ type dataGuardAssociationState struct {
 	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType *string `pulumi:"transportType"`
 }
 
@@ -454,6 +458,11 @@ type DataGuardAssociationState struct {
 	LicenseModel pulumi.StringPtrInput
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MigrateTrigger pulumi.IntPtrInput
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrInput
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -508,9 +517,6 @@ type DataGuardAssociationState struct {
 	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType pulumi.StringPtrInput
 }
 
@@ -575,6 +581,11 @@ type dataGuardAssociationArgs struct {
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
+	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MigrateTrigger *int `pulumi:"migrateTrigger"`
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount *int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -617,9 +628,6 @@ type dataGuardAssociationArgs struct {
 	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType string `pulumi:"transportType"`
 }
 
@@ -681,6 +689,11 @@ type DataGuardAssociationArgs struct {
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 	LicenseModel pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MigrateTrigger pulumi.IntPtrInput
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrInput
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -723,9 +736,6 @@ type DataGuardAssociationArgs struct {
 	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	//
 	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType pulumi.StringInput
 }
 
@@ -952,6 +962,14 @@ func (o DataGuardAssociationOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DataGuardAssociationOutput) MigrateTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.IntPtrOutput { return v.MigrateTrigger }).(pulumi.IntPtrOutput)
+}
+
 // The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 func (o DataGuardAssociationOutput) NodeCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.IntPtrOutput { return v.NodeCount }).(pulumi.IntPtrOutput)
@@ -1063,9 +1081,6 @@ func (o DataGuardAssociationOutput) TimeZone() pulumi.StringPtrOutput {
 // For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 //
 // **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataGuardAssociationOutput) TransportType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.TransportType }).(pulumi.StringOutput)
 }

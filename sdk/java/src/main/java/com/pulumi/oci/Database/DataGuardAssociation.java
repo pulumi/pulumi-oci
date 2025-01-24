@@ -464,6 +464,26 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="migrateTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> migrateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> migrateTrigger() {
+        return Codegen.optional(this.migrateTrigger);
+    }
+    /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      * 
      */
@@ -755,9 +775,6 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="transportType", refs={String.class}, tree="[0]")
     private Output<String> transportType;
@@ -771,9 +788,6 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      * 
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> transportType() {

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DatabaseUpgradeArgs;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeState;
 import com.pulumi.oci.Database.outputs.DatabaseUpgradeConnectionString;
+import com.pulumi.oci.Database.outputs.DatabaseUpgradeDataGuardGroup;
 import com.pulumi.oci.Database.outputs.DatabaseUpgradeDatabaseUpgradeSourceDetails;
 import com.pulumi.oci.Database.outputs.DatabaseUpgradeDbBackupConfig;
 import com.pulumi.oci.Utilities;
@@ -141,6 +142,20 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      */
     public Output<List<DatabaseUpgradeConnectionString>> connectionStrings() {
         return this.connectionStrings;
+    }
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    @Export(name="dataGuardGroups", refs={List.class,DatabaseUpgradeDataGuardGroup.class}, tree="[0,1]")
+    private Output<List<DatabaseUpgradeDataGuardGroup>> dataGuardGroups;
+
+    /**
+     * @return Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    public Output<List<DatabaseUpgradeDataGuardGroup>> dataGuardGroups() {
+        return this.dataGuardGroups;
     }
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

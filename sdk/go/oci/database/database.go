@@ -28,12 +28,21 @@ import (
 type Database struct {
 	pulumi.CustomResourceState
 
+	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+	ActionTrigger pulumi.IntPtrOutput `pulumi:"actionTrigger"`
 	// The character set for the database.
 	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseConnectionStringArrayOutput `pulumi:"connectionStrings"`
+	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DataGuardAction pulumi.StringPtrOutput `pulumi:"dataGuardAction"`
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups DatabaseDataGuardGroupArrayOutput `pulumi:"dataGuardGroups"`
 	// (Updatable) Details for creating a database.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -90,10 +99,7 @@ type Database struct {
 	PdbName pulumi.StringOutput `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringOutput `pulumi:"sidPrefix"`
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
 	Source pulumi.StringOutput `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
@@ -146,12 +152,21 @@ func GetDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Database resources.
 type databaseState struct {
+	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+	ActionTrigger *int `pulumi:"actionTrigger"`
 	// The character set for the database.
 	CharacterSet *string `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings []DatabaseConnectionString `pulumi:"connectionStrings"`
+	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DataGuardAction *string `pulumi:"dataGuardAction"`
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups []DatabaseDataGuardGroup `pulumi:"dataGuardGroups"`
 	// (Updatable) Details for creating a database.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -208,10 +223,7 @@ type databaseState struct {
 	PdbName *string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix *string `pulumi:"sidPrefix"`
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
 	Source *string `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp *string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
@@ -226,12 +238,21 @@ type databaseState struct {
 }
 
 type DatabaseState struct {
+	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+	ActionTrigger pulumi.IntPtrInput
 	// The character set for the database.
 	CharacterSet pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseConnectionStringArrayInput
+	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DataGuardAction pulumi.StringPtrInput
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups DatabaseDataGuardGroupArrayInput
 	// (Updatable) Details for creating a database.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -288,10 +309,7 @@ type DatabaseState struct {
 	PdbName pulumi.StringPtrInput
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringPtrInput
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
 	Source pulumi.StringPtrInput
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringPtrInput
@@ -310,6 +328,13 @@ func (DatabaseState) ElementType() reflect.Type {
 }
 
 type databaseArgs struct {
+	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+	ActionTrigger *int `pulumi:"actionTrigger"`
+	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DataGuardAction *string `pulumi:"dataGuardAction"`
 	// (Updatable) Details for creating a database.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -330,10 +355,7 @@ type databaseArgs struct {
 	KmsKeyRotation *int `pulumi:"kmsKeyRotation"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
 	Source string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId *string `pulumi:"vaultId"`
@@ -341,6 +363,13 @@ type databaseArgs struct {
 
 // The set of arguments for constructing a Database resource.
 type DatabaseArgs struct {
+	// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+	ActionTrigger pulumi.IntPtrInput
+	// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DataGuardAction pulumi.StringPtrInput
 	// (Updatable) Details for creating a database.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -361,10 +390,7 @@ type DatabaseArgs struct {
 	KmsKeyRotation pulumi.IntPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId pulumi.StringPtrInput
-	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
 	Source pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringPtrInput
@@ -457,6 +483,11 @@ func (o DatabaseOutput) ToDatabaseOutputWithContext(ctx context.Context) Databas
 	return o
 }
 
+// (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
+func (o DatabaseOutput) ActionTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Database) pulumi.IntPtrOutput { return v.ActionTrigger }).(pulumi.IntPtrOutput)
+}
+
 // The character set for the database.
 func (o DatabaseOutput) CharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.CharacterSet }).(pulumi.StringOutput)
@@ -470,6 +501,19 @@ func (o DatabaseOutput) CompartmentId() pulumi.StringOutput {
 // The Connection strings used to connect to the Oracle Database.
 func (o DatabaseOutput) ConnectionStrings() DatabaseConnectionStringArrayOutput {
 	return o.ApplyT(func(v *Database) DatabaseConnectionStringArrayOutput { return v.ConnectionStrings }).(DatabaseConnectionStringArrayOutput)
+}
+
+// Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DatabaseOutput) DataGuardAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Database) pulumi.StringPtrOutput { return v.DataGuardAction }).(pulumi.StringPtrOutput)
+}
+
+// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+func (o DatabaseOutput) DataGuardGroups() DatabaseDataGuardGroupArrayOutput {
+	return o.ApplyT(func(v *Database) DatabaseDataGuardGroupArrayOutput { return v.DataGuardGroups }).(DatabaseDataGuardGroupArrayOutput)
 }
 
 // (Updatable) Details for creating a database.
@@ -606,10 +650,7 @@ func (o DatabaseOutput) SidPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.SidPrefix }).(pulumi.StringOutput)
 }
 
-// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
 func (o DatabaseOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }

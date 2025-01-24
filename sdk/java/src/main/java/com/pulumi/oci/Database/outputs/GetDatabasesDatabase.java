@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseConnectionString;
+import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabase;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDbBackupConfig;
@@ -18,6 +19,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatabasesDatabase {
+    private Integer actionTrigger;
     /**
      * @return The character set for the database.
      * 
@@ -33,6 +35,12 @@ public final class GetDatabasesDatabase {
      * 
      */
     private List<GetDatabasesDatabaseConnectionString> connectionStrings;
+    private String dataGuardAction;
+    /**
+     * @return Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    private List<GetDatabasesDatabaseDataGuardGroup> dataGuardGroups;
     /**
      * @return The configuration of the Database Management service.
      * 
@@ -180,6 +188,9 @@ public final class GetDatabasesDatabase {
     private String vmClusterId;
 
     private GetDatabasesDatabase() {}
+    public Integer actionTrigger() {
+        return this.actionTrigger;
+    }
     /**
      * @return The character set for the database.
      * 
@@ -200,6 +211,16 @@ public final class GetDatabasesDatabase {
      */
     public List<GetDatabasesDatabaseConnectionString> connectionStrings() {
         return this.connectionStrings;
+    }
+    public String dataGuardAction() {
+        return this.dataGuardAction;
+    }
+    /**
+     * @return Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    public List<GetDatabasesDatabaseDataGuardGroup> dataGuardGroups() {
+        return this.dataGuardGroups;
     }
     /**
      * @return The configuration of the Database Management service.
@@ -422,9 +443,12 @@ public final class GetDatabasesDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer actionTrigger;
         private String characterSet;
         private String compartmentId;
         private List<GetDatabasesDatabaseConnectionString> connectionStrings;
+        private String dataGuardAction;
+        private List<GetDatabasesDatabaseDataGuardGroup> dataGuardGroups;
         private List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs;
         private String databaseSoftwareImageId;
         private List<GetDatabasesDatabaseDatabase> databases;
@@ -461,9 +485,12 @@ public final class GetDatabasesDatabase {
         public Builder() {}
         public Builder(GetDatabasesDatabase defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.actionTrigger = defaults.actionTrigger;
     	      this.characterSet = defaults.characterSet;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.dataGuardAction = defaults.dataGuardAction;
+    	      this.dataGuardGroups = defaults.dataGuardGroups;
     	      this.databaseManagementConfigs = defaults.databaseManagementConfigs;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.databases = defaults.databases;
@@ -500,6 +527,14 @@ public final class GetDatabasesDatabase {
         }
 
         @CustomType.Setter
+        public Builder actionTrigger(Integer actionTrigger) {
+            if (actionTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "actionTrigger");
+            }
+            this.actionTrigger = actionTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder characterSet(String characterSet) {
             if (characterSet == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabase", "characterSet");
@@ -525,6 +560,25 @@ public final class GetDatabasesDatabase {
         }
         public Builder connectionStrings(GetDatabasesDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+        @CustomType.Setter
+        public Builder dataGuardAction(String dataGuardAction) {
+            if (dataGuardAction == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dataGuardAction");
+            }
+            this.dataGuardAction = dataGuardAction;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dataGuardGroups(List<GetDatabasesDatabaseDataGuardGroup> dataGuardGroups) {
+            if (dataGuardGroups == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "dataGuardGroups");
+            }
+            this.dataGuardGroups = dataGuardGroups;
+            return this;
+        }
+        public Builder dataGuardGroups(GetDatabasesDatabaseDataGuardGroup... dataGuardGroups) {
+            return dataGuardGroups(List.of(dataGuardGroups));
         }
         @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
@@ -801,9 +855,12 @@ public final class GetDatabasesDatabase {
         }
         public GetDatabasesDatabase build() {
             final var _resultValue = new GetDatabasesDatabase();
+            _resultValue.actionTrigger = actionTrigger;
             _resultValue.characterSet = characterSet;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.dataGuardAction = dataGuardAction;
+            _resultValue.dataGuardGroups = dataGuardGroups;
             _resultValue.databaseManagementConfigs = databaseManagementConfigs;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.databases = databases;

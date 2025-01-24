@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeConnectionStringArgs;
+import com.pulumi.oci.Database.inputs.DatabaseUpgradeDataGuardGroupArgs;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseUpgradeDbBackupConfigArgs;
 import java.lang.Boolean;
@@ -80,6 +81,21 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<List<DatabaseUpgradeConnectionStringArgs>>> connectionStrings() {
         return Optional.ofNullable(this.connectionStrings);
+    }
+
+    /**
+     * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    @Import(name="dataGuardGroups")
+    private @Nullable Output<List<DatabaseUpgradeDataGuardGroupArgs>> dataGuardGroups;
+
+    /**
+     * @return Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+     * 
+     */
+    public Optional<Output<List<DatabaseUpgradeDataGuardGroupArgs>>> dataGuardGroups() {
+        return Optional.ofNullable(this.dataGuardGroups);
     }
 
     /**
@@ -509,6 +525,7 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
         this.characterSet = $.characterSet;
         this.compartmentId = $.compartmentId;
         this.connectionStrings = $.connectionStrings;
+        this.dataGuardGroups = $.dataGuardGroups;
         this.databaseId = $.databaseId;
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.databaseUpgradeSourceDetails = $.databaseUpgradeSourceDetails;
@@ -649,6 +666,37 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
          */
         public Builder connectionStrings(DatabaseUpgradeConnectionStringArgs... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+
+        /**
+         * @param dataGuardGroups Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataGuardGroups(@Nullable Output<List<DatabaseUpgradeDataGuardGroupArgs>> dataGuardGroups) {
+            $.dataGuardGroups = dataGuardGroups;
+            return this;
+        }
+
+        /**
+         * @param dataGuardGroups Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataGuardGroups(List<DatabaseUpgradeDataGuardGroupArgs> dataGuardGroups) {
+            return dataGuardGroups(Output.of(dataGuardGroups));
+        }
+
+        /**
+         * @param dataGuardGroups Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataGuardGroups(DatabaseUpgradeDataGuardGroupArgs... dataGuardGroups) {
+            return dataGuardGroups(List.of(dataGuardGroups));
         }
 
         /**

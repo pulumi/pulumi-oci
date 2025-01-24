@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The character set for the database.
         /// </summary>
         public readonly string CharacterSet;
+        public readonly string DatabaseAdminPassword;
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
@@ -49,6 +50,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// True if active Data Guard is enabled.
+        /// </summary>
+        public readonly bool IsActiveDataGuardEnabled;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string KmsKeyId;
@@ -66,10 +71,23 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string PdbName;
         public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
+        /// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
+        public readonly string ProtectionMode;
+        /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string SidPrefix;
+        public readonly string SourceDatabaseId;
+        public readonly string SourceTdeWalletPassword;
         public readonly string TdeWalletPassword;
+        /// <summary>
+        /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        /// * MAXIMUM_PERFORMANCE - ASYNC
+        /// * MAXIMUM_PROTECTION - SYNC
+        /// </summary>
+        public readonly string TransportType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
@@ -85,6 +103,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string characterSet,
 
+            string databaseAdminPassword,
+
             string databaseSoftwareImageId,
 
             ImmutableArray<Outputs.GetDatabaseDatabaseDbBackupConfigResult> dbBackupConfigs,
@@ -99,6 +119,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            bool isActiveDataGuardEnabled,
+
             string kmsKeyId,
 
             string kmsKeyVersionId,
@@ -109,9 +131,17 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> pluggableDatabases,
 
+            string protectionMode,
+
             string sidPrefix,
 
+            string sourceDatabaseId,
+
+            string sourceTdeWalletPassword,
+
             string tdeWalletPassword,
+
+            string transportType,
 
             string vaultId)
         {
@@ -119,6 +149,7 @@ namespace Pulumi.Oci.Database.Outputs
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;
+            DatabaseAdminPassword = databaseAdminPassword;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbBackupConfigs = dbBackupConfigs;
             DbName = dbName;
@@ -126,13 +157,18 @@ namespace Pulumi.Oci.Database.Outputs
             DbWorkload = dbWorkload;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
+            IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             NcharacterSet = ncharacterSet;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
+            ProtectionMode = protectionMode;
             SidPrefix = sidPrefix;
+            SourceDatabaseId = sourceDatabaseId;
+            SourceTdeWalletPassword = sourceTdeWalletPassword;
             TdeWalletPassword = tdeWalletPassword;
+            TransportType = transportType;
             VaultId = vaultId;
         }
     }

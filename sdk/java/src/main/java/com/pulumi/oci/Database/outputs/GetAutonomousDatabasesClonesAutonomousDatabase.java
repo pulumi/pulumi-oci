@@ -628,7 +628,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer usedDataStorageSizeInGbs;
     /**
-     * @return The amount of storage that has been used, in terabytes.
+     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * 
      */
     private Integer usedDataStorageSizeInTbs;
@@ -1481,7 +1481,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.usedDataStorageSizeInGbs;
     }
     /**
-     * @return The amount of storage that has been used, in terabytes.
+     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * 
      */
     public Integer usedDataStorageSizeInTbs() {

@@ -21,6 +21,21 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
     public static final NetworkLoadBalancersBackendSetsUnifiedArgs Empty = new NetworkLoadBalancersBackendSetsUnifiedArgs();
 
     /**
+     * (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * 
+     */
+    @Import(name="areOperationallyActiveBackendsPreferred")
+    private @Nullable Output<Boolean> areOperationallyActiveBackendsPreferred;
+
+    /**
+     * @return (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * 
+     */
+    public Optional<Output<Boolean>> areOperationallyActiveBackendsPreferred() {
+        return Optional.ofNullable(this.areOperationallyActiveBackendsPreferred);
+    }
+
+    /**
      * (Updatable) An array of backends to be associated with the backend set.
      * 
      */
@@ -36,14 +51,14 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      * 
      */
     @Import(name="healthChecker", required=true)
     private Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      * 
      */
     public Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs> healthChecker() {
@@ -93,6 +108,21 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
      */
     public Optional<Output<Boolean>> isInstantFailoverEnabled() {
         return Optional.ofNullable(this.isInstantFailoverEnabled);
+    }
+
+    /**
+     * (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * 
+     */
+    @Import(name="isInstantFailoverTcpResetEnabled")
+    private @Nullable Output<Boolean> isInstantFailoverTcpResetEnabled;
+
+    /**
+     * @return (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> isInstantFailoverTcpResetEnabled() {
+        return Optional.ofNullable(this.isInstantFailoverTcpResetEnabled);
     }
 
     /**
@@ -172,11 +202,13 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
     private NetworkLoadBalancersBackendSetsUnifiedArgs() {}
 
     private NetworkLoadBalancersBackendSetsUnifiedArgs(NetworkLoadBalancersBackendSetsUnifiedArgs $) {
+        this.areOperationallyActiveBackendsPreferred = $.areOperationallyActiveBackendsPreferred;
         this.backends = $.backends;
         this.healthChecker = $.healthChecker;
         this.ipVersion = $.ipVersion;
         this.isFailOpen = $.isFailOpen;
         this.isInstantFailoverEnabled = $.isInstantFailoverEnabled;
+        this.isInstantFailoverTcpResetEnabled = $.isInstantFailoverTcpResetEnabled;
         this.isPreserveSource = $.isPreserveSource;
         this.name = $.name;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
@@ -199,6 +231,27 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
 
         public Builder(NetworkLoadBalancersBackendSetsUnifiedArgs defaults) {
             $ = new NetworkLoadBalancersBackendSetsUnifiedArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param areOperationallyActiveBackendsPreferred (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areOperationallyActiveBackendsPreferred(@Nullable Output<Boolean> areOperationallyActiveBackendsPreferred) {
+            $.areOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
+            return this;
+        }
+
+        /**
+         * @param areOperationallyActiveBackendsPreferred (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areOperationallyActiveBackendsPreferred(Boolean areOperationallyActiveBackendsPreferred) {
+            return areOperationallyActiveBackendsPreferred(Output.of(areOperationallyActiveBackendsPreferred));
         }
 
         /**
@@ -233,7 +286,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
          * 
          * @return builder
          * 
@@ -244,7 +297,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
          * 
          * @return builder
          * 
@@ -314,6 +367,27 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
          */
         public Builder isInstantFailoverEnabled(Boolean isInstantFailoverEnabled) {
             return isInstantFailoverEnabled(Output.of(isInstantFailoverEnabled));
+        }
+
+        /**
+         * @param isInstantFailoverTcpResetEnabled (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInstantFailoverTcpResetEnabled(@Nullable Output<Boolean> isInstantFailoverTcpResetEnabled) {
+            $.isInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
+            return this;
+        }
+
+        /**
+         * @param isInstantFailoverTcpResetEnabled (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInstantFailoverTcpResetEnabled(Boolean isInstantFailoverTcpResetEnabled) {
+            return isInstantFailoverTcpResetEnabled(Output.of(isInstantFailoverTcpResetEnabled));
         }
 
         /**

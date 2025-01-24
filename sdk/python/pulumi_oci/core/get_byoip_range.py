@@ -27,7 +27,7 @@ class GetByoipRangeResult:
     """
     A collection of values returned by getByoipRange.
     """
-    def __init__(__self__, byoip_range_id=None, byoip_range_vcn_ipv6allocations=None, cidr_block=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv6cidr_block=None, lifecycle_details=None, state=None, time_advertised=None, time_created=None, time_validated=None, time_withdrawn=None, validation_token=None):
+    def __init__(__self__, byoip_range_id=None, byoip_range_vcn_ipv6allocations=None, cidr_block=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv6cidr_block=None, lifecycle_details=None, origin_asns=None, state=None, time_advertised=None, time_created=None, time_validated=None, time_withdrawn=None, validation_token=None):
         if byoip_range_id and not isinstance(byoip_range_id, str):
             raise TypeError("Expected argument 'byoip_range_id' to be a str")
         pulumi.set(__self__, "byoip_range_id", byoip_range_id)
@@ -58,6 +58,9 @@ class GetByoipRangeResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if origin_asns and not isinstance(origin_asns, list):
+            raise TypeError("Expected argument 'origin_asns' to be a list")
+        pulumi.set(__self__, "origin_asns", origin_asns)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -158,6 +161,14 @@ class GetByoipRangeResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="originAsns")
+    def origin_asns(self) -> Sequence['outputs.GetByoipRangeOriginAsnResult']:
+        """
+        Information about the origin asn.
+        """
+        return pulumi.get(self, "origin_asns")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -222,6 +233,7 @@ class AwaitableGetByoipRangeResult(GetByoipRangeResult):
             id=self.id,
             ipv6cidr_block=self.ipv6cidr_block,
             lifecycle_details=self.lifecycle_details,
+            origin_asns=self.origin_asns,
             state=self.state,
             time_advertised=self.time_advertised,
             time_created=self.time_created,
@@ -265,6 +277,7 @@ def get_byoip_range(byoip_range_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         ipv6cidr_block=pulumi.get(__ret__, 'ipv6cidr_block'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        origin_asns=pulumi.get(__ret__, 'origin_asns'),
         state=pulumi.get(__ret__, 'state'),
         time_advertised=pulumi.get(__ret__, 'time_advertised'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -305,6 +318,7 @@ def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
         id=pulumi.get(__response__, 'id'),
         ipv6cidr_block=pulumi.get(__response__, 'ipv6cidr_block'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        origin_asns=pulumi.get(__response__, 'origin_asns'),
         state=pulumi.get(__response__, 'state'),
         time_advertised=pulumi.get(__response__, 'time_advertised'),
         time_created=pulumi.get(__response__, 'time_created'),

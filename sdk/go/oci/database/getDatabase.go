@@ -58,13 +58,18 @@ type LookupDatabaseArgs struct {
 
 // A collection of values returned by getDatabase.
 type LookupDatabaseResult struct {
+	ActionTrigger int `pulumi:"actionTrigger"`
 	// The character set for the database.
 	CharacterSet string `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings []GetDatabaseConnectionString `pulumi:"connectionStrings"`
-	DatabaseId        string                        `pulumi:"databaseId"`
+	DataGuardAction   string                        `pulumi:"dataGuardAction"`
+	// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+	DataGuardGroups []GetDatabaseDataGuardGroup `pulumi:"dataGuardGroups"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+	DatabaseId string `pulumi:"databaseId"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -162,6 +167,10 @@ func (o LookupDatabaseResultOutput) ToLookupDatabaseResultOutputWithContext(ctx 
 	return o
 }
 
+func (o LookupDatabaseResultOutput) ActionTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) int { return v.ActionTrigger }).(pulumi.IntOutput)
+}
+
 // The character set for the database.
 func (o LookupDatabaseResultOutput) CharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.CharacterSet }).(pulumi.StringOutput)
@@ -177,6 +186,16 @@ func (o LookupDatabaseResultOutput) ConnectionStrings() GetDatabaseConnectionStr
 	return o.ApplyT(func(v LookupDatabaseResult) []GetDatabaseConnectionString { return v.ConnectionStrings }).(GetDatabaseConnectionStringArrayOutput)
 }
 
+func (o LookupDatabaseResultOutput) DataGuardAction() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DataGuardAction }).(pulumi.StringOutput)
+}
+
+// Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+func (o LookupDatabaseResultOutput) DataGuardGroups() GetDatabaseDataGuardGroupArrayOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) []GetDatabaseDataGuardGroup { return v.DataGuardGroups }).(GetDatabaseDataGuardGroupArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 func (o LookupDatabaseResultOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.DatabaseId }).(pulumi.StringOutput)
 }

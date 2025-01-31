@@ -46,9 +46,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string LastSeen;
         /// <summary>
+        /// The maximum amount of controlled memory used by a statement during execution.
+        /// </summary>
+        public readonly string MaxControlledMemory;
+        /// <summary>
         /// The slowest the query has been executed.
         /// </summary>
         public readonly double MaxTimerWait;
+        /// <summary>
+        /// The maximum amount of memory used by a statement during execution.
+        /// </summary>
+        public readonly string MaxTotalMemory;
         /// <summary>
         /// The fastest the query has been executed.
         /// </summary>
@@ -69,6 +77,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
         /// </summary>
         public readonly string SchemaName;
+        /// <summary>
+        /// The total amount of time spent on CPU for this statement.
+        /// </summary>
+        public readonly string SumCpuTime;
         /// <summary>
         /// The total number of On-Disk internal temporary tables that have been created by the query.
         /// </summary>
@@ -168,7 +180,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string lastSeen,
 
+            string maxControlledMemory,
+
             double maxTimerWait,
+
+            string maxTotalMemory,
 
             double minTimerWait,
 
@@ -179,6 +195,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             double quantile999,
 
             string schemaName,
+
+            string sumCpuTime,
 
             double sumCreatedTempDiskTables,
 
@@ -228,12 +246,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             HeatWaveOffloaded = heatWaveOffloaded;
             HeatWaveOutOfMemory = heatWaveOutOfMemory;
             LastSeen = lastSeen;
+            MaxControlledMemory = maxControlledMemory;
             MaxTimerWait = maxTimerWait;
+            MaxTotalMemory = maxTotalMemory;
             MinTimerWait = minTimerWait;
             Quantile95 = quantile95;
             Quantile99 = quantile99;
             Quantile999 = quantile999;
             SchemaName = schemaName;
+            SumCpuTime = sumCpuTime;
             SumCreatedTempDiskTables = sumCreatedTempDiskTables;
             SumCreatedTempTables = sumCreatedTempTables;
             SumErrors = sumErrors;

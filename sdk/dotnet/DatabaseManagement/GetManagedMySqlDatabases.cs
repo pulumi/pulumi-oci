@@ -30,6 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedMySqlDatabases = Oci.DatabaseManagement.GetManagedMySqlDatabases.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         FilterByMySqlDatabaseTypeParam = managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedMySqlDatabases = Oci.DatabaseManagement.GetManagedMySqlDatabases.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         FilterByMySqlDatabaseTypeParam = managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     var testManagedMySqlDatabases = Oci.DatabaseManagement.GetManagedMySqlDatabases.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         FilterByMySqlDatabaseTypeParam = managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
         ///     });
         /// 
         /// });
@@ -101,6 +104,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+        /// </summary>
+        [Input("filterByMySqlDatabaseTypeParam")]
+        public string? FilterByMySqlDatabaseTypeParam { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetManagedMySqlDatabasesFilterArgs>? _filters;
@@ -124,6 +133,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+        /// </summary>
+        [Input("filterByMySqlDatabaseTypeParam")]
+        public Input<string>? FilterByMySqlDatabaseTypeParam { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetManagedMySqlDatabasesFilterInputArgs>? _filters;
         public InputList<Inputs.GetManagedMySqlDatabasesFilterInputArgs> Filters
@@ -146,6 +161,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly string? FilterByMySqlDatabaseTypeParam;
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabasesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -160,6 +176,8 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedMySqlDatabasesResult(
             string compartmentId,
 
+            string? filterByMySqlDatabaseTypeParam,
+
             ImmutableArray<Outputs.GetManagedMySqlDatabasesFilterResult> filters,
 
             string id,
@@ -167,6 +185,7 @@ namespace Pulumi.Oci.DatabaseManagement
             ImmutableArray<Outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult> managedMySqlDatabaseCollections)
         {
             CompartmentId = compartmentId;
+            FilterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             Filters = filters;
             Id = id;
             ManagedMySqlDatabaseCollections = managedMySqlDatabaseCollections;

@@ -36,6 +36,8 @@ type DatabaseInsight struct {
 	CredentialDetails DatabaseInsightCredentialDetailsPtrOutput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringOutput `pulumi:"databaseConnectionStatusDetails"`
+	// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId pulumi.StringOutput `pulumi:"databaseConnectorId"`
 	// Display name of database
 	DatabaseDisplayName pulumi.StringOutput `pulumi:"databaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -155,6 +157,8 @@ type databaseInsightState struct {
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails *string `pulumi:"databaseConnectionStatusDetails"`
+	// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId *string `pulumi:"databaseConnectorId"`
 	// Display name of database
 	DatabaseDisplayName *string `pulumi:"databaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -239,6 +243,8 @@ type DatabaseInsightState struct {
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringPtrInput
+	// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId pulumi.StringPtrInput
 	// Display name of database
 	DatabaseDisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -327,6 +333,8 @@ type databaseInsightArgs struct {
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails *string `pulumi:"databaseConnectionStatusDetails"`
+	// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId *string `pulumi:"databaseConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId *string `pulumi:"databaseId"`
 	// Oracle Cloud Infrastructure database resource type
@@ -378,6 +386,8 @@ type DatabaseInsightArgs struct {
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringPtrInput
+	// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringPtrInput
 	// Oracle Cloud Infrastructure database resource type
@@ -532,6 +542,11 @@ func (o DatabaseInsightOutput) CredentialDetails() DatabaseInsightCredentialDeta
 // A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 func (o DatabaseInsightOutput) DatabaseConnectionStatusDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.DatabaseConnectionStatusDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+func (o DatabaseInsightOutput) DatabaseConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.DatabaseConnectorId }).(pulumi.StringOutput)
 }
 
 // Display name of database

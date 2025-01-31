@@ -48,6 +48,11 @@ public final class GetDatabaseInsightResult {
      */
     private String databaseConnectionStatusDetails;
     /**
+     * @return (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     * 
+     */
+    private String databaseConnectorId;
+    /**
      * @return Display name of database
      * 
      */
@@ -249,6 +254,13 @@ public final class GetDatabaseInsightResult {
      */
     public String databaseConnectionStatusDetails() {
         return this.databaseConnectionStatusDetails;
+    }
+    /**
+     * @return (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     * 
+     */
+    public String databaseConnectorId() {
+        return this.databaseConnectorId;
     }
     /**
      * @return Display name of database
@@ -495,6 +507,7 @@ public final class GetDatabaseInsightResult {
         private String connectorId;
         private List<GetDatabaseInsightCredentialDetail> credentialDetails;
         private String databaseConnectionStatusDetails;
+        private String databaseConnectorId;
         private String databaseDisplayName;
         private String databaseId;
         private String databaseInsightId;
@@ -539,6 +552,7 @@ public final class GetDatabaseInsightResult {
     	      this.connectorId = defaults.connectorId;
     	      this.credentialDetails = defaults.credentialDetails;
     	      this.databaseConnectionStatusDetails = defaults.databaseConnectionStatusDetails;
+    	      this.databaseConnectorId = defaults.databaseConnectorId;
     	      this.databaseDisplayName = defaults.databaseDisplayName;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseInsightId = defaults.databaseInsightId;
@@ -631,6 +645,14 @@ public final class GetDatabaseInsightResult {
               throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseConnectionStatusDetails");
             }
             this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseConnectorId(String databaseConnectorId) {
+            if (databaseConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "databaseConnectorId");
+            }
+            this.databaseConnectorId = databaseConnectorId;
             return this;
         }
         @CustomType.Setter
@@ -921,6 +943,7 @@ public final class GetDatabaseInsightResult {
             _resultValue.connectorId = connectorId;
             _resultValue.credentialDetails = credentialDetails;
             _resultValue.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            _resultValue.databaseConnectorId = databaseConnectorId;
             _resultValue.databaseDisplayName = databaseDisplayName;
             _resultValue.databaseId = databaseId;
             _resultValue.databaseInsightId = databaseInsightId;

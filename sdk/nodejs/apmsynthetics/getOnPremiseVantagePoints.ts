@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Returns a list of On-premise vantage points.
  *
@@ -77,7 +77,7 @@ export interface GetOnPremiseVantagePointsResult {
     readonly onPremiseVantagePointCollections: outputs.ApmSynthetics.GetOnPremiseVantagePointsOnPremiseVantagePointCollection[];
 }
 /**
- * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Returns a list of On-premise vantage points.
  *

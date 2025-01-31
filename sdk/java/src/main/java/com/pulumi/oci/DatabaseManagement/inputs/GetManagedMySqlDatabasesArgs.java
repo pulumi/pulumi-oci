@@ -33,6 +33,21 @@ public final class GetManagedMySqlDatabasesArgs extends com.pulumi.resources.Inv
         return this.compartmentId;
     }
 
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     * 
+     */
+    @Import(name="filterByMySqlDatabaseTypeParam")
+    private @Nullable Output<String> filterByMySqlDatabaseTypeParam;
+
+    /**
+     * @return The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     * 
+     */
+    public Optional<Output<String>> filterByMySqlDatabaseTypeParam() {
+        return Optional.ofNullable(this.filterByMySqlDatabaseTypeParam);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetManagedMySqlDatabasesFilterArgs>> filters;
 
@@ -44,6 +59,7 @@ public final class GetManagedMySqlDatabasesArgs extends com.pulumi.resources.Inv
 
     private GetManagedMySqlDatabasesArgs(GetManagedMySqlDatabasesArgs $) {
         this.compartmentId = $.compartmentId;
+        this.filterByMySqlDatabaseTypeParam = $.filterByMySqlDatabaseTypeParam;
         this.filters = $.filters;
     }
 
@@ -84,6 +100,27 @@ public final class GetManagedMySqlDatabasesArgs extends com.pulumi.resources.Inv
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param filterByMySqlDatabaseTypeParam The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filterByMySqlDatabaseTypeParam(@Nullable Output<String> filterByMySqlDatabaseTypeParam) {
+            $.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
+            return this;
+        }
+
+        /**
+         * @param filterByMySqlDatabaseTypeParam The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filterByMySqlDatabaseTypeParam(String filterByMySqlDatabaseTypeParam) {
+            return filterByMySqlDatabaseTypeParam(Output.of(filterByMySqlDatabaseTypeParam));
         }
 
         public Builder filters(@Nullable Output<List<GetManagedMySqlDatabasesFilterArgs>> filters) {

@@ -30,6 +30,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
             set => _backendSetMappings = value;
         }
 
+        /// <summary>
+        /// (Updatable) Create backup configuration properties for an OKE member.
+        /// </summary>
+        [Input("backupConfig")]
+        public Input<Inputs.DrProtectionGroupMemberBackupConfigArgs>? BackupConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) The details for creating the backup location of an OKE Cluster.
+        /// </summary>
+        [Input("backupLocation")]
+        public Input<Inputs.DrProtectionGroupMemberBackupLocationArgs>? BackupLocation { get; set; }
+
         [Input("blockVolumeOperations")]
         private InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs>? _blockVolumeOperations;
 
@@ -133,6 +145,36 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<bool>? IsStartStopEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+        /// </summary>
+        [Input("jumpHostId")]
+        public Input<string>? JumpHostId { get; set; }
+
+        [Input("loadBalancerMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberLoadBalancerMappingArgs>? _loadBalancerMappings;
+
+        /// <summary>
+        /// (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberLoadBalancerMappingArgs> LoadBalancerMappings
+        {
+            get => _loadBalancerMappings ?? (_loadBalancerMappings = new InputList<Inputs.DrProtectionGroupMemberLoadBalancerMappingArgs>());
+            set => _loadBalancerMappings = value;
+        }
+
+        [Input("managedNodePoolConfigs")]
+        private InputList<Inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs>? _managedNodePoolConfigs;
+
+        /// <summary>
+        /// (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs> ManagedNodePoolConfigs
+        {
+            get => _managedNodePoolConfigs ?? (_managedNodePoolConfigs = new InputList<Inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs>());
+            set => _managedNodePoolConfigs = value;
+        }
+
+        /// <summary>
         /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
         [Input("memberId", required: true)]
@@ -150,6 +192,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
+        [Input("networkLoadBalancerMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs>? _networkLoadBalancerMappings;
+
+        /// <summary>
+        /// (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs> NetworkLoadBalancerMappings
+        {
+            get => _networkLoadBalancerMappings ?? (_networkLoadBalancerMappings = new InputList<Inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs>());
+            set => _networkLoadBalancerMappings = value;
+        }
+
         [Input("passwordVaultSecretId")]
         private Input<string>? _passwordVaultSecretId;
 
@@ -164,6 +218,36 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
                 var emptySecret = Output.CreateSecret(0);
                 _passwordVaultSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
+        }
+
+        /// <summary>
+        /// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+        /// </summary>
+        [Input("peerClusterId")]
+        public Input<string>? PeerClusterId { get; set; }
+
+        [Input("vaultMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberVaultMappingArgs>? _vaultMappings;
+
+        /// <summary>
+        /// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberVaultMappingArgs> VaultMappings
+        {
+            get => _vaultMappings ?? (_vaultMappings = new InputList<Inputs.DrProtectionGroupMemberVaultMappingArgs>());
+            set => _vaultMappings = value;
+        }
+
+        [Input("virtualNodePoolConfigs")]
+        private InputList<Inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs>? _virtualNodePoolConfigs;
+
+        /// <summary>
+        /// (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs> VirtualNodePoolConfigs
+        {
+            get => _virtualNodePoolConfigs ?? (_virtualNodePoolConfigs = new InputList<Inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs>());
+            set => _virtualNodePoolConfigs = value;
         }
 
         [Input("vnicMapping")]

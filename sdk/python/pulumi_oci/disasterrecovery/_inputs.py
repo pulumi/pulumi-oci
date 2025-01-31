@@ -41,6 +41,10 @@ __all__ = [
     'DrProtectionGroupMemberArgsDict',
     'DrProtectionGroupMemberBackendSetMappingArgs',
     'DrProtectionGroupMemberBackendSetMappingArgsDict',
+    'DrProtectionGroupMemberBackupConfigArgs',
+    'DrProtectionGroupMemberBackupConfigArgsDict',
+    'DrProtectionGroupMemberBackupLocationArgs',
+    'DrProtectionGroupMemberBackupLocationArgsDict',
     'DrProtectionGroupMemberBlockVolumeOperationArgs',
     'DrProtectionGroupMemberBlockVolumeOperationArgsDict',
     'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs',
@@ -55,6 +59,16 @@ __all__ = [
     'DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict',
     'DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs',
     'DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict',
+    'DrProtectionGroupMemberLoadBalancerMappingArgs',
+    'DrProtectionGroupMemberLoadBalancerMappingArgsDict',
+    'DrProtectionGroupMemberManagedNodePoolConfigArgs',
+    'DrProtectionGroupMemberManagedNodePoolConfigArgsDict',
+    'DrProtectionGroupMemberNetworkLoadBalancerMappingArgs',
+    'DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict',
+    'DrProtectionGroupMemberVaultMappingArgs',
+    'DrProtectionGroupMemberVaultMappingArgsDict',
+    'DrProtectionGroupMemberVirtualNodePoolConfigArgs',
+    'DrProtectionGroupMemberVirtualNodePoolConfigArgsDict',
     'DrProtectionGroupMemberVnicMappingArgs',
     'DrProtectionGroupMemberVnicMappingArgsDict',
     'GetDrPlanExecutionsFilterArgs',
@@ -1453,6 +1467,14 @@ if not MYPY:
         """
         (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
         """
+        backup_config: NotRequired[pulumi.Input['DrProtectionGroupMemberBackupConfigArgsDict']]
+        """
+        (Updatable) Create backup configuration properties for an OKE member.
+        """
+        backup_location: NotRequired[pulumi.Input['DrProtectionGroupMemberBackupLocationArgsDict']]
+        """
+        (Updatable) The details for creating the backup location of an OKE Cluster.
+        """
         block_volume_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgsDict']]]]
         """
         (Updatable) A list of operations performed on block volumes used by the compute instance.
@@ -1509,13 +1531,41 @@ if not MYPY:
         """
         (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
         """
+        jump_host_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        load_balancer_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgsDict']]]]
+        """
+        (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        """
+        managed_node_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgsDict']]]]
+        """
+        (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        """
         namespace: NotRequired[pulumi.Input[str]]
         """
         (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         """
+        network_load_balancer_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict']]]]
+        """
+        (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        """
         password_vault_secret_id: NotRequired[pulumi.Input[str]]
         """
         (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        peer_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+        """
+        vault_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgsDict']]]]
+        """
+        (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        """
+        virtual_node_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgsDict']]]]
+        """
+        (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
         """
         vnic_mapping: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
         """
@@ -1535,6 +1585,8 @@ class DrProtectionGroupMemberArgs:
                  member_type: pulumi.Input[str],
                  autonomous_database_standby_type_for_dr_drills: Optional[pulumi.Input[str]] = None,
                  backend_set_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]] = None,
+                 backup_config: Optional[pulumi.Input['DrProtectionGroupMemberBackupConfigArgs']] = None,
+                 backup_location: Optional[pulumi.Input['DrProtectionGroupMemberBackupLocationArgs']] = None,
                  block_volume_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  connection_string_type: Optional[pulumi.Input[str]] = None,
@@ -1549,8 +1601,15 @@ class DrProtectionGroupMemberArgs:
                  is_movable: Optional[pulumi.Input[bool]] = None,
                  is_retain_fault_domain: Optional[pulumi.Input[bool]] = None,
                  is_start_stop_enabled: Optional[pulumi.Input[bool]] = None,
+                 jump_host_id: Optional[pulumi.Input[str]] = None,
+                 load_balancer_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgs']]]] = None,
+                 managed_node_pool_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgs']]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
+                 network_load_balancer_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs']]]] = None,
                  password_vault_secret_id: Optional[pulumi.Input[str]] = None,
+                 peer_cluster_id: Optional[pulumi.Input[str]] = None,
+                 vault_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgs']]]] = None,
+                 virtual_node_pool_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgs']]]] = None,
                  vnic_mapping: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
                  vnic_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None):
         """
@@ -1558,6 +1617,8 @@ class DrProtectionGroupMemberArgs:
         :param pulumi.Input[str] member_type: (Updatable) The type of the member.
         :param pulumi.Input[str] autonomous_database_standby_type_for_dr_drills: (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]] backend_set_mappings: (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+        :param pulumi.Input['DrProtectionGroupMemberBackupConfigArgs'] backup_config: (Updatable) Create backup configuration properties for an OKE member.
+        :param pulumi.Input['DrProtectionGroupMemberBackupLocationArgs'] backup_location: (Updatable) The details for creating the backup location of an OKE Cluster.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]] block_volume_operations: (Updatable) A list of operations performed on block volumes used by the compute instance.
         :param pulumi.Input[str] bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
         :param pulumi.Input[str] connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
@@ -1572,8 +1633,15 @@ class DrProtectionGroupMemberArgs:
         :param pulumi.Input[bool] is_movable: (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         :param pulumi.Input[bool] is_retain_fault_domain: (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         :param pulumi.Input[bool] is_start_stop_enabled: (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+        :param pulumi.Input[str] jump_host_id: (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgs']]] load_balancer_mappings: (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgs']]] managed_node_pool_configs: (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
         :param pulumi.Input[str] namespace: (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs']]] network_load_balancer_mappings: (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param pulumi.Input[str] password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param pulumi.Input[str] peer_cluster_id: (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgs']]] vault_mappings: (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgs']]] virtual_node_pool_configs: (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mapping: (Updatable) A list of compute instance VNIC mappings.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mappings: (Updatable) A list of compute instance VNIC mappings.
         """
@@ -1583,6 +1651,10 @@ class DrProtectionGroupMemberArgs:
             pulumi.set(__self__, "autonomous_database_standby_type_for_dr_drills", autonomous_database_standby_type_for_dr_drills)
         if backend_set_mappings is not None:
             pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
+        if backup_config is not None:
+            pulumi.set(__self__, "backup_config", backup_config)
+        if backup_location is not None:
+            pulumi.set(__self__, "backup_location", backup_location)
         if block_volume_operations is not None:
             pulumi.set(__self__, "block_volume_operations", block_volume_operations)
         if bucket is not None:
@@ -1611,10 +1683,24 @@ class DrProtectionGroupMemberArgs:
             pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         if is_start_stop_enabled is not None:
             pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
+        if jump_host_id is not None:
+            pulumi.set(__self__, "jump_host_id", jump_host_id)
+        if load_balancer_mappings is not None:
+            pulumi.set(__self__, "load_balancer_mappings", load_balancer_mappings)
+        if managed_node_pool_configs is not None:
+            pulumi.set(__self__, "managed_node_pool_configs", managed_node_pool_configs)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
+        if network_load_balancer_mappings is not None:
+            pulumi.set(__self__, "network_load_balancer_mappings", network_load_balancer_mappings)
         if password_vault_secret_id is not None:
             pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        if peer_cluster_id is not None:
+            pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        if vault_mappings is not None:
+            pulumi.set(__self__, "vault_mappings", vault_mappings)
+        if virtual_node_pool_configs is not None:
+            pulumi.set(__self__, "virtual_node_pool_configs", virtual_node_pool_configs)
         if vnic_mapping is not None:
             pulumi.set(__self__, "vnic_mapping", vnic_mapping)
         if vnic_mappings is not None:
@@ -1667,6 +1753,30 @@ class DrProtectionGroupMemberArgs:
     @backend_set_mappings.setter
     def backend_set_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]]):
         pulumi.set(self, "backend_set_mappings", value)
+
+    @property
+    @pulumi.getter(name="backupConfig")
+    def backup_config(self) -> Optional[pulumi.Input['DrProtectionGroupMemberBackupConfigArgs']]:
+        """
+        (Updatable) Create backup configuration properties for an OKE member.
+        """
+        return pulumi.get(self, "backup_config")
+
+    @backup_config.setter
+    def backup_config(self, value: Optional[pulumi.Input['DrProtectionGroupMemberBackupConfigArgs']]):
+        pulumi.set(self, "backup_config", value)
+
+    @property
+    @pulumi.getter(name="backupLocation")
+    def backup_location(self) -> Optional[pulumi.Input['DrProtectionGroupMemberBackupLocationArgs']]:
+        """
+        (Updatable) The details for creating the backup location of an OKE Cluster.
+        """
+        return pulumi.get(self, "backup_location")
+
+    @backup_location.setter
+    def backup_location(self, value: Optional[pulumi.Input['DrProtectionGroupMemberBackupLocationArgs']]):
+        pulumi.set(self, "backup_location", value)
 
     @property
     @pulumi.getter(name="blockVolumeOperations")
@@ -1837,6 +1947,42 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "is_start_stop_enabled", value)
 
     @property
+    @pulumi.getter(name="jumpHostId")
+    def jump_host_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        return pulumi.get(self, "jump_host_id")
+
+    @jump_host_id.setter
+    def jump_host_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jump_host_id", value)
+
+    @property
+    @pulumi.getter(name="loadBalancerMappings")
+    def load_balancer_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgs']]]]:
+        """
+        (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        """
+        return pulumi.get(self, "load_balancer_mappings")
+
+    @load_balancer_mappings.setter
+    def load_balancer_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgs']]]]):
+        pulumi.set(self, "load_balancer_mappings", value)
+
+    @property
+    @pulumi.getter(name="managedNodePoolConfigs")
+    def managed_node_pool_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgs']]]]:
+        """
+        (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        """
+        return pulumi.get(self, "managed_node_pool_configs")
+
+    @managed_node_pool_configs.setter
+    def managed_node_pool_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgs']]]]):
+        pulumi.set(self, "managed_node_pool_configs", value)
+
+    @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1849,6 +1995,18 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "namespace", value)
 
     @property
+    @pulumi.getter(name="networkLoadBalancerMappings")
+    def network_load_balancer_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs']]]]:
+        """
+        (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        """
+        return pulumi.get(self, "network_load_balancer_mappings")
+
+    @network_load_balancer_mappings.setter
+    def network_load_balancer_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs']]]]):
+        pulumi.set(self, "network_load_balancer_mappings", value)
+
+    @property
     @pulumi.getter(name="passwordVaultSecretId")
     def password_vault_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1859,6 +2017,42 @@ class DrProtectionGroupMemberArgs:
     @password_vault_secret_id.setter
     def password_vault_secret_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "password_vault_secret_id", value)
+
+    @property
+    @pulumi.getter(name="peerClusterId")
+    def peer_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+        """
+        return pulumi.get(self, "peer_cluster_id")
+
+    @peer_cluster_id.setter
+    def peer_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_cluster_id", value)
+
+    @property
+    @pulumi.getter(name="vaultMappings")
+    def vault_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgs']]]]:
+        """
+        (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        """
+        return pulumi.get(self, "vault_mappings")
+
+    @vault_mappings.setter
+    def vault_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgs']]]]):
+        pulumi.set(self, "vault_mappings", value)
+
+    @property
+    @pulumi.getter(name="virtualNodePoolConfigs")
+    def virtual_node_pool_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgs']]]]:
+        """
+        (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        """
+        return pulumi.get(self, "virtual_node_pool_configs")
+
+    @virtual_node_pool_configs.setter
+    def virtual_node_pool_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgs']]]]):
+        pulumi.set(self, "virtual_node_pool_configs", value)
 
     @property
     @pulumi.getter(name="vnicMapping")
@@ -1955,6 +2149,232 @@ class DrProtectionGroupMemberBackendSetMappingArgs:
     @source_backend_set_name.setter
     def source_backend_set_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_backend_set_name", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberBackupConfigArgsDict(TypedDict):
+        backup_schedule: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+
+        The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+        * Minimum = 1
+        * Maximum = 24 DAILY
+        * Minimum = 1
+        * Maximum = 30 WEEKLY
+        * Minimum = 1
+        * Maximum = 1 MONTHLY
+        * Minimum = 1
+        * Maximum = 12
+
+        Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+
+        FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+        """
+        image_replication_vault_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+        """
+        max_number_of_backups_retained: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+        """
+        namespaces: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        """
+        replicate_images: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+        """
+elif False:
+    DrProtectionGroupMemberBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberBackupConfigArgs:
+    def __init__(__self__, *,
+                 backup_schedule: Optional[pulumi.Input[str]] = None,
+                 image_replication_vault_secret_id: Optional[pulumi.Input[str]] = None,
+                 max_number_of_backups_retained: Optional[pulumi.Input[int]] = None,
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 replicate_images: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backup_schedule: (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+               
+               The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+               * Minimum = 1
+               * Maximum = 24 DAILY
+               * Minimum = 1
+               * Maximum = 30 WEEKLY
+               * Minimum = 1
+               * Maximum = 1 MONTHLY
+               * Minimum = 1
+               * Maximum = 12
+               
+               Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+               
+               FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+        :param pulumi.Input[str] image_replication_vault_secret_id: (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+        :param pulumi.Input[int] max_number_of_backups_retained: (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        :param pulumi.Input[str] replicate_images: (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+        """
+        if backup_schedule is not None:
+            pulumi.set(__self__, "backup_schedule", backup_schedule)
+        if image_replication_vault_secret_id is not None:
+            pulumi.set(__self__, "image_replication_vault_secret_id", image_replication_vault_secret_id)
+        if max_number_of_backups_retained is not None:
+            pulumi.set(__self__, "max_number_of_backups_retained", max_number_of_backups_retained)
+        if namespaces is not None:
+            pulumi.set(__self__, "namespaces", namespaces)
+        if replicate_images is not None:
+            pulumi.set(__self__, "replicate_images", replicate_images)
+
+    @property
+    @pulumi.getter(name="backupSchedule")
+    def backup_schedule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+
+        The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+        * Minimum = 1
+        * Maximum = 24 DAILY
+        * Minimum = 1
+        * Maximum = 30 WEEKLY
+        * Minimum = 1
+        * Maximum = 1 MONTHLY
+        * Minimum = 1
+        * Maximum = 12
+
+        Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+
+        FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+        """
+        return pulumi.get(self, "backup_schedule")
+
+    @backup_schedule.setter
+    def backup_schedule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_schedule", value)
+
+    @property
+    @pulumi.getter(name="imageReplicationVaultSecretId")
+    def image_replication_vault_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+        """
+        return pulumi.get(self, "image_replication_vault_secret_id")
+
+    @image_replication_vault_secret_id.setter
+    def image_replication_vault_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_replication_vault_secret_id", value)
+
+    @property
+    @pulumi.getter(name="maxNumberOfBackupsRetained")
+    def max_number_of_backups_retained(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+        """
+        return pulumi.get(self, "max_number_of_backups_retained")
+
+    @max_number_of_backups_retained.setter
+    def max_number_of_backups_retained(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_number_of_backups_retained", value)
+
+    @property
+    @pulumi.getter
+    def namespaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        """
+        return pulumi.get(self, "namespaces")
+
+    @namespaces.setter
+    def namespaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "namespaces", value)
+
+    @property
+    @pulumi.getter(name="replicateImages")
+    def replicate_images(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+        """
+        return pulumi.get(self, "replicate_images")
+
+    @replicate_images.setter
+    def replicate_images(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replicate_images", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberBackupLocationArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        """
+elif False:
+    DrProtectionGroupMemberBackupLocationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberBackupLocationArgs:
+    def __init__(__self__, *,
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 object: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+        :param pulumi.Input[str] namespace: (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[pulumi.Input[str]]:
+        """
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object", value)
 
 
 if not MYPY:
@@ -2319,6 +2739,306 @@ class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
     @mount_target_id.setter
     def mount_target_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mount_target_id", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberLoadBalancerMappingArgsDict(TypedDict):
+        destination_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+        source_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberLoadBalancerMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberLoadBalancerMappingArgs:
+    def __init__(__self__, *,
+                 destination_load_balancer_id: Optional[pulumi.Input[str]] = None,
+                 source_load_balancer_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_load_balancer_id: (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        :param pulumi.Input[str] source_load_balancer_id: (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+        if destination_load_balancer_id is not None:
+            pulumi.set(__self__, "destination_load_balancer_id", destination_load_balancer_id)
+        if source_load_balancer_id is not None:
+            pulumi.set(__self__, "source_load_balancer_id", source_load_balancer_id)
+
+    @property
+    @pulumi.getter(name="destinationLoadBalancerId")
+    def destination_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_load_balancer_id")
+
+    @destination_load_balancer_id.setter
+    def destination_load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_load_balancer_id", value)
+
+    @property
+    @pulumi.getter(name="sourceLoadBalancerId")
+    def source_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_load_balancer_id")
+
+    @source_load_balancer_id.setter
+    def source_load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_load_balancer_id", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberManagedNodePoolConfigArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the managed node pool in OKE cluster.
+        """
+        maximum: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+        """
+        minimum: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+        """
+elif False:
+    DrProtectionGroupMemberManagedNodePoolConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberManagedNodePoolConfigArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[str]] = None,
+                 maximum: Optional[pulumi.Input[int]] = None,
+                 minimum: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] id: (Updatable) The OCID of the managed node pool in OKE cluster.
+        :param pulumi.Input[int] maximum: (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+        :param pulumi.Input[int] minimum: (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the managed node pool in OKE cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "maximum", value)
+
+    @property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minimum", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict(TypedDict):
+        destination_network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+        source_network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberNetworkLoadBalancerMappingArgs:
+    def __init__(__self__, *,
+                 destination_network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+                 source_network_load_balancer_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_network_load_balancer_id: (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        :param pulumi.Input[str] source_network_load_balancer_id: (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+        if destination_network_load_balancer_id is not None:
+            pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
+        if source_network_load_balancer_id is not None:
+            pulumi.set(__self__, "source_network_load_balancer_id", source_network_load_balancer_id)
+
+    @property
+    @pulumi.getter(name="destinationNetworkLoadBalancerId")
+    def destination_network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_network_load_balancer_id")
+
+    @destination_network_load_balancer_id.setter
+    def destination_network_load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_network_load_balancer_id", value)
+
+    @property
+    @pulumi.getter(name="sourceNetworkLoadBalancerId")
+    def source_network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_network_load_balancer_id")
+
+    @source_network_load_balancer_id.setter
+    def source_network_load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_network_load_balancer_id", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberVaultMappingArgsDict(TypedDict):
+        destination_vault_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        source_vault_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+elif False:
+    DrProtectionGroupMemberVaultMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberVaultMappingArgs:
+    def __init__(__self__, *,
+                 destination_vault_id: Optional[pulumi.Input[str]] = None,
+                 source_vault_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_vault_id: (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+        :param pulumi.Input[str] source_vault_id: (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        if destination_vault_id is not None:
+            pulumi.set(__self__, "destination_vault_id", destination_vault_id)
+        if source_vault_id is not None:
+            pulumi.set(__self__, "source_vault_id", source_vault_id)
+
+    @property
+    @pulumi.getter(name="destinationVaultId")
+    def destination_vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_vault_id")
+
+    @destination_vault_id.setter
+    def destination_vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_vault_id", value)
+
+    @property
+    @pulumi.getter(name="sourceVaultId")
+    def source_vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_vault_id")
+
+    @source_vault_id.setter
+    def source_vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_vault_id", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberVirtualNodePoolConfigArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the virtual node pool in OKE cluster.
+        """
+        maximum: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+        """
+        minimum: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+        """
+elif False:
+    DrProtectionGroupMemberVirtualNodePoolConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberVirtualNodePoolConfigArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[str]] = None,
+                 maximum: Optional[pulumi.Input[int]] = None,
+                 minimum: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] id: (Updatable) The OCID of the virtual node pool in OKE cluster.
+        :param pulumi.Input[int] maximum: (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+        :param pulumi.Input[int] minimum: (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if maximum is not None:
+            pulumi.set(__self__, "maximum", maximum)
+        if minimum is not None:
+            pulumi.set(__self__, "minimum", minimum)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the virtual node pool in OKE cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def maximum(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+        """
+        return pulumi.get(self, "maximum")
+
+    @maximum.setter
+    def maximum(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "maximum", value)
+
+    @property
+    @pulumi.getter
+    def minimum(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+        """
+        return pulumi.get(self, "minimum")
+
+    @minimum.setter
+    def minimum(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minimum", value)
 
 
 if not MYPY:

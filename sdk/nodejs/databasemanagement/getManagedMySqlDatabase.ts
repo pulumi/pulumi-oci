@@ -48,6 +48,10 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly compartmentId: string;
     /**
+     * The type of the MySQL Database. Indicates whether the database is external or MDS.
+     */
+    readonly databaseType: string;
+    /**
      * The name of the MySQL Database.
      */
     readonly dbName: string;
@@ -89,9 +93,17 @@ export interface GetManagedMySqlDatabaseResult {
     readonly isLakehouseEnabled: boolean;
     readonly managedMySqlDatabaseId: string;
     /**
+     * Indicates database management status.
+     */
+    readonly managementState: string;
+    /**
      * The name of the Managed MySQL Database.
      */
     readonly name: string;
+    /**
+     * Indicates lifecycle  state of the resource.
+     */
+    readonly state: string;
     /**
      * The date and time the HeatWave node was created.
      */
@@ -100,6 +112,10 @@ export interface GetManagedMySqlDatabaseResult {
      * The date and time the Managed MySQL Database was created.
      */
     readonly timeCreatedHeatWave: string;
+    /**
+     * The date and time the Managed MySQL Database was updated.
+     */
+    readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.

@@ -131,6 +131,8 @@ __all__ = [
     'ExternalListenerServicedAsmArgsDict',
     'ExternalListenerServicedDatabaseArgs',
     'ExternalListenerServicedDatabaseArgsDict',
+    'ExternalMySqlDatabaseConnectorConnectorDetailsArgs',
+    'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict',
     'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs',
     'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict',
     'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs',
@@ -217,6 +219,10 @@ __all__ = [
     'GetExternalListenerServicesFilterArgsDict',
     'GetExternalListenersFilterArgs',
     'GetExternalListenersFilterArgsDict',
+    'GetExternalMySqlDatabaseConnectorsFilterArgs',
+    'GetExternalMySqlDatabaseConnectorsFilterArgsDict',
+    'GetExternalMySqlDatabasesFilterArgs',
+    'GetExternalMySqlDatabasesFilterArgsDict',
     'GetJobExecutionsStatusesFilterArgs',
     'GetJobExecutionsStatusesFilterArgsDict',
     'GetManagedDatabaseAddmTasksFilterArgs',
@@ -8183,6 +8189,170 @@ class ExternalListenerServicedDatabaseArgs:
 
 
 if not MYPY:
+    class ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict(TypedDict):
+        credential_type: pulumi.Input[str]
+        """
+        (Updatable) Type of the credential.
+        """
+        display_name: pulumi.Input[str]
+        """
+        (Updatable) External MySQL Database Connector Name.
+        """
+        external_database_id: pulumi.Input[str]
+        """
+        (Updatable) OCID of MySQL Database resource.
+        """
+        host_name: pulumi.Input[str]
+        """
+        (Updatable) Host name for Connector.
+        """
+        macs_agent_id: pulumi.Input[str]
+        """
+        (Updatable) Agent Id of the MACS agent.
+        """
+        network_protocol: pulumi.Input[str]
+        """
+        (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+        """
+        port: pulumi.Input[int]
+        """
+        (Updatable) Port number to connect to External MySQL Database.
+        """
+        ssl_secret_id: pulumi.Input[str]
+        """
+        (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+        """
+elif False:
+    ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExternalMySqlDatabaseConnectorConnectorDetailsArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[str],
+                 display_name: pulumi.Input[str],
+                 external_database_id: pulumi.Input[str],
+                 host_name: pulumi.Input[str],
+                 macs_agent_id: pulumi.Input[str],
+                 network_protocol: pulumi.Input[str],
+                 port: pulumi.Input[int],
+                 ssl_secret_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] credential_type: (Updatable) Type of the credential.
+        :param pulumi.Input[str] display_name: (Updatable) External MySQL Database Connector Name.
+        :param pulumi.Input[str] external_database_id: (Updatable) OCID of MySQL Database resource.
+        :param pulumi.Input[str] host_name: (Updatable) Host name for Connector.
+        :param pulumi.Input[str] macs_agent_id: (Updatable) Agent Id of the MACS agent.
+        :param pulumi.Input[str] network_protocol: (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+        :param pulumi.Input[int] port: (Updatable) Port number to connect to External MySQL Database.
+        :param pulumi.Input[str] ssl_secret_id: (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_database_id", external_database_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "macs_agent_id", macs_agent_id)
+        pulumi.set(__self__, "network_protocol", network_protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Type of the credential.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) External MySQL Database Connector Name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) OCID of MySQL Database resource.
+        """
+        return pulumi.get(self, "external_database_id")
+
+    @external_database_id.setter
+    def external_database_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "external_database_id", value)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Host name for Connector.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter(name="macsAgentId")
+    def macs_agent_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Agent Id of the MACS agent.
+        """
+        return pulumi.get(self, "macs_agent_id")
+
+    @macs_agent_id.setter
+    def macs_agent_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "macs_agent_id", value)
+
+    @property
+    @pulumi.getter(name="networkProtocol")
+    def network_protocol(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+        """
+        return pulumi.get(self, "network_protocol")
+
+    @network_protocol.setter
+    def network_protocol(self, value: pulumi.Input[str]):
+        pulumi.set(self, "network_protocol", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Port number to connect to External MySQL Database.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: pulumi.Input[int]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+
+if not MYPY:
     class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
         feature: pulumi.Input[str]
         """
@@ -11571,6 +11741,118 @@ class GetExternalListenersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetExternalMySqlDatabaseConnectorsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The parameter to filter by MySQL Database System type.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetExternalMySqlDatabaseConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetExternalMySqlDatabaseConnectorsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The parameter to filter by MySQL Database System type.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The parameter to filter by MySQL Database System type.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetExternalMySqlDatabasesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The parameter to filter by MySQL Database System type.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetExternalMySqlDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetExternalMySqlDatabasesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The parameter to filter by MySQL Database System type.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The parameter to filter by MySQL Database System type.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

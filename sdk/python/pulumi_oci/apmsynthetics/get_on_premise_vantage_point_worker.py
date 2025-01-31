@@ -319,7 +319,7 @@ def get_on_premise_vantage_point_worker(apm_domain_id: Optional[str] = None,
                                         worker_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnPremiseVantagePointWorkerResult:
     """
-    This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the details of the worker identified by the OCID.
 
@@ -376,7 +376,7 @@ def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.In
                                                worker_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointWorkerResult]:
     """
-    This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the details of the worker identified by the OCID.
 

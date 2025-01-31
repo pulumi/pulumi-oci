@@ -27,10 +27,13 @@ class GetManagedMySqlDatabaseResult:
     """
     A collection of values returned by getManagedMySqlDatabase.
     """
-    def __init__(__self__, compartment_id=None, db_name=None, db_version=None, heat_wave_cluster_display_name=None, heat_wave_memory_size=None, heat_wave_node_shape=None, heat_wave_nodes=None, id=None, is_heat_wave_active=None, is_heat_wave_enabled=None, is_lakehouse_enabled=None, managed_my_sql_database_id=None, name=None, time_created=None, time_created_heat_wave=None):
+    def __init__(__self__, compartment_id=None, database_type=None, db_name=None, db_version=None, heat_wave_cluster_display_name=None, heat_wave_memory_size=None, heat_wave_node_shape=None, heat_wave_nodes=None, id=None, is_heat_wave_active=None, is_heat_wave_enabled=None, is_lakehouse_enabled=None, managed_my_sql_database_id=None, management_state=None, name=None, state=None, time_created=None, time_created_heat_wave=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_type and not isinstance(database_type, str):
+            raise TypeError("Expected argument 'database_type' to be a str")
+        pulumi.set(__self__, "database_type", database_type)
         if db_name and not isinstance(db_name, str):
             raise TypeError("Expected argument 'db_name' to be a str")
         pulumi.set(__self__, "db_name", db_name)
@@ -64,15 +67,24 @@ class GetManagedMySqlDatabaseResult:
         if managed_my_sql_database_id and not isinstance(managed_my_sql_database_id, str):
             raise TypeError("Expected argument 'managed_my_sql_database_id' to be a str")
         pulumi.set(__self__, "managed_my_sql_database_id", managed_my_sql_database_id)
+        if management_state and not isinstance(management_state, str):
+            raise TypeError("Expected argument 'management_state' to be a str")
+        pulumi.set(__self__, "management_state", management_state)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
         if time_created_heat_wave and not isinstance(time_created_heat_wave, str):
             raise TypeError("Expected argument 'time_created_heat_wave' to be a str")
         pulumi.set(__self__, "time_created_heat_wave", time_created_heat_wave)
+        if time_updated and not isinstance(time_updated, str):
+            raise TypeError("Expected argument 'time_updated' to be a str")
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -81,6 +93,14 @@ class GetManagedMySqlDatabaseResult:
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The type of the MySQL Database. Indicates whether the database is external or MDS.
+        """
+        return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="dbName")
@@ -168,12 +188,28 @@ class GetManagedMySqlDatabaseResult:
         return pulumi.get(self, "managed_my_sql_database_id")
 
     @property
+    @pulumi.getter(name="managementState")
+    def management_state(self) -> str:
+        """
+        Indicates database management status.
+        """
+        return pulumi.get(self, "management_state")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
         The name of the Managed MySQL Database.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Indicates lifecycle  state of the resource.
+        """
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -191,6 +227,14 @@ class GetManagedMySqlDatabaseResult:
         """
         return pulumi.get(self, "time_created_heat_wave")
 
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the Managed MySQL Database was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
 
 class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
     # pylint: disable=using-constant-test
@@ -199,6 +243,7 @@ class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
             yield self
         return GetManagedMySqlDatabaseResult(
             compartment_id=self.compartment_id,
+            database_type=self.database_type,
             db_name=self.db_name,
             db_version=self.db_version,
             heat_wave_cluster_display_name=self.heat_wave_cluster_display_name,
@@ -210,9 +255,12 @@ class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
             is_heat_wave_enabled=self.is_heat_wave_enabled,
             is_lakehouse_enabled=self.is_lakehouse_enabled,
             managed_my_sql_database_id=self.managed_my_sql_database_id,
+            management_state=self.management_state,
             name=self.name,
+            state=self.state,
             time_created=self.time_created,
-            time_created_heat_wave=self.time_created_heat_wave)
+            time_created_heat_wave=self.time_created_heat_wave,
+            time_updated=self.time_updated)
 
 
 def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None,
@@ -241,6 +289,7 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None
 
     return AwaitableGetManagedMySqlDatabaseResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_type=pulumi.get(__ret__, 'database_type'),
         db_name=pulumi.get(__ret__, 'db_name'),
         db_version=pulumi.get(__ret__, 'db_version'),
         heat_wave_cluster_display_name=pulumi.get(__ret__, 'heat_wave_cluster_display_name'),
@@ -252,9 +301,12 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None
         is_heat_wave_enabled=pulumi.get(__ret__, 'is_heat_wave_enabled'),
         is_lakehouse_enabled=pulumi.get(__ret__, 'is_lakehouse_enabled'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
+        management_state=pulumi.get(__ret__, 'management_state'),
         name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_created_heat_wave=pulumi.get(__ret__, 'time_created_heat_wave'))
+        time_created_heat_wave=pulumi.get(__ret__, 'time_created_heat_wave'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseResult]:
     """
@@ -280,6 +332,7 @@ def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulu
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase', __args__, opts=opts, typ=GetManagedMySqlDatabaseResult)
     return __ret__.apply(lambda __response__: GetManagedMySqlDatabaseResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_type=pulumi.get(__response__, 'database_type'),
         db_name=pulumi.get(__response__, 'db_name'),
         db_version=pulumi.get(__response__, 'db_version'),
         heat_wave_cluster_display_name=pulumi.get(__response__, 'heat_wave_cluster_display_name'),
@@ -291,6 +344,9 @@ def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulu
         is_heat_wave_enabled=pulumi.get(__response__, 'is_heat_wave_enabled'),
         is_lakehouse_enabled=pulumi.get(__response__, 'is_lakehouse_enabled'),
         managed_my_sql_database_id=pulumi.get(__response__, 'managed_my_sql_database_id'),
+        management_state=pulumi.get(__response__, 'management_state'),
         name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_created_heat_wave=pulumi.get(__response__, 'time_created_heat_wave')))
+        time_created_heat_wave=pulumi.get(__response__, 'time_created_heat_wave'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

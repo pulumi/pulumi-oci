@@ -86,6 +86,14 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenersPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
@@ -247,6 +255,10 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServer
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalMySqlDatabaseConnectorResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalMySqlDatabaseConnectorsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalMySqlDatabaseResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalMySqlDatabasesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTaskResult;
@@ -9921,6 +9933,896 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetExternalListenersResult> getExternalListenersPlain(GetExternalListenersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalListeners:getExternalListeners", TypeShape.of(GetExternalListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the external MySQL database information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseResult> getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs args) {
+        return getExternalMySqlDatabase(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the external MySQL database information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabaseResult> getExternalMySqlDatabasePlain(GetExternalMySqlDatabasePlainArgs args) {
+        return getExternalMySqlDatabasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the external MySQL database information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseResult> getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabase:getExternalMySqlDatabase", TypeShape.of(GetExternalMySqlDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the external MySQL database information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseResult> getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabase:getExternalMySqlDatabase", TypeShape.of(GetExternalMySqlDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the external MySQL database information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabase = DatabaseManagementFunctions.getExternalMySqlDatabase(GetExternalMySqlDatabaseArgs.builder()
+     *             .externalMySqlDatabaseId(testExternalMySqlDatabaseOciDatabaseManagementExternalMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabaseResult> getExternalMySqlDatabasePlain(GetExternalMySqlDatabasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalMySqlDatabase:getExternalMySqlDatabase", TypeShape.of(GetExternalMySqlDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the MySQL database connector.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseConnectorResult> getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs args) {
+        return getExternalMySqlDatabaseConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the MySQL database connector.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabaseConnectorResult> getExternalMySqlDatabaseConnectorPlain(GetExternalMySqlDatabaseConnectorPlainArgs args) {
+        return getExternalMySqlDatabaseConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the MySQL database connector.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseConnectorResult> getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabaseConnector:getExternalMySqlDatabaseConnector", TypeShape.of(GetExternalMySqlDatabaseConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the MySQL database connector.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseConnectorResult> getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabaseConnector:getExternalMySqlDatabaseConnector", TypeShape.of(GetExternalMySqlDatabaseConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves the MySQL database connector.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnector = DatabaseManagementFunctions.getExternalMySqlDatabaseConnector(GetExternalMySqlDatabaseConnectorArgs.builder()
+     *             .externalMySqlDatabaseConnectorId(testExternalMySqlDatabaseConnectorOciDatabaseManagementExternalMySqlDatabaseConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabaseConnectorResult> getExternalMySqlDatabaseConnectorPlain(GetExternalMySqlDatabaseConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalMySqlDatabaseConnector:getExternalMySqlDatabaseConnector", TypeShape.of(GetExternalMySqlDatabaseConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Database connectors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnectors = DatabaseManagementFunctions.getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseConnectorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseConnectorsResult> getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs args) {
+        return getExternalMySqlDatabaseConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Database connectors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnectors = DatabaseManagementFunctions.getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseConnectorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabaseConnectorsResult> getExternalMySqlDatabaseConnectorsPlain(GetExternalMySqlDatabaseConnectorsPlainArgs args) {
+        return getExternalMySqlDatabaseConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Database connectors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnectors = DatabaseManagementFunctions.getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseConnectorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseConnectorsResult> getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabaseConnectors:getExternalMySqlDatabaseConnectors", TypeShape.of(GetExternalMySqlDatabaseConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Database connectors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnectors = DatabaseManagementFunctions.getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseConnectorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabaseConnectorsResult> getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabaseConnectors:getExternalMySqlDatabaseConnectors", TypeShape.of(GetExternalMySqlDatabaseConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Database connectors.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabaseConnectors = DatabaseManagementFunctions.getExternalMySqlDatabaseConnectors(GetExternalMySqlDatabaseConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseConnectorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabaseConnectorsResult> getExternalMySqlDatabaseConnectorsPlain(GetExternalMySqlDatabaseConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalMySqlDatabaseConnectors:getExternalMySqlDatabaseConnectors", TypeShape.of(GetExternalMySqlDatabaseConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabases = DatabaseManagementFunctions.getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabasesResult> getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs args) {
+        return getExternalMySqlDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabases = DatabaseManagementFunctions.getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabasesResult> getExternalMySqlDatabasesPlain(GetExternalMySqlDatabasesPlainArgs args) {
+        return getExternalMySqlDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabases = DatabaseManagementFunctions.getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabasesResult> getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabases:getExternalMySqlDatabases", TypeShape.of(GetExternalMySqlDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabases = DatabaseManagementFunctions.getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExternalMySqlDatabasesResult> getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalMySqlDatabases:getExternalMySqlDatabases", TypeShape.of(GetExternalMySqlDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the list of External MySQL Databases.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalMySqlDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalMySqlDatabases = DatabaseManagementFunctions.getExternalMySqlDatabases(GetExternalMySqlDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(externalMySqlDatabaseName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExternalMySqlDatabasesResult> getExternalMySqlDatabasesPlain(GetExternalMySqlDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalMySqlDatabases:getExternalMySqlDatabases", TypeShape.of(GetExternalMySqlDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
@@ -23819,6 +24721,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .filterByMySqlDatabaseTypeParam(managedMySqlDatabaseFilterByMySqlDatabaseTypeParam)
      *             .build());
      * 
      *     }
@@ -23863,6 +24766,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .filterByMySqlDatabaseTypeParam(managedMySqlDatabaseFilterByMySqlDatabaseTypeParam)
      *             .build());
      * 
      *     }
@@ -23907,6 +24811,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .filterByMySqlDatabaseTypeParam(managedMySqlDatabaseFilterByMySqlDatabaseTypeParam)
      *             .build());
      * 
      *     }
@@ -23951,6 +24856,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .filterByMySqlDatabaseTypeParam(managedMySqlDatabaseFilterByMySqlDatabaseTypeParam)
      *             .build());
      * 
      *     }
@@ -23995,6 +24901,7 @@ public final class DatabaseManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .filterByMySqlDatabaseTypeParam(managedMySqlDatabaseFilterByMySqlDatabaseTypeParam)
      *             .build());
      * 
      *     }

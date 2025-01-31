@@ -372,7 +372,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
                 monitor_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitorResult:
     """
-    This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the configuration of the monitor identified by the OCID.
 
@@ -429,7 +429,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        monitor_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitorResult]:
     """
-    This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the configuration of the monitor identified by the OCID.
 

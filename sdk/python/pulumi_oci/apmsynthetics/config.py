@@ -825,7 +825,7 @@ class Config(pulumi.CustomResource):
                  vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        This resource provides the Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
         Creates a new monitor.
 
@@ -1007,7 +1007,7 @@ class Config(pulumi.CustomResource):
                  args: ConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        This resource provides the Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
         Creates a new monitor.
 

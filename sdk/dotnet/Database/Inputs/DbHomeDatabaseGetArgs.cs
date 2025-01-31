@@ -113,6 +113,12 @@ namespace Pulumi.Oci.Database.Inputs
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Input("encryptionKeyLocationDetails")]
+        public Input<Inputs.DbHomeDatabaseEncryptionKeyLocationDetailsGetArgs>? EncryptionKeyLocationDetails { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 

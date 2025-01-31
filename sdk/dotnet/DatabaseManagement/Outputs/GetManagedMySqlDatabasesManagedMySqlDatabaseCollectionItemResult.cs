@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The type of the MySQL Database. Indicates whether the database is external or MDS.
+        /// </summary>
+        public readonly string DatabaseType;
+        /// <summary>
         /// The name of the MySQL Database.
         /// </summary>
         public readonly string DbName;
@@ -58,9 +62,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly bool IsLakehouseEnabled;
         /// <summary>
+        /// Indicates database management status.
+        /// </summary>
+        public readonly string ManagementState;
+        /// <summary>
         /// The name of the Managed MySQL Database.
         /// </summary>
         public readonly string Name;
+        public readonly string State;
         /// <summary>
         /// The date and time the node was created.
         /// </summary>
@@ -69,10 +78,16 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The date and time the Managed MySQL Database was created.
         /// </summary>
         public readonly string TimeCreatedHeatWave;
+        /// <summary>
+        /// The date and time the Managed MySQL Database was updated.
+        /// </summary>
+        public readonly string TimeUpdated;
 
         [OutputConstructor]
         private GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(
             string compartmentId,
+
+            string databaseType,
 
             string dbName,
 
@@ -94,13 +109,20 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             bool isLakehouseEnabled,
 
+            string managementState,
+
             string name,
+
+            string state,
 
             string timeCreated,
 
-            string timeCreatedHeatWave)
+            string timeCreatedHeatWave,
+
+            string timeUpdated)
         {
             CompartmentId = compartmentId;
+            DatabaseType = databaseType;
             DbName = dbName;
             DbVersion = dbVersion;
             HeatWaveClusterDisplayName = heatWaveClusterDisplayName;
@@ -111,9 +133,12 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             IsHeatWaveActive = isHeatWaveActive;
             IsHeatWaveEnabled = isHeatWaveEnabled;
             IsLakehouseEnabled = isLakehouseEnabled;
+            ManagementState = managementState;
             Name = name;
+            State = state;
             TimeCreated = timeCreated;
             TimeCreatedHeatWave = timeCreatedHeatWave;
+            TimeUpdated = timeUpdated;
         }
     }
 }

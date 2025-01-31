@@ -124,7 +124,7 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[str] = None,
                                  status: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVantagePointsResult:
     """
-    This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of dedicated vantage points.
 
@@ -170,7 +170,7 @@ def get_dedicated_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str
                                         status: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVantagePointsResult]:
     """
-    This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of dedicated vantage points.
 

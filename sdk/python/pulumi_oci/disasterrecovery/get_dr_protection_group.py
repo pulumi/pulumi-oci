@@ -137,7 +137,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        The OCID of the virtual node pool in OKE cluster.
         """
         return pulumi.get(self, "id")
 

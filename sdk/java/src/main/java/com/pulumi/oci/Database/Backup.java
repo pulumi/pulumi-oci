@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.BackupArgs;
 import com.pulumi.oci.Database.inputs.BackupState;
+import com.pulumi.oci.Database.outputs.BackupEncryptionKeyLocationDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
@@ -155,6 +157,20 @@ public class Backup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Export(name="encryptionKeyLocationDetails", refs={List.class,BackupEncryptionKeyLocationDetail.class}, tree="[0,1]")
+    private Output<List<BackupEncryptionKeyLocationDetail>> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Output<List<BackupEncryptionKeyLocationDetail>> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.

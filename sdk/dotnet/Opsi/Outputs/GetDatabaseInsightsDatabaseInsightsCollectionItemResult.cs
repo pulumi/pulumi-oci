@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string DatabaseConnectionStatusDetails;
         /// <summary>
+        /// (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        /// </summary>
+        public readonly string DatabaseConnectorId;
+        /// <summary>
         /// Display name of database
         /// </summary>
         public readonly string DatabaseDisplayName;
@@ -179,6 +183,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string databaseConnectionStatusDetails,
 
+            string databaseConnectorId,
+
             string databaseDisplayName,
 
             string databaseId,
@@ -253,6 +259,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             ConnectorId = connectorId;
             CredentialDetails = credentialDetails;
             DatabaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            DatabaseConnectorId = databaseConnectorId;
             DatabaseDisplayName = databaseDisplayName;
             DatabaseId = databaseId;
             DatabaseName = databaseName;

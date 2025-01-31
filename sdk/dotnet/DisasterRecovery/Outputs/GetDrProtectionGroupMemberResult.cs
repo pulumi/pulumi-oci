@@ -22,6 +22,14 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberBackendSetMappingResult> BackendSetMappings;
         /// <summary>
+        /// The details of backup performed on OKE Cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberBackupConfigResult> BackupConfigs;
+        /// <summary>
+        /// The details for object storage backup location of an OKE Cluster
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberBackupLocationResult> BackupLocations;
+        /// <summary>
         /// Operations performed on a list of block volumes used on the non-movable compute instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberBlockVolumeOperationResult> BlockVolumeOperations;
@@ -50,11 +58,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string DestinationDedicatedVmHostId;
         /// <summary>
-        /// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        /// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         /// </summary>
         public readonly string DestinationLoadBalancerId;
         /// <summary>
-        /// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        /// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         /// </summary>
         public readonly string DestinationNetworkLoadBalancerId;
         /// <summary>
@@ -78,6 +86,18 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly bool IsStartStopEnabled;
         /// <summary>
+        /// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+        /// </summary>
+        public readonly string JumpHostId;
+        /// <summary>
+        /// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberLoadBalancerMappingResult> LoadBalancerMappings;
+        /// <summary>
+        /// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberManagedNodePoolConfigResult> ManagedNodePoolConfigs;
+        /// <summary>
         /// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
         public readonly string MemberId;
@@ -90,9 +110,25 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
+        /// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberNetworkLoadBalancerMappingResult> NetworkLoadBalancerMappings;
+        /// <summary>
         /// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         /// </summary>
         public readonly string PasswordVaultSecretId;
+        /// <summary>
+        /// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+        /// </summary>
+        public readonly string PeerClusterId;
+        /// <summary>
+        /// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberVaultMappingResult> VaultMappings;
+        /// <summary>
+        /// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberVirtualNodePoolConfigResult> VirtualNodePoolConfigs;
         /// <summary>
         /// A list of compute instance VNIC mappings.
         /// </summary>
@@ -107,6 +143,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             string autonomousDatabaseStandbyTypeForDrDrills,
 
             ImmutableArray<Outputs.GetDrProtectionGroupMemberBackendSetMappingResult> backendSetMappings,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberBackupConfigResult> backupConfigs,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberBackupLocationResult> backupLocations,
 
             ImmutableArray<Outputs.GetDrProtectionGroupMemberBlockVolumeOperationResult> blockVolumeOperations,
 
@@ -136,13 +176,27 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             bool isStartStopEnabled,
 
+            string jumpHostId,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberLoadBalancerMappingResult> loadBalancerMappings,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberManagedNodePoolConfigResult> managedNodePoolConfigs,
+
             string memberId,
 
             string memberType,
 
             string @namespace,
 
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberNetworkLoadBalancerMappingResult> networkLoadBalancerMappings,
+
             string passwordVaultSecretId,
+
+            string peerClusterId,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberVaultMappingResult> vaultMappings,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberVirtualNodePoolConfigResult> virtualNodePoolConfigs,
 
             ImmutableArray<Outputs.GetDrProtectionGroupMemberVnicMappingResult> vnicMapping,
 
@@ -150,6 +204,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         {
             AutonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
             BackendSetMappings = backendSetMappings;
+            BackupConfigs = backupConfigs;
+            BackupLocations = backupLocations;
             BlockVolumeOperations = blockVolumeOperations;
             Bucket = bucket;
             ConnectionStringType = connectionStringType;
@@ -164,10 +220,17 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             IsMovable = isMovable;
             IsRetainFaultDomain = isRetainFaultDomain;
             IsStartStopEnabled = isStartStopEnabled;
+            JumpHostId = jumpHostId;
+            LoadBalancerMappings = loadBalancerMappings;
+            ManagedNodePoolConfigs = managedNodePoolConfigs;
             MemberId = memberId;
             MemberType = memberType;
             Namespace = @namespace;
+            NetworkLoadBalancerMappings = networkLoadBalancerMappings;
             PasswordVaultSecretId = passwordVaultSecretId;
+            PeerClusterId = peerClusterId;
+            VaultMappings = vaultMappings;
+            VirtualNodePoolConfigs = virtualNodePoolConfigs;
             VnicMapping = vnicMapping;
             VnicMappings = vnicMappings;
         }

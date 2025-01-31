@@ -52,7 +52,7 @@ import java.util.concurrent.CompletableFuture;
 
 public final class ApmSyntheticsFunctions {
     /**
-     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
@@ -97,7 +97,7 @@ public final class ApmSyntheticsFunctions {
         return getDedicatedVantagePoint(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
@@ -142,7 +142,7 @@ public final class ApmSyntheticsFunctions {
         return getDedicatedVantagePointPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
@@ -187,7 +187,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", TypeShape.of(GetDedicatedVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
@@ -232,7 +232,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", TypeShape.of(GetDedicatedVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
@@ -277,7 +277,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", TypeShape.of(GetDedicatedVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of dedicated vantage points.
      * 
@@ -324,7 +324,7 @@ public final class ApmSyntheticsFunctions {
         return getDedicatedVantagePoints(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of dedicated vantage points.
      * 
@@ -371,7 +371,7 @@ public final class ApmSyntheticsFunctions {
         return getDedicatedVantagePointsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of dedicated vantage points.
      * 
@@ -418,7 +418,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", TypeShape.of(GetDedicatedVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of dedicated vantage points.
      * 
@@ -465,7 +465,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", TypeShape.of(GetDedicatedVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of dedicated vantage points.
      * 
@@ -512,7 +512,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", TypeShape.of(GetDedicatedVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the monitor identified by the OCID.
      * 
@@ -557,7 +557,7 @@ public final class ApmSyntheticsFunctions {
         return getMonitor(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the monitor identified by the OCID.
      * 
@@ -602,7 +602,7 @@ public final class ApmSyntheticsFunctions {
         return getMonitorPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the monitor identified by the OCID.
      * 
@@ -647,7 +647,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getMonitor:getMonitor", TypeShape.of(GetMonitorResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the monitor identified by the OCID.
      * 
@@ -692,7 +692,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getMonitor:getMonitor", TypeShape.of(GetMonitorResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the monitor identified by the OCID.
      * 
@@ -737,7 +737,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getMonitor:getMonitor", TypeShape.of(GetMonitorResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of monitors.
      * 
@@ -788,7 +788,7 @@ public final class ApmSyntheticsFunctions {
         return getMonitors(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of monitors.
      * 
@@ -839,7 +839,7 @@ public final class ApmSyntheticsFunctions {
         return getMonitorsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of monitors.
      * 
@@ -890,7 +890,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getMonitors:getMonitors", TypeShape.of(GetMonitorsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of monitors.
      * 
@@ -941,7 +941,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getMonitors:getMonitors", TypeShape.of(GetMonitorsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of monitors.
      * 
@@ -992,7 +992,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getMonitors:getMonitors", TypeShape.of(GetMonitorsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
@@ -1037,7 +1037,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePoint(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
@@ -1082,7 +1082,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePointPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
@@ -1127,7 +1127,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", TypeShape.of(GetOnPremiseVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
@@ -1172,7 +1172,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", TypeShape.of(GetOnPremiseVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the On-premise vantage point identified by the OCID.
      * 
@@ -1217,7 +1217,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", TypeShape.of(GetOnPremiseVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the worker identified by the OCID.
      * 
@@ -1263,7 +1263,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePointWorker(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the worker identified by the OCID.
      * 
@@ -1309,7 +1309,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePointWorkerPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the worker identified by the OCID.
      * 
@@ -1355,7 +1355,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", TypeShape.of(GetOnPremiseVantagePointWorkerResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the worker identified by the OCID.
      * 
@@ -1401,7 +1401,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", TypeShape.of(GetOnPremiseVantagePointWorkerResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the details of the worker identified by the OCID.
      * 
@@ -1447,7 +1447,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", TypeShape.of(GetOnPremiseVantagePointWorkerResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of workers.
      * 
@@ -1496,7 +1496,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePointWorkers(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of workers.
      * 
@@ -1545,7 +1545,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePointWorkersPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of workers.
      * 
@@ -1594,7 +1594,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", TypeShape.of(GetOnPremiseVantagePointWorkersResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of workers.
      * 
@@ -1643,7 +1643,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", TypeShape.of(GetOnPremiseVantagePointWorkersResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of workers.
      * 
@@ -1692,7 +1692,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", TypeShape.of(GetOnPremiseVantagePointWorkersResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of On-premise vantage points.
      * 
@@ -1738,7 +1738,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePoints(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of On-premise vantage points.
      * 
@@ -1784,7 +1784,7 @@ public final class ApmSyntheticsFunctions {
         return getOnPremiseVantagePointsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of On-premise vantage points.
      * 
@@ -1830,7 +1830,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", TypeShape.of(GetOnPremiseVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of On-premise vantage points.
      * 
@@ -1876,7 +1876,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", TypeShape.of(GetOnPremiseVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of On-premise vantage points.
      * 
@@ -1922,7 +1922,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getOnPremiseVantagePoints:getOnPremiseVantagePoints", TypeShape.of(GetOnPremiseVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
@@ -1971,7 +1971,7 @@ public final class ApmSyntheticsFunctions {
         return getResult(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
@@ -2020,7 +2020,7 @@ public final class ApmSyntheticsFunctions {
         return getResultPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
@@ -2069,7 +2069,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getResult:getResult", TypeShape.of(GetResultResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
@@ -2118,7 +2118,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getResult:getResult", TypeShape.of(GetResultResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
@@ -2167,7 +2167,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getResult:getResult", TypeShape.of(GetResultResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the script identified by the OCID.
      * 
@@ -2212,7 +2212,7 @@ public final class ApmSyntheticsFunctions {
         return getScript(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the script identified by the OCID.
      * 
@@ -2257,7 +2257,7 @@ public final class ApmSyntheticsFunctions {
         return getScriptPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the script identified by the OCID.
      * 
@@ -2302,7 +2302,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getScript:getScript", TypeShape.of(GetScriptResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the script identified by the OCID.
      * 
@@ -2347,7 +2347,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getScript:getScript", TypeShape.of(GetScriptResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Gets the configuration of the script identified by the OCID.
      * 
@@ -2392,7 +2392,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getScript:getScript", TypeShape.of(GetScriptResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of scripts.
      * 
@@ -2438,7 +2438,7 @@ public final class ApmSyntheticsFunctions {
         return getScripts(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of scripts.
      * 
@@ -2484,7 +2484,7 @@ public final class ApmSyntheticsFunctions {
         return getScriptsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of scripts.
      * 
@@ -2530,7 +2530,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getScripts:getScripts", TypeShape.of(GetScriptsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of scripts.
      * 
@@ -2576,7 +2576,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getScripts:getScripts", TypeShape.of(GetScriptsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of scripts.
      * 
@@ -2622,7 +2622,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getScripts:getScripts", TypeShape.of(GetScriptsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2668,7 +2668,7 @@ public final class ApmSyntheticsFunctions {
         return getVantagePoint(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2714,7 +2714,7 @@ public final class ApmSyntheticsFunctions {
         return getVantagePointPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2760,7 +2760,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getVantagePoint:getVantagePoint", TypeShape.of(GetVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2806,7 +2806,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getVantagePoint:getVantagePoint", TypeShape.of(GetVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2852,7 +2852,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getVantagePoint:getVantagePoint", TypeShape.of(GetVantagePointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2898,7 +2898,7 @@ public final class ApmSyntheticsFunctions {
         return getVantagePoints(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2944,7 +2944,7 @@ public final class ApmSyntheticsFunctions {
         return getVantagePointsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -2990,7 +2990,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getVantagePoints:getVantagePoints", TypeShape.of(GetVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 
@@ -3036,7 +3036,7 @@ public final class ApmSyntheticsFunctions {
         return Deployment.getInstance().invoke("oci:ApmSynthetics/getVantagePoints:getVantagePoints", TypeShape.of(GetVantagePointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
      * Returns a list of public vantage points.
      * 

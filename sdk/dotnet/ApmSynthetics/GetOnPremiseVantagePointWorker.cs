@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetOnPremiseVantagePointWorker
     {
         /// <summary>
-        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the details of the worker identified by the OCID.
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOnPremiseVantagePointWorkerResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args ?? new GetOnPremiseVantagePointWorkerArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the details of the worker identified by the OCID.
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointWorkerResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args ?? new GetOnPremiseVantagePointWorkerInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the details of the worker identified by the OCID.
         /// 

@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NewsReportContentTypes {
     /**
+     * @return (Updatable) Supported resources for actionable insights content type.
+     * 
+     */
+    private @Nullable List<String> actionableInsightsResources;
+    /**
      * @return (Updatable) Supported resources for capacity planning content type.
      * 
      */
@@ -48,6 +53,13 @@ public final class NewsReportContentTypes {
     private @Nullable List<String> sqlInsightsTopSqlResources;
 
     private NewsReportContentTypes() {}
+    /**
+     * @return (Updatable) Supported resources for actionable insights content type.
+     * 
+     */
+    public List<String> actionableInsightsResources() {
+        return this.actionableInsightsResources == null ? List.of() : this.actionableInsightsResources;
+    }
     /**
      * @return (Updatable) Supported resources for capacity planning content type.
      * 
@@ -107,6 +119,7 @@ public final class NewsReportContentTypes {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> actionableInsightsResources;
         private @Nullable List<String> capacityPlanningResources;
         private @Nullable List<String> sqlInsightsFleetAnalysisResources;
         private @Nullable List<String> sqlInsightsPerformanceDegradationResources;
@@ -117,6 +130,7 @@ public final class NewsReportContentTypes {
         public Builder() {}
         public Builder(NewsReportContentTypes defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.actionableInsightsResources = defaults.actionableInsightsResources;
     	      this.capacityPlanningResources = defaults.capacityPlanningResources;
     	      this.sqlInsightsFleetAnalysisResources = defaults.sqlInsightsFleetAnalysisResources;
     	      this.sqlInsightsPerformanceDegradationResources = defaults.sqlInsightsPerformanceDegradationResources;
@@ -126,6 +140,15 @@ public final class NewsReportContentTypes {
     	      this.sqlInsightsTopSqlResources = defaults.sqlInsightsTopSqlResources;
         }
 
+        @CustomType.Setter
+        public Builder actionableInsightsResources(@Nullable List<String> actionableInsightsResources) {
+
+            this.actionableInsightsResources = actionableInsightsResources;
+            return this;
+        }
+        public Builder actionableInsightsResources(String... actionableInsightsResources) {
+            return actionableInsightsResources(List.of(actionableInsightsResources));
+        }
         @CustomType.Setter
         public Builder capacityPlanningResources(@Nullable List<String> capacityPlanningResources) {
 
@@ -191,6 +214,7 @@ public final class NewsReportContentTypes {
         }
         public NewsReportContentTypes build() {
             final var _resultValue = new NewsReportContentTypes();
+            _resultValue.actionableInsightsResources = actionableInsightsResources;
             _resultValue.capacityPlanningResources = capacityPlanningResources;
             _resultValue.sqlInsightsFleetAnalysisResources = sqlInsightsFleetAnalysisResources;
             _resultValue.sqlInsightsPerformanceDegradationResources = sqlInsightsPerformanceDegradationResources;

@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string Locale;
         /// <summary>
+        /// Match rule used for tag filters.
+        /// </summary>
+        public readonly string MatchRule;
+        /// <summary>
         /// The news report name.
         /// </summary>
         public readonly string Name;
@@ -77,6 +81,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;'.
+        /// </summary>
+        public readonly ImmutableArray<string> TagFilters;
         /// <summary>
         /// The time the the news report was first enabled. An RFC3339 formatted datetime string.
         /// </summary>
@@ -108,6 +116,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string locale,
 
+            string matchRule,
+
             string name,
 
             string newsFrequency,
@@ -119,6 +129,8 @@ namespace Pulumi.Oci.Opsi.Outputs
             string status,
 
             ImmutableDictionary<string, string> systemTags,
+
+            ImmutableArray<string> tagFilters,
 
             string timeCreated,
 
@@ -134,12 +146,14 @@ namespace Pulumi.Oci.Opsi.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             Locale = locale;
+            MatchRule = matchRule;
             Name = name;
             NewsFrequency = newsFrequency;
             OnsTopicId = onsTopicId;
             State = state;
             Status = status;
             SystemTags = systemTags;
+            TagFilters = tagFilters;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Opsi
     ///         CompartmentId = compartmentId,
     ///         ContentTypes = new Oci.Opsi.Inputs.NewsReportContentTypesArgs
     ///         {
+    ///             ActionableInsightsResources = newsReportContentTypesActionableInsightsResources,
     ///             CapacityPlanningResources = newsReportContentTypesCapacityPlanningResources,
     ///             SqlInsightsFleetAnalysisResources = newsReportContentTypesSqlInsightsFleetAnalysisResources,
     ///             SqlInsightsPerformanceDegradationResources = newsReportContentTypesSqlInsightsPerformanceDegradationResources,
@@ -52,7 +53,9 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         MatchRule = newsReportMatchRule,
     ///         Status = newsReportStatus,
+    ///         TagFilters = newsReportTagFilters,
     ///     });
     /// 
     /// });
@@ -124,6 +127,12 @@ namespace Pulumi.Oci.Opsi
         public Output<string> Locale { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Match rule used for tag filters.
+        /// </summary>
+        [Output("matchRule")]
+        public Output<string> MatchRule { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The news report name.
         /// </summary>
         [Output("name")]
@@ -149,10 +158,6 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Defines if the news report will be enabled or disabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -162,6 +167,16 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;' 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("tagFilters")]
+        public Output<ImmutableArray<string>> TagFilters { get; private set; } = null!;
 
         /// <summary>
         /// The time the the news report was first enabled. An RFC3339 formatted datetime string.
@@ -282,6 +297,12 @@ namespace Pulumi.Oci.Opsi
         public Input<string> Locale { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Match rule used for tag filters.
+        /// </summary>
+        [Input("matchRule")]
+        public Input<string>? MatchRule { get; set; }
+
+        /// <summary>
         /// (Updatable) The news report name.
         /// </summary>
         [Input("name")]
@@ -301,13 +322,25 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Defines if the news report will be enabled or disabled.
+        /// </summary>
+        [Input("status")]
+        public Input<string>? Status { get; set; }
+
+        [Input("tagFilters")]
+        private InputList<string>? _tagFilters;
+
+        /// <summary>
+        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;' 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("status")]
-        public Input<string>? Status { get; set; }
+        public InputList<string> TagFilters
+        {
+            get => _tagFilters ?? (_tagFilters = new InputList<string>());
+            set => _tagFilters = value;
+        }
 
         public NewsReportArgs()
         {
@@ -384,6 +417,12 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? Locale { get; set; }
 
         /// <summary>
+        /// (Updatable) Match rule used for tag filters.
+        /// </summary>
+        [Input("matchRule")]
+        public Input<string>? MatchRule { get; set; }
+
+        /// <summary>
         /// (Updatable) The news report name.
         /// </summary>
         [Input("name")]
@@ -409,10 +448,6 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Defines if the news report will be enabled or disabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -427,6 +462,22 @@ namespace Pulumi.Oci.Opsi
         {
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
+        }
+
+        [Input("tagFilters")]
+        private InputList<string>? _tagFilters;
+
+        /// <summary>
+        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;' 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputList<string> TagFilters
+        {
+            get => _tagFilters ?? (_tagFilters = new InputList<string>());
+            set => _tagFilters = value;
         }
 
         /// <summary>

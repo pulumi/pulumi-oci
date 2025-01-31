@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedMySqlDatabases = oci.DatabaseManagement.getManagedMySqlDatabases({
  *     compartmentId: compartmentId,
+ *     filterByMySqlDatabaseTypeParam: managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
  * });
  * ```
  */
@@ -26,6 +27,7 @@ export function getManagedMySqlDatabases(args: GetManagedMySqlDatabasesArgs, opt
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", {
         "compartmentId": args.compartmentId,
+        "filterByMySqlDatabaseTypeParam": args.filterByMySqlDatabaseTypeParam,
         "filters": args.filters,
     }, opts);
 }
@@ -38,6 +40,10 @@ export interface GetManagedMySqlDatabasesArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: string;
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     */
+    filterByMySqlDatabaseTypeParam?: string;
     filters?: inputs.DatabaseManagement.GetManagedMySqlDatabasesFilter[];
 }
 
@@ -49,6 +55,7 @@ export interface GetManagedMySqlDatabasesResult {
      * The OCID of the compartment.
      */
     readonly compartmentId: string;
+    readonly filterByMySqlDatabaseTypeParam?: string;
     readonly filters?: outputs.DatabaseManagement.GetManagedMySqlDatabasesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -72,6 +79,7 @@ export interface GetManagedMySqlDatabasesResult {
  *
  * const testManagedMySqlDatabases = oci.DatabaseManagement.getManagedMySqlDatabases({
  *     compartmentId: compartmentId,
+ *     filterByMySqlDatabaseTypeParam: managedMySqlDatabaseFilterByMySqlDatabaseTypeParam,
  * });
  * ```
  */
@@ -79,6 +87,7 @@ export function getManagedMySqlDatabasesOutput(args: GetManagedMySqlDatabasesOut
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases", {
         "compartmentId": args.compartmentId,
+        "filterByMySqlDatabaseTypeParam": args.filterByMySqlDatabaseTypeParam,
         "filters": args.filters,
     }, opts);
 }
@@ -91,5 +100,9 @@ export interface GetManagedMySqlDatabasesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     */
+    filterByMySqlDatabaseTypeParam?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabasesFilterArgs>[]>;
 }

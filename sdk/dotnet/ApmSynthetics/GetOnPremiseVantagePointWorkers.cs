@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetOnPremiseVantagePointWorkers
     {
         /// <summary>
-        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of workers.
         /// 
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOnPremiseVantagePointWorkersResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", args ?? new GetOnPremiseVantagePointWorkersArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of workers.
         /// 
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointWorkersResult>("oci:ApmSynthetics/getOnPremiseVantagePointWorkers:getOnPremiseVantagePointWorkers", args ?? new GetOnPremiseVantagePointWorkersInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of workers.
         /// 

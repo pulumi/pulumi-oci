@@ -69,7 +69,7 @@ type LookupDrProtectionGroupResult struct {
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+	// The OCID of the virtual node pool in OKE cluster.
 	Id string `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
@@ -161,7 +161,7 @@ func (o LookupDrProtectionGroupResultOutput) FreeformTags() pulumi.StringMapOutp
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+// The OCID of the virtual node pool in OKE cluster.
 func (o LookupDrProtectionGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }

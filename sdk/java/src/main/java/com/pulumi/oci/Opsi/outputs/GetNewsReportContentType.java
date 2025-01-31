@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetNewsReportContentType {
     /**
+     * @return Supported resources for actionable insights content type.
+     * 
+     */
+    private List<String> actionableInsightsResources;
+    /**
      * @return Supported resources for capacity planning content type.
      * 
      */
@@ -48,6 +53,13 @@ public final class GetNewsReportContentType {
     private List<String> sqlInsightsTopSqlResources;
 
     private GetNewsReportContentType() {}
+    /**
+     * @return Supported resources for actionable insights content type.
+     * 
+     */
+    public List<String> actionableInsightsResources() {
+        return this.actionableInsightsResources;
+    }
     /**
      * @return Supported resources for capacity planning content type.
      * 
@@ -107,6 +119,7 @@ public final class GetNewsReportContentType {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> actionableInsightsResources;
         private List<String> capacityPlanningResources;
         private List<String> sqlInsightsFleetAnalysisResources;
         private List<String> sqlInsightsPerformanceDegradationResources;
@@ -117,6 +130,7 @@ public final class GetNewsReportContentType {
         public Builder() {}
         public Builder(GetNewsReportContentType defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.actionableInsightsResources = defaults.actionableInsightsResources;
     	      this.capacityPlanningResources = defaults.capacityPlanningResources;
     	      this.sqlInsightsFleetAnalysisResources = defaults.sqlInsightsFleetAnalysisResources;
     	      this.sqlInsightsPerformanceDegradationResources = defaults.sqlInsightsPerformanceDegradationResources;
@@ -126,6 +140,17 @@ public final class GetNewsReportContentType {
     	      this.sqlInsightsTopSqlResources = defaults.sqlInsightsTopSqlResources;
         }
 
+        @CustomType.Setter
+        public Builder actionableInsightsResources(List<String> actionableInsightsResources) {
+            if (actionableInsightsResources == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportContentType", "actionableInsightsResources");
+            }
+            this.actionableInsightsResources = actionableInsightsResources;
+            return this;
+        }
+        public Builder actionableInsightsResources(String... actionableInsightsResources) {
+            return actionableInsightsResources(List.of(actionableInsightsResources));
+        }
         @CustomType.Setter
         public Builder capacityPlanningResources(List<String> capacityPlanningResources) {
             if (capacityPlanningResources == null) {
@@ -205,6 +230,7 @@ public final class GetNewsReportContentType {
         }
         public GetNewsReportContentType build() {
             final var _resultValue = new GetNewsReportContentType();
+            _resultValue.actionableInsightsResources = actionableInsightsResources;
             _resultValue.capacityPlanningResources = capacityPlanningResources;
             _resultValue.sqlInsightsFleetAnalysisResources = sqlInsightsFleetAnalysisResources;
             _resultValue.sqlInsightsPerformanceDegradationResources = sqlInsightsPerformanceDegradationResources;

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetVantagePoints
     {
         /// <summary>
-        /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of public vantage points.
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointsResult>("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of public vantage points.
         /// 
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointsResult>("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args ?? new GetVantagePointsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of public vantage points.
         /// 

@@ -60,6 +60,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public readonly Outputs.DbHomeDatabaseEncryptionKeyLocationDetails? EncryptionKeyLocationDetails;
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? FreeformTags;
@@ -150,6 +154,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableDictionary<string, string>? definedTags,
 
+            Outputs.DbHomeDatabaseEncryptionKeyLocationDetails? encryptionKeyLocationDetails,
+
             ImmutableDictionary<string, string>? freeformTags,
 
             string? id,
@@ -194,6 +200,7 @@ namespace Pulumi.Oci.Database.Outputs
             DbUniqueName = dbUniqueName;
             DbWorkload = dbWorkload;
             DefinedTags = definedTags;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             FreeformTags = freeformTags;
             Id = id;
             KeyStoreId = keyStoreId;

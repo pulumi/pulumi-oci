@@ -70,6 +70,8 @@ type LookupDatabaseInsightResult struct {
 	CredentialDetails []GetDatabaseInsightCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails string `pulumi:"databaseConnectionStatusDetails"`
+	// (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId string `pulumi:"databaseConnectorId"`
 	// Display name of database
 	DatabaseDisplayName string `pulumi:"databaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -202,6 +204,11 @@ func (o LookupDatabaseInsightResultOutput) CredentialDetails() GetDatabaseInsigh
 // A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 func (o LookupDatabaseInsightResultOutput) DatabaseConnectionStatusDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseConnectionStatusDetails }).(pulumi.StringOutput)
+}
+
+// (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+func (o LookupDatabaseInsightResultOutput) DatabaseConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseConnectorId }).(pulumi.StringOutput)
 }
 
 // Display name of database

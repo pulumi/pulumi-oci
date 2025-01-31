@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := databasemanagement.GetManagedMySqlDatabases(ctx, &databasemanagement.GetManagedMySqlDatabasesArgs{
-//				CompartmentId: compartmentId,
+//				CompartmentId:                  compartmentId,
+//				FilterByMySqlDatabaseTypeParam: pulumi.StringRef(managedMySqlDatabaseFilterByMySqlDatabaseTypeParam),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -53,15 +54,18 @@ func GetManagedMySqlDatabases(ctx *pulumi.Context, args *GetManagedMySqlDatabase
 // A collection of arguments for invoking getManagedMySqlDatabases.
 type GetManagedMySqlDatabasesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string                           `pulumi:"compartmentId"`
-	Filters       []GetManagedMySqlDatabasesFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+	FilterByMySqlDatabaseTypeParam *string                          `pulumi:"filterByMySqlDatabaseTypeParam"`
+	Filters                        []GetManagedMySqlDatabasesFilter `pulumi:"filters"`
 }
 
 // A collection of values returned by getManagedMySqlDatabases.
 type GetManagedMySqlDatabasesResult struct {
 	// The OCID of the compartment.
-	CompartmentId string                           `pulumi:"compartmentId"`
-	Filters       []GetManagedMySqlDatabasesFilter `pulumi:"filters"`
+	CompartmentId                  string                           `pulumi:"compartmentId"`
+	FilterByMySqlDatabaseTypeParam *string                          `pulumi:"filterByMySqlDatabaseTypeParam"`
+	Filters                        []GetManagedMySqlDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of managed_my_sql_database_collection.
@@ -80,8 +84,10 @@ func GetManagedMySqlDatabasesOutput(ctx *pulumi.Context, args GetManagedMySqlDat
 // A collection of arguments for invoking getManagedMySqlDatabases.
 type GetManagedMySqlDatabasesOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput                       `pulumi:"compartmentId"`
-	Filters       GetManagedMySqlDatabasesFilterArrayInput `pulumi:"filters"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+	FilterByMySqlDatabaseTypeParam pulumi.StringPtrInput                    `pulumi:"filterByMySqlDatabaseTypeParam"`
+	Filters                        GetManagedMySqlDatabasesFilterArrayInput `pulumi:"filters"`
 }
 
 func (GetManagedMySqlDatabasesOutputArgs) ElementType() reflect.Type {
@@ -106,6 +112,10 @@ func (o GetManagedMySqlDatabasesResultOutput) ToGetManagedMySqlDatabasesResultOu
 // The OCID of the compartment.
 func (o GetManagedMySqlDatabasesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetManagedMySqlDatabasesResultOutput) FilterByMySqlDatabaseTypeParam() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesResult) *string { return v.FilterByMySqlDatabaseTypeParam }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedMySqlDatabasesResultOutput) Filters() GetManagedMySqlDatabasesFilterArrayOutput {

@@ -60,6 +60,12 @@ namespace Pulumi.Oci.Opsi
         public Output<string> DatabaseConnectionStatusDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        /// </summary>
+        [Output("databaseConnectorId")]
+        public Output<string> DatabaseConnectorId { get; private set; } = null!;
+
+        /// <summary>
         /// Display name of database
         /// </summary>
         [Output("databaseDisplayName")]
@@ -343,6 +349,12 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? DatabaseConnectionStatusDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        /// </summary>
+        [Input("databaseConnectorId")]
+        public Input<string>? DatabaseConnectorId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
         [Input("databaseId")]
@@ -496,6 +508,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("databaseConnectionStatusDetails")]
         public Input<string>? DatabaseConnectionStatusDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        /// </summary>
+        [Input("databaseConnectorId")]
+        public Input<string>? DatabaseConnectorId { get; set; }
 
         /// <summary>
         /// Display name of database

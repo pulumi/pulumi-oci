@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetScript
     {
         /// <summary>
-        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the configuration of the script identified by the OCID.
         /// 
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetScriptResult>("oci:ApmSynthetics/getScript:getScript", args ?? new GetScriptArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the configuration of the script identified by the OCID.
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetScriptResult>("oci:ApmSynthetics/getScript:getScript", args ?? new GetScriptInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the configuration of the script identified by the OCID.
         /// 

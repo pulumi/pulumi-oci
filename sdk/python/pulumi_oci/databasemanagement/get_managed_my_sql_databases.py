@@ -28,10 +28,13 @@ class GetManagedMySqlDatabasesResult:
     """
     A collection of values returned by getManagedMySqlDatabases.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, managed_my_sql_database_collections=None):
+    def __init__(__self__, compartment_id=None, filter_by_my_sql_database_type_param=None, filters=None, id=None, managed_my_sql_database_collections=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if filter_by_my_sql_database_type_param and not isinstance(filter_by_my_sql_database_type_param, str):
+            raise TypeError("Expected argument 'filter_by_my_sql_database_type_param' to be a str")
+        pulumi.set(__self__, "filter_by_my_sql_database_type_param", filter_by_my_sql_database_type_param)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -49,6 +52,11 @@ class GetManagedMySqlDatabasesResult:
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="filterByMySqlDatabaseTypeParam")
+    def filter_by_my_sql_database_type_param(self) -> Optional[str]:
+        return pulumi.get(self, "filter_by_my_sql_database_type_param")
 
     @property
     @pulumi.getter
@@ -79,12 +87,14 @@ class AwaitableGetManagedMySqlDatabasesResult(GetManagedMySqlDatabasesResult):
             yield self
         return GetManagedMySqlDatabasesResult(
             compartment_id=self.compartment_id,
+            filter_by_my_sql_database_type_param=self.filter_by_my_sql_database_type_param,
             filters=self.filters,
             id=self.id,
             managed_my_sql_database_collections=self.managed_my_sql_database_collections)
 
 
 def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
+                                 filter_by_my_sql_database_type_param: Optional[str] = None,
                                  filters: Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabasesResult:
     """
@@ -98,24 +108,29 @@ def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id)
+    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id,
+        filter_by_my_sql_database_type_param=managed_my_sql_database_filter_by_my_sql_database_type_param)
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str filter_by_my_sql_database_type_param: The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['filterByMySqlDatabaseTypeParam'] = filter_by_my_sql_database_type_param
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases', __args__, opts=opts, typ=GetManagedMySqlDatabasesResult).value
 
     return AwaitableGetManagedMySqlDatabasesResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filter_by_my_sql_database_type_param=pulumi.get(__ret__, 'filter_by_my_sql_database_type_param'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_collections=pulumi.get(__ret__, 'managed_my_sql_database_collections'))
 def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
+                                        filter_by_my_sql_database_type_param: Optional[pulumi.Input[Optional[str]]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabasesResult]:
     """
@@ -129,19 +144,23 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id)
+    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id,
+        filter_by_my_sql_database_type_param=managed_my_sql_database_filter_by_my_sql_database_type_param)
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str filter_by_my_sql_database_type_param: The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['filterByMySqlDatabaseTypeParam'] = filter_by_my_sql_database_type_param
     __args__['filters'] = filters
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabases:getManagedMySqlDatabases', __args__, opts=opts, typ=GetManagedMySqlDatabasesResult)
     return __ret__.apply(lambda __response__: GetManagedMySqlDatabasesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filter_by_my_sql_database_type_param=pulumi.get(__response__, 'filter_by_my_sql_database_type_param'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         managed_my_sql_database_collections=pulumi.get(__response__, 'managed_my_sql_database_collections')))

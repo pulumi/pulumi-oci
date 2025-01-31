@@ -68,6 +68,10 @@ export interface GetDatabaseInsightResult {
      */
     readonly databaseConnectionStatusDetails: string;
     /**
+     * (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     */
+    readonly databaseConnectorId: string;
+    /**
      * Display name of database
      */
     readonly databaseDisplayName: string;

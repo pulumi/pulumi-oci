@@ -31,8 +31,10 @@ class NewsReportArgs:
                  day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 match_rule: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 status: Optional[pulumi.Input[str]] = None):
+                 status: Optional[pulumi.Input[str]] = None,
+                 tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a NewsReport resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
@@ -45,8 +47,10 @@ class NewsReportArgs:
         :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] match_rule: (Updatable) Match rule used for tag filters.
         :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
                
                
                ** IMPORTANT **
@@ -66,10 +70,14 @@ class NewsReportArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if match_rule is not None:
+            pulumi.set(__self__, "match_rule", match_rule)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if tag_filters is not None:
+            pulumi.set(__self__, "tag_filters", tag_filters)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -192,6 +200,18 @@ class NewsReportArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="matchRule")
+    def match_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Match rule used for tag filters.
+        """
+        return pulumi.get(self, "match_rule")
+
+    @match_rule.setter
+    def match_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "match_rule", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -208,16 +228,28 @@ class NewsReportArgs:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Defines if the news report will be enabled or disabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
     @status.setter
     def status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="tagFilters")
+    def tag_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tag_filters")
+
+    @tag_filters.setter
+    def tag_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_filters", value)
 
 
 @pulumi.input_type
@@ -232,12 +264,14 @@ class _NewsReportState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
+                 match_rule: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  news_frequency: Optional[pulumi.Input[str]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
@@ -251,16 +285,18 @@ class _NewsReportState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
+        :param pulumi.Input[str] match_rule: (Updatable) Match rule used for tag filters.
         :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] state: The current state of the news report.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
@@ -282,6 +318,8 @@ class _NewsReportState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if locale is not None:
             pulumi.set(__self__, "locale", locale)
+        if match_rule is not None:
+            pulumi.set(__self__, "match_rule", match_rule)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if news_frequency is not None:
@@ -294,6 +332,8 @@ class _NewsReportState:
             pulumi.set(__self__, "status", status)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tag_filters is not None:
+            pulumi.set(__self__, "tag_filters", tag_filters)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -408,6 +448,18 @@ class _NewsReportState:
         pulumi.set(self, "locale", value)
 
     @property
+    @pulumi.getter(name="matchRule")
+    def match_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Match rule used for tag filters.
+        """
+        return pulumi.get(self, "match_rule")
+
+    @match_rule.setter
+    def match_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "match_rule", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -460,10 +512,6 @@ class _NewsReportState:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Defines if the news report will be enabled or disabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -482,6 +530,22 @@ class _NewsReportState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="tagFilters")
+    def tag_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tag_filters")
+
+    @tag_filters.setter
+    def tag_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_filters", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -521,10 +585,12 @@ class NewsReport(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
+                 match_rule: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  news_frequency: Optional[pulumi.Input[str]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
+                 tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
         This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
@@ -540,6 +606,7 @@ class NewsReport(pulumi.CustomResource):
         test_news_report = oci.opsi.NewsReport("test_news_report",
             compartment_id=compartment_id,
             content_types={
+                "actionable_insights_resources": news_report_content_types_actionable_insights_resources,
                 "capacity_planning_resources": news_report_content_types_capacity_planning_resources,
                 "sql_insights_fleet_analysis_resources": news_report_content_types_sql_insights_fleet_analysis_resources,
                 "sql_insights_performance_degradation_resources": news_report_content_types_sql_insights_performance_degradation_resources,
@@ -561,7 +628,9 @@ class NewsReport(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            status=news_report_status)
+            match_rule=news_report_match_rule,
+            status=news_report_status,
+            tag_filters=news_report_tag_filters)
         ```
 
         ## Import
@@ -582,10 +651,12 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the news report.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
+        :param pulumi.Input[str] match_rule: (Updatable) Match rule used for tag filters.
         :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
                
                
                ** IMPORTANT **
@@ -611,6 +682,7 @@ class NewsReport(pulumi.CustomResource):
         test_news_report = oci.opsi.NewsReport("test_news_report",
             compartment_id=compartment_id,
             content_types={
+                "actionable_insights_resources": news_report_content_types_actionable_insights_resources,
                 "capacity_planning_resources": news_report_content_types_capacity_planning_resources,
                 "sql_insights_fleet_analysis_resources": news_report_content_types_sql_insights_fleet_analysis_resources,
                 "sql_insights_performance_degradation_resources": news_report_content_types_sql_insights_performance_degradation_resources,
@@ -632,7 +704,9 @@ class NewsReport(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            status=news_report_status)
+            match_rule=news_report_match_rule,
+            status=news_report_status,
+            tag_filters=news_report_tag_filters)
         ```
 
         ## Import
@@ -666,10 +740,12 @@ class NewsReport(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
+                 match_rule: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  news_frequency: Optional[pulumi.Input[str]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
+                 tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -695,6 +771,7 @@ class NewsReport(pulumi.CustomResource):
             if locale is None and not opts.urn:
                 raise TypeError("Missing required property 'locale'")
             __props__.__dict__["locale"] = locale
+            __props__.__dict__["match_rule"] = match_rule
             __props__.__dict__["name"] = name
             if news_frequency is None and not opts.urn:
                 raise TypeError("Missing required property 'news_frequency'")
@@ -703,6 +780,7 @@ class NewsReport(pulumi.CustomResource):
                 raise TypeError("Missing required property 'ons_topic_id'")
             __props__.__dict__["ons_topic_id"] = ons_topic_id
             __props__.__dict__["status"] = status
+            __props__.__dict__["tag_filters"] = tag_filters
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -727,12 +805,14 @@ class NewsReport(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             locale: Optional[pulumi.Input[str]] = None,
+            match_rule: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             news_frequency: Optional[pulumi.Input[str]] = None,
             ons_topic_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'NewsReport':
         """
@@ -751,16 +831,18 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] locale: (Updatable) Language of the news report.
+        :param pulumi.Input[str] match_rule: (Updatable) Match rule used for tag filters.
         :param pulumi.Input[str] name: (Updatable) The news report name.
         :param pulumi.Input[str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[str] state: The current state of the news report.
         :param pulumi.Input[str] status: (Updatable) Defines if the news report will be enabled or disabled.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
@@ -777,12 +859,14 @@ class NewsReport(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["locale"] = locale
+        __props__.__dict__["match_rule"] = match_rule
         __props__.__dict__["name"] = name
         __props__.__dict__["news_frequency"] = news_frequency
         __props__.__dict__["ons_topic_id"] = ons_topic_id
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tag_filters"] = tag_filters
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return NewsReport(resource_name, opts=opts, __props__=__props__)
@@ -860,6 +944,14 @@ class NewsReport(pulumi.CustomResource):
         return pulumi.get(self, "locale")
 
     @property
+    @pulumi.getter(name="matchRule")
+    def match_rule(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Match rule used for tag filters.
+        """
+        return pulumi.get(self, "match_rule")
+
+    @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
@@ -896,10 +988,6 @@ class NewsReport(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Defines if the news report will be enabled or disabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -910,6 +998,18 @@ class NewsReport(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tagFilters")
+    def tag_filters(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tag_filters")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -86,6 +88,10 @@ export class Backup extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * Types of providers supported for managing database encryption keys
+     */
+    public /*out*/ readonly encryptionKeyLocationDetails!: pulumi.Output<outputs.Database.BackupEncryptionKeyLocationDetail[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
@@ -153,6 +159,7 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseSizeInGbs"] = state ? state.databaseSizeInGbs : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["encryptionKeyLocationDetails"] = state ? state.encryptionKeyLocationDetails : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
@@ -179,6 +186,7 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databaseEdition"] = undefined /*out*/;
             resourceInputs["databaseSizeInGbs"] = undefined /*out*/;
+            resourceInputs["encryptionKeyLocationDetails"] = undefined /*out*/;
             resourceInputs["keyStoreId"] = undefined /*out*/;
             resourceInputs["keyStoreWalletName"] = undefined /*out*/;
             resourceInputs["kmsKeyId"] = undefined /*out*/;
@@ -229,6 +237,10 @@ export interface BackupState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
+    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.BackupEncryptionKeyLocationDetail>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */

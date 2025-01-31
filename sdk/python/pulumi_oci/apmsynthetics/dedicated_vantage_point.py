@@ -348,7 +348,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
         Registers a new dedicated vantage point.
 
@@ -406,7 +406,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
                  args: DedicatedVantagePointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
         Registers a new dedicated vantage point.
 

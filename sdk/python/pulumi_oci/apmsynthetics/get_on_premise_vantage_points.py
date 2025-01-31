@@ -111,7 +111,7 @@ def get_on_premise_vantage_points(apm_domain_id: Optional[str] = None,
                                   name: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnPremiseVantagePointsResult:
     """
-    This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of On-premise vantage points.
 
@@ -152,7 +152,7 @@ def get_on_premise_vantage_points_output(apm_domain_id: Optional[pulumi.Input[st
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointsResult]:
     """
-    This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of On Premise Vantage Points in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of On-premise vantage points.
 

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetOnPremiseVantagePoint
     {
         /// <summary>
-        /// This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the details of the On-premise vantage point identified by the OCID.
         /// 
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOnPremiseVantagePointResult>("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", args ?? new GetOnPremiseVantagePointArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the details of the On-premise vantage point identified by the OCID.
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetOnPremiseVantagePointResult>("oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint", args ?? new GetOnPremiseVantagePointInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the details of the On-premise vantage point identified by the OCID.
         /// 

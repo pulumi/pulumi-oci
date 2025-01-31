@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Gets the details of the On-premise vantage point identified by the OCID.
  *
@@ -93,7 +93,7 @@ export interface GetOnPremiseVantagePointResult {
     readonly workersSummaries: outputs.ApmSynthetics.GetOnPremiseVantagePointWorkersSummary[];
 }
 /**
- * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Gets the details of the On-premise vantage point identified by the OCID.
  *

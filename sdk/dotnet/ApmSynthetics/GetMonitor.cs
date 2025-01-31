@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetMonitor
     {
         /// <summary>
-        /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the configuration of the monitor identified by the OCID.
         /// 
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitorResult>("oci:ApmSynthetics/getMonitor:getMonitor", args ?? new GetMonitorArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the configuration of the monitor identified by the OCID.
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitorResult>("oci:ApmSynthetics/getMonitor:getMonitor", args ?? new GetMonitorInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Gets the configuration of the monitor identified by the OCID.
         /// 

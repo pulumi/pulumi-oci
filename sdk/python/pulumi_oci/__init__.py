@@ -3158,6 +3158,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/externalMySqlDatabase",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalMySqlDatabase:ExternalMySqlDatabase": "ExternalMySqlDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalMySqlDatabaseConnector",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector": "ExternalMySqlDatabaseConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement": "ExternalMySqlDatabaseExternalMysqlDatabasesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {

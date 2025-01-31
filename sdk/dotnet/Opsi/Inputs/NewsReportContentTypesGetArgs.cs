@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Opsi.Inputs
 
     public sealed class NewsReportContentTypesGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("actionableInsightsResources")]
+        private InputList<string>? _actionableInsightsResources;
+
+        /// <summary>
+        /// (Updatable) Supported resources for actionable insights content type.
+        /// </summary>
+        public InputList<string> ActionableInsightsResources
+        {
+            get => _actionableInsightsResources ?? (_actionableInsightsResources = new InputList<string>());
+            set => _actionableInsightsResources = value;
+        }
+
         [Input("capacityPlanningResources")]
         private InputList<string>? _capacityPlanningResources;
 

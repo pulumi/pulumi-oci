@@ -52,10 +52,20 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      */
     private String lastSeen;
     /**
+     * @return The maximum amount of controlled memory used by a statement during execution.
+     * 
+     */
+    private String maxControlledMemory;
+    /**
      * @return The slowest the query has been executed.
      * 
      */
     private Double maxTimerWait;
+    /**
+     * @return The maximum amount of memory used by a statement during execution.
+     * 
+     */
+    private String maxTotalMemory;
     /**
      * @return The fastest the query has been executed.
      * 
@@ -81,6 +91,11 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      * 
      */
     private String schemaName;
+    /**
+     * @return The total amount of time spent on CPU for this statement.
+     * 
+     */
+    private String sumCpuTime;
     /**
      * @return The total number of On-Disk internal temporary tables that have been created by the query.
      * 
@@ -240,11 +255,25 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         return this.lastSeen;
     }
     /**
+     * @return The maximum amount of controlled memory used by a statement during execution.
+     * 
+     */
+    public String maxControlledMemory() {
+        return this.maxControlledMemory;
+    }
+    /**
      * @return The slowest the query has been executed.
      * 
      */
     public Double maxTimerWait() {
         return this.maxTimerWait;
+    }
+    /**
+     * @return The maximum amount of memory used by a statement during execution.
+     * 
+     */
+    public String maxTotalMemory() {
+        return this.maxTotalMemory;
     }
     /**
      * @return The fastest the query has been executed.
@@ -280,6 +309,13 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      */
     public String schemaName() {
         return this.schemaName;
+    }
+    /**
+     * @return The total amount of time spent on CPU for this statement.
+     * 
+     */
+    public String sumCpuTime() {
+        return this.sumCpuTime;
     }
     /**
      * @return The total number of On-Disk internal temporary tables that have been created by the query.
@@ -439,12 +475,15 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         private Double heatWaveOffloaded;
         private Double heatWaveOutOfMemory;
         private String lastSeen;
+        private String maxControlledMemory;
         private Double maxTimerWait;
+        private String maxTotalMemory;
         private Double minTimerWait;
         private Double quantile95;
         private Double quantile99;
         private Double quantile999;
         private String schemaName;
+        private String sumCpuTime;
         private Double sumCreatedTempDiskTables;
         private Double sumCreatedTempTables;
         private Double sumErrors;
@@ -476,12 +515,15 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
     	      this.heatWaveOffloaded = defaults.heatWaveOffloaded;
     	      this.heatWaveOutOfMemory = defaults.heatWaveOutOfMemory;
     	      this.lastSeen = defaults.lastSeen;
+    	      this.maxControlledMemory = defaults.maxControlledMemory;
     	      this.maxTimerWait = defaults.maxTimerWait;
+    	      this.maxTotalMemory = defaults.maxTotalMemory;
     	      this.minTimerWait = defaults.minTimerWait;
     	      this.quantile95 = defaults.quantile95;
     	      this.quantile99 = defaults.quantile99;
     	      this.quantile999 = defaults.quantile999;
     	      this.schemaName = defaults.schemaName;
+    	      this.sumCpuTime = defaults.sumCpuTime;
     	      this.sumCreatedTempDiskTables = defaults.sumCreatedTempDiskTables;
     	      this.sumCreatedTempTables = defaults.sumCreatedTempTables;
     	      this.sumErrors = defaults.sumErrors;
@@ -569,11 +611,27 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder maxControlledMemory(String maxControlledMemory) {
+            if (maxControlledMemory == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "maxControlledMemory");
+            }
+            this.maxControlledMemory = maxControlledMemory;
+            return this;
+        }
+        @CustomType.Setter
         public Builder maxTimerWait(Double maxTimerWait) {
             if (maxTimerWait == null) {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "maxTimerWait");
             }
             this.maxTimerWait = maxTimerWait;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxTotalMemory(String maxTotalMemory) {
+            if (maxTotalMemory == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "maxTotalMemory");
+            }
+            this.maxTotalMemory = maxTotalMemory;
             return this;
         }
         @CustomType.Setter
@@ -614,6 +672,14 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "schemaName");
             }
             this.schemaName = schemaName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sumCpuTime(String sumCpuTime) {
+            if (sumCpuTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem", "sumCpuTime");
+            }
+            this.sumCpuTime = sumCpuTime;
             return this;
         }
         @CustomType.Setter
@@ -786,12 +852,15 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
             _resultValue.heatWaveOffloaded = heatWaveOffloaded;
             _resultValue.heatWaveOutOfMemory = heatWaveOutOfMemory;
             _resultValue.lastSeen = lastSeen;
+            _resultValue.maxControlledMemory = maxControlledMemory;
             _resultValue.maxTimerWait = maxTimerWait;
+            _resultValue.maxTotalMemory = maxTotalMemory;
             _resultValue.minTimerWait = minTimerWait;
             _resultValue.quantile95 = quantile95;
             _resultValue.quantile99 = quantile99;
             _resultValue.quantile999 = quantile999;
             _resultValue.schemaName = schemaName;
+            _resultValue.sumCpuTime = sumCpuTime;
             _resultValue.sumCreatedTempDiskTables = sumCreatedTempDiskTables;
             _resultValue.sumCreatedTempTables = sumCreatedTempTables;
             _resultValue.sumErrors = sumErrors;

@@ -120,6 +120,12 @@ namespace Pulumi.Oci.Database.Inputs
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Input("encryptionKeyLocationDetails")]
+        public Input<Inputs.DatabaseDatabaseEncryptionKeyLocationDetailsGetArgs>? EncryptionKeyLocationDetails { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -191,6 +197,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("sourceDatabaseId")]
         public Input<string>? SourceDatabaseId { get; set; }
+
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Input("sourceEncryptionKeyLocationDetails")]
+        public Input<Inputs.DatabaseDatabaseSourceEncryptionKeyLocationDetailsGetArgs>? SourceEncryptionKeyLocationDetails { get; set; }
 
         [Input("sourceTdeWalletPassword")]
         private Input<string>? _sourceTdeWalletPassword;

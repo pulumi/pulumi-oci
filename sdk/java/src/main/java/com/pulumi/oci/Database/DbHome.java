@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.DbHomeArgs;
  * import com.pulumi.oci.Database.inputs.DbHomeDatabaseArgs;
  * import com.pulumi.oci.Database.inputs.DbHomeDatabaseDbBackupConfigArgs;
+ * import com.pulumi.oci.Database.inputs.DbHomeDatabaseEncryptionKeyLocationDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -71,6 +72,10 @@ import javax.annotation.Nullable;
  *                 .dbName(dbHomeDatabaseDbName)
  *                 .dbWorkload(dbHomeDatabaseDbWorkload)
  *                 .definedTags(dbHomeDatabaseDefinedTags)
+ *                 .encryptionKeyLocationDetails(DbHomeDatabaseEncryptionKeyLocationDetailsArgs.builder()
+ *                     .hsmPassword(dbHomeDatabaseEncryptionKeyLocationDetailsHsmPassword)
+ *                     .providerType(dbHomeDatabaseEncryptionKeyLocationDetailsProviderType)
+ *                     .build())
  *                 .freeformTags(dbHomeDatabaseFreeformTags)
  *                 .keyStoreId(testKeyStore.id())
  *                 .kmsKeyId(testKey.id())
@@ -79,6 +84,7 @@ import javax.annotation.Nullable;
  *                 .pdbName(dbHomeDatabasePdbName)
  *                 .pluggableDatabases(dbHomeDatabasePluggableDatabases)
  *                 .sidPrefix(dbHomeDatabaseSidPrefix)
+ *                 .sourceEncryptionKeyLocationDetails(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
  *                 .tdeWalletPassword(dbHomeDatabaseTdeWalletPassword)
  *                 .timeStampForPointInTimeRecovery(dbHomeDatabaseTimeStampForPointInTimeRecovery)
  *                 .vaultId(testVault.id())

@@ -10,6 +10,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesManaged
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,6 +20,7 @@ public final class GetManagedMySqlDatabasesResult {
      * 
      */
     private String compartmentId;
+    private @Nullable String filterByMySqlDatabaseTypeParam;
     private @Nullable List<GetManagedMySqlDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -38,6 +40,9 @@ public final class GetManagedMySqlDatabasesResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Optional<String> filterByMySqlDatabaseTypeParam() {
+        return Optional.ofNullable(this.filterByMySqlDatabaseTypeParam);
     }
     public List<GetManagedMySqlDatabasesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -67,6 +72,7 @@ public final class GetManagedMySqlDatabasesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private @Nullable String filterByMySqlDatabaseTypeParam;
         private @Nullable List<GetManagedMySqlDatabasesFilter> filters;
         private String id;
         private List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections;
@@ -74,6 +80,7 @@ public final class GetManagedMySqlDatabasesResult {
         public Builder(GetManagedMySqlDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.filterByMySqlDatabaseTypeParam = defaults.filterByMySqlDatabaseTypeParam;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.managedMySqlDatabaseCollections = defaults.managedMySqlDatabaseCollections;
@@ -85,6 +92,12 @@ public final class GetManagedMySqlDatabasesResult {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder filterByMySqlDatabaseTypeParam(@Nullable String filterByMySqlDatabaseTypeParam) {
+
+            this.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             return this;
         }
         @CustomType.Setter
@@ -118,6 +131,7 @@ public final class GetManagedMySqlDatabasesResult {
         public GetManagedMySqlDatabasesResult build() {
             final var _resultValue = new GetManagedMySqlDatabasesResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.managedMySqlDatabaseCollections = managedMySqlDatabaseCollections;

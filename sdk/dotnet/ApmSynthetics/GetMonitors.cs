@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ApmSynthetics
     public static class GetMonitors
     {
         /// <summary>
-        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of monitors.
         /// 
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of monitors.
         /// 
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.ApmSynthetics
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitorsResult>("oci:ApmSynthetics/getMonitors:getMonitors", args ?? new GetMonitorsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+        /// This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
         /// Returns a list of monitors.
         /// 

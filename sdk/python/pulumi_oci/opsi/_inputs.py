@@ -1293,6 +1293,10 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
 
 if not MYPY:
     class NewsReportContentTypesArgsDict(TypedDict):
+        actionable_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Supported resources for actionable insights content type.
+        """
         capacity_planning_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
         """
         (Updatable) Supported resources for capacity planning content type.
@@ -1327,6 +1331,7 @@ elif False:
 @pulumi.input_type
 class NewsReportContentTypesArgs:
     def __init__(__self__, *,
+                 actionable_insights_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  capacity_planning_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sql_insights_fleet_analysis_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sql_insights_performance_degradation_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1335,6 +1340,7 @@ class NewsReportContentTypesArgs:
                  sql_insights_top_sql_by_insights_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sql_insights_top_sql_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] actionable_insights_resources: (Updatable) Supported resources for actionable insights content type.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_fleet_analysis_resources: (Updatable) Supported resources for SQL insights - fleet analysis content type.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_performance_degradation_resources: (Updatable) Supported resources for SQL insights - performance degradation content type.
@@ -1343,6 +1349,8 @@ class NewsReportContentTypesArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_top_sql_by_insights_resources: (Updatable) Supported resources for SQL insights - top SQL by insights content type.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sql_insights_top_sql_resources: (Updatable) Supported resources for SQL insights - top SQL content type.
         """
+        if actionable_insights_resources is not None:
+            pulumi.set(__self__, "actionable_insights_resources", actionable_insights_resources)
         if capacity_planning_resources is not None:
             pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
         if sql_insights_fleet_analysis_resources is not None:
@@ -1357,6 +1365,18 @@ class NewsReportContentTypesArgs:
             pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
         if sql_insights_top_sql_resources is not None:
             pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
+
+    @property
+    @pulumi.getter(name="actionableInsightsResources")
+    def actionable_insights_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Supported resources for actionable insights content type.
+        """
+        return pulumi.get(self, "actionable_insights_resources")
+
+    @actionable_insights_resources.setter
+    def actionable_insights_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "actionable_insights_resources", value)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")

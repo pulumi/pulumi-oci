@@ -109,6 +109,8 @@ __all__ = [
     'BackupDestinationAssociatedDatabaseArgsDict',
     'BackupDestinationMountTypeDetailsArgs',
     'BackupDestinationMountTypeDetailsArgsDict',
+    'BackupEncryptionKeyLocationDetailArgs',
+    'BackupEncryptionKeyLocationDetailArgsDict',
     'CloudAutonomousVmClusterMaintenanceWindowArgs',
     'CloudAutonomousVmClusterMaintenanceWindowArgsDict',
     'CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs',
@@ -163,8 +165,12 @@ __all__ = [
     'DatabaseDatabaseDbBackupConfigArgsDict',
     'DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs',
     'DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict',
+    'DatabaseDatabaseEncryptionKeyLocationDetailsArgs',
+    'DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict',
     'DatabaseDatabaseManagementConfigArgs',
     'DatabaseDatabaseManagementConfigArgsDict',
+    'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs',
+    'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict',
     'DatabaseDbBackupConfigArgs',
     'DatabaseDbBackupConfigArgsDict',
     'DatabaseDbBackupConfigBackupDestinationDetailArgs',
@@ -189,6 +195,8 @@ __all__ = [
     'DbHomeDatabaseDbBackupConfigArgsDict',
     'DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs',
     'DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict',
+    'DbHomeDatabaseEncryptionKeyLocationDetailsArgs',
+    'DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict',
     'DbSystemDataCollectionOptionsArgs',
     'DbSystemDataCollectionOptionsArgsDict',
     'DbSystemDbHomeArgs',
@@ -5346,6 +5354,58 @@ class BackupDestinationMountTypeDetailsArgs:
 
 
 if not MYPY:
+    class BackupEncryptionKeyLocationDetailArgsDict(TypedDict):
+        hsm_password: NotRequired[pulumi.Input[str]]
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        provider_type: NotRequired[pulumi.Input[str]]
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+elif False:
+    BackupEncryptionKeyLocationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BackupEncryptionKeyLocationDetailArgs:
+    def __init__(__self__, *,
+                 hsm_password: Optional[pulumi.Input[str]] = None,
+                 provider_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
+        :param pulumi.Input[str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
+        if provider_type is not None:
+            pulumi.set(__self__, "provider_type", provider_type)
+
+    @property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hsm_password", value)
+
+    @property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        return pulumi.get(self, "provider_type")
+
+    @provider_type.setter
+    def provider_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "provider_type", value)
+
+
+if not MYPY:
     class CloudAutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
         custom_action_timeout_in_mins: NotRequired[pulumi.Input[int]]
         """
@@ -7420,6 +7480,10 @@ if not MYPY:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
+        encryption_key_location_details: NotRequired[pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict']]
+        """
+        Types of providers supported for managing database encryption keys
+        """
         freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -7459,6 +7523,10 @@ if not MYPY:
         source_database_id: NotRequired[pulumi.Input[str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        """
+        source_encryption_key_location_details: NotRequired[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict']]
+        """
+        Types of providers supported for managing database encryption keys
         """
         source_tde_wallet_password: NotRequired[pulumi.Input[str]]
         """
@@ -7500,6 +7568,7 @@ class DatabaseDatabaseArgs:
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 encryption_key_location_details: Optional[pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -7510,6 +7579,7 @@ class DatabaseDatabaseArgs:
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  sid_prefix: Optional[pulumi.Input[str]] = None,
                  source_database_id: Optional[pulumi.Input[str]] = None,
+                 source_encryption_key_location_details: Optional[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs']] = None,
                  source_tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  transport_type: Optional[pulumi.Input[str]] = None,
@@ -7532,6 +7602,7 @@ class DatabaseDatabaseArgs:
                
                The database workload type.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -7542,6 +7613,7 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] source_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+        :param pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs'] source_encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[str] source_tde_wallet_password: The TDE wallet password of the source database specified by 'sourceDatabaseId'.
         :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -7576,6 +7648,8 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "db_workload", db_workload)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if encryption_key_location_details is not None:
+            pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_active_data_guard_enabled is not None:
@@ -7596,6 +7670,8 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "sid_prefix", sid_prefix)
         if source_database_id is not None:
             pulumi.set(__self__, "source_database_id", source_database_id)
+        if source_encryption_key_location_details is not None:
+            pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
         if source_tde_wallet_password is not None:
             pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         if tde_wallet_password is not None:
@@ -7744,6 +7820,18 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Optional[pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgs']]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, value: Optional[pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgs']]):
+        pulumi.set(self, "encryption_key_location_details", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -7862,6 +7950,18 @@ class DatabaseDatabaseArgs:
     @source_database_id.setter
     def source_database_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_database_id", value)
+
+    @property
+    @pulumi.getter(name="sourceEncryptionKeyLocationDetails")
+    def source_encryption_key_location_details(self) -> Optional[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs']]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "source_encryption_key_location_details")
+
+    @source_encryption_key_location_details.setter
+    def source_encryption_key_location_details(self, value: Optional[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs']]):
+        pulumi.set(self, "source_encryption_key_location_details", value)
 
     @property
     @pulumi.getter(name="sourceTdeWalletPassword")
@@ -8177,6 +8277,56 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
 
 
 if not MYPY:
+    class DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
+        hsm_password: pulumi.Input[str]
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        provider_type: pulumi.Input[str]
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+elif False:
+    DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDatabaseEncryptionKeyLocationDetailsArgs:
+    def __init__(__self__, *,
+                 hsm_password: pulumi.Input[str],
+                 provider_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
+        :param pulumi.Input[str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        pulumi.set(__self__, "hsm_password", hsm_password)
+        pulumi.set(__self__, "provider_type", provider_type)
+
+    @property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> pulumi.Input[str]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hsm_password", value)
+
+    @property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> pulumi.Input[str]:
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        return pulumi.get(self, "provider_type")
+
+    @provider_type.setter
+    def provider_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "provider_type", value)
+
+
+if not MYPY:
     class DatabaseDatabaseManagementConfigArgsDict(TypedDict):
         management_status: NotRequired[pulumi.Input[str]]
         """
@@ -8226,6 +8376,56 @@ class DatabaseDatabaseManagementConfigArgs:
     @management_type.setter
     def management_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "management_type", value)
+
+
+if not MYPY:
+    class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict(TypedDict):
+        hsm_password: pulumi.Input[str]
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        provider_type: pulumi.Input[str]
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+elif False:
+    DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs:
+    def __init__(__self__, *,
+                 hsm_password: pulumi.Input[str],
+                 provider_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
+        :param pulumi.Input[str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        pulumi.set(__self__, "hsm_password", hsm_password)
+        pulumi.set(__self__, "provider_type", provider_type)
+
+    @property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> pulumi.Input[str]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hsm_password", value)
+
+    @property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> pulumi.Input[str]:
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        return pulumi.get(self, "provider_type")
+
+    @provider_type.setter
+    def provider_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "provider_type", value)
 
 
 if not MYPY:
@@ -9278,6 +9478,10 @@ if not MYPY:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
+        encryption_key_location_details: NotRequired[pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict']]
+        """
+        Types of providers supported for managing database encryption keys
+        """
         freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -9360,6 +9564,7 @@ class DbHomeDatabaseArgs:
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 encryption_key_location_details: Optional[pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -9391,6 +9596,7 @@ class DbHomeDatabaseArgs:
                
                The database workload type.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
@@ -9431,6 +9637,8 @@ class DbHomeDatabaseArgs:
             pulumi.set(__self__, "db_workload", db_workload)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if encryption_key_location_details is not None:
+            pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
@@ -9605,6 +9813,18 @@ class DbHomeDatabaseArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Optional[pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgs']]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, value: Optional[pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgs']]):
+        pulumi.set(self, "encryption_key_location_details", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -10090,6 +10310,56 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
+        hsm_password: pulumi.Input[str]
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        provider_type: pulumi.Input[str]
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+elif False:
+    DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbHomeDatabaseEncryptionKeyLocationDetailsArgs:
+    def __init__(__self__, *,
+                 hsm_password: pulumi.Input[str],
+                 provider_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
+        :param pulumi.Input[str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        pulumi.set(__self__, "hsm_password", hsm_password)
+        pulumi.set(__self__, "provider_type", provider_type)
+
+    @property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> pulumi.Input[str]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hsm_password", value)
+
+    @property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> pulumi.Input[str]:
+        """
+        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        """
+        return pulumi.get(self, "provider_type")
+
+    @provider_type.setter
+    def provider_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "provider_type", value)
 
 
 if not MYPY:

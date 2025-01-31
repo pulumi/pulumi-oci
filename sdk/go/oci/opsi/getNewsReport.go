@@ -78,6 +78,8 @@ type LookupNewsReportResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Language of the news report.
 	Locale string `pulumi:"locale"`
+	// Match rule used for tag filters.
+	MatchRule string `pulumi:"matchRule"`
 	// The news report name.
 	Name string `pulumi:"name"`
 	// News report frequency.
@@ -91,6 +93,8 @@ type LookupNewsReportResult struct {
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+	TagFilters []string `pulumi:"tagFilters"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -181,6 +185,11 @@ func (o LookupNewsReportResultOutput) Locale() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Locale }).(pulumi.StringOutput)
 }
 
+// Match rule used for tag filters.
+func (o LookupNewsReportResultOutput) MatchRule() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) string { return v.MatchRule }).(pulumi.StringOutput)
+}
+
 // The news report name.
 func (o LookupNewsReportResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Name }).(pulumi.StringOutput)
@@ -213,6 +222,11 @@ func (o LookupNewsReportResultOutput) Status() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupNewsReportResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+func (o LookupNewsReportResultOutput) TagFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) []string { return v.TagFilters }).(pulumi.StringArrayOutput)
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.

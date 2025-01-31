@@ -17,6 +17,21 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
     public static final NewsReportContentTypesArgs Empty = new NewsReportContentTypesArgs();
 
     /**
+     * (Updatable) Supported resources for actionable insights content type.
+     * 
+     */
+    @Import(name="actionableInsightsResources")
+    private @Nullable Output<List<String>> actionableInsightsResources;
+
+    /**
+     * @return (Updatable) Supported resources for actionable insights content type.
+     * 
+     */
+    public Optional<Output<List<String>>> actionableInsightsResources() {
+        return Optional.ofNullable(this.actionableInsightsResources);
+    }
+
+    /**
      * (Updatable) Supported resources for capacity planning content type.
      * 
      */
@@ -124,6 +139,7 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
     private NewsReportContentTypesArgs() {}
 
     private NewsReportContentTypesArgs(NewsReportContentTypesArgs $) {
+        this.actionableInsightsResources = $.actionableInsightsResources;
         this.capacityPlanningResources = $.capacityPlanningResources;
         this.sqlInsightsFleetAnalysisResources = $.sqlInsightsFleetAnalysisResources;
         this.sqlInsightsPerformanceDegradationResources = $.sqlInsightsPerformanceDegradationResources;
@@ -149,6 +165,37 @@ public final class NewsReportContentTypesArgs extends com.pulumi.resources.Resou
 
         public Builder(NewsReportContentTypesArgs defaults) {
             $ = new NewsReportContentTypesArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param actionableInsightsResources (Updatable) Supported resources for actionable insights content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionableInsightsResources(@Nullable Output<List<String>> actionableInsightsResources) {
+            $.actionableInsightsResources = actionableInsightsResources;
+            return this;
+        }
+
+        /**
+         * @param actionableInsightsResources (Updatable) Supported resources for actionable insights content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionableInsightsResources(List<String> actionableInsightsResources) {
+            return actionableInsightsResources(Output.of(actionableInsightsResources));
+        }
+
+        /**
+         * @param actionableInsightsResources (Updatable) Supported resources for actionable insights content type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionableInsightsResources(String... actionableInsightsResources) {
+            return actionableInsightsResources(List.of(actionableInsightsResources));
         }
 
         /**

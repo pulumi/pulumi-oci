@@ -25203,6 +25203,17 @@ export namespace Database {
         nfsServers?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface BackupEncryptionKeyLocationDetail {
+        /**
+         * Provide the HSM password as you would in RDBMS for External HSM.
+         */
+        hsmPassword?: pulumi.Input<string>;
+        /**
+         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         */
+        providerType?: pulumi.Input<string>;
+    }
+
     export interface CloudAutonomousVmClusterMaintenanceWindow {
         /**
          * Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -25678,6 +25689,10 @@ export namespace Database {
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
+         * Types of providers supported for managing database encryption keys
+         */
+        encryptionKeyLocationDetails?: pulumi.Input<inputs.Database.DatabaseDatabaseEncryptionKeyLocationDetails>;
+        /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -25717,6 +25732,10 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
          */
         sourceDatabaseId?: pulumi.Input<string>;
+        /**
+         * Types of providers supported for managing database encryption keys
+         */
+        sourceEncryptionKeyLocationDetails?: pulumi.Input<inputs.Database.DatabaseDatabaseSourceEncryptionKeyLocationDetails>;
         /**
          * The TDE wallet password of the source database specified by 'sourceDatabaseId'.
          */
@@ -25793,6 +25812,17 @@ export namespace Database {
         vpcUser?: pulumi.Input<string>;
     }
 
+    export interface DatabaseDatabaseEncryptionKeyLocationDetails {
+        /**
+         * Provide the HSM password as you would in RDBMS for External HSM.
+         */
+        hsmPassword: pulumi.Input<string>;
+        /**
+         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         */
+        providerType: pulumi.Input<string>;
+    }
+
     export interface DatabaseDatabaseManagementConfig {
         /**
          * The status of the Database Management service.
@@ -25802,6 +25832,17 @@ export namespace Database {
          * The Database Management type.
          */
         managementType?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseDatabaseSourceEncryptionKeyLocationDetails {
+        /**
+         * Provide the HSM password as you would in RDBMS for External HSM.
+         */
+        hsmPassword: pulumi.Input<string>;
+        /**
+         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         */
+        providerType: pulumi.Input<string>;
     }
 
     export interface DatabaseDbBackupConfig {
@@ -26060,6 +26101,10 @@ export namespace Database {
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
+         * Types of providers supported for managing database encryption keys
+         */
+        encryptionKeyLocationDetails?: pulumi.Input<inputs.Database.DbHomeDatabaseEncryptionKeyLocationDetails>;
+        /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -26179,6 +26224,17 @@ export namespace Database {
          * Type of the database backup destination. Supported values: `NFS`.
          */
         type?: pulumi.Input<string>;
+    }
+
+    export interface DbHomeDatabaseEncryptionKeyLocationDetails {
+        /**
+         * Provide the HSM password as you would in RDBMS for External HSM.
+         */
+        hsmPassword: pulumi.Input<string>;
+        /**
+         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         */
+        providerType: pulumi.Input<string>;
     }
 
     export interface DbSystemDataCollectionOptions {
@@ -30347,6 +30403,41 @@ export namespace DatabaseManagement {
         isManaged?: pulumi.Input<boolean>;
     }
 
+    export interface ExternalMySqlDatabaseConnectorConnectorDetails {
+        /**
+         * (Updatable) Type of the credential.
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * (Updatable) External MySQL Database Connector Name.
+         */
+        displayName: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of MySQL Database resource.
+         */
+        externalDatabaseId: pulumi.Input<string>;
+        /**
+         * (Updatable) Host name for Connector.
+         */
+        hostName: pulumi.Input<string>;
+        /**
+         * (Updatable) Agent Id of the MACS agent.
+         */
+        macsAgentId: pulumi.Input<string>;
+        /**
+         * (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+         */
+        networkProtocol: pulumi.Input<string>;
+        /**
+         * (Updatable) Port number to connect to External MySQL Database.
+         */
+        port: pulumi.Input<number>;
+        /**
+         * (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+         */
+        sslSecretId: pulumi.Input<string>;
+    }
+
     export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails {
         /**
          * The connector details required to connect to an Oracle cloud database.
@@ -30710,6 +30801,42 @@ export namespace DatabaseManagement {
     }
 
     export interface GetExternalListenersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExternalMySqlDatabaseConnectorsFilter {
+        /**
+         * The parameter to filter by MySQL Database System type.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExternalMySqlDatabaseConnectorsFilterArgs {
+        /**
+         * The parameter to filter by MySQL Database System type.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExternalMySqlDatabasesFilter {
+        /**
+         * The parameter to filter by MySQL Database System type.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExternalMySqlDatabasesFilterArgs {
+        /**
+         * The parameter to filter by MySQL Database System type.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -34706,6 +34833,14 @@ export namespace DisasterRecovery {
          */
         backendSetMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBackendSetMapping>[]>;
         /**
+         * (Updatable) Create backup configuration properties for an OKE member.
+         */
+        backupConfig?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBackupConfig>;
+        /**
+         * (Updatable) The details for creating the backup location of an OKE Cluster.
+         */
+        backupLocation?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBackupLocation>;
+        /**
          * (Updatable) A list of operations performed on block volumes used by the compute instance.
          */
         blockVolumeOperations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperation>[]>;
@@ -34762,6 +34897,18 @@ export namespace DisasterRecovery {
          */
         isStartStopEnabled?: pulumi.Input<boolean>;
         /**
+         * (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+         */
+        jumpHostId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         */
+        loadBalancerMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberLoadBalancerMapping>[]>;
+        /**
+         * (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         */
+        managedNodePoolConfigs?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberManagedNodePoolConfig>[]>;
+        /**
          * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
          */
         memberId: pulumi.Input<string>;
@@ -34774,9 +34921,25 @@ export namespace DisasterRecovery {
          */
         namespace?: pulumi.Input<string>;
         /**
+         * (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         */
+        networkLoadBalancerMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberNetworkLoadBalancerMapping>[]>;
+        /**
          * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          */
         passwordVaultSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+         */
+        peerClusterId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         */
+        vaultMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberVaultMapping>[]>;
+        /**
+         * (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         */
+        virtualNodePoolConfigs?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberVirtualNodePoolConfig>[]>;
         /**
          * (Updatable) A list of compute instance VNIC mappings.
          */
@@ -34800,6 +34963,58 @@ export namespace DisasterRecovery {
          * (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
          */
         sourceBackendSetName?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberBackupConfig {
+        /**
+         * (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+         *
+         * The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+         * * Minimum = 1
+         * * Maximum = 24 DAILY
+         * * Minimum = 1
+         * * Maximum = 30 WEEKLY
+         * * Minimum = 1
+         * * Maximum = 1 MONTHLY
+         * * Minimum = 1
+         * * Maximum = 12
+         *
+         * Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+         *
+         * FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+         */
+        backupSchedule?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+         */
+        imageReplicationVaultSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+         */
+        maxNumberOfBackupsRetained?: pulumi.Input<number>;
+        /**
+         * (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+         */
+        namespaces?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+         */
+        replicateImages?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberBackupLocation {
+        /**
+         * (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+         */
+        object?: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupMemberBlockVolumeOperation {
@@ -34877,6 +35092,69 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
          */
         mountTargetId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberLoadBalancerMapping {
+        /**
+         * (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+         */
+        destinationLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+         */
+        sourceLoadBalancerId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberManagedNodePoolConfig {
+        /**
+         * (Updatable) The OCID of the managed node pool in OKE cluster.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+         */
+        maximum?: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+         */
+        minimum?: pulumi.Input<number>;
+    }
+
+    export interface DrProtectionGroupMemberNetworkLoadBalancerMapping {
+        /**
+         * (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+         */
+        destinationNetworkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+         */
+        sourceNetworkLoadBalancerId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberVaultMapping {
+        /**
+         * (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+         */
+        destinationVaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+         */
+        sourceVaultId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberVirtualNodePoolConfig {
+        /**
+         * (Updatable) The OCID of the virtual node pool in OKE cluster.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+         */
+        maximum?: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+         */
+        minimum?: pulumi.Input<number>;
     }
 
     export interface DrProtectionGroupMemberVnicMapping {
@@ -76413,6 +76691,10 @@ export namespace Opsi {
     }
 
     export interface NewsReportContentTypes {
+        /**
+         * (Updatable) Supported resources for actionable insights content type.
+         */
+        actionableInsightsResources?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Supported resources for capacity planning content type.
          */

@@ -74,6 +74,7 @@ __all__ = [
     'ExternalListenerEndpoint',
     'ExternalListenerServicedAsm',
     'ExternalListenerServicedDatabase',
+    'ExternalMySqlDatabaseConnectorConnectorDetails',
     'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails',
     'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails',
     'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails',
@@ -264,6 +265,14 @@ __all__ = [
     'GetExternalListenersExternalListenerCollectionItemServicedAsmResult',
     'GetExternalListenersExternalListenerCollectionItemServicedDatabaseResult',
     'GetExternalListenersFilterResult',
+    'GetExternalMySqlDatabaseConnectorConnectorDetailResult',
+    'GetExternalMySqlDatabaseConnectorsFilterResult',
+    'GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionResult',
+    'GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemResult',
+    'GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemConnectorDetailResult',
+    'GetExternalMySqlDatabasesExternalMySqlDatabaseCollectionResult',
+    'GetExternalMySqlDatabasesExternalMySqlDatabaseCollectionItemResult',
+    'GetExternalMySqlDatabasesFilterResult',
     'GetJobExecutionsStatusItemResult',
     'GetJobExecutionsStatusesFilterResult',
     'GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionResult',
@@ -6508,6 +6517,130 @@ class ExternalListenerServicedDatabase(dict):
         Indicates whether the database is a Managed Database or not.
         """
         return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
+class ExternalMySqlDatabaseConnectorConnectorDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialType":
+            suggest = "credential_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "externalDatabaseId":
+            suggest = "external_database_id"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "macsAgentId":
+            suggest = "macs_agent_id"
+        elif key == "networkProtocol":
+            suggest = "network_protocol"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalMySqlDatabaseConnectorConnectorDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalMySqlDatabaseConnectorConnectorDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalMySqlDatabaseConnectorConnectorDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_type: str,
+                 display_name: str,
+                 external_database_id: str,
+                 host_name: str,
+                 macs_agent_id: str,
+                 network_protocol: str,
+                 port: int,
+                 ssl_secret_id: str):
+        """
+        :param str credential_type: (Updatable) Type of the credential.
+        :param str display_name: (Updatable) External MySQL Database Connector Name.
+        :param str external_database_id: (Updatable) OCID of MySQL Database resource.
+        :param str host_name: (Updatable) Host name for Connector.
+        :param str macs_agent_id: (Updatable) Agent Id of the MACS agent.
+        :param str network_protocol: (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+        :param int port: (Updatable) Port number to connect to External MySQL Database.
+        :param str ssl_secret_id: (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_database_id", external_database_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "macs_agent_id", macs_agent_id)
+        pulumi.set(__self__, "network_protocol", network_protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        (Updatable) Type of the credential.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        (Updatable) External MySQL Database Connector Name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> str:
+        """
+        (Updatable) OCID of MySQL Database resource.
+        """
+        return pulumi.get(self, "external_database_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        (Updatable) Host name for Connector.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="macsAgentId")
+    def macs_agent_id(self) -> str:
+        """
+        (Updatable) Agent Id of the MACS agent.
+        """
+        return pulumi.get(self, "macs_agent_id")
+
+    @property
+    @pulumi.getter(name="networkProtocol")
+    def network_protocol(self) -> str:
+        """
+        (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+        """
+        return pulumi.get(self, "network_protocol")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        (Updatable) Port number to connect to External MySQL Database.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+        """
+        return pulumi.get(self, "ssl_secret_id")
 
 
 @pulumi.output_type
@@ -20753,6 +20886,566 @@ class GetExternalListenersFilterResult(dict):
 
 
 @pulumi.output_type
+class GetExternalMySqlDatabaseConnectorConnectorDetailResult(dict):
+    def __init__(__self__, *,
+                 credential_type: str,
+                 display_name: str,
+                 external_database_id: str,
+                 host_name: str,
+                 macs_agent_id: str,
+                 network_protocol: str,
+                 port: int,
+                 ssl_secret_id: str):
+        """
+        :param str credential_type: Credential type used to connect to database.
+        :param str external_database_id: OCID of MySQL Database resource
+        :param str host_name: Host name for Connector.
+        :param str macs_agent_id: Agent Id of the MACS agent.
+        :param str network_protocol: Network Protocol.
+        :param int port: Connector port.
+        :param str ssl_secret_id: OCID of the SSL secret, if TCPS with SSL is used to connect to database.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_database_id", external_database_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "macs_agent_id", macs_agent_id)
+        pulumi.set(__self__, "network_protocol", network_protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        Credential type used to connect to database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> str:
+        """
+        OCID of MySQL Database resource
+        """
+        return pulumi.get(self, "external_database_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        Host name for Connector.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="macsAgentId")
+    def macs_agent_id(self) -> str:
+        """
+        Agent Id of the MACS agent.
+        """
+        return pulumi.get(self, "macs_agent_id")
+
+    @property
+    @pulumi.getter(name="networkProtocol")
+    def network_protocol(self) -> str:
+        """
+        Network Protocol.
+        """
+        return pulumi.get(self, "network_protocol")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        Connector port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        OCID of the SSL secret, if TCPS with SSL is used to connect to database.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabaseConnectorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The parameter to filter by MySQL Database System type.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The parameter to filter by MySQL Database System type.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 associated_services: str,
+                 check_connection_status_trigger: int,
+                 compartment_id: str,
+                 connection_status: str,
+                 connector_details: Sequence['outputs.GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemConnectorDetailResult'],
+                 connector_type: str,
+                 credential_type: str,
+                 external_database_id: str,
+                 host_name: str,
+                 id: str,
+                 is_test_connection_param: bool,
+                 macs_agent_id: str,
+                 name: str,
+                 network_protocol: str,
+                 port: int,
+                 source_database: str,
+                 source_database_type: str,
+                 ssl_secret_id: str,
+                 ssl_secret_name: str,
+                 state: str,
+                 time_connection_status_updated: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str associated_services: Oracle Cloud Infrastructure Services associated with this connector.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str connection_status: Connection Status
+        :param str connector_type: Connector Type.
+        :param str credential_type: Credential type used to connect to database.
+        :param str external_database_id: OCID of MySQL Database resource
+        :param str host_name: Host name for Connector.
+        :param str id: OCID of MySQL Database Connector.
+        :param str macs_agent_id: Agent Id of the MACS agent.
+        :param str name: The parameter to filter by MySQL Database System type.
+        :param str network_protocol: Network Protocol.
+        :param int port: Connector port.
+        :param str source_database: Name of MySQL Database.
+        :param str source_database_type: Type of MySQL Database.
+        :param str ssl_secret_id: OCID of the SSL secret, if TCPS with SSL is used to connect to database.
+        :param str ssl_secret_name: Name of the SSL secret, if TCPS with SSL is used to connect to database.
+        :param str state: Indicates lifecycle  state of the resource.
+        :param str time_connection_status_updated: Time when connection status was last updated.
+        :param str time_created: Connector creation time.
+        :param str time_updated: Connector update time.
+        """
+        pulumi.set(__self__, "associated_services", associated_services)
+        pulumi.set(__self__, "check_connection_status_trigger", check_connection_status_trigger)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_details", connector_details)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "external_database_id", external_database_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_test_connection_param", is_test_connection_param)
+        pulumi.set(__self__, "macs_agent_id", macs_agent_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_protocol", network_protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "source_database", source_database)
+        pulumi.set(__self__, "source_database_type", source_database_type)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "ssl_secret_name", ssl_secret_name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_connection_status_updated", time_connection_status_updated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="associatedServices")
+    def associated_services(self) -> str:
+        """
+        Oracle Cloud Infrastructure Services associated with this connector.
+        """
+        return pulumi.get(self, "associated_services")
+
+    @property
+    @pulumi.getter(name="checkConnectionStatusTrigger")
+    def check_connection_status_trigger(self) -> int:
+        return pulumi.get(self, "check_connection_status_trigger")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> str:
+        """
+        Connection Status
+        """
+        return pulumi.get(self, "connection_status")
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Sequence['outputs.GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemConnectorDetailResult']:
+        return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> str:
+        """
+        Connector Type.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        Credential type used to connect to database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> str:
+        """
+        OCID of MySQL Database resource
+        """
+        return pulumi.get(self, "external_database_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        Host name for Connector.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        OCID of MySQL Database Connector.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isTestConnectionParam")
+    def is_test_connection_param(self) -> bool:
+        return pulumi.get(self, "is_test_connection_param")
+
+    @property
+    @pulumi.getter(name="macsAgentId")
+    def macs_agent_id(self) -> str:
+        """
+        Agent Id of the MACS agent.
+        """
+        return pulumi.get(self, "macs_agent_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The parameter to filter by MySQL Database System type.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="networkProtocol")
+    def network_protocol(self) -> str:
+        """
+        Network Protocol.
+        """
+        return pulumi.get(self, "network_protocol")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        Connector port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="sourceDatabase")
+    def source_database(self) -> str:
+        """
+        Name of MySQL Database.
+        """
+        return pulumi.get(self, "source_database")
+
+    @property
+    @pulumi.getter(name="sourceDatabaseType")
+    def source_database_type(self) -> str:
+        """
+        Type of MySQL Database.
+        """
+        return pulumi.get(self, "source_database_type")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        OCID of the SSL secret, if TCPS with SSL is used to connect to database.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @property
+    @pulumi.getter(name="sslSecretName")
+    def ssl_secret_name(self) -> str:
+        """
+        Name of the SSL secret, if TCPS with SSL is used to connect to database.
+        """
+        return pulumi.get(self, "ssl_secret_name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Indicates lifecycle  state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeConnectionStatusUpdated")
+    def time_connection_status_updated(self) -> str:
+        """
+        Time when connection status was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_updated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Connector creation time.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        Connector update time.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabaseConnectorsMySqlConnectorCollectionItemConnectorDetailResult(dict):
+    def __init__(__self__, *,
+                 credential_type: str,
+                 display_name: str,
+                 external_database_id: str,
+                 host_name: str,
+                 macs_agent_id: str,
+                 network_protocol: str,
+                 port: int,
+                 ssl_secret_id: str):
+        """
+        :param str credential_type: Credential type used to connect to database.
+        :param str external_database_id: OCID of MySQL Database resource
+        :param str host_name: Host name for Connector.
+        :param str macs_agent_id: Agent Id of the MACS agent.
+        :param str network_protocol: Network Protocol.
+        :param int port: Connector port.
+        :param str ssl_secret_id: OCID of the SSL secret, if TCPS with SSL is used to connect to database.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_database_id", external_database_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "macs_agent_id", macs_agent_id)
+        pulumi.set(__self__, "network_protocol", network_protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        """
+        Credential type used to connect to database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> str:
+        """
+        OCID of MySQL Database resource
+        """
+        return pulumi.get(self, "external_database_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        Host name for Connector.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="macsAgentId")
+    def macs_agent_id(self) -> str:
+        """
+        Agent Id of the MACS agent.
+        """
+        return pulumi.get(self, "macs_agent_id")
+
+    @property
+    @pulumi.getter(name="networkProtocol")
+    def network_protocol(self) -> str:
+        """
+        Network Protocol.
+        """
+        return pulumi.get(self, "network_protocol")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        Connector port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        OCID of the SSL secret, if TCPS with SSL is used to connect to database.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabasesExternalMySqlDatabaseCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetExternalMySqlDatabasesExternalMySqlDatabaseCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetExternalMySqlDatabasesExternalMySqlDatabaseCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabasesExternalMySqlDatabaseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_name: str,
+                 external_database_id: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str db_name: Display Name of the External MySQL Database.
+        :param str external_database_id: OCID of External MySQL Database.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "external_database_id", external_database_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> str:
+        """
+        Display Name of the External MySQL Database.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> str:
+        """
+        OCID of External MySQL Database.
+        """
+        return pulumi.get(self, "external_database_id")
+
+
+@pulumi.output_type
+class GetExternalMySqlDatabasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The parameter to filter by MySQL Database System type.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The parameter to filter by MySQL Database System type.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetJobExecutionsStatusItemResult(dict):
     def __init__(__self__, *,
                  count: int,
@@ -29611,12 +30304,15 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
                  heat_wave_offloaded: float,
                  heat_wave_out_of_memory: float,
                  last_seen: str,
+                 max_controlled_memory: str,
                  max_timer_wait: float,
+                 max_total_memory: str,
                  min_timer_wait: float,
                  quantile95: float,
                  quantile99: float,
                  quantile999: float,
                  schema_name: str,
+                 sum_cpu_time: str,
                  sum_created_temp_disk_tables: float,
                  sum_created_temp_tables: float,
                  sum_errors: float,
@@ -29646,12 +30342,15 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
         :param float heat_wave_offloaded: The number of query executions offloaded to HeatWave.
         :param float heat_wave_out_of_memory: The number of query executions with HeatWave out-of-memory errors.
         :param str last_seen: The date and time the query was last seen.
+        :param str max_controlled_memory: The maximum amount of controlled memory used by a statement during execution.
         :param float max_timer_wait: The slowest the query has been executed.
+        :param str max_total_memory: The maximum amount of memory used by a statement during execution.
         :param float min_timer_wait: The fastest the query has been executed.
         :param float quantile95: The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
         :param float quantile99: The 99th percentile of the query latency.
         :param float quantile999: The 99.9th percentile of the query latency.
         :param str schema_name: The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
+        :param str sum_cpu_time: The total amount of time spent on CPU for this statement.
         :param float sum_created_temp_disk_tables: The total number of On-Disk internal temporary tables that have been created by the query.
         :param float sum_created_temp_tables: The total number of internal temporary tables (in memory or on disk), which have been created by the query.
         :param float sum_errors: The total number of errors that have been encountered executing the query.
@@ -29681,12 +30380,15 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
         pulumi.set(__self__, "heat_wave_offloaded", heat_wave_offloaded)
         pulumi.set(__self__, "heat_wave_out_of_memory", heat_wave_out_of_memory)
         pulumi.set(__self__, "last_seen", last_seen)
+        pulumi.set(__self__, "max_controlled_memory", max_controlled_memory)
         pulumi.set(__self__, "max_timer_wait", max_timer_wait)
+        pulumi.set(__self__, "max_total_memory", max_total_memory)
         pulumi.set(__self__, "min_timer_wait", min_timer_wait)
         pulumi.set(__self__, "quantile95", quantile95)
         pulumi.set(__self__, "quantile99", quantile99)
         pulumi.set(__self__, "quantile999", quantile999)
         pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sum_cpu_time", sum_cpu_time)
         pulumi.set(__self__, "sum_created_temp_disk_tables", sum_created_temp_disk_tables)
         pulumi.set(__self__, "sum_created_temp_tables", sum_created_temp_tables)
         pulumi.set(__self__, "sum_errors", sum_errors)
@@ -29773,12 +30475,28 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
         return pulumi.get(self, "last_seen")
 
     @property
+    @pulumi.getter(name="maxControlledMemory")
+    def max_controlled_memory(self) -> str:
+        """
+        The maximum amount of controlled memory used by a statement during execution.
+        """
+        return pulumi.get(self, "max_controlled_memory")
+
+    @property
     @pulumi.getter(name="maxTimerWait")
     def max_timer_wait(self) -> float:
         """
         The slowest the query has been executed.
         """
         return pulumi.get(self, "max_timer_wait")
+
+    @property
+    @pulumi.getter(name="maxTotalMemory")
+    def max_total_memory(self) -> str:
+        """
+        The maximum amount of memory used by a statement during execution.
+        """
+        return pulumi.get(self, "max_total_memory")
 
     @property
     @pulumi.getter(name="minTimerWait")
@@ -29819,6 +30537,14 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
         The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
         """
         return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sumCpuTime")
+    def sum_cpu_time(self) -> str:
+        """
+        The total amount of time spent on CPU for this statement.
+        """
+        return pulumi.get(self, "sum_cpu_time")
 
     @property
     @pulumi.getter(name="sumCreatedTempDiskTables")
@@ -30030,6 +30756,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult(dict):
 class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 database_type: str,
                  db_name: str,
                  db_version: str,
                  heat_wave_cluster_display_name: str,
@@ -30040,11 +30767,15 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
                  is_heat_wave_active: bool,
                  is_heat_wave_enabled: bool,
                  is_lakehouse_enabled: bool,
+                 management_state: str,
                  name: str,
+                 state: str,
                  time_created: str,
-                 time_created_heat_wave: str):
+                 time_created_heat_wave: str,
+                 time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str database_type: The type of the MySQL Database. Indicates whether the database is external or MDS.
         :param str db_name: The name of the MySQL Database.
         :param str db_version: The version of the MySQL Database.
         :param str heat_wave_cluster_display_name: The name of the HeatWave cluster.
@@ -30055,11 +30786,14 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         :param bool is_heat_wave_active: If the HeatWave cluster is active or not.
         :param bool is_heat_wave_enabled: If HeatWave is enabled for this db system or not.
         :param bool is_lakehouse_enabled: If HeatWave Lakehouse is enabled for the db system or not.
+        :param str management_state: Indicates database management status.
         :param str name: The name of the Managed MySQL Database.
         :param str time_created: The date and time the node was created.
         :param str time_created_heat_wave: The date and time the Managed MySQL Database was created.
+        :param str time_updated: The date and time the Managed MySQL Database was updated.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_type", database_type)
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "heat_wave_cluster_display_name", heat_wave_cluster_display_name)
@@ -30070,9 +30804,12 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         pulumi.set(__self__, "is_heat_wave_active", is_heat_wave_active)
         pulumi.set(__self__, "is_heat_wave_enabled", is_heat_wave_enabled)
         pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
+        pulumi.set(__self__, "management_state", management_state)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_created_heat_wave", time_created_heat_wave)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -30081,6 +30818,14 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        The type of the MySQL Database. Indicates whether the database is external or MDS.
+        """
+        return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="dbName")
@@ -30163,12 +30908,25 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
+    @pulumi.getter(name="managementState")
+    def management_state(self) -> str:
+        """
+        Indicates database management status.
+        """
+        return pulumi.get(self, "management_state")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
         The name of the Managed MySQL Database.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -30185,6 +30943,14 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         The date and time the Managed MySQL Database was created.
         """
         return pulumi.get(self, "time_created_heat_wave")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the Managed MySQL Database was updated.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

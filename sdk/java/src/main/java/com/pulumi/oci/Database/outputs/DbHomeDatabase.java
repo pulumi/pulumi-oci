@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.DbHomeDatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.DbHomeDatabaseEncryptionKeyLocationDetails;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -72,6 +73,11 @@ public final class DbHomeDatabase {
      * 
      */
     private @Nullable Map<String,String> definedTags;
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private @Nullable DbHomeDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -235,6 +241,13 @@ public final class DbHomeDatabase {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<DbHomeDatabaseEncryptionKeyLocationDetails> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
+    }
+    /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -368,6 +381,7 @@ public final class DbHomeDatabase {
         private @Nullable String dbUniqueName;
         private @Nullable String dbWorkload;
         private @Nullable Map<String,String> definedTags;
+        private @Nullable DbHomeDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
         private @Nullable String keyStoreId;
@@ -399,6 +413,7 @@ public final class DbHomeDatabase {
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.keyStoreId = defaults.keyStoreId;
@@ -492,6 +507,12 @@ public final class DbHomeDatabase {
         public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(@Nullable DbHomeDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             return this;
         }
         @CustomType.Setter
@@ -610,6 +631,7 @@ public final class DbHomeDatabase {
             _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.dbWorkload = dbWorkload;
             _resultValue.definedTags = definedTags;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.keyStoreId = keyStoreId;

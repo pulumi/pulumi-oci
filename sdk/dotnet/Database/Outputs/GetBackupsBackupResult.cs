@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBackupsBackupEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         /// </summary>
         public readonly string Id;
@@ -104,6 +108,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetBackupsBackupEncryptionKeyLocationDetailResult> encryptionKeyLocationDetails,
+
             string id,
 
             string keyStoreId,
@@ -136,6 +142,7 @@ namespace Pulumi.Oci.Database.Outputs
             DatabaseId = databaseId;
             DatabaseSizeInGbs = databaseSizeInGbs;
             DisplayName = displayName;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             Id = id;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;

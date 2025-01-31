@@ -139,7 +139,7 @@ def get_result(apm_domain_id: Optional[str] = None,
                vantage_point: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResultResult:
     """
-    This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
 
@@ -192,7 +192,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       vantage_point: Optional[pulumi.Input[str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResultResult]:
     """
-    This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
 

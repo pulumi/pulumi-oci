@@ -33,6 +33,7 @@ import (
 //			_, err := opsi.NewNewsReport(ctx, "test_news_report", &opsi.NewsReportArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ContentTypes: &opsi.NewsReportContentTypesArgs{
+//					ActionableInsightsResources:                pulumi.Any(newsReportContentTypesActionableInsightsResources),
 //					CapacityPlanningResources:                  pulumi.Any(newsReportContentTypesCapacityPlanningResources),
 //					SqlInsightsFleetAnalysisResources:          pulumi.Any(newsReportContentTypesSqlInsightsFleetAnalysisResources),
 //					SqlInsightsPerformanceDegradationResources: pulumi.Any(newsReportContentTypesSqlInsightsPerformanceDegradationResources),
@@ -54,7 +55,9 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				Status: pulumi.Any(newsReportStatus),
+//				MatchRule:  pulumi.Any(newsReportMatchRule),
+//				Status:     pulumi.Any(newsReportStatus),
+//				TagFilters: pulumi.Any(newsReportTagFilters),
 //			})
 //			if err != nil {
 //				return err
@@ -93,6 +96,8 @@ type NewsReport struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringOutput `pulumi:"locale"`
+	// (Updatable) Match rule used for tag filters.
+	MatchRule pulumi.StringOutput `pulumi:"matchRule"`
 	// (Updatable) The news report name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) News report frequency.
@@ -102,12 +107,14 @@ type NewsReport struct {
 	// The current state of the news report.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Defines if the news report will be enabled or disabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TagFilters pulumi.StringArrayOutput `pulumi:"tagFilters"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -180,6 +187,8 @@ type newsReportState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
 	Locale *string `pulumi:"locale"`
+	// (Updatable) Match rule used for tag filters.
+	MatchRule *string `pulumi:"matchRule"`
 	// (Updatable) The news report name.
 	Name *string `pulumi:"name"`
 	// (Updatable) News report frequency.
@@ -189,12 +198,14 @@ type newsReportState struct {
 	// The current state of the news report.
 	State *string `pulumi:"state"`
 	// (Updatable) Defines if the news report will be enabled or disabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TagFilters []string `pulumi:"tagFilters"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -220,6 +231,8 @@ type NewsReportState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringPtrInput
+	// (Updatable) Match rule used for tag filters.
+	MatchRule pulumi.StringPtrInput
 	// (Updatable) The news report name.
 	Name pulumi.StringPtrInput
 	// (Updatable) News report frequency.
@@ -229,12 +242,14 @@ type NewsReportState struct {
 	// The current state of the news report.
 	State pulumi.StringPtrInput
 	// (Updatable) Defines if the news report will be enabled or disabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TagFilters pulumi.StringArrayInput
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -262,6 +277,8 @@ type newsReportArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Language of the news report.
 	Locale string `pulumi:"locale"`
+	// (Updatable) Match rule used for tag filters.
+	MatchRule *string `pulumi:"matchRule"`
 	// (Updatable) The news report name.
 	Name *string `pulumi:"name"`
 	// (Updatable) News report frequency.
@@ -269,10 +286,12 @@ type newsReportArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
 	OnsTopicId string `pulumi:"onsTopicId"`
 	// (Updatable) Defines if the news report will be enabled or disabled.
+	Status *string `pulumi:"status"`
+	// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Status *string `pulumi:"status"`
+	TagFilters []string `pulumi:"tagFilters"`
 }
 
 // The set of arguments for constructing a NewsReport resource.
@@ -293,6 +312,8 @@ type NewsReportArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringInput
+	// (Updatable) Match rule used for tag filters.
+	MatchRule pulumi.StringPtrInput
 	// (Updatable) The news report name.
 	Name pulumi.StringPtrInput
 	// (Updatable) News report frequency.
@@ -300,10 +321,12 @@ type NewsReportArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
 	OnsTopicId pulumi.StringInput
 	// (Updatable) Defines if the news report will be enabled or disabled.
+	Status pulumi.StringPtrInput
+	// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Status pulumi.StringPtrInput
+	TagFilters pulumi.StringArrayInput
 }
 
 func (NewsReportArgs) ElementType() reflect.Type {
@@ -438,6 +461,11 @@ func (o NewsReportOutput) Locale() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Locale }).(pulumi.StringOutput)
 }
 
+// (Updatable) Match rule used for tag filters.
+func (o NewsReportOutput) MatchRule() pulumi.StringOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.MatchRule }).(pulumi.StringOutput)
+}
+
 // (Updatable) The news report name.
 func (o NewsReportOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
@@ -459,9 +487,6 @@ func (o NewsReportOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) Defines if the news report will be enabled or disabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NewsReportOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -469,6 +494,14 @@ func (o NewsReportOutput) Status() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o NewsReportOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NewsReport) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o NewsReportOutput) TagFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringArrayOutput { return v.TagFilters }).(pulumi.StringArrayOutput)
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.

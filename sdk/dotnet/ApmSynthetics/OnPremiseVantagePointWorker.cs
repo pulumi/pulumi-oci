@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics
 {
     /// <summary>
-    /// This resource provides the On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    /// This resource provides the On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
     /// 
     /// Registers a new worker.
     /// 

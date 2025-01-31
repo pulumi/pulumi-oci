@@ -40,7 +40,7 @@ public final class GetDrProtectionGroupResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+     * @return The OCID of the virtual node pool in OKE cluster.
      * 
      */
     private String id;
@@ -139,7 +139,7 @@ public final class GetDrProtectionGroupResult {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+     * @return The OCID of the virtual node pool in OKE cluster.
      * 
      */
     public String id() {

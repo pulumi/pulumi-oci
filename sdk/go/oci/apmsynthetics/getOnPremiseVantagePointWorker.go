@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+// This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 //
 // Gets the details of the worker identified by the OCID.
 //

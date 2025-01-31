@@ -5,8 +5,10 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetBackupsBackupEncryptionKeyLocationDetail;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -41,6 +43,11 @@ public final class GetBackupsBackup {
      * 
      */
     private String displayName;
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private List<GetBackupsBackupEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
@@ -151,6 +158,13 @@ public final class GetBackupsBackup {
         return this.displayName;
     }
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public List<GetBackupsBackupEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
      */
@@ -257,6 +271,7 @@ public final class GetBackupsBackup {
         private String databaseId;
         private Double databaseSizeInGbs;
         private String displayName;
+        private List<GetBackupsBackupEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private String id;
         private String keyStoreId;
         private String keyStoreWalletName;
@@ -279,6 +294,7 @@ public final class GetBackupsBackup {
     	      this.databaseId = defaults.databaseId;
     	      this.databaseSizeInGbs = defaults.databaseSizeInGbs;
     	      this.displayName = defaults.displayName;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.id = defaults.id;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
@@ -341,6 +357,17 @@ public final class GetBackupsBackup {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(List<GetBackupsBackupEncryptionKeyLocationDetail> encryptionKeyLocationDetails) {
+            if (encryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackup", "encryptionKeyLocationDetails");
+            }
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder encryptionKeyLocationDetails(GetBackupsBackupEncryptionKeyLocationDetail... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -454,6 +481,7 @@ public final class GetBackupsBackup {
             _resultValue.databaseId = databaseId;
             _resultValue.databaseSizeInGbs = databaseSizeInGbs;
             _resultValue.displayName = displayName;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.id = id;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.keyStoreWalletName = keyStoreWalletName;

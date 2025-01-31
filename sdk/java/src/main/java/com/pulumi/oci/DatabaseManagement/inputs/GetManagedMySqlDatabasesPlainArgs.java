@@ -32,6 +32,21 @@ public final class GetManagedMySqlDatabasesPlainArgs extends com.pulumi.resource
         return this.compartmentId;
     }
 
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     * 
+     */
+    @Import(name="filterByMySqlDatabaseTypeParam")
+    private @Nullable String filterByMySqlDatabaseTypeParam;
+
+    /**
+     * @return The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     * 
+     */
+    public Optional<String> filterByMySqlDatabaseTypeParam() {
+        return Optional.ofNullable(this.filterByMySqlDatabaseTypeParam);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetManagedMySqlDatabasesFilter> filters;
 
@@ -43,6 +58,7 @@ public final class GetManagedMySqlDatabasesPlainArgs extends com.pulumi.resource
 
     private GetManagedMySqlDatabasesPlainArgs(GetManagedMySqlDatabasesPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.filterByMySqlDatabaseTypeParam = $.filterByMySqlDatabaseTypeParam;
         this.filters = $.filters;
     }
 
@@ -72,6 +88,17 @@ public final class GetManagedMySqlDatabasesPlainArgs extends com.pulumi.resource
          */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param filterByMySqlDatabaseTypeParam The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filterByMySqlDatabaseTypeParam(@Nullable String filterByMySqlDatabaseTypeParam) {
+            $.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             return this;
         }
 

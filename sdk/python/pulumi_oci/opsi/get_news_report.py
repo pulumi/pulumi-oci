@@ -27,7 +27,7 @@ class GetNewsReportResult:
     """
     A collection of values returned by getNewsReport.
     """
-    def __init__(__self__, are_child_compartments_included=None, compartment_id=None, content_types=None, day_of_week=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, locale=None, name=None, news_frequency=None, news_report_id=None, ons_topic_id=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, are_child_compartments_included=None, compartment_id=None, content_types=None, day_of_week=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, locale=None, match_rule=None, name=None, news_frequency=None, news_report_id=None, ons_topic_id=None, state=None, status=None, system_tags=None, tag_filters=None, time_created=None, time_updated=None):
         if are_child_compartments_included and not isinstance(are_child_compartments_included, bool):
             raise TypeError("Expected argument 'are_child_compartments_included' to be a bool")
         pulumi.set(__self__, "are_child_compartments_included", are_child_compartments_included)
@@ -58,6 +58,9 @@ class GetNewsReportResult:
         if locale and not isinstance(locale, str):
             raise TypeError("Expected argument 'locale' to be a str")
         pulumi.set(__self__, "locale", locale)
+        if match_rule and not isinstance(match_rule, str):
+            raise TypeError("Expected argument 'match_rule' to be a str")
+        pulumi.set(__self__, "match_rule", match_rule)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -79,6 +82,9 @@ class GetNewsReportResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tag_filters and not isinstance(tag_filters, list):
+            raise TypeError("Expected argument 'tag_filters' to be a list")
+        pulumi.set(__self__, "tag_filters", tag_filters)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -167,6 +173,14 @@ class GetNewsReportResult:
         return pulumi.get(self, "locale")
 
     @property
+    @pulumi.getter(name="matchRule")
+    def match_rule(self) -> str:
+        """
+        Match rule used for tag filters.
+        """
+        return pulumi.get(self, "match_rule")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -220,6 +234,14 @@ class GetNewsReportResult:
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="tagFilters")
+    def tag_filters(self) -> Sequence[str]:
+        """
+        List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+        """
+        return pulumi.get(self, "tag_filters")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -252,6 +274,7 @@ class AwaitableGetNewsReportResult(GetNewsReportResult):
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             locale=self.locale,
+            match_rule=self.match_rule,
             name=self.name,
             news_frequency=self.news_frequency,
             news_report_id=self.news_report_id,
@@ -259,6 +282,7 @@ class AwaitableGetNewsReportResult(GetNewsReportResult):
             state=self.state,
             status=self.status,
             system_tags=self.system_tags,
+            tag_filters=self.tag_filters,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -298,6 +322,7 @@ def get_news_report(news_report_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         locale=pulumi.get(__ret__, 'locale'),
+        match_rule=pulumi.get(__ret__, 'match_rule'),
         name=pulumi.get(__ret__, 'name'),
         news_frequency=pulumi.get(__ret__, 'news_frequency'),
         news_report_id=pulumi.get(__ret__, 'news_report_id'),
@@ -305,6 +330,7 @@ def get_news_report(news_report_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tag_filters=pulumi.get(__ret__, 'tag_filters'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
@@ -341,6 +367,7 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         locale=pulumi.get(__response__, 'locale'),
+        match_rule=pulumi.get(__response__, 'match_rule'),
         name=pulumi.get(__response__, 'name'),
         news_frequency=pulumi.get(__response__, 'news_frequency'),
         news_report_id=pulumi.get(__response__, 'news_report_id'),
@@ -348,5 +375,6 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
         state=pulumi.get(__response__, 'state'),
         status=pulumi.get(__response__, 'status'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        tag_filters=pulumi.get(__response__, 'tag_filters'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

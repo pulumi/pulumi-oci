@@ -216,7 +216,7 @@ def get_script(apm_domain_id: Optional[str] = None,
                script_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScriptResult:
     """
-    This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the configuration of the script identified by the OCID.
 
@@ -260,7 +260,7 @@ def get_script_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       script_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptResult]:
     """
-    This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the configuration of the script identified by the OCID.
 

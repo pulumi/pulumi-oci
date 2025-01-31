@@ -27,7 +27,7 @@ class GetDatabaseInsightResult:
     """
     A collection of values returned by getDatabaseInsight.
     """
-    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, connector_id=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, is_advanced_features_enabled=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, management_agent_id=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, connector_id=None, credential_details=None, database_connection_status_details=None, database_connector_id=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, is_advanced_features_enabled=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, management_agent_id=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -46,6 +46,9 @@ class GetDatabaseInsightResult:
         if database_connection_status_details and not isinstance(database_connection_status_details, str):
             raise TypeError("Expected argument 'database_connection_status_details' to be a str")
         pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+        if database_connector_id and not isinstance(database_connector_id, str):
+            raise TypeError("Expected argument 'database_connector_id' to be a str")
+        pulumi.set(__self__, "database_connector_id", database_connector_id)
         if database_display_name and not isinstance(database_display_name, str):
             raise TypeError("Expected argument 'database_display_name' to be a str")
         pulumi.set(__self__, "database_display_name", database_display_name)
@@ -199,6 +202,14 @@ class GetDatabaseInsightResult:
         A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         """
         return pulumi.get(self, "database_connection_status_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> str:
+        """
+        (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        """
+        return pulumi.get(self, "database_connector_id")
 
     @property
     @pulumi.getter(name="databaseDisplayName")
@@ -481,6 +492,7 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
             connector_id=self.connector_id,
             credential_details=self.credential_details,
             database_connection_status_details=self.database_connection_status_details,
+            database_connector_id=self.database_connector_id,
             database_display_name=self.database_display_name,
             database_id=self.database_id,
             database_insight_id=self.database_insight_id,
@@ -549,6 +561,7 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         connector_id=pulumi.get(__ret__, 'connector_id'),
         credential_details=pulumi.get(__ret__, 'credential_details'),
         database_connection_status_details=pulumi.get(__ret__, 'database_connection_status_details'),
+        database_connector_id=pulumi.get(__ret__, 'database_connector_id'),
         database_display_name=pulumi.get(__ret__, 'database_display_name'),
         database_id=pulumi.get(__ret__, 'database_id'),
         database_insight_id=pulumi.get(__ret__, 'database_insight_id'),
@@ -614,6 +627,7 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]]
         connector_id=pulumi.get(__response__, 'connector_id'),
         credential_details=pulumi.get(__response__, 'credential_details'),
         database_connection_status_details=pulumi.get(__response__, 'database_connection_status_details'),
+        database_connector_id=pulumi.get(__response__, 'database_connector_id'),
         database_display_name=pulumi.get(__response__, 'database_display_name'),
         database_id=pulumi.get(__response__, 'database_id'),
         database_insight_id=pulumi.get(__response__, 'database_insight_id'),

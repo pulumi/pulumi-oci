@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Returns a list of workers.
  *
@@ -101,7 +101,7 @@ export interface GetOnPremiseVantagePointWorkersResult {
     readonly workerCollections: outputs.ApmSynthetics.GetOnPremiseVantagePointWorkersWorkerCollection[];
 }
 /**
- * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Returns a list of workers.
  *

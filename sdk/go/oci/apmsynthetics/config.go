@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
+// This resource provides the Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 //
 // Creates a new monitor.
 //

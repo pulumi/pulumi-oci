@@ -61,6 +61,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExternalExadataStorageServer{}
 	case "oci:DatabaseManagement/externalListener:ExternalListener":
 		r = &ExternalListener{}
+	case "oci:DatabaseManagement/externalMySqlDatabase:ExternalMySqlDatabase":
+		r = &ExternalMySqlDatabase{}
+	case "oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector":
+		r = &ExternalMySqlDatabaseConnector{}
+	case "oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement":
+		r = &ExternalMySqlDatabaseExternalMysqlDatabasesManagement{}
 	case "oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement":
 		r = &ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement{}
 	case "oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement":
@@ -190,6 +196,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/externalListener",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalMySqlDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalMySqlDatabaseConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

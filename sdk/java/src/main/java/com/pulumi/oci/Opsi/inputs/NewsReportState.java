@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Opsi.inputs.NewsReportContentTypesArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -154,6 +155,21 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Match rule used for tag filters.
+     * 
+     */
+    @Import(name="matchRule")
+    private @Nullable Output<String> matchRule;
+
+    /**
+     * @return (Updatable) Match rule used for tag filters.
+     * 
+     */
+    public Optional<Output<String>> matchRule() {
+        return Optional.ofNullable(this.matchRule);
+    }
+
+    /**
      * (Updatable) The news report name.
      * 
      */
@@ -216,18 +232,12 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) Defines if the news report will be enabled or disabled.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> status() {
@@ -247,6 +257,27 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="tagFilters")
+    private @Nullable Output<List<String>> tagFilters;
+
+    /**
+     * @return (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<List<String>>> tagFilters() {
+        return Optional.ofNullable(this.tagFilters);
     }
 
     /**
@@ -291,12 +322,14 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.locale = $.locale;
+        this.matchRule = $.matchRule;
         this.name = $.name;
         this.newsFrequency = $.newsFrequency;
         this.onsTopicId = $.onsTopicId;
         this.state = $.state;
         this.status = $.status;
         this.systemTags = $.systemTags;
+        this.tagFilters = $.tagFilters;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -509,6 +542,27 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param matchRule (Updatable) Match rule used for tag filters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchRule(@Nullable Output<String> matchRule) {
+            $.matchRule = matchRule;
+            return this;
+        }
+
+        /**
+         * @param matchRule (Updatable) Match rule used for tag filters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchRule(String matchRule) {
+            return matchRule(Output.of(matchRule));
+        }
+
+        /**
          * @param name (Updatable) The news report name.
          * 
          * @return builder
@@ -595,9 +649,6 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param status (Updatable) Defines if the news report will be enabled or disabled.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -608,9 +659,6 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status (Updatable) Defines if the news report will be enabled or disabled.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -638,6 +686,46 @@ public final class NewsReportState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param tagFilters (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tagFilters(@Nullable Output<List<String>> tagFilters) {
+            $.tagFilters = tagFilters;
+            return this;
+        }
+
+        /**
+         * @param tagFilters (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tagFilters(List<String> tagFilters) {
+            return tagFilters(Output.of(tagFilters));
+        }
+
+        /**
+         * @param tagFilters (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tagFilters(String... tagFilters) {
+            return tagFilters(List.of(tagFilters));
         }
 
         /**

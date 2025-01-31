@@ -5,6 +5,8 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseEncryptionKeyLocationDetails;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -77,6 +79,11 @@ public final class DatabaseDatabase {
      */
     private @Nullable Map<String,String> definedTags;
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private @Nullable DatabaseDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails;
+    /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -126,6 +133,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String sourceDatabaseId;
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private @Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
     /**
      * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
      * 
@@ -239,6 +251,13 @@ public final class DatabaseDatabase {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<DatabaseDatabaseEncryptionKeyLocationDetails> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
+    }
+    /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -309,6 +328,13 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.sourceDatabaseId);
     }
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<DatabaseDatabaseSourceEncryptionKeyLocationDetails> sourceEncryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.sourceEncryptionKeyLocationDetails);
+    }
+    /**
      * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
      * 
      */
@@ -364,6 +390,7 @@ public final class DatabaseDatabase {
         private @Nullable String dbUniqueName;
         private @Nullable String dbWorkload;
         private @Nullable Map<String,String> definedTags;
+        private @Nullable DatabaseDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isActiveDataGuardEnabled;
         private @Nullable String kmsKeyId;
@@ -374,6 +401,7 @@ public final class DatabaseDatabase {
         private @Nullable String protectionMode;
         private @Nullable String sidPrefix;
         private @Nullable String sourceDatabaseId;
+        private @Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
         private @Nullable String sourceTdeWalletPassword;
         private @Nullable String tdeWalletPassword;
         private @Nullable String transportType;
@@ -392,6 +420,7 @@ public final class DatabaseDatabase {
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
@@ -402,6 +431,7 @@ public final class DatabaseDatabase {
     	      this.protectionMode = defaults.protectionMode;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
+    	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.transportType = defaults.transportType;
@@ -475,6 +505,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(@Nullable DatabaseDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
@@ -538,6 +574,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceEncryptionKeyLocationDetails(@Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceTdeWalletPassword(@Nullable String sourceTdeWalletPassword) {
 
             this.sourceTdeWalletPassword = sourceTdeWalletPassword;
@@ -574,6 +616,7 @@ public final class DatabaseDatabase {
             _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.dbWorkload = dbWorkload;
             _resultValue.definedTags = definedTags;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
@@ -584,6 +627,7 @@ public final class DatabaseDatabase {
             _resultValue.protectionMode = protectionMode;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.sourceDatabaseId = sourceDatabaseId;
+            _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.transportType = transportType;

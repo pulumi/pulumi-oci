@@ -318,7 +318,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        This resource provides the On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
         Registers a new On-premise vantage point.
 
@@ -369,7 +369,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
                  args: OnPremiseVantagePointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        This resource provides the On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
         Registers a new On-premise vantage point.
 

@@ -6,9 +6,16 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBackendSetMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBackupConfig;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBackupLocation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberExportMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSystemOperation;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberLoadBalancerMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberManagedNodePoolConfig;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberNetworkLoadBalancerMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVaultMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVirtualNodePoolConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVnicMapping;
 import java.lang.Boolean;
 import java.lang.String;
@@ -27,6 +34,16 @@ public final class GetDrProtectionGroupMember {
      * 
      */
     private List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings;
+    /**
+     * @return The details of backup performed on OKE Cluster.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberBackupConfig> backupConfigs;
+    /**
+     * @return The details for object storage backup location of an OKE Cluster
+     * 
+     */
+    private List<GetDrProtectionGroupMemberBackupLocation> backupLocations;
     /**
      * @return Operations performed on a list of block volumes used on the non-movable compute instance.
      * 
@@ -63,12 +80,12 @@ public final class GetDrProtectionGroupMember {
      */
     private String destinationDedicatedVmHostId;
     /**
-     * @return The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+     * @return The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
      * 
      */
     private String destinationLoadBalancerId;
     /**
-     * @return The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+     * @return The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
      * 
      */
     private String destinationNetworkLoadBalancerId;
@@ -98,6 +115,21 @@ public final class GetDrProtectionGroupMember {
      */
     private Boolean isStartStopEnabled;
     /**
+     * @return The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent&#39;s Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+     * 
+     */
+    private String jumpHostId;
+    /**
+     * @return The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberLoadBalancerMapping> loadBalancerMappings;
+    /**
+     * @return The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberManagedNodePoolConfig> managedNodePoolConfigs;
+    /**
      * @return The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
@@ -113,10 +145,30 @@ public final class GetDrProtectionGroupMember {
      */
     private String namespace;
     /**
+     * @return The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberNetworkLoadBalancerMapping> networkLoadBalancerMappings;
+    /**
      * @return The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     private String passwordVaultSecretId;
+    /**
+     * @return The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+     * 
+     */
+    private String peerClusterId;
+    /**
+     * @return The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberVaultMapping> vaultMappings;
+    /**
+     * @return The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs;
     /**
      * @return A list of compute instance VNIC mappings.
      * 
@@ -142,6 +194,20 @@ public final class GetDrProtectionGroupMember {
      */
     public List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings() {
         return this.backendSetMappings;
+    }
+    /**
+     * @return The details of backup performed on OKE Cluster.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberBackupConfig> backupConfigs() {
+        return this.backupConfigs;
+    }
+    /**
+     * @return The details for object storage backup location of an OKE Cluster
+     * 
+     */
+    public List<GetDrProtectionGroupMemberBackupLocation> backupLocations() {
+        return this.backupLocations;
     }
     /**
      * @return Operations performed on a list of block volumes used on the non-movable compute instance.
@@ -193,14 +259,14 @@ public final class GetDrProtectionGroupMember {
         return this.destinationDedicatedVmHostId;
     }
     /**
-     * @return The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+     * @return The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
      * 
      */
     public String destinationLoadBalancerId() {
         return this.destinationLoadBalancerId;
     }
     /**
-     * @return The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+     * @return The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
      * 
      */
     public String destinationNetworkLoadBalancerId() {
@@ -242,6 +308,27 @@ public final class GetDrProtectionGroupMember {
         return this.isStartStopEnabled;
     }
     /**
+     * @return The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent&#39;s Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+     * 
+     */
+    public String jumpHostId() {
+        return this.jumpHostId;
+    }
+    /**
+     * @return The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberLoadBalancerMapping> loadBalancerMappings() {
+        return this.loadBalancerMappings;
+    }
+    /**
+     * @return The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberManagedNodePoolConfig> managedNodePoolConfigs() {
+        return this.managedNodePoolConfigs;
+    }
+    /**
      * @return The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
@@ -263,11 +350,39 @@ public final class GetDrProtectionGroupMember {
         return this.namespace;
     }
     /**
+     * @return The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberNetworkLoadBalancerMapping> networkLoadBalancerMappings() {
+        return this.networkLoadBalancerMappings;
+    }
+    /**
      * @return The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     public String passwordVaultSecretId() {
         return this.passwordVaultSecretId;
+    }
+    /**
+     * @return The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+     * 
+     */
+    public String peerClusterId() {
+        return this.peerClusterId;
+    }
+    /**
+     * @return The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberVaultMapping> vaultMappings() {
+        return this.vaultMappings;
+    }
+    /**
+     * @return The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs() {
+        return this.virtualNodePoolConfigs;
     }
     /**
      * @return A list of compute instance VNIC mappings.
@@ -295,6 +410,8 @@ public final class GetDrProtectionGroupMember {
     public static final class Builder {
         private String autonomousDatabaseStandbyTypeForDrDrills;
         private List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings;
+        private List<GetDrProtectionGroupMemberBackupConfig> backupConfigs;
+        private List<GetDrProtectionGroupMemberBackupLocation> backupLocations;
         private List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
         private String bucket;
         private String connectionStringType;
@@ -309,10 +426,17 @@ public final class GetDrProtectionGroupMember {
         private Boolean isMovable;
         private Boolean isRetainFaultDomain;
         private Boolean isStartStopEnabled;
+        private String jumpHostId;
+        private List<GetDrProtectionGroupMemberLoadBalancerMapping> loadBalancerMappings;
+        private List<GetDrProtectionGroupMemberManagedNodePoolConfig> managedNodePoolConfigs;
         private String memberId;
         private String memberType;
         private String namespace;
+        private List<GetDrProtectionGroupMemberNetworkLoadBalancerMapping> networkLoadBalancerMappings;
         private String passwordVaultSecretId;
+        private String peerClusterId;
+        private List<GetDrProtectionGroupMemberVaultMapping> vaultMappings;
+        private List<GetDrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs;
         private List<GetDrProtectionGroupMemberVnicMapping> vnicMapping;
         private List<GetDrProtectionGroupMemberVnicMapping> vnicMappings;
         public Builder() {}
@@ -320,6 +444,8 @@ public final class GetDrProtectionGroupMember {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseStandbyTypeForDrDrills = defaults.autonomousDatabaseStandbyTypeForDrDrills;
     	      this.backendSetMappings = defaults.backendSetMappings;
+    	      this.backupConfigs = defaults.backupConfigs;
+    	      this.backupLocations = defaults.backupLocations;
     	      this.blockVolumeOperations = defaults.blockVolumeOperations;
     	      this.bucket = defaults.bucket;
     	      this.connectionStringType = defaults.connectionStringType;
@@ -334,10 +460,17 @@ public final class GetDrProtectionGroupMember {
     	      this.isMovable = defaults.isMovable;
     	      this.isRetainFaultDomain = defaults.isRetainFaultDomain;
     	      this.isStartStopEnabled = defaults.isStartStopEnabled;
+    	      this.jumpHostId = defaults.jumpHostId;
+    	      this.loadBalancerMappings = defaults.loadBalancerMappings;
+    	      this.managedNodePoolConfigs = defaults.managedNodePoolConfigs;
     	      this.memberId = defaults.memberId;
     	      this.memberType = defaults.memberType;
     	      this.namespace = defaults.namespace;
+    	      this.networkLoadBalancerMappings = defaults.networkLoadBalancerMappings;
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
+    	      this.peerClusterId = defaults.peerClusterId;
+    	      this.vaultMappings = defaults.vaultMappings;
+    	      this.virtualNodePoolConfigs = defaults.virtualNodePoolConfigs;
     	      this.vnicMapping = defaults.vnicMapping;
     	      this.vnicMappings = defaults.vnicMappings;
         }
@@ -360,6 +493,28 @@ public final class GetDrProtectionGroupMember {
         }
         public Builder backendSetMappings(GetDrProtectionGroupMemberBackendSetMapping... backendSetMappings) {
             return backendSetMappings(List.of(backendSetMappings));
+        }
+        @CustomType.Setter
+        public Builder backupConfigs(List<GetDrProtectionGroupMemberBackupConfig> backupConfigs) {
+            if (backupConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "backupConfigs");
+            }
+            this.backupConfigs = backupConfigs;
+            return this;
+        }
+        public Builder backupConfigs(GetDrProtectionGroupMemberBackupConfig... backupConfigs) {
+            return backupConfigs(List.of(backupConfigs));
+        }
+        @CustomType.Setter
+        public Builder backupLocations(List<GetDrProtectionGroupMemberBackupLocation> backupLocations) {
+            if (backupLocations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "backupLocations");
+            }
+            this.backupLocations = backupLocations;
+            return this;
+        }
+        public Builder backupLocations(GetDrProtectionGroupMemberBackupLocation... backupLocations) {
+            return backupLocations(List.of(backupLocations));
         }
         @CustomType.Setter
         public Builder blockVolumeOperations(List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations) {
@@ -483,6 +638,36 @@ public final class GetDrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder jumpHostId(String jumpHostId) {
+            if (jumpHostId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "jumpHostId");
+            }
+            this.jumpHostId = jumpHostId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loadBalancerMappings(List<GetDrProtectionGroupMemberLoadBalancerMapping> loadBalancerMappings) {
+            if (loadBalancerMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "loadBalancerMappings");
+            }
+            this.loadBalancerMappings = loadBalancerMappings;
+            return this;
+        }
+        public Builder loadBalancerMappings(GetDrProtectionGroupMemberLoadBalancerMapping... loadBalancerMappings) {
+            return loadBalancerMappings(List.of(loadBalancerMappings));
+        }
+        @CustomType.Setter
+        public Builder managedNodePoolConfigs(List<GetDrProtectionGroupMemberManagedNodePoolConfig> managedNodePoolConfigs) {
+            if (managedNodePoolConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "managedNodePoolConfigs");
+            }
+            this.managedNodePoolConfigs = managedNodePoolConfigs;
+            return this;
+        }
+        public Builder managedNodePoolConfigs(GetDrProtectionGroupMemberManagedNodePoolConfig... managedNodePoolConfigs) {
+            return managedNodePoolConfigs(List.of(managedNodePoolConfigs));
+        }
+        @CustomType.Setter
         public Builder memberId(String memberId) {
             if (memberId == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "memberId");
@@ -507,12 +692,53 @@ public final class GetDrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder networkLoadBalancerMappings(List<GetDrProtectionGroupMemberNetworkLoadBalancerMapping> networkLoadBalancerMappings) {
+            if (networkLoadBalancerMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "networkLoadBalancerMappings");
+            }
+            this.networkLoadBalancerMappings = networkLoadBalancerMappings;
+            return this;
+        }
+        public Builder networkLoadBalancerMappings(GetDrProtectionGroupMemberNetworkLoadBalancerMapping... networkLoadBalancerMappings) {
+            return networkLoadBalancerMappings(List.of(networkLoadBalancerMappings));
+        }
+        @CustomType.Setter
         public Builder passwordVaultSecretId(String passwordVaultSecretId) {
             if (passwordVaultSecretId == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "passwordVaultSecretId");
             }
             this.passwordVaultSecretId = passwordVaultSecretId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder peerClusterId(String peerClusterId) {
+            if (peerClusterId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "peerClusterId");
+            }
+            this.peerClusterId = peerClusterId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vaultMappings(List<GetDrProtectionGroupMemberVaultMapping> vaultMappings) {
+            if (vaultMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "vaultMappings");
+            }
+            this.vaultMappings = vaultMappings;
+            return this;
+        }
+        public Builder vaultMappings(GetDrProtectionGroupMemberVaultMapping... vaultMappings) {
+            return vaultMappings(List.of(vaultMappings));
+        }
+        @CustomType.Setter
+        public Builder virtualNodePoolConfigs(List<GetDrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs) {
+            if (virtualNodePoolConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "virtualNodePoolConfigs");
+            }
+            this.virtualNodePoolConfigs = virtualNodePoolConfigs;
+            return this;
+        }
+        public Builder virtualNodePoolConfigs(GetDrProtectionGroupMemberVirtualNodePoolConfig... virtualNodePoolConfigs) {
+            return virtualNodePoolConfigs(List.of(virtualNodePoolConfigs));
         }
         @CustomType.Setter
         public Builder vnicMapping(List<GetDrProtectionGroupMemberVnicMapping> vnicMapping) {
@@ -540,6 +766,8 @@ public final class GetDrProtectionGroupMember {
             final var _resultValue = new GetDrProtectionGroupMember();
             _resultValue.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
             _resultValue.backendSetMappings = backendSetMappings;
+            _resultValue.backupConfigs = backupConfigs;
+            _resultValue.backupLocations = backupLocations;
             _resultValue.blockVolumeOperations = blockVolumeOperations;
             _resultValue.bucket = bucket;
             _resultValue.connectionStringType = connectionStringType;
@@ -554,10 +782,17 @@ public final class GetDrProtectionGroupMember {
             _resultValue.isMovable = isMovable;
             _resultValue.isRetainFaultDomain = isRetainFaultDomain;
             _resultValue.isStartStopEnabled = isStartStopEnabled;
+            _resultValue.jumpHostId = jumpHostId;
+            _resultValue.loadBalancerMappings = loadBalancerMappings;
+            _resultValue.managedNodePoolConfigs = managedNodePoolConfigs;
             _resultValue.memberId = memberId;
             _resultValue.memberType = memberType;
             _resultValue.namespace = namespace;
+            _resultValue.networkLoadBalancerMappings = networkLoadBalancerMappings;
             _resultValue.passwordVaultSecretId = passwordVaultSecretId;
+            _resultValue.peerClusterId = peerClusterId;
+            _resultValue.vaultMappings = vaultMappings;
+            _resultValue.virtualNodePoolConfigs = virtualNodePoolConfigs;
             _resultValue.vnicMapping = vnicMapping;
             _resultValue.vnicMappings = vnicMappings;
             return _resultValue;

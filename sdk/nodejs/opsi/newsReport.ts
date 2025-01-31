@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testNewsReport = new oci.opsi.NewsReport("test_news_report", {
  *     compartmentId: compartmentId,
  *     contentTypes: {
+ *         actionableInsightsResources: newsReportContentTypesActionableInsightsResources,
  *         capacityPlanningResources: newsReportContentTypesCapacityPlanningResources,
  *         sqlInsightsFleetAnalysisResources: newsReportContentTypesSqlInsightsFleetAnalysisResources,
  *         sqlInsightsPerformanceDegradationResources: newsReportContentTypesSqlInsightsPerformanceDegradationResources,
@@ -41,7 +42,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     matchRule: newsReportMatchRule,
  *     status: newsReportStatus,
+ *     tagFilters: newsReportTagFilters,
  * });
  * ```
  *
@@ -118,6 +121,10 @@ export class NewsReport extends pulumi.CustomResource {
      */
     public readonly locale!: pulumi.Output<string>;
     /**
+     * (Updatable) Match rule used for tag filters.
+     */
+    public readonly matchRule!: pulumi.Output<string>;
+    /**
      * (Updatable) The news report name.
      */
     public readonly name!: pulumi.Output<string>;
@@ -135,16 +142,20 @@ export class NewsReport extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly status!: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly tagFilters!: pulumi.Output<string[]>;
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */
@@ -176,12 +187,14 @@ export class NewsReport extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["locale"] = state ? state.locale : undefined;
+            resourceInputs["matchRule"] = state ? state.matchRule : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["newsFrequency"] = state ? state.newsFrequency : undefined;
             resourceInputs["onsTopicId"] = state ? state.onsTopicId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["tagFilters"] = state ? state.tagFilters : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -212,10 +225,12 @@ export class NewsReport extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["locale"] = args ? args.locale : undefined;
+            resourceInputs["matchRule"] = args ? args.matchRule : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["newsFrequency"] = args ? args.newsFrequency : undefined;
             resourceInputs["onsTopicId"] = args ? args.onsTopicId : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["tagFilters"] = args ? args.tagFilters : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -268,6 +283,10 @@ export interface NewsReportState {
      */
     locale?: pulumi.Input<string>;
     /**
+     * (Updatable) Match rule used for tag filters.
+     */
+    matchRule?: pulumi.Input<string>;
+    /**
      * (Updatable) The news report name.
      */
     name?: pulumi.Input<string>;
@@ -285,16 +304,20 @@ export interface NewsReportState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    tagFilters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */
@@ -342,6 +365,10 @@ export interface NewsReportArgs {
      */
     locale: pulumi.Input<string>;
     /**
+     * (Updatable) Match rule used for tag filters.
+     */
+    matchRule?: pulumi.Input<string>;
+    /**
      * (Updatable) The news report name.
      */
     name?: pulumi.Input<string>;
@@ -355,10 +382,14 @@ export interface NewsReportArgs {
     onsTopicId: pulumi.Input<string>;
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    tagFilters?: pulumi.Input<pulumi.Input<string>[]>;
 }

@@ -13,6 +13,7 @@ import com.pulumi.oci.Opsi.outputs.NewsReportContentTypes;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -50,6 +51,7 @@ import javax.annotation.Nullable;
  *         var testNewsReport = new NewsReport("testNewsReport", NewsReportArgs.builder()
  *             .compartmentId(compartmentId)
  *             .contentTypes(NewsReportContentTypesArgs.builder()
+ *                 .actionableInsightsResources(newsReportContentTypesActionableInsightsResources)
  *                 .capacityPlanningResources(newsReportContentTypesCapacityPlanningResources)
  *                 .sqlInsightsFleetAnalysisResources(newsReportContentTypesSqlInsightsFleetAnalysisResources)
  *                 .sqlInsightsPerformanceDegradationResources(newsReportContentTypesSqlInsightsPerformanceDegradationResources)
@@ -67,7 +69,9 @@ import javax.annotation.Nullable;
  *             .dayOfWeek(newsReportDayOfWeek)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .matchRule(newsReportMatchRule)
  *             .status(newsReportStatus)
+ *             .tagFilters(newsReportTagFilters)
  *             .build());
  * 
  *     }
@@ -214,6 +218,20 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
         return this.locale;
     }
     /**
+     * (Updatable) Match rule used for tag filters.
+     * 
+     */
+    @Export(name="matchRule", refs={String.class}, tree="[0]")
+    private Output<String> matchRule;
+
+    /**
+     * @return (Updatable) Match rule used for tag filters.
+     * 
+     */
+    public Output<String> matchRule() {
+        return this.matchRule;
+    }
+    /**
      * (Updatable) The news report name.
      * 
      */
@@ -272,18 +290,12 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return (Updatable) Defines if the news report will be enabled or disabled.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> status() {
@@ -302,6 +314,26 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="tagFilters", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> tagFilters;
+
+    /**
+     * @return (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<List<String>> tagFilters() {
+        return this.tagFilters;
     }
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.

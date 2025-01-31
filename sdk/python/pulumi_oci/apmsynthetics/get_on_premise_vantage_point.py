@@ -180,7 +180,7 @@ def get_on_premise_vantage_point(apm_domain_id: Optional[str] = None,
                                  on_premise_vantage_point_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnPremiseVantagePointResult:
     """
-    This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the details of the On-premise vantage point identified by the OCID.
 
@@ -221,7 +221,7 @@ def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str
                                         on_premise_vantage_point_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointResult]:
     """
-    This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides details about a specific On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Gets the details of the On-premise vantage point identified by the OCID.
 

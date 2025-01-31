@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
+import com.pulumi.oci.Database.inputs.DatabaseDatabaseEncryptionKeyLocationDetailsArgs;
+import com.pulumi.oci.Database.inputs.DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -197,6 +199,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="encryptionKeyLocationDetails")
+    private @Nullable Output<DatabaseDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<DatabaseDatabaseEncryptionKeyLocationDetailsArgs>> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -347,6 +364,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="sourceEncryptionKeyLocationDetails")
+    private @Nullable Output<DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs> sourceEncryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs>> sourceEncryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.sourceEncryptionKeyLocationDetails);
+    }
+
+    /**
      * The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
      * 
      */
@@ -434,6 +466,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.dbUniqueName = $.dbUniqueName;
         this.dbWorkload = $.dbWorkload;
         this.definedTags = $.definedTags;
+        this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.freeformTags = $.freeformTags;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
         this.kmsKeyId = $.kmsKeyId;
@@ -444,6 +477,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.protectionMode = $.protectionMode;
         this.sidPrefix = $.sidPrefix;
         this.sourceDatabaseId = $.sourceDatabaseId;
+        this.sourceEncryptionKeyLocationDetails = $.sourceEncryptionKeyLocationDetails;
         this.sourceTdeWalletPassword = $.sourceTdeWalletPassword;
         this.tdeWalletPassword = $.tdeWalletPassword;
         this.transportType = $.transportType;
@@ -712,6 +746,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(@Nullable Output<DatabaseDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails) {
+            $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(DatabaseDatabaseEncryptionKeyLocationDetailsArgs encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -929,6 +984,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder sourceDatabaseId(String sourceDatabaseId) {
             return sourceDatabaseId(Output.of(sourceDatabaseId));
+        }
+
+        /**
+         * @param sourceEncryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceEncryptionKeyLocationDetails(@Nullable Output<DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs> sourceEncryptionKeyLocationDetails) {
+            $.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceEncryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceEncryptionKeyLocationDetails(DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs sourceEncryptionKeyLocationDetails) {
+            return sourceEncryptionKeyLocationDetails(Output.of(sourceEncryptionKeyLocationDetails));
         }
 
         /**

@@ -60,6 +60,8 @@ type GetManagedMySqlDatabaseArgs struct {
 type GetManagedMySqlDatabaseResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The type of the MySQL Database. Indicates whether the database is external or MDS.
+	DatabaseType string `pulumi:"databaseType"`
 	// The name of the MySQL Database.
 	DbName string `pulumi:"dbName"`
 	// The version of the MySQL Database.
@@ -81,12 +83,18 @@ type GetManagedMySqlDatabaseResult struct {
 	// Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
 	IsLakehouseEnabled     bool   `pulumi:"isLakehouseEnabled"`
 	ManagedMySqlDatabaseId string `pulumi:"managedMySqlDatabaseId"`
+	// Indicates database management status.
+	ManagementState string `pulumi:"managementState"`
 	// The name of the Managed MySQL Database.
 	Name string `pulumi:"name"`
+	// Indicates lifecycle  state of the resource.
+	State string `pulumi:"state"`
 	// The date and time the HeatWave node was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Managed MySQL Database was created.
 	TimeCreatedHeatWave string `pulumi:"timeCreatedHeatWave"`
+	// The date and time the Managed MySQL Database was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
 func GetManagedMySqlDatabaseOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseResultOutput {
@@ -126,6 +134,11 @@ func (o GetManagedMySqlDatabaseResultOutput) ToGetManagedMySqlDatabaseResultOutp
 // The OCID of the compartment.
 func (o GetManagedMySqlDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The type of the MySQL Database. Indicates whether the database is external or MDS.
+func (o GetManagedMySqlDatabaseResultOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
 // The name of the MySQL Database.
@@ -182,9 +195,19 @@ func (o GetManagedMySqlDatabaseResultOutput) ManagedMySqlDatabaseId() pulumi.Str
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.ManagedMySqlDatabaseId }).(pulumi.StringOutput)
 }
 
+// Indicates database management status.
+func (o GetManagedMySqlDatabaseResultOutput) ManagementState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.ManagementState }).(pulumi.StringOutput)
+}
+
 // The name of the Managed MySQL Database.
 func (o GetManagedMySqlDatabaseResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Indicates lifecycle  state of the resource.
+func (o GetManagedMySqlDatabaseResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The date and time the HeatWave node was created.
@@ -195,6 +218,11 @@ func (o GetManagedMySqlDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the Managed MySQL Database was created.
 func (o GetManagedMySqlDatabaseResultOutput) TimeCreatedHeatWave() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.TimeCreatedHeatWave }).(pulumi.StringOutput)
+}
+
+// The date and time the Managed MySQL Database was updated.
+func (o GetManagedMySqlDatabaseResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {

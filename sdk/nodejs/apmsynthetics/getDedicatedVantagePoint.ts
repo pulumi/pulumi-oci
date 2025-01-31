@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Gets the details of the dedicated vantage point identified by the OCID.
  *
@@ -97,7 +97,7 @@ export interface GetDedicatedVantagePointResult {
     readonly timeUpdated: string;
 }
 /**
- * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Gets the details of the dedicated vantage point identified by the OCID.
  *

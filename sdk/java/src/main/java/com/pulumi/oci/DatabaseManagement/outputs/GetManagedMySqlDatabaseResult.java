@@ -20,6 +20,11 @@ public final class GetManagedMySqlDatabaseResult {
      */
     private String compartmentId;
     /**
+     * @return The type of the MySQL Database. Indicates whether the database is external or MDS.
+     * 
+     */
+    private String databaseType;
+    /**
      * @return The name of the MySQL Database.
      * 
      */
@@ -71,10 +76,20 @@ public final class GetManagedMySqlDatabaseResult {
     private Boolean isLakehouseEnabled;
     private String managedMySqlDatabaseId;
     /**
+     * @return Indicates database management status.
+     * 
+     */
+    private String managementState;
+    /**
      * @return The name of the Managed MySQL Database.
      * 
      */
     private String name;
+    /**
+     * @return Indicates lifecycle  state of the resource.
+     * 
+     */
+    private String state;
     /**
      * @return The date and time the HeatWave node was created.
      * 
@@ -85,6 +100,11 @@ public final class GetManagedMySqlDatabaseResult {
      * 
      */
     private String timeCreatedHeatWave;
+    /**
+     * @return The date and time the Managed MySQL Database was updated.
+     * 
+     */
+    private String timeUpdated;
 
     private GetManagedMySqlDatabaseResult() {}
     /**
@@ -93,6 +113,13 @@ public final class GetManagedMySqlDatabaseResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The type of the MySQL Database. Indicates whether the database is external or MDS.
+     * 
+     */
+    public String databaseType() {
+        return this.databaseType;
     }
     /**
      * @return The name of the MySQL Database.
@@ -168,11 +195,25 @@ public final class GetManagedMySqlDatabaseResult {
         return this.managedMySqlDatabaseId;
     }
     /**
+     * @return Indicates database management status.
+     * 
+     */
+    public String managementState() {
+        return this.managementState;
+    }
+    /**
      * @return The name of the Managed MySQL Database.
      * 
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return Indicates lifecycle  state of the resource.
+     * 
+     */
+    public String state() {
+        return this.state;
     }
     /**
      * @return The date and time the HeatWave node was created.
@@ -188,6 +229,13 @@ public final class GetManagedMySqlDatabaseResult {
     public String timeCreatedHeatWave() {
         return this.timeCreatedHeatWave;
     }
+    /**
+     * @return The date and time the Managed MySQL Database was updated.
+     * 
+     */
+    public String timeUpdated() {
+        return this.timeUpdated;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -199,6 +247,7 @@ public final class GetManagedMySqlDatabaseResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String databaseType;
         private String dbName;
         private String dbVersion;
         private String heatWaveClusterDisplayName;
@@ -210,13 +259,17 @@ public final class GetManagedMySqlDatabaseResult {
         private Boolean isHeatWaveEnabled;
         private Boolean isLakehouseEnabled;
         private String managedMySqlDatabaseId;
+        private String managementState;
         private String name;
+        private String state;
         private String timeCreated;
         private String timeCreatedHeatWave;
+        private String timeUpdated;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.databaseType = defaults.databaseType;
     	      this.dbName = defaults.dbName;
     	      this.dbVersion = defaults.dbVersion;
     	      this.heatWaveClusterDisplayName = defaults.heatWaveClusterDisplayName;
@@ -228,9 +281,12 @@ public final class GetManagedMySqlDatabaseResult {
     	      this.isHeatWaveEnabled = defaults.isHeatWaveEnabled;
     	      this.isLakehouseEnabled = defaults.isLakehouseEnabled;
     	      this.managedMySqlDatabaseId = defaults.managedMySqlDatabaseId;
+    	      this.managementState = defaults.managementState;
     	      this.name = defaults.name;
+    	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeCreatedHeatWave = defaults.timeCreatedHeatWave;
+    	      this.timeUpdated = defaults.timeUpdated;
         }
 
         @CustomType.Setter
@@ -239,6 +295,14 @@ public final class GetManagedMySqlDatabaseResult {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseType(String databaseType) {
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseResult", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
@@ -333,11 +397,27 @@ public final class GetManagedMySqlDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder managementState(String managementState) {
+            if (managementState == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseResult", "managementState");
+            }
+            this.managementState = managementState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseResult", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
@@ -356,9 +436,18 @@ public final class GetManagedMySqlDatabaseResult {
             this.timeCreatedHeatWave = timeCreatedHeatWave;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
+            return this;
+        }
         public GetManagedMySqlDatabaseResult build() {
             final var _resultValue = new GetManagedMySqlDatabaseResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseType = databaseType;
             _resultValue.dbName = dbName;
             _resultValue.dbVersion = dbVersion;
             _resultValue.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
@@ -370,9 +459,12 @@ public final class GetManagedMySqlDatabaseResult {
             _resultValue.isHeatWaveEnabled = isHeatWaveEnabled;
             _resultValue.isLakehouseEnabled = isLakehouseEnabled;
             _resultValue.managedMySqlDatabaseId = managedMySqlDatabaseId;
+            _resultValue.managementState = managementState;
             _resultValue.name = name;
+            _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeCreatedHeatWave = timeCreatedHeatWave;
+            _resultValue.timeUpdated = timeUpdated;
             return _resultValue;
         }
     }

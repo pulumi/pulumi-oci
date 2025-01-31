@@ -68,6 +68,8 @@ type Backup struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails BackupEncryptionKeyLocationDetailArrayOutput `pulumi:"encryptionKeyLocationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
@@ -145,6 +147,8 @@ type backupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName *string `pulumi:"displayName"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails []BackupEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
@@ -187,6 +191,8 @@ type BackupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringPtrInput
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails BackupEncryptionKeyLocationDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringPtrInput
 	// The wallet name for Oracle Key Vault.
@@ -356,6 +362,11 @@ func (o BackupOutput) DatabaseSizeInGbs() pulumi.Float64Output {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Types of providers supported for managing database encryption keys
+func (o BackupOutput) EncryptionKeyLocationDetails() BackupEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v *Backup) BackupEncryptionKeyLocationDetailArrayOutput { return v.EncryptionKeyLocationDetails }).(BackupEncryptionKeyLocationDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.

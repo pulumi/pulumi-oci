@@ -84,6 +84,10 @@ export interface GetNewsReportResult {
      */
     readonly locale: string;
     /**
+     * Match rule used for tag filters.
+     */
+    readonly matchRule: string;
+    /**
      * The news report name.
      */
     readonly name: string;
@@ -108,6 +112,10 @@ export interface GetNewsReportResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+     */
+    readonly tagFilters: string[];
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */

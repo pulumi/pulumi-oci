@@ -111,7 +111,7 @@ def get_scripts(apm_domain_id: Optional[str] = None,
                 filters: Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScriptsResult:
     """
-    This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of scripts.
 
@@ -152,7 +152,7 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptsResult]:
     """
-    This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of scripts.
 

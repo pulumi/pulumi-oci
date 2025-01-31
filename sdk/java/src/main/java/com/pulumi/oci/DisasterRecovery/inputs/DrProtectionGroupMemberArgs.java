@@ -7,9 +7,16 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackendSetMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupConfigArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupLocationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberLoadBalancerMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVaultMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVnicMappingArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -51,6 +58,36 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<List<DrProtectionGroupMemberBackendSetMappingArgs>>> backendSetMappings() {
         return Optional.ofNullable(this.backendSetMappings);
+    }
+
+    /**
+     * (Updatable) Create backup configuration properties for an OKE member.
+     * 
+     */
+    @Import(name="backupConfig")
+    private @Nullable Output<DrProtectionGroupMemberBackupConfigArgs> backupConfig;
+
+    /**
+     * @return (Updatable) Create backup configuration properties for an OKE member.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberBackupConfigArgs>> backupConfig() {
+        return Optional.ofNullable(this.backupConfig);
+    }
+
+    /**
+     * (Updatable) The details for creating the backup location of an OKE Cluster.
+     * 
+     */
+    @Import(name="backupLocation")
+    private @Nullable Output<DrProtectionGroupMemberBackupLocationArgs> backupLocation;
+
+    /**
+     * @return (Updatable) The details for creating the backup location of an OKE Cluster.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberBackupLocationArgs>> backupLocation() {
+        return Optional.ofNullable(this.backupLocation);
     }
 
     /**
@@ -264,6 +301,51 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent&#39;s Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+     * 
+     */
+    @Import(name="jumpHostId")
+    private @Nullable Output<String> jumpHostId;
+
+    /**
+     * @return (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent&#39;s Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> jumpHostId() {
+        return Optional.ofNullable(this.jumpHostId);
+    }
+
+    /**
+     * (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    @Import(name="loadBalancerMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberLoadBalancerMappingArgs>> loadBalancerMappings;
+
+    /**
+     * @return (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberLoadBalancerMappingArgs>>> loadBalancerMappings() {
+        return Optional.ofNullable(this.loadBalancerMappings);
+    }
+
+    /**
+     * (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    @Import(name="managedNodePoolConfigs")
+    private @Nullable Output<List<DrProtectionGroupMemberManagedNodePoolConfigArgs>> managedNodePoolConfigs;
+
+    /**
+     * @return (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberManagedNodePoolConfigArgs>>> managedNodePoolConfigs() {
+        return Optional.ofNullable(this.managedNodePoolConfigs);
+    }
+
+    /**
      * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
@@ -309,6 +391,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    @Import(name="networkLoadBalancerMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberNetworkLoadBalancerMappingArgs>> networkLoadBalancerMappings;
+
+    /**
+     * @return (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberNetworkLoadBalancerMappingArgs>>> networkLoadBalancerMappings() {
+        return Optional.ofNullable(this.networkLoadBalancerMappings);
+    }
+
+    /**
      * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
@@ -321,6 +418,51 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> passwordVaultSecretId() {
         return Optional.ofNullable(this.passwordVaultSecretId);
+    }
+
+    /**
+     * (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+     * 
+     */
+    @Import(name="peerClusterId")
+    private @Nullable Output<String> peerClusterId;
+
+    /**
+     * @return (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> peerClusterId() {
+        return Optional.ofNullable(this.peerClusterId);
+    }
+
+    /**
+     * (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    @Import(name="vaultMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberVaultMappingArgs>> vaultMappings;
+
+    /**
+     * @return (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberVaultMappingArgs>>> vaultMappings() {
+        return Optional.ofNullable(this.vaultMappings);
+    }
+
+    /**
+     * (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    @Import(name="virtualNodePoolConfigs")
+    private @Nullable Output<List<DrProtectionGroupMemberVirtualNodePoolConfigArgs>> virtualNodePoolConfigs;
+
+    /**
+     * @return (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberVirtualNodePoolConfigArgs>>> virtualNodePoolConfigs() {
+        return Optional.ofNullable(this.virtualNodePoolConfigs);
     }
 
     /**
@@ -358,6 +500,8 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     private DrProtectionGroupMemberArgs(DrProtectionGroupMemberArgs $) {
         this.autonomousDatabaseStandbyTypeForDrDrills = $.autonomousDatabaseStandbyTypeForDrDrills;
         this.backendSetMappings = $.backendSetMappings;
+        this.backupConfig = $.backupConfig;
+        this.backupLocation = $.backupLocation;
         this.blockVolumeOperations = $.blockVolumeOperations;
         this.bucket = $.bucket;
         this.connectionStringType = $.connectionStringType;
@@ -372,10 +516,17 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.isMovable = $.isMovable;
         this.isRetainFaultDomain = $.isRetainFaultDomain;
         this.isStartStopEnabled = $.isStartStopEnabled;
+        this.jumpHostId = $.jumpHostId;
+        this.loadBalancerMappings = $.loadBalancerMappings;
+        this.managedNodePoolConfigs = $.managedNodePoolConfigs;
         this.memberId = $.memberId;
         this.memberType = $.memberType;
         this.namespace = $.namespace;
+        this.networkLoadBalancerMappings = $.networkLoadBalancerMappings;
         this.passwordVaultSecretId = $.passwordVaultSecretId;
+        this.peerClusterId = $.peerClusterId;
+        this.vaultMappings = $.vaultMappings;
+        this.virtualNodePoolConfigs = $.virtualNodePoolConfigs;
         this.vnicMapping = $.vnicMapping;
         this.vnicMappings = $.vnicMappings;
     }
@@ -448,6 +599,48 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder backendSetMappings(DrProtectionGroupMemberBackendSetMappingArgs... backendSetMappings) {
             return backendSetMappings(List.of(backendSetMappings));
+        }
+
+        /**
+         * @param backupConfig (Updatable) Create backup configuration properties for an OKE member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupConfig(@Nullable Output<DrProtectionGroupMemberBackupConfigArgs> backupConfig) {
+            $.backupConfig = backupConfig;
+            return this;
+        }
+
+        /**
+         * @param backupConfig (Updatable) Create backup configuration properties for an OKE member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupConfig(DrProtectionGroupMemberBackupConfigArgs backupConfig) {
+            return backupConfig(Output.of(backupConfig));
+        }
+
+        /**
+         * @param backupLocation (Updatable) The details for creating the backup location of an OKE Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupLocation(@Nullable Output<DrProtectionGroupMemberBackupLocationArgs> backupLocation) {
+            $.backupLocation = backupLocation;
+            return this;
+        }
+
+        /**
+         * @param backupLocation (Updatable) The details for creating the backup location of an OKE Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupLocation(DrProtectionGroupMemberBackupLocationArgs backupLocation) {
+            return backupLocation(Output.of(backupLocation));
         }
 
         /**
@@ -775,6 +968,89 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param jumpHostId (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent&#39;s Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jumpHostId(@Nullable Output<String> jumpHostId) {
+            $.jumpHostId = jumpHostId;
+            return this;
+        }
+
+        /**
+         * @param jumpHostId (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent&#39;s Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jumpHostId(String jumpHostId) {
+            return jumpHostId(Output.of(jumpHostId));
+        }
+
+        /**
+         * @param loadBalancerMappings (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerMappings(@Nullable Output<List<DrProtectionGroupMemberLoadBalancerMappingArgs>> loadBalancerMappings) {
+            $.loadBalancerMappings = loadBalancerMappings;
+            return this;
+        }
+
+        /**
+         * @param loadBalancerMappings (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerMappings(List<DrProtectionGroupMemberLoadBalancerMappingArgs> loadBalancerMappings) {
+            return loadBalancerMappings(Output.of(loadBalancerMappings));
+        }
+
+        /**
+         * @param loadBalancerMappings (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerMappings(DrProtectionGroupMemberLoadBalancerMappingArgs... loadBalancerMappings) {
+            return loadBalancerMappings(List.of(loadBalancerMappings));
+        }
+
+        /**
+         * @param managedNodePoolConfigs (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedNodePoolConfigs(@Nullable Output<List<DrProtectionGroupMemberManagedNodePoolConfigArgs>> managedNodePoolConfigs) {
+            $.managedNodePoolConfigs = managedNodePoolConfigs;
+            return this;
+        }
+
+        /**
+         * @param managedNodePoolConfigs (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedNodePoolConfigs(List<DrProtectionGroupMemberManagedNodePoolConfigArgs> managedNodePoolConfigs) {
+            return managedNodePoolConfigs(Output.of(managedNodePoolConfigs));
+        }
+
+        /**
+         * @param managedNodePoolConfigs (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedNodePoolConfigs(DrProtectionGroupMemberManagedNodePoolConfigArgs... managedNodePoolConfigs) {
+            return managedNodePoolConfigs(List.of(managedNodePoolConfigs));
+        }
+
+        /**
          * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
          * 
          * @return builder
@@ -838,6 +1114,37 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param networkLoadBalancerMappings (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLoadBalancerMappings(@Nullable Output<List<DrProtectionGroupMemberNetworkLoadBalancerMappingArgs>> networkLoadBalancerMappings) {
+            $.networkLoadBalancerMappings = networkLoadBalancerMappings;
+            return this;
+        }
+
+        /**
+         * @param networkLoadBalancerMappings (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLoadBalancerMappings(List<DrProtectionGroupMemberNetworkLoadBalancerMappingArgs> networkLoadBalancerMappings) {
+            return networkLoadBalancerMappings(Output.of(networkLoadBalancerMappings));
+        }
+
+        /**
+         * @param networkLoadBalancerMappings (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLoadBalancerMappings(DrProtectionGroupMemberNetworkLoadBalancerMappingArgs... networkLoadBalancerMappings) {
+            return networkLoadBalancerMappings(List.of(networkLoadBalancerMappings));
+        }
+
+        /**
          * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          * 
          * @return builder
@@ -856,6 +1163,89 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder passwordVaultSecretId(String passwordVaultSecretId) {
             return passwordVaultSecretId(Output.of(passwordVaultSecretId));
+        }
+
+        /**
+         * @param peerClusterId (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerClusterId(@Nullable Output<String> peerClusterId) {
+            $.peerClusterId = peerClusterId;
+            return this;
+        }
+
+        /**
+         * @param peerClusterId (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerClusterId(String peerClusterId) {
+            return peerClusterId(Output.of(peerClusterId));
+        }
+
+        /**
+         * @param vaultMappings (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vaultMappings(@Nullable Output<List<DrProtectionGroupMemberVaultMappingArgs>> vaultMappings) {
+            $.vaultMappings = vaultMappings;
+            return this;
+        }
+
+        /**
+         * @param vaultMappings (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vaultMappings(List<DrProtectionGroupMemberVaultMappingArgs> vaultMappings) {
+            return vaultMappings(Output.of(vaultMappings));
+        }
+
+        /**
+         * @param vaultMappings (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vaultMappings(DrProtectionGroupMemberVaultMappingArgs... vaultMappings) {
+            return vaultMappings(List.of(vaultMappings));
+        }
+
+        /**
+         * @param virtualNodePoolConfigs (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualNodePoolConfigs(@Nullable Output<List<DrProtectionGroupMemberVirtualNodePoolConfigArgs>> virtualNodePoolConfigs) {
+            $.virtualNodePoolConfigs = virtualNodePoolConfigs;
+            return this;
+        }
+
+        /**
+         * @param virtualNodePoolConfigs (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualNodePoolConfigs(List<DrProtectionGroupMemberVirtualNodePoolConfigArgs> virtualNodePoolConfigs) {
+            return virtualNodePoolConfigs(Output.of(virtualNodePoolConfigs));
+        }
+
+        /**
+         * @param virtualNodePoolConfigs (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualNodePoolConfigs(DrProtectionGroupMemberVirtualNodePoolConfigArgs... virtualNodePoolConfigs) {
+            return virtualNodePoolConfigs(List.of(virtualNodePoolConfigs));
         }
 
         /**

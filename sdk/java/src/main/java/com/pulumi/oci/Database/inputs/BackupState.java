@@ -5,8 +5,10 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.BackupEncryptionKeyLocationDetailArgs;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -110,6 +112,21 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="encryptionKeyLocationDetails")
+    private @Nullable Output<List<BackupEncryptionKeyLocationDetailArgs>> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<List<BackupEncryptionKeyLocationDetailArgs>>> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
     }
 
     /**
@@ -301,6 +318,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         this.databaseId = $.databaseId;
         this.databaseSizeInGbs = $.databaseSizeInGbs;
         this.displayName = $.displayName;
+        this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.keyStoreId = $.keyStoreId;
         this.keyStoreWalletName = $.keyStoreWalletName;
         this.kmsKeyId = $.kmsKeyId;
@@ -463,6 +481,37 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(@Nullable Output<List<BackupEncryptionKeyLocationDetailArgs>> encryptionKeyLocationDetails) {
+            $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(List<BackupEncryptionKeyLocationDetailArgs> encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(BackupEncryptionKeyLocationDetailArgs... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
 
         /**

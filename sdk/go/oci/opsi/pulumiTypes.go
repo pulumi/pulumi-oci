@@ -1946,6 +1946,8 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 }
 
 type NewsReportContentTypes struct {
+	// (Updatable) Supported resources for actionable insights content type.
+	ActionableInsightsResources []string `pulumi:"actionableInsightsResources"`
 	// (Updatable) Supported resources for capacity planning content type.
 	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
 	// (Updatable) Supported resources for SQL insights - fleet analysis content type.
@@ -1974,6 +1976,8 @@ type NewsReportContentTypesInput interface {
 }
 
 type NewsReportContentTypesArgs struct {
+	// (Updatable) Supported resources for actionable insights content type.
+	ActionableInsightsResources pulumi.StringArrayInput `pulumi:"actionableInsightsResources"`
 	// (Updatable) Supported resources for capacity planning content type.
 	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
 	// (Updatable) Supported resources for SQL insights - fleet analysis content type.
@@ -2067,6 +2071,11 @@ func (o NewsReportContentTypesOutput) ToNewsReportContentTypesPtrOutputWithConte
 	}).(NewsReportContentTypesPtrOutput)
 }
 
+// (Updatable) Supported resources for actionable insights content type.
+func (o NewsReportContentTypesOutput) ActionableInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.ActionableInsightsResources }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) Supported resources for capacity planning content type.
 func (o NewsReportContentTypesOutput) CapacityPlanningResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NewsReportContentTypes) []string { return v.CapacityPlanningResources }).(pulumi.StringArrayOutput)
@@ -2124,6 +2133,16 @@ func (o NewsReportContentTypesPtrOutput) Elem() NewsReportContentTypesOutput {
 		var ret NewsReportContentTypes
 		return ret
 	}).(NewsReportContentTypesOutput)
+}
+
+// (Updatable) Supported resources for actionable insights content type.
+func (o NewsReportContentTypesPtrOutput) ActionableInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NewsReportContentTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ActionableInsightsResources
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Supported resources for capacity planning content type.
@@ -5026,6 +5045,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	CredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails string `pulumi:"databaseConnectionStatusDetails"`
+	// (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId string `pulumi:"databaseConnectorId"`
 	// Display name of database
 	DatabaseDisplayName string `pulumi:"databaseDisplayName"`
 	// Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
@@ -5117,6 +5138,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	CredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringInput `pulumi:"databaseConnectionStatusDetails"`
+	// (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+	DatabaseConnectorId pulumi.StringInput `pulumi:"databaseConnectorId"`
 	// Display name of database
 	DatabaseDisplayName pulumi.StringInput `pulumi:"databaseDisplayName"`
 	// Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
@@ -5271,6 +5294,11 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseConnect
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string {
 		return v.DatabaseConnectionStatusDetails
 	}).(pulumi.StringOutput)
+}
+
+// (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseConnectorId }).(pulumi.StringOutput)
 }
 
 // Display name of database
@@ -9875,6 +9903,8 @@ func (o GetImportableComputeEntityItemArrayOutput) Index(i pulumi.IntInput) GetI
 }
 
 type GetNewsReportContentType struct {
+	// Supported resources for actionable insights content type.
+	ActionableInsightsResources []string `pulumi:"actionableInsightsResources"`
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
 	// Supported resources for SQL insights - fleet analysis content type.
@@ -9903,6 +9933,8 @@ type GetNewsReportContentTypeInput interface {
 }
 
 type GetNewsReportContentTypeArgs struct {
+	// Supported resources for actionable insights content type.
+	ActionableInsightsResources pulumi.StringArrayInput `pulumi:"actionableInsightsResources"`
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
 	// Supported resources for SQL insights - fleet analysis content type.
@@ -9968,6 +10000,11 @@ func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutput() GetNe
 
 func (o GetNewsReportContentTypeOutput) ToGetNewsReportContentTypeOutputWithContext(ctx context.Context) GetNewsReportContentTypeOutput {
 	return o
+}
+
+// Supported resources for actionable insights content type.
+func (o GetNewsReportContentTypeOutput) ActionableInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportContentType) []string { return v.ActionableInsightsResources }).(pulumi.StringArrayOutput)
 }
 
 // Supported resources for capacity planning content type.
@@ -10249,6 +10286,8 @@ type GetNewsReportsNewsReportCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Language of the news report.
 	Locale string `pulumi:"locale"`
+	// Match rule used for tag filters.
+	MatchRule string `pulumi:"matchRule"`
 	// The news report name.
 	Name string `pulumi:"name"`
 	// News report frequency.
@@ -10261,6 +10300,8 @@ type GetNewsReportsNewsReportCollectionItem struct {
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+	TagFilters []string `pulumi:"tagFilters"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -10299,6 +10340,8 @@ type GetNewsReportsNewsReportCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Language of the news report.
 	Locale pulumi.StringInput `pulumi:"locale"`
+	// Match rule used for tag filters.
+	MatchRule pulumi.StringInput `pulumi:"matchRule"`
 	// The news report name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// News report frequency.
@@ -10311,6 +10354,8 @@ type GetNewsReportsNewsReportCollectionItemArgs struct {
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+	TagFilters pulumi.StringArrayInput `pulumi:"tagFilters"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -10420,6 +10465,11 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) Locale() pulumi.StringOutp
 	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Locale }).(pulumi.StringOutput)
 }
 
+// Match rule used for tag filters.
+func (o GetNewsReportsNewsReportCollectionItemOutput) MatchRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.MatchRule }).(pulumi.StringOutput)
+}
+
 // The news report name.
 func (o GetNewsReportsNewsReportCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) string { return v.Name }).(pulumi.StringOutput)
@@ -10448,6 +10498,11 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) Status() pulumi.StringOutp
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetNewsReportsNewsReportCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+func (o GetNewsReportsNewsReportCollectionItemOutput) TagFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) []string { return v.TagFilters }).(pulumi.StringArrayOutput)
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.
@@ -10481,6 +10536,8 @@ func (o GetNewsReportsNewsReportCollectionItemArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetNewsReportsNewsReportCollectionItemContentType struct {
+	// Supported resources for actionable insights content type.
+	ActionableInsightsResources []string `pulumi:"actionableInsightsResources"`
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources []string `pulumi:"capacityPlanningResources"`
 	// Supported resources for SQL insights - fleet analysis content type.
@@ -10509,6 +10566,8 @@ type GetNewsReportsNewsReportCollectionItemContentTypeInput interface {
 }
 
 type GetNewsReportsNewsReportCollectionItemContentTypeArgs struct {
+	// Supported resources for actionable insights content type.
+	ActionableInsightsResources pulumi.StringArrayInput `pulumi:"actionableInsightsResources"`
 	// Supported resources for capacity planning content type.
 	CapacityPlanningResources pulumi.StringArrayInput `pulumi:"capacityPlanningResources"`
 	// Supported resources for SQL insights - fleet analysis content type.
@@ -10574,6 +10633,13 @@ func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReport
 
 func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ToGetNewsReportsNewsReportCollectionItemContentTypeOutputWithContext(ctx context.Context) GetNewsReportsNewsReportCollectionItemContentTypeOutput {
 	return o
+}
+
+// Supported resources for actionable insights content type.
+func (o GetNewsReportsNewsReportCollectionItemContentTypeOutput) ActionableInsightsResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItemContentType) []string {
+		return v.ActionableInsightsResources
+	}).(pulumi.StringArrayOutput)
 }
 
 // Supported resources for capacity planning content type.

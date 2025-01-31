@@ -25,6 +25,9 @@ from .external_exadata_storage_connector import *
 from .external_exadata_storage_grid import *
 from .external_exadata_storage_server import *
 from .external_listener import *
+from .external_my_sql_database import *
+from .external_my_sql_database_connector import *
+from .external_my_sql_database_external_mysql_databases_management import *
 from .externalcontainerdatabase_external_container_dbm_features_management import *
 from .externalnoncontainerdatabase_external_non_container_dbm_features_management import *
 from .externalpluggabledatabase_external_pluggable_dbm_features_management import *
@@ -67,6 +70,10 @@ from .get_external_exadata_storage_servers import *
 from .get_external_listener import *
 from .get_external_listener_services import *
 from .get_external_listeners import *
+from .get_external_my_sql_database import *
+from .get_external_my_sql_database_connector import *
+from .get_external_my_sql_database_connectors import *
+from .get_external_my_sql_databases import *
 from .get_job_executions_status import *
 from .get_job_executions_statuses import *
 from .get_managed_database import *

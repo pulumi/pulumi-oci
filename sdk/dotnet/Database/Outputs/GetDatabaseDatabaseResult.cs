@@ -46,6 +46,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseDatabaseEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -79,6 +83,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SidPrefix;
         public readonly string SourceDatabaseId;
+        public readonly ImmutableArray<Outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult> SourceEncryptionKeyLocationDetails;
         public readonly string SourceTdeWalletPassword;
         public readonly string TdeWalletPassword;
         /// <summary>
@@ -117,6 +122,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableDictionary<string, string> definedTags,
 
+            ImmutableArray<Outputs.GetDatabaseDatabaseEncryptionKeyLocationDetailResult> encryptionKeyLocationDetails,
+
             ImmutableDictionary<string, string> freeformTags,
 
             bool isActiveDataGuardEnabled,
@@ -137,6 +144,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string sourceDatabaseId,
 
+            ImmutableArray<Outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult> sourceEncryptionKeyLocationDetails,
+
             string sourceTdeWalletPassword,
 
             string tdeWalletPassword,
@@ -156,6 +165,7 @@ namespace Pulumi.Oci.Database.Outputs
             DbUniqueName = dbUniqueName;
             DbWorkload = dbWorkload;
             DefinedTags = definedTags;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             FreeformTags = freeformTags;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
             KmsKeyId = kmsKeyId;
@@ -166,6 +176,7 @@ namespace Pulumi.Oci.Database.Outputs
             ProtectionMode = protectionMode;
             SidPrefix = sidPrefix;
             SourceDatabaseId = sourceDatabaseId;
+            SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             SourceTdeWalletPassword = sourceTdeWalletPassword;
             TdeWalletPassword = tdeWalletPassword;
             TransportType = transportType;

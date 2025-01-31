@@ -105,6 +105,21 @@ export type ExternalListener = import("./externalListener").ExternalListener;
 export const ExternalListener: typeof import("./externalListener").ExternalListener = null as any;
 utilities.lazyLoad(exports, ["ExternalListener"], () => require("./externalListener"));
 
+export { ExternalMySqlDatabaseArgs, ExternalMySqlDatabaseState } from "./externalMySqlDatabase";
+export type ExternalMySqlDatabase = import("./externalMySqlDatabase").ExternalMySqlDatabase;
+export const ExternalMySqlDatabase: typeof import("./externalMySqlDatabase").ExternalMySqlDatabase = null as any;
+utilities.lazyLoad(exports, ["ExternalMySqlDatabase"], () => require("./externalMySqlDatabase"));
+
+export { ExternalMySqlDatabaseConnectorArgs, ExternalMySqlDatabaseConnectorState } from "./externalMySqlDatabaseConnector";
+export type ExternalMySqlDatabaseConnector = import("./externalMySqlDatabaseConnector").ExternalMySqlDatabaseConnector;
+export const ExternalMySqlDatabaseConnector: typeof import("./externalMySqlDatabaseConnector").ExternalMySqlDatabaseConnector = null as any;
+utilities.lazyLoad(exports, ["ExternalMySqlDatabaseConnector"], () => require("./externalMySqlDatabaseConnector"));
+
+export { ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs, ExternalMySqlDatabaseExternalMysqlDatabasesManagementState } from "./externalMySqlDatabaseExternalMysqlDatabasesManagement";
+export type ExternalMySqlDatabaseExternalMysqlDatabasesManagement = import("./externalMySqlDatabaseExternalMysqlDatabasesManagement").ExternalMySqlDatabaseExternalMysqlDatabasesManagement;
+export const ExternalMySqlDatabaseExternalMysqlDatabasesManagement: typeof import("./externalMySqlDatabaseExternalMysqlDatabasesManagement").ExternalMySqlDatabaseExternalMysqlDatabasesManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalMySqlDatabaseExternalMysqlDatabasesManagement"], () => require("./externalMySqlDatabaseExternalMysqlDatabasesManagement"));
+
 export { ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState } from "./externalcontainerdatabaseExternalContainerDbmFeaturesManagement";
 export type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = import("./externalcontainerdatabaseExternalContainerDbmFeaturesManagement").ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement;
 export const ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement: typeof import("./externalcontainerdatabaseExternalContainerDbmFeaturesManagement").ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = null as any;
@@ -314,6 +329,26 @@ export { GetExternalListenersArgs, GetExternalListenersResult, GetExternalListen
 export const getExternalListeners: typeof import("./getExternalListeners").getExternalListeners = null as any;
 export const getExternalListenersOutput: typeof import("./getExternalListeners").getExternalListenersOutput = null as any;
 utilities.lazyLoad(exports, ["getExternalListeners","getExternalListenersOutput"], () => require("./getExternalListeners"));
+
+export { GetExternalMySqlDatabaseArgs, GetExternalMySqlDatabaseResult, GetExternalMySqlDatabaseOutputArgs } from "./getExternalMySqlDatabase";
+export const getExternalMySqlDatabase: typeof import("./getExternalMySqlDatabase").getExternalMySqlDatabase = null as any;
+export const getExternalMySqlDatabaseOutput: typeof import("./getExternalMySqlDatabase").getExternalMySqlDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalMySqlDatabase","getExternalMySqlDatabaseOutput"], () => require("./getExternalMySqlDatabase"));
+
+export { GetExternalMySqlDatabaseConnectorArgs, GetExternalMySqlDatabaseConnectorResult, GetExternalMySqlDatabaseConnectorOutputArgs } from "./getExternalMySqlDatabaseConnector";
+export const getExternalMySqlDatabaseConnector: typeof import("./getExternalMySqlDatabaseConnector").getExternalMySqlDatabaseConnector = null as any;
+export const getExternalMySqlDatabaseConnectorOutput: typeof import("./getExternalMySqlDatabaseConnector").getExternalMySqlDatabaseConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalMySqlDatabaseConnector","getExternalMySqlDatabaseConnectorOutput"], () => require("./getExternalMySqlDatabaseConnector"));
+
+export { GetExternalMySqlDatabaseConnectorsArgs, GetExternalMySqlDatabaseConnectorsResult, GetExternalMySqlDatabaseConnectorsOutputArgs } from "./getExternalMySqlDatabaseConnectors";
+export const getExternalMySqlDatabaseConnectors: typeof import("./getExternalMySqlDatabaseConnectors").getExternalMySqlDatabaseConnectors = null as any;
+export const getExternalMySqlDatabaseConnectorsOutput: typeof import("./getExternalMySqlDatabaseConnectors").getExternalMySqlDatabaseConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalMySqlDatabaseConnectors","getExternalMySqlDatabaseConnectorsOutput"], () => require("./getExternalMySqlDatabaseConnectors"));
+
+export { GetExternalMySqlDatabasesArgs, GetExternalMySqlDatabasesResult, GetExternalMySqlDatabasesOutputArgs } from "./getExternalMySqlDatabases";
+export const getExternalMySqlDatabases: typeof import("./getExternalMySqlDatabases").getExternalMySqlDatabases = null as any;
+export const getExternalMySqlDatabasesOutput: typeof import("./getExternalMySqlDatabases").getExternalMySqlDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalMySqlDatabases","getExternalMySqlDatabasesOutput"], () => require("./getExternalMySqlDatabases"));
 
 export { GetJobExecutionsStatusArgs, GetJobExecutionsStatusResult, GetJobExecutionsStatusOutputArgs } from "./getJobExecutionsStatus";
 export const getJobExecutionsStatus: typeof import("./getJobExecutionsStatus").getJobExecutionsStatus = null as any;
@@ -695,6 +730,12 @@ const _module = {
                 return new ExternalExadataStorageServer(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalListener:ExternalListener":
                 return new ExternalListener(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalMySqlDatabase:ExternalMySqlDatabase":
+                return new ExternalMySqlDatabase(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector":
+                return new ExternalMySqlDatabaseConnector(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement":
+                return new ExternalMySqlDatabaseExternalMysqlDatabasesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement":
                 return new ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement":
@@ -738,6 +779,9 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadata
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageGrid", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageServer", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalListener", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalMySqlDatabase", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalMySqlDatabaseConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement", _module)

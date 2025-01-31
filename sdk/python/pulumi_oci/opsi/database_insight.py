@@ -28,6 +28,7 @@ class DatabaseInsightArgs:
                  connector_id: Optional[pulumi.Input[str]] = None,
                  credential_details: Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']] = None,
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
                  dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -52,6 +53,7 @@ class DatabaseInsightArgs:
         :param pulumi.Input[str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
         :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+        :param pulumi.Input[str] database_connector_id: (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
         :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
@@ -83,6 +85,8 @@ class DatabaseInsightArgs:
             pulumi.set(__self__, "credential_details", credential_details)
         if database_connection_status_details is not None:
             pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_resource_type is not None:
@@ -197,6 +201,18 @@ class DatabaseInsightArgs:
     @database_connection_status_details.setter
     def database_connection_status_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_connection_status_details", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -391,6 +407,7 @@ class _DatabaseInsightState:
                  connector_id: Optional[pulumi.Input[str]] = None,
                  credential_details: Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']] = None,
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
                  database_display_name: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_name: Optional[pulumi.Input[str]] = None,
@@ -432,6 +449,7 @@ class _DatabaseInsightState:
         :param pulumi.Input[str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
         :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+        :param pulumi.Input[str] database_connector_id: (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param pulumi.Input[str] database_display_name: Display name of database
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_name: Name of database
@@ -481,6 +499,8 @@ class _DatabaseInsightState:
             pulumi.set(__self__, "credential_details", credential_details)
         if database_connection_status_details is not None:
             pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
         if database_display_name is not None:
             pulumi.set(__self__, "database_display_name", database_display_name)
         if database_id is not None:
@@ -619,6 +639,18 @@ class _DatabaseInsightState:
     @database_connection_status_details.setter
     def database_connection_status_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_connection_status_details", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
 
     @property
     @pulumi.getter(name="databaseDisplayName")
@@ -1031,6 +1063,7 @@ class DatabaseInsight(pulumi.CustomResource):
                  connector_id: Optional[pulumi.Input[str]] = None,
                  credential_details: Optional[pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']]] = None,
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
                  dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -1067,6 +1100,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
         :param pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+        :param pulumi.Input[str] database_connector_id: (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
         :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
@@ -1125,6 +1159,7 @@ class DatabaseInsight(pulumi.CustomResource):
                  connector_id: Optional[pulumi.Input[str]] = None,
                  credential_details: Optional[pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']]] = None,
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
                  dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -1158,6 +1193,7 @@ class DatabaseInsight(pulumi.CustomResource):
             __props__.__dict__["connector_id"] = connector_id
             __props__.__dict__["credential_details"] = credential_details
             __props__.__dict__["database_connection_status_details"] = database_connection_status_details
+            __props__.__dict__["database_connector_id"] = database_connector_id
             __props__.__dict__["database_id"] = database_id
             __props__.__dict__["database_resource_type"] = database_resource_type
             __props__.__dict__["dbm_private_endpoint_id"] = dbm_private_endpoint_id
@@ -1209,6 +1245,7 @@ class DatabaseInsight(pulumi.CustomResource):
             connector_id: Optional[pulumi.Input[str]] = None,
             credential_details: Optional[pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']]] = None,
             database_connection_status_details: Optional[pulumi.Input[str]] = None,
+            database_connector_id: Optional[pulumi.Input[str]] = None,
             database_display_name: Optional[pulumi.Input[str]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_name: Optional[pulumi.Input[str]] = None,
@@ -1255,6 +1292,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
         :param pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+        :param pulumi.Input[str] database_connector_id: (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param pulumi.Input[str] database_display_name: Display name of database
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_name: Name of database
@@ -1302,6 +1340,7 @@ class DatabaseInsight(pulumi.CustomResource):
         __props__.__dict__["connector_id"] = connector_id
         __props__.__dict__["credential_details"] = credential_details
         __props__.__dict__["database_connection_status_details"] = database_connection_status_details
+        __props__.__dict__["database_connector_id"] = database_connector_id
         __props__.__dict__["database_display_name"] = database_display_name
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_name"] = database_name
@@ -1384,6 +1423,14 @@ class DatabaseInsight(pulumi.CustomResource):
         A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         """
         return pulumi.get(self, "database_connection_status_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        """
+        return pulumi.get(self, "database_connector_id")
 
     @property
     @pulumi.getter(name="databaseDisplayName")

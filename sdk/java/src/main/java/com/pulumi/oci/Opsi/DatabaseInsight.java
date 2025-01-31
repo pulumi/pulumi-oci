@@ -119,6 +119,20 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.databaseConnectionStatusDetails;
     }
     /**
+     * (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     * 
+     */
+    @Export(name="databaseConnectorId", refs={String.class}, tree="[0]")
+    private Output<String> databaseConnectorId;
+
+    /**
+     * @return (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     * 
+     */
+    public Output<String> databaseConnectorId() {
+        return this.databaseConnectorId;
+    }
+    /**
      * Display name of database
      * 
      */

@@ -70,6 +70,10 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly databaseConnectionStatusDetails!: pulumi.Output<string>;
     /**
+     * (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     */
+    public readonly databaseConnectorId!: pulumi.Output<string>;
+    /**
      * Display name of database
      */
     public /*out*/ readonly databaseDisplayName!: pulumi.Output<string>;
@@ -224,6 +228,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["connectorId"] = state ? state.connectorId : undefined;
             resourceInputs["credentialDetails"] = state ? state.credentialDetails : undefined;
             resourceInputs["databaseConnectionStatusDetails"] = state ? state.databaseConnectionStatusDetails : undefined;
+            resourceInputs["databaseConnectorId"] = state ? state.databaseConnectorId : undefined;
             resourceInputs["databaseDisplayName"] = state ? state.databaseDisplayName : undefined;
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseName"] = state ? state.databaseName : undefined;
@@ -271,6 +276,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["connectorId"] = args ? args.connectorId : undefined;
             resourceInputs["credentialDetails"] = args ? args.credentialDetails : undefined;
             resourceInputs["databaseConnectionStatusDetails"] = args ? args.databaseConnectionStatusDetails : undefined;
+            resourceInputs["databaseConnectorId"] = args ? args.databaseConnectorId : undefined;
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
             resourceInputs["databaseResourceType"] = args ? args.databaseResourceType : undefined;
             resourceInputs["dbmPrivateEndpointId"] = args ? args.dbmPrivateEndpointId : undefined;
@@ -338,6 +344,10 @@ export interface DatabaseInsightState {
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      */
     databaseConnectionStatusDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     */
+    databaseConnectorId?: pulumi.Input<string>;
     /**
      * Display name of database
      */
@@ -503,6 +513,10 @@ export interface DatabaseInsightArgs {
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      */
     databaseConnectionStatusDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     */
+    databaseConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */

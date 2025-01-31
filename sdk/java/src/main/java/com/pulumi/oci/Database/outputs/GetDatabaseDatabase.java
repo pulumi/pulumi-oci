@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseEncryptionKeyLocationDetail;
+import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -54,6 +56,11 @@ public final class GetDatabaseDatabase {
      */
     private Map<String,String> definedTags;
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private List<GetDatabaseDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -95,6 +102,7 @@ public final class GetDatabaseDatabase {
      */
     private String sidPrefix;
     private String sourceDatabaseId;
+    private List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
     private String sourceTdeWalletPassword;
     private String tdeWalletPassword;
     /**
@@ -174,6 +182,13 @@ public final class GetDatabaseDatabase {
         return this.definedTags;
     }
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public List<GetDatabaseDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -235,6 +250,9 @@ public final class GetDatabaseDatabase {
     public String sourceDatabaseId() {
         return this.sourceDatabaseId;
     }
+    public List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails() {
+        return this.sourceEncryptionKeyLocationDetails;
+    }
     public String sourceTdeWalletPassword() {
         return this.sourceTdeWalletPassword;
     }
@@ -279,6 +297,7 @@ public final class GetDatabaseDatabase {
         private String dbUniqueName;
         private String dbWorkload;
         private Map<String,String> definedTags;
+        private List<GetDatabaseDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private Map<String,String> freeformTags;
         private Boolean isActiveDataGuardEnabled;
         private String kmsKeyId;
@@ -289,6 +308,7 @@ public final class GetDatabaseDatabase {
         private String protectionMode;
         private String sidPrefix;
         private String sourceDatabaseId;
+        private List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
         private String sourceTdeWalletPassword;
         private String tdeWalletPassword;
         private String transportType;
@@ -307,6 +327,7 @@ public final class GetDatabaseDatabase {
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
@@ -317,6 +338,7 @@ public final class GetDatabaseDatabase {
     	      this.protectionMode = defaults.protectionMode;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
+    	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.transportType = defaults.transportType;
@@ -415,6 +437,17 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(List<GetDatabaseDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails) {
+            if (encryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "encryptionKeyLocationDetails");
+            }
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder encryptionKeyLocationDetails(GetDatabaseDatabaseEncryptionKeyLocationDetail... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "freeformTags");
@@ -498,6 +531,17 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceEncryptionKeyLocationDetails(List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails) {
+            if (sourceEncryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "sourceEncryptionKeyLocationDetails");
+            }
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder sourceEncryptionKeyLocationDetails(GetDatabaseDatabaseSourceEncryptionKeyLocationDetail... sourceEncryptionKeyLocationDetails) {
+            return sourceEncryptionKeyLocationDetails(List.of(sourceEncryptionKeyLocationDetails));
+        }
+        @CustomType.Setter
         public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
             if (sourceTdeWalletPassword == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "sourceTdeWalletPassword");
@@ -542,6 +586,7 @@ public final class GetDatabaseDatabase {
             _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.dbWorkload = dbWorkload;
             _resultValue.definedTags = definedTags;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
@@ -552,6 +597,7 @@ public final class GetDatabaseDatabase {
             _resultValue.protectionMode = protectionMode;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.sourceDatabaseId = sourceDatabaseId;
+            _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.transportType = transportType;

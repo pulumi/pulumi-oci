@@ -144,7 +144,7 @@ def get_on_premise_vantage_point_workers(apm_domain_id: Optional[str] = None,
                                          status: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnPremiseVantagePointWorkersResult:
     """
-    This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of workers.
 
@@ -200,7 +200,7 @@ def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.I
                                                 status: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointWorkersResult]:
     """
-    This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of On Premise Vantage Point Workers in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of workers.
 

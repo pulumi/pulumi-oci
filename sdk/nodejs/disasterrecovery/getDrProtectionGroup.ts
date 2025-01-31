@@ -63,7 +63,7 @@ export interface GetDrProtectionGroupResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+     * The OCID of the virtual node pool in OKE cluster.
      */
     readonly id: string;
     /**

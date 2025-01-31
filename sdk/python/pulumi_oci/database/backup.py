@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['BackupArgs', 'Backup']
 
@@ -71,6 +73,7 @@ class _BackupState:
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  key_store_wallet_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -95,6 +98,7 @@ class _BackupState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -120,6 +124,8 @@ class _BackupState:
             pulumi.set(__self__, "database_size_in_gbs", database_size_in_gbs)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encryption_key_location_details is not None:
+            pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         if key_store_id is not None:
             pulumi.set(__self__, "key_store_id", key_store_id)
         if key_store_wallet_name is not None:
@@ -220,6 +226,18 @@ class _BackupState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BackupEncryptionKeyLocationDetailArgs']]]]):
+        pulumi.set(self, "encryption_key_location_details", value)
 
     @property
     @pulumi.getter(name="keyStoreId")
@@ -473,6 +491,7 @@ class Backup(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["database_edition"] = None
             __props__.__dict__["database_size_in_gbs"] = None
+            __props__.__dict__["encryption_key_location_details"] = None
             __props__.__dict__["key_store_id"] = None
             __props__.__dict__["key_store_wallet_name"] = None
             __props__.__dict__["kms_key_id"] = None
@@ -501,6 +520,7 @@ class Backup(pulumi.CustomResource):
             database_id: Optional[pulumi.Input[str]] = None,
             database_size_in_gbs: Optional[pulumi.Input[float]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -530,6 +550,7 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -553,6 +574,7 @@ class Backup(pulumi.CustomResource):
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_size_in_gbs"] = database_size_in_gbs
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["encryption_key_location_details"] = encryption_key_location_details
         __props__.__dict__["key_store_id"] = key_store_id
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["kms_key_id"] = kms_key_id
@@ -618,6 +640,14 @@ class Backup(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> pulumi.Output[Sequence['outputs.BackupEncryptionKeyLocationDetail']]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
 
     @property
     @pulumi.getter(name="keyStoreId")

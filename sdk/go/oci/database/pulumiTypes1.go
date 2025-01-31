@@ -13,6 +13,1388 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDbSystemsDbSystemMaintenanceWindowDetail struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetDbSystemsDbSystemMaintenanceWindowDetailMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	SkipRus    []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDetailInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailArgs and GetDbSystemsDbSystemMaintenanceWindowDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDetailArgs{...}
+type GetDbSystemsDbSystemMaintenanceWindowDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailOutput() GetDbSystemsDbSystemMaintenanceWindowDetailOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailArgs) ToGetDbSystemsDbSystemMaintenanceWindowDetailOutput() GetDbSystemsDbSystemMaintenanceWindowDetailOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailArgs) ToGetDbSystemsDbSystemMaintenanceWindowDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDetailOutput)
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailArray and GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDetailArray{ GetDbSystemsDbSystemMaintenanceWindowDetailArgs{...} }
+type GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailArray []GetDbSystemsDbSystemMaintenanceWindowDetailInput
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailArray) ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailArray) ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailOutput() GetDbSystemsDbSystemMaintenanceWindowDetailOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) DaysOfWeeks() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) []GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) Months() GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) []GetDbSystemsDbSystemMaintenanceWindowDetailMonth {
+		return v.Months
+	}).(GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) string { return v.Preference }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetail) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemMaintenanceWindowDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemMaintenanceWindowDetail {
+		return vs[0].([]GetDbSystemsDbSystemMaintenanceWindowDetail)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemMaintenanceWindowDetailOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs and GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{...}
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray and GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray{ GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{...} }
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray []GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek {
+		return vs[0].([]GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs and GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{...}
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput() GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput() GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput)
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray and GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray{ GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{...} }
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray []GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput() GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDetailMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemMaintenanceWindowDetailMonth {
+		return vs[0].([]GetDbSystemsDbSystemMaintenanceWindowDetailMonth)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowMonthInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowMonthArgs and GetDbSystemsDbSystemMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowMonthInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowMonthArgs{...}
+type GetDbSystemsDbSystemMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowMonthOutput() GetDbSystemsDbSystemMaintenanceWindowMonthOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowMonthOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowMonthOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDbSystemsDbSystemMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowMonthArgs) ToGetDbSystemsDbSystemMaintenanceWindowMonthOutput() GetDbSystemsDbSystemMaintenanceWindowMonthOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowMonthArgs) ToGetDbSystemsDbSystemMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowMonthOutput)
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowMonthArray and GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowMonthArray{ GetDbSystemsDbSystemMaintenanceWindowMonthArgs{...} }
+type GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput() GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowMonthArray []GetDbSystemsDbSystemMaintenanceWindowMonthInput
+
+func (GetDbSystemsDbSystemMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowMonthArray) ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput() GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowMonthArray) ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowMonthOutput) ToGetDbSystemsDbSystemMaintenanceWindowMonthOutput() GetDbSystemsDbSystemMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowMonthOutput) ToGetDbSystemsDbSystemMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetDbSystemsDbSystemMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput() GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemMaintenanceWindowMonth {
+		return vs[0].([]GetDbSystemsDbSystemMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemMaintenanceWindowMonthOutput)
+}
+
+type GetDbSystemsFilter struct {
+	// Name of the month of the year.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemsFilterInput is an input type that accepts GetDbSystemsFilterArgs and GetDbSystemsFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemsFilterInput` via:
+//
+//	GetDbSystemsFilterArgs{...}
+type GetDbSystemsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsFilterOutput() GetDbSystemsFilterOutput
+	ToGetDbSystemsFilterOutputWithContext(context.Context) GetDbSystemsFilterOutput
+}
+
+type GetDbSystemsFilterArgs struct {
+	// Name of the month of the year.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemsFilterArgs) ToGetDbSystemsFilterOutput() GetDbSystemsFilterOutput {
+	return i.ToGetDbSystemsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsFilterArgs) ToGetDbSystemsFilterOutputWithContext(ctx context.Context) GetDbSystemsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsFilterOutput)
+}
+
+// GetDbSystemsFilterArrayInput is an input type that accepts GetDbSystemsFilterArray and GetDbSystemsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsFilterArrayInput` via:
+//
+//	GetDbSystemsFilterArray{ GetDbSystemsFilterArgs{...} }
+type GetDbSystemsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsFilterArrayOutput() GetDbSystemsFilterArrayOutput
+	ToGetDbSystemsFilterArrayOutputWithContext(context.Context) GetDbSystemsFilterArrayOutput
+}
+
+type GetDbSystemsFilterArray []GetDbSystemsFilterInput
+
+func (GetDbSystemsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemsFilterArray) ToGetDbSystemsFilterArrayOutput() GetDbSystemsFilterArrayOutput {
+	return i.ToGetDbSystemsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsFilterArray) ToGetDbSystemsFilterArrayOutputWithContext(ctx context.Context) GetDbSystemsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsFilterArrayOutput)
+}
+
+type GetDbSystemsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemsFilterOutput) ToGetDbSystemsFilterOutput() GetDbSystemsFilterOutput {
+	return o
+}
+
+func (o GetDbSystemsFilterOutput) ToGetDbSystemsFilterOutputWithContext(ctx context.Context) GetDbSystemsFilterOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetDbSystemsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemsFilterArrayOutput) ToGetDbSystemsFilterArrayOutput() GetDbSystemsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsFilterArrayOutput) ToGetDbSystemsFilterArrayOutputWithContext(ctx context.Context) GetDbSystemsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsFilter {
+		return vs[0].([]GetDbSystemsFilter)[vs[1].(int)]
+	}).(GetDbSystemsFilterOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry struct {
+	// The operating system upgrade action.
+	Action string `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	NewGiVersion string `pulumi:"newGiVersion"`
+	// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+	NewOsVersion string `pulumi:"newOsVersion"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	OldGiVersion string `pulumi:"oldGiVersion"`
+	// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+	OldOsVersion string `pulumi:"oldOsVersion"`
+	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	SnapshotRetentionPeriodInDays int `pulumi:"snapshotRetentionPeriodInDays"`
+	// A filter to return only upgrade history entries that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time when the upgrade action completed
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the upgrade action started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs and GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput` via:
+//
+//	GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...}
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs struct {
+	// The operating system upgrade action.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	NewGiVersion pulumi.StringInput `pulumi:"newGiVersion"`
+	// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+	NewOsVersion pulumi.StringInput `pulumi:"newOsVersion"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	OldGiVersion pulumi.StringInput `pulumi:"oldGiVersion"`
+	// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+	OldOsVersion pulumi.StringInput `pulumi:"oldOsVersion"`
+	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	SnapshotRetentionPeriodInDays pulumi.IntInput `pulumi:"snapshotRetentionPeriodInDays"`
+	// A filter to return only upgrade history entries that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the upgrade action completed
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the upgrade action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput)
+}
+
+// GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray and GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput` via:
+//
+//	GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray{ GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...} }
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray []GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return o
+}
+
+// The operating system upgrade action.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Grid Infrastructure (GI) software version.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) NewGiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.NewGiVersion }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) NewOsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.NewOsVersion }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Grid Infrastructure (GI) software version.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) OldGiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.OldGiVersion }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) OldOsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.OldOsVersion }).(pulumi.StringOutput)
+}
+
+// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) SnapshotRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) int {
+		return v.SnapshotRetentionPeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only upgrade history entries that match the given lifecycle state exactly.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the upgrade action completed
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time when the upgrade action started.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry {
+		return vs[0].([]GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)[vs[1].(int)]
+	}).(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemsUpgradeHistoryEntriesFilterInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesFilterArgs and GetDbSystemsUpgradeHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesFilterInput` via:
+//
+//	GetDbSystemsUpgradeHistoryEntriesFilterArgs{...}
+type GetDbSystemsUpgradeHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesFilterOutput() GetDbSystemsUpgradeHistoryEntriesFilterOutput
+	ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesFilterOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArgs) ToGetDbSystemsUpgradeHistoryEntriesFilterOutput() GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArgs) ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesFilterOutput)
+}
+
+// GetDbSystemsUpgradeHistoryEntriesFilterArrayInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesFilterArray and GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesFilterArrayInput` via:
+//
+//	GetDbSystemsUpgradeHistoryEntriesFilterArray{ GetDbSystemsUpgradeHistoryEntriesFilterArgs{...} }
+type GetDbSystemsUpgradeHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutput() GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput
+	ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterArray []GetDbSystemsUpgradeHistoryEntriesFilterInput
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArray) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutput() GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArray) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterOutput() GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutput() GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsUpgradeHistoryEntriesFilter {
+		return vs[0].([]GetDbSystemsUpgradeHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetDbSystemsUpgradeHistoryEntriesFilterOutput)
+}
+
+type GetDbVersionsDbVersion struct {
+	// True if this version of the Oracle Database software is the latest version for a release.
+	IsLatestForMajorVersion bool `pulumi:"isLatestForMajorVersion"`
+	// True if this version of the Oracle Database software is the preview version.
+	IsPreviewDbVersion bool `pulumi:"isPreviewDbVersion"`
+	// If provided, filters the results to the set of database versions which are supported for Upgrade.
+	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
+	// True if this version of the Oracle Database software supports pluggable databases.
+	SupportsPdb bool `pulumi:"supportsPdb"`
+	// A valid Oracle Database version.
+	Version string `pulumi:"version"`
+}
+
+// GetDbVersionsDbVersionInput is an input type that accepts GetDbVersionsDbVersionArgs and GetDbVersionsDbVersionOutput values.
+// You can construct a concrete instance of `GetDbVersionsDbVersionInput` via:
+//
+//	GetDbVersionsDbVersionArgs{...}
+type GetDbVersionsDbVersionInput interface {
+	pulumi.Input
+
+	ToGetDbVersionsDbVersionOutput() GetDbVersionsDbVersionOutput
+	ToGetDbVersionsDbVersionOutputWithContext(context.Context) GetDbVersionsDbVersionOutput
+}
+
+type GetDbVersionsDbVersionArgs struct {
+	// True if this version of the Oracle Database software is the latest version for a release.
+	IsLatestForMajorVersion pulumi.BoolInput `pulumi:"isLatestForMajorVersion"`
+	// True if this version of the Oracle Database software is the preview version.
+	IsPreviewDbVersion pulumi.BoolInput `pulumi:"isPreviewDbVersion"`
+	// If provided, filters the results to the set of database versions which are supported for Upgrade.
+	IsUpgradeSupported pulumi.BoolInput `pulumi:"isUpgradeSupported"`
+	// True if this version of the Oracle Database software supports pluggable databases.
+	SupportsPdb pulumi.BoolInput `pulumi:"supportsPdb"`
+	// A valid Oracle Database version.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDbVersionsDbVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbVersionsDbVersion)(nil)).Elem()
+}
+
+func (i GetDbVersionsDbVersionArgs) ToGetDbVersionsDbVersionOutput() GetDbVersionsDbVersionOutput {
+	return i.ToGetDbVersionsDbVersionOutputWithContext(context.Background())
+}
+
+func (i GetDbVersionsDbVersionArgs) ToGetDbVersionsDbVersionOutputWithContext(ctx context.Context) GetDbVersionsDbVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbVersionsDbVersionOutput)
+}
+
+// GetDbVersionsDbVersionArrayInput is an input type that accepts GetDbVersionsDbVersionArray and GetDbVersionsDbVersionArrayOutput values.
+// You can construct a concrete instance of `GetDbVersionsDbVersionArrayInput` via:
+//
+//	GetDbVersionsDbVersionArray{ GetDbVersionsDbVersionArgs{...} }
+type GetDbVersionsDbVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbVersionsDbVersionArrayOutput() GetDbVersionsDbVersionArrayOutput
+	ToGetDbVersionsDbVersionArrayOutputWithContext(context.Context) GetDbVersionsDbVersionArrayOutput
+}
+
+type GetDbVersionsDbVersionArray []GetDbVersionsDbVersionInput
+
+func (GetDbVersionsDbVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbVersionsDbVersion)(nil)).Elem()
+}
+
+func (i GetDbVersionsDbVersionArray) ToGetDbVersionsDbVersionArrayOutput() GetDbVersionsDbVersionArrayOutput {
+	return i.ToGetDbVersionsDbVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbVersionsDbVersionArray) ToGetDbVersionsDbVersionArrayOutputWithContext(ctx context.Context) GetDbVersionsDbVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbVersionsDbVersionArrayOutput)
+}
+
+type GetDbVersionsDbVersionOutput struct{ *pulumi.OutputState }
+
+func (GetDbVersionsDbVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbVersionsDbVersion)(nil)).Elem()
+}
+
+func (o GetDbVersionsDbVersionOutput) ToGetDbVersionsDbVersionOutput() GetDbVersionsDbVersionOutput {
+	return o
+}
+
+func (o GetDbVersionsDbVersionOutput) ToGetDbVersionsDbVersionOutputWithContext(ctx context.Context) GetDbVersionsDbVersionOutput {
+	return o
+}
+
+// True if this version of the Oracle Database software is the latest version for a release.
+func (o GetDbVersionsDbVersionOutput) IsLatestForMajorVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbVersionsDbVersion) bool { return v.IsLatestForMajorVersion }).(pulumi.BoolOutput)
+}
+
+// True if this version of the Oracle Database software is the preview version.
+func (o GetDbVersionsDbVersionOutput) IsPreviewDbVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbVersionsDbVersion) bool { return v.IsPreviewDbVersion }).(pulumi.BoolOutput)
+}
+
+// If provided, filters the results to the set of database versions which are supported for Upgrade.
+func (o GetDbVersionsDbVersionOutput) IsUpgradeSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbVersionsDbVersion) bool { return v.IsUpgradeSupported }).(pulumi.BoolOutput)
+}
+
+// True if this version of the Oracle Database software supports pluggable databases.
+func (o GetDbVersionsDbVersionOutput) SupportsPdb() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbVersionsDbVersion) bool { return v.SupportsPdb }).(pulumi.BoolOutput)
+}
+
+// A valid Oracle Database version.
+func (o GetDbVersionsDbVersionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbVersionsDbVersion) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDbVersionsDbVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbVersionsDbVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbVersionsDbVersion)(nil)).Elem()
+}
+
+func (o GetDbVersionsDbVersionArrayOutput) ToGetDbVersionsDbVersionArrayOutput() GetDbVersionsDbVersionArrayOutput {
+	return o
+}
+
+func (o GetDbVersionsDbVersionArrayOutput) ToGetDbVersionsDbVersionArrayOutputWithContext(ctx context.Context) GetDbVersionsDbVersionArrayOutput {
+	return o
+}
+
+func (o GetDbVersionsDbVersionArrayOutput) Index(i pulumi.IntInput) GetDbVersionsDbVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbVersionsDbVersion {
+		return vs[0].([]GetDbVersionsDbVersion)[vs[1].(int)]
+	}).(GetDbVersionsDbVersionOutput)
+}
+
+type GetDbVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbVersionsFilterInput is an input type that accepts GetDbVersionsFilterArgs and GetDbVersionsFilterOutput values.
+// You can construct a concrete instance of `GetDbVersionsFilterInput` via:
+//
+//	GetDbVersionsFilterArgs{...}
+type GetDbVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbVersionsFilterOutput() GetDbVersionsFilterOutput
+	ToGetDbVersionsFilterOutputWithContext(context.Context) GetDbVersionsFilterOutput
+}
+
+type GetDbVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbVersionsFilter)(nil)).Elem()
+}
+
+func (i GetDbVersionsFilterArgs) ToGetDbVersionsFilterOutput() GetDbVersionsFilterOutput {
+	return i.ToGetDbVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbVersionsFilterArgs) ToGetDbVersionsFilterOutputWithContext(ctx context.Context) GetDbVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbVersionsFilterOutput)
+}
+
+// GetDbVersionsFilterArrayInput is an input type that accepts GetDbVersionsFilterArray and GetDbVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbVersionsFilterArrayInput` via:
+//
+//	GetDbVersionsFilterArray{ GetDbVersionsFilterArgs{...} }
+type GetDbVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbVersionsFilterArrayOutput() GetDbVersionsFilterArrayOutput
+	ToGetDbVersionsFilterArrayOutputWithContext(context.Context) GetDbVersionsFilterArrayOutput
+}
+
+type GetDbVersionsFilterArray []GetDbVersionsFilterInput
+
+func (GetDbVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbVersionsFilter)(nil)).Elem()
+}
+
+func (i GetDbVersionsFilterArray) ToGetDbVersionsFilterArrayOutput() GetDbVersionsFilterArrayOutput {
+	return i.ToGetDbVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbVersionsFilterArray) ToGetDbVersionsFilterArrayOutputWithContext(ctx context.Context) GetDbVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbVersionsFilterArrayOutput)
+}
+
+type GetDbVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbVersionsFilter)(nil)).Elem()
+}
+
+func (o GetDbVersionsFilterOutput) ToGetDbVersionsFilterOutput() GetDbVersionsFilterOutput {
+	return o
+}
+
+func (o GetDbVersionsFilterOutput) ToGetDbVersionsFilterOutputWithContext(ctx context.Context) GetDbVersionsFilterOutput {
+	return o
+}
+
+func (o GetDbVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbVersionsFilter)(nil)).Elem()
+}
+
+func (o GetDbVersionsFilterArrayOutput) ToGetDbVersionsFilterArrayOutput() GetDbVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbVersionsFilterArrayOutput) ToGetDbVersionsFilterArrayOutputWithContext(ctx context.Context) GetDbVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetDbVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbVersionsFilter {
+		return vs[0].([]GetDbVersionsFilter)[vs[1].(int)]
+	}).(GetDbVersionsFilterOutput)
+}
+
+type GetExadataInfrastructureContact struct {
+	// The email for the Exadata Infrastructure contact.
+	Email string `pulumi:"email"`
+	// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+	IsContactMosValidated bool `pulumi:"isContactMosValidated"`
+	// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+	IsPrimary bool `pulumi:"isPrimary"`
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+	// The phone number for the Exadata Infrastructure contact.
+	PhoneNumber string `pulumi:"phoneNumber"`
+}
+
+// GetExadataInfrastructureContactInput is an input type that accepts GetExadataInfrastructureContactArgs and GetExadataInfrastructureContactOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureContactInput` via:
+//
+//	GetExadataInfrastructureContactArgs{...}
+type GetExadataInfrastructureContactInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureContactOutput() GetExadataInfrastructureContactOutput
+	ToGetExadataInfrastructureContactOutputWithContext(context.Context) GetExadataInfrastructureContactOutput
+}
+
+type GetExadataInfrastructureContactArgs struct {
+	// The email for the Exadata Infrastructure contact.
+	Email pulumi.StringInput `pulumi:"email"`
+	// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+	IsContactMosValidated pulumi.BoolInput `pulumi:"isContactMosValidated"`
+	// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The phone number for the Exadata Infrastructure contact.
+	PhoneNumber pulumi.StringInput `pulumi:"phoneNumber"`
+}
+
+func (GetExadataInfrastructureContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureContactArgs) ToGetExadataInfrastructureContactOutput() GetExadataInfrastructureContactOutput {
+	return i.ToGetExadataInfrastructureContactOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureContactArgs) ToGetExadataInfrastructureContactOutputWithContext(ctx context.Context) GetExadataInfrastructureContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureContactOutput)
+}
+
+// GetExadataInfrastructureContactArrayInput is an input type that accepts GetExadataInfrastructureContactArray and GetExadataInfrastructureContactArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureContactArrayInput` via:
+//
+//	GetExadataInfrastructureContactArray{ GetExadataInfrastructureContactArgs{...} }
+type GetExadataInfrastructureContactArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureContactArrayOutput() GetExadataInfrastructureContactArrayOutput
+	ToGetExadataInfrastructureContactArrayOutputWithContext(context.Context) GetExadataInfrastructureContactArrayOutput
+}
+
+type GetExadataInfrastructureContactArray []GetExadataInfrastructureContactInput
+
+func (GetExadataInfrastructureContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureContactArray) ToGetExadataInfrastructureContactArrayOutput() GetExadataInfrastructureContactArrayOutput {
+	return i.ToGetExadataInfrastructureContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureContactArray) ToGetExadataInfrastructureContactArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureContactArrayOutput)
+}
+
+type GetExadataInfrastructureContactOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureContactOutput) ToGetExadataInfrastructureContactOutput() GetExadataInfrastructureContactOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureContactOutput) ToGetExadataInfrastructureContactOutputWithContext(ctx context.Context) GetExadataInfrastructureContactOutput {
+	return o
+}
+
+// The email for the Exadata Infrastructure contact.
+func (o GetExadataInfrastructureContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+func (o GetExadataInfrastructureContactOutput) IsContactMosValidated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureContact) bool { return v.IsContactMosValidated }).(pulumi.BoolOutput)
+}
+
+// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+func (o GetExadataInfrastructureContactOutput) IsPrimary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureContact) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+// Name of the month of the year.
+func (o GetExadataInfrastructureContactOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureContact) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The phone number for the Exadata Infrastructure contact.
+func (o GetExadataInfrastructureContactOutput) PhoneNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureContact) string { return v.PhoneNumber }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructureContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureContact)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureContactArrayOutput) ToGetExadataInfrastructureContactArrayOutput() GetExadataInfrastructureContactArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureContactArrayOutput) ToGetExadataInfrastructureContactArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureContactArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureContactArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureContact {
+		return vs[0].([]GetExadataInfrastructureContact)[vs[1].(int)]
+	}).(GetExadataInfrastructureContactOutput)
+}
+
+type GetExadataInfrastructureDefinedFileSystemConfiguration struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition bool `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable bool `pulumi:"isResizable"`
+	// The minimum size of file system.
+	MinSizeGb int `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetExadataInfrastructureDefinedFileSystemConfigurationInput is an input type that accepts GetExadataInfrastructureDefinedFileSystemConfigurationArgs and GetExadataInfrastructureDefinedFileSystemConfigurationOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureDefinedFileSystemConfigurationInput` via:
+//
+//	GetExadataInfrastructureDefinedFileSystemConfigurationArgs{...}
+type GetExadataInfrastructureDefinedFileSystemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureDefinedFileSystemConfigurationOutput() GetExadataInfrastructureDefinedFileSystemConfigurationOutput
+	ToGetExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Context) GetExadataInfrastructureDefinedFileSystemConfigurationOutput
+}
+
+type GetExadataInfrastructureDefinedFileSystemConfigurationArgs struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The minimum size of file system.
+	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetExadataInfrastructureDefinedFileSystemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetExadataInfrastructureDefinedFileSystemConfigurationOutput() GetExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return i.ToGetExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+// GetExadataInfrastructureDefinedFileSystemConfigurationArrayInput is an input type that accepts GetExadataInfrastructureDefinedFileSystemConfigurationArray and GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureDefinedFileSystemConfigurationArrayInput` via:
+//
+//	GetExadataInfrastructureDefinedFileSystemConfigurationArray{ GetExadataInfrastructureDefinedFileSystemConfigurationArgs{...} }
+type GetExadataInfrastructureDefinedFileSystemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+	ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Context) GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+}
+
+type GetExadataInfrastructureDefinedFileSystemConfigurationArray []GetExadataInfrastructureDefinedFileSystemConfigurationInput
+
+func (GetExadataInfrastructureDefinedFileSystemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return i.ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
+}
+
+type GetExadataInfrastructureDefinedFileSystemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureDefinedFileSystemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetExadataInfrastructureDefinedFileSystemConfigurationOutput() GetExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+// If true, the file system is used to create a backup prior to Exadata VM OS update.
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) IsBackupPartition() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDefinedFileSystemConfiguration) bool { return v.IsBackupPartition }).(pulumi.BoolOutput)
+}
+
+// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) IsResizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDefinedFileSystemConfiguration) bool { return v.IsResizable }).(pulumi.BoolOutput)
+}
+
+// The minimum size of file system.
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) MinSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDefinedFileSystemConfiguration) int { return v.MinSizeGb }).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDefinedFileSystemConfiguration) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureDefinedFileSystemConfiguration {
+		return vs[0].([]GetExadataInfrastructureDefinedFileSystemConfiguration)[vs[1].(int)]
+	}).(GetExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
 type GetExadataInfrastructureMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
@@ -18669,6 +20051,28 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowMonthInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsFilterInput)(nil)).Elem(), GetDbSystemsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsFilterArrayInput)(nil)).Elem(), GetDbSystemsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilterInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsDbVersionInput)(nil)).Elem(), GetDbVersionsDbVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsDbVersionArrayInput)(nil)).Elem(), GetDbVersionsDbVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsFilterInput)(nil)).Elem(), GetDbVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsFilterArrayInput)(nil)).Elem(), GetDbVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureContactInput)(nil)).Elem(), GetExadataInfrastructureContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureContactArrayInput)(nil)).Elem(), GetExadataInfrastructureContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetExadataInfrastructureDefinedFileSystemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructureDefinedFileSystemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -18941,6 +20345,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbVersionsDbVersionOutput{})
+	pulumi.RegisterOutputType(GetDbVersionsDbVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureContactOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureContactArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureDefinedFileSystemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})

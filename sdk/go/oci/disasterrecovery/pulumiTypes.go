@@ -1730,6 +1730,10 @@ type DrProtectionGroupMember struct {
 	AutonomousDatabaseStandbyTypeForDrDrills *string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []DrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
+	// (Updatable) Create backup configuration properties for an OKE member.
+	BackupConfig *DrProtectionGroupMemberBackupConfig `pulumi:"backupConfig"`
+	// (Updatable) The details for creating the backup location of an OKE Cluster.
+	BackupLocation *DrProtectionGroupMemberBackupLocation `pulumi:"backupLocation"`
 	// (Updatable) A list of operations performed on block volumes used by the compute instance.
 	BlockVolumeOperations []DrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
@@ -1758,14 +1762,28 @@ type DrProtectionGroupMember struct {
 	IsRetainFaultDomain *bool `pulumi:"isRetainFaultDomain"`
 	// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
 	IsStartStopEnabled *bool `pulumi:"isStartStopEnabled"`
+	// (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+	JumpHostId *string `pulumi:"jumpHostId"`
+	// (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	LoadBalancerMappings []DrProtectionGroupMemberLoadBalancerMapping `pulumi:"loadBalancerMappings"`
+	// (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	ManagedNodePoolConfigs []DrProtectionGroupMemberManagedNodePoolConfig `pulumi:"managedNodePoolConfigs"`
 	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType string `pulumi:"memberType"`
 	// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	NetworkLoadBalancerMappings []DrProtectionGroupMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
 	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
+	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+	PeerClusterId *string `pulumi:"peerClusterId"`
+	// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	VaultMappings []DrProtectionGroupMemberVaultMapping `pulumi:"vaultMappings"`
+	// (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	VirtualNodePoolConfigs []DrProtectionGroupMemberVirtualNodePoolConfig `pulumi:"virtualNodePoolConfigs"`
 	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMapping []DrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
 	// (Updatable) A list of compute instance VNIC mappings.
@@ -1788,6 +1806,10 @@ type DrProtectionGroupMemberArgs struct {
 	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringPtrInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings DrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
+	// (Updatable) Create backup configuration properties for an OKE member.
+	BackupConfig DrProtectionGroupMemberBackupConfigPtrInput `pulumi:"backupConfig"`
+	// (Updatable) The details for creating the backup location of an OKE Cluster.
+	BackupLocation DrProtectionGroupMemberBackupLocationPtrInput `pulumi:"backupLocation"`
 	// (Updatable) A list of operations performed on block volumes used by the compute instance.
 	BlockVolumeOperations DrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
@@ -1816,14 +1838,28 @@ type DrProtectionGroupMemberArgs struct {
 	IsRetainFaultDomain pulumi.BoolPtrInput `pulumi:"isRetainFaultDomain"`
 	// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
 	IsStartStopEnabled pulumi.BoolPtrInput `pulumi:"isStartStopEnabled"`
+	// (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+	JumpHostId pulumi.StringPtrInput `pulumi:"jumpHostId"`
+	// (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	LoadBalancerMappings DrProtectionGroupMemberLoadBalancerMappingArrayInput `pulumi:"loadBalancerMappings"`
+	// (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	ManagedNodePoolConfigs DrProtectionGroupMemberManagedNodePoolConfigArrayInput `pulumi:"managedNodePoolConfigs"`
 	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
 	// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	NetworkLoadBalancerMappings DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
 	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
+	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+	PeerClusterId pulumi.StringPtrInput `pulumi:"peerClusterId"`
+	// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	VaultMappings DrProtectionGroupMemberVaultMappingArrayInput `pulumi:"vaultMappings"`
+	// (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	VirtualNodePoolConfigs DrProtectionGroupMemberVirtualNodePoolConfigArrayInput `pulumi:"virtualNodePoolConfigs"`
 	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMapping DrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// (Updatable) A list of compute instance VNIC mappings.
@@ -1891,6 +1927,16 @@ func (o DrProtectionGroupMemberOutput) BackendSetMappings() DrProtectionGroupMem
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberBackendSetMapping {
 		return v.BackendSetMappings
 	}).(DrProtectionGroupMemberBackendSetMappingArrayOutput)
+}
+
+// (Updatable) Create backup configuration properties for an OKE member.
+func (o DrProtectionGroupMemberOutput) BackupConfig() DrProtectionGroupMemberBackupConfigPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberBackupConfig { return v.BackupConfig }).(DrProtectionGroupMemberBackupConfigPtrOutput)
+}
+
+// (Updatable) The details for creating the backup location of an OKE Cluster.
+func (o DrProtectionGroupMemberOutput) BackupLocation() DrProtectionGroupMemberBackupLocationPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberBackupLocation { return v.BackupLocation }).(DrProtectionGroupMemberBackupLocationPtrOutput)
 }
 
 // (Updatable) A list of operations performed on block volumes used by the compute instance.
@@ -1967,6 +2013,25 @@ func (o DrProtectionGroupMemberOutput) IsStartStopEnabled() pulumi.BoolPtrOutput
 	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsStartStopEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) JumpHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.JumpHostId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberOutput) LoadBalancerMappings() DrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberLoadBalancerMapping {
+		return v.LoadBalancerMappings
+	}).(DrProtectionGroupMemberLoadBalancerMappingArrayOutput)
+}
+
+// (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+func (o DrProtectionGroupMemberOutput) ManagedNodePoolConfigs() DrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberManagedNodePoolConfig {
+		return v.ManagedNodePoolConfigs
+	}).(DrProtectionGroupMemberManagedNodePoolConfigArrayOutput)
+}
+
 // (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
@@ -1982,9 +2047,33 @@ func (o DrProtectionGroupMemberOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberOutput) NetworkLoadBalancerMappings() DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberNetworkLoadBalancerMapping {
+		return v.NetworkLoadBalancerMappings
+	}).(DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput)
+}
+
 // (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerClusterId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberOutput) VaultMappings() DrProtectionGroupMemberVaultMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberVaultMapping { return v.VaultMappings }).(DrProtectionGroupMemberVaultMappingArrayOutput)
+}
+
+// (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+func (o DrProtectionGroupMemberOutput) VirtualNodePoolConfigs() DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberVirtualNodePoolConfig {
+		return v.VirtualNodePoolConfigs
+	}).(DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput)
 }
 
 // (Updatable) A list of compute instance VNIC mappings.
@@ -2130,6 +2219,450 @@ func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberBackendSetMapping {
 		return vs[0].([]DrProtectionGroupMemberBackendSetMapping)[vs[1].(int)]
 	}).(DrProtectionGroupMemberBackendSetMappingOutput)
+}
+
+type DrProtectionGroupMemberBackupConfig struct {
+	// (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+	//
+	// The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+	// * Minimum = 1
+	// * Maximum = 24 DAILY
+	// * Minimum = 1
+	// * Maximum = 30 WEEKLY
+	// * Minimum = 1
+	// * Maximum = 1 MONTHLY
+	// * Minimum = 1
+	// * Maximum = 12
+	//
+	// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+	//
+	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+	BackupSchedule *string `pulumi:"backupSchedule"`
+	// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+	ImageReplicationVaultSecretId *string `pulumi:"imageReplicationVaultSecretId"`
+	// (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+	MaxNumberOfBackupsRetained *int `pulumi:"maxNumberOfBackupsRetained"`
+	// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	Namespaces []string `pulumi:"namespaces"`
+	// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+	ReplicateImages *string `pulumi:"replicateImages"`
+}
+
+// DrProtectionGroupMemberBackupConfigInput is an input type that accepts DrProtectionGroupMemberBackupConfigArgs and DrProtectionGroupMemberBackupConfigOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBackupConfigInput` via:
+//
+//	DrProtectionGroupMemberBackupConfigArgs{...}
+type DrProtectionGroupMemberBackupConfigInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBackupConfigOutput() DrProtectionGroupMemberBackupConfigOutput
+	ToDrProtectionGroupMemberBackupConfigOutputWithContext(context.Context) DrProtectionGroupMemberBackupConfigOutput
+}
+
+type DrProtectionGroupMemberBackupConfigArgs struct {
+	// (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+	//
+	// The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+	// * Minimum = 1
+	// * Maximum = 24 DAILY
+	// * Minimum = 1
+	// * Maximum = 30 WEEKLY
+	// * Minimum = 1
+	// * Maximum = 1 MONTHLY
+	// * Minimum = 1
+	// * Maximum = 12
+	//
+	// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+	//
+	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+	BackupSchedule pulumi.StringPtrInput `pulumi:"backupSchedule"`
+	// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+	ImageReplicationVaultSecretId pulumi.StringPtrInput `pulumi:"imageReplicationVaultSecretId"`
+	// (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+	MaxNumberOfBackupsRetained pulumi.IntPtrInput `pulumi:"maxNumberOfBackupsRetained"`
+	// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
+	// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+	ReplicateImages pulumi.StringPtrInput `pulumi:"replicateImages"`
+}
+
+func (DrProtectionGroupMemberBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBackupConfigArgs) ToDrProtectionGroupMemberBackupConfigOutput() DrProtectionGroupMemberBackupConfigOutput {
+	return i.ToDrProtectionGroupMemberBackupConfigOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBackupConfigArgs) ToDrProtectionGroupMemberBackupConfigOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackupConfigOutput)
+}
+
+func (i DrProtectionGroupMemberBackupConfigArgs) ToDrProtectionGroupMemberBackupConfigPtrOutput() DrProtectionGroupMemberBackupConfigPtrOutput {
+	return i.ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBackupConfigArgs) ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackupConfigOutput).ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberBackupConfigPtrInput is an input type that accepts DrProtectionGroupMemberBackupConfigArgs, DrProtectionGroupMemberBackupConfigPtr and DrProtectionGroupMemberBackupConfigPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBackupConfigPtrInput` via:
+//
+//	        DrProtectionGroupMemberBackupConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberBackupConfigPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBackupConfigPtrOutput() DrProtectionGroupMemberBackupConfigPtrOutput
+	ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(context.Context) DrProtectionGroupMemberBackupConfigPtrOutput
+}
+
+type drProtectionGroupMemberBackupConfigPtrType DrProtectionGroupMemberBackupConfigArgs
+
+func DrProtectionGroupMemberBackupConfigPtr(v *DrProtectionGroupMemberBackupConfigArgs) DrProtectionGroupMemberBackupConfigPtrInput {
+	return (*drProtectionGroupMemberBackupConfigPtrType)(v)
+}
+
+func (*drProtectionGroupMemberBackupConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberBackupConfigPtrType) ToDrProtectionGroupMemberBackupConfigPtrOutput() DrProtectionGroupMemberBackupConfigPtrOutput {
+	return i.ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberBackupConfigPtrType) ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackupConfigPtrOutput)
+}
+
+type DrProtectionGroupMemberBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBackupConfigOutput) ToDrProtectionGroupMemberBackupConfigOutput() DrProtectionGroupMemberBackupConfigOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupConfigOutput) ToDrProtectionGroupMemberBackupConfigOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupConfigOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupConfigOutput) ToDrProtectionGroupMemberBackupConfigPtrOutput() DrProtectionGroupMemberBackupConfigPtrOutput {
+	return o.ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberBackupConfigOutput) ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberBackupConfig) *DrProtectionGroupMemberBackupConfig {
+		return &v
+	}).(DrProtectionGroupMemberBackupConfigPtrOutput)
+}
+
+// (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+//
+// The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+// * Minimum = 1
+// * Maximum = 24 DAILY
+// * Minimum = 1
+// * Maximum = 30 WEEKLY
+// * Minimum = 1
+// * Maximum = 1 MONTHLY
+// * Minimum = 1
+// * Maximum = 12
+//
+// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+//
+// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+func (o DrProtectionGroupMemberBackupConfigOutput) BackupSchedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.BackupSchedule }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+func (o DrProtectionGroupMemberBackupConfigOutput) ImageReplicationVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.ImageReplicationVaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberBackupConfigOutput) MaxNumberOfBackupsRetained() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *int { return v.MaxNumberOfBackupsRetained }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+func (o DrProtectionGroupMemberBackupConfigOutput) Namespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) []string { return v.Namespaces }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberBackupConfigOutput) ReplicateImages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.ReplicateImages }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBackupConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBackupConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) ToDrProtectionGroupMemberBackupConfigPtrOutput() DrProtectionGroupMemberBackupConfigPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) ToDrProtectionGroupMemberBackupConfigPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupConfigPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) Elem() DrProtectionGroupMemberBackupConfigOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) DrProtectionGroupMemberBackupConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberBackupConfig
+		return ret
+	}).(DrProtectionGroupMemberBackupConfigOutput)
+}
+
+// (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+//
+// The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+// * Minimum = 1
+// * Maximum = 24 DAILY
+// * Minimum = 1
+// * Maximum = 30 WEEKLY
+// * Minimum = 1
+// * Maximum = 1 MONTHLY
+// * Minimum = 1
+// * Maximum = 12
+//
+// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+//
+// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) BackupSchedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupSchedule
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) ImageReplicationVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageReplicationVaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) MaxNumberOfBackupsRetained() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxNumberOfBackupsRetained
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) Namespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespaces
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) ReplicateImages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicateImages
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBackupLocation struct {
+	// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace *string `pulumi:"namespace"`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+	Object *string `pulumi:"object"`
+}
+
+// DrProtectionGroupMemberBackupLocationInput is an input type that accepts DrProtectionGroupMemberBackupLocationArgs and DrProtectionGroupMemberBackupLocationOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBackupLocationInput` via:
+//
+//	DrProtectionGroupMemberBackupLocationArgs{...}
+type DrProtectionGroupMemberBackupLocationInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBackupLocationOutput() DrProtectionGroupMemberBackupLocationOutput
+	ToDrProtectionGroupMemberBackupLocationOutputWithContext(context.Context) DrProtectionGroupMemberBackupLocationOutput
+}
+
+type DrProtectionGroupMemberBackupLocationArgs struct {
+	// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+	Object pulumi.StringPtrInput `pulumi:"object"`
+}
+
+func (DrProtectionGroupMemberBackupLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBackupLocationArgs) ToDrProtectionGroupMemberBackupLocationOutput() DrProtectionGroupMemberBackupLocationOutput {
+	return i.ToDrProtectionGroupMemberBackupLocationOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBackupLocationArgs) ToDrProtectionGroupMemberBackupLocationOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackupLocationOutput)
+}
+
+func (i DrProtectionGroupMemberBackupLocationArgs) ToDrProtectionGroupMemberBackupLocationPtrOutput() DrProtectionGroupMemberBackupLocationPtrOutput {
+	return i.ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBackupLocationArgs) ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackupLocationOutput).ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberBackupLocationPtrInput is an input type that accepts DrProtectionGroupMemberBackupLocationArgs, DrProtectionGroupMemberBackupLocationPtr and DrProtectionGroupMemberBackupLocationPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBackupLocationPtrInput` via:
+//
+//	        DrProtectionGroupMemberBackupLocationArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberBackupLocationPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBackupLocationPtrOutput() DrProtectionGroupMemberBackupLocationPtrOutput
+	ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(context.Context) DrProtectionGroupMemberBackupLocationPtrOutput
+}
+
+type drProtectionGroupMemberBackupLocationPtrType DrProtectionGroupMemberBackupLocationArgs
+
+func DrProtectionGroupMemberBackupLocationPtr(v *DrProtectionGroupMemberBackupLocationArgs) DrProtectionGroupMemberBackupLocationPtrInput {
+	return (*drProtectionGroupMemberBackupLocationPtrType)(v)
+}
+
+func (*drProtectionGroupMemberBackupLocationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberBackupLocationPtrType) ToDrProtectionGroupMemberBackupLocationPtrOutput() DrProtectionGroupMemberBackupLocationPtrOutput {
+	return i.ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberBackupLocationPtrType) ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackupLocationPtrOutput)
+}
+
+type DrProtectionGroupMemberBackupLocationOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBackupLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBackupLocationOutput) ToDrProtectionGroupMemberBackupLocationOutput() DrProtectionGroupMemberBackupLocationOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupLocationOutput) ToDrProtectionGroupMemberBackupLocationOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupLocationOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupLocationOutput) ToDrProtectionGroupMemberBackupLocationPtrOutput() DrProtectionGroupMemberBackupLocationPtrOutput {
+	return o.ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberBackupLocationOutput) ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupLocationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberBackupLocation) *DrProtectionGroupMemberBackupLocation {
+		return &v
+	}).(DrProtectionGroupMemberBackupLocationPtrOutput)
+}
+
+// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
+func (o DrProtectionGroupMemberBackupLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o DrProtectionGroupMemberBackupLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+func (o DrProtectionGroupMemberBackupLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBackupLocationPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBackupLocationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBackupLocationPtrOutput) ToDrProtectionGroupMemberBackupLocationPtrOutput() DrProtectionGroupMemberBackupLocationPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupLocationPtrOutput) ToDrProtectionGroupMemberBackupLocationPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackupLocationPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackupLocationPtrOutput) Elem() DrProtectionGroupMemberBackupLocationOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupLocation) DrProtectionGroupMemberBackupLocation {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberBackupLocation
+		return ret
+	}).(DrProtectionGroupMemberBackupLocationOutput)
+}
+
+// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
+func (o DrProtectionGroupMemberBackupLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o DrProtectionGroupMemberBackupLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+func (o DrProtectionGroupMemberBackupLocationPtrOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Object
+	}).(pulumi.StringPtrOutput)
 }
 
 type DrProtectionGroupMemberBlockVolumeOperation struct {
@@ -3042,6 +3575,558 @@ func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) Mount
 		}
 		return v.MountTargetId
 	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberLoadBalancerMapping struct {
+	// (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId *string `pulumi:"destinationLoadBalancerId"`
+	// (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+	SourceLoadBalancerId *string `pulumi:"sourceLoadBalancerId"`
+}
+
+// DrProtectionGroupMemberLoadBalancerMappingInput is an input type that accepts DrProtectionGroupMemberLoadBalancerMappingArgs and DrProtectionGroupMemberLoadBalancerMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberLoadBalancerMappingInput` via:
+//
+//	DrProtectionGroupMemberLoadBalancerMappingArgs{...}
+type DrProtectionGroupMemberLoadBalancerMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberLoadBalancerMappingOutput() DrProtectionGroupMemberLoadBalancerMappingOutput
+	ToDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(context.Context) DrProtectionGroupMemberLoadBalancerMappingOutput
+}
+
+type DrProtectionGroupMemberLoadBalancerMappingArgs struct {
+	// (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationLoadBalancerId"`
+	// (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+	SourceLoadBalancerId pulumi.StringPtrInput `pulumi:"sourceLoadBalancerId"`
+}
+
+func (DrProtectionGroupMemberLoadBalancerMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberLoadBalancerMappingArgs) ToDrProtectionGroupMemberLoadBalancerMappingOutput() DrProtectionGroupMemberLoadBalancerMappingOutput {
+	return i.ToDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberLoadBalancerMappingArgs) ToDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberLoadBalancerMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberLoadBalancerMappingOutput)
+}
+
+// DrProtectionGroupMemberLoadBalancerMappingArrayInput is an input type that accepts DrProtectionGroupMemberLoadBalancerMappingArray and DrProtectionGroupMemberLoadBalancerMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberLoadBalancerMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberLoadBalancerMappingArray{ DrProtectionGroupMemberLoadBalancerMappingArgs{...} }
+type DrProtectionGroupMemberLoadBalancerMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberLoadBalancerMappingArrayOutput() DrProtectionGroupMemberLoadBalancerMappingArrayOutput
+	ToDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberLoadBalancerMappingArrayOutput
+}
+
+type DrProtectionGroupMemberLoadBalancerMappingArray []DrProtectionGroupMemberLoadBalancerMappingInput
+
+func (DrProtectionGroupMemberLoadBalancerMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberLoadBalancerMappingArray) ToDrProtectionGroupMemberLoadBalancerMappingArrayOutput() DrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberLoadBalancerMappingArray) ToDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberLoadBalancerMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberLoadBalancerMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberLoadBalancerMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberLoadBalancerMappingOutput) ToDrProtectionGroupMemberLoadBalancerMappingOutput() DrProtectionGroupMemberLoadBalancerMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberLoadBalancerMappingOutput) ToDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberLoadBalancerMappingOutput {
+	return o
+}
+
+// (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o DrProtectionGroupMemberLoadBalancerMappingOutput) DestinationLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberLoadBalancerMapping) *string { return v.DestinationLoadBalancerId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o DrProtectionGroupMemberLoadBalancerMappingOutput) SourceLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberLoadBalancerMapping) *string { return v.SourceLoadBalancerId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberLoadBalancerMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberLoadBalancerMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberLoadBalancerMappingArrayOutput) ToDrProtectionGroupMemberLoadBalancerMappingArrayOutput() DrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberLoadBalancerMappingArrayOutput) ToDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberLoadBalancerMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberLoadBalancerMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberLoadBalancerMapping {
+		return vs[0].([]DrProtectionGroupMemberLoadBalancerMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberLoadBalancerMappingOutput)
+}
+
+type DrProtectionGroupMemberManagedNodePoolConfig struct {
+	// (Updatable) The OCID of the managed node pool in OKE cluster.
+	Id *string `pulumi:"id"`
+	// (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+	Maximum *int `pulumi:"maximum"`
+	// (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// DrProtectionGroupMemberManagedNodePoolConfigInput is an input type that accepts DrProtectionGroupMemberManagedNodePoolConfigArgs and DrProtectionGroupMemberManagedNodePoolConfigOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberManagedNodePoolConfigInput` via:
+//
+//	DrProtectionGroupMemberManagedNodePoolConfigArgs{...}
+type DrProtectionGroupMemberManagedNodePoolConfigInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberManagedNodePoolConfigOutput() DrProtectionGroupMemberManagedNodePoolConfigOutput
+	ToDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(context.Context) DrProtectionGroupMemberManagedNodePoolConfigOutput
+}
+
+type DrProtectionGroupMemberManagedNodePoolConfigArgs struct {
+	// (Updatable) The OCID of the managed node pool in OKE cluster.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (DrProtectionGroupMemberManagedNodePoolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberManagedNodePoolConfigArgs) ToDrProtectionGroupMemberManagedNodePoolConfigOutput() DrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return i.ToDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberManagedNodePoolConfigArgs) ToDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(ctx context.Context) DrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberManagedNodePoolConfigOutput)
+}
+
+// DrProtectionGroupMemberManagedNodePoolConfigArrayInput is an input type that accepts DrProtectionGroupMemberManagedNodePoolConfigArray and DrProtectionGroupMemberManagedNodePoolConfigArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberManagedNodePoolConfigArrayInput` via:
+//
+//	DrProtectionGroupMemberManagedNodePoolConfigArray{ DrProtectionGroupMemberManagedNodePoolConfigArgs{...} }
+type DrProtectionGroupMemberManagedNodePoolConfigArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutput() DrProtectionGroupMemberManagedNodePoolConfigArrayOutput
+	ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(context.Context) DrProtectionGroupMemberManagedNodePoolConfigArrayOutput
+}
+
+type DrProtectionGroupMemberManagedNodePoolConfigArray []DrProtectionGroupMemberManagedNodePoolConfigInput
+
+func (DrProtectionGroupMemberManagedNodePoolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberManagedNodePoolConfigArray) ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutput() DrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return i.ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberManagedNodePoolConfigArray) ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberManagedNodePoolConfigArrayOutput)
+}
+
+type DrProtectionGroupMemberManagedNodePoolConfigOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberManagedNodePoolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberManagedNodePoolConfigOutput) ToDrProtectionGroupMemberManagedNodePoolConfigOutput() DrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberManagedNodePoolConfigOutput) ToDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(ctx context.Context) DrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return o
+}
+
+// (Updatable) The OCID of the managed node pool in OKE cluster.
+func (o DrProtectionGroupMemberManagedNodePoolConfigOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberManagedNodePoolConfig) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+func (o DrProtectionGroupMemberManagedNodePoolConfigOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberManagedNodePoolConfig) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+func (o DrProtectionGroupMemberManagedNodePoolConfigOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberManagedNodePoolConfig) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type DrProtectionGroupMemberManagedNodePoolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberManagedNodePoolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberManagedNodePoolConfigArrayOutput) ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutput() DrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberManagedNodePoolConfigArrayOutput) ToDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberManagedNodePoolConfigArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberManagedNodePoolConfig {
+		return vs[0].([]DrProtectionGroupMemberManagedNodePoolConfig)[vs[1].(int)]
+	}).(DrProtectionGroupMemberManagedNodePoolConfigOutput)
+}
+
+type DrProtectionGroupMemberNetworkLoadBalancerMapping struct {
+	// (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId *string `pulumi:"destinationNetworkLoadBalancerId"`
+	// (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	SourceNetworkLoadBalancerId *string `pulumi:"sourceNetworkLoadBalancerId"`
+}
+
+// DrProtectionGroupMemberNetworkLoadBalancerMappingInput is an input type that accepts DrProtectionGroupMemberNetworkLoadBalancerMappingArgs and DrProtectionGroupMemberNetworkLoadBalancerMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberNetworkLoadBalancerMappingInput` via:
+//
+//	DrProtectionGroupMemberNetworkLoadBalancerMappingArgs{...}
+type DrProtectionGroupMemberNetworkLoadBalancerMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutput() DrProtectionGroupMemberNetworkLoadBalancerMappingOutput
+	ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(context.Context) DrProtectionGroupMemberNetworkLoadBalancerMappingOutput
+}
+
+type DrProtectionGroupMemberNetworkLoadBalancerMappingArgs struct {
+	// (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	SourceNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"sourceNetworkLoadBalancerId"`
+}
+
+func (DrProtectionGroupMemberNetworkLoadBalancerMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberNetworkLoadBalancerMappingArgs) ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutput() DrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return i.ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberNetworkLoadBalancerMappingArgs) ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
+}
+
+// DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput is an input type that accepts DrProtectionGroupMemberNetworkLoadBalancerMappingArray and DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberNetworkLoadBalancerMappingArray{ DrProtectionGroupMemberNetworkLoadBalancerMappingArgs{...} }
+type DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput() DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput
+	ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput
+}
+
+type DrProtectionGroupMemberNetworkLoadBalancerMappingArray []DrProtectionGroupMemberNetworkLoadBalancerMappingInput
+
+func (DrProtectionGroupMemberNetworkLoadBalancerMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberNetworkLoadBalancerMappingArray) ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput() DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberNetworkLoadBalancerMappingArray) ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberNetworkLoadBalancerMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberNetworkLoadBalancerMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingOutput) ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutput() DrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingOutput) ToDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return o
+}
+
+// (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingOutput) DestinationNetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberNetworkLoadBalancerMapping) *string {
+		return v.DestinationNetworkLoadBalancerId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingOutput) SourceNetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberNetworkLoadBalancerMapping) *string {
+		return v.SourceNetworkLoadBalancerId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput() DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) ToDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberNetworkLoadBalancerMapping {
+		return vs[0].([]DrProtectionGroupMemberNetworkLoadBalancerMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
+}
+
+type DrProtectionGroupMemberVaultMapping struct {
+	// (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	DestinationVaultId *string `pulumi:"destinationVaultId"`
+	// (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	SourceVaultId *string `pulumi:"sourceVaultId"`
+}
+
+// DrProtectionGroupMemberVaultMappingInput is an input type that accepts DrProtectionGroupMemberVaultMappingArgs and DrProtectionGroupMemberVaultMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberVaultMappingInput` via:
+//
+//	DrProtectionGroupMemberVaultMappingArgs{...}
+type DrProtectionGroupMemberVaultMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberVaultMappingOutput() DrProtectionGroupMemberVaultMappingOutput
+	ToDrProtectionGroupMemberVaultMappingOutputWithContext(context.Context) DrProtectionGroupMemberVaultMappingOutput
+}
+
+type DrProtectionGroupMemberVaultMappingArgs struct {
+	// (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	DestinationVaultId pulumi.StringPtrInput `pulumi:"destinationVaultId"`
+	// (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	SourceVaultId pulumi.StringPtrInput `pulumi:"sourceVaultId"`
+}
+
+func (DrProtectionGroupMemberVaultMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberVaultMappingArgs) ToDrProtectionGroupMemberVaultMappingOutput() DrProtectionGroupMemberVaultMappingOutput {
+	return i.ToDrProtectionGroupMemberVaultMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberVaultMappingArgs) ToDrProtectionGroupMemberVaultMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberVaultMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVaultMappingOutput)
+}
+
+// DrProtectionGroupMemberVaultMappingArrayInput is an input type that accepts DrProtectionGroupMemberVaultMappingArray and DrProtectionGroupMemberVaultMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberVaultMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberVaultMappingArray{ DrProtectionGroupMemberVaultMappingArgs{...} }
+type DrProtectionGroupMemberVaultMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberVaultMappingArrayOutput() DrProtectionGroupMemberVaultMappingArrayOutput
+	ToDrProtectionGroupMemberVaultMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberVaultMappingArrayOutput
+}
+
+type DrProtectionGroupMemberVaultMappingArray []DrProtectionGroupMemberVaultMappingInput
+
+func (DrProtectionGroupMemberVaultMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberVaultMappingArray) ToDrProtectionGroupMemberVaultMappingArrayOutput() DrProtectionGroupMemberVaultMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberVaultMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberVaultMappingArray) ToDrProtectionGroupMemberVaultMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberVaultMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVaultMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberVaultMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberVaultMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberVaultMappingOutput) ToDrProtectionGroupMemberVaultMappingOutput() DrProtectionGroupMemberVaultMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberVaultMappingOutput) ToDrProtectionGroupMemberVaultMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberVaultMappingOutput {
+	return o
+}
+
+// (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberVaultMappingOutput) DestinationVaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVaultMapping) *string { return v.DestinationVaultId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberVaultMappingOutput) SourceVaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVaultMapping) *string { return v.SourceVaultId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberVaultMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberVaultMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberVaultMappingArrayOutput) ToDrProtectionGroupMemberVaultMappingArrayOutput() DrProtectionGroupMemberVaultMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberVaultMappingArrayOutput) ToDrProtectionGroupMemberVaultMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberVaultMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberVaultMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberVaultMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberVaultMapping {
+		return vs[0].([]DrProtectionGroupMemberVaultMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberVaultMappingOutput)
+}
+
+type DrProtectionGroupMemberVirtualNodePoolConfig struct {
+	// (Updatable) The OCID of the virtual node pool in OKE cluster.
+	Id *string `pulumi:"id"`
+	// (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum *int `pulumi:"maximum"`
+	// (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum *int `pulumi:"minimum"`
+}
+
+// DrProtectionGroupMemberVirtualNodePoolConfigInput is an input type that accepts DrProtectionGroupMemberVirtualNodePoolConfigArgs and DrProtectionGroupMemberVirtualNodePoolConfigOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberVirtualNodePoolConfigInput` via:
+//
+//	DrProtectionGroupMemberVirtualNodePoolConfigArgs{...}
+type DrProtectionGroupMemberVirtualNodePoolConfigInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberVirtualNodePoolConfigOutput() DrProtectionGroupMemberVirtualNodePoolConfigOutput
+	ToDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(context.Context) DrProtectionGroupMemberVirtualNodePoolConfigOutput
+}
+
+type DrProtectionGroupMemberVirtualNodePoolConfigArgs struct {
+	// (Updatable) The OCID of the virtual node pool in OKE cluster.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum pulumi.IntPtrInput `pulumi:"maximum"`
+	// (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum pulumi.IntPtrInput `pulumi:"minimum"`
+}
+
+func (DrProtectionGroupMemberVirtualNodePoolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberVirtualNodePoolConfigArgs) ToDrProtectionGroupMemberVirtualNodePoolConfigOutput() DrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return i.ToDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberVirtualNodePoolConfigArgs) ToDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(ctx context.Context) DrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVirtualNodePoolConfigOutput)
+}
+
+// DrProtectionGroupMemberVirtualNodePoolConfigArrayInput is an input type that accepts DrProtectionGroupMemberVirtualNodePoolConfigArray and DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberVirtualNodePoolConfigArrayInput` via:
+//
+//	DrProtectionGroupMemberVirtualNodePoolConfigArray{ DrProtectionGroupMemberVirtualNodePoolConfigArgs{...} }
+type DrProtectionGroupMemberVirtualNodePoolConfigArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput() DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput
+	ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(context.Context) DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput
+}
+
+type DrProtectionGroupMemberVirtualNodePoolConfigArray []DrProtectionGroupMemberVirtualNodePoolConfigInput
+
+func (DrProtectionGroupMemberVirtualNodePoolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberVirtualNodePoolConfigArray) ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput() DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return i.ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberVirtualNodePoolConfigArray) ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput)
+}
+
+type DrProtectionGroupMemberVirtualNodePoolConfigOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberVirtualNodePoolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberVirtualNodePoolConfigOutput) ToDrProtectionGroupMemberVirtualNodePoolConfigOutput() DrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberVirtualNodePoolConfigOutput) ToDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(ctx context.Context) DrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return o
+}
+
+// (Updatable) The OCID of the virtual node pool in OKE cluster.
+func (o DrProtectionGroupMemberVirtualNodePoolConfigOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVirtualNodePoolConfig) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+func (o DrProtectionGroupMemberVirtualNodePoolConfigOutput) Maximum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVirtualNodePoolConfig) *int { return v.Maximum }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+func (o DrProtectionGroupMemberVirtualNodePoolConfigOutput) Minimum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVirtualNodePoolConfig) *int { return v.Minimum }).(pulumi.IntPtrOutput)
+}
+
+type DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput() DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) ToDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberVirtualNodePoolConfig {
+		return vs[0].([]DrProtectionGroupMemberVirtualNodePoolConfig)[vs[1].(int)]
+	}).(DrProtectionGroupMemberVirtualNodePoolConfigOutput)
 }
 
 type DrProtectionGroupMemberVnicMapping struct {
@@ -6998,6 +8083,10 @@ type GetDrProtectionGroupMember struct {
 	AutonomousDatabaseStandbyTypeForDrDrills string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []GetDrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
+	// The details of backup performed on OKE Cluster.
+	BackupConfigs []GetDrProtectionGroupMemberBackupConfig `pulumi:"backupConfigs"`
+	// The details for object storage backup location of an OKE Cluster
+	BackupLocations []GetDrProtectionGroupMemberBackupLocation `pulumi:"backupLocations"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
@@ -7012,9 +8101,9 @@ type GetDrProtectionGroupMember struct {
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
-	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
-	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
@@ -7026,14 +8115,28 @@ type GetDrProtectionGroupMember struct {
 	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
 	IsStartStopEnabled bool `pulumi:"isStartStopEnabled"`
+	// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+	JumpHostId string `pulumi:"jumpHostId"`
+	// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	LoadBalancerMappings []GetDrProtectionGroupMemberLoadBalancerMapping `pulumi:"loadBalancerMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	ManagedNodePoolConfigs []GetDrProtectionGroupMemberManagedNodePoolConfig `pulumi:"managedNodePoolConfigs"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
+	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	NetworkLoadBalancerMappings []GetDrProtectionGroupMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+	PeerClusterId string `pulumi:"peerClusterId"`
+	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	VaultMappings []GetDrProtectionGroupMemberVaultMapping `pulumi:"vaultMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	VirtualNodePoolConfigs []GetDrProtectionGroupMemberVirtualNodePoolConfig `pulumi:"virtualNodePoolConfigs"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -7056,6 +8159,10 @@ type GetDrProtectionGroupMemberArgs struct {
 	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings GetDrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
+	// The details of backup performed on OKE Cluster.
+	BackupConfigs GetDrProtectionGroupMemberBackupConfigArrayInput `pulumi:"backupConfigs"`
+	// The details for object storage backup location of an OKE Cluster
+	BackupLocations GetDrProtectionGroupMemberBackupLocationArrayInput `pulumi:"backupLocations"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
@@ -7070,9 +8177,9 @@ type GetDrProtectionGroupMemberArgs struct {
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
-	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
-	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
@@ -7084,14 +8191,28 @@ type GetDrProtectionGroupMemberArgs struct {
 	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
 	IsStartStopEnabled pulumi.BoolInput `pulumi:"isStartStopEnabled"`
+	// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+	JumpHostId pulumi.StringInput `pulumi:"jumpHostId"`
+	// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	LoadBalancerMappings GetDrProtectionGroupMemberLoadBalancerMappingArrayInput `pulumi:"loadBalancerMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	ManagedNodePoolConfigs GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput `pulumi:"managedNodePoolConfigs"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	NetworkLoadBalancerMappings GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
+	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	VaultMappings GetDrProtectionGroupMemberVaultMappingArrayInput `pulumi:"vaultMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	VirtualNodePoolConfigs GetDrProtectionGroupMemberVirtualNodePoolConfigArrayInput `pulumi:"virtualNodePoolConfigs"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -7161,6 +8282,18 @@ func (o GetDrProtectionGroupMemberOutput) BackendSetMappings() GetDrProtectionGr
 	}).(GetDrProtectionGroupMemberBackendSetMappingArrayOutput)
 }
 
+// The details of backup performed on OKE Cluster.
+func (o GetDrProtectionGroupMemberOutput) BackupConfigs() GetDrProtectionGroupMemberBackupConfigArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBackupConfig { return v.BackupConfigs }).(GetDrProtectionGroupMemberBackupConfigArrayOutput)
+}
+
+// The details for object storage backup location of an OKE Cluster
+func (o GetDrProtectionGroupMemberOutput) BackupLocations() GetDrProtectionGroupMemberBackupLocationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBackupLocation {
+		return v.BackupLocations
+	}).(GetDrProtectionGroupMemberBackupLocationArrayOutput)
+}
+
 // Operations performed on a list of block volumes used on the non-movable compute instance.
 func (o GetDrProtectionGroupMemberOutput) BlockVolumeOperations() GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBlockVolumeOperation {
@@ -7198,12 +8331,12 @@ func (o GetDrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationDedicatedVmHostId }).(pulumi.StringOutput)
 }
 
-// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationLoadBalancerId }).(pulumi.StringOutput)
 }
 
-// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringOutput)
 }
@@ -7235,6 +8368,25 @@ func (o GetDrProtectionGroupMemberOutput) IsStartStopEnabled() pulumi.BoolOutput
 	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsStartStopEnabled }).(pulumi.BoolOutput)
 }
 
+// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberOutput) JumpHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.JumpHostId }).(pulumi.StringOutput)
+}
+
+// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupMemberOutput) LoadBalancerMappings() GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberLoadBalancerMapping {
+		return v.LoadBalancerMappings
+	}).(GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput)
+}
+
+// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+func (o GetDrProtectionGroupMemberOutput) ManagedNodePoolConfigs() GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberManagedNodePoolConfig {
+		return v.ManagedNodePoolConfigs
+	}).(GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput)
+}
+
 // The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
@@ -7250,9 +8402,33 @@ func (o GetDrProtectionGroupMemberOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupMemberOutput) NetworkLoadBalancerMappings() GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberNetworkLoadBalancerMapping {
+		return v.NetworkLoadBalancerMappings
+	}).(GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput)
+}
+
 // The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
+}
+
+// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+func (o GetDrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
+}
+
+// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupMemberOutput) VaultMappings() GetDrProtectionGroupMemberVaultMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberVaultMapping { return v.VaultMappings }).(GetDrProtectionGroupMemberVaultMappingArrayOutput)
+}
+
+// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+func (o GetDrProtectionGroupMemberOutput) VirtualNodePoolConfigs() GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberVirtualNodePoolConfig {
+		return v.VirtualNodePoolConfigs
+	}).(GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput)
 }
 
 // A list of compute instance VNIC mappings.
@@ -7398,6 +8574,254 @@ func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBackendSetMapping {
 		return vs[0].([]GetDrProtectionGroupMemberBackendSetMapping)[vs[1].(int)]
 	}).(GetDrProtectionGroupMemberBackendSetMappingOutput)
+}
+
+type GetDrProtectionGroupMemberBackupConfig struct {
+	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+	BackupSchedule string `pulumi:"backupSchedule"`
+	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+	ImageReplicationVaultSecretId string `pulumi:"imageReplicationVaultSecretId"`
+	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+	MaxNumberOfBackupsRetained int `pulumi:"maxNumberOfBackupsRetained"`
+	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	Namespaces []string `pulumi:"namespaces"`
+	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
+	ReplicateImages string `pulumi:"replicateImages"`
+}
+
+// GetDrProtectionGroupMemberBackupConfigInput is an input type that accepts GetDrProtectionGroupMemberBackupConfigArgs and GetDrProtectionGroupMemberBackupConfigOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBackupConfigInput` via:
+//
+//	GetDrProtectionGroupMemberBackupConfigArgs{...}
+type GetDrProtectionGroupMemberBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBackupConfigOutput() GetDrProtectionGroupMemberBackupConfigOutput
+	ToGetDrProtectionGroupMemberBackupConfigOutputWithContext(context.Context) GetDrProtectionGroupMemberBackupConfigOutput
+}
+
+type GetDrProtectionGroupMemberBackupConfigArgs struct {
+	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+	BackupSchedule pulumi.StringInput `pulumi:"backupSchedule"`
+	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+	ImageReplicationVaultSecretId pulumi.StringInput `pulumi:"imageReplicationVaultSecretId"`
+	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+	MaxNumberOfBackupsRetained pulumi.IntInput `pulumi:"maxNumberOfBackupsRetained"`
+	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
+	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
+	ReplicateImages pulumi.StringInput `pulumi:"replicateImages"`
+}
+
+func (GetDrProtectionGroupMemberBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBackupConfigArgs) ToGetDrProtectionGroupMemberBackupConfigOutput() GetDrProtectionGroupMemberBackupConfigOutput {
+	return i.ToGetDrProtectionGroupMemberBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBackupConfigArgs) ToGetDrProtectionGroupMemberBackupConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackupConfigOutput)
+}
+
+// GetDrProtectionGroupMemberBackupConfigArrayInput is an input type that accepts GetDrProtectionGroupMemberBackupConfigArray and GetDrProtectionGroupMemberBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBackupConfigArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBackupConfigArray{ GetDrProtectionGroupMemberBackupConfigArgs{...} }
+type GetDrProtectionGroupMemberBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBackupConfigArrayOutput() GetDrProtectionGroupMemberBackupConfigArrayOutput
+	ToGetDrProtectionGroupMemberBackupConfigArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBackupConfigArrayOutput
+}
+
+type GetDrProtectionGroupMemberBackupConfigArray []GetDrProtectionGroupMemberBackupConfigInput
+
+func (GetDrProtectionGroupMemberBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBackupConfigArray) ToGetDrProtectionGroupMemberBackupConfigArrayOutput() GetDrProtectionGroupMemberBackupConfigArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBackupConfigArray) ToGetDrProtectionGroupMemberBackupConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackupConfigArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBackupConfigOutput) ToGetDrProtectionGroupMemberBackupConfigOutput() GetDrProtectionGroupMemberBackupConfigOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackupConfigOutput) ToGetDrProtectionGroupMemberBackupConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupConfigOutput {
+	return o
+}
+
+// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+func (o GetDrProtectionGroupMemberBackupConfigOutput) BackupSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) string { return v.BackupSchedule }).(pulumi.StringOutput)
+}
+
+// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+func (o GetDrProtectionGroupMemberBackupConfigOutput) ImageReplicationVaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) string { return v.ImageReplicationVaultSecretId }).(pulumi.StringOutput)
+}
+
+// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupMemberBackupConfigOutput) MaxNumberOfBackupsRetained() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) int { return v.MaxNumberOfBackupsRetained }).(pulumi.IntOutput)
+}
+
+// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+func (o GetDrProtectionGroupMemberBackupConfigOutput) Namespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) []string { return v.Namespaces }).(pulumi.StringArrayOutput)
+}
+
+// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupMemberBackupConfigOutput) ReplicateImages() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) string { return v.ReplicateImages }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBackupConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBackupConfigArrayOutput) ToGetDrProtectionGroupMemberBackupConfigArrayOutput() GetDrProtectionGroupMemberBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackupConfigArrayOutput) ToGetDrProtectionGroupMemberBackupConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBackupConfig {
+		return vs[0].([]GetDrProtectionGroupMemberBackupConfig)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBackupConfigOutput)
+}
+
+type GetDrProtectionGroupMemberBackupLocation struct {
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket string `pulumi:"bucket"`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace string `pulumi:"namespace"`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+	Object string `pulumi:"object"`
+}
+
+// GetDrProtectionGroupMemberBackupLocationInput is an input type that accepts GetDrProtectionGroupMemberBackupLocationArgs and GetDrProtectionGroupMemberBackupLocationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBackupLocationInput` via:
+//
+//	GetDrProtectionGroupMemberBackupLocationArgs{...}
+type GetDrProtectionGroupMemberBackupLocationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBackupLocationOutput() GetDrProtectionGroupMemberBackupLocationOutput
+	ToGetDrProtectionGroupMemberBackupLocationOutputWithContext(context.Context) GetDrProtectionGroupMemberBackupLocationOutput
+}
+
+type GetDrProtectionGroupMemberBackupLocationArgs struct {
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetDrProtectionGroupMemberBackupLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBackupLocationArgs) ToGetDrProtectionGroupMemberBackupLocationOutput() GetDrProtectionGroupMemberBackupLocationOutput {
+	return i.ToGetDrProtectionGroupMemberBackupLocationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBackupLocationArgs) ToGetDrProtectionGroupMemberBackupLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackupLocationOutput)
+}
+
+// GetDrProtectionGroupMemberBackupLocationArrayInput is an input type that accepts GetDrProtectionGroupMemberBackupLocationArray and GetDrProtectionGroupMemberBackupLocationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBackupLocationArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBackupLocationArray{ GetDrProtectionGroupMemberBackupLocationArgs{...} }
+type GetDrProtectionGroupMemberBackupLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBackupLocationArrayOutput() GetDrProtectionGroupMemberBackupLocationArrayOutput
+	ToGetDrProtectionGroupMemberBackupLocationArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBackupLocationArrayOutput
+}
+
+type GetDrProtectionGroupMemberBackupLocationArray []GetDrProtectionGroupMemberBackupLocationInput
+
+func (GetDrProtectionGroupMemberBackupLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBackupLocationArray) ToGetDrProtectionGroupMemberBackupLocationArrayOutput() GetDrProtectionGroupMemberBackupLocationArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBackupLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBackupLocationArray) ToGetDrProtectionGroupMemberBackupLocationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackupLocationArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBackupLocationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBackupLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBackupLocationOutput) ToGetDrProtectionGroupMemberBackupLocationOutput() GetDrProtectionGroupMemberBackupLocationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackupLocationOutput) ToGetDrProtectionGroupMemberBackupLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupLocationOutput {
+	return o
+}
+
+// The bucket name inside the object storage namespace.  Example: `bucketName`
+func (o GetDrProtectionGroupMemberBackupLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o GetDrProtectionGroupMemberBackupLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+func (o GetDrProtectionGroupMemberBackupLocationOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Object }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBackupLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBackupLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBackupLocation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBackupLocationArrayOutput) ToGetDrProtectionGroupMemberBackupLocationArrayOutput() GetDrProtectionGroupMemberBackupLocationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackupLocationArrayOutput) ToGetDrProtectionGroupMemberBackupLocationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackupLocationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackupLocationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBackupLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBackupLocation {
+		return vs[0].([]GetDrProtectionGroupMemberBackupLocation)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBackupLocationOutput)
 }
 
 type GetDrProtectionGroupMemberBlockVolumeOperation struct {
@@ -8152,6 +9576,558 @@ func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) I
 	}).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput)
 }
 
+type GetDrProtectionGroupMemberLoadBalancerMapping struct {
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the source Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	SourceLoadBalancerId string `pulumi:"sourceLoadBalancerId"`
+}
+
+// GetDrProtectionGroupMemberLoadBalancerMappingInput is an input type that accepts GetDrProtectionGroupMemberLoadBalancerMappingArgs and GetDrProtectionGroupMemberLoadBalancerMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberLoadBalancerMappingInput` via:
+//
+//	GetDrProtectionGroupMemberLoadBalancerMappingArgs{...}
+type GetDrProtectionGroupMemberLoadBalancerMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberLoadBalancerMappingOutput() GetDrProtectionGroupMemberLoadBalancerMappingOutput
+	ToGetDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberLoadBalancerMappingOutput
+}
+
+type GetDrProtectionGroupMemberLoadBalancerMappingArgs struct {
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the source Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	SourceLoadBalancerId pulumi.StringInput `pulumi:"sourceLoadBalancerId"`
+}
+
+func (GetDrProtectionGroupMemberLoadBalancerMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberLoadBalancerMappingArgs) ToGetDrProtectionGroupMemberLoadBalancerMappingOutput() GetDrProtectionGroupMemberLoadBalancerMappingOutput {
+	return i.ToGetDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberLoadBalancerMappingArgs) ToGetDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberLoadBalancerMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberLoadBalancerMappingOutput)
+}
+
+// GetDrProtectionGroupMemberLoadBalancerMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberLoadBalancerMappingArray and GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberLoadBalancerMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberLoadBalancerMappingArray{ GetDrProtectionGroupMemberLoadBalancerMappingArgs{...} }
+type GetDrProtectionGroupMemberLoadBalancerMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutput() GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput
+	ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberLoadBalancerMappingArray []GetDrProtectionGroupMemberLoadBalancerMappingInput
+
+func (GetDrProtectionGroupMemberLoadBalancerMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberLoadBalancerMappingArray) ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutput() GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberLoadBalancerMappingArray) ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberLoadBalancerMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberLoadBalancerMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberLoadBalancerMappingOutput) ToGetDrProtectionGroupMemberLoadBalancerMappingOutput() GetDrProtectionGroupMemberLoadBalancerMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberLoadBalancerMappingOutput) ToGetDrProtectionGroupMemberLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberLoadBalancerMappingOutput {
+	return o
+}
+
+// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberLoadBalancerMappingOutput) DestinationLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberLoadBalancerMapping) string { return v.DestinationLoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The OCID of the source Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberLoadBalancerMappingOutput) SourceLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberLoadBalancerMapping) string { return v.SourceLoadBalancerId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutput() GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupMemberLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberLoadBalancerMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberLoadBalancerMapping {
+		return vs[0].([]GetDrProtectionGroupMemberLoadBalancerMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberLoadBalancerMappingOutput)
+}
+
+type GetDrProtectionGroupMemberManagedNodePoolConfig struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id string `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum int `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum int `pulumi:"minimum"`
+}
+
+// GetDrProtectionGroupMemberManagedNodePoolConfigInput is an input type that accepts GetDrProtectionGroupMemberManagedNodePoolConfigArgs and GetDrProtectionGroupMemberManagedNodePoolConfigOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberManagedNodePoolConfigInput` via:
+//
+//	GetDrProtectionGroupMemberManagedNodePoolConfigArgs{...}
+type GetDrProtectionGroupMemberManagedNodePoolConfigInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberManagedNodePoolConfigOutput() GetDrProtectionGroupMemberManagedNodePoolConfigOutput
+	ToGetDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(context.Context) GetDrProtectionGroupMemberManagedNodePoolConfigOutput
+}
+
+type GetDrProtectionGroupMemberManagedNodePoolConfigArgs struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum pulumi.IntInput `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum pulumi.IntInput `pulumi:"minimum"`
+}
+
+func (GetDrProtectionGroupMemberManagedNodePoolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberManagedNodePoolConfigArgs) ToGetDrProtectionGroupMemberManagedNodePoolConfigOutput() GetDrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return i.ToGetDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberManagedNodePoolConfigArgs) ToGetDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberManagedNodePoolConfigOutput)
+}
+
+// GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput is an input type that accepts GetDrProtectionGroupMemberManagedNodePoolConfigArray and GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput` via:
+//
+//	GetDrProtectionGroupMemberManagedNodePoolConfigArray{ GetDrProtectionGroupMemberManagedNodePoolConfigArgs{...} }
+type GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput() GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput
+	ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput
+}
+
+type GetDrProtectionGroupMemberManagedNodePoolConfigArray []GetDrProtectionGroupMemberManagedNodePoolConfigInput
+
+func (GetDrProtectionGroupMemberManagedNodePoolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberManagedNodePoolConfigArray) ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput() GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return i.ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberManagedNodePoolConfigArray) ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput)
+}
+
+type GetDrProtectionGroupMemberManagedNodePoolConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberManagedNodePoolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigOutput) ToGetDrProtectionGroupMemberManagedNodePoolConfigOutput() GetDrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigOutput) ToGetDrProtectionGroupMemberManagedNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return o
+}
+
+// The OCID of the virtual node pool in OKE cluster.
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberManagedNodePoolConfig) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The maximum number to which nodes in the virtual node pool could be scaled up.
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigOutput) Maximum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberManagedNodePoolConfig) int { return v.Maximum }).(pulumi.IntOutput)
+}
+
+// The minimum number to which nodes in the virtual node pool could be scaled down.
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigOutput) Minimum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberManagedNodePoolConfig) int { return v.Minimum }).(pulumi.IntOutput)
+}
+
+type GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput) ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput() GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput) ToGetDrProtectionGroupMemberManagedNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberManagedNodePoolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberManagedNodePoolConfig {
+		return vs[0].([]GetDrProtectionGroupMemberManagedNodePoolConfig)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberManagedNodePoolConfigOutput)
+}
+
+type GetDrProtectionGroupMemberNetworkLoadBalancerMapping struct {
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	SourceNetworkLoadBalancerId string `pulumi:"sourceNetworkLoadBalancerId"`
+}
+
+// GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput is an input type that accepts GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs and GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput` via:
+//
+//	GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs{...}
+type GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput() GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput
+	ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput
+}
+
+type GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs struct {
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	SourceNetworkLoadBalancerId pulumi.StringInput `pulumi:"sourceNetworkLoadBalancerId"`
+}
+
+func (GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput() GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return i.ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
+}
+
+// GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray and GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray{ GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs{...} }
+type GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput() GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput
+	ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray []GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput
+
+func (GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput() GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput() GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return o
+}
+
+// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberNetworkLoadBalancerMapping) string {
+		return v.DestinationNetworkLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput) SourceNetworkLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberNetworkLoadBalancerMapping) string {
+		return v.SourceNetworkLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput() GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberNetworkLoadBalancerMapping {
+		return vs[0].([]GetDrProtectionGroupMemberNetworkLoadBalancerMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
+}
+
+type GetDrProtectionGroupMemberVaultMapping struct {
+	// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	DestinationVaultId string `pulumi:"destinationVaultId"`
+	// The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	SourceVaultId string `pulumi:"sourceVaultId"`
+}
+
+// GetDrProtectionGroupMemberVaultMappingInput is an input type that accepts GetDrProtectionGroupMemberVaultMappingArgs and GetDrProtectionGroupMemberVaultMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberVaultMappingInput` via:
+//
+//	GetDrProtectionGroupMemberVaultMappingArgs{...}
+type GetDrProtectionGroupMemberVaultMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberVaultMappingOutput() GetDrProtectionGroupMemberVaultMappingOutput
+	ToGetDrProtectionGroupMemberVaultMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberVaultMappingOutput
+}
+
+type GetDrProtectionGroupMemberVaultMappingArgs struct {
+	// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	DestinationVaultId pulumi.StringInput `pulumi:"destinationVaultId"`
+	// The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	SourceVaultId pulumi.StringInput `pulumi:"sourceVaultId"`
+}
+
+func (GetDrProtectionGroupMemberVaultMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberVaultMappingArgs) ToGetDrProtectionGroupMemberVaultMappingOutput() GetDrProtectionGroupMemberVaultMappingOutput {
+	return i.ToGetDrProtectionGroupMemberVaultMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberVaultMappingArgs) ToGetDrProtectionGroupMemberVaultMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVaultMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVaultMappingOutput)
+}
+
+// GetDrProtectionGroupMemberVaultMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberVaultMappingArray and GetDrProtectionGroupMemberVaultMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberVaultMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberVaultMappingArray{ GetDrProtectionGroupMemberVaultMappingArgs{...} }
+type GetDrProtectionGroupMemberVaultMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberVaultMappingArrayOutput() GetDrProtectionGroupMemberVaultMappingArrayOutput
+	ToGetDrProtectionGroupMemberVaultMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberVaultMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberVaultMappingArray []GetDrProtectionGroupMemberVaultMappingInput
+
+func (GetDrProtectionGroupMemberVaultMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberVaultMappingArray) ToGetDrProtectionGroupMemberVaultMappingArrayOutput() GetDrProtectionGroupMemberVaultMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberVaultMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberVaultMappingArray) ToGetDrProtectionGroupMemberVaultMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVaultMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVaultMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberVaultMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberVaultMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberVaultMappingOutput) ToGetDrProtectionGroupMemberVaultMappingOutput() GetDrProtectionGroupMemberVaultMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberVaultMappingOutput) ToGetDrProtectionGroupMemberVaultMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVaultMappingOutput {
+	return o
+}
+
+// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberVaultMappingOutput) DestinationVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVaultMapping) string { return v.DestinationVaultId }).(pulumi.StringOutput)
+}
+
+// The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberVaultMappingOutput) SourceVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVaultMapping) string { return v.SourceVaultId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberVaultMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberVaultMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberVaultMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberVaultMappingArrayOutput) ToGetDrProtectionGroupMemberVaultMappingArrayOutput() GetDrProtectionGroupMemberVaultMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberVaultMappingArrayOutput) ToGetDrProtectionGroupMemberVaultMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVaultMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberVaultMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberVaultMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberVaultMapping {
+		return vs[0].([]GetDrProtectionGroupMemberVaultMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberVaultMappingOutput)
+}
+
+type GetDrProtectionGroupMemberVirtualNodePoolConfig struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id string `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum int `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum int `pulumi:"minimum"`
+}
+
+// GetDrProtectionGroupMemberVirtualNodePoolConfigInput is an input type that accepts GetDrProtectionGroupMemberVirtualNodePoolConfigArgs and GetDrProtectionGroupMemberVirtualNodePoolConfigOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberVirtualNodePoolConfigInput` via:
+//
+//	GetDrProtectionGroupMemberVirtualNodePoolConfigArgs{...}
+type GetDrProtectionGroupMemberVirtualNodePoolConfigInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutput() GetDrProtectionGroupMemberVirtualNodePoolConfigOutput
+	ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(context.Context) GetDrProtectionGroupMemberVirtualNodePoolConfigOutput
+}
+
+type GetDrProtectionGroupMemberVirtualNodePoolConfigArgs struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum pulumi.IntInput `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum pulumi.IntInput `pulumi:"minimum"`
+}
+
+func (GetDrProtectionGroupMemberVirtualNodePoolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberVirtualNodePoolConfigArgs) ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutput() GetDrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return i.ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberVirtualNodePoolConfigArgs) ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVirtualNodePoolConfigOutput)
+}
+
+// GetDrProtectionGroupMemberVirtualNodePoolConfigArrayInput is an input type that accepts GetDrProtectionGroupMemberVirtualNodePoolConfigArray and GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberVirtualNodePoolConfigArrayInput` via:
+//
+//	GetDrProtectionGroupMemberVirtualNodePoolConfigArray{ GetDrProtectionGroupMemberVirtualNodePoolConfigArgs{...} }
+type GetDrProtectionGroupMemberVirtualNodePoolConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput() GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput
+	ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput
+}
+
+type GetDrProtectionGroupMemberVirtualNodePoolConfigArray []GetDrProtectionGroupMemberVirtualNodePoolConfigInput
+
+func (GetDrProtectionGroupMemberVirtualNodePoolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberVirtualNodePoolConfigArray) ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput() GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return i.ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberVirtualNodePoolConfigArray) ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput)
+}
+
+type GetDrProtectionGroupMemberVirtualNodePoolConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberVirtualNodePoolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigOutput) ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutput() GetDrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigOutput) ToGetDrProtectionGroupMemberVirtualNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return o
+}
+
+// The OCID of the virtual node pool in OKE cluster.
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVirtualNodePoolConfig) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The maximum number to which nodes in the virtual node pool could be scaled up.
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigOutput) Maximum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVirtualNodePoolConfig) int { return v.Maximum }).(pulumi.IntOutput)
+}
+
+// The minimum number to which nodes in the virtual node pool could be scaled down.
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigOutput) Minimum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVirtualNodePoolConfig) int { return v.Minimum }).(pulumi.IntOutput)
+}
+
+type GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput() GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) ToGetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberVirtualNodePoolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberVirtualNodePoolConfig {
+		return vs[0].([]GetDrProtectionGroupMemberVirtualNodePoolConfig)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberVirtualNodePoolConfigOutput)
+}
+
 type GetDrProtectionGroupMemberVnicMapping struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
@@ -8394,7 +10370,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+	// The OCID of the virtual node pool in OKE cluster.
 	Id string `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
@@ -8442,7 +10418,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+	// The OCID of the virtual node pool in OKE cluster.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
@@ -8549,7 +10525,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) FreeformTags
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+// The OCID of the virtual node pool in OKE cluster.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -8868,6 +10844,10 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	AutonomousDatabaseStandbyTypeForDrDrills string `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping `pulumi:"backendSetMappings"`
+	// The details of backup performed on OKE Cluster.
+	BackupConfigs []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig `pulumi:"backupConfigs"`
+	// The details for object storage backup location of an OKE Cluster
+	BackupLocations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation `pulumi:"backupLocations"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
@@ -8882,9 +10862,9 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
-	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
-	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping `pulumi:"exportMappings"`
@@ -8896,14 +10876,28 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
 	IsStartStopEnabled bool `pulumi:"isStartStopEnabled"`
+	// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+	JumpHostId string `pulumi:"jumpHostId"`
+	// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	LoadBalancerMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping `pulumi:"loadBalancerMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	ManagedNodePoolConfigs []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig `pulumi:"managedNodePoolConfigs"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
+	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	NetworkLoadBalancerMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+	PeerClusterId string `pulumi:"peerClusterId"`
+	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	VaultMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping `pulumi:"vaultMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	VirtualNodePoolConfigs []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig `pulumi:"virtualNodePoolConfigs"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -8926,6 +10920,10 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	AutonomousDatabaseStandbyTypeForDrDrills pulumi.StringInput `pulumi:"autonomousDatabaseStandbyTypeForDrDrills"`
 	// A list of backend set mappings that are used to transfer or update backends during DR.
 	BackendSetMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
+	// The details of backup performed on OKE Cluster.
+	BackupConfigs GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput `pulumi:"backupConfigs"`
+	// The details for object storage backup location of an OKE Cluster
+	BackupLocations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput `pulumi:"backupLocations"`
 	// Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
@@ -8940,9 +10938,9 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
-	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
-	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput `pulumi:"exportMappings"`
@@ -8954,14 +10952,28 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
 	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
 	IsStartStopEnabled pulumi.BoolInput `pulumi:"isStartStopEnabled"`
+	// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+	JumpHostId pulumi.StringInput `pulumi:"jumpHostId"`
+	// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	LoadBalancerMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayInput `pulumi:"loadBalancerMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	ManagedNodePoolConfigs GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput `pulumi:"managedNodePoolConfigs"`
 	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	NetworkLoadBalancerMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
 	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
+	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+	VaultMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput `pulumi:"vaultMappings"`
+	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+	VirtualNodePoolConfigs GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayInput `pulumi:"virtualNodePoolConfigs"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
@@ -9033,6 +11045,20 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Backen
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput)
 }
 
+// The details of backup performed on OKE Cluster.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BackupConfigs() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig {
+		return v.BackupConfigs
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput)
+}
+
+// The details for object storage backup location of an OKE Cluster
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BackupLocations() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation {
+		return v.BackupLocations
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput)
+}
+
 // Operations performed on a list of block volumes used on the non-movable compute instance.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockVolumeOperations() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
@@ -9080,14 +11106,14 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Destin
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationLoadBalancerId
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationNetworkLoadBalancerId
@@ -9123,6 +11149,25 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsStar
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsStartStopEnabled }).(pulumi.BoolOutput)
 }
 
+// The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) JumpHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.JumpHostId }).(pulumi.StringOutput)
+}
+
+// The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) LoadBalancerMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping {
+		return v.LoadBalancerMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput)
+}
+
+// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ManagedNodePoolConfigs() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig {
+		return v.ManagedNodePoolConfigs
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput)
+}
+
 // The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberId }).(pulumi.StringOutput)
@@ -9138,11 +11183,37 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Namesp
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) NetworkLoadBalancerMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping {
+		return v.NetworkLoadBalancerMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput)
+}
+
 // The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.PasswordVaultSecretId
 	}).(pulumi.StringOutput)
+}
+
+// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
+}
+
+// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) VaultMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping {
+		return v.VaultMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput)
+}
+
+// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) VirtualNodePoolConfigs() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig {
+		return v.VirtualNodePoolConfigs
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput)
 }
 
 // A list of compute instance VNIC mappings.
@@ -9298,6 +11369,270 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)[vs[1].(int)]
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig struct {
+	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+	BackupSchedule string `pulumi:"backupSchedule"`
+	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+	ImageReplicationVaultSecretId string `pulumi:"imageReplicationVaultSecretId"`
+	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+	MaxNumberOfBackupsRetained int `pulumi:"maxNumberOfBackupsRetained"`
+	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	Namespaces []string `pulumi:"namespaces"`
+	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
+	ReplicateImages string `pulumi:"replicateImages"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs struct {
+	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+	BackupSchedule pulumi.StringInput `pulumi:"backupSchedule"`
+	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+	ImageReplicationVaultSecretId pulumi.StringInput `pulumi:"imageReplicationVaultSecretId"`
+	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+	MaxNumberOfBackupsRetained pulumi.IntInput `pulumi:"maxNumberOfBackupsRetained"`
+	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
+	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
+	ReplicateImages pulumi.StringInput `pulumi:"replicateImages"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput {
+	return o
+}
+
+// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) BackupSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) string {
+		return v.BackupSchedule
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ImageReplicationVaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) string {
+		return v.ImageReplicationVaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) MaxNumberOfBackupsRetained() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) int {
+		return v.MaxNumberOfBackupsRetained
+	}).(pulumi.IntOutput)
+}
+
+// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) Namespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) []string {
+		return v.Namespaces
+	}).(pulumi.StringArrayOutput)
+}
+
+// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ReplicateImages() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) string {
+		return v.ReplicateImages
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation struct {
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket string `pulumi:"bucket"`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace string `pulumi:"namespace"`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+	Object string `pulumi:"object"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs struct {
+	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput {
+	return o
+}
+
+// The bucket name inside the object storage namespace.  Example: `bucketName`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation struct {
@@ -10070,6 +12405,578 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput)
 }
 
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping struct {
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the source Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	SourceLoadBalancerId string `pulumi:"sourceLoadBalancerId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs struct {
+	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the source Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	SourceLoadBalancerId pulumi.StringInput `pulumi:"sourceLoadBalancerId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput {
+	return o
+}
+
+// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput) DestinationLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping) string {
+		return v.DestinationLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the source Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput) SourceLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping) string {
+		return v.SourceLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id string `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum int `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum int `pulumi:"minimum"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum pulumi.IntInput `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum pulumi.IntInput `pulumi:"minimum"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput {
+	return o
+}
+
+// The OCID of the virtual node pool in OKE cluster.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The maximum number to which nodes in the virtual node pool could be scaled up.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput) Maximum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig) int {
+		return v.Maximum
+	}).(pulumi.IntOutput)
+}
+
+// The minimum number to which nodes in the virtual node pool could be scaled down.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput) Minimum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig) int {
+		return v.Minimum
+	}).(pulumi.IntOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfig)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping struct {
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	SourceNetworkLoadBalancerId string `pulumi:"sourceNetworkLoadBalancerId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs struct {
+	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	SourceNetworkLoadBalancerId pulumi.StringInput `pulumi:"sourceNetworkLoadBalancerId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput {
+	return o
+}
+
+// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping) string {
+		return v.DestinationNetworkLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput) SourceNetworkLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping) string {
+		return v.SourceNetworkLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping struct {
+	// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	DestinationVaultId string `pulumi:"destinationVaultId"`
+	// The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	SourceVaultId string `pulumi:"sourceVaultId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs struct {
+	// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	DestinationVaultId pulumi.StringInput `pulumi:"destinationVaultId"`
+	// The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+	SourceVaultId pulumi.StringInput `pulumi:"sourceVaultId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput {
+	return o
+}
+
+// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput) DestinationVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping) string {
+		return v.DestinationVaultId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput) SourceVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping) string {
+		return v.SourceVaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id string `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum int `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum int `pulumi:"minimum"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs struct {
+	// The OCID of the virtual node pool in OKE cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The maximum number to which nodes in the virtual node pool could be scaled up.
+	Maximum pulumi.IntInput `pulumi:"maximum"`
+	// The minimum number to which nodes in the virtual node pool could be scaled down.
+	Minimum pulumi.IntInput `pulumi:"minimum"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput {
+	return o
+}
+
+// The OCID of the virtual node pool in OKE cluster.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The maximum number to which nodes in the virtual node pool could be scaled up.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput) Maximum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig) int {
+		return v.Maximum
+	}).(pulumi.IntOutput)
+}
+
+// The minimum number to which nodes in the virtual node pool could be scaled down.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput) Minimum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig) int {
+		return v.Minimum
+	}).(pulumi.IntOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfig)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput)
+}
+
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
@@ -10346,6 +13253,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberArrayInput)(nil)).Elem(), DrProtectionGroupMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackendSetMappingInput)(nil)).Elem(), DrProtectionGroupMemberBackendSetMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackendSetMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberBackendSetMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupConfigInput)(nil)).Elem(), DrProtectionGroupMemberBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupConfigPtrInput)(nil)).Elem(), DrProtectionGroupMemberBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupLocationInput)(nil)).Elem(), DrProtectionGroupMemberBackupLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupLocationPtrInput)(nil)).Elem(), DrProtectionGroupMemberBackupLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationArrayInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{})
@@ -10360,6 +13271,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationMountDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationUnmountDetailsInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberLoadBalancerMappingInput)(nil)).Elem(), DrProtectionGroupMemberLoadBalancerMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberLoadBalancerMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberManagedNodePoolConfigInput)(nil)).Elem(), DrProtectionGroupMemberManagedNodePoolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), DrProtectionGroupMemberManagedNodePoolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), DrProtectionGroupMemberNetworkLoadBalancerMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVaultMappingInput)(nil)).Elem(), DrProtectionGroupMemberVaultMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVaultMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberVaultMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVirtualNodePoolConfigInput)(nil)).Elem(), DrProtectionGroupMemberVirtualNodePoolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVirtualNodePoolConfigArrayInput)(nil)).Elem(), DrProtectionGroupMemberVirtualNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVnicMappingInput)(nil)).Elem(), DrProtectionGroupMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVnicMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionExecutionOptionInput)(nil)).Elem(), GetDrPlanExecutionExecutionOptionArgs{})
@@ -10418,6 +13339,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackendSetMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberBackendSetMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackendSetMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBackendSetMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupConfigInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupLocationInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupLocationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs{})
@@ -10432,6 +13357,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationMountDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberLoadBalancerMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberManagedNodePoolConfigInput)(nil)).Elem(), GetDrProtectionGroupMemberManagedNodePoolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberManagedNodePoolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVaultMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberVaultMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVaultMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberVaultMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVirtualNodePoolConfigInput)(nil)).Elem(), GetDrProtectionGroupMemberVirtualNodePoolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVirtualNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberVirtualNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVnicMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionArgs{})
@@ -10446,6 +13381,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs{})
@@ -10460,6 +13399,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsFilterInput)(nil)).Elem(), GetDrProtectionGroupsFilterArgs{})
@@ -10490,6 +13439,10 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBackendSetMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBackendSetMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupConfigOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupConfigPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupLocationOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupLocationPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput{})
@@ -10504,6 +13457,16 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberLoadBalancerMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberManagedNodePoolConfigOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberManagedNodePoolConfigArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberVaultMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberVaultMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberVirtualNodePoolConfigOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionExecutionOptionOutput{})
@@ -10562,6 +13525,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackendSetMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackendSetMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupLocationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput{})
@@ -10576,6 +13543,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberLoadBalancerMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberManagedNodePoolConfigOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVaultMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVaultMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVirtualNodePoolConfigOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionOutput{})
@@ -10590,6 +13567,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput{})
@@ -10604,6 +13585,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsFilterOutput{})

@@ -112,6 +112,21 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     * 
+     */
+    @Import(name="databaseConnectorId")
+    private @Nullable Output<String> databaseConnectorId;
+
+    /**
+     * @return (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+     * 
+     */
+    public Optional<Output<String>> databaseConnectorId() {
+        return Optional.ofNullable(this.databaseConnectorId);
+    }
+
+    /**
      * Display name of database
      * 
      */
@@ -621,6 +636,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         this.connectorId = $.connectorId;
         this.credentialDetails = $.credentialDetails;
         this.databaseConnectionStatusDetails = $.databaseConnectionStatusDetails;
+        this.databaseConnectorId = $.databaseConnectorId;
         this.databaseDisplayName = $.databaseDisplayName;
         this.databaseId = $.databaseId;
         this.databaseName = $.databaseName;
@@ -798,6 +814,27 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
          */
         public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
             return databaseConnectionStatusDetails(Output.of(databaseConnectionStatusDetails));
+        }
+
+        /**
+         * @param databaseConnectorId (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConnectorId(@Nullable Output<String> databaseConnectorId) {
+            $.databaseConnectorId = databaseConnectorId;
+            return this;
+        }
+
+        /**
+         * @param databaseConnectorId (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConnectorId(String databaseConnectorId) {
+            return databaseConnectorId(Output.of(databaseConnectorId));
         }
 
         /**

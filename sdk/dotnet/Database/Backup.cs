@@ -85,6 +85,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Output("encryptionKeyLocationDetails")]
+        public Output<ImmutableArray<Outputs.BackupEncryptionKeyLocationDetail>> EncryptionKeyLocationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
         [Output("keyStoreId")]
@@ -265,6 +271,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("encryptionKeyLocationDetails")]
+        private InputList<Inputs.BackupEncryptionKeyLocationDetailGetArgs>? _encryptionKeyLocationDetails;
+
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public InputList<Inputs.BackupEncryptionKeyLocationDetailGetArgs> EncryptionKeyLocationDetails
+        {
+            get => _encryptionKeyLocationDetails ?? (_encryptionKeyLocationDetails = new InputList<Inputs.BackupEncryptionKeyLocationDetailGetArgs>());
+            set => _encryptionKeyLocationDetails = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.

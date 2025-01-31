@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class GetNewsReportsNewsReportCollectionItemContentTypeResult
     {
         /// <summary>
+        /// Supported resources for actionable insights content type.
+        /// </summary>
+        public readonly ImmutableArray<string> ActionableInsightsResources;
+        /// <summary>
         /// Supported resources for capacity planning content type.
         /// </summary>
         public readonly ImmutableArray<string> CapacityPlanningResources;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
         [OutputConstructor]
         private GetNewsReportsNewsReportCollectionItemContentTypeResult(
+            ImmutableArray<string> actionableInsightsResources,
+
             ImmutableArray<string> capacityPlanningResources,
 
             ImmutableArray<string> sqlInsightsFleetAnalysisResources,
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             ImmutableArray<string> sqlInsightsTopSqlResources)
         {
+            ActionableInsightsResources = actionableInsightsResources;
             CapacityPlanningResources = capacityPlanningResources;
             SqlInsightsFleetAnalysisResources = sqlInsightsFleetAnalysisResources;
             SqlInsightsPerformanceDegradationResources = sqlInsightsPerformanceDegradationResources;

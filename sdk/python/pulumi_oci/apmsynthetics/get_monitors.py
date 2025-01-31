@@ -167,7 +167,7 @@ def get_monitors(apm_domain_id: Optional[str] = None,
                  vantage_point: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitorsResult:
     """
-    This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of monitors.
 
@@ -233,7 +233,7 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         vantage_point: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitorsResult]:
     """
-    This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+    This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
     Returns a list of monitors.
 

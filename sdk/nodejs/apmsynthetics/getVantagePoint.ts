@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Returns a list of public vantage points.
  *
@@ -74,7 +74,7 @@ export interface GetVantagePointResult {
     readonly name?: string;
 }
 /**
- * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
  * Returns a list of public vantage points.
  *

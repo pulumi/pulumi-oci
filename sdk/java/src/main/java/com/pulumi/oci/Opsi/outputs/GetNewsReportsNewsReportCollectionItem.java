@@ -65,6 +65,11 @@ public final class GetNewsReportsNewsReportCollectionItem {
      */
     private String locale;
     /**
+     * @return Match rule used for tag filters.
+     * 
+     */
+    private String matchRule;
+    /**
      * @return The news report name.
      * 
      */
@@ -94,6 +99,11 @@ public final class GetNewsReportsNewsReportCollectionItem {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;.
+     * 
+     */
+    private List<String> tagFilters;
     /**
      * @return The time the the news report was first enabled. An RFC3339 formatted datetime string.
      * 
@@ -177,6 +187,13 @@ public final class GetNewsReportsNewsReportCollectionItem {
         return this.locale;
     }
     /**
+     * @return Match rule used for tag filters.
+     * 
+     */
+    public String matchRule() {
+        return this.matchRule;
+    }
+    /**
      * @return The news report name.
      * 
      */
@@ -219,6 +236,13 @@ public final class GetNewsReportsNewsReportCollectionItem {
         return this.systemTags;
     }
     /**
+     * @return List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - &#39;&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;&#39;. Example for freeform tags - &#39;&lt;TagKey&gt;=&lt;TagValue&gt;&#39;.
+     * 
+     */
+    public List<String> tagFilters() {
+        return this.tagFilters;
+    }
+    /**
      * @return The time the the news report was first enabled. An RFC3339 formatted datetime string.
      * 
      */
@@ -252,12 +276,14 @@ public final class GetNewsReportsNewsReportCollectionItem {
         private String id;
         private String lifecycleDetails;
         private String locale;
+        private String matchRule;
         private String name;
         private String newsFrequency;
         private String onsTopicId;
         private String state;
         private String status;
         private Map<String,String> systemTags;
+        private List<String> tagFilters;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -273,12 +299,14 @@ public final class GetNewsReportsNewsReportCollectionItem {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locale = defaults.locale;
+    	      this.matchRule = defaults.matchRule;
     	      this.name = defaults.name;
     	      this.newsFrequency = defaults.newsFrequency;
     	      this.onsTopicId = defaults.onsTopicId;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
     	      this.systemTags = defaults.systemTags;
+    	      this.tagFilters = defaults.tagFilters;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -367,6 +395,14 @@ public final class GetNewsReportsNewsReportCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder matchRule(String matchRule) {
+            if (matchRule == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportsNewsReportCollectionItem", "matchRule");
+            }
+            this.matchRule = matchRule;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetNewsReportsNewsReportCollectionItem", "name");
@@ -415,6 +451,17 @@ public final class GetNewsReportsNewsReportCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder tagFilters(List<String> tagFilters) {
+            if (tagFilters == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportsNewsReportCollectionItem", "tagFilters");
+            }
+            this.tagFilters = tagFilters;
+            return this;
+        }
+        public Builder tagFilters(String... tagFilters) {
+            return tagFilters(List.of(tagFilters));
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetNewsReportsNewsReportCollectionItem", "timeCreated");
@@ -442,12 +489,14 @@ public final class GetNewsReportsNewsReportCollectionItem {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locale = locale;
+            _resultValue.matchRule = matchRule;
             _resultValue.name = name;
             _resultValue.newsFrequency = newsFrequency;
             _resultValue.onsTopicId = onsTopicId;
             _resultValue.state = state;
             _resultValue.status = status;
             _resultValue.systemTags = systemTags;
+            _resultValue.tagFilters = tagFilters;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

@@ -19,7 +19,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+ * This resource provides the Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  * 
  * Creates a new script.
  * 

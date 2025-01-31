@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+// This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 //
 // Gets the configuration of the script identified by the OCID.
 //

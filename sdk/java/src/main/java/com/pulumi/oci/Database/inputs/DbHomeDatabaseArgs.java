@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DbHomeDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.DbHomeDatabaseDbBackupConfigArgs;
+import com.pulumi.oci.Database.inputs.DbHomeDatabaseEncryptionKeyLocationDetailsArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -190,6 +191,21 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="encryptionKeyLocationDetails")
+    private @Nullable Output<DbHomeDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<DbHomeDatabaseEncryptionKeyLocationDetailsArgs>> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
     }
 
     /**
@@ -447,6 +463,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         this.dbUniqueName = $.dbUniqueName;
         this.dbWorkload = $.dbWorkload;
         this.definedTags = $.definedTags;
+        this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.freeformTags = $.freeformTags;
         this.id = $.id;
         this.keyStoreId = $.keyStoreId;
@@ -721,6 +738,27 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(@Nullable Output<DbHomeDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails) {
+            $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(DbHomeDatabaseEncryptionKeyLocationDetailsArgs encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
         }
 
         /**

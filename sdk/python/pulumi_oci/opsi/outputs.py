@@ -1085,7 +1085,9 @@ class NewsReportContentTypes(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "capacityPlanningResources":
+        if key == "actionableInsightsResources":
+            suggest = "actionable_insights_resources"
+        elif key == "capacityPlanningResources":
             suggest = "capacity_planning_resources"
         elif key == "sqlInsightsFleetAnalysisResources":
             suggest = "sql_insights_fleet_analysis_resources"
@@ -1112,6 +1114,7 @@ class NewsReportContentTypes(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 actionable_insights_resources: Optional[Sequence[str]] = None,
                  capacity_planning_resources: Optional[Sequence[str]] = None,
                  sql_insights_fleet_analysis_resources: Optional[Sequence[str]] = None,
                  sql_insights_performance_degradation_resources: Optional[Sequence[str]] = None,
@@ -1120,6 +1123,7 @@ class NewsReportContentTypes(dict):
                  sql_insights_top_sql_by_insights_resources: Optional[Sequence[str]] = None,
                  sql_insights_top_sql_resources: Optional[Sequence[str]] = None):
         """
+        :param Sequence[str] actionable_insights_resources: (Updatable) Supported resources for actionable insights content type.
         :param Sequence[str] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
         :param Sequence[str] sql_insights_fleet_analysis_resources: (Updatable) Supported resources for SQL insights - fleet analysis content type.
         :param Sequence[str] sql_insights_performance_degradation_resources: (Updatable) Supported resources for SQL insights - performance degradation content type.
@@ -1128,6 +1132,8 @@ class NewsReportContentTypes(dict):
         :param Sequence[str] sql_insights_top_sql_by_insights_resources: (Updatable) Supported resources for SQL insights - top SQL by insights content type.
         :param Sequence[str] sql_insights_top_sql_resources: (Updatable) Supported resources for SQL insights - top SQL content type.
         """
+        if actionable_insights_resources is not None:
+            pulumi.set(__self__, "actionable_insights_resources", actionable_insights_resources)
         if capacity_planning_resources is not None:
             pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
         if sql_insights_fleet_analysis_resources is not None:
@@ -1142,6 +1148,14 @@ class NewsReportContentTypes(dict):
             pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
         if sql_insights_top_sql_resources is not None:
             pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
+
+    @property
+    @pulumi.getter(name="actionableInsightsResources")
+    def actionable_insights_resources(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Supported resources for actionable insights content type.
+        """
+        return pulumi.get(self, "actionable_insights_resources")
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -2618,6 +2632,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  connector_id: str,
                  credential_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult'],
                  database_connection_status_details: str,
+                 database_connector_id: str,
                  database_display_name: str,
                  database_id: str,
                  database_name: str,
@@ -2659,6 +2674,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
         :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs'] credential_details: User credential details to connect to the database.
         :param str database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+        :param str database_connector_id: (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param str database_display_name: Display name of database
         :param str database_id: Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
         :param str database_name: Name of database
@@ -2697,6 +2713,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "credential_details", credential_details)
         pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+        pulumi.set(__self__, "database_connector_id", database_connector_id)
         pulumi.set(__self__, "database_display_name", database_display_name)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "database_name", database_name)
@@ -2779,6 +2796,14 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         """
         return pulumi.get(self, "database_connection_status_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> str:
+        """
+        (Required when entity_source=EXTERNAL_MYSQL_DATABASE_SYSTEM) (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
+        """
+        return pulumi.get(self, "database_connector_id")
 
     @property
     @pulumi.getter(name="databaseDisplayName")
@@ -5124,6 +5149,7 @@ class GetImportableComputeEntityItemResult(dict):
 @pulumi.output_type
 class GetNewsReportContentTypeResult(dict):
     def __init__(__self__, *,
+                 actionable_insights_resources: Sequence[str],
                  capacity_planning_resources: Sequence[str],
                  sql_insights_fleet_analysis_resources: Sequence[str],
                  sql_insights_performance_degradation_resources: Sequence[str],
@@ -5132,6 +5158,7 @@ class GetNewsReportContentTypeResult(dict):
                  sql_insights_top_sql_by_insights_resources: Sequence[str],
                  sql_insights_top_sql_resources: Sequence[str]):
         """
+        :param Sequence[str] actionable_insights_resources: Supported resources for actionable insights content type.
         :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
         :param Sequence[str] sql_insights_fleet_analysis_resources: Supported resources for SQL insights - fleet analysis content type.
         :param Sequence[str] sql_insights_performance_degradation_resources: Supported resources for SQL insights - performance degradation content type.
@@ -5140,6 +5167,7 @@ class GetNewsReportContentTypeResult(dict):
         :param Sequence[str] sql_insights_top_sql_by_insights_resources: Supported resources for SQL insights - top SQL by insights content type.
         :param Sequence[str] sql_insights_top_sql_resources: Supported resources for SQL insights - top SQL content type.
         """
+        pulumi.set(__self__, "actionable_insights_resources", actionable_insights_resources)
         pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
         pulumi.set(__self__, "sql_insights_fleet_analysis_resources", sql_insights_fleet_analysis_resources)
         pulumi.set(__self__, "sql_insights_performance_degradation_resources", sql_insights_performance_degradation_resources)
@@ -5147,6 +5175,14 @@ class GetNewsReportContentTypeResult(dict):
         pulumi.set(__self__, "sql_insights_top_databases_resources", sql_insights_top_databases_resources)
         pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
         pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
+
+    @property
+    @pulumi.getter(name="actionableInsightsResources")
+    def actionable_insights_resources(self) -> Sequence[str]:
+        """
+        Supported resources for actionable insights content type.
+        """
+        return pulumi.get(self, "actionable_insights_resources")
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -5263,12 +5299,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
                  id: str,
                  lifecycle_details: str,
                  locale: str,
+                 match_rule: str,
                  name: str,
                  news_frequency: str,
                  ons_topic_id: str,
                  state: str,
                  status: str,
                  system_tags: Mapping[str, str],
+                 tag_filters: Sequence[str],
                  time_created: str,
                  time_updated: str):
         """
@@ -5282,12 +5320,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str locale: Language of the news report.
+        :param str match_rule: Match rule used for tag filters.
         :param str name: The news report name.
         :param str news_frequency: News report frequency.
         :param str ons_topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param str state: Lifecycle states
         :param str status: Resource Status
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence[str] tag_filters: List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
         :param str time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param str time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
@@ -5301,12 +5341,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locale", locale)
+        pulumi.set(__self__, "match_rule", match_rule)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "news_frequency", news_frequency)
         pulumi.set(__self__, "ons_topic_id", ons_topic_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tag_filters", tag_filters)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -5391,6 +5433,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         return pulumi.get(self, "locale")
 
     @property
+    @pulumi.getter(name="matchRule")
+    def match_rule(self) -> str:
+        """
+        Match rule used for tag filters.
+        """
+        return pulumi.get(self, "match_rule")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -5439,6 +5489,14 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="tagFilters")
+    def tag_filters(self) -> Sequence[str]:
+        """
+        List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'.
+        """
+        return pulumi.get(self, "tag_filters")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -5458,6 +5516,7 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
 @pulumi.output_type
 class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
     def __init__(__self__, *,
+                 actionable_insights_resources: Sequence[str],
                  capacity_planning_resources: Sequence[str],
                  sql_insights_fleet_analysis_resources: Sequence[str],
                  sql_insights_performance_degradation_resources: Sequence[str],
@@ -5466,6 +5525,7 @@ class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
                  sql_insights_top_sql_by_insights_resources: Sequence[str],
                  sql_insights_top_sql_resources: Sequence[str]):
         """
+        :param Sequence[str] actionable_insights_resources: Supported resources for actionable insights content type.
         :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
         :param Sequence[str] sql_insights_fleet_analysis_resources: Supported resources for SQL insights - fleet analysis content type.
         :param Sequence[str] sql_insights_performance_degradation_resources: Supported resources for SQL insights - performance degradation content type.
@@ -5474,6 +5534,7 @@ class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
         :param Sequence[str] sql_insights_top_sql_by_insights_resources: Supported resources for SQL insights - top SQL by insights content type.
         :param Sequence[str] sql_insights_top_sql_resources: Supported resources for SQL insights - top SQL content type.
         """
+        pulumi.set(__self__, "actionable_insights_resources", actionable_insights_resources)
         pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
         pulumi.set(__self__, "sql_insights_fleet_analysis_resources", sql_insights_fleet_analysis_resources)
         pulumi.set(__self__, "sql_insights_performance_degradation_resources", sql_insights_performance_degradation_resources)
@@ -5481,6 +5542,14 @@ class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
         pulumi.set(__self__, "sql_insights_top_databases_resources", sql_insights_top_databases_resources)
         pulumi.set(__self__, "sql_insights_top_sql_by_insights_resources", sql_insights_top_sql_by_insights_resources)
         pulumi.set(__self__, "sql_insights_top_sql_resources", sql_insights_top_sql_resources)
+
+    @property
+    @pulumi.getter(name="actionableInsightsResources")
+    def actionable_insights_resources(self) -> Sequence[str]:
+        """
+        Supported resources for actionable insights content type.
+        """
+        return pulumi.get(self, "actionable_insights_resources")
 
     @property
     @pulumi.getter(name="capacityPlanningResources")

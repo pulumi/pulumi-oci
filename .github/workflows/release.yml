@@ -65,6 +65,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     needs:
       - prerequisites
       - build_provider

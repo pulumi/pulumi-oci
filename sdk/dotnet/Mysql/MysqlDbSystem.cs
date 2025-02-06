@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Mysql
     ///         CompartmentId = compartmentId,
     ///         ShapeName = mysqlShapeName,
     ///         SubnetId = testSubnet.Id,
+    ///         AccessMode = mysqlDbSystemAccessMode,
     ///         AdminPassword = mysqlDbSystemAdminPassword,
     ///         AdminUsername = mysqlDbSystemAdminUsername,
     ///         BackupPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyArgs
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         DataStorageSizeInGb = mysqlDbSystemDataStorageSizeInGb,
     ///         DatabaseManagement = mysqlDbSystemDatabaseManagement,
+    ///         DatabaseMode = mysqlDbSystemDatabaseMode,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -95,6 +97,13 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         Port = mysqlDbSystemPort,
     ///         PortX = mysqlDbSystemPortX,
+    ///         ReadEndpoint = new Oci.Mysql.Inputs.MysqlDbSystemReadEndpointArgs
+    ///         {
+    ///             ExcludeIps = mysqlDbSystemReadEndpointExcludeIps,
+    ///             IsEnabled = mysqlDbSystemReadEndpointIsEnabled,
+    ///             ReadEndpointHostnameLabel = mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
+    ///             ReadEndpointIpAddress = mysqlDbSystemReadEndpointReadEndpointIpAddress,
+    ///         },
     ///         SecureConnections = new Oci.Mysql.Inputs.MysqlDbSystemSecureConnectionsArgs
     ///         {
     ///             CertificateGenerationType = mysqlDbSystemSecureConnectionsCertificateGenerationType,
@@ -121,6 +130,14 @@ namespace Pulumi.Oci.Mysql
     [OciResourceType("oci:Mysql/mysqlDbSystem:MysqlDbSystem")]
     public partial class MysqlDbSystem : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+        /// * UNRESTRICTED (default): the access to the database is not restricted;
+        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// </summary>
+        [Output("accessMode")]
+        public Output<string> AccessMode { get; private set; } = null!;
+
         /// <summary>
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         /// </summary>
@@ -202,6 +219,14 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("databaseManagement")]
         public Output<string> DatabaseManagement { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+        /// * READ_WRITE (default): allow running read and write statements on the DB system;
+        /// * READ_ONLY: only allow running read statements on the DB system.
+        /// </summary>
+        [Output("databaseMode")]
+        public Output<string> DatabaseMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -322,6 +347,12 @@ namespace Pulumi.Oci.Mysql
         public Output<int> PortX { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Details required to create a Read Endpoint.
+        /// </summary>
+        [Output("readEndpoint")]
+        public Output<Outputs.MysqlDbSystemReadEndpoint> ReadEndpoint { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Secure connection configuration details.
         /// </summary>
         [Output("secureConnections")]
@@ -423,6 +454,14 @@ namespace Pulumi.Oci.Mysql
 
     public sealed class MysqlDbSystemArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+        /// * UNRESTRICTED (default): the access to the database is not restricted;
+        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// </summary>
+        [Input("accessMode")]
+        public Input<string>? AccessMode { get; set; }
+
         [Input("adminPassword")]
         private Input<string>? _adminPassword;
 
@@ -508,6 +547,14 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("databaseManagement")]
         public Input<string>? DatabaseManagement { get; set; }
+
+        /// <summary>
+        /// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+        /// * READ_WRITE (default): allow running read and write statements on the DB system;
+        /// * READ_ONLY: only allow running read statements on the DB system.
+        /// </summary>
+        [Input("databaseMode")]
+        public Input<string>? DatabaseMode { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -616,6 +663,12 @@ namespace Pulumi.Oci.Mysql
         public Input<int>? PortX { get; set; }
 
         /// <summary>
+        /// (Updatable) Details required to create a Read Endpoint.
+        /// </summary>
+        [Input("readEndpoint")]
+        public Input<Inputs.MysqlDbSystemReadEndpointArgs>? ReadEndpoint { get; set; }
+
+        /// <summary>
         /// (Updatable) Secure connection configuration details.
         /// </summary>
         [Input("secureConnections")]
@@ -663,6 +716,14 @@ namespace Pulumi.Oci.Mysql
 
     public sealed class MysqlDbSystemState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+        /// * UNRESTRICTED (default): the access to the database is not restricted;
+        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// </summary>
+        [Input("accessMode")]
+        public Input<string>? AccessMode { get; set; }
+
         [Input("adminPassword")]
         private Input<string>? _adminPassword;
 
@@ -772,6 +833,14 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("databaseManagement")]
         public Input<string>? DatabaseManagement { get; set; }
+
+        /// <summary>
+        /// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+        /// * READ_WRITE (default): allow running read and write statements on the DB system;
+        /// * READ_ONLY: only allow running read statements on the DB system.
+        /// </summary>
+        [Input("databaseMode")]
+        public Input<string>? DatabaseMode { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -926,6 +995,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("portX")]
         public Input<int>? PortX { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details required to create a Read Endpoint.
+        /// </summary>
+        [Input("readEndpoint")]
+        public Input<Inputs.MysqlDbSystemReadEndpointGetArgs>? ReadEndpoint { get; set; }
 
         /// <summary>
         /// (Updatable) Secure connection configuration details.

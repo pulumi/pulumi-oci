@@ -5,6 +5,7 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_containers import *
 from .get_fast_launch_job_configs import *
 from .get_job import *
 from .get_job_run import *
@@ -30,6 +31,8 @@ from .get_private_endpoint import *
 from .get_private_endpoints import *
 from .get_project import *
 from .get_projects import *
+from .get_schedule import *
+from .get_schedules import *
 from .job import *
 from .job_run import *
 from .model import *
@@ -43,5 +46,6 @@ from .pipeline import *
 from .pipeline_run import *
 from .private_endpoint import *
 from .project import *
+from .schedule import *
 from ._inputs import *
 from . import outputs

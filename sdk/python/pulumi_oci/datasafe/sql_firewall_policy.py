@@ -39,7 +39,7 @@ class SqlFirewallPolicyArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL Firewall policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL Firewall policy.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the SQL Firewall policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL Firewall policy enforcement option.
@@ -142,7 +142,7 @@ class SqlFirewallPolicyArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -270,7 +270,7 @@ class _SqlFirewallPolicyState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL Firewall policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL Firewall policy.
         :param pulumi.Input[str] db_user_name: The database user name.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the SQL Firewall policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL Firewall policy enforcement option.
@@ -398,7 +398,7 @@ class _SqlFirewallPolicyState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -629,7 +629,7 @@ class SqlFirewallPolicy(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL Firewall policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL Firewall policy.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the SQL Firewall policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL Firewall policy enforcement option.
@@ -765,7 +765,7 @@ class SqlFirewallPolicy(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL Firewall policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL Firewall policy.
         :param pulumi.Input[str] db_user_name: The database user name.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the SQL Firewall policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL Firewall policy enforcement option.
@@ -857,7 +857,7 @@ class SqlFirewallPolicy(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 

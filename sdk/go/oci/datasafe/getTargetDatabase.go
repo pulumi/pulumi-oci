@@ -68,7 +68,7 @@ type LookupTargetDatabaseResult struct {
 	Credentials []GetTargetDatabaseCredential `pulumi:"credentials"`
 	// Details of the database for the registration in Data Safe.
 	DatabaseDetails []GetTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the peer target database in Data Safe.
 	Description string `pulumi:"description"`
@@ -155,7 +155,7 @@ func (o LookupTargetDatabaseResultOutput) DatabaseDetails() GetTargetDatabaseDat
 	return o.ApplyT(func(v LookupTargetDatabaseResult) []GetTargetDatabaseDatabaseDetail { return v.DatabaseDetails }).(GetTargetDatabaseDatabaseDetailArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupTargetDatabaseResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

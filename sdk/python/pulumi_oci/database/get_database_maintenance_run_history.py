@@ -27,10 +27,16 @@ class GetDatabaseMaintenanceRunHistoryResult:
     """
     A collection of values returned by getDatabaseMaintenanceRunHistory.
     """
-    def __init__(__self__, db_servers_history_details=None, id=None, maintenance_run_details=None, maintenance_run_history_id=None):
+    def __init__(__self__, current_execution_window=None, db_servers_history_details=None, granular_maintenance_histories=None, id=None, maintenance_run_details=None, maintenance_run_history_id=None):
+        if current_execution_window and not isinstance(current_execution_window, str):
+            raise TypeError("Expected argument 'current_execution_window' to be a str")
+        pulumi.set(__self__, "current_execution_window", current_execution_window)
         if db_servers_history_details and not isinstance(db_servers_history_details, list):
             raise TypeError("Expected argument 'db_servers_history_details' to be a list")
         pulumi.set(__self__, "db_servers_history_details", db_servers_history_details)
+        if granular_maintenance_histories and not isinstance(granular_maintenance_histories, list):
+            raise TypeError("Expected argument 'granular_maintenance_histories' to be a list")
+        pulumi.set(__self__, "granular_maintenance_histories", granular_maintenance_histories)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -42,12 +48,28 @@ class GetDatabaseMaintenanceRunHistoryResult:
         pulumi.set(__self__, "maintenance_run_history_id", maintenance_run_history_id)
 
     @property
+    @pulumi.getter(name="currentExecutionWindow")
+    def current_execution_window(self) -> str:
+        """
+        The OCID of the current execution window.
+        """
+        return pulumi.get(self, "current_execution_window")
+
+    @property
     @pulumi.getter(name="dbServersHistoryDetails")
     def db_servers_history_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult']:
         """
         List of database server history details.
         """
         return pulumi.get(self, "db_servers_history_details")
+
+    @property
+    @pulumi.getter(name="granularMaintenanceHistories")
+    def granular_maintenance_histories(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryResult']:
+        """
+        The list of granular maintenance history details.
+        """
+        return pulumi.get(self, "granular_maintenance_histories")
 
     @property
     @pulumi.getter
@@ -77,7 +99,9 @@ class AwaitableGetDatabaseMaintenanceRunHistoryResult(GetDatabaseMaintenanceRunH
         if False:
             yield self
         return GetDatabaseMaintenanceRunHistoryResult(
+            current_execution_window=self.current_execution_window,
             db_servers_history_details=self.db_servers_history_details,
+            granular_maintenance_histories=self.granular_maintenance_histories,
             id=self.id,
             maintenance_run_details=self.maintenance_run_details,
             maintenance_run_history_id=self.maintenance_run_history_id)
@@ -108,7 +132,9 @@ def get_database_maintenance_run_history(maintenance_run_history_id: Optional[st
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory', __args__, opts=opts, typ=GetDatabaseMaintenanceRunHistoryResult).value
 
     return AwaitableGetDatabaseMaintenanceRunHistoryResult(
+        current_execution_window=pulumi.get(__ret__, 'current_execution_window'),
         db_servers_history_details=pulumi.get(__ret__, 'db_servers_history_details'),
+        granular_maintenance_histories=pulumi.get(__ret__, 'granular_maintenance_histories'),
         id=pulumi.get(__ret__, 'id'),
         maintenance_run_details=pulumi.get(__ret__, 'maintenance_run_details'),
         maintenance_run_history_id=pulumi.get(__ret__, 'maintenance_run_history_id'))
@@ -136,7 +162,9 @@ def get_database_maintenance_run_history_output(maintenance_run_history_id: Opti
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory', __args__, opts=opts, typ=GetDatabaseMaintenanceRunHistoryResult)
     return __ret__.apply(lambda __response__: GetDatabaseMaintenanceRunHistoryResult(
+        current_execution_window=pulumi.get(__response__, 'current_execution_window'),
         db_servers_history_details=pulumi.get(__response__, 'db_servers_history_details'),
+        granular_maintenance_histories=pulumi.get(__response__, 'granular_maintenance_histories'),
         id=pulumi.get(__response__, 'id'),
         maintenance_run_details=pulumi.get(__response__, 'maintenance_run_details'),
         maintenance_run_history_id=pulumi.get(__response__, 'maintenance_run_history_id')))

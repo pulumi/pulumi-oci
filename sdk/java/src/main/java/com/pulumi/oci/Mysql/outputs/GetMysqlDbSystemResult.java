@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemPointInTimeRecoveryDetail;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSecureConnection;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSource;
 import java.lang.Boolean;
@@ -26,6 +27,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMysqlDbSystemResult {
+    /**
+     * @return The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+     * * UNRESTRICTED: the access to the database is not restricted;
+     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * 
+     */
+    private String accessMode;
     private String adminPassword;
     private String adminUsername;
     /**
@@ -83,6 +91,13 @@ public final class GetMysqlDbSystemResult {
      * 
      */
     private String databaseManagement;
+    /**
+     * @return The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE: allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     * 
+     */
+    private String databaseMode;
     /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
@@ -184,6 +199,11 @@ public final class GetMysqlDbSystemResult {
      */
     private Integer portX;
     /**
+     * @return The read endpoint of a DB System.
+     * 
+     */
+    private List<GetMysqlDbSystemReadEndpoint> readEndpoints;
+    /**
      * @return Secure connection configuration details.
      * 
      */
@@ -221,6 +241,15 @@ public final class GetMysqlDbSystemResult {
     private String timeUpdated;
 
     private GetMysqlDbSystemResult() {}
+    /**
+     * @return The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+     * * UNRESTRICTED: the access to the database is not restricted;
+     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * 
+     */
+    public String accessMode() {
+        return this.accessMode;
+    }
     public String adminPassword() {
         return this.adminPassword;
     }
@@ -303,6 +332,15 @@ public final class GetMysqlDbSystemResult {
      */
     public String databaseManagement() {
         return this.databaseManagement;
+    }
+    /**
+     * @return The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE: allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     * 
+     */
+    public String databaseMode() {
+        return this.databaseMode;
     }
     /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
@@ -445,6 +483,13 @@ public final class GetMysqlDbSystemResult {
         return this.portX;
     }
     /**
+     * @return The read endpoint of a DB System.
+     * 
+     */
+    public List<GetMysqlDbSystemReadEndpoint> readEndpoints() {
+        return this.readEndpoints;
+    }
+    /**
      * @return Secure connection configuration details.
      * 
      */
@@ -506,6 +551,7 @@ public final class GetMysqlDbSystemResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String accessMode;
         private String adminPassword;
         private String adminUsername;
         private String availabilityDomain;
@@ -519,6 +565,7 @@ public final class GetMysqlDbSystemResult {
         private Integer dataStorageSizeInGb;
         private List<GetMysqlDbSystemDataStorage> dataStorages;
         private String databaseManagement;
+        private String databaseMode;
         private String dbSystemId;
         private Map<String,String> definedTags;
         private List<GetMysqlDbSystemDeletionPolicy> deletionPolicies;
@@ -539,6 +586,7 @@ public final class GetMysqlDbSystemResult {
         private List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
         private Integer port;
         private Integer portX;
+        private List<GetMysqlDbSystemReadEndpoint> readEndpoints;
         private List<GetMysqlDbSystemSecureConnection> secureConnections;
         private String shapeName;
         private String shutdownType;
@@ -550,6 +598,7 @@ public final class GetMysqlDbSystemResult {
         public Builder() {}
         public Builder(GetMysqlDbSystemResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accessMode = defaults.accessMode;
     	      this.adminPassword = defaults.adminPassword;
     	      this.adminUsername = defaults.adminUsername;
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -563,6 +612,7 @@ public final class GetMysqlDbSystemResult {
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorages = defaults.dataStorages;
     	      this.databaseManagement = defaults.databaseManagement;
+    	      this.databaseMode = defaults.databaseMode;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -583,6 +633,7 @@ public final class GetMysqlDbSystemResult {
     	      this.pointInTimeRecoveryDetails = defaults.pointInTimeRecoveryDetails;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.readEndpoints = defaults.readEndpoints;
     	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.shutdownType = defaults.shutdownType;
@@ -593,6 +644,14 @@ public final class GetMysqlDbSystemResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder accessMode(String accessMode) {
+            if (accessMode == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "accessMode");
+            }
+            this.accessMode = accessMode;
+            return this;
+        }
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             if (adminPassword == null) {
@@ -710,6 +769,14 @@ public final class GetMysqlDbSystemResult {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "databaseManagement");
             }
             this.databaseManagement = databaseManagement;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseMode(String databaseMode) {
+            if (databaseMode == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "databaseMode");
+            }
+            this.databaseMode = databaseMode;
             return this;
         }
         @CustomType.Setter
@@ -888,6 +955,17 @@ public final class GetMysqlDbSystemResult {
             return this;
         }
         @CustomType.Setter
+        public Builder readEndpoints(List<GetMysqlDbSystemReadEndpoint> readEndpoints) {
+            if (readEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "readEndpoints");
+            }
+            this.readEndpoints = readEndpoints;
+            return this;
+        }
+        public Builder readEndpoints(GetMysqlDbSystemReadEndpoint... readEndpoints) {
+            return readEndpoints(List.of(readEndpoints));
+        }
+        @CustomType.Setter
         public Builder secureConnections(List<GetMysqlDbSystemSecureConnection> secureConnections) {
             if (secureConnections == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "secureConnections");
@@ -959,6 +1037,7 @@ public final class GetMysqlDbSystemResult {
         }
         public GetMysqlDbSystemResult build() {
             final var _resultValue = new GetMysqlDbSystemResult();
+            _resultValue.accessMode = accessMode;
             _resultValue.adminPassword = adminPassword;
             _resultValue.adminUsername = adminUsername;
             _resultValue.availabilityDomain = availabilityDomain;
@@ -972,6 +1051,7 @@ public final class GetMysqlDbSystemResult {
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dataStorages = dataStorages;
             _resultValue.databaseManagement = databaseManagement;
+            _resultValue.databaseMode = databaseMode;
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.definedTags = definedTags;
             _resultValue.deletionPolicies = deletionPolicies;
@@ -992,6 +1072,7 @@ public final class GetMysqlDbSystemResult {
             _resultValue.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.readEndpoints = readEndpoints;
             _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.shutdownType = shutdownType;

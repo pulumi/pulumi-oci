@@ -39,11 +39,11 @@ type AuditProfile struct {
 	ChangeRetentionTrigger pulumi.IntPtrOutput `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -55,7 +55,7 @@ type AuditProfile struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
 	OfflineMonths pulumi.IntOutput `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 	OnlineMonths pulumi.IntOutput `pulumi:"onlineMonths"`
 	// The current state of the audit profile.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -115,11 +115,11 @@ type auditProfileState struct {
 	ChangeRetentionTrigger *int `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -131,7 +131,7 @@ type auditProfileState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
 	OfflineMonths *int `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 	OnlineMonths *int `pulumi:"onlineMonths"`
 	// The current state of the audit profile.
 	State *string `pulumi:"state"`
@@ -159,11 +159,11 @@ type AuditProfileState struct {
 	ChangeRetentionTrigger pulumi.IntPtrInput
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -175,7 +175,7 @@ type AuditProfileState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
 	OfflineMonths pulumi.IntPtrInput
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 	OnlineMonths pulumi.IntPtrInput
 	// The current state of the audit profile.
 	State pulumi.StringPtrInput
@@ -203,11 +203,11 @@ type auditProfileArgs struct {
 	ChangeRetentionTrigger *int `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -226,11 +226,11 @@ type AuditProfileArgs struct {
 	ChangeRetentionTrigger pulumi.IntPtrInput
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -353,7 +353,7 @@ func (o AuditProfileOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o AuditProfileOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -363,7 +363,7 @@ func (o AuditProfileOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 func (o AuditProfileOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -393,7 +393,7 @@ func (o AuditProfileOutput) OfflineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.IntOutput { return v.OfflineMonths }).(pulumi.IntOutput)
 }
 
-// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 func (o AuditProfileOutput) OnlineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.IntOutput { return v.OnlineMonths }).(pulumi.IntOutput)
 }

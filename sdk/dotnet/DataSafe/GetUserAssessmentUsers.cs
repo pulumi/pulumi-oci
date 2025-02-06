@@ -42,6 +42,8 @@ namespace Pulumi.Oci.DataSafe
         ///         TargetId = testTarget.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
         ///         TimeLastLoginLessThan = userAssessmentUserTimeLastLoginLessThan,
+        ///         TimePasswordExpiryGreaterThanOrEqualTo = userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo,
+        ///         TimePasswordExpiryLessThan = userAssessmentUserTimePasswordExpiryLessThan,
         ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo,
         ///         TimePasswordLastChangedLessThan = userAssessmentUserTimePasswordLastChangedLessThan,
         ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo,
@@ -91,6 +93,8 @@ namespace Pulumi.Oci.DataSafe
         ///         TargetId = testTarget.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
         ///         TimeLastLoginLessThan = userAssessmentUserTimeLastLoginLessThan,
+        ///         TimePasswordExpiryGreaterThanOrEqualTo = userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo,
+        ///         TimePasswordExpiryLessThan = userAssessmentUserTimePasswordExpiryLessThan,
         ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo,
         ///         TimePasswordLastChangedLessThan = userAssessmentUserTimePasswordLastChangedLessThan,
         ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo,
@@ -140,6 +144,8 @@ namespace Pulumi.Oci.DataSafe
         ///         TargetId = testTarget.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
         ///         TimeLastLoginLessThan = userAssessmentUserTimeLastLoginLessThan,
+        ///         TimePasswordExpiryGreaterThanOrEqualTo = userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo,
+        ///         TimePasswordExpiryLessThan = userAssessmentUserTimePasswordExpiryLessThan,
         ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo,
         ///         TimePasswordLastChangedLessThan = userAssessmentUserTimePasswordLastChangedLessThan,
         ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo,
@@ -231,6 +237,18 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("timeLastLoginLessThan")]
         public string? TimeLastLoginLessThan { get; set; }
+
+        /// <summary>
+        /// A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryGreaterThanOrEqualTo")]
+        public string? TimePasswordExpiryGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryLessThan")]
+        public string? TimePasswordExpiryLessThan { get; set; }
 
         /// <summary>
         /// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -386,6 +404,18 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TimeLastLoginLessThan { get; set; }
 
         /// <summary>
+        /// A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryGreaterThanOrEqualTo")]
+        public Input<string>? TimePasswordExpiryGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryLessThan")]
+        public Input<string>? TimePasswordExpiryLessThan { get; set; }
+
+        /// <summary>
         /// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// 
         /// **Example:** 2016-12-19T16:39:57.600Z
@@ -499,6 +529,8 @@ namespace Pulumi.Oci.DataSafe
         public readonly string? TargetId;
         public readonly string? TimeLastLoginGreaterThanOrEqualTo;
         public readonly string? TimeLastLoginLessThan;
+        public readonly string? TimePasswordExpiryGreaterThanOrEqualTo;
+        public readonly string? TimePasswordExpiryLessThan;
         public readonly string? TimePasswordLastChangedGreaterThanOrEqualTo;
         public readonly string? TimePasswordLastChangedLessThan;
         public readonly string? TimeUserCreatedGreaterThanOrEqualTo;
@@ -548,6 +580,10 @@ namespace Pulumi.Oci.DataSafe
 
             string? timeLastLoginLessThan,
 
+            string? timePasswordExpiryGreaterThanOrEqualTo,
+
+            string? timePasswordExpiryLessThan,
+
             string? timePasswordLastChangedGreaterThanOrEqualTo,
 
             string? timePasswordLastChangedLessThan,
@@ -583,6 +619,8 @@ namespace Pulumi.Oci.DataSafe
             TargetId = targetId;
             TimeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
             TimeLastLoginLessThan = timeLastLoginLessThan;
+            TimePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            TimePasswordExpiryLessThan = timePasswordExpiryLessThan;
             TimePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
             TimePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
             TimeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;

@@ -106,6 +106,8 @@ import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsPlainArgs;
@@ -182,6 +184,10 @@ import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyReportsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
@@ -197,6 +203,10 @@ import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsPlai
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypePlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsPlainArgs;
@@ -247,6 +257,8 @@ import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentProfileAnalyticsPlainArgs;
@@ -309,6 +321,7 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyHealthReportResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyHealthReportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingObjectsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingSchemasResult;
+import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyReferentialRelationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportMaskedColumnsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportResult;
@@ -347,6 +360,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportRoleGrantPathsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyReportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelReferentialRelationResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelReferentialRelationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasResult;
@@ -355,6 +370,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesExportResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesExportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionLogInsightsResult;
@@ -380,6 +397,7 @@ import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesSchemasResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTablesResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonResult;
+import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentPasswordExpiryDateAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfileAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfilesResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentResult;
@@ -13007,6 +13025,246 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", TypeShape.of(GetMaskingPolicyMaskingSchemasResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Masking Policy Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified masking policy based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPolicyReferentialRelationColumnName)
+     *             .objects(maskingPolicyReferentialRelationObject)
+     *             .relationTypes(maskingPolicyReferentialRelationRelationType)
+     *             .schemaNames(maskingPolicyReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyReferentialRelationsResult> getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs args) {
+        return getMaskingPolicyReferentialRelations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Policy Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified masking policy based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPolicyReferentialRelationColumnName)
+     *             .objects(maskingPolicyReferentialRelationObject)
+     *             .relationTypes(maskingPolicyReferentialRelationRelationType)
+     *             .schemaNames(maskingPolicyReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyReferentialRelationsResult> getMaskingPolicyReferentialRelationsPlain(GetMaskingPolicyReferentialRelationsPlainArgs args) {
+        return getMaskingPolicyReferentialRelationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Policy Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified masking policy based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPolicyReferentialRelationColumnName)
+     *             .objects(maskingPolicyReferentialRelationObject)
+     *             .relationTypes(maskingPolicyReferentialRelationRelationType)
+     *             .schemaNames(maskingPolicyReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyReferentialRelationsResult> getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingPolicyReferentialRelations:getMaskingPolicyReferentialRelations", TypeShape.of(GetMaskingPolicyReferentialRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Policy Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified masking policy based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPolicyReferentialRelationColumnName)
+     *             .objects(maskingPolicyReferentialRelationObject)
+     *             .relationTypes(maskingPolicyReferentialRelationRelationType)
+     *             .schemaNames(maskingPolicyReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyReferentialRelationsResult> getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingPolicyReferentialRelations:getMaskingPolicyReferentialRelations", TypeShape.of(GetMaskingPolicyReferentialRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Policy Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified masking policy based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyReferentialRelations = DataSafeFunctions.getMaskingPolicyReferentialRelations(GetMaskingPolicyReferentialRelationsArgs.builder()
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPolicyReferentialRelationColumnName)
+     *             .objects(maskingPolicyReferentialRelationObject)
+     *             .relationTypes(maskingPolicyReferentialRelationRelationType)
+     *             .schemaNames(maskingPolicyReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyReferentialRelationsResult> getMaskingPolicyReferentialRelationsPlain(GetMaskingPolicyReferentialRelationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingPolicyReferentialRelations:getMaskingPolicyReferentialRelations", TypeShape.of(GetMaskingPolicyReferentialRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the specified masking report.
@@ -22002,6 +22260,476 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveDataModel:getSensitiveDataModel", TypeShape.of(GetSensitiveDataModelResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args) {
+        return getSensitiveDataModelReferentialRelation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelationPlain(GetSensitiveDataModelReferentialRelationPlainArgs args) {
+        return getSensitiveDataModelReferentialRelationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelationPlain(GetSensitiveDataModelReferentialRelationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified sensitive data model based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
+     *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
+     *             .objects(sensitiveDataModelReferentialRelationObject)
+     *             .relationTypes(sensitiveDataModelReferentialRelationRelationType)
+     *             .schemaNames(sensitiveDataModelReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelReferentialRelationsResult> getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs args) {
+        return getSensitiveDataModelReferentialRelations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified sensitive data model based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
+     *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
+     *             .objects(sensitiveDataModelReferentialRelationObject)
+     *             .relationTypes(sensitiveDataModelReferentialRelationRelationType)
+     *             .schemaNames(sensitiveDataModelReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveDataModelReferentialRelationsResult> getSensitiveDataModelReferentialRelationsPlain(GetSensitiveDataModelReferentialRelationsPlainArgs args) {
+        return getSensitiveDataModelReferentialRelationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified sensitive data model based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
+     *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
+     *             .objects(sensitiveDataModelReferentialRelationObject)
+     *             .relationTypes(sensitiveDataModelReferentialRelationRelationType)
+     *             .schemaNames(sensitiveDataModelReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelReferentialRelationsResult> getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelations:getSensitiveDataModelReferentialRelations", TypeShape.of(GetSensitiveDataModelReferentialRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified sensitive data model based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
+     *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
+     *             .objects(sensitiveDataModelReferentialRelationObject)
+     *             .relationTypes(sensitiveDataModelReferentialRelationRelationType)
+     *             .schemaNames(sensitiveDataModelReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelReferentialRelationsResult> getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelations:getSensitiveDataModelReferentialRelations", TypeShape.of(GetSensitiveDataModelReferentialRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Referential Relations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of referential relations present in the specified sensitive data model based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelations = DataSafeFunctions.getSensitiveDataModelReferentialRelations(GetSensitiveDataModelReferentialRelationsArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnNames(sensitiveDataModelReferentialRelationColumnName)
+     *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
+     *             .objects(sensitiveDataModelReferentialRelationObject)
+     *             .relationTypes(sensitiveDataModelReferentialRelationRelationType)
+     *             .schemaNames(sensitiveDataModelReferentialRelationSchemaName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveDataModelReferentialRelationsResult> getSensitiveDataModelReferentialRelationsPlain(GetSensitiveDataModelReferentialRelationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveDataModelReferentialRelations:getSensitiveDataModelReferentialRelations", TypeShape.of(GetSensitiveDataModelReferentialRelationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Sensitive Data Model Sensitive Objects in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
@@ -23970,6 +24698,486 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetSensitiveTypesResult> getSensitiveTypesPlain(GetSensitiveTypesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", TypeShape.of(GetSensitiveTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive types export by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypesExportResult> getSensitiveTypesExport(GetSensitiveTypesExportArgs args) {
+        return getSensitiveTypesExport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive types export by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypesExportResult> getSensitiveTypesExportPlain(GetSensitiveTypesExportPlainArgs args) {
+        return getSensitiveTypesExportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive types export by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypesExportResult> getSensitiveTypesExport(GetSensitiveTypesExportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypesExport:getSensitiveTypesExport", TypeShape.of(GetSensitiveTypesExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive types export by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypesExportResult> getSensitiveTypesExport(GetSensitiveTypesExportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypesExport:getSensitiveTypesExport", TypeShape.of(GetSensitiveTypesExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sensitive Types Export resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified sensitive types export by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExport = DataSafeFunctions.getSensitiveTypesExport(GetSensitiveTypesExportArgs.builder()
+     *             .sensitiveTypesExportId(testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypesExportResult> getSensitiveTypesExportPlain(GetSensitiveTypesExportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypesExport:getSensitiveTypesExport", TypeShape.of(GetSensitiveTypesExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Types Exports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
+     * The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExports = DataSafeFunctions.getSensitiveTypesExports(GetSensitiveTypesExportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypesExportAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypesExportDisplayName)
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .state(sensitiveTypesExportState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypesExportsResult> getSensitiveTypesExports(GetSensitiveTypesExportsArgs args) {
+        return getSensitiveTypesExports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Types Exports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
+     * The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExports = DataSafeFunctions.getSensitiveTypesExports(GetSensitiveTypesExportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypesExportAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypesExportDisplayName)
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .state(sensitiveTypesExportState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypesExportsResult> getSensitiveTypesExportsPlain(GetSensitiveTypesExportsPlainArgs args) {
+        return getSensitiveTypesExportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Types Exports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
+     * The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExports = DataSafeFunctions.getSensitiveTypesExports(GetSensitiveTypesExportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypesExportAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypesExportDisplayName)
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .state(sensitiveTypesExportState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypesExportsResult> getSensitiveTypesExports(GetSensitiveTypesExportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypesExports:getSensitiveTypesExports", TypeShape.of(GetSensitiveTypesExportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Types Exports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
+     * The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExports = DataSafeFunctions.getSensitiveTypesExports(GetSensitiveTypesExportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypesExportAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypesExportDisplayName)
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .state(sensitiveTypesExportState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveTypesExportsResult> getSensitiveTypesExports(GetSensitiveTypesExportsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveTypesExports:getSensitiveTypesExports", TypeShape.of(GetSensitiveTypesExportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Types Exports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
+     * The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypesExports = DataSafeFunctions.getSensitiveTypesExports(GetSensitiveTypesExportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypesExportAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypesExportCompartmentIdInSubtree)
+     *             .displayName(sensitiveTypesExportDisplayName)
+     *             .sensitiveTypesExportId(testSensitiveTypesExport.id())
+     *             .state(sensitiveTypesExportState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypesExportTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypesExportTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveTypesExportsResult> getSensitiveTypesExportsPlain(GetSensitiveTypesExportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypesExports:getSensitiveTypesExports", TypeShape.of(GetSensitiveTypesExportsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
@@ -30097,6 +31305,296 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison", TypeShape.of(GetUserAssessmentComparisonResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of User Assessment Password Expiry Date Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next 30-90 days, and beyond 90 days based on specified user assessment.
+     * It internally uses the aforementioned userAnalytics api.
+     * 
+     * When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
+     *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
+     *             .userCategory(userAssessmentPasswordExpiryDateAnalyticUserCategory)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUserAssessmentPasswordExpiryDateAnalyticsResult> getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs args) {
+        return getUserAssessmentPasswordExpiryDateAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of User Assessment Password Expiry Date Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next 30-90 days, and beyond 90 days based on specified user assessment.
+     * It internally uses the aforementioned userAnalytics api.
+     * 
+     * When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
+     *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
+     *             .userCategory(userAssessmentPasswordExpiryDateAnalyticUserCategory)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUserAssessmentPasswordExpiryDateAnalyticsResult> getUserAssessmentPasswordExpiryDateAnalyticsPlain(GetUserAssessmentPasswordExpiryDateAnalyticsPlainArgs args) {
+        return getUserAssessmentPasswordExpiryDateAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of User Assessment Password Expiry Date Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next 30-90 days, and beyond 90 days based on specified user assessment.
+     * It internally uses the aforementioned userAnalytics api.
+     * 
+     * When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
+     *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
+     *             .userCategory(userAssessmentPasswordExpiryDateAnalyticUserCategory)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUserAssessmentPasswordExpiryDateAnalyticsResult> getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUserAssessmentPasswordExpiryDateAnalytics:getUserAssessmentPasswordExpiryDateAnalytics", TypeShape.of(GetUserAssessmentPasswordExpiryDateAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of User Assessment Password Expiry Date Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next 30-90 days, and beyond 90 days based on specified user assessment.
+     * It internally uses the aforementioned userAnalytics api.
+     * 
+     * When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
+     *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
+     *             .userCategory(userAssessmentPasswordExpiryDateAnalyticUserCategory)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUserAssessmentPasswordExpiryDateAnalyticsResult> getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUserAssessmentPasswordExpiryDateAnalytics:getUserAssessmentPasswordExpiryDateAnalytics", TypeShape.of(GetUserAssessmentPasswordExpiryDateAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of User Assessment Password Expiry Date Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next 30-90 days, and beyond 90 days based on specified user assessment.
+     * It internally uses the aforementioned userAnalytics api.
+     * 
+     * When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentPasswordExpiryDateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentPasswordExpiryDateAnalytics = DataSafeFunctions.getUserAssessmentPasswordExpiryDateAnalytics(GetUserAssessmentPasswordExpiryDateAnalyticsArgs.builder()
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentPasswordExpiryDateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree)
+     *             .timePasswordExpiryLessThan(userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan)
+     *             .userCategory(userAssessmentPasswordExpiryDateAnalyticUserCategory)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUserAssessmentPasswordExpiryDateAnalyticsResult> getUserAssessmentPasswordExpiryDateAnalyticsPlain(GetUserAssessmentPasswordExpiryDateAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getUserAssessmentPasswordExpiryDateAnalytics:getUserAssessmentPasswordExpiryDateAnalytics", TypeShape.of(GetUserAssessmentPasswordExpiryDateAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of aggregated user profile details in the specified compartment. This provides information about the
@@ -31014,7 +32512,7 @@ public final class DataSafeFunctions {
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
-     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
      * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
@@ -31059,6 +32557,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserAnalyticTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
@@ -31086,7 +32586,7 @@ public final class DataSafeFunctions {
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
-     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
      * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
@@ -31131,6 +32631,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserAnalyticTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
@@ -31158,7 +32660,7 @@ public final class DataSafeFunctions {
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
-     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
      * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
@@ -31203,6 +32705,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserAnalyticTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
@@ -31230,7 +32734,7 @@ public final class DataSafeFunctions {
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
-     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
      * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
@@ -31275,6 +32779,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserAnalyticTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
@@ -31302,7 +32808,7 @@ public final class DataSafeFunctions {
      * the critical category. This data is especially useful content for dashboards or to support analytics.
      * 
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
-     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
      * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
@@ -31347,6 +32853,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserAnalyticTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
@@ -31410,6 +32918,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
@@ -31476,6 +32986,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
@@ -31542,6 +33054,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
@@ -31608,6 +33122,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
@@ -31674,6 +33190,8 @@ public final class DataSafeFunctions {
      *             .targetId(testTarget.id())
      *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
      *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordExpiryGreaterThanOrEqualTo(userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo)
+     *             .timePasswordExpiryLessThan(userAssessmentUserTimePasswordExpiryLessThan)
      *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
      *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
      *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)

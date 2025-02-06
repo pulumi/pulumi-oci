@@ -50,6 +50,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TimePasswordChanged;
         /// <summary>
+        /// The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimePasswordExpiry;
+        /// <summary>
         /// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeUserCreated;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string timePasswordChanged,
 
+            string timePasswordExpiry,
+
             string timeUserCreated,
 
             string userCategory,
@@ -109,6 +115,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             TargetId = targetId;
             TimeLastLogin = timeLastLogin;
             TimePasswordChanged = timePasswordChanged;
+            TimePasswordExpiry = timePasswordExpiry;
             TimeUserCreated = timeUserCreated;
             UserCategory = userCategory;
             UserName = userName;

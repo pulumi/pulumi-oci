@@ -278,6 +278,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsMultiRackDeployment { get; private set; } = null!;
 
         /// <summary>
+        /// If true, the infrastructure is using granular maintenance scheduling preference.
+        /// </summary>
+        [Output("isSchedulingPolicyAssociated")]
+        public Output<bool> IsSchedulingPolicyAssociated { get; private set; } = null!;
+
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -834,6 +840,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isMultiRackDeployment")]
         public Input<bool>? IsMultiRackDeployment { get; set; }
+
+        /// <summary>
+        /// If true, the infrastructure is using granular maintenance scheduling preference.
+        /// </summary>
+        [Input("isSchedulingPolicyAssociated")]
+        public Input<bool>? IsSchedulingPolicyAssociated { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycle state.

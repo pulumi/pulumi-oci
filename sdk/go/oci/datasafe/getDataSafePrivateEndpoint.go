@@ -61,7 +61,7 @@ type LookupDataSafePrivateEndpointResult struct {
 	// The OCID of the compartment.
 	CompartmentId             string `pulumi:"compartmentId"`
 	DataSafePrivateEndpointId string `pulumi:"dataSafePrivateEndpointId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description string `pulumi:"description"`
@@ -134,7 +134,7 @@ func (o LookupDataSafePrivateEndpointResultOutput) DataSafePrivateEndpointId() p
 	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.DataSafePrivateEndpointId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupDataSafePrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

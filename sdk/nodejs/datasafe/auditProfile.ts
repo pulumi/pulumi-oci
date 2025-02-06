@@ -72,7 +72,7 @@ export class AuditProfile extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -80,7 +80,7 @@ export class AuditProfile extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -104,7 +104,7 @@ export class AuditProfile extends pulumi.CustomResource {
      */
     public /*out*/ readonly offlineMonths!: pulumi.Output<number>;
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      */
     public /*out*/ readonly onlineMonths!: pulumi.Output<number>;
     /**
@@ -219,7 +219,7 @@ export interface AuditProfileState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -227,7 +227,7 @@ export interface AuditProfileState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -251,7 +251,7 @@ export interface AuditProfileState {
      */
     offlineMonths?: pulumi.Input<number>;
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      */
     onlineMonths?: pulumi.Input<number>;
     /**
@@ -297,7 +297,7 @@ export interface AuditProfileArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -305,7 +305,7 @@ export interface AuditProfileArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
     displayName?: pulumi.Input<string>;
     /**

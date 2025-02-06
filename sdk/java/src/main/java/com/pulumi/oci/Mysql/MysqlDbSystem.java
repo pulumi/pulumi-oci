@@ -19,6 +19,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemPointInTimeRecoveryDetail;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSecureConnections;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSource;
 import com.pulumi.oci.Utilities;
@@ -53,6 +54,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
  * import java.util.List;
@@ -73,6 +75,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .shapeName(mysqlShapeName)
  *             .subnetId(testSubnet.id())
+ *             .accessMode(mysqlDbSystemAccessMode)
  *             .adminPassword(mysqlDbSystemAdminPassword)
  *             .adminUsername(mysqlDbSystemAdminUsername)
  *             .backupPolicy(MysqlDbSystemBackupPolicyArgs.builder()
@@ -96,6 +99,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .dataStorageSizeInGb(mysqlDbSystemDataStorageSizeInGb)
  *             .databaseManagement(mysqlDbSystemDatabaseManagement)
+ *             .databaseMode(mysqlDbSystemDatabaseMode)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .deletionPolicies(MysqlDbSystemDeletionPolicyArgs.builder()
  *                 .automaticBackupRetention(mysqlDbSystemDeletionPolicyAutomaticBackupRetention)
@@ -114,6 +118,12 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .port(mysqlDbSystemPort)
  *             .portX(mysqlDbSystemPortX)
+ *             .readEndpoint(MysqlDbSystemReadEndpointArgs.builder()
+ *                 .excludeIps(mysqlDbSystemReadEndpointExcludeIps)
+ *                 .isEnabled(mysqlDbSystemReadEndpointIsEnabled)
+ *                 .readEndpointHostnameLabel(mysqlDbSystemReadEndpointReadEndpointHostnameLabel)
+ *                 .readEndpointIpAddress(mysqlDbSystemReadEndpointReadEndpointIpAddress)
+ *                 .build())
  *             .secureConnections(MysqlDbSystemSecureConnectionsArgs.builder()
  *                 .certificateGenerationType(mysqlDbSystemSecureConnectionsCertificateGenerationType)
  *                 .certificateId(testCertificate.id())
@@ -141,6 +151,24 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Mysql/mysqlDbSystem:MysqlDbSystem")
 public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * 
+     */
+    @Export(name="accessMode", refs={String.class}, tree="[0]")
+    private Output<String> accessMode;
+
+    /**
+     * @return (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * 
+     */
+    public Output<String> accessMode() {
+        return this.accessMode;
+    }
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      * 
@@ -330,6 +358,24 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> databaseManagement() {
         return this.databaseManagement;
+    }
+    /**
+     * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     * 
+     */
+    @Export(name="databaseMode", refs={String.class}, tree="[0]")
+    private Output<String> databaseMode;
+
+    /**
+     * @return (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     * 
+     */
+    public Output<String> databaseMode() {
+        return this.databaseMode;
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -602,6 +648,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> portX() {
         return this.portX;
+    }
+    /**
+     * (Updatable) Details required to create a Read Endpoint.
+     * 
+     */
+    @Export(name="readEndpoint", refs={MysqlDbSystemReadEndpoint.class}, tree="[0]")
+    private Output<MysqlDbSystemReadEndpoint> readEndpoint;
+
+    /**
+     * @return (Updatable) Details required to create a Read Endpoint.
+     * 
+     */
+    public Output<MysqlDbSystemReadEndpoint> readEndpoint() {
+        return this.readEndpoint;
     }
     /**
      * (Updatable) Secure connection configuration details.

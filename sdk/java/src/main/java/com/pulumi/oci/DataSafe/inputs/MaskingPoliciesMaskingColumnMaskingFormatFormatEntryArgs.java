@@ -238,14 +238,14 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
     }
 
     /**
-     * (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+     * (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
      * 
      */
     @Import(name="replaceWith")
     private @Nullable Output<String> replaceWith;
 
     /**
-     * @return (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+     * @return (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
      * 
      */
     public Optional<Output<String>> replaceWith() {
@@ -757,7 +757,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         /**
-         * @param replaceWith (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+         * @param replaceWith (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
          * 
          * @return builder
          * 
@@ -768,7 +768,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         /**
-         * @param replaceWith (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+         * @param replaceWith (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
          * 
          * @return builder
          * 

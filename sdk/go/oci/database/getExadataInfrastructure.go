@@ -90,6 +90,8 @@ type LookupExadataInfrastructureResult struct {
 	IsCpsOfflineReportEnabled bool `pulumi:"isCpsOfflineReportEnabled"`
 	// Indicates if deployment is Multi-Rack or not.
 	IsMultiRackDeployment bool `pulumi:"isMultiRackDeployment"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated bool `pulumi:"isSchedulingPolicyAssociated"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -313,6 +315,11 @@ func (o LookupExadataInfrastructureResultOutput) IsCpsOfflineReportEnabled() pul
 // Indicates if deployment is Multi-Rack or not.
 func (o LookupExadataInfrastructureResultOutput) IsMultiRackDeployment() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) bool { return v.IsMultiRackDeployment }).(pulumi.BoolOutput)
+}
+
+// If true, the infrastructure is using granular maintenance scheduling preference.
+func (o LookupExadataInfrastructureResultOutput) IsSchedulingPolicyAssociated() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) bool { return v.IsSchedulingPolicyAssociated }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.

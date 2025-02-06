@@ -96,14 +96,14 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Whether the Channel has been enabled by the user.
+     * Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -341,7 +341,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isEnabled Whether the Channel has been enabled by the user.
+         * @param isEnabled Specifies if the DB System read endpoint is enabled or not.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isEnabled Whether the Channel has been enabled by the user.
+         * @param isEnabled Specifies if the DB System read endpoint is enabled or not.
          * 
          * @return builder
          * 

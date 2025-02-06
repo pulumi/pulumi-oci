@@ -101,6 +101,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExadbVmCluster{}
 	case "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault":
 		r = &ExascaleDbStorageVault{}
+	case "oci:Database/executionAction:ExecutionAction":
+		r = &ExecutionAction{}
+	case "oci:Database/executionWindow:ExecutionWindow":
+		r = &ExecutionWindow{}
 	case "oci:Database/externalContainerDatabase:ExternalContainerDatabase":
 		r = &ExternalContainerDatabase{}
 	case "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement":
@@ -139,6 +143,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PluggableDatabasesLocalClone{}
 	case "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone":
 		r = &PluggableDatabasesRemoteClone{}
+	case "oci:Database/scheduledAction:ScheduledAction":
+		r = &ScheduledAction{}
+	case "oci:Database/schedulingPlan:SchedulingPlan":
+		r = &SchedulingPlan{}
+	case "oci:Database/schedulingPolicy:SchedulingPolicy":
+		r = &SchedulingPolicy{}
+	case "oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow":
+		r = &SchedulingPolicySchedulingWindow{}
 	case "oci:Database/vmCluster:VmCluster":
 		r = &VmCluster{}
 	case "oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork":
@@ -362,6 +374,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/executionAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/executionWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/externalContainerDatabase",
 		&module{version},
 	)
@@ -453,6 +475,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/pluggableDatabasesRemoteClone",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/scheduledAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/schedulingPlan",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/schedulingPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/schedulingPolicySchedulingWindow",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

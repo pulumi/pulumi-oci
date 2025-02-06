@@ -34,7 +34,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.NewSecurityAssessment(ctx, "test_security_assessment", &datasafe.SecurityAssessmentArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
-//				TargetId:      pulumi.Any(testTarget.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -45,6 +44,7 @@ import (
 //				},
 //				IsAssessmentScheduled: pulumi.Any(securityAssessmentIsAssessmentScheduled),
 //				Schedule:              pulumi.Any(securityAssessmentSchedule),
+//				TargetId:              pulumi.Any(testTarget.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -67,7 +67,7 @@ type SecurityAssessment struct {
 
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -134,9 +134,6 @@ func NewSecurityAssessment(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
-	if args.TargetId == nil {
-		return nil, errors.New("invalid value for required argument 'TargetId'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SecurityAssessment
 	err := ctx.RegisterResource("oci:DataSafe/securityAssessment:SecurityAssessment", name, args, &resource, opts...)
@@ -162,7 +159,7 @@ func GetSecurityAssessment(ctx *pulumi.Context,
 type securityAssessmentState struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
 	Description *string `pulumi:"description"`
@@ -222,7 +219,7 @@ type securityAssessmentState struct {
 type SecurityAssessmentState struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the security assessment.
 	Description pulumi.StringPtrInput
@@ -286,7 +283,7 @@ func (SecurityAssessmentState) ElementType() reflect.Type {
 type securityAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
 	Description *string `pulumi:"description"`
@@ -304,14 +301,14 @@ type securityAssessmentArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 }
 
 // The set of arguments for constructing a SecurityAssessment resource.
 type SecurityAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the security assessment.
 	Description pulumi.StringPtrInput
@@ -329,7 +326,7 @@ type SecurityAssessmentArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TargetId pulumi.StringInput
+	TargetId pulumi.StringPtrInput
 }
 
 func (SecurityAssessmentArgs) ElementType() reflect.Type {
@@ -424,7 +421,7 @@ func (o SecurityAssessmentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o SecurityAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

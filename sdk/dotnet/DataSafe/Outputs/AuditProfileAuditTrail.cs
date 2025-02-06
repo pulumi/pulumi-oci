@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        /// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

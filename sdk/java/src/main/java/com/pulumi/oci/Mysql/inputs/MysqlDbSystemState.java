@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemHeatWaveClusterArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemPointInTimeRecoveryDetailArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
 import java.lang.Boolean;
@@ -30,6 +31,25 @@ import javax.annotation.Nullable;
 public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlDbSystemState Empty = new MysqlDbSystemState();
+
+    /**
+     * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * 
+     */
+    @Import(name="accessMode")
+    private @Nullable Output<String> accessMode;
+
+    /**
+     * @return (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * 
+     */
+    public Optional<Output<String>> accessMode() {
+        return Optional.ofNullable(this.accessMode);
+    }
 
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -232,6 +252,25 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<String>> databaseManagement() {
         return Optional.ofNullable(this.databaseManagement);
+    }
+
+    /**
+     * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     * 
+     */
+    @Import(name="databaseMode")
+    private @Nullable Output<String> databaseMode;
+
+    /**
+     * @return (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     * 
+     */
+    public Optional<Output<String>> databaseMode() {
+        return Optional.ofNullable(this.databaseMode);
     }
 
     /**
@@ -525,6 +564,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Details required to create a Read Endpoint.
+     * 
+     */
+    @Import(name="readEndpoint")
+    private @Nullable Output<MysqlDbSystemReadEndpointArgs> readEndpoint;
+
+    /**
+     * @return (Updatable) Details required to create a Read Endpoint.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemReadEndpointArgs>> readEndpoint() {
+        return Optional.ofNullable(this.readEndpoint);
+    }
+
+    /**
      * (Updatable) Secure connection configuration details.
      * 
      */
@@ -655,6 +709,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     private MysqlDbSystemState() {}
 
     private MysqlDbSystemState(MysqlDbSystemState $) {
+        this.accessMode = $.accessMode;
         this.adminPassword = $.adminPassword;
         this.adminUsername = $.adminUsername;
         this.availabilityDomain = $.availabilityDomain;
@@ -668,6 +723,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.dataStorage = $.dataStorage;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.databaseManagement = $.databaseManagement;
+        this.databaseMode = $.databaseMode;
         this.definedTags = $.definedTags;
         this.deletionPolicies = $.deletionPolicies;
         this.description = $.description;
@@ -686,6 +742,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.pointInTimeRecoveryDetails = $.pointInTimeRecoveryDetails;
         this.port = $.port;
         this.portX = $.portX;
+        this.readEndpoint = $.readEndpoint;
         this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
         this.shutdownType = $.shutdownType;
@@ -712,6 +769,31 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
 
         public Builder(MysqlDbSystemState defaults) {
             $ = new MysqlDbSystemState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param accessMode (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+         * * UNRESTRICTED (default): the access to the database is not restricted;
+         * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accessMode(@Nullable Output<String> accessMode) {
+            $.accessMode = accessMode;
+            return this;
+        }
+
+        /**
+         * @param accessMode (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+         * * UNRESTRICTED (default): the access to the database is not restricted;
+         * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accessMode(String accessMode) {
+            return accessMode(Output.of(accessMode));
         }
 
         /**
@@ -1023,6 +1105,31 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder databaseManagement(String databaseManagement) {
             return databaseManagement(Output.of(databaseManagement));
+        }
+
+        /**
+         * @param databaseMode (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+         * * READ_WRITE (default): allow running read and write statements on the DB system;
+         * * READ_ONLY: only allow running read statements on the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseMode(@Nullable Output<String> databaseMode) {
+            $.databaseMode = databaseMode;
+            return this;
+        }
+
+        /**
+         * @param databaseMode (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+         * * READ_WRITE (default): allow running read and write statements on the DB system;
+         * * READ_ONLY: only allow running read statements on the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseMode(String databaseMode) {
+            return databaseMode(Output.of(databaseMode));
         }
 
         /**
@@ -1461,6 +1568,27 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder portX(Integer portX) {
             return portX(Output.of(portX));
+        }
+
+        /**
+         * @param readEndpoint (Updatable) Details required to create a Read Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpoint(@Nullable Output<MysqlDbSystemReadEndpointArgs> readEndpoint) {
+            $.readEndpoint = readEndpoint;
+            return this;
+        }
+
+        /**
+         * @param readEndpoint (Updatable) Details required to create a Read Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpoint(MysqlDbSystemReadEndpointArgs readEndpoint) {
+            return readEndpoint(Output.of(readEndpoint));
         }
 
         /**

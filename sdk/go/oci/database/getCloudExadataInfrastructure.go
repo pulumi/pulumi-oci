@@ -93,6 +93,8 @@ type LookupCloudExadataInfrastructureResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	Id string `pulumi:"id"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated bool `pulumi:"isSchedulingPolicyAssociated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
@@ -258,6 +260,11 @@ func (o LookupCloudExadataInfrastructureResultOutput) FreeformTags() pulumi.Stri
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 func (o LookupCloudExadataInfrastructureResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If true, the infrastructure is using granular maintenance scheduling preference.
+func (o LookupCloudExadataInfrastructureResultOutput) IsSchedulingPolicyAssociated() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) bool { return v.IsSchedulingPolicyAssociated }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

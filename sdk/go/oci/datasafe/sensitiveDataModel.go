@@ -80,7 +80,7 @@ type SensitiveDataModel struct {
 	AppSuiteName pulumi.StringOutput `pulumi:"appSuiteName"`
 	// (Updatable) The OCID of the compartment where the sensitive data model should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive data model.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -157,7 +157,7 @@ type sensitiveDataModelState struct {
 	AppSuiteName *string `pulumi:"appSuiteName"`
 	// (Updatable) The OCID of the compartment where the sensitive data model should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive data model.
 	Description *string `pulumi:"description"`
@@ -199,7 +199,7 @@ type SensitiveDataModelState struct {
 	AppSuiteName pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment where the sensitive data model should be created.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the sensitive data model.
 	Description pulumi.StringPtrInput
@@ -245,7 +245,7 @@ type sensitiveDataModelArgs struct {
 	AppSuiteName *string `pulumi:"appSuiteName"`
 	// (Updatable) The OCID of the compartment where the sensitive data model should be created.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive data model.
 	Description *string `pulumi:"description"`
@@ -280,7 +280,7 @@ type SensitiveDataModelArgs struct {
 	AppSuiteName pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment where the sensitive data model should be created.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the sensitive data model.
 	Description pulumi.StringPtrInput
@@ -406,7 +406,7 @@ func (o SensitiveDataModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SensitiveDataModel) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o SensitiveDataModelOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SensitiveDataModel) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

@@ -90,7 +90,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
      */
     private @Nullable String regularExpression;
     /**
-     * @return (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+     * @return (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
      * 
      */
     private @Nullable String replaceWith;
@@ -244,7 +244,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         return Optional.ofNullable(this.regularExpression);
     }
     /**
-     * @return (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+     * @return (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
      * 
      */
     public Optional<String> replaceWith() {

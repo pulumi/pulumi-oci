@@ -10,6 +10,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDataStorageArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotReadEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSecureConnectionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -386,6 +387,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
+     * The read endpoint of a DB System.
+     * 
+     */
+    @Import(name="readEndpoints")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotReadEndpointArgs>> readEndpoints;
+
+    /**
+     * @return The read endpoint of a DB System.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotReadEndpointArgs>>> readEndpoints() {
+        return Optional.ofNullable(this.readEndpoints);
+    }
+
+    /**
      * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
      * 
      */
@@ -472,6 +488,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.mysqlVersion = $.mysqlVersion;
         this.port = $.port;
         this.portX = $.portX;
+        this.readEndpoints = $.readEndpoints;
         this.region = $.region;
         this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
@@ -1048,6 +1065,37 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder portX(Integer portX) {
             return portX(Output.of(portX));
+        }
+
+        /**
+         * @param readEndpoints The read endpoint of a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpoints(@Nullable Output<List<MysqlBackupDbSystemSnapshotReadEndpointArgs>> readEndpoints) {
+            $.readEndpoints = readEndpoints;
+            return this;
+        }
+
+        /**
+         * @param readEndpoints The read endpoint of a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpoints(List<MysqlBackupDbSystemSnapshotReadEndpointArgs> readEndpoints) {
+            return readEndpoints(Output.of(readEndpoints));
+        }
+
+        /**
+         * @param readEndpoints The read endpoint of a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpoints(MysqlBackupDbSystemSnapshotReadEndpointArgs... readEndpoints) {
+            return readEndpoints(List.of(readEndpoints));
         }
 
         /**

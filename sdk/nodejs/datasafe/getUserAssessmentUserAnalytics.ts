@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * the critical category. This data is especially useful content for dashboards or to support analytics.
  *
  * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
- * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+ * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
  * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
  * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
  * compartmentId, then "Not Authorized" is returned.
@@ -40,6 +40,8 @@ import * as utilities from "../utilities";
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
+ *     timePasswordExpiryGreaterThanOrEqualTo: userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo,
+ *     timePasswordExpiryLessThan: userAssessmentUserAnalyticTimePasswordExpiryLessThan,
  *     timePasswordLastChangedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
  *     timePasswordLastChangedLessThan: userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
  *     timeUserCreatedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
@@ -61,6 +63,8 @@ export function getUserAssessmentUserAnalytics(args: GetUserAssessmentUserAnalyt
         "targetId": args.targetId,
         "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
         "timeLastLoginLessThan": args.timeLastLoginLessThan,
+        "timePasswordExpiryGreaterThanOrEqualTo": args.timePasswordExpiryGreaterThanOrEqualTo,
+        "timePasswordExpiryLessThan": args.timePasswordExpiryLessThan,
         "timePasswordLastChangedGreaterThanOrEqualTo": args.timePasswordLastChangedGreaterThanOrEqualTo,
         "timePasswordLastChangedLessThan": args.timePasswordLastChangedLessThan,
         "timeUserCreatedGreaterThanOrEqualTo": args.timeUserCreatedGreaterThanOrEqualTo,
@@ -107,6 +111,14 @@ export interface GetUserAssessmentUserAnalyticsArgs {
      * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
     timeLastLoginLessThan?: string;
+    /**
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryGreaterThanOrEqualTo?: string;
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryLessThan?: string;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -161,6 +173,8 @@ export interface GetUserAssessmentUserAnalyticsResult {
     readonly targetId?: string;
     readonly timeLastLoginGreaterThanOrEqualTo?: string;
     readonly timeLastLoginLessThan?: string;
+    readonly timePasswordExpiryGreaterThanOrEqualTo?: string;
+    readonly timePasswordExpiryLessThan?: string;
     readonly timePasswordLastChangedGreaterThanOrEqualTo?: string;
     readonly timePasswordLastChangedLessThan?: string;
     readonly timeUserCreatedGreaterThanOrEqualTo?: string;
@@ -182,7 +196,7 @@ export interface GetUserAssessmentUserAnalyticsResult {
  * the critical category. This data is especially useful content for dashboards or to support analytics.
  *
  * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
- * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+ * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
  * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
  * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
  * compartmentId, then "Not Authorized" is returned.
@@ -208,6 +222,8 @@ export interface GetUserAssessmentUserAnalyticsResult {
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
+ *     timePasswordExpiryGreaterThanOrEqualTo: userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo,
+ *     timePasswordExpiryLessThan: userAssessmentUserAnalyticTimePasswordExpiryLessThan,
  *     timePasswordLastChangedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
  *     timePasswordLastChangedLessThan: userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
  *     timeUserCreatedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
@@ -229,6 +245,8 @@ export function getUserAssessmentUserAnalyticsOutput(args: GetUserAssessmentUser
         "targetId": args.targetId,
         "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
         "timeLastLoginLessThan": args.timeLastLoginLessThan,
+        "timePasswordExpiryGreaterThanOrEqualTo": args.timePasswordExpiryGreaterThanOrEqualTo,
+        "timePasswordExpiryLessThan": args.timePasswordExpiryLessThan,
         "timePasswordLastChangedGreaterThanOrEqualTo": args.timePasswordLastChangedGreaterThanOrEqualTo,
         "timePasswordLastChangedLessThan": args.timePasswordLastChangedLessThan,
         "timeUserCreatedGreaterThanOrEqualTo": args.timeUserCreatedGreaterThanOrEqualTo,
@@ -275,6 +293,14 @@ export interface GetUserAssessmentUserAnalyticsOutputArgs {
      * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
     timeLastLoginLessThan?: pulumi.Input<string>;
+    /**
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryGreaterThanOrEqualTo?: pulumi.Input<string>;
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryLessThan?: pulumi.Input<string>;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *

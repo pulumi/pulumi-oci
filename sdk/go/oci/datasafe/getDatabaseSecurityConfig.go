@@ -61,7 +61,7 @@ type LookupDatabaseSecurityConfigResult struct {
 	// The OCID of the compartment containing the database security config.
 	CompartmentId            string `pulumi:"compartmentId"`
 	DatabaseSecurityConfigId string `pulumi:"databaseSecurityConfigId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the database security config.
 	Description string `pulumi:"description"`
@@ -133,7 +133,7 @@ func (o LookupDatabaseSecurityConfigResultOutput) DatabaseSecurityConfigId() pul
 	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.DatabaseSecurityConfigId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupDatabaseSecurityConfigResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

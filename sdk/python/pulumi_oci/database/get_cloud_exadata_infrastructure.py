@@ -27,7 +27,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_scheduling_policy_associated=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -82,6 +82,9 @@ class GetCloudExadataInfrastructureResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_scheduling_policy_associated and not isinstance(is_scheduling_policy_associated, bool):
+            raise TypeError("Expected argument 'is_scheduling_policy_associated' to be a bool")
+        pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         if last_maintenance_run_id and not isinstance(last_maintenance_run_id, str):
             raise TypeError("Expected argument 'last_maintenance_run_id' to be a str")
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
@@ -282,6 +285,14 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> bool:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> str:
         """
@@ -458,6 +469,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_scheduling_policy_associated=self.is_scheduling_policy_associated,
             last_maintenance_run_id=self.last_maintenance_run_id,
             lifecycle_details=self.lifecycle_details,
             maintenance_windows=self.maintenance_windows,
@@ -522,6 +534,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_scheduling_policy_associated=pulumi.get(__ret__, 'is_scheduling_policy_associated'),
         last_maintenance_run_id=pulumi.get(__ret__, 'last_maintenance_run_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
@@ -583,6 +596,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_scheduling_policy_associated=pulumi.get(__response__, 'is_scheduling_policy_associated'),
         last_maintenance_run_id=pulumi.get(__response__, 'last_maintenance_run_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),

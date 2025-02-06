@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private Boolean isEnabled;
 
     private GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy() {}
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Boolean isEnabled() {

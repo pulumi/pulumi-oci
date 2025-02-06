@@ -65,7 +65,7 @@ type TargetAlertPolicyAssociation struct {
 
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -138,7 +138,7 @@ func GetTargetAlertPolicyAssociation(ctx *pulumi.Context,
 type targetAlertPolicyAssociationState struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
 	Description *string `pulumi:"description"`
@@ -170,7 +170,7 @@ type targetAlertPolicyAssociationState struct {
 type TargetAlertPolicyAssociationState struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Describes the target-alert policy association.
 	Description pulumi.StringPtrInput
@@ -206,7 +206,7 @@ func (TargetAlertPolicyAssociationState) ElementType() reflect.Type {
 type targetAlertPolicyAssociationArgs struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
 	Description *string `pulumi:"description"`
@@ -229,7 +229,7 @@ type targetAlertPolicyAssociationArgs struct {
 type TargetAlertPolicyAssociationArgs struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Describes the target-alert policy association.
 	Description pulumi.StringPtrInput
@@ -340,7 +340,7 @@ func (o TargetAlertPolicyAssociationOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o TargetAlertPolicyAssociationOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

@@ -128,7 +128,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
@@ -139,6 +139,10 @@ namespace Pulumi.Oci.DataSafe
         /// The display name of the health report.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The count of errors in the masking health report.
+        /// </summary>
+        public readonly string ErrorCount;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -168,6 +172,10 @@ namespace Pulumi.Oci.DataSafe
         /// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The count of warnings in the masking health report.
+        /// </summary>
+        public readonly string WarningCount;
 
         [OutputConstructor]
         private GetMaskingPolicyHealthReportResult(
@@ -178,6 +186,8 @@ namespace Pulumi.Oci.DataSafe
             string description,
 
             string displayName,
+
+            string errorCount,
 
             ImmutableDictionary<string, string> freeformTags,
 
@@ -193,12 +203,15 @@ namespace Pulumi.Oci.DataSafe
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string warningCount)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            ErrorCount = errorCount;
             FreeformTags = freeformTags;
             Id = id;
             MaskingPolicyHealthReportId = maskingPolicyHealthReportId;
@@ -207,6 +220,7 @@ namespace Pulumi.Oci.DataSafe
             TargetId = targetId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            WarningCount = warningCount;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Mysql.Inputs
     public sealed class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Specifies if PITR is enabled or disabled.
+        /// Specifies if the DB System read endpoint is enabled or not.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

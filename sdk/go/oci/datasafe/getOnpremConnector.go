@@ -64,7 +64,7 @@ type GetOnpremConnectorResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Created version of the on-premises connector.
 	CreatedVersion string `pulumi:"createdVersion"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the on-premises connector.
 	Description string `pulumi:"description"`
@@ -134,7 +134,7 @@ func (o GetOnpremConnectorResultOutput) CreatedVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOnpremConnectorResult) string { return v.CreatedVersion }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetOnpremConnectorResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetOnpremConnectorResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

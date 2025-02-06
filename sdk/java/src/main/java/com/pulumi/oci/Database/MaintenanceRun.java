@@ -232,6 +232,20 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.isDstFileUpdateEnabled;
     }
     /**
+     * If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+     * 
+     */
+    @Export(name="isMaintenanceRunGranular", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMaintenanceRunGranular;
+
+    /**
+     * @return If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+     * 
+     */
+    public Output<Boolean> isMaintenanceRunGranular() {
+        return this.isMaintenanceRunGranular;
+    }
+    /**
      * Additional information about the current lifecycle state.
      * 
      */
@@ -506,6 +520,20 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeStarted() {
         return this.timeStarted;
+    }
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     * 
+     */
+    @Export(name="totalTimeTakenInMins", refs={Integer.class}, tree="[0]")
+    private Output<Integer> totalTimeTakenInMins;
+
+    /**
+     * @return The total time taken by corresponding resource activity in minutes.
+     * 
+     */
+    public Output<Integer> totalTimeTakenInMins() {
+        return this.totalTimeTakenInMins;
     }
 
     /**

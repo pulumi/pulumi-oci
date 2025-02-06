@@ -113,6 +113,10 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly id: string;
     /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     */
+    readonly isSchedulingPolicyAssociated: boolean;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     readonly lastMaintenanceRunId: string;

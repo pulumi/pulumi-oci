@@ -158,6 +158,11 @@ public final class GetExadataInfrastructureResult {
      */
     private Boolean isMultiRackDeployment;
     /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    private Boolean isSchedulingPolicyAssociated;
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -458,6 +463,13 @@ public final class GetExadataInfrastructureResult {
         return this.isMultiRackDeployment;
     }
     /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    public Boolean isSchedulingPolicyAssociated() {
+        return this.isSchedulingPolicyAssociated;
+    }
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -637,6 +649,7 @@ public final class GetExadataInfrastructureResult {
         private String infiniBandNetworkCidr;
         private Boolean isCpsOfflineReportEnabled;
         private Boolean isMultiRackDeployment;
+        private Boolean isSchedulingPolicyAssociated;
         private String lifecycleDetails;
         private String maintenanceSloStatus;
         private List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows;
@@ -690,6 +703,7 @@ public final class GetExadataInfrastructureResult {
     	      this.infiniBandNetworkCidr = defaults.infiniBandNetworkCidr;
     	      this.isCpsOfflineReportEnabled = defaults.isCpsOfflineReportEnabled;
     	      this.isMultiRackDeployment = defaults.isMultiRackDeployment;
+    	      this.isSchedulingPolicyAssociated = defaults.isSchedulingPolicyAssociated;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceSloStatus = defaults.maintenanceSloStatus;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
@@ -962,6 +976,14 @@ public final class GetExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            if (isSchedulingPolicyAssociated == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "isSchedulingPolicyAssociated");
+            }
+            this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "lifecycleDetails");
@@ -1162,6 +1184,7 @@ public final class GetExadataInfrastructureResult {
             _resultValue.infiniBandNetworkCidr = infiniBandNetworkCidr;
             _resultValue.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
             _resultValue.isMultiRackDeployment = isMultiRackDeployment;
+            _resultValue.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceSloStatus = maintenanceSloStatus;
             _resultValue.maintenanceWindows = maintenanceWindows;

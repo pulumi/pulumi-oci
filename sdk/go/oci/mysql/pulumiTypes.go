@@ -1192,6 +1192,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints []MysqlBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region *string `pulumi:"region"`
 	// Secure connection configuration details.
@@ -1262,6 +1264,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints MysqlBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Secure connection configuration details.
@@ -1445,6 +1449,11 @@ func (o MysqlBackupDbSystemSnapshotOutput) PortX() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
+// The read endpoint of a DB System.
+func (o MysqlBackupDbSystemSnapshotOutput) ReadEndpoints() MysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotReadEndpoint { return v.ReadEndpoints }).(MysqlBackupDbSystemSnapshotReadEndpointArrayOutput)
+}
+
 // The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 func (o MysqlBackupDbSystemSnapshotOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.Region }).(pulumi.StringPtrOutput)
@@ -1492,7 +1501,7 @@ type MysqlBackupDbSystemSnapshotBackupPolicy struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
@@ -1518,7 +1527,7 @@ type MysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
@@ -1589,7 +1598,7 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.Str
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Specifies if PITR is enabled or disabled.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -1632,7 +1641,7 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntIn
 }
 
 type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
@@ -1648,7 +1657,7 @@ type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
 }
 
 type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
@@ -1703,7 +1712,7 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDb
 	return o
 }
 
-// Specifies if PITR is enabled or disabled.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -2240,6 +2249,130 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]MysqlBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpoint struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps []string `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled *bool `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel *string `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress *string `pulumi:"readEndpointIpAddress"`
+}
+
+// MysqlBackupDbSystemSnapshotReadEndpointInput is an input type that accepts MysqlBackupDbSystemSnapshotReadEndpointArgs and MysqlBackupDbSystemSnapshotReadEndpointOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotReadEndpointInput` via:
+//
+//	MysqlBackupDbSystemSnapshotReadEndpointArgs{...}
+type MysqlBackupDbSystemSnapshotReadEndpointInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotReadEndpointOutput() MysqlBackupDbSystemSnapshotReadEndpointOutput
+	ToMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotReadEndpointOutput
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointArgs struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel pulumi.StringPtrInput `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress pulumi.StringPtrInput `pulumi:"readEndpointIpAddress"`
+}
+
+func (MysqlBackupDbSystemSnapshotReadEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointArgs) ToMysqlBackupDbSystemSnapshotReadEndpointOutput() MysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return i.ToMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointArgs) ToMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+// MysqlBackupDbSystemSnapshotReadEndpointArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotReadEndpointArray and MysqlBackupDbSystemSnapshotReadEndpointArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotReadEndpointArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotReadEndpointArray{ MysqlBackupDbSystemSnapshotReadEndpointArgs{...} }
+type MysqlBackupDbSystemSnapshotReadEndpointArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutput() MysqlBackupDbSystemSnapshotReadEndpointArrayOutput
+	ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotReadEndpointArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointArray []MysqlBackupDbSystemSnapshotReadEndpointInput
+
+func (MysqlBackupDbSystemSnapshotReadEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointArray) ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutput() MysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointArray) ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotReadEndpointArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotReadEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ToMysqlBackupDbSystemSnapshotReadEndpointOutput() MysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ToMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return o
+}
+
+// A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
+}
+
+// Specifies if the DB System read endpoint is enabled or not.
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpoint) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the read endpoint of the DB System. Used for DNS.
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpoint) *string { return v.ReadEndpointHostnameLabel }).(pulumi.StringPtrOutput)
+}
+
+// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpoint) *string { return v.ReadEndpointIpAddress }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutput() MysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ToMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotReadEndpoint {
+		return vs[0].([]MysqlBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotReadEndpointOutput)
 }
 
 type MysqlBackupDbSystemSnapshotSecureConnection struct {
@@ -5266,7 +5399,7 @@ type MysqlDbSystemChannel struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id *string `pulumi:"id"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -5304,7 +5437,7 @@ type MysqlDbSystemChannelArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -5396,7 +5529,7 @@ func (o MysqlDbSystemChannelOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o MysqlDbSystemChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -7255,6 +7388,216 @@ func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemPointInTimeRecoveryDetail {
 		return vs[0].([]MysqlDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
 	}).(MysqlDbSystemPointInTimeRecoveryDetailOutput)
+}
+
+type MysqlDbSystemReadEndpoint struct {
+	// (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps []string `pulumi:"excludeIps"`
+	// (Updatable) Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+	ReadEndpointHostnameLabel *string `pulumi:"readEndpointHostnameLabel"`
+	// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress *string `pulumi:"readEndpointIpAddress"`
+}
+
+// MysqlDbSystemReadEndpointInput is an input type that accepts MysqlDbSystemReadEndpointArgs and MysqlDbSystemReadEndpointOutput values.
+// You can construct a concrete instance of `MysqlDbSystemReadEndpointInput` via:
+//
+//	MysqlDbSystemReadEndpointArgs{...}
+type MysqlDbSystemReadEndpointInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemReadEndpointOutput() MysqlDbSystemReadEndpointOutput
+	ToMysqlDbSystemReadEndpointOutputWithContext(context.Context) MysqlDbSystemReadEndpointOutput
+}
+
+type MysqlDbSystemReadEndpointArgs struct {
+	// (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
+	// (Updatable) Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+	ReadEndpointHostnameLabel pulumi.StringPtrInput `pulumi:"readEndpointHostnameLabel"`
+	// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress pulumi.StringPtrInput `pulumi:"readEndpointIpAddress"`
+}
+
+func (MysqlDbSystemReadEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (i MysqlDbSystemReadEndpointArgs) ToMysqlDbSystemReadEndpointOutput() MysqlDbSystemReadEndpointOutput {
+	return i.ToMysqlDbSystemReadEndpointOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemReadEndpointArgs) ToMysqlDbSystemReadEndpointOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemReadEndpointOutput)
+}
+
+func (i MysqlDbSystemReadEndpointArgs) ToMysqlDbSystemReadEndpointPtrOutput() MysqlDbSystemReadEndpointPtrOutput {
+	return i.ToMysqlDbSystemReadEndpointPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemReadEndpointArgs) ToMysqlDbSystemReadEndpointPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemReadEndpointOutput).ToMysqlDbSystemReadEndpointPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemReadEndpointPtrInput is an input type that accepts MysqlDbSystemReadEndpointArgs, MysqlDbSystemReadEndpointPtr and MysqlDbSystemReadEndpointPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemReadEndpointPtrInput` via:
+//
+//	        MysqlDbSystemReadEndpointArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemReadEndpointPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemReadEndpointPtrOutput() MysqlDbSystemReadEndpointPtrOutput
+	ToMysqlDbSystemReadEndpointPtrOutputWithContext(context.Context) MysqlDbSystemReadEndpointPtrOutput
+}
+
+type mysqlDbSystemReadEndpointPtrType MysqlDbSystemReadEndpointArgs
+
+func MysqlDbSystemReadEndpointPtr(v *MysqlDbSystemReadEndpointArgs) MysqlDbSystemReadEndpointPtrInput {
+	return (*mysqlDbSystemReadEndpointPtrType)(v)
+}
+
+func (*mysqlDbSystemReadEndpointPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemReadEndpointPtrType) ToMysqlDbSystemReadEndpointPtrOutput() MysqlDbSystemReadEndpointPtrOutput {
+	return i.ToMysqlDbSystemReadEndpointPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemReadEndpointPtrType) ToMysqlDbSystemReadEndpointPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemReadEndpointPtrOutput)
+}
+
+type MysqlDbSystemReadEndpointOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemReadEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (o MysqlDbSystemReadEndpointOutput) ToMysqlDbSystemReadEndpointOutput() MysqlDbSystemReadEndpointOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointOutput) ToMysqlDbSystemReadEndpointOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointOutput) ToMysqlDbSystemReadEndpointPtrOutput() MysqlDbSystemReadEndpointPtrOutput {
+	return o.ToMysqlDbSystemReadEndpointPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemReadEndpointOutput) ToMysqlDbSystemReadEndpointPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemReadEndpoint) *MysqlDbSystemReadEndpoint {
+		return &v
+	}).(MysqlDbSystemReadEndpointPtrOutput)
+}
+
+// (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o MysqlDbSystemReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Specifies if the DB System read endpoint is enabled or not.
+func (o MysqlDbSystemReadEndpointOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpoint) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+//
+// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+//
+// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+func (o MysqlDbSystemReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpoint) *string { return v.ReadEndpointHostnameLabel }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o MysqlDbSystemReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpoint) *string { return v.ReadEndpointIpAddress }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemReadEndpointPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemReadEndpointPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (o MysqlDbSystemReadEndpointPtrOutput) ToMysqlDbSystemReadEndpointPtrOutput() MysqlDbSystemReadEndpointPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointPtrOutput) ToMysqlDbSystemReadEndpointPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointPtrOutput) Elem() MysqlDbSystemReadEndpointOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpoint) MysqlDbSystemReadEndpoint {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemReadEndpoint
+		return ret
+	}).(MysqlDbSystemReadEndpointOutput)
+}
+
+// (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o MysqlDbSystemReadEndpointPtrOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpoint) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Specifies if the DB System read endpoint is enabled or not.
+func (o MysqlDbSystemReadEndpointPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpoint) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+//
+// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+//
+// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+func (o MysqlDbSystemReadEndpointPtrOutput) ReadEndpointHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReadEndpointHostnameLabel
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o MysqlDbSystemReadEndpointPtrOutput) ReadEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReadEndpointIpAddress
+	}).(pulumi.StringPtrOutput)
 }
 
 type MysqlDbSystemSecureConnections struct {
@@ -9699,6 +10042,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints []GetMysqlBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region string `pulumi:"region"`
 	// Secure connection configuration details.
@@ -9769,6 +10114,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region pulumi.StringInput `pulumi:"region"`
 	// Secure connection configuration details.
@@ -9958,6 +10305,13 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
 }
 
+// The read endpoint of a DB System.
+func (o GetMysqlBackupDbSystemSnapshotOutput) ReadEndpoints() GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotReadEndpoint {
+		return v.ReadEndpoints
+	}).(GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput)
+}
+
 // The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 func (o GetMysqlBackupDbSystemSnapshotOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.Region }).(pulumi.StringOutput)
@@ -10005,7 +10359,7 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicy struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
@@ -10031,7 +10385,7 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
@@ -10102,7 +10456,7 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Specifies if PITR is enabled or disabled.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -10145,7 +10499,7 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.In
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -10161,7 +10515,7 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -10216,7 +10570,7 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBa
 	return o
 }
 
-// Specifies if PITR is enabled or disabled.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -10753,6 +11107,130 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpoint struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps []string `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+}
+
+// GetMysqlBackupDbSystemSnapshotReadEndpointInput is an input type that accepts GetMysqlBackupDbSystemSnapshotReadEndpointArgs and GetMysqlBackupDbSystemSnapshotReadEndpointOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotReadEndpointInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotReadEndpointArgs{...}
+type GetMysqlBackupDbSystemSnapshotReadEndpointInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupDbSystemSnapshotReadEndpointOutput
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointArgs struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointArgs) ToGetMysqlBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointArgs) ToGetMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotReadEndpointArray and GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotReadEndpointArray{ GetMysqlBackupDbSystemSnapshotReadEndpointArgs{...} }
+type GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointArray []GetMysqlBackupDbSystemSnapshotReadEndpointInput
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointArray) ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointArray) ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return o
+}
+
+// A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
+}
+
+// Specifies if the DB System read endpoint is enabled or not.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpoint) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The hostname for the read endpoint of the DB System. Used for DNS.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointHostnameLabel }).(pulumi.StringOutput)
+}
+
+// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotReadEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotReadEndpoint {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotReadEndpointOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotSecureConnection struct {
@@ -11440,6 +11918,8 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints []GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region string `pulumi:"region"`
 	// Secure connection configuration details.
@@ -11510,6 +11990,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region pulumi.StringInput `pulumi:"region"`
 	// Secure connection configuration details.
@@ -11701,6 +12183,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
 }
 
+// The read endpoint of a DB System.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ReadEndpoints() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint {
+		return v.ReadEndpoints
+	}).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput)
+}
+
 // The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Region }).(pulumi.StringOutput)
@@ -11748,7 +12237,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
@@ -11774,7 +12263,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
@@ -11845,7 +12334,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() 
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Specifies if PITR is enabled or disabled.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -11888,7 +12377,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pu
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -11904,7 +12393,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface 
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
-	// Specifies if PITR is enabled or disabled.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -11959,7 +12448,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGet
 	return o
 }
 
-// Specifies if PITR is enabled or disabled.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -12496,6 +12985,130 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps []string `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs and GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray and GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray{ GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray []GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
+	return o
+}
+
+// A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
+}
+
+// Specifies if the DB System read endpoint is enabled or not.
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The hostname for the read endpoint of the DB System. Used for DNS.
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointHostnameLabel }).(pulumi.StringOutput)
+}
+
+// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotSecureConnection struct {
@@ -15173,7 +15786,7 @@ type GetMysqlDbSystemBackupPolicy struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
@@ -15199,7 +15812,7 @@ type GetMysqlDbSystemBackupPolicyArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
@@ -15270,7 +15883,7 @@ func (o GetMysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -15311,7 +15924,7 @@ func (o GetMysqlDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMys
 }
 
 type GetMysqlDbSystemBackupPolicyPitrPolicy struct {
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -15327,7 +15940,7 @@ type GetMysqlDbSystemBackupPolicyPitrPolicyInput interface {
 }
 
 type GetMysqlDbSystemBackupPolicyPitrPolicyArgs struct {
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -15382,7 +15995,7 @@ func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemBackupPo
 	return o
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -15418,7 +16031,7 @@ type GetMysqlDbSystemChannel struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id string `pulumi:"id"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -15456,7 +16069,7 @@ type GetMysqlDbSystemChannelArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -15548,7 +16161,7 @@ func (o GetMysqlDbSystemChannelOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlDbSystemChannelOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannel) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -17214,6 +17827,130 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.Int
 	}).(GetMysqlDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+type GetMysqlDbSystemReadEndpoint struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps []string `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+}
+
+// GetMysqlDbSystemReadEndpointInput is an input type that accepts GetMysqlDbSystemReadEndpointArgs and GetMysqlDbSystemReadEndpointOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemReadEndpointInput` via:
+//
+//	GetMysqlDbSystemReadEndpointArgs{...}
+type GetMysqlDbSystemReadEndpointInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemReadEndpointOutput() GetMysqlDbSystemReadEndpointOutput
+	ToGetMysqlDbSystemReadEndpointOutputWithContext(context.Context) GetMysqlDbSystemReadEndpointOutput
+}
+
+type GetMysqlDbSystemReadEndpointArgs struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+}
+
+func (GetMysqlDbSystemReadEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemReadEndpointArgs) ToGetMysqlDbSystemReadEndpointOutput() GetMysqlDbSystemReadEndpointOutput {
+	return i.ToGetMysqlDbSystemReadEndpointOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemReadEndpointArgs) ToGetMysqlDbSystemReadEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemReadEndpointOutput)
+}
+
+// GetMysqlDbSystemReadEndpointArrayInput is an input type that accepts GetMysqlDbSystemReadEndpointArray and GetMysqlDbSystemReadEndpointArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemReadEndpointArrayInput` via:
+//
+//	GetMysqlDbSystemReadEndpointArray{ GetMysqlDbSystemReadEndpointArgs{...} }
+type GetMysqlDbSystemReadEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemReadEndpointArrayOutput() GetMysqlDbSystemReadEndpointArrayOutput
+	ToGetMysqlDbSystemReadEndpointArrayOutputWithContext(context.Context) GetMysqlDbSystemReadEndpointArrayOutput
+}
+
+type GetMysqlDbSystemReadEndpointArray []GetMysqlDbSystemReadEndpointInput
+
+func (GetMysqlDbSystemReadEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemReadEndpointArray) ToGetMysqlDbSystemReadEndpointArrayOutput() GetMysqlDbSystemReadEndpointArrayOutput {
+	return i.ToGetMysqlDbSystemReadEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemReadEndpointArray) ToGetMysqlDbSystemReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemReadEndpointArrayOutput)
+}
+
+type GetMysqlDbSystemReadEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemReadEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemReadEndpointOutput) ToGetMysqlDbSystemReadEndpointOutput() GetMysqlDbSystemReadEndpointOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemReadEndpointOutput) ToGetMysqlDbSystemReadEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointOutput {
+	return o
+}
+
+// A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o GetMysqlDbSystemReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
+}
+
+// Specifies if the DB System read endpoint is enabled or not.
+func (o GetMysqlDbSystemReadEndpointOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpoint) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The hostname for the read endpoint of the DB System. Used for DNS.
+func (o GetMysqlDbSystemReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpoint) string { return v.ReadEndpointHostnameLabel }).(pulumi.StringOutput)
+}
+
+// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o GetMysqlDbSystemReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemReadEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemReadEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemReadEndpointArrayOutput) ToGetMysqlDbSystemReadEndpointArrayOutput() GetMysqlDbSystemReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemReadEndpointArrayOutput) ToGetMysqlDbSystemReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemReadEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemReadEndpoint {
+		return vs[0].([]GetMysqlDbSystemReadEndpoint)[vs[1].(int)]
+	}).(GetMysqlDbSystemReadEndpointOutput)
+}
+
 type GetMysqlDbSystemSecureConnection struct {
 	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
 	CertificateGenerationType string `pulumi:"certificateGenerationType"`
@@ -17451,6 +18188,10 @@ func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSy
 }
 
 type GetMysqlDbSystemsDbSystem struct {
+	// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+	// * UNRESTRICTED: the access to the database is not restricted;
+	// * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode    string `pulumi:"accessMode"`
 	AdminPassword string `pulumi:"adminPassword"`
 	AdminUsername string `pulumi:"adminUsername"`
 	// The availability domain in which the DB System is placed.
@@ -17475,6 +18216,10 @@ type GetMysqlDbSystemsDbSystem struct {
 	DataStorages []GetMysqlDbSystemsDbSystemDataStorage `pulumi:"dataStorages"`
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement string `pulumi:"databaseManagement"`
+	// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE: allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode string `pulumi:"databaseMode"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -17513,6 +18258,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints []GetMysqlDbSystemsDbSystemReadEndpoint `pulumi:"readEndpoints"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlDbSystemsDbSystemSecureConnection `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -17542,6 +18289,10 @@ type GetMysqlDbSystemsDbSystemInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemArgs struct {
+	// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+	// * UNRESTRICTED: the access to the database is not restricted;
+	// * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode    pulumi.StringInput `pulumi:"accessMode"`
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
 	// The availability domain in which the DB System is placed.
@@ -17566,6 +18317,10 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	DataStorages GetMysqlDbSystemsDbSystemDataStorageArrayInput `pulumi:"dataStorages"`
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
+	// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE: allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode pulumi.StringInput `pulumi:"databaseMode"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -17604,6 +18359,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints GetMysqlDbSystemsDbSystemReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// Secure connection configuration details.
 	SecureConnections GetMysqlDbSystemsDbSystemSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -17672,6 +18429,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) ToGetMysqlDbSystemsDbSystemOutputWithCo
 	return o
 }
 
+// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+// * UNRESTRICTED: the access to the database is not restricted;
+// * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+func (o GetMysqlDbSystemsDbSystemOutput) AccessMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.AccessMode }).(pulumi.StringOutput)
+}
+
 func (o GetMysqlDbSystemsDbSystemOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.AdminPassword }).(pulumi.StringOutput)
 }
@@ -17737,6 +18501,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) DataStorages() GetMysqlDbSystemsDbSyste
 // Filter DB Systems by their Database Management configuration.
 func (o GetMysqlDbSystemsDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.DatabaseManagement }).(pulumi.StringOutput)
+}
+
+// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+// * READ_WRITE: allow running read and write statements on the DB system;
+// * READ_ONLY: only allow running read statements on the DB system.
+func (o GetMysqlDbSystemsDbSystemOutput) DatabaseMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.DatabaseMode }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17838,6 +18609,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.PortX }).(pulumi.IntOutput)
 }
 
+// The read endpoint of a DB System.
+func (o GetMysqlDbSystemsDbSystemOutput) ReadEndpoints() GetMysqlDbSystemsDbSystemReadEndpointArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemReadEndpoint { return v.ReadEndpoints }).(GetMysqlDbSystemsDbSystemReadEndpointArrayOutput)
+}
+
 // Secure connection configuration details.
 func (o GetMysqlDbSystemsDbSystemOutput) SecureConnections() GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemSecureConnection {
@@ -17904,7 +18680,7 @@ type GetMysqlDbSystemsDbSystemBackupPolicy struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
@@ -17930,7 +18706,7 @@ type GetMysqlDbSystemsDbSystemBackupPolicyArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
@@ -18001,7 +18777,7 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) FreeformTags() pulumi.Strin
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -18044,7 +18820,7 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy struct {
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -18060,7 +18836,7 @@ type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs struct {
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -18115,7 +18891,7 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSyste
 	return o
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -18151,7 +18927,7 @@ type GetMysqlDbSystemsDbSystemChannel struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id string `pulumi:"id"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -18189,7 +18965,7 @@ type GetMysqlDbSystemsDbSystemChannelArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Whether the Channel has been enabled by the user.
+	// Specifies if the DB System read endpoint is enabled or not.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -18281,7 +19057,7 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Whether the Channel has been enabled by the user.
+// Specifies if the DB System read endpoint is enabled or not.
 func (o GetMysqlDbSystemsDbSystemChannelOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -19947,6 +20723,130 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i p
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
 		return vs[0].([]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput)
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpoint struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps []string `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+}
+
+// GetMysqlDbSystemsDbSystemReadEndpointInput is an input type that accepts GetMysqlDbSystemsDbSystemReadEndpointArgs and GetMysqlDbSystemsDbSystemReadEndpointOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemReadEndpointInput` via:
+//
+//	GetMysqlDbSystemsDbSystemReadEndpointArgs{...}
+type GetMysqlDbSystemsDbSystemReadEndpointInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemReadEndpointOutput() GetMysqlDbSystemsDbSystemReadEndpointOutput
+	ToGetMysqlDbSystemsDbSystemReadEndpointOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemReadEndpointOutput
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointArgs struct {
+	// A list of IP addresses of read replicas that are excluded from serving read requests.
+	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
+	// Specifies if the DB System read endpoint is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The hostname for the read endpoint of the DB System. Used for DNS.
+	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
+	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+}
+
+func (GetMysqlDbSystemsDbSystemReadEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointArgs) ToGetMysqlDbSystemsDbSystemReadEndpointOutput() GetMysqlDbSystemsDbSystemReadEndpointOutput {
+	return i.ToGetMysqlDbSystemsDbSystemReadEndpointOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointArgs) ToGetMysqlDbSystemsDbSystemReadEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemReadEndpointOutput)
+}
+
+// GetMysqlDbSystemsDbSystemReadEndpointArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemReadEndpointArray and GetMysqlDbSystemsDbSystemReadEndpointArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemReadEndpointArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemReadEndpointArray{ GetMysqlDbSystemsDbSystemReadEndpointArgs{...} }
+type GetMysqlDbSystemsDbSystemReadEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutput() GetMysqlDbSystemsDbSystemReadEndpointArrayOutput
+	ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemReadEndpointArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointArray []GetMysqlDbSystemsDbSystemReadEndpointInput
+
+func (GetMysqlDbSystemsDbSystemReadEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointArray) ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutput() GetMysqlDbSystemsDbSystemReadEndpointArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointArray) ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemReadEndpointArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemReadEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ToGetMysqlDbSystemsDbSystemReadEndpointOutput() GetMysqlDbSystemsDbSystemReadEndpointOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ToGetMysqlDbSystemsDbSystemReadEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointOutput {
+	return o
+}
+
+// A list of IP addresses of read replicas that are excluded from serving read requests.
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
+}
+
+// Specifies if the DB System read endpoint is enabled or not.
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpoint) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The hostname for the read endpoint of the DB System. Used for DNS.
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpoint) string { return v.ReadEndpointHostnameLabel }).(pulumi.StringOutput)
+}
+
+// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemReadEndpoint)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutput() GetMysqlDbSystemsDbSystemReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) ToGetMysqlDbSystemsDbSystemReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemReadEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemReadEndpoint {
+		return vs[0].([]GetMysqlDbSystemsDbSystemReadEndpoint)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemReadEndpointOutput)
 }
 
 type GetMysqlDbSystemsDbSystemSecureConnection struct {
@@ -21703,6 +22603,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSummaryArgs{})
@@ -21745,6 +22647,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenancePtrInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointPtrInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsPtrInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
@@ -21793,6 +22697,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSummaryArgs{})
@@ -21815,6 +22721,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSummaryArgs{})
@@ -21867,6 +22775,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemSourceArgs{})
@@ -21905,6 +22815,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArgs{})
@@ -21959,6 +22871,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSummaryOutput{})
@@ -22001,6 +22915,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenancePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
@@ -22049,6 +22965,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSummaryOutput{})
@@ -22071,6 +22989,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSummaryOutput{})
@@ -22123,6 +23043,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceOutput{})
@@ -22161,6 +23083,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceOutput{})

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy
     {
         /// <summary>
-        /// Specifies if PITR is enabled or disabled.
+        /// Specifies if the DB System read endpoint is enabled or not.
         /// </summary>
         public readonly bool? IsEnabled;
 

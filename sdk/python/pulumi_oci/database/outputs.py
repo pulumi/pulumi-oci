@@ -149,6 +149,7 @@ __all__ = [
     'ExadbVmClusterNodeConfig',
     'ExadbVmClusterNodeResource',
     'ExascaleDbStorageVaultHighCapacityDatabaseStorage',
+    'ExecutionActionActionMember',
     'ExternalContainerDatabaseDatabaseManagementConfig',
     'ExternalContainerDatabaseStackMonitoringConfig',
     'ExternalDatabaseConnectorConnectionCredentials',
@@ -179,6 +180,11 @@ __all__ = [
     'PluggableDatabasesRemoteClonePdbNodeLevelDetail',
     'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig',
     'PluggableDatabasesRemoteCloneRefreshableCloneConfig',
+    'ScheduledActionActionMember',
+    'SchedulingPolicyCadenceStartMonth',
+    'SchedulingPolicySchedulingWindowWindowPreference',
+    'SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek',
+    'SchedulingPolicySchedulingWindowWindowPreferenceMonth',
     'VmClusterAddVirtualNetworkCloudAutomationUpdateDetail',
     'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference',
     'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod',
@@ -435,10 +441,18 @@ __all__ = [
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult',
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult',
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult',
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult',
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
     'GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult',
     'GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult',
+    'GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryResult',
+    'GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult',
+    'GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult',
+    'GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult',
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult',
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
     'GetDatabasePdbConversionHistoryEntriesFilterResult',
@@ -561,6 +575,12 @@ __all__ = [
     'GetExascaleDbStorageVaultsExascaleDbStorageVaultResult',
     'GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult',
     'GetExascaleDbStorageVaultsFilterResult',
+    'GetExecutionActionActionMemberResult',
+    'GetExecutionActionsExecutionActionResult',
+    'GetExecutionActionsExecutionActionActionMemberResult',
+    'GetExecutionActionsFilterResult',
+    'GetExecutionWindowsExecutionWindowResult',
+    'GetExecutionWindowsFilterResult',
     'GetExternalContainerDatabaseDatabaseManagementConfigResult',
     'GetExternalContainerDatabaseStackMonitoringConfigResult',
     'GetExternalContainerDatabasesExternalContainerDatabaseResult',
@@ -625,6 +645,33 @@ __all__ = [
     'GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailResult',
     'GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigResult',
+    'GetScheduledActionActionMemberResult',
+    'GetScheduledActionParamsActionParamValuesCollectionResult',
+    'GetScheduledActionParamsActionParamValuesCollectionItemResult',
+    'GetScheduledActionParamsFilterResult',
+    'GetScheduledActionsFilterResult',
+    'GetScheduledActionsScheduledActionCollectionResult',
+    'GetScheduledActionsScheduledActionCollectionItemResult',
+    'GetScheduledActionsScheduledActionCollectionItemActionMemberResult',
+    'GetSchedulingPlansFilterResult',
+    'GetSchedulingPlansSchedulingPlanCollectionResult',
+    'GetSchedulingPlansSchedulingPlanCollectionItemResult',
+    'GetSchedulingPoliciesFilterResult',
+    'GetSchedulingPoliciesSchedulingPolicyResult',
+    'GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthResult',
+    'GetSchedulingPolicyCadenceStartMonthResult',
+    'GetSchedulingPolicyRecommendedScheduledActionsFilterResult',
+    'GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionResult',
+    'GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemResult',
+    'GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberResult',
+    'GetSchedulingPolicySchedulingWindowWindowPreferenceResult',
+    'GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekResult',
+    'GetSchedulingPolicySchedulingWindowWindowPreferenceMonthResult',
+    'GetSchedulingPolicySchedulingWindowsFilterResult',
+    'GetSchedulingPolicySchedulingWindowsSchedulingWindowResult',
+    'GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceResult',
+    'GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekResult',
+    'GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthResult',
     'GetSystemVersionsFilterResult',
     'GetSystemVersionsSystemVersionCollectionResult',
     'GetSystemVersionsSystemVersionCollectionItemResult',
@@ -11500,6 +11547,108 @@ class ExascaleDbStorageVaultHighCapacityDatabaseStorage(dict):
 
 
 @pulumi.output_type
+class ExecutionActionActionMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memberId":
+            suggest = "member_id"
+        elif key == "memberOrder":
+            suggest = "member_order"
+        elif key == "estimatedTimeInMins":
+            suggest = "estimated_time_in_mins"
+        elif key == "totalTimeTakenInMins":
+            suggest = "total_time_taken_in_mins"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExecutionActionActionMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExecutionActionActionMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExecutionActionActionMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 member_id: str,
+                 member_order: int,
+                 estimated_time_in_mins: Optional[int] = None,
+                 status: Optional[str] = None,
+                 total_time_taken_in_mins: Optional[int] = None):
+        """
+        :param str member_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        :param int member_order: (Updatable) The priority order of the execution action member.
+        :param int estimated_time_in_mins: (Updatable) The estimated time of the execution action member in minutes.
+        :param str status: (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+               * SCHEDULED
+               * IN_PROGRESS
+               * FAILED
+               * CANCELED
+               * DURATION_EXCEEDED
+               * RESCHEDULED
+               * SUCCEEDED
+        :param int total_time_taken_in_mins: (Updatable) The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        if estimated_time_in_mins is not None:
+            pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if total_time_taken_in_mins is not None:
+            pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        (Updatable) The priority order of the execution action member.
+        """
+        return pulumi.get(self, "member_order")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> Optional[int]:
+        """
+        (Updatable) The estimated time of the execution action member in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> Optional[int]:
+        """
+        (Updatable) The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
 class ExternalContainerDatabaseDatabaseManagementConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -13215,6 +13364,226 @@ class PluggableDatabasesRemoteCloneRefreshableCloneConfig(dict):
         Indicates whether the Pluggable Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+
+@pulumi.output_type
+class ScheduledActionActionMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memberId":
+            suggest = "member_id"
+        elif key == "memberOrder":
+            suggest = "member_order"
+        elif key == "estimatedTimeInMins":
+            suggest = "estimated_time_in_mins"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduledActionActionMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduledActionActionMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduledActionActionMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 member_id: str,
+                 member_order: int,
+                 estimated_time_in_mins: Optional[int] = None):
+        """
+        :param str member_id: (Updatable) The ocid of the action member.
+        :param int member_order: (Updatable) The order of the action member in a scheduled action.
+        :param int estimated_time_in_mins: (Updatable) The estimated time for the intended action member.
+        """
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        if estimated_time_in_mins is not None:
+            pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        (Updatable) The ocid of the action member.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        (Updatable) The order of the action member in a scheduled action.
+        """
+        return pulumi.get(self, "member_order")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> Optional[int]:
+        """
+        (Updatable) The estimated time for the intended action member.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+
+@pulumi.output_type
+class SchedulingPolicyCadenceStartMonth(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class SchedulingPolicySchedulingWindowWindowPreference(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "isEnforcedDuration":
+            suggest = "is_enforced_duration"
+        elif key == "startTime":
+            suggest = "start_time"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SchedulingPolicySchedulingWindowWindowPreference. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SchedulingPolicySchedulingWindowWindowPreference.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SchedulingPolicySchedulingWindowWindowPreference.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence['outputs.SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek'],
+                 duration: int,
+                 is_enforced_duration: bool,
+                 months: Sequence['outputs.SchedulingPolicySchedulingWindowWindowPreferenceMonth'],
+                 start_time: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param Sequence['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when scheduling window should be performed.
+        :param int duration: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param bool is_enforced_duration: (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param Sequence['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs'] months: (Updatable) Months during the year when scheduled window should be performed.
+        :param str start_time: (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek']:
+        """
+        (Updatable) Days during the week when scheduling window should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> int:
+        """
+        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> bool:
+        """
+        (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.SchedulingPolicySchedulingWindowWindowPreferenceMonth']:
+        """
+        (Updatable) Months during the year when scheduled window should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        """
+        (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: (Updatable) Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class SchedulingPolicySchedulingWindowWindowPreferenceMonth(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -30650,6 +31019,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_scheduling_policy_associated: bool,
                  last_maintenance_run_id: str,
                  lifecycle_details: str,
                  maintenance_windows: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowResult'],
@@ -30687,6 +31057,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+        :param bool is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -30724,6 +31095,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -30879,6 +31251,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> bool:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
@@ -33788,17 +34168,31 @@ class GetDatabaseMaintenanceRunHistoriesFilterResult(dict):
 @pulumi.output_type
 class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult(dict):
     def __init__(__self__, *,
+                 current_execution_window: str,
                  db_servers_history_details: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult'],
+                 granular_maintenance_histories: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryResult'],
                  id: str,
                  maintenance_run_details: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult']):
         """
+        :param str current_execution_window: The OCID of the current execution window.
         :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs'] db_servers_history_details: List of database server history details.
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryArgs'] granular_maintenance_histories: The list of granular maintenance history details.
         :param str id: The OCID of the maintenance run.
         :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs'] maintenance_run_details: Details of a maintenance run.
         """
+        pulumi.set(__self__, "current_execution_window", current_execution_window)
         pulumi.set(__self__, "db_servers_history_details", db_servers_history_details)
+        pulumi.set(__self__, "granular_maintenance_histories", granular_maintenance_histories)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "maintenance_run_details", maintenance_run_details)
+
+    @property
+    @pulumi.getter(name="currentExecutionWindow")
+    def current_execution_window(self) -> str:
+        """
+        The OCID of the current execution window.
+        """
+        return pulumi.get(self, "current_execution_window")
 
     @property
     @pulumi.getter(name="dbServersHistoryDetails")
@@ -33807,6 +34201,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult(dict):
         List of database server history details.
         """
         return pulumi.get(self, "db_servers_history_details")
+
+    @property
+    @pulumi.getter(name="granularMaintenanceHistories")
+    def granular_maintenance_histories(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryResult']:
+        """
+        The list of granular maintenance history details.
+        """
+        return pulumi.get(self, "granular_maintenance_histories")
 
     @property
     @pulumi.getter
@@ -33917,6 +34319,543 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDet
 
 
 @pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryResult(dict):
+    def __init__(__self__, *,
+                 execution_actions: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult'],
+                 execution_windows: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult']):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs'] execution_actions: The list of execution actions for this granular maintenance history.
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs'] execution_windows: Details of an execution window.
+        """
+        pulumi.set(__self__, "execution_actions", execution_actions)
+        pulumi.set(__self__, "execution_windows", execution_windows)
+
+    @property
+    @pulumi.getter(name="executionActions")
+    def execution_actions(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult']:
+        """
+        The list of execution actions for this granular maintenance history.
+        """
+        return pulumi.get(self, "execution_actions")
+
+    @property
+    @pulumi.getter(name="executionWindows")
+    def execution_windows(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult']:
+        """
+        Details of an execution window.
+        """
+        return pulumi.get(self, "execution_windows")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult(dict):
+    def __init__(__self__, *,
+                 action_members: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult'],
+                 action_params: Mapping[str, str],
+                 action_type: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 execution_action_order: int,
+                 execution_window_id: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 lifecycle_substate: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs'] action_members: List of action members of this execution action.
+        :param Mapping[str, str] action_params: Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        :param str action_type: The action type of the execution action being performed
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Description of the maintenance run.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param int execution_action_order: The priority order of the execution action.
+        :param str execution_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the maintenance run.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        :param str state: The state of the maintenance run history.
+        :param str time_created: The date and time the execution window was created.
+        :param str time_updated: The last date and time that the execution window was updated.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "action_members", action_members)
+        pulumi.set(__self__, "action_params", action_params)
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "execution_action_order", execution_action_order)
+        pulumi.set(__self__, "execution_window_id", execution_window_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="actionMembers")
+    def action_members(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult']:
+        """
+        List of action members of this execution action.
+        """
+        return pulumi.get(self, "action_members")
+
+    @property
+    @pulumi.getter(name="actionParams")
+    def action_params(self) -> Mapping[str, str]:
+        """
+        Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        """
+        return pulumi.get(self, "action_params")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The action type of the execution action being performed
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the maintenance run.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="executionActionOrder")
+    def execution_action_order(self) -> int:
+        """
+        The priority order of the execution action.
+        """
+        return pulumi.get(self, "execution_action_order")
+
+    @property
+    @pulumi.getter(name="executionWindowId")
+    def execution_window_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+        """
+        return pulumi.get(self, "execution_window_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the maintenance run history.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the execution window was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the execution window was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int,
+                 status: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param str member_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        :param int member_order: The priority order of the execution action member.
+        :param str status: The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+               * SCHEDULED
+               * IN_PROGRESS
+               * FAILED
+               * CANCELED
+               * DURATION_EXCEEDED
+               * RESCHEDULED
+               * SUCCEEDED
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The priority order of the execution action member.
+        """
+        return pulumi.get(self, "member_order")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 execution_resource_id: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_enforced_duration: bool,
+                 lifecycle_details: str,
+                 lifecycle_substate: str,
+                 state: str,
+                 time_created: str,
+                 time_ended: str,
+                 time_scheduled: str,
+                 time_started: str,
+                 time_updated: str,
+                 total_time_taken_in_mins: int,
+                 window_duration_in_mins: int,
+                 window_type: str):
+        """
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Description of the maintenance run.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param str execution_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the maintenance run.
+        :param bool is_enforced_duration: Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        :param str state: The state of the maintenance run history.
+        :param str time_created: The date and time the execution window was created.
+        :param str time_ended: The date and time the maintenance run was completed.
+        :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
+        :param str time_started: The date and time the maintenance run starts.
+        :param str time_updated: The last date and time that the execution window was updated.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param int window_duration_in_mins: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param str window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "execution_resource_id", execution_resource_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_duration_in_mins", window_duration_in_mins)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the maintenance run.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="executionResourceId")
+    def execution_resource_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+        """
+        return pulumi.get(self, "execution_resource_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> bool:
+        """
+        Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the maintenance run history.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the execution window was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The date and time the maintenance run was completed.
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> str:
+        """
+        The date and time the maintenance run is scheduled to occur.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the maintenance run starts.
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the execution window was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+    @property
+    @pulumi.getter(name="windowDurationInMins")
+    def window_duration_in_mins(self) -> int:
+        """
+        Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "window_duration_in_mins")
+
+    @property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> str:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
+
+
+@pulumi.output_type
 class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
@@ -33931,6 +34870,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  id: str,
                  is_custom_action_timeout_enabled: bool,
                  is_dst_file_update_enabled: bool,
+                 is_maintenance_run_granular: bool,
                  lifecycle_details: str,
                  maintenance_subtype: str,
                  maintenance_type: str,
@@ -33948,7 +34888,8 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  target_storage_server_version: str,
                  time_ended: str,
                  time_scheduled: str,
-                 time_started: str):
+                 time_started: str,
+                 total_time_taken_in_mins: int):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
@@ -33962,6 +34903,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param bool is_maintenance_run_granular: If `FALSE`, the maintenance run doesn't support granular maintenance.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_subtype: Maintenance sub-type.
         :param str maintenance_type: The maintenance type.
@@ -33980,6 +34922,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param str time_ended: The date and time the maintenance run was completed.
         :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
         :param str time_started: The date and time the maintenance run starts.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
@@ -33993,6 +34936,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        pulumi.set(__self__, "is_maintenance_run_granular", is_maintenance_run_granular)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -34011,6 +34955,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -34107,6 +35052,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMaintenanceRunGranular")
+    def is_maintenance_run_granular(self) -> bool:
+        """
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+        """
+        return pulumi.get(self, "is_maintenance_run_granular")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -34252,6 +35205,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         """
         return pulumi.get(self, "time_started")
 
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
 
 @pulumi.output_type
 class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult(dict):
@@ -34396,6 +35357,543 @@ class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDeta
 
 
 @pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryResult(dict):
+    def __init__(__self__, *,
+                 execution_actions: Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult'],
+                 execution_windows: Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult']):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionArgs'] execution_actions: The list of execution actions for this granular maintenance history.
+        :param Sequence['GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowArgs'] execution_windows: Details of an execution window.
+        """
+        pulumi.set(__self__, "execution_actions", execution_actions)
+        pulumi.set(__self__, "execution_windows", execution_windows)
+
+    @property
+    @pulumi.getter(name="executionActions")
+    def execution_actions(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult']:
+        """
+        The list of execution actions for this granular maintenance history.
+        """
+        return pulumi.get(self, "execution_actions")
+
+    @property
+    @pulumi.getter(name="executionWindows")
+    def execution_windows(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult']:
+        """
+        Details of an execution window.
+        """
+        return pulumi.get(self, "execution_windows")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionResult(dict):
+    def __init__(__self__, *,
+                 action_members: Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult'],
+                 action_params: Mapping[str, str],
+                 action_type: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 execution_action_order: int,
+                 execution_window_id: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 lifecycle_substate: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberArgs'] action_members: List of action members of this execution action.
+        :param Mapping[str, str] action_params: Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        :param str action_type: The action type of the execution action being performed
+        :param str compartment_id: The OCID of the compartment.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Description of the maintenance run.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param int execution_action_order: The priority order of the execution action.
+        :param str execution_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the maintenance run.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        :param str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param str time_created: The date and time the execution window was created.
+        :param str time_updated: The last date and time that the execution window was updated.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "action_members", action_members)
+        pulumi.set(__self__, "action_params", action_params)
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "execution_action_order", execution_action_order)
+        pulumi.set(__self__, "execution_window_id", execution_window_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="actionMembers")
+    def action_members(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult']:
+        """
+        List of action members of this execution action.
+        """
+        return pulumi.get(self, "action_members")
+
+    @property
+    @pulumi.getter(name="actionParams")
+    def action_params(self) -> Mapping[str, str]:
+        """
+        Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        """
+        return pulumi.get(self, "action_params")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The action type of the execution action being performed
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the maintenance run.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="executionActionOrder")
+    def execution_action_order(self) -> int:
+        """
+        The priority order of the execution action.
+        """
+        return pulumi.get(self, "execution_action_order")
+
+    @property
+    @pulumi.getter(name="executionWindowId")
+    def execution_window_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
+        """
+        return pulumi.get(self, "execution_window_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the execution window was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the execution window was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionActionActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int,
+                 status: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param str member_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        :param int member_order: The priority order of the execution action member.
+        :param str status: The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+               * SCHEDULED
+               * IN_PROGRESS
+               * FAILED
+               * CANCELED
+               * DURATION_EXCEEDED
+               * RESCHEDULED
+               * SUCCEEDED
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The priority order of the execution action member.
+        """
+        return pulumi.get(self, "member_order")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 execution_resource_id: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_enforced_duration: bool,
+                 lifecycle_details: str,
+                 lifecycle_substate: str,
+                 state: str,
+                 time_created: str,
+                 time_ended: str,
+                 time_scheduled: str,
+                 time_started: str,
+                 time_updated: str,
+                 total_time_taken_in_mins: int,
+                 window_duration_in_mins: int,
+                 window_type: str):
+        """
+        :param str compartment_id: The OCID of the compartment.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Description of the maintenance run.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param str execution_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the maintenance run.
+        :param bool is_enforced_duration: Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        :param str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param str time_created: The date and time the execution window was created.
+        :param str time_ended: The date and time the maintenance run was completed.
+        :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
+        :param str time_started: The date and time the maintenance run starts.
+        :param str time_updated: The last date and time that the execution window was updated.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param int window_duration_in_mins: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param str window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "execution_resource_id", execution_resource_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_duration_in_mins", window_duration_in_mins)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the maintenance run.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="executionResourceId")
+    def execution_resource_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+        """
+        return pulumi.get(self, "execution_resource_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> bool:
+        """
+        Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the execution window was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The date and time the maintenance run was completed.
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> str:
+        """
+        The date and time the maintenance run is scheduled to occur.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the maintenance run starts.
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the execution window was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+    @property
+    @pulumi.getter(name="windowDurationInMins")
+    def window_duration_in_mins(self) -> int:
+        """
+        Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "window_duration_in_mins")
+
+    @property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> str:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
+
+
+@pulumi.output_type
 class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
@@ -34410,6 +35908,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  id: str,
                  is_custom_action_timeout_enabled: bool,
                  is_dst_file_update_enabled: bool,
+                 is_maintenance_run_granular: bool,
                  lifecycle_details: str,
                  maintenance_subtype: str,
                  maintenance_type: str,
@@ -34427,7 +35926,8 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  target_storage_server_version: str,
                  time_ended: str,
                  time_scheduled: str,
-                 time_started: str):
+                 time_started: str,
+                 total_time_taken_in_mins: int):
         """
         :param str compartment_id: The OCID of the compartment.
         :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
@@ -34441,6 +35941,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param bool is_maintenance_run_granular: If `FALSE`, the maintenance run doesn't support granular maintenance.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_subtype: Maintenance sub-type.
         :param str maintenance_type: Maintenance type.
@@ -34459,6 +35960,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param str time_ended: The date and time the maintenance run was completed.
         :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
         :param str time_started: The date and time the maintenance run starts.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
@@ -34472,6 +35974,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        pulumi.set(__self__, "is_maintenance_run_granular", is_maintenance_run_granular)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -34490,6 +35993,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -34586,6 +36090,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMaintenanceRunGranular")
+    def is_maintenance_run_granular(self) -> bool:
+        """
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+        """
+        return pulumi.get(self, "is_maintenance_run_granular")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -34730,6 +36242,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         The date and time the maintenance run starts.
         """
         return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
 
 
 @pulumi.output_type
@@ -41946,6 +43466,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  infini_band_network_cidr: str,
                  is_cps_offline_report_enabled: bool,
                  is_multi_rack_deployment: bool,
+                 is_scheduling_policy_associated: bool,
                  lifecycle_details: str,
                  maintenance_slo_status: str,
                  maintenance_windows: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult'],
@@ -41994,6 +43515,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str infini_band_network_cidr: The CIDR block for the Exadata InfiniBand interconnect.
         :param bool is_cps_offline_report_enabled: Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param bool is_multi_rack_deployment: Indicates if deployment is Multi-Rack or not.
+        :param bool is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -42044,6 +43566,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
         pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
+        pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -42290,6 +43813,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         Indicates if deployment is Multi-Rack or not.
         """
         return pulumi.get(self, "is_multi_rack_deployment")
+
+    @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> bool:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -44330,6 +45861,644 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorag
 
 @pulumi.output_type
 class GetExascaleDbStorageVaultsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExecutionActionActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int,
+                 status: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param int estimated_time_in_mins: The estimated time of the execution action in minutes.
+        :param str member_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        :param int member_order: The priority order of the execution action member.
+        :param str status: The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+               * SCHEDULED
+               * IN_PROGRESS
+               * FAILED
+               * CANCELED
+               * DURATION_EXCEEDED
+               * RESCHEDULED
+               * SUCCEEDED
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution action in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The priority order of the execution action member.
+        """
+        return pulumi.get(self, "member_order")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetExecutionActionsExecutionActionResult(dict):
+    def __init__(__self__, *,
+                 action_members: Sequence['outputs.GetExecutionActionsExecutionActionActionMemberResult'],
+                 action_params: Mapping[str, str],
+                 action_type: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 execution_action_order: int,
+                 execution_window_id: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 lifecycle_substate: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param Sequence['GetExecutionActionsExecutionActionActionMemberArgs'] action_members: List of action members of this execution action.
+        :param Mapping[str, str] action_params: Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        :param str action_type: The action type of the execution action being performed
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Description of the execution action.
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param int estimated_time_in_mins: The estimated time of the execution action in minutes.
+        :param int execution_action_order: The priority order of the execution action.
+        :param str execution_window_id: A filter to return only resources that match the given execution wondow id.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution action.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str lifecycle_substate: The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the execution action was created.
+        :param str time_updated: The last date and time that the execution action was updated.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "action_members", action_members)
+        pulumi.set(__self__, "action_params", action_params)
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "execution_action_order", execution_action_order)
+        pulumi.set(__self__, "execution_window_id", execution_window_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="actionMembers")
+    def action_members(self) -> Sequence['outputs.GetExecutionActionsExecutionActionActionMemberResult']:
+        """
+        List of action members of this execution action.
+        """
+        return pulumi.get(self, "action_members")
+
+    @property
+    @pulumi.getter(name="actionParams")
+    def action_params(self) -> Mapping[str, str]:
+        """
+        Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        """
+        return pulumi.get(self, "action_params")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The action type of the execution action being performed
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the execution action.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution action in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="executionActionOrder")
+    def execution_action_order(self) -> int:
+        """
+        The priority order of the execution action.
+        """
+        return pulumi.get(self, "execution_action_order")
+
+    @property
+    @pulumi.getter(name="executionWindowId")
+    def execution_window_id(self) -> str:
+        """
+        A filter to return only resources that match the given execution wondow id.
+        """
+        return pulumi.get(self, "execution_window_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution action.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the execution action was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the execution action was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetExecutionActionsExecutionActionActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int,
+                 status: str,
+                 total_time_taken_in_mins: int):
+        """
+        :param int estimated_time_in_mins: The estimated time of the execution action in minutes.
+        :param str member_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        :param int member_order: The priority order of the execution action member.
+        :param str status: The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+               * SCHEDULED
+               * IN_PROGRESS
+               * FAILED
+               * CANCELED
+               * DURATION_EXCEEDED
+               * RESCHEDULED
+               * SUCCEEDED
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution action in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The priority order of the execution action member.
+        """
+        return pulumi.get(self, "member_order")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+
+@pulumi.output_type
+class GetExecutionActionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExecutionWindowsExecutionWindowResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 execution_resource_id: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_enforced_duration: bool,
+                 lifecycle_details: str,
+                 lifecycle_substate: str,
+                 state: str,
+                 time_created: str,
+                 time_ended: str,
+                 time_scheduled: str,
+                 time_started: str,
+                 time_updated: str,
+                 total_time_taken_in_mins: int,
+                 window_duration_in_mins: int,
+                 window_type: str):
+        """
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Description of the execution window.
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param int estimated_time_in_mins: The estimated time of the execution window in minutes.
+        :param str execution_resource_id: A filter to return only resources that match the given resource id exactly.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+        :param bool is_enforced_duration: Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str lifecycle_substate: The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the execution window was created.
+        :param str time_ended: The date and time that the execution window ended.
+        :param str time_scheduled: The scheduled start date and time of the execution window.
+        :param str time_started: The date and time that the execution window was started.
+        :param str time_updated: The last date and time that the execution window was updated.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param int window_duration_in_mins: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param str window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "execution_resource_id", execution_resource_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_duration_in_mins", window_duration_in_mins)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the execution window.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time of the execution window in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="executionResourceId")
+    def execution_resource_id(self) -> str:
+        """
+        A filter to return only resources that match the given resource id exactly.
+        """
+        return pulumi.get(self, "execution_resource_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> bool:
+        """
+        Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the execution window was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The date and time that the execution window ended.
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> str:
+        """
+        The scheduled start date and time of the execution window.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time that the execution window was started.
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the execution window was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+    @property
+    @pulumi.getter(name="windowDurationInMins")
+    def window_duration_in_mins(self) -> int:
+        """
+        Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "window_duration_in_mins")
+
+    @property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> str:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
+
+
+@pulumi.output_type
+class GetExecutionWindowsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -46728,6 +48897,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  id: str,
                  is_custom_action_timeout_enabled: bool,
                  is_dst_file_update_enabled: bool,
+                 is_maintenance_run_granular: bool,
                  lifecycle_details: str,
                  maintenance_subtype: str,
                  maintenance_type: str,
@@ -46746,7 +48916,8 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  target_storage_server_version: str,
                  time_ended: str,
                  time_scheduled: str,
-                 time_started: str):
+                 time_started: str,
+                 total_time_taken_in_mins: int):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
@@ -46760,6 +48931,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param bool is_maintenance_run_granular: If `FALSE`, the maintenance run doesn't support granular maintenance.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_subtype: The sub-type of the maintenance run.
         :param str maintenance_type: The maintenance type.
@@ -46778,6 +48950,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param str time_ended: The date and time the maintenance run was completed.
         :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
         :param str time_started: The date and time the maintenance run starts.
+        :param int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
@@ -46791,6 +48964,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        pulumi.set(__self__, "is_maintenance_run_granular", is_maintenance_run_granular)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -46810,6 +48984,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -46906,6 +49081,14 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMaintenanceRunGranular")
+    def is_maintenance_run_granular(self) -> bool:
+        """
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+        """
+        return pulumi.get(self, "is_maintenance_run_granular")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -47055,6 +49238,14 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         The date and time the maintenance run starts.
         """
         return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
 
 
 @pulumi.output_type
@@ -48069,6 +50260,1404 @@ class GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigResult(dict):
         Indicates whether the Pluggable Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+
+@pulumi.output_type
+class GetScheduledActionActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int):
+        """
+        :param int estimated_time_in_mins: The estimated patching time for the scheduled action.
+        :param str member_id: The ocid of the action member.
+        :param int member_order: The order of the action member in a scheduled action.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated patching time for the scheduled action.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The ocid of the action member.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The order of the action member in a scheduled action.
+        """
+        return pulumi.get(self, "member_order")
+
+
+@pulumi.output_type
+class GetScheduledActionParamsActionParamValuesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetScheduledActionParamsActionParamValuesCollectionItemResult']):
+        """
+        :param Sequence['GetScheduledActionParamsActionParamValuesCollectionItemArgs'] items: List of Action Parameters and their possible values.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetScheduledActionParamsActionParamValuesCollectionItemResult']:
+        """
+        List of Action Parameters and their possible values.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetScheduledActionParamsActionParamValuesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 default_value: str,
+                 is_required: bool,
+                 parameter_name: str,
+                 parameter_type: str,
+                 parameter_values: Sequence[str]):
+        """
+        :param str default_value: The default value for this parameter.
+        :param bool is_required: Whether this parameter is required or not for this action type.、
+        :param str parameter_name: The name of this parameter.
+        :param str parameter_type: The type of the parameter.
+        :param Sequence[str] parameter_values: Possible values for this parameter. In case of integer it's min and max values.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "parameter_name", parameter_name)
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "parameter_values", parameter_values)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        The default value for this parameter.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> bool:
+        """
+        Whether this parameter is required or not for this action type.、
+        """
+        return pulumi.get(self, "is_required")
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> str:
+        """
+        The name of this parameter.
+        """
+        return pulumi.get(self, "parameter_name")
+
+    @property
+    @pulumi.getter(name="parameterType")
+    def parameter_type(self) -> str:
+        """
+        The type of the parameter.
+        """
+        return pulumi.get(self, "parameter_type")
+
+    @property
+    @pulumi.getter(name="parameterValues")
+    def parameter_values(self) -> Sequence[str]:
+        """
+        Possible values for this parameter. In case of integer it's min and max values.
+        """
+        return pulumi.get(self, "parameter_values")
+
+
+@pulumi.output_type
+class GetScheduledActionParamsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetScheduledActionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetScheduledActionsScheduledActionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetScheduledActionsScheduledActionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetScheduledActionsScheduledActionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetScheduledActionsScheduledActionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action_members: Sequence['outputs.GetScheduledActionsScheduledActionCollectionItemActionMemberResult'],
+                 action_order: int,
+                 action_params: Mapping[str, str],
+                 action_type: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 scheduling_plan_id: str,
+                 scheduling_window_id: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param Sequence['GetScheduledActionsScheduledActionCollectionItemActionMemberArgs'] action_members: The list of action members in a scheduled action.
+        :param int action_order: The order of the scheduled action.
+        :param Mapping[str, str] action_params: Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        :param str action_type: The type of the scheduled action being performed
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param int estimated_time_in_mins: The estimated patching time for the scheduled action.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: A filter to return only resources that match the given Scheduled Action id exactly.
+        :param str scheduling_plan_id: A filter to return only resources that match the given scheduling policy id exactly.
+        :param str scheduling_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str time_created: The date and time the Scheduled Action Resource was created.
+        :param str time_updated: The date and time the Scheduled Action Resource was updated.
+        """
+        pulumi.set(__self__, "action_members", action_members)
+        pulumi.set(__self__, "action_order", action_order)
+        pulumi.set(__self__, "action_params", action_params)
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "scheduling_plan_id", scheduling_plan_id)
+        pulumi.set(__self__, "scheduling_window_id", scheduling_window_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="actionMembers")
+    def action_members(self) -> Sequence['outputs.GetScheduledActionsScheduledActionCollectionItemActionMemberResult']:
+        """
+        The list of action members in a scheduled action.
+        """
+        return pulumi.get(self, "action_members")
+
+    @property
+    @pulumi.getter(name="actionOrder")
+    def action_order(self) -> int:
+        """
+        The order of the scheduled action.
+        """
+        return pulumi.get(self, "action_order")
+
+    @property
+    @pulumi.getter(name="actionParams")
+    def action_params(self) -> Mapping[str, str]:
+        """
+        Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        """
+        return pulumi.get(self, "action_params")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The type of the scheduled action being performed
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated patching time for the scheduled action.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        A filter to return only resources that match the given Scheduled Action id exactly.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="schedulingPlanId")
+    def scheduling_plan_id(self) -> str:
+        """
+        A filter to return only resources that match the given scheduling policy id exactly.
+        """
+        return pulumi.get(self, "scheduling_plan_id")
+
+    @property
+    @pulumi.getter(name="schedulingWindowId")
+    def scheduling_window_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+        """
+        return pulumi.get(self, "scheduling_window_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Scheduled Action Resource was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the Scheduled Action Resource was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetScheduledActionsScheduledActionCollectionItemActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int):
+        """
+        :param int estimated_time_in_mins: The estimated patching time for the scheduled action.
+        :param str member_id: The ocid of the action member.
+        :param int member_order: The order of the action member in a scheduled action.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated patching time for the scheduled action.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The ocid of the action member.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The order of the action member in a scheduled action.
+        """
+        return pulumi.get(self, "member_order")
+
+
+@pulumi.output_type
+class GetSchedulingPlansFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulingPlansSchedulingPlanCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSchedulingPlansSchedulingPlanCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSchedulingPlansSchedulingPlanCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSchedulingPlansSchedulingPlanCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_using_recommended_scheduled_actions: bool,
+                 lifecycle_details: str,
+                 plan_intent: str,
+                 resource_id: str,
+                 scheduling_policy_id: str,
+                 service_type: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param int estimated_time_in_mins: The estimated time for the Scheduling Plan.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: A filter to return only resources that match the given Schedule Plan id exactly.
+        :param bool is_using_recommended_scheduled_actions: If true, recommended scheduled actions will be generated for the scheduling plan.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str plan_intent: The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+        :param str resource_id: A filter to return only resources that match the given resource id exactly.
+        :param str scheduling_policy_id: A filter to return only resources that match the given scheduling policy id exactly.
+        :param str service_type: The service type of the Scheduling Plan.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str time_created: The date and time the Scheduling Plan Resource was created.
+        :param str time_updated: The date and time the Scheduling Plan Resource was updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_using_recommended_scheduled_actions", is_using_recommended_scheduled_actions)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "plan_intent", plan_intent)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "scheduling_policy_id", scheduling_policy_id)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated time for the Scheduling Plan.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        A filter to return only resources that match the given Schedule Plan id exactly.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isUsingRecommendedScheduledActions")
+    def is_using_recommended_scheduled_actions(self) -> bool:
+        """
+        If true, recommended scheduled actions will be generated for the scheduling plan.
+        """
+        return pulumi.get(self, "is_using_recommended_scheduled_actions")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="planIntent")
+    def plan_intent(self) -> str:
+        """
+        The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+        """
+        return pulumi.get(self, "plan_intent")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        A filter to return only resources that match the given resource id exactly.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="schedulingPolicyId")
+    def scheduling_policy_id(self) -> str:
+        """
+        A filter to return only resources that match the given scheduling policy id exactly.
+        """
+        return pulumi.get(self, "scheduling_policy_id")
+
+    @property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> str:
+        """
+        The service type of the Scheduling Plan.
+        """
+        return pulumi.get(self, "service_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Scheduling Plan Resource was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the Scheduling Plan Resource was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSchedulingPoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulingPoliciesSchedulingPolicyResult(dict):
+    def __init__(__self__, *,
+                 cadence: str,
+                 cadence_start_months: Sequence['outputs.GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthResult'],
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 time_created: str,
+                 time_next_window_starts: str,
+                 time_updated: str):
+        """
+        :param str cadence: The cadence period.
+        :param Sequence['GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs'] cadence_start_months: Start of the month to be followed during the cadence period.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the Scheduling Policy was created.
+        :param str time_next_window_starts: The date and time of the next scheduling window associated with the schedulingPolicy is planned to start.
+        :param str time_updated: The last date and time that the Scheduling Policy was updated.
+        """
+        pulumi.set(__self__, "cadence", cadence)
+        pulumi.set(__self__, "cadence_start_months", cadence_start_months)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_next_window_starts", time_next_window_starts)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def cadence(self) -> str:
+        """
+        The cadence period.
+        """
+        return pulumi.get(self, "cadence")
+
+    @property
+    @pulumi.getter(name="cadenceStartMonths")
+    def cadence_start_months(self) -> Sequence['outputs.GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthResult']:
+        """
+        Start of the month to be followed during the cadence period.
+        """
+        return pulumi.get(self, "cadence_start_months")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Scheduling Policy was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeNextWindowStarts")
+    def time_next_window_starts(self) -> str:
+        """
+        The date and time of the next scheduling window associated with the schedulingPolicy is planned to start.
+        """
+        return pulumi.get(self, "time_next_window_starts")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the Scheduling Policy was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSchedulingPolicyCadenceStartMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSchedulingPolicyRecommendedScheduledActionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemResult']):
+        """
+        :param Sequence['GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs'] items: List of scheduled actions.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemResult']:
+        """
+        List of scheduled actions.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action_members: Sequence['outputs.GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberResult'],
+                 action_order: int,
+                 action_params: Mapping[str, str],
+                 action_type: str,
+                 display_name: str,
+                 estimated_time_in_mins: int,
+                 scheduling_window_id: str):
+        """
+        :param Sequence['GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs'] action_members: The list of action members in a scheduled action.
+        :param int action_order: The order of the scheduled action.
+        :param Mapping[str, str] action_params: Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        :param str action_type: The type of the scheduled action being performed
+        :param str display_name: Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+        :param int estimated_time_in_mins: The estimated patching time in minutes for the entire scheduled action.
+        :param str scheduling_window_id: The id of the scheduling window this scheduled action belongs to.
+        """
+        pulumi.set(__self__, "action_members", action_members)
+        pulumi.set(__self__, "action_order", action_order)
+        pulumi.set(__self__, "action_params", action_params)
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "scheduling_window_id", scheduling_window_id)
+
+    @property
+    @pulumi.getter(name="actionMembers")
+    def action_members(self) -> Sequence['outputs.GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberResult']:
+        """
+        The list of action members in a scheduled action.
+        """
+        return pulumi.get(self, "action_members")
+
+    @property
+    @pulumi.getter(name="actionOrder")
+    def action_order(self) -> int:
+        """
+        The order of the scheduled action.
+        """
+        return pulumi.get(self, "action_order")
+
+    @property
+    @pulumi.getter(name="actionParams")
+    def action_params(self) -> Mapping[str, str]:
+        """
+        Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+        """
+        return pulumi.get(self, "action_params")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The type of the scheduled action being performed
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated patching time in minutes for the entire scheduled action.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="schedulingWindowId")
+    def scheduling_window_id(self) -> str:
+        """
+        The id of the scheduling window this scheduled action belongs to.
+        """
+        return pulumi.get(self, "scheduling_window_id")
+
+
+@pulumi.output_type
+class GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberResult(dict):
+    def __init__(__self__, *,
+                 estimated_time_in_mins: int,
+                 member_id: str,
+                 member_order: int):
+        """
+        :param int estimated_time_in_mins: The estimated patching time in minutes for the entire scheduled action.
+        :param str member_id: The ocid of the action member.
+        :param int member_order: The order of the action member in a scheduled action.
+        """
+        pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> int:
+        """
+        The estimated patching time in minutes for the entire scheduled action.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> str:
+        """
+        The ocid of the action member.
+        """
+        return pulumi.get(self, "member_id")
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> int:
+        """
+        The order of the action member in a scheduled action.
+        """
+        return pulumi.get(self, "member_order")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowWindowPreferenceResult(dict):
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence['outputs.GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekResult'],
+                 duration: int,
+                 is_enforced_duration: bool,
+                 months: Sequence['outputs.GetSchedulingPolicySchedulingWindowWindowPreferenceMonthResult'],
+                 start_time: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param Sequence['GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs'] days_of_weeks: Days during the week when scheduling window should be performed.
+        :param int duration: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param bool is_enforced_duration: Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param Sequence['GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs'] months: Months during the year when scheduled window should be performed.
+        :param str start_time: The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        :param Sequence[int] weeks_of_months: Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekResult']:
+        """
+        Days during the week when scheduling window should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> int:
+        """
+        Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> bool:
+        """
+        Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.GetSchedulingPolicySchedulingWindowWindowPreferenceMonthResult']:
+        """
+        Months during the year when scheduled window should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        """
+        The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowWindowPreferenceMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowsSchedulingWindowResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 scheduling_policy_id: str,
+                 state: str,
+                 time_created: str,
+                 time_next_scheduling_window_starts: str,
+                 time_updated: str,
+                 window_preferences: Sequence['outputs.GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceResult']):
+        """
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str scheduling_policy_id: The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the Scheduling Window was created.
+        :param str time_next_scheduling_window_starts: The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
+        :param str time_updated: The last date and time that the Scheduling Window was updated.
+        :param Sequence['GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs'] window_preferences: The Single Scheduling Window details.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "scheduling_policy_id", scheduling_policy_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_next_scheduling_window_starts", time_next_scheduling_window_starts)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "window_preferences", window_preferences)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="schedulingPolicyId")
+    def scheduling_policy_id(self) -> str:
+        """
+        The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "scheduling_policy_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Scheduling Window was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeNextSchedulingWindowStarts")
+    def time_next_scheduling_window_starts(self) -> str:
+        """
+        The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
+        """
+        return pulumi.get(self, "time_next_scheduling_window_starts")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The last date and time that the Scheduling Window was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="windowPreferences")
+    def window_preferences(self) -> Sequence['outputs.GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceResult']:
+        """
+        The Single Scheduling Window details.
+        """
+        return pulumi.get(self, "window_preferences")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceResult(dict):
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence['outputs.GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekResult'],
+                 duration: int,
+                 is_enforced_duration: bool,
+                 months: Sequence['outputs.GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthResult'],
+                 start_time: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param Sequence['GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs'] days_of_weeks: Days during the week when scheduling window should be performed.
+        :param int duration: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param bool is_enforced_duration: Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param Sequence['GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs'] months: Months during the year when scheduled window should be performed.
+        :param str start_time: The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        :param Sequence[int] weeks_of_months: Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekResult']:
+        """
+        Days during the week when scheduling window should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> int:
+        """
+        Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> bool:
+        """
+        Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthResult']:
+        """
+        Months during the year when scheduled window should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        """
+        The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type

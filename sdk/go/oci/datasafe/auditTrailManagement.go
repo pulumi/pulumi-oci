@@ -66,11 +66,11 @@ type AuditTrailManagement struct {
 	AuditProfileId pulumi.StringOutput `pulumi:"auditProfileId"`
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit trail.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -143,11 +143,11 @@ type auditTrailManagementState struct {
 	AuditProfileId *string `pulumi:"auditProfileId"`
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit trail.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -191,11 +191,11 @@ type AuditTrailManagementState struct {
 	AuditProfileId pulumi.StringPtrInput
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit trail.
 	Description pulumi.StringPtrInput
-	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -241,11 +241,11 @@ type auditTrailManagementArgs struct {
 	AuditCollectionStartTime *string `pulumi:"auditCollectionStartTime"`
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit trail.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -274,11 +274,11 @@ type AuditTrailManagementArgs struct {
 	AuditCollectionStartTime pulumi.StringPtrInput
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit trail.
 	Description pulumi.StringPtrInput
-	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -403,7 +403,7 @@ func (o AuditTrailManagementOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o AuditTrailManagementOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -413,7 +413,7 @@ func (o AuditTrailManagementOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
+// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
 func (o AuditTrailManagementOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

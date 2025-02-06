@@ -58,6 +58,10 @@ type LookupMysqlDbSystemArgs struct {
 
 // A collection of values returned by getMysqlDbSystem.
 type LookupMysqlDbSystemResult struct {
+	// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+	// * UNRESTRICTED: the access to the database is not restricted;
+	// * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode    string `pulumi:"accessMode"`
 	AdminPassword string `pulumi:"adminPassword"`
 	AdminUsername string `pulumi:"adminUsername"`
 	// The availability domain in which the DB System is placed.
@@ -82,6 +86,10 @@ type LookupMysqlDbSystemResult struct {
 	DataStorages []GetMysqlDbSystemDataStorage `pulumi:"dataStorages"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
+	// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE: allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode string `pulumi:"databaseMode"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -122,6 +130,8 @@ type LookupMysqlDbSystemResult struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The read endpoint of a DB System.
+	ReadEndpoints []GetMysqlDbSystemReadEndpoint `pulumi:"readEndpoints"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlDbSystemSecureConnection `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -171,6 +181,13 @@ func (o LookupMysqlDbSystemResultOutput) ToLookupMysqlDbSystemResultOutput() Loo
 
 func (o LookupMysqlDbSystemResultOutput) ToLookupMysqlDbSystemResultOutputWithContext(ctx context.Context) LookupMysqlDbSystemResultOutput {
 	return o
+}
+
+// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+// * UNRESTRICTED: the access to the database is not restricted;
+// * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+func (o LookupMysqlDbSystemResultOutput) AccessMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.AccessMode }).(pulumi.StringOutput)
 }
 
 func (o LookupMysqlDbSystemResultOutput) AdminPassword() pulumi.StringOutput {
@@ -234,6 +251,13 @@ func (o LookupMysqlDbSystemResultOutput) DataStorages() GetMysqlDbSystemDataStor
 // Whether to enable monitoring via the Database Management service.
 func (o LookupMysqlDbSystemResultOutput) DatabaseManagement() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.DatabaseManagement }).(pulumi.StringOutput)
+}
+
+// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+// * READ_WRITE: allow running read and write statements on the DB system;
+// * READ_ONLY: only allow running read statements on the DB system.
+func (o LookupMysqlDbSystemResultOutput) DatabaseMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.DatabaseMode }).(pulumi.StringOutput)
 }
 
 // The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
@@ -336,6 +360,11 @@ func (o LookupMysqlDbSystemResultOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o LookupMysqlDbSystemResultOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The read endpoint of a DB System.
+func (o LookupMysqlDbSystemResultOutput) ReadEndpoints() GetMysqlDbSystemReadEndpointArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemReadEndpoint { return v.ReadEndpoints }).(GetMysqlDbSystemReadEndpointArrayOutput)
 }
 
 // Secure connection configuration details.

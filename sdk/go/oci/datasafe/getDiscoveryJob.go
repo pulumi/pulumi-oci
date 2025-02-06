@@ -60,7 +60,7 @@ type GetDiscoveryJobArgs struct {
 type GetDiscoveryJobResult struct {
 	// The OCID of the compartment that contains the discovery job.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags    map[string]string `pulumi:"definedTags"`
 	DiscoveryJobId string            `pulumi:"discoveryJobId"`
 	// The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
@@ -150,7 +150,7 @@ func (o GetDiscoveryJobResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetDiscoveryJobResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

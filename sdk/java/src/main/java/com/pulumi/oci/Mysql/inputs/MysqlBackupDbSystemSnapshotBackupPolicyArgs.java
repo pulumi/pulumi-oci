@@ -51,14 +51,14 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
     }
 
     /**
-     * Specifies if PITR is enabled or disabled.
+     * Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -182,7 +182,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
         }
 
         /**
-         * @param isEnabled Specifies if PITR is enabled or disabled.
+         * @param isEnabled Specifies if the DB System read endpoint is enabled or not.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
         }
 
         /**
-         * @param isEnabled Specifies if PITR is enabled or disabled.
+         * @param isEnabled Specifies if the DB System read endpoint is enabled or not.
          * 
          * @return builder
          * 

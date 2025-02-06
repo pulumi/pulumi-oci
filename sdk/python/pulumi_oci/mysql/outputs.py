@@ -29,6 +29,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotDeletionPolicy',
     'MysqlBackupDbSystemSnapshotEndpoint',
     'MysqlBackupDbSystemSnapshotMaintenance',
+    'MysqlBackupDbSystemSnapshotReadEndpoint',
     'MysqlBackupDbSystemSnapshotSecureConnection',
     'MysqlBackupDbSystemSnapshotSummary',
     'MysqlBackupSourceDetails',
@@ -50,6 +51,7 @@ __all__ = [
     'MysqlDbSystemHeatWaveCluster',
     'MysqlDbSystemMaintenance',
     'MysqlDbSystemPointInTimeRecoveryDetail',
+    'MysqlDbSystemReadEndpoint',
     'MysqlDbSystemSecureConnections',
     'MysqlDbSystemSource',
     'ReplicaReplicaOverrides',
@@ -74,6 +76,7 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotDeletionPolicyResult',
     'GetMysqlBackupDbSystemSnapshotEndpointResult',
     'GetMysqlBackupDbSystemSnapshotMaintenanceResult',
+    'GetMysqlBackupDbSystemSnapshotReadEndpointResult',
     'GetMysqlBackupDbSystemSnapshotSecureConnectionResult',
     'GetMysqlBackupDbSystemSnapshotSummaryResult',
     'GetMysqlBackupSourceDetailResult',
@@ -85,6 +88,7 @@ __all__ = [
     'GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult',
     'GetMysqlBackupsBackupDbSystemSnapshotEndpointResult',
     'GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult',
+    'GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult',
     'GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult',
     'GetMysqlBackupsBackupDbSystemSnapshotSummaryResult',
     'GetMysqlBackupsBackupSourceDetailResult',
@@ -111,6 +115,7 @@ __all__ = [
     'GetMysqlDbSystemHeatWaveClusterResult',
     'GetMysqlDbSystemMaintenanceResult',
     'GetMysqlDbSystemPointInTimeRecoveryDetailResult',
+    'GetMysqlDbSystemReadEndpointResult',
     'GetMysqlDbSystemSecureConnectionResult',
     'GetMysqlDbSystemSourceResult',
     'GetMysqlDbSystemsDbSystemResult',
@@ -130,6 +135,7 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemHeatWaveClusterResult',
     'GetMysqlDbSystemsDbSystemMaintenanceResult',
     'GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult',
+    'GetMysqlDbSystemsDbSystemReadEndpointResult',
     'GetMysqlDbSystemsDbSystemSecureConnectionResult',
     'GetMysqlDbSystemsDbSystemSourceResult',
     'GetMysqlDbSystemsFilterResult',
@@ -668,6 +674,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             suggest = "mysql_version"
         elif key == "portX":
             suggest = "port_x"
+        elif key == "readEndpoints":
+            suggest = "read_endpoints"
         elif key == "secureConnections":
             suggest = "secure_connections"
         elif key == "shapeName":
@@ -711,6 +719,7 @@ class MysqlBackupDbSystemSnapshot(dict):
                  mysql_version: Optional[str] = None,
                  port: Optional[int] = None,
                  port_x: Optional[int] = None,
+                 read_endpoints: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotReadEndpoint']] = None,
                  region: Optional[str] = None,
                  secure_connections: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotSecureConnection']] = None,
                  shape_name: Optional[str] = None,
@@ -740,6 +749,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param Sequence['MysqlBackupDbSystemSnapshotReadEndpointArgs'] read_endpoints: The read endpoint of a DB System.
         :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param Sequence['MysqlBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the DB System instance used for backup.
@@ -793,6 +803,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if read_endpoints is not None:
+            pulumi.set(__self__, "read_endpoints", read_endpoints)
         if region is not None:
             pulumi.set(__self__, "region", region)
         if secure_connections is not None:
@@ -995,6 +1007,14 @@ class MysqlBackupDbSystemSnapshot(dict):
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter(name="readEndpoints")
+    def read_endpoints(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotReadEndpoint']]:
+        """
+        The read endpoint of a DB System.
+        """
+        return pulumi.get(self, "read_endpoints")
+
+    @property
     @pulumi.getter
     def region(self) -> Optional[str]:
         """
@@ -1066,7 +1086,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
         """
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param bool is_enabled: Specifies if PITR is enabled or disabled.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param Sequence['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: (Updatable) Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
@@ -1104,7 +1124,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         """
-        Specifies if PITR is enabled or disabled.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -1155,7 +1175,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(dict):
     def __init__(__self__, *,
                  is_enabled: Optional[bool] = None):
         """
-        :param bool is_enabled: Specifies if PITR is enabled or disabled.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
@@ -1164,7 +1184,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         """
-        Specifies if PITR is enabled or disabled.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -1499,6 +1519,84 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotReadEndpoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "excludeIps":
+            suggest = "exclude_ips"
+        elif key == "isEnabled":
+            suggest = "is_enabled"
+        elif key == "readEndpointHostnameLabel":
+            suggest = "read_endpoint_hostname_label"
+        elif key == "readEndpointIpAddress":
+            suggest = "read_endpoint_ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshotReadEndpoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupDbSystemSnapshotReadEndpoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupDbSystemSnapshotReadEndpoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclude_ips: Optional[Sequence[str]] = None,
+                 is_enabled: Optional[bool] = None,
+                 read_endpoint_hostname_label: Optional[str] = None,
+                 read_endpoint_ip_address: Optional[str] = None):
+        """
+        :param Sequence[str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
+        :param str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
+        :param str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        if exclude_ips is not None:
+            pulumi.set(__self__, "exclude_ips", exclude_ips)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if read_endpoint_hostname_label is not None:
+            pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
+        if read_endpoint_ip_address is not None:
+            pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+
+    @property
+    @pulumi.getter(name="excludeIps")
+    def exclude_ips(self) -> Optional[Sequence[str]]:
+        """
+        A list of IP addresses of read replicas that are excluded from serving read requests.
+        """
+        return pulumi.get(self, "exclude_ips")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[bool]:
+        """
+        Specifies if the DB System read endpoint is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="readEndpointHostnameLabel")
+    def read_endpoint_hostname_label(self) -> Optional[str]:
+        """
+        The hostname for the read endpoint of the DB System. Used for DNS.
+        """
+        return pulumi.get(self, "read_endpoint_hostname_label")
+
+    @property
+    @pulumi.getter(name="readEndpointIpAddress")
+    def read_endpoint_ip_address(self) -> Optional[str]:
+        """
+        The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        return pulumi.get(self, "read_endpoint_ip_address")
 
 
 @pulumi.output_type
@@ -3253,7 +3351,7 @@ class MysqlDbSystemChannel(dict):
         :param str display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the DB System.
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param str lifecycle_details: Additional information about the current lifecycleState.
         :param Sequence['MysqlDbSystemChannelSourceArgs'] sources: Parameters detailing how to provision the initial data of the system.
         :param str state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -3330,7 +3428,7 @@ class MysqlDbSystemChannel(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -4361,6 +4459,92 @@ class MysqlDbSystemPointInTimeRecoveryDetail(dict):
         Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_latest_recovery_point")
+
+
+@pulumi.output_type
+class MysqlDbSystemReadEndpoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "excludeIps":
+            suggest = "exclude_ips"
+        elif key == "isEnabled":
+            suggest = "is_enabled"
+        elif key == "readEndpointHostnameLabel":
+            suggest = "read_endpoint_hostname_label"
+        elif key == "readEndpointIpAddress":
+            suggest = "read_endpoint_ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemReadEndpoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlDbSystemReadEndpoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlDbSystemReadEndpoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclude_ips: Optional[Sequence[str]] = None,
+                 is_enabled: Optional[bool] = None,
+                 read_endpoint_hostname_label: Optional[str] = None,
+                 read_endpoint_ip_address: Optional[str] = None):
+        """
+        :param Sequence[str] exclude_ips: (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+        :param bool is_enabled: (Updatable) Specifies if the DB System read endpoint is enabled or not.
+        :param str read_endpoint_hostname_label: (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+               
+               The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+               
+               Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+        :param str read_endpoint_ip_address: (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        if exclude_ips is not None:
+            pulumi.set(__self__, "exclude_ips", exclude_ips)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if read_endpoint_hostname_label is not None:
+            pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
+        if read_endpoint_ip_address is not None:
+            pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+
+    @property
+    @pulumi.getter(name="excludeIps")
+    def exclude_ips(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+        """
+        return pulumi.get(self, "exclude_ips")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies if the DB System read endpoint is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="readEndpointHostnameLabel")
+    def read_endpoint_hostname_label(self) -> Optional[str]:
+        """
+        (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+
+        The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+
+        Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+        """
+        return pulumi.get(self, "read_endpoint_hostname_label")
+
+    @property
+    @pulumi.getter(name="readEndpointIpAddress")
+    def read_endpoint_ip_address(self) -> Optional[str]:
+        """
+        (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        return pulumi.get(self, "read_endpoint_ip_address")
 
 
 @pulumi.output_type
@@ -5448,6 +5632,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  mysql_version: str,
                  port: int,
                  port_x: int,
+                 read_endpoints: Sequence['outputs.GetMysqlBackupDbSystemSnapshotReadEndpointResult'],
                  region: str,
                  secure_connections: Sequence['outputs.GetMysqlBackupDbSystemSnapshotSecureConnectionResult'],
                  shape_name: str,
@@ -5477,6 +5662,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param Sequence['GetMysqlBackupDbSystemSnapshotReadEndpointArgs'] read_endpoints: The read endpoint of a DB System.
         :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param Sequence['GetMysqlBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the DB System instance used for backup.
@@ -5506,6 +5692,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "mysql_version", mysql_version)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "read_endpoints", read_endpoints)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "secure_connections", secure_connections)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -5704,6 +5891,14 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter(name="readEndpoints")
+    def read_endpoints(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotReadEndpointResult']:
+        """
+        The read endpoint of a DB System.
+        """
+        return pulumi.get(self, "read_endpoints")
+
+    @property
     @pulumi.getter
     def region(self) -> str:
         """
@@ -5748,7 +5943,7 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
         """
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param bool is_enabled: Specifies if PITR is enabled or disabled.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param Sequence['GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
@@ -5780,7 +5975,7 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Specifies if PITR is enabled or disabled.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -5814,7 +6009,7 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: Specifies if PITR is enabled or disabled.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -5822,7 +6017,7 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Specifies if PITR is enabled or disabled.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -6051,6 +6246,57 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotReadEndpointResult(dict):
+    def __init__(__self__, *,
+                 exclude_ips: Sequence[str],
+                 is_enabled: bool,
+                 read_endpoint_hostname_label: str,
+                 read_endpoint_ip_address: str):
+        """
+        :param Sequence[str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
+        :param str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
+        :param str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        pulumi.set(__self__, "exclude_ips", exclude_ips)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
+        pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+
+    @property
+    @pulumi.getter(name="excludeIps")
+    def exclude_ips(self) -> Sequence[str]:
+        """
+        A list of IP addresses of read replicas that are excluded from serving read requests.
+        """
+        return pulumi.get(self, "exclude_ips")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Specifies if the DB System read endpoint is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="readEndpointHostnameLabel")
+    def read_endpoint_hostname_label(self) -> str:
+        """
+        The hostname for the read endpoint of the DB System. Used for DNS.
+        """
+        return pulumi.get(self, "read_endpoint_hostname_label")
+
+    @property
+    @pulumi.getter(name="readEndpointIpAddress")
+    def read_endpoint_ip_address(self) -> str:
+        """
+        The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        return pulumi.get(self, "read_endpoint_ip_address")
 
 
 @pulumi.output_type
@@ -6452,6 +6698,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
                  mysql_version: str,
                  port: int,
                  port_x: int,
+                 read_endpoints: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult'],
                  region: str,
                  secure_connections: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult'],
                  shape_name: str,
@@ -6481,6 +6728,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs'] read_endpoints: The read endpoint of a DB System.
         :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the DB System instance used for backup.
@@ -6510,6 +6758,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "mysql_version", mysql_version)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "read_endpoints", read_endpoints)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "secure_connections", secure_connections)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -6708,6 +6957,14 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter(name="readEndpoints")
+    def read_endpoints(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult']:
+        """
+        The read endpoint of a DB System.
+        """
+        return pulumi.get(self, "read_endpoints")
+
+    @property
     @pulumi.getter
     def region(self) -> str:
         """
@@ -6752,7 +7009,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
         """
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param bool is_enabled: Specifies if PITR is enabled or disabled.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
@@ -6784,7 +7041,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Specifies if PITR is enabled or disabled.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -6818,7 +7075,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: Specifies if PITR is enabled or disabled.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -6826,7 +7083,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Specifies if PITR is enabled or disabled.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -7055,6 +7312,57 @@ class GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult(dict):
+    def __init__(__self__, *,
+                 exclude_ips: Sequence[str],
+                 is_enabled: bool,
+                 read_endpoint_hostname_label: str,
+                 read_endpoint_ip_address: str):
+        """
+        :param Sequence[str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
+        :param str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
+        :param str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        pulumi.set(__self__, "exclude_ips", exclude_ips)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
+        pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+
+    @property
+    @pulumi.getter(name="excludeIps")
+    def exclude_ips(self) -> Sequence[str]:
+        """
+        A list of IP addresses of read replicas that are excluded from serving read requests.
+        """
+        return pulumi.get(self, "exclude_ips")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Specifies if the DB System read endpoint is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="readEndpointHostnameLabel")
+    def read_endpoint_hostname_label(self) -> str:
+        """
+        The hostname for the read endpoint of the DB System. Used for DNS.
+        """
+        return pulumi.get(self, "read_endpoint_hostname_label")
+
+    @property
+    @pulumi.getter(name="readEndpointIpAddress")
+    def read_endpoint_ip_address(self) -> str:
+        """
+        The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        return pulumi.get(self, "read_endpoint_ip_address")
 
 
 @pulumi.output_type
@@ -9211,7 +9519,7 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
         """
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param Sequence['GetMysqlDbSystemBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: The number of days automated backups are retained.
         :param str window_start_time: The start time of the maintenance window.
@@ -9243,7 +9551,7 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -9277,7 +9585,7 @@ class GetMysqlDbSystemBackupPolicyPitrPolicyResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -9285,7 +9593,7 @@ class GetMysqlDbSystemBackupPolicyPitrPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -9311,7 +9619,7 @@ class GetMysqlDbSystemChannelResult(dict):
         :param str display_name: The user-friendly name for the DB System. It does not have to be unique.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the DB System.
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param str lifecycle_details: Additional information about the current lifecycleState.
         :param Sequence['GetMysqlDbSystemChannelSourceArgs'] sources: Parameters detailing how to provision the initial data of the DB System.
         :param str state: The current state of the DB System.
@@ -9376,7 +9684,7 @@ class GetMysqlDbSystemChannelResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -10082,6 +10390,57 @@ class GetMysqlDbSystemPointInTimeRecoveryDetailResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemReadEndpointResult(dict):
+    def __init__(__self__, *,
+                 exclude_ips: Sequence[str],
+                 is_enabled: bool,
+                 read_endpoint_hostname_label: str,
+                 read_endpoint_ip_address: str):
+        """
+        :param Sequence[str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
+        :param str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
+        :param str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        pulumi.set(__self__, "exclude_ips", exclude_ips)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
+        pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+
+    @property
+    @pulumi.getter(name="excludeIps")
+    def exclude_ips(self) -> Sequence[str]:
+        """
+        A list of IP addresses of read replicas that are excluded from serving read requests.
+        """
+        return pulumi.get(self, "exclude_ips")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Specifies if the DB System read endpoint is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="readEndpointHostnameLabel")
+    def read_endpoint_hostname_label(self) -> str:
+        """
+        The hostname for the read endpoint of the DB System. Used for DNS.
+        """
+        return pulumi.get(self, "read_endpoint_hostname_label")
+
+    @property
+    @pulumi.getter(name="readEndpointIpAddress")
+    def read_endpoint_ip_address(self) -> str:
+        """
+        The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        return pulumi.get(self, "read_endpoint_ip_address")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemSecureConnectionResult(dict):
     def __init__(__self__, *,
                  certificate_generation_type: str,
@@ -10171,6 +10530,7 @@ class GetMysqlDbSystemSourceResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemsDbSystemResult(dict):
     def __init__(__self__, *,
+                 access_mode: str,
                  admin_password: str,
                  admin_username: str,
                  availability_domain: str,
@@ -10184,6 +10544,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  data_storage_size_in_gb: int,
                  data_storages: Sequence['outputs.GetMysqlDbSystemsDbSystemDataStorageResult'],
                  database_management: str,
+                 database_mode: str,
                  defined_tags: Mapping[str, str],
                  deletion_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult'],
                  description: str,
@@ -10203,6 +10564,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  point_in_time_recovery_details: Sequence['outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult'],
                  port: int,
                  port_x: int,
+                 read_endpoints: Sequence['outputs.GetMysqlDbSystemsDbSystemReadEndpointResult'],
                  secure_connections: Sequence['outputs.GetMysqlDbSystemsDbSystemSecureConnectionResult'],
                  shape_name: str,
                  shutdown_type: str,
@@ -10212,6 +10574,9 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
+        :param str access_mode: The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+               * UNRESTRICTED: the access to the database is not restricted;
+               * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         :param str availability_domain: The availability domain in which the DB System is placed.
         :param Sequence['GetMysqlDbSystemsDbSystemBackupPolicyArgs'] backup_policies: The Backup policy for the DB System.
         :param Sequence['GetMysqlDbSystemsDbSystemChannelArgs'] channels: A list with a summary of all the Channels attached to the DB System.
@@ -10223,6 +10588,9 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param Sequence['GetMysqlDbSystemsDbSystemDataStorageArgs'] data_storages: Data Storage information.
         :param str database_management: Filter DB Systems by their Database Management configuration.
+        :param str database_mode: The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+               * READ_WRITE: allow running read and write statements on the DB system;
+               * READ_ONLY: only allow running read statements on the DB system.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlDbSystemsDbSystemDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: User-provided data about the DB System.
@@ -10242,6 +10610,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param Sequence['GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs'] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param Sequence['GetMysqlDbSystemsDbSystemReadEndpointArgs'] read_endpoints: The read endpoint of a DB System.
         :param Sequence['GetMysqlDbSystemsDbSystemSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         :param Sequence['GetMysqlDbSystemsDbSystemSourceArgs'] sources: Parameters detailing how to provision the initial data of the DB System.
@@ -10250,6 +10619,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
+        pulumi.set(__self__, "access_mode", access_mode)
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -10263,6 +10633,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storages", data_storages)
         pulumi.set(__self__, "database_management", database_management)
+        pulumi.set(__self__, "database_mode", database_mode)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deletion_policies", deletion_policies)
         pulumi.set(__self__, "description", description)
@@ -10282,6 +10653,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "read_endpoints", read_endpoints)
         pulumi.set(__self__, "secure_connections", secure_connections)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "shutdown_type", shutdown_type)
@@ -10290,6 +10662,16 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="accessMode")
+    def access_mode(self) -> str:
+        """
+        The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+        * UNRESTRICTED: the access to the database is not restricted;
+        * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        """
+        return pulumi.get(self, "access_mode")
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -10388,6 +10770,16 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         Filter DB Systems by their Database Management configuration.
         """
         return pulumi.get(self, "database_management")
+
+    @property
+    @pulumi.getter(name="databaseMode")
+    def database_mode(self) -> str:
+        """
+        The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+        * READ_WRITE: allow running read and write statements on the DB system;
+        * READ_ONLY: only allow running read statements on the DB system.
+        """
+        return pulumi.get(self, "database_mode")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -10542,6 +10934,14 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter(name="readEndpoints")
+    def read_endpoints(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemReadEndpointResult']:
+        """
+        The read endpoint of a DB System.
+        """
+        return pulumi.get(self, "read_endpoints")
+
+    @property
     @pulumi.getter(name="secureConnections")
     def secure_connections(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemSecureConnectionResult']:
         """
@@ -10615,7 +11015,7 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
         """
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param Sequence['GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: The number of days automated backups are retained.
         :param str window_start_time: The start time of the maintenance window.
@@ -10647,7 +11047,7 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -10681,7 +11081,7 @@ class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -10689,7 +11089,7 @@ class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -10715,7 +11115,7 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
         :param str display_name: A filter to return only the resource matching the given display name exactly.
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the DB System.
-        :param bool is_enabled: Whether the Channel has been enabled by the user.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param str lifecycle_details: Additional information about the current lifecycleState.
         :param Sequence['GetMysqlDbSystemsDbSystemChannelSourceArgs'] sources: Parameters detailing how to provision the initial data of the DB System.
         :param str state: DbSystem Lifecycle State
@@ -10780,7 +11180,7 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Whether the Channel has been enabled by the user.
+        Specifies if the DB System read endpoint is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -11483,6 +11883,57 @@ class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult(dict):
         Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_latest_recovery_point")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemReadEndpointResult(dict):
+    def __init__(__self__, *,
+                 exclude_ips: Sequence[str],
+                 is_enabled: bool,
+                 read_endpoint_hostname_label: str,
+                 read_endpoint_ip_address: str):
+        """
+        :param Sequence[str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
+        :param bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
+        :param str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
+        :param str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        pulumi.set(__self__, "exclude_ips", exclude_ips)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
+        pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+
+    @property
+    @pulumi.getter(name="excludeIps")
+    def exclude_ips(self) -> Sequence[str]:
+        """
+        A list of IP addresses of read replicas that are excluded from serving read requests.
+        """
+        return pulumi.get(self, "exclude_ips")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Specifies if the DB System read endpoint is enabled or not.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="readEndpointHostnameLabel")
+    def read_endpoint_hostname_label(self) -> str:
+        """
+        The hostname for the read endpoint of the DB System. Used for DNS.
+        """
+        return pulumi.get(self, "read_endpoint_hostname_label")
+
+    @property
+    @pulumi.getter(name="readEndpointIpAddress")
+    def read_endpoint_ip_address(self) -> str:
+        """
+        The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        return pulumi.get(self, "read_endpoint_ip_address")
 
 
 @pulumi.output_type

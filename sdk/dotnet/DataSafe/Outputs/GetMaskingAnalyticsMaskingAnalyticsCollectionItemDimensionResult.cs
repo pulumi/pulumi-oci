@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult
     {
         /// <summary>
-        /// The OCID of the masking policy..
+        /// The OCID of the masking policy.
         /// </summary>
         public readonly string PolicyId;
         /// <summary>

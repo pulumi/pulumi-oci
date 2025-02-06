@@ -47,6 +47,8 @@ __all__ = [
     'SecurityAssessmentStatisticLowRisk',
     'SecurityAssessmentStatisticMediumRisk',
     'SecurityAssessmentStatisticPass',
+    'SensitiveDataModelReferentialRelationChild',
+    'SensitiveDataModelReferentialRelationParent',
     'SensitiveDataModelTablesForDiscovery',
     'TargetDatabaseConnectionOption',
     'TargetDatabaseCredentials',
@@ -174,6 +176,11 @@ __all__ = [
     'GetMaskingPolicyMaskingSchemasFilterResult',
     'GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult',
     'GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult',
+    'GetMaskingPolicyReferentialRelationsFilterResult',
+    'GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionResult',
+    'GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemResult',
+    'GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildResult',
+    'GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentResult',
     'GetMaskingReportMaskedColumnsFilterResult',
     'GetMaskingReportMaskedColumnsMaskedColumnCollectionResult',
     'GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult',
@@ -300,6 +307,13 @@ __all__ = [
     'GetSecurityPolicyReportsFilterResult',
     'GetSecurityPolicyReportsSecurityPolicyReportCollectionResult',
     'GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult',
+    'GetSensitiveDataModelReferentialRelationChildResult',
+    'GetSensitiveDataModelReferentialRelationParentResult',
+    'GetSensitiveDataModelReferentialRelationsFilterResult',
+    'GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionResult',
+    'GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemResult',
+    'GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildResult',
+    'GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentResult',
     'GetSensitiveDataModelSensitiveObjectsFilterResult',
     'GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult',
     'GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult',
@@ -317,6 +331,9 @@ __all__ = [
     'GetSensitiveDataModelsSensitiveDataModelCollectionResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult',
+    'GetSensitiveTypesExportsFilterResult',
+    'GetSensitiveTypesExportsSensitiveTypesExportCollectionResult',
+    'GetSensitiveTypesExportsSensitiveTypesExportCollectionItemResult',
     'GetSensitiveTypesFilterResult',
     'GetSensitiveTypesSensitiveTypeCollectionResult',
     'GetSensitiveTypesSensitiveTypeCollectionItemResult',
@@ -396,6 +413,9 @@ __all__ = [
     'GetUserAssessmentComparisonSummaryBaselineResult',
     'GetUserAssessmentComparisonSummaryCurrentResult',
     'GetUserAssessmentIgnoredTargetResult',
+    'GetUserAssessmentPasswordExpiryDateAnalyticsFilterResult',
+    'GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationResult',
+    'GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemResult',
     'GetUserAssessmentProfileAnalyticsFilterResult',
     'GetUserAssessmentProfileAnalyticsProfileAggregationResult',
     'GetUserAssessmentProfilesFilterResult',
@@ -1245,9 +1265,9 @@ class AuditProfileAuditTrail(dict):
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param str audit_profile_id: The OCID of the audit.
         :param str compartment_id: (Updatable) The OCID of the compartment that contains the audit.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: (Updatable) The description of the audit profile.
-        :param str display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        :param str display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the audit profile.
         :param bool is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -1344,7 +1364,7 @@ class AuditProfileAuditTrail(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1360,7 +1380,7 @@ class AuditProfileAuditTrail(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
@@ -2064,7 +2084,7 @@ class LibraryMasingFormatFormatEntry(dict):
                In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
                
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param str schema_name: (Updatable) The name of the schema that contains the substitution column.
         :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -2250,7 +2270,7 @@ class LibraryMasingFormatFormatEntry(dict):
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> Optional[str]:
         """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -2480,7 +2500,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
                In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
                
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param str schema_name: (Updatable) The name of the schema that contains the substitution column.
         :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -2666,7 +2686,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> Optional[str]:
         """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -4205,6 +4225,204 @@ class SecurityAssessmentStatisticPass(dict):
 
 
 @pulumi.output_type
+class SensitiveDataModelReferentialRelationChild(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appName":
+            suggest = "app_name"
+        elif key == "columnGroups":
+            suggest = "column_groups"
+        elif key == "objectType":
+            suggest = "object_type"
+        elif key == "schemaName":
+            suggest = "schema_name"
+        elif key == "sensitiveTypeIds":
+            suggest = "sensitive_type_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SensitiveDataModelReferentialRelationChild. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SensitiveDataModelReferentialRelationChild.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SensitiveDataModelReferentialRelationChild.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 app_name: str,
+                 column_groups: Sequence[str],
+                 object: str,
+                 object_type: str,
+                 schema_name: str,
+                 sensitive_type_ids: Optional[Sequence[str]] = None):
+        """
+        :param str app_name: The application name.
+        :param Sequence[str] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str object: The database object that contains the columns.
+        :param str object_type: The type of the database object that contains the sensitive column.
+        :param str schema_name: The schema name.
+        :param Sequence[str] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        if sensitive_type_ids is not None:
+            pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> str:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The database object that contains the columns.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        The schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Optional[Sequence[str]]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+
+@pulumi.output_type
+class SensitiveDataModelReferentialRelationParent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appName":
+            suggest = "app_name"
+        elif key == "columnGroups":
+            suggest = "column_groups"
+        elif key == "objectType":
+            suggest = "object_type"
+        elif key == "schemaName":
+            suggest = "schema_name"
+        elif key == "sensitiveTypeIds":
+            suggest = "sensitive_type_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SensitiveDataModelReferentialRelationParent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SensitiveDataModelReferentialRelationParent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SensitiveDataModelReferentialRelationParent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 app_name: str,
+                 column_groups: Sequence[str],
+                 object: str,
+                 object_type: str,
+                 schema_name: str,
+                 sensitive_type_ids: Optional[Sequence[str]] = None):
+        """
+        :param str app_name: The application name.
+        :param Sequence[str] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str object: The database object that contains the columns.
+        :param str object_type: The type of the database object that contains the sensitive column.
+        :param str schema_name: The schema name.
+        :param Sequence[str] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        if sensitive_type_ids is not None:
+            pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> str:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The database object that contains the columns.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        The schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Optional[Sequence[str]]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+
+@pulumi.output_type
 class SensitiveDataModelTablesForDiscovery(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -5669,7 +5887,7 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
         """
         :param str alert_policy_type: Indicates the Data Safe feature to which the alert policy belongs.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the alert policy.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -5723,7 +5941,7 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -6084,7 +6302,7 @@ class GetAlertsAlertCollectionItemResult(dict):
         :param str alert_type: Type of the alert. Indicates the Data Safe feature triggering the alert.
         :param str comment: A comment for the alert. Entered by the user.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the alert.
         :param str display_name: The display name of the alert.
         :param Mapping[str, str] feature_details: Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
@@ -6179,7 +6397,7 @@ class GetAlertsAlertCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -6390,7 +6608,7 @@ class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult(dict):
         """
         :param str audit_event_count: Total count of audit events to be retrieved from the archive for the specified date range.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description of the archive retrieval.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param str end_date: End month of the archive retrieval, in the format defined by RFC3339.
@@ -6444,7 +6662,7 @@ class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -7257,7 +7475,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
         :param str database_unique_name: Unique name of the database associated to the peer target database.
         :param str db_user_name: The name of the database user whose actions were audited.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str error_code: Oracle Error code generated by the action. Zero indicates the action was successful.
         :param str error_message: The detailed message on why the error occurred.
         :param str event_name: The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
@@ -7463,7 +7681,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -7703,7 +7921,7 @@ class GetAuditPoliciesAuditPolicyCollectionItemResult(dict):
         :param str audit_policy_id: An optional filter to return only resources that match the specified id.
         :param Sequence['GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs'] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description of the audit policy.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -7775,7 +7993,7 @@ class GetAuditPoliciesAuditPolicyCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -8459,7 +8677,7 @@ class GetAuditProfileAuditTrailResult(dict):
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param str audit_profile_id: The OCID of the audit.
         :param str compartment_id: The OCID of the compartment that contains the audit.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the audit profile.
         :param str display_name: The display name of the audit profile.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -8534,7 +8752,7 @@ class GetAuditProfileAuditTrailResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -9091,7 +9309,7 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
         :param str audit_profile_id: A optional filter to return only resources that match the specified id.
         :param Sequence['GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs'] audit_trails: Indicates the list of available audit trails on the target.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the audit profile.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -9100,7 +9318,7 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
         :param bool is_paid_usage_enabled: Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
         :param str lifecycle_details: Details about the current state of the audit profile in Data Safe.
         :param int offline_months: Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
-        :param int online_months: Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+        :param int online_months: Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
         :param str state: A optional filter to return only resources that match the specified lifecycle state.
         :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_id: A filter to return only items related to a specific target OCID.
@@ -9169,7 +9387,7 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -9241,7 +9459,7 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
     @pulumi.getter(name="onlineMonths")
     def online_months(self) -> int:
         """
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
         """
         return pulumi.get(self, "online_months")
 
@@ -9317,7 +9535,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param str audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param str audit_profile_id: A optional filter to return only resources that match the specified id.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the audit profile.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -9392,7 +9610,7 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -9710,7 +9928,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param str audit_profile_id: The OCID of the  parent audit.
         :param str audit_trail_id: A optional filter to return only resources that match the specified id.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the audit trail.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -9795,7 +10013,7 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -10190,7 +10408,7 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the private endpoint.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param str endpoint_fqdn: The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
@@ -10233,7 +10451,7 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -10454,7 +10672,7 @@ class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult(dict)
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str database_security_config_id: An optional filter to return only resources that match the specified OCID of the database security configuration resource.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the database security config.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -10505,7 +10723,7 @@ class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult(dict)
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -11281,7 +11499,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param str schema_name: The name of the schema that contains the substitution column.
         :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -11433,7 +11651,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> str:
         """
-        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -11566,7 +11784,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the format entry.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Sequence['GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs'] format_entries: An array of format entries. The combined output of all the format entries is used for masking.
@@ -11603,7 +11821,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -11730,7 +11948,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param str schema_name: The name of the schema that contains the substitution column.
         :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -11882,7 +12100,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> str:
         """
-        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -12208,7 +12426,7 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult(dict):
                  policy_id: str,
                  target_id: str):
         """
-        :param str policy_id: The OCID of the masking policy..
+        :param str policy_id: The OCID of the masking policy.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
         pulumi.set(__self__, "policy_id", policy_id)
@@ -12218,7 +12436,7 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult(dict):
     @pulumi.getter(name="policyId")
     def policy_id(self) -> str:
         """
-        The OCID of the masking policy..
+        The OCID of the masking policy.
         """
         return pulumi.get(self, "policy_id")
 
@@ -12340,7 +12558,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param str schema_name: The name of the schema that contains the database column.
         :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -12492,7 +12710,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> str:
         """
-        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -12873,7 +13091,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param str schema_name: A filter to return only items related to specific schema name.
         :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -13025,7 +13243,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> str:
         """
-        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -13139,7 +13357,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         """
         :param Sequence['GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs'] column_sources: The source of masking columns.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the masking policy.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -13200,7 +13418,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -13451,18 +13669,21 @@ class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionResu
 class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemResult(dict):
     def __init__(__self__, *,
                  description: str,
+                 health_check_type: str,
                  message: str,
                  message_type: str,
                  remediation: str,
                  timestamp: str):
         """
         :param str description: A human-readable description for the log entry.
+        :param str health_check_type: An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
         :param str message: A human-readable log entry.
         :param str message_type: A filter to return only the resources that match the specified log message type.
         :param str remediation: A human-readable log entry to remedy any error or warnings in the masking policy.
         :param str timestamp: The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "health_check_type", health_check_type)
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "message_type", message_type)
         pulumi.set(__self__, "remediation", remediation)
@@ -13475,6 +13696,14 @@ class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem
         A human-readable description for the log entry.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="healthCheckType")
+    def health_check_type(self) -> str:
+        """
+        An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+        """
+        return pulumi.get(self, "health_check_type")
 
     @property
     @pulumi.getter
@@ -13555,18 +13784,21 @@ class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult
                  defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
+                 error_count: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
                  masking_policy_id: str,
                  state: str,
                  target_id: str,
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 warning_count: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the masking health report.
         :param str display_name: A filter to return only resources that match the specified display name.
+        :param str error_count: The count of errors in the masking health report.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the health report.
         :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
@@ -13574,11 +13806,13 @@ class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        :param str warning_count: The count of warnings in the masking health report.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "error_count", error_count)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
@@ -13586,6 +13820,7 @@ class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "warning_count", warning_count)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13599,7 +13834,7 @@ class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -13618,6 +13853,14 @@ class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult
         A filter to return only resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="errorCount")
+    def error_count(self) -> str:
+        """
+        The count of errors in the masking health report.
+        """
+        return pulumi.get(self, "error_count")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -13674,6 +13917,14 @@ class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult
         The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="warningCount")
+    def warning_count(self) -> str:
+        """
+        The count of warnings in the masking health report.
+        """
+        return pulumi.get(self, "warning_count")
 
 
 @pulumi.output_type
@@ -13814,6 +14065,215 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult(dict):
         :param str schema_name: A filter to return only items related to specific schema name.
         """
         pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+
+@pulumi.output_type
+class GetMaskingPolicyReferentialRelationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemResult']):
+        """
+        :param Sequence['GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs'] items: An array of referential relation summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemResult']:
+        """
+        An array of referential relation summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 children: Sequence['outputs.GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildResult'],
+                 masking_formats: Sequence[str],
+                 masking_policy_id: str,
+                 parents: Sequence['outputs.GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentResult'],
+                 relation_type: str):
+        """
+        :param Sequence['GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs'] children: maskingPolicyColumnsInfo object has details of column group with schema details.
+        :param Sequence[str] masking_formats: The masking format associated with the parent column.
+        :param str masking_policy_id: The OCID of the masking policy.
+        :param Sequence['GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs'] parents: maskingPolicyColumnsInfo object has details of column group with schema details.
+        :param str relation_type: A filter to return columns based on their relationship with their parent columns. If set to NONE, it returns the columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+        """
+        pulumi.set(__self__, "children", children)
+        pulumi.set(__self__, "masking_formats", masking_formats)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "parents", parents)
+        pulumi.set(__self__, "relation_type", relation_type)
+
+    @property
+    @pulumi.getter
+    def children(self) -> Sequence['outputs.GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildResult']:
+        """
+        maskingPolicyColumnsInfo object has details of column group with schema details.
+        """
+        return pulumi.get(self, "children")
+
+    @property
+    @pulumi.getter(name="maskingFormats")
+    def masking_formats(self) -> Sequence[str]:
+        """
+        The masking format associated with the parent column.
+        """
+        return pulumi.get(self, "masking_formats")
+
+    @property
+    @pulumi.getter(name="maskingPolicyId")
+    def masking_policy_id(self) -> str:
+        """
+        The OCID of the masking policy.
+        """
+        return pulumi.get(self, "masking_policy_id")
+
+    @property
+    @pulumi.getter
+    def parents(self) -> Sequence['outputs.GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentResult']:
+        """
+        maskingPolicyColumnsInfo object has details of column group with schema details.
+        """
+        return pulumi.get(self, "parents")
+
+    @property
+    @pulumi.getter(name="relationType")
+    def relation_type(self) -> str:
+        """
+        A filter to return columns based on their relationship with their parent columns. If set to NONE, it returns the columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+        """
+        return pulumi.get(self, "relation_type")
+
+
+@pulumi.output_type
+class GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildResult(dict):
+    def __init__(__self__, *,
+                 object: str,
+                 object_type: str,
+                 referential_column_groups: Sequence[str],
+                 schema_name: str):
+        """
+        :param str object: A filter to return only items related to a specific object name.
+        :param str object_type: The type of the database object that contains the masking policy.
+        :param Sequence[str] referential_column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "referential_column_groups", referential_column_groups)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the masking policy.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="referentialColumnGroups")
+    def referential_column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "referential_column_groups")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+
+@pulumi.output_type
+class GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentResult(dict):
+    def __init__(__self__, *,
+                 object: str,
+                 object_type: str,
+                 referential_column_groups: Sequence[str],
+                 schema_name: str):
+        """
+        :param str object: A filter to return only items related to a specific object name.
+        :param str object_type: The type of the database object that contains the masking policy.
+        :param Sequence[str] referential_column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "referential_column_groups", referential_column_groups)
+        pulumi.set(__self__, "schema_name", schema_name)
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the masking policy.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="referentialColumnGroups")
+    def referential_column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "referential_column_groups")
 
     @property
     @pulumi.getter(name="schemaName")
@@ -14404,7 +14864,7 @@ class GetOnpremConnectorsOnPremConnectorResult(dict):
         :param str available_version: Latest available version of the on-premises connector.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str created_version: Created version of the on-premises connector.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the on-premises connector.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -14455,7 +14915,7 @@ class GetOnpremConnectorsOnPremConnectorResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -14845,7 +15305,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param Sequence[str] compliance_standards: The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         :param str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: A description of the report definition.
         :param str display_name: The name of the report definition to query.
         :param int display_order: Specifies the order in which the summary must be displayed.
@@ -14956,7 +15416,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -15416,7 +15876,7 @@ class GetReportsReportCollectionItemResult(dict):
                  type: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: Specifies a description of the report.
         :param str display_name: The name of the report definition to query.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -15456,7 +15916,7 @@ class GetReportsReportCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -15777,7 +16237,7 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
                  time_creation_started: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str difference_type: The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -15814,7 +16274,7 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -21941,7 +22401,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
                  type: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the security assessment.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -22008,7 +22468,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -23029,7 +23489,7 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the security policy.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -23066,7 +23526,7 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -23394,7 +23854,7 @@ class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult(d
                  time_updated: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the security policy deployment.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -23435,7 +23895,7 @@ class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult(d
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -24365,6 +24825,421 @@ class GetSecurityPolicyReportsSecurityPolicyReportCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetSensitiveDataModelReferentialRelationChildResult(dict):
+    def __init__(__self__, *,
+                 app_name: str,
+                 column_groups: Sequence[str],
+                 object: str,
+                 object_type: str,
+                 schema_name: str,
+                 sensitive_type_ids: Sequence[str]):
+        """
+        :param str app_name: The application name.
+        :param Sequence[str] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str object: The database object that contains the columns.
+        :param str object_type: The type of the database object that contains the sensitive column.
+        :param str schema_name: The schema name.
+        :param Sequence[str] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> str:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The database object that contains the columns.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        The schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Sequence[str]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelReferentialRelationParentResult(dict):
+    def __init__(__self__, *,
+                 app_name: str,
+                 column_groups: Sequence[str],
+                 object: str,
+                 object_type: str,
+                 schema_name: str,
+                 sensitive_type_ids: Sequence[str]):
+        """
+        :param str app_name: The application name.
+        :param Sequence[str] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str object: The database object that contains the columns.
+        :param str object_type: The type of the database object that contains the sensitive column.
+        :param str schema_name: The schema name.
+        :param Sequence[str] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> str:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The database object that contains the columns.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        The schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Sequence[str]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelReferentialRelationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 child: 'outputs.GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildResult',
+                 is_sensitive: bool,
+                 key: str,
+                 parent: 'outputs.GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentResult',
+                 relation_type: str,
+                 sensitive_data_model_id: str,
+                 state: str):
+        """
+        :param 'GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs' child: columnsInfo object has details of column group with schema details.
+        :param bool is_sensitive: Returns referential relations containing sensitive columns when true. Returns referential relations containing non sensitive columns when false.
+        :param str key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+        :param 'GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs' parent: columnsInfo object has details of column group with schema details.
+        :param str relation_type: A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+        :param str sensitive_data_model_id: The OCID of the sensitive data model.
+        :param str state: The current state of the referential relation.
+        """
+        pulumi.set(__self__, "child", child)
+        pulumi.set(__self__, "is_sensitive", is_sensitive)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "relation_type", relation_type)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def child(self) -> 'outputs.GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildResult':
+        """
+        columnsInfo object has details of column group with schema details.
+        """
+        return pulumi.get(self, "child")
+
+    @property
+    @pulumi.getter(name="isSensitive")
+    def is_sensitive(self) -> bool:
+        """
+        Returns referential relations containing sensitive columns when true. Returns referential relations containing non sensitive columns when false.
+        """
+        return pulumi.get(self, "is_sensitive")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def parent(self) -> 'outputs.GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentResult':
+        """
+        columnsInfo object has details of column group with schema details.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="relationType")
+    def relation_type(self) -> str:
+        """
+        A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+        """
+        return pulumi.get(self, "relation_type")
+
+    @property
+    @pulumi.getter(name="sensitiveDataModelId")
+    def sensitive_data_model_id(self) -> str:
+        """
+        The OCID of the sensitive data model.
+        """
+        return pulumi.get(self, "sensitive_data_model_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the referential relation.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildResult(dict):
+    def __init__(__self__, *,
+                 app_name: str,
+                 column_groups: Sequence[str],
+                 object: str,
+                 object_type: str,
+                 schema_name: str,
+                 sensitive_type_ids: Sequence[str]):
+        """
+        :param str app_name: The application name.
+        :param Sequence[str] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str object: A filter to return only items related to a specific object name.
+        :param str object_type: The type of the database object that contains the sensitive column.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        :param Sequence[str] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> str:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Sequence[str]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentResult(dict):
+    def __init__(__self__, *,
+                 app_name: str,
+                 column_groups: Sequence[str],
+                 object: str,
+                 object_type: str,
+                 schema_name: str,
+                 sensitive_type_ids: Sequence[str]):
+        """
+        :param str app_name: The application name.
+        :param Sequence[str] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param str object: A filter to return only items related to a specific object name.
+        :param str object_type: The type of the database object that contains the sensitive column.
+        :param str schema_name: A filter to return only items related to specific schema name.
+        :param Sequence[str] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> str:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> Sequence[str]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        A filter to return only items related to a specific object name.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        A filter to return only items related to specific schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Sequence[str]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+
+@pulumi.output_type
 class GetSensitiveDataModelSensitiveObjectsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -24967,7 +25842,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         """
         :param str app_suite_name: The application suite name identifying a collection of applications. The default value is GENERIC. It's useful only if maintaining a sensitive data model for a suite of applications.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the sensitive data model.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -25025,7 +25900,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -25188,6 +26063,184 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryRe
 
 
 @pulumi.output_type
+class GetSensitiveTypesExportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveTypesExportsSensitiveTypesExportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveTypesExportsSensitiveTypesExportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveTypesExportsSensitiveTypesExportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveTypesExportsSensitiveTypesExportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 is_include_all_sensitive_types: bool,
+                 sensitive_type_ids_for_exports: Sequence[str],
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the sensitive types export.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the sensitive types export.
+        :param bool is_include_all_sensitive_types: Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are exported.
+        :param Sequence[str] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export.
+        :param str state: A filter to return only the resources that match the specified lifecycle state.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the sensitive types export was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the sensitive types export was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
+        pulumi.set(__self__, "sensitive_type_ids_for_exports", sensitive_type_ids_for_exports)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the sensitive types export.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the sensitive types export.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isIncludeAllSensitiveTypes")
+    def is_include_all_sensitive_types(self) -> bool:
+        """
+        Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are exported.
+        """
+        return pulumi.get(self, "is_include_all_sensitive_types")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIdsForExports")
+    def sensitive_type_ids_for_exports(self) -> Sequence[str]:
+        """
+        The OCIDs of the sensitive types used to create sensitive types export.
+        """
+        return pulumi.get(self, "sensitive_type_ids_for_exports")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only the resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the sensitive types export was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the sensitive types export was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class GetSensitiveTypesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -25254,7 +26307,7 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str data_pattern: A regular expression to be used by data discovery for matching column data values.
         :param str default_masking_format_id: A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the sensitive type.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param str entity_type: A filter to return the sensitive type resources based on the value of their entityType attribute.
@@ -25328,7 +26381,7 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -25770,7 +26823,7 @@ class GetSqlCollectionsSqlCollectionCollectionItemResult(dict):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str db_user_name: A filter to return only items that match the specified user name.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the SQL collection.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -25829,7 +26882,7 @@ class GetSqlCollectionsSqlCollectionCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -26159,7 +27212,7 @@ class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemResult(dict):
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str current_user: The name of the user that SQL was executed as.
         :param str db_user_name: The database user name.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the SQL Firewall allowed SQL.
         :param str display_name: The display name of the SQL Firewall allowed SQL.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -26220,7 +27273,7 @@ class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -26399,7 +27452,7 @@ class GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemResult(dict):
         :param Sequence[str] allowed_client_programs: The list of allowed client programs for the SQL Firewall policy.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param str db_user_name: A filter to return only items that match the specified user name.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the SQL Firewall policy.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param str enforcement_scope: Specifies the SQL Firewall policy enforcement option.
@@ -26484,7 +27537,7 @@ class GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -27285,7 +28338,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
                  time_updated: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: Describes the target-alert policy association.
         :param str display_name: The display name of the target-alert policy association.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -27326,7 +28379,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -29027,7 +30080,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         :param Sequence['GetTargetDatabasesTargetDatabaseConnectionOptionArgs'] connection_options: Types of connection supported by Data Safe.
         :param Sequence['GetTargetDatabasesTargetDatabaseCredentialArgs'] credentials: The database credentials required for Data Safe to connect to the database.
         :param Sequence['GetTargetDatabasesTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the peer target database in Data Safe.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -29103,7 +30156,7 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -30077,6 +31130,57 @@ class GetUserAssessmentIgnoredTargetResult(dict):
 
 
 @pulumi.output_type
+class GetUserAssessmentPasswordExpiryDateAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemResult']):
+        """
+        :param Sequence['GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs'] items: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemResult']:
+        """
+        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemResult(dict):
+    def __init__(__self__):
+        pass
+
+
+@pulumi.output_type
 class GetUserAssessmentProfileAnalyticsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -30206,7 +31310,7 @@ class GetUserAssessmentProfilesProfileResult(dict):
         :param str connect_time: Specify the total elapsed time limit for a session, expressed in minutes.
         :param str cpu_per_call: Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
         :param str cpu_per_session: Specify the CPU time limit for a session, expressed in hundredth of seconds.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str failed_login_attempts: Maximum times the user is allowed in fail login before the user account is locked.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str idle_time: Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
@@ -30301,7 +31405,7 @@ class GetUserAssessmentProfilesProfileResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -30580,7 +31684,7 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetUserAssessmentUserAnalyticsUserAggregationItemResult']):
         """
-        :param Sequence['GetUserAssessmentUserAnalyticsUserAggregationItemArgs'] items: The array of user aggregation data.
+        :param Sequence['GetUserAssessmentUserAnalyticsUserAggregationItemArgs'] items: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         pulumi.set(__self__, "items", items)
 
@@ -30588,7 +31692,7 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetUserAssessmentUserAnalyticsUserAggregationItemResult']:
         """
-        The array of user aggregation data.
+        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         return pulumi.get(self, "items")
 
@@ -30638,6 +31742,7 @@ class GetUserAssessmentUsersUserResult(dict):
                  target_id: str,
                  time_last_login: str,
                  time_password_changed: str,
+                 time_password_expiry: str,
                  time_user_created: str,
                  user_category: str,
                  user_name: str,
@@ -30653,6 +31758,7 @@ class GetUserAssessmentUsersUserResult(dict):
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_last_login: The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_password_changed: The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_password_expiry: The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_user_created: The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str user_category: A filter to return only items that match the specified user category.
         :param str user_name: A filter to return only items that match the specified user name.
@@ -30668,6 +31774,7 @@ class GetUserAssessmentUsersUserResult(dict):
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_last_login", time_last_login)
         pulumi.set(__self__, "time_password_changed", time_password_changed)
+        pulumi.set(__self__, "time_password_expiry", time_password_expiry)
         pulumi.set(__self__, "time_user_created", time_user_created)
         pulumi.set(__self__, "user_category", user_category)
         pulumi.set(__self__, "user_name", user_name)
@@ -30745,6 +31852,14 @@ class GetUserAssessmentUsersUserResult(dict):
         The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_password_changed")
+
+    @property
+    @pulumi.getter(name="timePasswordExpiry")
+    def time_password_expiry(self) -> str:
+        """
+        The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_password_expiry")
 
     @property
     @pulumi.getter(name="timeUserCreated")
@@ -30876,7 +31991,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
                  type: str):
         """
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the user assessment.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -30939,7 +32054,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 

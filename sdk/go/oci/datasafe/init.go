@@ -99,12 +99,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SecurityPolicyManagement{}
 	case "oci:DataSafe/sensitiveDataModel:SensitiveDataModel":
 		r = &SensitiveDataModel{}
+	case "oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation":
+		r = &SensitiveDataModelReferentialRelation{}
 	case "oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults":
 		r = &SensitiveDataModelsApplyDiscoveryJobResults{}
 	case "oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn":
 		r = &SensitiveDataModelsSensitiveColumn{}
 	case "oci:DataSafe/sensitiveType:SensitiveType":
 		r = &SensitiveType{}
+	case "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport":
+		r = &SensitiveTypesExport{}
 	case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
 		r = &SetSecurityAssessmentBaseline{}
 	case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
@@ -345,6 +349,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/sensitiveDataModelReferentialRelation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/sensitiveDataModelsApplyDiscoveryJobResults",
 		&module{version},
 	)
@@ -356,6 +365,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/sensitiveType",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sensitiveTypesExport",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -75,6 +75,11 @@ public final class GetMaintenanceRunsMaintenanceRun {
      */
     private Boolean isDstFileUpdateEnabled;
     /**
+     * @return If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+     * 
+     */
+    private Boolean isMaintenanceRunGranular;
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -165,6 +170,11 @@ public final class GetMaintenanceRunsMaintenanceRun {
      * 
      */
     private String timeStarted;
+    /**
+     * @return The total time taken by corresponding resource activity in minutes.
+     * 
+     */
+    private Integer totalTimeTakenInMins;
 
     private GetMaintenanceRunsMaintenanceRun() {}
     /**
@@ -250,6 +260,13 @@ public final class GetMaintenanceRunsMaintenanceRun {
      */
     public Boolean isDstFileUpdateEnabled() {
         return this.isDstFileUpdateEnabled;
+    }
+    /**
+     * @return If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+     * 
+     */
+    public Boolean isMaintenanceRunGranular() {
+        return this.isMaintenanceRunGranular;
     }
     /**
      * @return Additional information about the current lifecycle state.
@@ -380,6 +397,13 @@ public final class GetMaintenanceRunsMaintenanceRun {
     public String timeStarted() {
         return this.timeStarted;
     }
+    /**
+     * @return The total time taken by corresponding resource activity in minutes.
+     * 
+     */
+    public Integer totalTimeTakenInMins() {
+        return this.totalTimeTakenInMins;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -402,6 +426,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
         private String id;
         private Boolean isCustomActionTimeoutEnabled;
         private Boolean isDstFileUpdateEnabled;
+        private Boolean isMaintenanceRunGranular;
         private String lifecycleDetails;
         private String maintenanceSubtype;
         private String maintenanceType;
@@ -421,6 +446,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
         private String timeEnded;
         private String timeScheduled;
         private String timeStarted;
+        private Integer totalTimeTakenInMins;
         public Builder() {}
         public Builder(GetMaintenanceRunsMaintenanceRun defaults) {
     	      Objects.requireNonNull(defaults);
@@ -436,6 +462,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
     	      this.id = defaults.id;
     	      this.isCustomActionTimeoutEnabled = defaults.isCustomActionTimeoutEnabled;
     	      this.isDstFileUpdateEnabled = defaults.isDstFileUpdateEnabled;
+    	      this.isMaintenanceRunGranular = defaults.isMaintenanceRunGranular;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceSubtype = defaults.maintenanceSubtype;
     	      this.maintenanceType = defaults.maintenanceType;
@@ -455,6 +482,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeScheduled = defaults.timeScheduled;
     	      this.timeStarted = defaults.timeStarted;
+    	      this.totalTimeTakenInMins = defaults.totalTimeTakenInMins;
         }
 
         @CustomType.Setter
@@ -554,6 +582,14 @@ public final class GetMaintenanceRunsMaintenanceRun {
               throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRun", "isDstFileUpdateEnabled");
             }
             this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMaintenanceRunGranular(Boolean isMaintenanceRunGranular) {
+            if (isMaintenanceRunGranular == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRun", "isMaintenanceRunGranular");
+            }
+            this.isMaintenanceRunGranular = isMaintenanceRunGranular;
             return this;
         }
         @CustomType.Setter
@@ -708,6 +744,14 @@ public final class GetMaintenanceRunsMaintenanceRun {
             this.timeStarted = timeStarted;
             return this;
         }
+        @CustomType.Setter
+        public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
+            if (totalTimeTakenInMins == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRun", "totalTimeTakenInMins");
+            }
+            this.totalTimeTakenInMins = totalTimeTakenInMins;
+            return this;
+        }
         public GetMaintenanceRunsMaintenanceRun build() {
             final var _resultValue = new GetMaintenanceRunsMaintenanceRun();
             _resultValue.compartmentId = compartmentId;
@@ -722,6 +766,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
             _resultValue.id = id;
             _resultValue.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             _resultValue.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            _resultValue.isMaintenanceRunGranular = isMaintenanceRunGranular;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceSubtype = maintenanceSubtype;
             _resultValue.maintenanceType = maintenanceType;
@@ -741,6 +786,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeScheduled = timeScheduled;
             _resultValue.timeStarted = timeStarted;
+            _resultValue.totalTimeTakenInMins = totalTimeTakenInMins;
             return _resultValue;
         }
     }

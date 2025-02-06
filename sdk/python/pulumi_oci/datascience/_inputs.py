@@ -133,6 +133,40 @@ __all__ = [
     'PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict',
+    'ScheduleActionArgs',
+    'ScheduleActionArgsDict',
+    'ScheduleActionActionDetailsArgs',
+    'ScheduleActionActionDetailsArgsDict',
+    'ScheduleActionActionDetailsCreateJobRunDetailsArgs',
+    'ScheduleActionActionDetailsCreateJobRunDetailsArgsDict',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsArgs',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict',
+    'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs',
+    'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict',
+    'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs',
+    'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict',
+    'ScheduleLogDetailsArgs',
+    'ScheduleLogDetailsArgsDict',
+    'ScheduleTriggerArgs',
+    'ScheduleTriggerArgsDict',
+    'GetContainersFilterArgs',
+    'GetContainersFilterArgsDict',
     'GetFastLaunchJobConfigsFilterArgs',
     'GetFastLaunchJobConfigsFilterArgsDict',
     'GetJobRunsFilterArgs',
@@ -161,6 +195,8 @@ __all__ = [
     'GetPrivateEndpointsFilterArgsDict',
     'GetProjectsFilterArgs',
     'GetProjectsFilterArgsDict',
+    'GetSchedulesFilterArgs',
+    'GetSchedulesFilterArgsDict',
 ]
 
 MYPY = False
@@ -5735,6 +5771,1725 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
 
 
 if not MYPY:
+    class ScheduleActionArgsDict(TypedDict):
+        action_details: pulumi.Input['ScheduleActionActionDetailsArgsDict']
+        """
+        (Updatable) Schedule Http action details
+        """
+        action_type: pulumi.Input[str]
+        """
+        (Updatable) The Schedule Action type
+        """
+elif False:
+    ScheduleActionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionArgs:
+    def __init__(__self__, *,
+                 action_details: pulumi.Input['ScheduleActionActionDetailsArgs'],
+                 action_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input['ScheduleActionActionDetailsArgs'] action_details: (Updatable) Schedule Http action details
+        :param pulumi.Input[str] action_type: (Updatable) The Schedule Action type
+        """
+        pulumi.set(__self__, "action_details", action_details)
+        pulumi.set(__self__, "action_type", action_type)
+
+    @property
+    @pulumi.getter(name="actionDetails")
+    def action_details(self) -> pulumi.Input['ScheduleActionActionDetailsArgs']:
+        """
+        (Updatable) Schedule Http action details
+        """
+        return pulumi.get(self, "action_details")
+
+    @action_details.setter
+    def action_details(self, value: pulumi.Input['ScheduleActionActionDetailsArgs']):
+        pulumi.set(self, "action_details", value)
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The Schedule Action type
+        """
+        return pulumi.get(self, "action_type")
+
+    @action_type.setter
+    def action_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "action_type", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsArgsDict(TypedDict):
+        http_action_type: pulumi.Input[str]
+        """
+        (Updatable) The type of http action to trigger.
+        """
+        create_job_run_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgsDict']]
+        """
+        (Updatable) Parameters needed to create a new job run.
+        """
+        create_pipeline_run_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict']]
+        """
+        (Updatable) The information about new PipelineRun.
+        """
+        ml_application_instance_view_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        """
+        trigger_ml_application_instance_view_flow_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict']]
+        """
+        (Updatable) Payload for trigger request endpoint
+        """
+elif False:
+    ScheduleActionActionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsArgs:
+    def __init__(__self__, *,
+                 http_action_type: pulumi.Input[str],
+                 create_job_run_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgs']] = None,
+                 create_pipeline_run_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgs']] = None,
+                 ml_application_instance_view_id: Optional[pulumi.Input[str]] = None,
+                 trigger_ml_application_instance_view_flow_details: Optional[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs']] = None):
+        """
+        :param pulumi.Input[str] http_action_type: (Updatable) The type of http action to trigger.
+        :param pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgs'] create_job_run_details: (Updatable) Parameters needed to create a new job run.
+        :param pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgs'] create_pipeline_run_details: (Updatable) The information about new PipelineRun.
+        :param pulumi.Input[str] ml_application_instance_view_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        :param pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs'] trigger_ml_application_instance_view_flow_details: (Updatable) Payload for trigger request endpoint
+        """
+        pulumi.set(__self__, "http_action_type", http_action_type)
+        if create_job_run_details is not None:
+            pulumi.set(__self__, "create_job_run_details", create_job_run_details)
+        if create_pipeline_run_details is not None:
+            pulumi.set(__self__, "create_pipeline_run_details", create_pipeline_run_details)
+        if ml_application_instance_view_id is not None:
+            pulumi.set(__self__, "ml_application_instance_view_id", ml_application_instance_view_id)
+        if trigger_ml_application_instance_view_flow_details is not None:
+            pulumi.set(__self__, "trigger_ml_application_instance_view_flow_details", trigger_ml_application_instance_view_flow_details)
+
+    @property
+    @pulumi.getter(name="httpActionType")
+    def http_action_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of http action to trigger.
+        """
+        return pulumi.get(self, "http_action_type")
+
+    @http_action_type.setter
+    def http_action_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "http_action_type", value)
+
+    @property
+    @pulumi.getter(name="createJobRunDetails")
+    def create_job_run_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgs']]:
+        """
+        (Updatable) Parameters needed to create a new job run.
+        """
+        return pulumi.get(self, "create_job_run_details")
+
+    @create_job_run_details.setter
+    def create_job_run_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgs']]):
+        pulumi.set(self, "create_job_run_details", value)
+
+    @property
+    @pulumi.getter(name="createPipelineRunDetails")
+    def create_pipeline_run_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgs']]:
+        """
+        (Updatable) The information about new PipelineRun.
+        """
+        return pulumi.get(self, "create_pipeline_run_details")
+
+    @create_pipeline_run_details.setter
+    def create_pipeline_run_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgs']]):
+        pulumi.set(self, "create_pipeline_run_details", value)
+
+    @property
+    @pulumi.getter(name="mlApplicationInstanceViewId")
+    def ml_application_instance_view_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        """
+        return pulumi.get(self, "ml_application_instance_view_id")
+
+    @ml_application_instance_view_id.setter
+    def ml_application_instance_view_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ml_application_instance_view_id", value)
+
+    @property
+    @pulumi.getter(name="triggerMlApplicationInstanceViewFlowDetails")
+    def trigger_ml_application_instance_view_flow_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs']]:
+        """
+        (Updatable) Payload for trigger request endpoint
+        """
+        return pulumi.get(self, "trigger_ml_application_instance_view_flow_details")
+
+    @trigger_ml_application_instance_view_flow_details.setter
+    def trigger_ml_application_instance_view_flow_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs']]):
+        pulumi.set(self, "trigger_ml_application_instance_view_flow_details", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreateJobRunDetailsArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly display name for the resource.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        job_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict']]
+        """
+        (Updatable) The job configuration details
+        """
+        job_environment_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict']]
+        """
+        (Updatable) Environment configuration to capture job runtime dependencies.
+        """
+        job_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        """
+        job_log_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict']]
+        """
+        (Updatable) Logging configuration for resource.
+        """
+        project_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+        """
+elif False:
+    ScheduleActionActionDetailsCreateJobRunDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreateJobRunDetailsArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 job_configuration_override_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs']] = None,
+                 job_environment_configuration_override_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs']] = None,
+                 job_id: Optional[pulumi.Input[str]] = None,
+                 job_log_configuration_override_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs']] = None,
+                 project_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs'] job_configuration_override_details: (Updatable) The job configuration details
+        :param pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs'] job_environment_configuration_override_details: (Updatable) Environment configuration to capture job runtime dependencies.
+        :param pulumi.Input[str] job_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        :param pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: (Updatable) Logging configuration for resource.
+        :param pulumi.Input[str] project_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if job_configuration_override_details is not None:
+            pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        if job_environment_configuration_override_details is not None:
+            pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if job_log_configuration_override_details is not None:
+            pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly display name for the resource.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="jobConfigurationOverrideDetails")
+    def job_configuration_override_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs']]:
+        """
+        (Updatable) The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_override_details")
+
+    @job_configuration_override_details.setter
+    def job_configuration_override_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "job_configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs']]:
+        """
+        (Updatable) Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
+
+    @job_environment_configuration_override_details.setter
+    def job_environment_configuration_override_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "job_environment_configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        """
+        return pulumi.get(self, "job_id")
+
+    @job_id.setter
+    def job_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "job_id", value)
+
+    @property
+    @pulumi.getter(name="jobLogConfigurationOverrideDetails")
+    def job_log_configuration_override_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs']]:
+        """
+        (Updatable) Logging configuration for resource.
+        """
+        return pulumi.get(self, "job_log_configuration_override_details")
+
+    @job_log_configuration_override_details.setter
+    def job_log_configuration_override_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "job_log_configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "project_id", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict(TypedDict):
+        job_type: pulumi.Input[str]
+        """
+        (Updatable) The type of job.
+        """
+        command_line_arguments: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The arguments to pass to the job.
+        """
+        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Environment variables to set for the job.
+        """
+        maximum_runtime_in_minutes: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+elif False:
+    ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs:
+    def __init__(__self__, *,
+                 job_type: pulumi.Input[str],
+                 command_line_arguments: Optional[pulumi.Input[str]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] job_type: (Updatable) The type of job.
+        :param pulumi.Input[str] command_line_arguments: (Updatable) The arguments to pass to the job.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: (Updatable) Environment variables to set for the job.
+        :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+        pulumi.set(__self__, "job_type", job_type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @job_type.setter
+    def job_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "job_type", value)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @command_line_arguments.setter
+    def command_line_arguments(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "command_line_arguments", value)
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @environment_variables.setter
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "environment_variables", value)
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @maximum_runtime_in_minutes.setter
+    def maximum_runtime_in_minutes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "maximum_runtime_in_minutes", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict(TypedDict):
+        image: pulumi.Input[str]
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        job_environment_type: pulumi.Input[str]
+        """
+        (Updatable) The environment configuration type used for job runtime.
+        """
+        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        image_digest: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        image_signature_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the container image signature
+        """
+elif False:
+    ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs:
+    def __init__(__self__, *,
+                 image: pulumi.Input[str],
+                 job_environment_type: pulumi.Input[str],
+                 cmds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 image_digest: Optional[pulumi.Input[str]] = None,
+                 image_signature_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param pulumi.Input[str] job_environment_type: (Updatable) The environment configuration type used for job runtime.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param pulumi.Input[str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param pulumi.Input[str] image_signature_id: (Updatable) OCID of the container image signature
+        """
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def image(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @image.setter
+    def image(self, value: pulumi.Input[str]):
+        pulumi.set(self, "image", value)
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+    @job_environment_type.setter
+    def job_environment_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "job_environment_type", value)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @cmds.setter
+    def cmds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "cmds", value)
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @entrypoints.setter
+    def entrypoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "entrypoints", value)
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @image_digest.setter
+    def image_digest(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_digest", value)
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @image_signature_id.setter
+    def image_signature_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_signature_id", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict(TypedDict):
+        enable_auto_log_creation: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+        """
+        enable_logging: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If customer logging is enabled for job runs.
+        """
+        log_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The log group id for where log objects are for job runs.
+        """
+        log_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The log id the job run will push logs too.
+        """
+elif False:
+    ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs:
+    def __init__(__self__, *,
+                 enable_auto_log_creation: Optional[pulumi.Input[bool]] = None,
+                 enable_logging: Optional[pulumi.Input[bool]] = None,
+                 log_group_id: Optional[pulumi.Input[str]] = None,
+                 log_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+        :param pulumi.Input[bool] enable_logging: (Updatable) If customer logging is enabled for job runs.
+        :param pulumi.Input[str] log_group_id: (Updatable) The log group id for where log objects are for job runs.
+        :param pulumi.Input[str] log_id: (Updatable) The log id the job run will push logs too.
+        """
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @enable_auto_log_creation.setter
+    def enable_auto_log_creation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_auto_log_creation", value)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If customer logging is enabled for job runs.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @enable_logging.setter
+    def enable_logging(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_logging", value)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The log group id for where log objects are for job runs.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The log id the job run will push logs too.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+        """
+        configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict']]
+        """
+        (Updatable) The configuration details of a pipeline.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly display name for the resource.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        log_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict']]
+        """
+        (Updatable) The pipeline log configuration details.
+        """
+        pipeline_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        """
+        project_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        """
+        step_override_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict']]]]
+        """
+        (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+elif False:
+    ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 configuration_override_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs']] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 log_configuration_override_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs']] = None,
+                 pipeline_id: Optional[pulumi.Input[str]] = None,
+                 project_id: Optional[pulumi.Input[str]] = None,
+                 step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs']]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+        :param pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs'] configuration_override_details: (Updatable) The configuration details of a pipeline.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: (Updatable) The pipeline log configuration details.
+        :param pulumi.Input[str] pipeline_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param pulumi.Input[str] project_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs']]] step_override_details: (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration_override_details is not None:
+            pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if log_configuration_override_details is not None:
+            pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        if pipeline_id is not None:
+            pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if step_override_details is not None:
+            pulumi.set(__self__, "step_override_details", step_override_details)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="configurationOverrideDetails")
+    def configuration_override_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs']]:
+        """
+        (Updatable) The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_override_details")
+
+    @configuration_override_details.setter
+    def configuration_override_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly display name for the resource.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="logConfigurationOverrideDetails")
+    def log_configuration_override_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs']]:
+        """
+        (Updatable) The pipeline log configuration details.
+        """
+        return pulumi.get(self, "log_configuration_override_details")
+
+    @log_configuration_override_details.setter
+    def log_configuration_override_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "log_configuration_override_details", value)
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @pipeline_id.setter
+    def pipeline_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pipeline_id", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="stepOverrideDetails")
+    def step_override_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs']]]]:
+        """
+        (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+        """
+        return pulumi.get(self, "step_override_details")
+
+    @step_override_details.setter
+    def step_override_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs']]]]):
+        pulumi.set(self, "step_override_details", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of pipeline.
+        """
+        command_line_arguments: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The command line arguments to set for steps in the pipeline.
+        """
+        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Environment variables to set for steps in the pipeline.
+        """
+        maximum_runtime_in_minutes: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+        """
+elif False:
+    ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 command_line_arguments: Optional[pulumi.Input[str]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The type of pipeline.
+        :param pulumi.Input[str] command_line_arguments: (Updatable) The command line arguments to set for steps in the pipeline.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
+        :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+        """
+        pulumi.set(__self__, "type", type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The command line arguments to set for steps in the pipeline.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @command_line_arguments.setter
+    def command_line_arguments(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "command_line_arguments", value)
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Environment variables to set for steps in the pipeline.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @environment_variables.setter
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "environment_variables", value)
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @maximum_runtime_in_minutes.setter
+    def maximum_runtime_in_minutes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "maximum_runtime_in_minutes", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict(TypedDict):
+        enable_auto_log_creation: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        enable_logging: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If customer logging is enabled for pipeline.
+        """
+        log_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs:
+    def __init__(__self__, *,
+                 enable_auto_log_creation: Optional[pulumi.Input[bool]] = None,
+                 enable_logging: Optional[pulumi.Input[bool]] = None,
+                 log_group_id: Optional[pulumi.Input[str]] = None,
+                 log_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param pulumi.Input[bool] enable_logging: (Updatable) If customer logging is enabled for pipeline.
+        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @enable_auto_log_creation.setter
+    def enable_auto_log_creation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_auto_log_creation", value)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @enable_logging.setter
+    def enable_logging(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_logging", value)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict(TypedDict):
+        step_configuration_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict']]
+        """
+        (Updatable) The configuration details of a step.
+        """
+        step_container_configuration_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]
+        """
+        (Updatable) Container Details for a step in pipeline.
+        """
+        step_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the step.
+        """
+elif False:
+    ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs:
+    def __init__(__self__, *,
+                 step_configuration_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs']] = None,
+                 step_container_configuration_details: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs']] = None,
+                 step_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs'] step_configuration_details: (Updatable) The configuration details of a step.
+        :param pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs'] step_container_configuration_details: (Updatable) Container Details for a step in pipeline.
+        :param pulumi.Input[str] step_name: (Updatable) The name of the step.
+        """
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_container_configuration_details is not None:
+            pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs']]:
+        """
+        (Updatable) The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @step_configuration_details.setter
+    def step_configuration_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs']]):
+        pulumi.set(self, "step_configuration_details", value)
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs']]:
+        """
+        (Updatable) Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
+
+    @step_container_configuration_details.setter
+    def step_container_configuration_details(self, value: Optional[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs']]):
+        pulumi.set(self, "step_container_configuration_details", value)
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+    @step_name.setter
+    def step_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "step_name", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict(TypedDict):
+        command_line_arguments: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The command line arguments to set for step.
+        """
+        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Environment variables to set for step.
+        """
+        maximum_runtime_in_minutes: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A time bound for the execution of the step.
+        """
+elif False:
+    ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 command_line_arguments: Optional[pulumi.Input[str]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] command_line_arguments: (Updatable) The command line arguments to set for step.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: (Updatable) Environment variables to set for step.
+        :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
+        """
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @command_line_arguments.setter
+    def command_line_arguments(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "command_line_arguments", value)
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @environment_variables.setter
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "environment_variables", value)
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @maximum_runtime_in_minutes.setter
+    def maximum_runtime_in_minutes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "maximum_runtime_in_minutes", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
+        container_type: pulumi.Input[str]
+        """
+        (Updatable) The type of container.
+        """
+        image: pulumi.Input[str]
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        image_digest: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        image_signature_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the container image signature
+        """
+elif False:
+    ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 container_type: pulumi.Input[str],
+                 image: pulumi.Input[str],
+                 cmds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 image_digest: Optional[pulumi.Input[str]] = None,
+                 image_signature_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] container_type: (Updatable) The type of container.
+        :param pulumi.Input[str] image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param pulumi.Input[str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param pulumi.Input[str] image_signature_id: (Updatable) OCID of the container image signature
+        """
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "image", image)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @container_type.setter
+    def container_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "container_type", value)
+
+    @property
+    @pulumi.getter
+    def image(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @image.setter
+    def image(self, value: pulumi.Input[str]):
+        pulumi.set(self, "image", value)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @cmds.setter
+    def cmds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "cmds", value)
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @entrypoints.setter
+    def entrypoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "entrypoints", value)
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @image_digest.setter
+    def image_digest(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_digest", value)
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @image_signature_id.setter
+    def image_signature_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_signature_id", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict(TypedDict):
+        parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict']]]]
+        """
+        (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+        """
+        trigger_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of trigger
+        """
+elif False:
+    ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs:
+    def __init__(__self__, *,
+                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs']]]] = None,
+                 trigger_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs']]] parameters: (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+        :param pulumi.Input[str] trigger_name: (Updatable) Name of trigger
+        """
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if trigger_name is not None:
+            pulumi.set(__self__, "trigger_name", trigger_name)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs']]]]:
+        """
+        (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+        """
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs']]]]):
+        pulumi.set(self, "parameters", value)
+
+    @property
+    @pulumi.getter(name="triggerName")
+    def trigger_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of trigger
+        """
+        return pulumi.get(self, "trigger_name")
+
+    @trigger_name.setter
+    def trigger_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "trigger_name", value)
+
+
+if not MYPY:
+    class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of trigger parameter
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Value of trigger parameter
+        """
+elif False:
+    ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of trigger parameter
+        :param pulumi.Input[str] value: (Updatable) Value of trigger parameter
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of trigger parameter
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Value of trigger parameter
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ScheduleLogDetailsArgsDict(TypedDict):
+        log_group_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+elif False:
+    ScheduleLogDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleLogDetailsArgs:
+    def __init__(__self__, *,
+                 log_group_id: pulumi.Input[str],
+                 log_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class ScheduleTriggerArgsDict(TypedDict):
+        trigger_type: pulumi.Input[str]
+        """
+        (Updatable) The schedule trigger type
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        cron_expression: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Schedule cron expression
+        """
+        frequency: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of frequency
+        """
+        interval: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The interval of frequency.
+        """
+        is_random_start_time: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        """
+        recurrence: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This recurrence field conforms to RFC-5545 formatting
+        """
+        time_end: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        time_start: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+elif False:
+    ScheduleTriggerArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleTriggerArgs:
+    def __init__(__self__, *,
+                 trigger_type: pulumi.Input[str],
+                 cron_expression: Optional[pulumi.Input[str]] = None,
+                 frequency: Optional[pulumi.Input[str]] = None,
+                 interval: Optional[pulumi.Input[int]] = None,
+                 is_random_start_time: Optional[pulumi.Input[bool]] = None,
+                 recurrence: Optional[pulumi.Input[str]] = None,
+                 time_end: Optional[pulumi.Input[str]] = None,
+                 time_start: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] trigger_type: (Updatable) The schedule trigger type
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] cron_expression: (Updatable) Schedule cron expression
+        :param pulumi.Input[str] frequency: (Updatable) The type of frequency
+        :param pulumi.Input[int] interval: (Updatable) The interval of frequency.
+        :param pulumi.Input[bool] is_random_start_time: (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        :param pulumi.Input[str] recurrence: (Updatable) This recurrence field conforms to RFC-5545 formatting
+        :param pulumi.Input[str] time_end: (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_start: (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "trigger_type", trigger_type)
+        if cron_expression is not None:
+            pulumi.set(__self__, "cron_expression", cron_expression)
+        if frequency is not None:
+            pulumi.set(__self__, "frequency", frequency)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if is_random_start_time is not None:
+            pulumi.set(__self__, "is_random_start_time", is_random_start_time)
+        if recurrence is not None:
+            pulumi.set(__self__, "recurrence", recurrence)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+
+    @property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The schedule trigger type
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trigger_type")
+
+    @trigger_type.setter
+    def trigger_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "trigger_type", value)
+
+    @property
+    @pulumi.getter(name="cronExpression")
+    def cron_expression(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Schedule cron expression
+        """
+        return pulumi.get(self, "cron_expression")
+
+    @cron_expression.setter
+    def cron_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cron_expression", value)
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The type of frequency
+        """
+        return pulumi.get(self, "frequency")
+
+    @frequency.setter
+    def frequency(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "frequency", value)
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The interval of frequency.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "interval", value)
+
+    @property
+    @pulumi.getter(name="isRandomStartTime")
+    def is_random_start_time(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        """
+        return pulumi.get(self, "is_random_start_time")
+
+    @is_random_start_time.setter
+    def is_random_start_time(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_random_start_time", value)
+
+    @property
+    @pulumi.getter
+    def recurrence(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) This recurrence field conforms to RFC-5545 formatting
+        """
+        return pulumi.get(self, "recurrence")
+
+    @recurrence.setter
+    def recurrence(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "recurrence", value)
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @time_end.setter
+    def time_end(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_end", value)
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
+
+    @time_start.setter
+    def time_start(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_start", value)
+
+
+if not MYPY:
+    class GetContainersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetContainersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetFastLaunchJobConfigsFilterArgsDict(TypedDict):
         name: str
         """
@@ -6412,6 +8167,62 @@ class GetProjectsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSchedulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of trigger parameter
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSchedulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of trigger parameter
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of trigger parameter
+        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -281,6 +281,8 @@ __all__ = [
     'ExadbVmClusterNodeResourceArgsDict',
     'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs',
     'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict',
+    'ExecutionActionActionMemberArgs',
+    'ExecutionActionActionMemberArgsDict',
     'ExternalContainerDatabaseDatabaseManagementConfigArgs',
     'ExternalContainerDatabaseDatabaseManagementConfigArgsDict',
     'ExternalContainerDatabaseStackMonitoringConfigArgs',
@@ -341,6 +343,16 @@ __all__ = [
     'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict',
     'PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs',
     'PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict',
+    'ScheduledActionActionMemberArgs',
+    'ScheduledActionActionMemberArgsDict',
+    'SchedulingPolicyCadenceStartMonthArgs',
+    'SchedulingPolicyCadenceStartMonthArgsDict',
+    'SchedulingPolicySchedulingWindowWindowPreferenceArgs',
+    'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict',
+    'SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs',
+    'SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict',
+    'SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs',
+    'SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict',
     'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs',
     'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict',
     'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs',
@@ -487,6 +499,10 @@ __all__ = [
     'GetExadbVmClustersFilterArgsDict',
     'GetExascaleDbStorageVaultsFilterArgs',
     'GetExascaleDbStorageVaultsFilterArgsDict',
+    'GetExecutionActionsFilterArgs',
+    'GetExecutionActionsFilterArgsDict',
+    'GetExecutionWindowsFilterArgs',
+    'GetExecutionWindowsFilterArgsDict',
     'GetExternalContainerDatabasesFilterArgs',
     'GetExternalContainerDatabasesFilterArgsDict',
     'GetExternalDatabaseConnectorsFilterArgs',
@@ -511,6 +527,18 @@ __all__ = [
     'GetOneoffPatchesFilterArgsDict',
     'GetPluggableDatabasesFilterArgs',
     'GetPluggableDatabasesFilterArgsDict',
+    'GetScheduledActionParamsFilterArgs',
+    'GetScheduledActionParamsFilterArgsDict',
+    'GetScheduledActionsFilterArgs',
+    'GetScheduledActionsFilterArgsDict',
+    'GetSchedulingPlansFilterArgs',
+    'GetSchedulingPlansFilterArgsDict',
+    'GetSchedulingPoliciesFilterArgs',
+    'GetSchedulingPoliciesFilterArgsDict',
+    'GetSchedulingPolicyRecommendedScheduledActionsFilterArgs',
+    'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict',
+    'GetSchedulingPolicySchedulingWindowsFilterArgs',
+    'GetSchedulingPolicySchedulingWindowsFilterArgsDict',
     'GetSystemVersionsFilterArgs',
     'GetSystemVersionsFilterArgsDict',
     'GetVmClusterNetworksFilterArgs',
@@ -14480,6 +14508,137 @@ class ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs:
 
 
 if not MYPY:
+    class ExecutionActionActionMemberArgsDict(TypedDict):
+        member_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        member_order: pulumi.Input[int]
+        """
+        (Updatable) The priority order of the execution action member.
+        """
+        estimated_time_in_mins: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The estimated time of the execution action member in minutes.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        total_time_taken_in_mins: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The total time taken by corresponding resource activity in minutes.
+        """
+elif False:
+    ExecutionActionActionMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExecutionActionActionMemberArgs:
+    def __init__(__self__, *,
+                 member_id: pulumi.Input[str],
+                 member_order: pulumi.Input[int],
+                 estimated_time_in_mins: Optional[pulumi.Input[int]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 total_time_taken_in_mins: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] member_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        :param pulumi.Input[int] member_order: (Updatable) The priority order of the execution action member.
+        :param pulumi.Input[int] estimated_time_in_mins: (Updatable) The estimated time of the execution action member in minutes.
+        :param pulumi.Input[str] status: (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+               * SCHEDULED
+               * IN_PROGRESS
+               * FAILED
+               * CANCELED
+               * DURATION_EXCEEDED
+               * RESCHEDULED
+               * SUCCEEDED
+        :param pulumi.Input[int] total_time_taken_in_mins: (Updatable) The total time taken by corresponding resource activity in minutes.
+        """
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        if estimated_time_in_mins is not None:
+            pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if total_time_taken_in_mins is not None:
+            pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+        """
+        return pulumi.get(self, "member_id")
+
+    @member_id.setter
+    def member_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "member_id", value)
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The priority order of the execution action member.
+        """
+        return pulumi.get(self, "member_order")
+
+    @member_order.setter
+    def member_order(self, value: pulumi.Input[int]):
+        pulumi.set(self, "member_order", value)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The estimated time of the execution action member in minutes.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @estimated_time_in_mins.setter
+    def estimated_time_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "estimated_time_in_mins", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+        * SCHEDULED
+        * IN_PROGRESS
+        * FAILED
+        * CANCELED
+        * DURATION_EXCEEDED
+        * RESCHEDULED
+        * SUCCEEDED
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+    @total_time_taken_in_mins.setter
+    def total_time_taken_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_time_taken_in_mins", value)
+
+
+if not MYPY:
     class ExternalContainerDatabaseDatabaseManagementConfigArgsDict(TypedDict):
         database_management_connection_id: NotRequired[pulumi.Input[str]]
         """
@@ -16404,6 +16563,307 @@ class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs:
     @is_refreshable_clone.setter
     def is_refreshable_clone(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_refreshable_clone", value)
+
+
+if not MYPY:
+    class ScheduledActionActionMemberArgsDict(TypedDict):
+        member_id: pulumi.Input[str]
+        """
+        (Updatable) The ocid of the action member.
+        """
+        member_order: pulumi.Input[int]
+        """
+        (Updatable) The order of the action member in a scheduled action.
+        """
+        estimated_time_in_mins: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The estimated time for the intended action member.
+        """
+elif False:
+    ScheduledActionActionMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduledActionActionMemberArgs:
+    def __init__(__self__, *,
+                 member_id: pulumi.Input[str],
+                 member_order: pulumi.Input[int],
+                 estimated_time_in_mins: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] member_id: (Updatable) The ocid of the action member.
+        :param pulumi.Input[int] member_order: (Updatable) The order of the action member in a scheduled action.
+        :param pulumi.Input[int] estimated_time_in_mins: (Updatable) The estimated time for the intended action member.
+        """
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_order", member_order)
+        if estimated_time_in_mins is not None:
+            pulumi.set(__self__, "estimated_time_in_mins", estimated_time_in_mins)
+
+    @property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The ocid of the action member.
+        """
+        return pulumi.get(self, "member_id")
+
+    @member_id.setter
+    def member_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "member_id", value)
+
+    @property
+    @pulumi.getter(name="memberOrder")
+    def member_order(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The order of the action member in a scheduled action.
+        """
+        return pulumi.get(self, "member_order")
+
+    @member_order.setter
+    def member_order(self, value: pulumi.Input[int]):
+        pulumi.set(self, "member_order", value)
+
+    @property
+    @pulumi.getter(name="estimatedTimeInMins")
+    def estimated_time_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The estimated time for the intended action member.
+        """
+        return pulumi.get(self, "estimated_time_in_mins")
+
+    @estimated_time_in_mins.setter
+    def estimated_time_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "estimated_time_in_mins", value)
+
+
+if not MYPY:
+    class SchedulingPolicyCadenceStartMonthArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the month of the year.
+        """
+elif False:
+    SchedulingPolicyCadenceStartMonthArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SchedulingPolicyCadenceStartMonthArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class SchedulingPolicySchedulingWindowWindowPreferenceArgsDict(TypedDict):
+        days_of_weeks: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict']]]
+        """
+        (Updatable) Days during the week when scheduling window should be performed.
+        """
+        duration: pulumi.Input[int]
+        """
+        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        is_enforced_duration: pulumi.Input[bool]
+        """
+        (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        months: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict']]]
+        """
+        (Updatable) Months during the year when scheduled window should be performed.
+        """
+        start_time: pulumi.Input[str]
+        """
+        (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        weeks_of_months: pulumi.Input[Sequence[pulumi.Input[int]]]
+        """
+        (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    SchedulingPolicySchedulingWindowWindowPreferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SchedulingPolicySchedulingWindowWindowPreferenceArgs:
+    def __init__(__self__, *,
+                 days_of_weeks: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs']]],
+                 duration: pulumi.Input[int],
+                 is_enforced_duration: pulumi.Input[bool],
+                 months: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs']]],
+                 start_time: pulumi.Input[str],
+                 weeks_of_months: pulumi.Input[Sequence[pulumi.Input[int]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when scheduling window should be performed.
+        :param pulumi.Input[int] duration: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        :param pulumi.Input[bool] is_enforced_duration: (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        :param pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs']]] months: (Updatable) Months during the year when scheduled window should be performed.
+        :param pulumi.Input[str] start_time: (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "is_enforced_duration", is_enforced_duration)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs']]]:
+        """
+        (Updatable) Days during the week when scheduling window should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs']]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+        """
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[int]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="isEnforcedDuration")
+    def is_enforced_duration(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_enforced_duration")
+
+    @is_enforced_duration.setter
+    def is_enforced_duration(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "is_enforced_duration", value)
+
+    @property
+    @pulumi.getter
+    def months(self) -> pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs']]]:
+        """
+        (Updatable) Months during the year when scheduled window should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs']]]):
+        pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
+        """
+        (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: pulumi.Input[Sequence[pulumi.Input[int]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+if not MYPY:
+    class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the day of the week.
+        """
+elif False:
+    SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the month of the year.
+        """
+elif False:
+    SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
 
 
 if not MYPY:
@@ -20432,6 +20892,100 @@ class GetExascaleDbStorageVaultsFilterArgs:
 
 
 if not MYPY:
+    class GetExecutionActionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetExecutionActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetExecutionActionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetExecutionWindowsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetExecutionWindowsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetExecutionWindowsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetExternalContainerDatabasesFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -20979,6 +21533,306 @@ class GetPluggableDatabasesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetScheduledActionParamsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetScheduledActionParamsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetScheduledActionParamsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetScheduledActionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetScheduledActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetScheduledActionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSchedulingPlansFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulingPlansFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSchedulingPlansFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSchedulingPoliciesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the month of the year.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulingPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSchedulingPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSchedulingPolicyRecommendedScheduledActionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSchedulingPolicySchedulingWindowsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the month of the year.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulingPolicySchedulingWindowsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSchedulingPolicySchedulingWindowsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

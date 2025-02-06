@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
-        /// Specifies if PITR is enabled or disabled.
+        /// Specifies if the DB System read endpoint is enabled or not.
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>

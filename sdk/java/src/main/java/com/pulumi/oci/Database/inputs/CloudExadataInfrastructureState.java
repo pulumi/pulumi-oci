@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureDefinedFileSystemConfigurationArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -260,6 +261,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    @Import(name="isSchedulingPolicyAssociated")
+    private @Nullable Output<Boolean> isSchedulingPolicyAssociated;
+
+    /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    public Optional<Output<Boolean>> isSchedulingPolicyAssociated() {
+        return Optional.ofNullable(this.isSchedulingPolicyAssociated);
     }
 
     /**
@@ -572,6 +588,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isSchedulingPolicyAssociated = $.isSchedulingPolicyAssociated;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceWindow = $.maintenanceWindow;
@@ -965,6 +982,27 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isSchedulingPolicyAssociated If true, the infrastructure is using granular maintenance scheduling preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSchedulingPolicyAssociated(@Nullable Output<Boolean> isSchedulingPolicyAssociated) {
+            $.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+            return this;
+        }
+
+        /**
+         * @param isSchedulingPolicyAssociated If true, the infrastructure is using granular maintenance scheduling preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            return isSchedulingPolicyAssociated(Output.of(isSchedulingPolicyAssociated));
         }
 
         /**

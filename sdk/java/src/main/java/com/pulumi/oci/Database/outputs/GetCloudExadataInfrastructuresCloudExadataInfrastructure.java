@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -102,6 +103,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      * 
      */
     private String id;
+    /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    private Boolean isSchedulingPolicyAssociated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
@@ -319,6 +325,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.id;
     }
     /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    public Boolean isSchedulingPolicyAssociated() {
+        return this.isSchedulingPolicyAssociated;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -478,6 +491,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isSchedulingPolicyAssociated;
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
@@ -517,6 +531,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isSchedulingPolicyAssociated = defaults.isSchedulingPolicyAssociated;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
@@ -678,6 +693,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            if (isSchedulingPolicyAssociated == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "isSchedulingPolicyAssociated");
+            }
+            this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             return this;
         }
         @CustomType.Setter
@@ -854,6 +877,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceWindows = maintenanceWindows;

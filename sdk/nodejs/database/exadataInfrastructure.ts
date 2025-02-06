@@ -222,6 +222,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly isMultiRackDeployment!: pulumi.Output<boolean>;
     /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     */
+    public /*out*/ readonly isSchedulingPolicyAssociated!: pulumi.Output<boolean>;
+    /**
      * Additional information about the current lifecycle state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -343,6 +347,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["infiniBandNetworkCidr"] = state ? state.infiniBandNetworkCidr : undefined;
             resourceInputs["isCpsOfflineReportEnabled"] = state ? state.isCpsOfflineReportEnabled : undefined;
             resourceInputs["isMultiRackDeployment"] = state ? state.isMultiRackDeployment : undefined;
+            resourceInputs["isSchedulingPolicyAssociated"] = state ? state.isSchedulingPolicyAssociated : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenanceSloStatus"] = state ? state.maintenanceSloStatus : undefined;
             resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
@@ -437,6 +442,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["dbServerVersion"] = undefined /*out*/;
             resourceInputs["definedFileSystemConfigurations"] = undefined /*out*/;
+            resourceInputs["isSchedulingPolicyAssociated"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceSloStatus"] = undefined /*out*/;
             resourceInputs["maxCpuCount"] = undefined /*out*/;
@@ -571,6 +577,10 @@ export interface ExadataInfrastructureState {
      * (Updatable) Indicates if deployment is Multi-Rack or not.
      */
     isMultiRackDeployment?: pulumi.Input<boolean>;
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     */
+    isSchedulingPolicyAssociated?: pulumi.Input<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */

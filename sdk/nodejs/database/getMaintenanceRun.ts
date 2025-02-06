@@ -92,6 +92,10 @@ export interface GetMaintenanceRunResult {
      */
     readonly isDstFileUpdateEnabled: boolean;
     /**
+     * If `FALSE`, the maintenance run doesn't support granular maintenance.
+     */
+    readonly isMaintenanceRunGranular: boolean;
+    /**
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;
@@ -165,6 +169,10 @@ export interface GetMaintenanceRunResult {
      * The date and time the maintenance run starts.
      */
     readonly timeStarted: string;
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     */
+    readonly totalTimeTakenInMins: number;
 }
 /**
  * This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.

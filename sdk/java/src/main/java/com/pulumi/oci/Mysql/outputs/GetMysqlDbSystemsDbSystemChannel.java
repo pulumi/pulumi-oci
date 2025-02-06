@@ -41,7 +41,7 @@ public final class GetMysqlDbSystemsDbSystemChannel {
      */
     private String id;
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private Boolean isEnabled;
@@ -113,7 +113,7 @@ public final class GetMysqlDbSystemsDbSystemChannel {
         return this.id;
     }
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Boolean isEnabled() {

@@ -165,6 +165,36 @@ public final class GetUserAssessmentUsersPlainArgs extends com.pulumi.resources.
     }
 
     /**
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    @Import(name="timePasswordExpiryGreaterThanOrEqualTo")
+    private @Nullable String timePasswordExpiryGreaterThanOrEqualTo;
+
+    /**
+     * @return A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    public Optional<String> timePasswordExpiryGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timePasswordExpiryGreaterThanOrEqualTo);
+    }
+
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    @Import(name="timePasswordExpiryLessThan")
+    private @Nullable String timePasswordExpiryLessThan;
+
+    /**
+     * @return A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    public Optional<String> timePasswordExpiryLessThan() {
+        return Optional.ofNullable(this.timePasswordExpiryLessThan);
+    }
+
+    /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      * **Example:** 2016-12-19T16:39:57.600Z
@@ -360,6 +390,8 @@ public final class GetUserAssessmentUsersPlainArgs extends com.pulumi.resources.
         this.targetId = $.targetId;
         this.timeLastLoginGreaterThanOrEqualTo = $.timeLastLoginGreaterThanOrEqualTo;
         this.timeLastLoginLessThan = $.timeLastLoginLessThan;
+        this.timePasswordExpiryGreaterThanOrEqualTo = $.timePasswordExpiryGreaterThanOrEqualTo;
+        this.timePasswordExpiryLessThan = $.timePasswordExpiryLessThan;
         this.timePasswordLastChangedGreaterThanOrEqualTo = $.timePasswordLastChangedGreaterThanOrEqualTo;
         this.timePasswordLastChangedLessThan = $.timePasswordLastChangedLessThan;
         this.timeUserCreatedGreaterThanOrEqualTo = $.timeUserCreatedGreaterThanOrEqualTo;
@@ -508,6 +540,28 @@ public final class GetUserAssessmentUsersPlainArgs extends com.pulumi.resources.
          */
         public Builder timeLastLoginLessThan(@Nullable String timeLastLoginLessThan) {
             $.timeLastLoginLessThan = timeLastLoginLessThan;
+            return this;
+        }
+
+        /**
+         * @param timePasswordExpiryGreaterThanOrEqualTo A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timePasswordExpiryGreaterThanOrEqualTo(@Nullable String timePasswordExpiryGreaterThanOrEqualTo) {
+            $.timePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param timePasswordExpiryLessThan A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timePasswordExpiryLessThan(@Nullable String timePasswordExpiryLessThan) {
+            $.timePasswordExpiryLessThan = timePasswordExpiryLessThan;
             return this;
         }
 

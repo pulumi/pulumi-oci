@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult
     {
         /// <summary>
-        /// Whether the Channel has been enabled by the user.
+        /// Specifies if the DB System read endpoint is enabled or not.
         /// </summary>
         public readonly bool IsEnabled;
 

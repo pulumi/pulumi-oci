@@ -123,6 +123,12 @@ namespace Pulumi.Oci.Mysql
     [OutputType]
     public sealed class GetMysqlDbSystemResult
     {
+        /// <summary>
+        /// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+        /// * UNRESTRICTED: the access to the database is not restricted;
+        /// * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// </summary>
+        public readonly string AccessMode;
         public readonly string AdminPassword;
         public readonly string AdminUsername;
         /// <summary>
@@ -169,6 +175,12 @@ namespace Pulumi.Oci.Mysql
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>
         public readonly string DatabaseManagement;
+        /// <summary>
+        /// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+        /// * READ_WRITE: allow running read and write statements on the DB system;
+        /// * READ_ONLY: only allow running read statements on the DB system.
+        /// </summary>
+        public readonly string DatabaseMode;
         /// <summary>
         /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
@@ -250,6 +262,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly int PortX;
         /// <summary>
+        /// The read endpoint of a DB System.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemReadEndpointResult> ReadEndpoints;
+        /// <summary>
         /// Secure connection configuration details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemSecureConnectionResult> SecureConnections;
@@ -281,6 +297,8 @@ namespace Pulumi.Oci.Mysql
 
         [OutputConstructor]
         private GetMysqlDbSystemResult(
+            string accessMode,
+
             string adminPassword,
 
             string adminUsername,
@@ -306,6 +324,8 @@ namespace Pulumi.Oci.Mysql
             ImmutableArray<Outputs.GetMysqlDbSystemDataStorageResult> dataStorages,
 
             string databaseManagement,
+
+            string databaseMode,
 
             string dbSystemId,
 
@@ -347,6 +367,8 @@ namespace Pulumi.Oci.Mysql
 
             int portX,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemReadEndpointResult> readEndpoints,
+
             ImmutableArray<Outputs.GetMysqlDbSystemSecureConnectionResult> secureConnections,
 
             string shapeName,
@@ -363,6 +385,7 @@ namespace Pulumi.Oci.Mysql
 
             string timeUpdated)
         {
+            AccessMode = accessMode;
             AdminPassword = adminPassword;
             AdminUsername = adminUsername;
             AvailabilityDomain = availabilityDomain;
@@ -376,6 +399,7 @@ namespace Pulumi.Oci.Mysql
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorages = dataStorages;
             DatabaseManagement = databaseManagement;
+            DatabaseMode = databaseMode;
             DbSystemId = dbSystemId;
             DefinedTags = definedTags;
             DeletionPolicies = deletionPolicies;
@@ -396,6 +420,7 @@ namespace Pulumi.Oci.Mysql
             PointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             Port = port;
             PortX = portX;
+            ReadEndpoints = readEndpoints;
             SecureConnections = secureConnections;
             ShapeName = shapeName;
             ShutdownType = shutdownType;

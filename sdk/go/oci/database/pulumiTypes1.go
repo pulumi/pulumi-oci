@@ -13,6 +13,2357 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemStoragePerformancesFilterInput is an input type that accepts GetDbSystemStoragePerformancesFilterArgs and GetDbSystemStoragePerformancesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesFilterInput` via:
+//
+//	GetDbSystemStoragePerformancesFilterArgs{...}
+type GetDbSystemStoragePerformancesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesFilterOutput() GetDbSystemStoragePerformancesFilterOutput
+	ToGetDbSystemStoragePerformancesFilterOutputWithContext(context.Context) GetDbSystemStoragePerformancesFilterOutput
+}
+
+type GetDbSystemStoragePerformancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemStoragePerformancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesFilterArgs) ToGetDbSystemStoragePerformancesFilterOutput() GetDbSystemStoragePerformancesFilterOutput {
+	return i.ToGetDbSystemStoragePerformancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesFilterArgs) ToGetDbSystemStoragePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesFilterOutput)
+}
+
+// GetDbSystemStoragePerformancesFilterArrayInput is an input type that accepts GetDbSystemStoragePerformancesFilterArray and GetDbSystemStoragePerformancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesFilterArrayInput` via:
+//
+//	GetDbSystemStoragePerformancesFilterArray{ GetDbSystemStoragePerformancesFilterArgs{...} }
+type GetDbSystemStoragePerformancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesFilterArrayOutput() GetDbSystemStoragePerformancesFilterArrayOutput
+	ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesFilterArrayOutput
+}
+
+type GetDbSystemStoragePerformancesFilterArray []GetDbSystemStoragePerformancesFilterInput
+
+func (GetDbSystemStoragePerformancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesFilterArray) ToGetDbSystemStoragePerformancesFilterArrayOutput() GetDbSystemStoragePerformancesFilterArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesFilterArray) ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesFilterArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) ToGetDbSystemStoragePerformancesFilterOutput() GetDbSystemStoragePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) ToGetDbSystemStoragePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesFilterArrayOutput) ToGetDbSystemStoragePerformancesFilterArrayOutput() GetDbSystemStoragePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterArrayOutput) ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesFilter {
+		return vs[0].([]GetDbSystemStoragePerformancesFilter)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesFilterOutput)
+}
+
+type GetDbSystemsDbSystem struct {
+	// A filter to return only resources that match the given availability domain exactly.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+	BackupSubnetId string `pulumi:"backupSubnetId"`
+	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+	ClusterName string `pulumi:"clusterName"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The number of CPU cores enabled on the DB system.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions []GetDbSystemsDbSystemDataCollectionOption `pulumi:"dataCollectionOptions"`
+	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
+	DataStoragePercentage int `pulumi:"dataStoragePercentage"`
+	// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// The Oracle Database edition that applies to all the databases on the DB system.
+	DatabaseEdition string                       `pulumi:"databaseEdition"`
+	DbHomes         []GetDbSystemsDbSystemDbHome `pulumi:"dbHomes"`
+	// The DB system options.
+	DbSystemOptions []GetDbSystemsDbSystemDbSystemOption `pulumi:"dbSystemOptions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
+	DiskRedundancy string `pulumi:"diskRedundancy"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The domain name for the DB system.
+	Domain string `pulumi:"domain"`
+	// List of the Fault Domains in which this DB system is provisioned.
+	FaultDomains []string `pulumi:"faultDomains"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The hostname for the DB system.
+	Hostname string `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id               string                               `pulumi:"id"`
+	IormConfigCaches []GetDbSystemsDbSystemIormConfigCach `pulumi:"iormConfigCaches"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        string `pulumi:"kmsKeyId"`
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+	LastPatchHistoryEntryId string `pulumi:"lastPatchHistoryEntryId"`
+	// The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+	LicenseModel string `pulumi:"licenseModel"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The port number configured for the listener on the DB system.
+	ListenerPort             int                                           `pulumi:"listenerPort"`
+	MaintenanceWindowDetails []GetDbSystemsDbSystemMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows []GetDbSystemsDbSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
+	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
+	NodeCount int `pulumi:"nodeCount"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The most recent OS Patch Version applied on the DB system.
+	OsVersion string `pulumi:"osVersion"`
+	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	PointInTimeDataDiskCloneTimestamp string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	PrivateIp                         string `pulumi:"privateIp"`
+	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
+	RecoStorageSizeInGb int `pulumi:"recoStorageSizeInGb"`
+	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
+	ScanDnsName string `pulumi:"scanDnsName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
+	ScanDnsRecordId string `pulumi:"scanDnsRecordId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	ScanIpIds []string `pulumi:"scanIpIds"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The shape of the DB system. The shape determines resources to allocate to the DB system.
+	// * For virtual machine shapes, the number of CPU cores and memory
+	// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
+	Shape  string `pulumi:"shape"`
+	Source string `pulumi:"source"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	SourceDbSystemId string `pulumi:"sourceDbSystemId"`
+	// True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
+	SparseDiskgroup bool `pulumi:"sparseDiskgroup"`
+	// The public key portion of one or more key pairs used for SSH access to the DB system.
+	SshPublicKeys []string `pulumi:"sshPublicKeys"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time the DB system was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone string `pulumi:"timeZone"`
+	// The Oracle Database version of the DB system.
+	Version string `pulumi:"version"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	VipIds []string `pulumi:"vipIds"`
+	// The OCID of the zone the DB system is associated with.
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetDbSystemsDbSystemInput is an input type that accepts GetDbSystemsDbSystemArgs and GetDbSystemsDbSystemOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemInput` via:
+//
+//	GetDbSystemsDbSystemArgs{...}
+type GetDbSystemsDbSystemInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemOutput() GetDbSystemsDbSystemOutput
+	ToGetDbSystemsDbSystemOutputWithContext(context.Context) GetDbSystemsDbSystemOutput
+}
+
+type GetDbSystemsDbSystemArgs struct {
+	// A filter to return only resources that match the given availability domain exactly.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+	BackupNetworkNsgIds pulumi.StringArrayInput `pulumi:"backupNetworkNsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+	BackupSubnetId pulumi.StringInput `pulumi:"backupSubnetId"`
+	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The number of CPU cores enabled on the DB system.
+	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions GetDbSystemsDbSystemDataCollectionOptionArrayInput `pulumi:"dataCollectionOptions"`
+	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
+	DataStoragePercentage pulumi.IntInput `pulumi:"dataStoragePercentage"`
+	// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// The Oracle Database edition that applies to all the databases on the DB system.
+	DatabaseEdition pulumi.StringInput                   `pulumi:"databaseEdition"`
+	DbHomes         GetDbSystemsDbSystemDbHomeArrayInput `pulumi:"dbHomes"`
+	// The DB system options.
+	DbSystemOptions GetDbSystemsDbSystemDbSystemOptionArrayInput `pulumi:"dbSystemOptions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
+	DiskRedundancy pulumi.StringInput `pulumi:"diskRedundancy"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The domain name for the DB system.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// List of the Fault Domains in which this DB system is provisioned.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The hostname for the DB system.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id               pulumi.StringInput                           `pulumi:"id"`
+	IormConfigCaches GetDbSystemsDbSystemIormConfigCachArrayInput `pulumi:"iormConfigCaches"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+	LastMaintenanceRunId pulumi.StringInput `pulumi:"lastMaintenanceRunId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+	LastPatchHistoryEntryId pulumi.StringInput `pulumi:"lastPatchHistoryEntryId"`
+	// The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The port number configured for the listener on the DB system.
+	ListenerPort             pulumi.IntInput                                       `pulumi:"listenerPort"`
+	MaintenanceWindowDetails GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput `pulumi:"maintenanceWindowDetails"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows GetDbSystemsDbSystemMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
+	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The most recent OS Patch Version applied on the DB system.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
+	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	PointInTimeDataDiskCloneTimestamp pulumi.StringInput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	PrivateIp                         pulumi.StringInput `pulumi:"privateIp"`
+	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
+	RecoStorageSizeInGb pulumi.IntInput `pulumi:"recoStorageSizeInGb"`
+	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
+	ScanDnsName pulumi.StringInput `pulumi:"scanDnsName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
+	ScanDnsRecordId pulumi.StringInput `pulumi:"scanDnsRecordId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	ScanIpIds pulumi.StringArrayInput `pulumi:"scanIpIds"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The shape of the DB system. The shape determines resources to allocate to the DB system.
+	// * For virtual machine shapes, the number of CPU cores and memory
+	// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
+	Shape  pulumi.StringInput `pulumi:"shape"`
+	Source pulumi.StringInput `pulumi:"source"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	SourceDbSystemId pulumi.StringInput `pulumi:"sourceDbSystemId"`
+	// True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
+	SparseDiskgroup pulumi.BoolInput `pulumi:"sparseDiskgroup"`
+	// The public key portion of one or more key pairs used for SSH access to the DB system.
+	SshPublicKeys pulumi.StringArrayInput `pulumi:"sshPublicKeys"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode pulumi.StringInput `pulumi:"storageVolumePerformanceMode"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time the DB system was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// The Oracle Database version of the DB system.
+	Version pulumi.StringInput `pulumi:"version"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+	VipIds pulumi.StringArrayInput `pulumi:"vipIds"`
+	// The OCID of the zone the DB system is associated with.
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetDbSystemsDbSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystem)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemArgs) ToGetDbSystemsDbSystemOutput() GetDbSystemsDbSystemOutput {
+	return i.ToGetDbSystemsDbSystemOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemArgs) ToGetDbSystemsDbSystemOutputWithContext(ctx context.Context) GetDbSystemsDbSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemOutput)
+}
+
+// GetDbSystemsDbSystemArrayInput is an input type that accepts GetDbSystemsDbSystemArray and GetDbSystemsDbSystemArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemArrayInput` via:
+//
+//	GetDbSystemsDbSystemArray{ GetDbSystemsDbSystemArgs{...} }
+type GetDbSystemsDbSystemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemArrayOutput() GetDbSystemsDbSystemArrayOutput
+	ToGetDbSystemsDbSystemArrayOutputWithContext(context.Context) GetDbSystemsDbSystemArrayOutput
+}
+
+type GetDbSystemsDbSystemArray []GetDbSystemsDbSystemInput
+
+func (GetDbSystemsDbSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystem)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemArray) ToGetDbSystemsDbSystemArrayOutput() GetDbSystemsDbSystemArrayOutput {
+	return i.ToGetDbSystemsDbSystemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemArray) ToGetDbSystemsDbSystemArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemArrayOutput)
+}
+
+type GetDbSystemsDbSystemOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystem)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemOutput) ToGetDbSystemsDbSystemOutput() GetDbSystemsDbSystemOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemOutput) ToGetDbSystemsDbSystemOutputWithContext(ctx context.Context) GetDbSystemsDbSystemOutput {
+	return o
+}
+
+// A filter to return only resources that match the given availability domain exactly.
+func (o GetDbSystemsDbSystemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+func (o GetDbSystemsDbSystemOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+func (o GetDbSystemsDbSystemOutput) BackupSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.BackupSubnetId }).(pulumi.StringOutput)
+}
+
+// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+func (o GetDbSystemsDbSystemOutput) ClusterName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ClusterName }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbSystemsDbSystemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The number of CPU cores enabled on the DB system.
+func (o GetDbSystemsDbSystemOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+func (o GetDbSystemsDbSystemOutput) DataCollectionOptions() GetDbSystemsDbSystemDataCollectionOptionArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemDataCollectionOption {
+		return v.DataCollectionOptions
+	}).(GetDbSystemsDbSystemDataCollectionOptionArrayOutput)
+}
+
+// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
+func (o GetDbSystemsDbSystemOutput) DataStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.DataStoragePercentage }).(pulumi.IntOutput)
+}
+
+// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
+func (o GetDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The Oracle Database edition that applies to all the databases on the DB system.
+func (o GetDbSystemsDbSystemOutput) DatabaseEdition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) DbHomes() GetDbSystemsDbSystemDbHomeArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemDbHome { return v.DbHomes }).(GetDbSystemsDbSystemDbHomeArrayOutput)
+}
+
+// The DB system options.
+func (o GetDbSystemsDbSystemOutput) DbSystemOptions() GetDbSystemsDbSystemDbSystemOptionArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemDbSystemOption { return v.DbSystemOptions }).(GetDbSystemsDbSystemDbSystemOptionArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbSystemsDbSystemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
+func (o GetDbSystemsDbSystemOutput) DiskRedundancy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.DiskRedundancy }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetDbSystemsDbSystemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The domain name for the DB system.
+func (o GetDbSystemsDbSystemOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// List of the Fault Domains in which this DB system is provisioned.
+func (o GetDbSystemsDbSystemOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbSystemsDbSystemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The hostname for the DB system.
+func (o GetDbSystemsDbSystemOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o GetDbSystemsDbSystemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) IormConfigCaches() GetDbSystemsDbSystemIormConfigCachArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemIormConfigCach { return v.IormConfigCaches }).(GetDbSystemsDbSystemIormConfigCachArrayOutput)
+}
+
+// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+func (o GetDbSystemsDbSystemOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+func (o GetDbSystemsDbSystemOutput) LastMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+func (o GetDbSystemsDbSystemOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+func (o GetDbSystemsDbSystemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbSystemsDbSystemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The port number configured for the listener on the DB system.
+func (o GetDbSystemsDbSystemOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) MaintenanceWindowDetails() GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemMaintenanceWindowDetail {
+		return v.MaintenanceWindowDetails
+	}).(GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput)
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetDbSystemsDbSystemOutput) MaintenanceWindows() GetDbSystemsDbSystemMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemMaintenanceWindow { return v.MaintenanceWindows }).(GetDbSystemsDbSystemMaintenanceWindowArrayOutput)
+}
+
+// Memory allocated to the DB system, in gigabytes.
+func (o GetDbSystemsDbSystemOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+func (o GetDbSystemsDbSystemOutput) NextMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
+func (o GetDbSystemsDbSystemOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+func (o GetDbSystemsDbSystemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The most recent OS Patch Version applied on the DB system.
+func (o GetDbSystemsDbSystemOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.OsVersion }).(pulumi.StringOutput)
+}
+
+// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetDbSystemsDbSystemOutput) PointInTimeDataDiskCloneTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.PointInTimeDataDiskCloneTimestamp }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
+func (o GetDbSystemsDbSystemOutput) RecoStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.RecoStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
+func (o GetDbSystemsDbSystemOutput) ScanDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ScanDnsName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
+func (o GetDbSystemsDbSystemOutput) ScanDnsRecordId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ScanDnsRecordId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+func (o GetDbSystemsDbSystemOutput) ScanIpIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.ScanIpIds }).(pulumi.StringArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDbSystemsDbSystemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The shape of the DB system. The shape determines resources to allocate to the DB system.
+// * For virtual machine shapes, the number of CPU cores and memory
+// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
+func (o GetDbSystemsDbSystemOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o GetDbSystemsDbSystemOutput) SourceDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.SourceDbSystemId }).(pulumi.StringOutput)
+}
+
+// True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
+func (o GetDbSystemsDbSystemOutput) SparseDiskgroup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) bool { return v.SparseDiskgroup }).(pulumi.BoolOutput)
+}
+
+// The public key portion of one or more key pairs used for SSH access to the DB system.
+func (o GetDbSystemsDbSystemOutput) SshPublicKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.SshPublicKeys }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbSystemsDbSystemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+func (o GetDbSystemsDbSystemOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+func (o GetDbSystemsDbSystemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time the DB system was created.
+func (o GetDbSystemsDbSystemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+func (o GetDbSystemsDbSystemOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// The Oracle Database version of the DB system.
+func (o GetDbSystemsDbSystemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+func (o GetDbSystemsDbSystemOutput) VipIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.VipIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the zone the DB system is associated with.
+func (o GetDbSystemsDbSystemOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystem)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemArrayOutput) ToGetDbSystemsDbSystemArrayOutput() GetDbSystemsDbSystemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemArrayOutput) ToGetDbSystemsDbSystemArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystem {
+		return vs[0].([]GetDbSystemsDbSystem)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemOutput)
+}
+
+type GetDbSystemsDbSystemDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled bool `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetDbSystemsDbSystemDataCollectionOptionInput is an input type that accepts GetDbSystemsDbSystemDataCollectionOptionArgs and GetDbSystemsDbSystemDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDataCollectionOptionInput` via:
+//
+//	GetDbSystemsDbSystemDataCollectionOptionArgs{...}
+type GetDbSystemsDbSystemDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDataCollectionOptionOutput() GetDbSystemsDbSystemDataCollectionOptionOutput
+	ToGetDbSystemsDbSystemDataCollectionOptionOutputWithContext(context.Context) GetDbSystemsDbSystemDataCollectionOptionOutput
+}
+
+type GetDbSystemsDbSystemDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetDbSystemsDbSystemDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDataCollectionOptionArgs) ToGetDbSystemsDbSystemDataCollectionOptionOutput() GetDbSystemsDbSystemDataCollectionOptionOutput {
+	return i.ToGetDbSystemsDbSystemDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDataCollectionOptionArgs) ToGetDbSystemsDbSystemDataCollectionOptionOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDataCollectionOptionOutput)
+}
+
+// GetDbSystemsDbSystemDataCollectionOptionArrayInput is an input type that accepts GetDbSystemsDbSystemDataCollectionOptionArray and GetDbSystemsDbSystemDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDataCollectionOptionArrayInput` via:
+//
+//	GetDbSystemsDbSystemDataCollectionOptionArray{ GetDbSystemsDbSystemDataCollectionOptionArgs{...} }
+type GetDbSystemsDbSystemDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDataCollectionOptionArrayOutput() GetDbSystemsDbSystemDataCollectionOptionArrayOutput
+	ToGetDbSystemsDbSystemDataCollectionOptionArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDataCollectionOptionArrayOutput
+}
+
+type GetDbSystemsDbSystemDataCollectionOptionArray []GetDbSystemsDbSystemDataCollectionOptionInput
+
+func (GetDbSystemsDbSystemDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDataCollectionOptionArray) ToGetDbSystemsDbSystemDataCollectionOptionArrayOutput() GetDbSystemsDbSystemDataCollectionOptionArrayOutput {
+	return i.ToGetDbSystemsDbSystemDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDataCollectionOptionArray) ToGetDbSystemsDbSystemDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDataCollectionOptionArrayOutput)
+}
+
+type GetDbSystemsDbSystemDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDataCollectionOptionOutput) ToGetDbSystemsDbSystemDataCollectionOptionOutput() GetDbSystemsDbSystemDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDataCollectionOptionOutput) ToGetDbSystemsDbSystemDataCollectionOptionOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetDbSystemsDbSystemDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+func (o GetDbSystemsDbSystemDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+func (o GetDbSystemsDbSystemDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetDbSystemsDbSystemDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDataCollectionOptionArrayOutput) ToGetDbSystemsDbSystemDataCollectionOptionArrayOutput() GetDbSystemsDbSystemDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDataCollectionOptionArrayOutput) ToGetDbSystemsDbSystemDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDataCollectionOption {
+		return vs[0].([]GetDbSystemsDbSystemDataCollectionOption)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDataCollectionOptionOutput)
+}
+
+type GetDbSystemsDbSystemDbHome struct {
+	CreateAsync             bool                                 `pulumi:"createAsync"`
+	DatabaseSoftwareImageId string                               `pulumi:"databaseSoftwareImageId"`
+	Databases               []GetDbSystemsDbSystemDbHomeDatabase `pulumi:"databases"`
+	DbHomeLocation          string                               `pulumi:"dbHomeLocation"`
+	DbVersion               string                               `pulumi:"dbVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id                       string `pulumi:"id"`
+	IsUnifiedAuditingEnabled bool   `pulumi:"isUnifiedAuditingEnabled"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+	LastPatchHistoryEntryId string `pulumi:"lastPatchHistoryEntryId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the DB system was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDbSystemsDbSystemDbHomeInput is an input type that accepts GetDbSystemsDbSystemDbHomeArgs and GetDbSystemsDbSystemDbHomeOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeArgs{...}
+type GetDbSystemsDbSystemDbHomeInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeOutput() GetDbSystemsDbSystemDbHomeOutput
+	ToGetDbSystemsDbSystemDbHomeOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeOutput
+}
+
+type GetDbSystemsDbSystemDbHomeArgs struct {
+	CreateAsync             pulumi.BoolInput                             `pulumi:"createAsync"`
+	DatabaseSoftwareImageId pulumi.StringInput                           `pulumi:"databaseSoftwareImageId"`
+	Databases               GetDbSystemsDbSystemDbHomeDatabaseArrayInput `pulumi:"databases"`
+	DbHomeLocation          pulumi.StringInput                           `pulumi:"dbHomeLocation"`
+	DbVersion               pulumi.StringInput                           `pulumi:"dbVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id                       pulumi.StringInput `pulumi:"id"`
+	IsUnifiedAuditingEnabled pulumi.BoolInput   `pulumi:"isUnifiedAuditingEnabled"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+	LastPatchHistoryEntryId pulumi.StringInput `pulumi:"lastPatchHistoryEntryId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the DB system was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDbSystemsDbSystemDbHomeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHome)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeArgs) ToGetDbSystemsDbSystemDbHomeOutput() GetDbSystemsDbSystemDbHomeOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeArgs) ToGetDbSystemsDbSystemDbHomeOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeOutput)
+}
+
+// GetDbSystemsDbSystemDbHomeArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeArray and GetDbSystemsDbSystemDbHomeArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeArrayInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeArray{ GetDbSystemsDbSystemDbHomeArgs{...} }
+type GetDbSystemsDbSystemDbHomeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeArrayOutput() GetDbSystemsDbSystemDbHomeArrayOutput
+	ToGetDbSystemsDbSystemDbHomeArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeArrayOutput
+}
+
+type GetDbSystemsDbSystemDbHomeArray []GetDbSystemsDbSystemDbHomeInput
+
+func (GetDbSystemsDbSystemDbHomeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHome)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeArray) ToGetDbSystemsDbSystemDbHomeArrayOutput() GetDbSystemsDbSystemDbHomeArrayOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeArray) ToGetDbSystemsDbSystemDbHomeArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeArrayOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHome)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) ToGetDbSystemsDbSystemDbHomeOutput() GetDbSystemsDbSystemDbHomeOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) ToGetDbSystemsDbSystemDbHomeOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) CreateAsync() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) bool { return v.CreateAsync }).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) Databases() GetDbSystemsDbSystemDbHomeDatabaseArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) []GetDbSystemsDbSystemDbHomeDatabase { return v.Databases }).(GetDbSystemsDbSystemDbHomeDatabaseArrayOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) DbHomeLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.DbHomeLocation }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbSystemsDbSystemDbHomeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetDbSystemsDbSystemDbHomeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbSystemsDbSystemDbHomeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o GetDbSystemsDbSystemDbHomeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) bool { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+func (o GetDbSystemsDbSystemDbHomeOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbSystemsDbSystemDbHomeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbSystemsDbSystemDbHomeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the DB system was created.
+func (o GetDbSystemsDbSystemDbHomeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHome) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHome)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeArrayOutput) ToGetDbSystemsDbSystemDbHomeArrayOutput() GetDbSystemsDbSystemDbHomeArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeArrayOutput) ToGetDbSystemsDbSystemDbHomeArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDbHomeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDbHome {
+		return vs[0].([]GetDbSystemsDbSystemDbHome)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDbHomeOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabase struct {
+	AdminPassword string `pulumi:"adminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+	BackupId                string                                               `pulumi:"backupId"`
+	BackupTdePassword       string                                               `pulumi:"backupTdePassword"`
+	CharacterSet            string                                               `pulumi:"characterSet"`
+	ConnectionStrings       []GetDbSystemsDbSystemDbHomeDatabaseConnectionString `pulumi:"connectionStrings"`
+	DatabaseId              string                                               `pulumi:"databaseId"`
+	DatabaseSoftwareImageId string                                               `pulumi:"databaseSoftwareImageId"`
+	DbBackupConfigs         []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig   `pulumi:"dbBackupConfigs"`
+	DbDomain                string                                               `pulumi:"dbDomain"`
+	DbName                  string                                               `pulumi:"dbName"`
+	DbUniqueName            string                                               `pulumi:"dbUniqueName"`
+	DbWorkload              string                                               `pulumi:"dbWorkload"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id string `pulumi:"id"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        string `pulumi:"kmsKeyId"`
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails   string   `pulumi:"lifecycleDetails"`
+	NcharacterSet      string   `pulumi:"ncharacterSet"`
+	PdbName            string   `pulumi:"pdbName"`
+	PluggableDatabases []string `pulumi:"pluggableDatabases"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State             string `pulumi:"state"`
+	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
+	// The date and time the DB system was created.
+	TimeCreated                     string `pulumi:"timeCreated"`
+	TimeStampForPointInTimeRecovery string `pulumi:"timeStampForPointInTimeRecovery"`
+	VaultId                         string `pulumi:"vaultId"`
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseArgs and GetDbSystemsDbSystemDbHomeDatabaseOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseArgs{...}
+type GetDbSystemsDbSystemDbHomeDatabaseInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseOutput() GetDbSystemsDbSystemDbHomeDatabaseOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseArgs struct {
+	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+	BackupId                pulumi.StringInput                                           `pulumi:"backupId"`
+	BackupTdePassword       pulumi.StringInput                                           `pulumi:"backupTdePassword"`
+	CharacterSet            pulumi.StringInput                                           `pulumi:"characterSet"`
+	ConnectionStrings       GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput `pulumi:"connectionStrings"`
+	DatabaseId              pulumi.StringInput                                           `pulumi:"databaseId"`
+	DatabaseSoftwareImageId pulumi.StringInput                                           `pulumi:"databaseSoftwareImageId"`
+	DbBackupConfigs         GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput   `pulumi:"dbBackupConfigs"`
+	DbDomain                pulumi.StringInput                                           `pulumi:"dbDomain"`
+	DbName                  pulumi.StringInput                                           `pulumi:"dbName"`
+	DbUniqueName            pulumi.StringInput                                           `pulumi:"dbUniqueName"`
+	DbWorkload              pulumi.StringInput                                           `pulumi:"dbWorkload"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails   pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	NcharacterSet      pulumi.StringInput      `pulumi:"ncharacterSet"`
+	PdbName            pulumi.StringInput      `pulumi:"pdbName"`
+	PluggableDatabases pulumi.StringArrayInput `pulumi:"pluggableDatabases"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State             pulumi.StringInput `pulumi:"state"`
+	TdeWalletPassword pulumi.StringInput `pulumi:"tdeWalletPassword"`
+	// The date and time the DB system was created.
+	TimeCreated                     pulumi.StringInput `pulumi:"timeCreated"`
+	TimeStampForPointInTimeRecovery pulumi.StringInput `pulumi:"timeStampForPointInTimeRecovery"`
+	VaultId                         pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDbSystemsDbSystemDbHomeDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabase)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseArgs) ToGetDbSystemsDbSystemDbHomeDatabaseOutput() GetDbSystemsDbSystemDbHomeDatabaseOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseArgs) ToGetDbSystemsDbSystemDbHomeDatabaseOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseOutput)
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseArray and GetDbSystemsDbSystemDbHomeDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseArrayInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseArray{ GetDbSystemsDbSystemDbHomeDatabaseArgs{...} }
+type GetDbSystemsDbSystemDbHomeDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseArrayOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseArrayOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseArray []GetDbSystemsDbSystemDbHomeDatabaseInput
+
+func (GetDbSystemsDbSystemDbHomeDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabase)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseArray) ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseArrayOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseArray) ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseArrayOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabase)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) ToGetDbSystemsDbSystemDbHomeDatabaseOutput() GetDbSystemsDbSystemDbHomeDatabaseOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) ToGetDbSystemsDbSystemDbHomeDatabaseOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) AdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.AdminPassword }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) BackupTdePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.BackupTdePassword }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) ConnectionStrings() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) []GetDbSystemsDbSystemDbHomeDatabaseConnectionString {
+		return v.ConnectionStrings
+	}).(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DbBackupConfigs() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
+		return v.DbBackupConfigs
+	}).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DbDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DbDomain }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DbWorkload() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DbWorkload }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) PdbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.PdbName }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) PluggableDatabases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) []string { return v.PluggableDatabases }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) TdeWalletPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.TdeWalletPassword }).(pulumi.StringOutput)
+}
+
+// The date and time the DB system was created.
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.TimeStampForPointInTimeRecovery }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabase)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDbHomeDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDbHomeDatabase {
+		return vs[0].([]GetDbSystemsDbSystemDbHomeDatabase)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDbHomeDatabaseOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionString struct {
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
+	CdbDefault           string            `pulumi:"cdbDefault"`
+	CdbIpDefault         string            `pulumi:"cdbIpDefault"`
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs and GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{...}
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs struct {
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
+	CdbDefault           pulumi.StringInput    `pulumi:"cdbDefault"`
+	CdbIpDefault         pulumi.StringInput    `pulumi:"cdbIpDefault"`
+}
+
+func (GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput)
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray and GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray{ GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{...} }
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray []GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput
+
+func (GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseConnectionString) map[string]string {
+		return v.AllConnectionStrings
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput) CdbDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseConnectionString) string { return v.CdbDefault }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput) CdbIpDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseConnectionString) string { return v.CdbIpDefault }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDbHomeDatabaseConnectionString {
+		return vs[0].([]GetDbSystemsDbSystemDbHomeDatabaseConnectionString)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig struct {
+	AutoBackupEnabled        bool                                                                      `pulumi:"autoBackupEnabled"`
+	AutoBackupWindow         string                                                                    `pulumi:"autoBackupWindow"`
+	AutoFullBackupDay        string                                                                    `pulumi:"autoFullBackupDay"`
+	AutoFullBackupWindow     string                                                                    `pulumi:"autoFullBackupWindow"`
+	BackupDeletionPolicy     string                                                                    `pulumi:"backupDeletionPolicy"`
+	BackupDestinationDetails []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
+	RecoveryWindowInDays     int                                                                       `pulumi:"recoveryWindowInDays"`
+	RunImmediateFullBackup   bool                                                                      `pulumi:"runImmediateFullBackup"`
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{...}
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs struct {
+	AutoBackupEnabled        pulumi.BoolInput                                                                  `pulumi:"autoBackupEnabled"`
+	AutoBackupWindow         pulumi.StringInput                                                                `pulumi:"autoBackupWindow"`
+	AutoFullBackupDay        pulumi.StringInput                                                                `pulumi:"autoFullBackupDay"`
+	AutoFullBackupWindow     pulumi.StringInput                                                                `pulumi:"autoFullBackupWindow"`
+	BackupDeletionPolicy     pulumi.StringInput                                                                `pulumi:"backupDeletionPolicy"`
+	BackupDestinationDetails GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
+	RecoveryWindowInDays     pulumi.IntInput                                                                   `pulumi:"recoveryWindowInDays"`
+	RunImmediateFullBackup   pulumi.BoolInput                                                                  `pulumi:"runImmediateFullBackup"`
+}
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput)
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray{ GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{...} }
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) AutoBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) bool { return v.AutoBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) AutoBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) string { return v.AutoBackupWindow }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) AutoFullBackupDay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) string { return v.AutoFullBackupDay }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) AutoFullBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) BackupDestinationDetails() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+		return v.BackupDestinationDetails
+	}).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) RecoveryWindowInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) int { return v.RecoveryWindowInDays }).(pulumi.IntOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput) RunImmediateFullBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig) bool { return v.RunImmediateFullBackup }).(pulumi.BoolOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
+		return vs[0].([]GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
+	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id   string `pulumi:"id"`
+	Type string `pulumi:"type"`
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	Id   pulumi.StringInput `pulumi:"id"`
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+// GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
+//
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+	ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return i.ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.DbrsPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+		return vs[0].([]GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+type GetDbSystemsDbSystemDbSystemOption struct {
+	// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+	StorageManagement string `pulumi:"storageManagement"`
+}
+
+// GetDbSystemsDbSystemDbSystemOptionInput is an input type that accepts GetDbSystemsDbSystemDbSystemOptionArgs and GetDbSystemsDbSystemDbSystemOptionOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbSystemOptionInput` via:
+//
+//	GetDbSystemsDbSystemDbSystemOptionArgs{...}
+type GetDbSystemsDbSystemDbSystemOptionInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbSystemOptionOutput() GetDbSystemsDbSystemDbSystemOptionOutput
+	ToGetDbSystemsDbSystemDbSystemOptionOutputWithContext(context.Context) GetDbSystemsDbSystemDbSystemOptionOutput
+}
+
+type GetDbSystemsDbSystemDbSystemOptionArgs struct {
+	// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+	StorageManagement pulumi.StringInput `pulumi:"storageManagement"`
+}
+
+func (GetDbSystemsDbSystemDbSystemOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbSystemOption)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbSystemOptionArgs) ToGetDbSystemsDbSystemDbSystemOptionOutput() GetDbSystemsDbSystemDbSystemOptionOutput {
+	return i.ToGetDbSystemsDbSystemDbSystemOptionOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbSystemOptionArgs) ToGetDbSystemsDbSystemDbSystemOptionOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbSystemOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbSystemOptionOutput)
+}
+
+// GetDbSystemsDbSystemDbSystemOptionArrayInput is an input type that accepts GetDbSystemsDbSystemDbSystemOptionArray and GetDbSystemsDbSystemDbSystemOptionArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemDbSystemOptionArrayInput` via:
+//
+//	GetDbSystemsDbSystemDbSystemOptionArray{ GetDbSystemsDbSystemDbSystemOptionArgs{...} }
+type GetDbSystemsDbSystemDbSystemOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemDbSystemOptionArrayOutput() GetDbSystemsDbSystemDbSystemOptionArrayOutput
+	ToGetDbSystemsDbSystemDbSystemOptionArrayOutputWithContext(context.Context) GetDbSystemsDbSystemDbSystemOptionArrayOutput
+}
+
+type GetDbSystemsDbSystemDbSystemOptionArray []GetDbSystemsDbSystemDbSystemOptionInput
+
+func (GetDbSystemsDbSystemDbSystemOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbSystemOption)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemDbSystemOptionArray) ToGetDbSystemsDbSystemDbSystemOptionArrayOutput() GetDbSystemsDbSystemDbSystemOptionArrayOutput {
+	return i.ToGetDbSystemsDbSystemDbSystemOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemDbSystemOptionArray) ToGetDbSystemsDbSystemDbSystemOptionArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbSystemOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemDbSystemOptionArrayOutput)
+}
+
+type GetDbSystemsDbSystemDbSystemOptionOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbSystemOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemDbSystemOption)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbSystemOptionOutput) ToGetDbSystemsDbSystemDbSystemOptionOutput() GetDbSystemsDbSystemDbSystemOptionOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbSystemOptionOutput) ToGetDbSystemsDbSystemDbSystemOptionOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbSystemOptionOutput {
+	return o
+}
+
+// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+func (o GetDbSystemsDbSystemDbSystemOptionOutput) StorageManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbSystemOption) string { return v.StorageManagement }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemDbSystemOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemDbSystemOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemDbSystemOption)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemDbSystemOptionArrayOutput) ToGetDbSystemsDbSystemDbSystemOptionArrayOutput() GetDbSystemsDbSystemDbSystemOptionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbSystemOptionArrayOutput) ToGetDbSystemsDbSystemDbSystemOptionArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemDbSystemOptionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemDbSystemOptionArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemDbSystemOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemDbSystemOption {
+		return vs[0].([]GetDbSystemsDbSystemDbSystemOption)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemDbSystemOptionOutput)
+}
+
+type GetDbSystemsDbSystemIormConfigCach struct {
+	DbPlans    []GetDbSystemsDbSystemIormConfigCachDbPlan `pulumi:"dbPlans"`
+	DbSystemId string                                     `pulumi:"dbSystemId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	Objective        string `pulumi:"objective"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+}
+
+// GetDbSystemsDbSystemIormConfigCachInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachArgs and GetDbSystemsDbSystemIormConfigCachOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachInput` via:
+//
+//	GetDbSystemsDbSystemIormConfigCachArgs{...}
+type GetDbSystemsDbSystemIormConfigCachInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemIormConfigCachOutput() GetDbSystemsDbSystemIormConfigCachOutput
+	ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachOutput
+}
+
+type GetDbSystemsDbSystemIormConfigCachArgs struct {
+	DbPlans    GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput `pulumi:"dbPlans"`
+	DbSystemId pulumi.StringInput                                 `pulumi:"dbSystemId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	Objective        pulumi.StringInput `pulumi:"objective"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetDbSystemsDbSystemIormConfigCachArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachArgs) ToGetDbSystemsDbSystemIormConfigCachOutput() GetDbSystemsDbSystemIormConfigCachOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachArgs) ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachOutput)
+}
+
+// GetDbSystemsDbSystemIormConfigCachArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachArray and GetDbSystemsDbSystemIormConfigCachArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachArrayInput` via:
+//
+//	GetDbSystemsDbSystemIormConfigCachArray{ GetDbSystemsDbSystemIormConfigCachArgs{...} }
+type GetDbSystemsDbSystemIormConfigCachArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemIormConfigCachArrayOutput() GetDbSystemsDbSystemIormConfigCachArrayOutput
+	ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachArrayOutput
+}
+
+type GetDbSystemsDbSystemIormConfigCachArray []GetDbSystemsDbSystemIormConfigCachInput
+
+func (GetDbSystemsDbSystemIormConfigCachArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachArray) ToGetDbSystemsDbSystemIormConfigCachArrayOutput() GetDbSystemsDbSystemIormConfigCachArrayOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachArray) ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachArrayOutput)
+}
+
+type GetDbSystemsDbSystemIormConfigCachOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemIormConfigCachOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachOutput) ToGetDbSystemsDbSystemIormConfigCachOutput() GetDbSystemsDbSystemIormConfigCachOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachOutput) ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachOutput) DbPlans() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) []GetDbSystemsDbSystemIormConfigCachDbPlan {
+		return v.DbPlans
+	}).(GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput)
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDbSystemsDbSystemIormConfigCachOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachOutput) Objective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.Objective }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetDbSystemsDbSystemIormConfigCachOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemIormConfigCachArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemIormConfigCachArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachArrayOutput) ToGetDbSystemsDbSystemIormConfigCachArrayOutput() GetDbSystemsDbSystemIormConfigCachArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachArrayOutput) ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemIormConfigCachOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemIormConfigCach {
+		return vs[0].([]GetDbSystemsDbSystemIormConfigCach)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemIormConfigCachOutput)
+}
+
+type GetDbSystemsDbSystemIormConfigCachDbPlan struct {
+	DbName          string `pulumi:"dbName"`
+	FlashCacheLimit string `pulumi:"flashCacheLimit"`
+	Share           int    `pulumi:"share"`
+}
+
+// GetDbSystemsDbSystemIormConfigCachDbPlanInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachDbPlanArgs and GetDbSystemsDbSystemIormConfigCachDbPlanOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachDbPlanInput` via:
+//
+//	GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...}
+type GetDbSystemsDbSystemIormConfigCachDbPlanInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemIormConfigCachDbPlanOutput() GetDbSystemsDbSystemIormConfigCachDbPlanOutput
+	ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanOutput
+}
+
+type GetDbSystemsDbSystemIormConfigCachDbPlanArgs struct {
+	DbName          pulumi.StringInput `pulumi:"dbName"`
+	FlashCacheLimit pulumi.StringInput `pulumi:"flashCacheLimit"`
+	Share           pulumi.IntInput    `pulumi:"share"`
+}
+
+func (GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutput() GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachDbPlanOutput)
+}
+
+// GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachDbPlanArray and GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput` via:
+//
+//	GetDbSystemsDbSystemIormConfigCachDbPlanArray{ GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...} }
+type GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput
+	ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput
+}
+
+type GetDbSystemsDbSystemIormConfigCachDbPlanArray []GetDbSystemsDbSystemIormConfigCachDbPlanInput
+
+func (GetDbSystemsDbSystemIormConfigCachDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachDbPlanArray) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemIormConfigCachDbPlanArray) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput)
+}
+
+type GetDbSystemsDbSystemIormConfigCachDbPlanOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemIormConfigCachDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutput() GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCachDbPlan) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCachDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCachDbPlan) int { return v.Share }).(pulumi.IntOutput)
+}
+
+type GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemIormConfigCachDbPlan {
+		return vs[0].([]GetDbSystemsDbSystemIormConfigCachDbPlan)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemIormConfigCachDbPlanOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindow struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetDbSystemsDbSystemMaintenanceWindowMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	SkipRus    []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowArgs and GetDbSystemsDbSystemMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowArgs{...}
+type GetDbSystemsDbSystemMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowOutput() GetDbSystemsDbSystemMaintenanceWindowOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetDbSystemsDbSystemMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowArgs) ToGetDbSystemsDbSystemMaintenanceWindowOutput() GetDbSystemsDbSystemMaintenanceWindowOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowArgs) ToGetDbSystemsDbSystemMaintenanceWindowOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowOutput)
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowArray and GetDbSystemsDbSystemMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowArrayInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowArray{ GetDbSystemsDbSystemMaintenanceWindowArgs{...} }
+type GetDbSystemsDbSystemMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowArrayOutput() GetDbSystemsDbSystemMaintenanceWindowArrayOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowArrayOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowArrayOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowArray []GetDbSystemsDbSystemMaintenanceWindowInput
+
+func (GetDbSystemsDbSystemMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowArray) ToGetDbSystemsDbSystemMaintenanceWindowArrayOutput() GetDbSystemsDbSystemMaintenanceWindowArrayOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowArray) ToGetDbSystemsDbSystemMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) ToGetDbSystemsDbSystemMaintenanceWindowOutput() GetDbSystemsDbSystemMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) ToGetDbSystemsDbSystemMaintenanceWindowOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) DaysOfWeeks() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) []GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) Months() GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) []GetDbSystemsDbSystemMaintenanceWindowMonth {
+		return v.Months
+	}).(GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) string { return v.Preference }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetDbSystemsDbSystemMaintenanceWindowOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindow) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowArrayOutput() GetDbSystemsDbSystemMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemMaintenanceWindow {
+		return vs[0].([]GetDbSystemsDbSystemMaintenanceWindow)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemMaintenanceWindowOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs and GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{...}
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput)
+}
+
+// GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray and GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput` via:
+//
+//	GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray{ GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{...} }
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput
+	ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Context) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray []GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput
+
+func (GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput {
+	return i.ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput() GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput) ToGetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek {
+		return vs[0].([]GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput)
+}
+
 type GetDbSystemsDbSystemMaintenanceWindowDetail struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
@@ -2060,6 +4411,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	IsCpsOfflineReportEnabled bool `pulumi:"isCpsOfflineReportEnabled"`
 	// Indicates if deployment is Multi-Rack or not.
 	IsMultiRackDeployment bool `pulumi:"isMultiRackDeployment"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated bool `pulumi:"isSchedulingPolicyAssociated"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -2170,6 +4523,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	IsCpsOfflineReportEnabled pulumi.BoolInput `pulumi:"isCpsOfflineReportEnabled"`
 	// Indicates if deployment is Multi-Rack or not.
 	IsMultiRackDeployment pulumi.BoolInput `pulumi:"isMultiRackDeployment"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated pulumi.BoolInput `pulumi:"isSchedulingPolicyAssociated"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -2408,6 +4763,11 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) IsCpsOfflineReport
 // Indicates if deployment is Multi-Rack or not.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) IsMultiRackDeployment() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) bool { return v.IsMultiRackDeployment }).(pulumi.BoolOutput)
+}
+
+// If true, the infrastructure is using granular maintenance scheduling preference.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) IsSchedulingPolicyAssociated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) bool { return v.IsSchedulingPolicyAssociated }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.
@@ -6459,6 +8819,1046 @@ func (o GetExascaleDbStorageVaultsFilterArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExascaleDbStorageVaultsFilter {
 		return vs[0].([]GetExascaleDbStorageVaultsFilter)[vs[1].(int)]
 	}).(GetExascaleDbStorageVaultsFilterOutput)
+}
+
+type GetExecutionActionActionMember struct {
+	// The estimated time of the execution action in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId string `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder int `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status string `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetExecutionActionActionMemberInput is an input type that accepts GetExecutionActionActionMemberArgs and GetExecutionActionActionMemberOutput values.
+// You can construct a concrete instance of `GetExecutionActionActionMemberInput` via:
+//
+//	GetExecutionActionActionMemberArgs{...}
+type GetExecutionActionActionMemberInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionActionMemberOutput() GetExecutionActionActionMemberOutput
+	ToGetExecutionActionActionMemberOutputWithContext(context.Context) GetExecutionActionActionMemberOutput
+}
+
+type GetExecutionActionActionMemberArgs struct {
+	// The estimated time of the execution action in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status pulumi.StringInput `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetExecutionActionActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetExecutionActionActionMemberArgs) ToGetExecutionActionActionMemberOutput() GetExecutionActionActionMemberOutput {
+	return i.ToGetExecutionActionActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionActionMemberArgs) ToGetExecutionActionActionMemberOutputWithContext(ctx context.Context) GetExecutionActionActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionActionMemberOutput)
+}
+
+// GetExecutionActionActionMemberArrayInput is an input type that accepts GetExecutionActionActionMemberArray and GetExecutionActionActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetExecutionActionActionMemberArrayInput` via:
+//
+//	GetExecutionActionActionMemberArray{ GetExecutionActionActionMemberArgs{...} }
+type GetExecutionActionActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionActionMemberArrayOutput() GetExecutionActionActionMemberArrayOutput
+	ToGetExecutionActionActionMemberArrayOutputWithContext(context.Context) GetExecutionActionActionMemberArrayOutput
+}
+
+type GetExecutionActionActionMemberArray []GetExecutionActionActionMemberInput
+
+func (GetExecutionActionActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetExecutionActionActionMemberArray) ToGetExecutionActionActionMemberArrayOutput() GetExecutionActionActionMemberArrayOutput {
+	return i.ToGetExecutionActionActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionActionMemberArray) ToGetExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetExecutionActionActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionActionMemberArrayOutput)
+}
+
+type GetExecutionActionActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetExecutionActionActionMemberOutput) ToGetExecutionActionActionMemberOutput() GetExecutionActionActionMemberOutput {
+	return o
+}
+
+func (o GetExecutionActionActionMemberOutput) ToGetExecutionActionActionMemberOutputWithContext(ctx context.Context) GetExecutionActionActionMemberOutput {
+	return o
+}
+
+// The estimated time of the execution action in minutes.
+func (o GetExecutionActionActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionActionMember) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+func (o GetExecutionActionActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionActionMember) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The priority order of the execution action member.
+func (o GetExecutionActionActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionActionMember) int { return v.MemberOrder }).(pulumi.IntOutput)
+}
+
+// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+// * SCHEDULED
+// * IN_PROGRESS
+// * FAILED
+// * CANCELED
+// * DURATION_EXCEEDED
+// * RESCHEDULED
+// * SUCCEEDED
+func (o GetExecutionActionActionMemberOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionActionMember) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetExecutionActionActionMemberOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionActionMember) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+type GetExecutionActionActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetExecutionActionActionMemberArrayOutput) ToGetExecutionActionActionMemberArrayOutput() GetExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionActionMemberArrayOutput) ToGetExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionActionMemberArrayOutput) Index(i pulumi.IntInput) GetExecutionActionActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExecutionActionActionMember {
+		return vs[0].([]GetExecutionActionActionMember)[vs[1].(int)]
+	}).(GetExecutionActionActionMemberOutput)
+}
+
+type GetExecutionActionsExecutionAction struct {
+	// List of action members of this execution action.
+	ActionMembers []GetExecutionActionsExecutionActionActionMember `pulumi:"actionMembers"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams map[string]string `pulumi:"actionParams"`
+	// The action type of the execution action being performed
+	ActionType string `pulumi:"actionType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the execution action.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time of the execution action in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The priority order of the execution action.
+	ExecutionActionOrder int `pulumi:"executionActionOrder"`
+	// A filter to return only resources that match the given execution wondow id.
+	ExecutionWindowId string `pulumi:"executionWindowId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution action.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the execution action was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time that the execution action was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetExecutionActionsExecutionActionInput is an input type that accepts GetExecutionActionsExecutionActionArgs and GetExecutionActionsExecutionActionOutput values.
+// You can construct a concrete instance of `GetExecutionActionsExecutionActionInput` via:
+//
+//	GetExecutionActionsExecutionActionArgs{...}
+type GetExecutionActionsExecutionActionInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionsExecutionActionOutput() GetExecutionActionsExecutionActionOutput
+	ToGetExecutionActionsExecutionActionOutputWithContext(context.Context) GetExecutionActionsExecutionActionOutput
+}
+
+type GetExecutionActionsExecutionActionArgs struct {
+	// List of action members of this execution action.
+	ActionMembers GetExecutionActionsExecutionActionActionMemberArrayInput `pulumi:"actionMembers"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams pulumi.StringMapInput `pulumi:"actionParams"`
+	// The action type of the execution action being performed
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the execution action.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time of the execution action in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The priority order of the execution action.
+	ExecutionActionOrder pulumi.IntInput `pulumi:"executionActionOrder"`
+	// A filter to return only resources that match the given execution wondow id.
+	ExecutionWindowId pulumi.StringInput `pulumi:"executionWindowId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution action.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the execution action was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time that the execution action was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetExecutionActionsExecutionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionsExecutionAction)(nil)).Elem()
+}
+
+func (i GetExecutionActionsExecutionActionArgs) ToGetExecutionActionsExecutionActionOutput() GetExecutionActionsExecutionActionOutput {
+	return i.ToGetExecutionActionsExecutionActionOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionsExecutionActionArgs) ToGetExecutionActionsExecutionActionOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionsExecutionActionOutput)
+}
+
+// GetExecutionActionsExecutionActionArrayInput is an input type that accepts GetExecutionActionsExecutionActionArray and GetExecutionActionsExecutionActionArrayOutput values.
+// You can construct a concrete instance of `GetExecutionActionsExecutionActionArrayInput` via:
+//
+//	GetExecutionActionsExecutionActionArray{ GetExecutionActionsExecutionActionArgs{...} }
+type GetExecutionActionsExecutionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionsExecutionActionArrayOutput() GetExecutionActionsExecutionActionArrayOutput
+	ToGetExecutionActionsExecutionActionArrayOutputWithContext(context.Context) GetExecutionActionsExecutionActionArrayOutput
+}
+
+type GetExecutionActionsExecutionActionArray []GetExecutionActionsExecutionActionInput
+
+func (GetExecutionActionsExecutionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionsExecutionAction)(nil)).Elem()
+}
+
+func (i GetExecutionActionsExecutionActionArray) ToGetExecutionActionsExecutionActionArrayOutput() GetExecutionActionsExecutionActionArrayOutput {
+	return i.ToGetExecutionActionsExecutionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionsExecutionActionArray) ToGetExecutionActionsExecutionActionArrayOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionsExecutionActionArrayOutput)
+}
+
+type GetExecutionActionsExecutionActionOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionsExecutionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionsExecutionAction)(nil)).Elem()
+}
+
+func (o GetExecutionActionsExecutionActionOutput) ToGetExecutionActionsExecutionActionOutput() GetExecutionActionsExecutionActionOutput {
+	return o
+}
+
+func (o GetExecutionActionsExecutionActionOutput) ToGetExecutionActionsExecutionActionOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionOutput {
+	return o
+}
+
+// List of action members of this execution action.
+func (o GetExecutionActionsExecutionActionOutput) ActionMembers() GetExecutionActionsExecutionActionActionMemberArrayOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) []GetExecutionActionsExecutionActionActionMember {
+		return v.ActionMembers
+	}).(GetExecutionActionsExecutionActionActionMemberArrayOutput)
+}
+
+// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+func (o GetExecutionActionsExecutionActionOutput) ActionParams() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) map[string]string { return v.ActionParams }).(pulumi.StringMapOutput)
+}
+
+// The action type of the execution action being performed
+func (o GetExecutionActionsExecutionActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExecutionActionsExecutionActionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExecutionActionsExecutionActionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description of the execution action.
+func (o GetExecutionActionsExecutionActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExecutionActionsExecutionActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated time of the execution action in minutes.
+func (o GetExecutionActionsExecutionActionOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// The priority order of the execution action.
+func (o GetExecutionActionsExecutionActionOutput) ExecutionActionOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) int { return v.ExecutionActionOrder }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given execution wondow id.
+func (o GetExecutionActionsExecutionActionOutput) ExecutionWindowId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.ExecutionWindowId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExecutionActionsExecutionActionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution action.
+func (o GetExecutionActionsExecutionActionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExecutionActionsExecutionActionOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+func (o GetExecutionActionsExecutionActionOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.LifecycleSubstate }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetExecutionActionsExecutionActionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the execution action was created.
+func (o GetExecutionActionsExecutionActionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time that the execution action was updated.
+func (o GetExecutionActionsExecutionActionOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetExecutionActionsExecutionActionOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionAction) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+type GetExecutionActionsExecutionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionsExecutionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionsExecutionAction)(nil)).Elem()
+}
+
+func (o GetExecutionActionsExecutionActionArrayOutput) ToGetExecutionActionsExecutionActionArrayOutput() GetExecutionActionsExecutionActionArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionsExecutionActionArrayOutput) ToGetExecutionActionsExecutionActionArrayOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionsExecutionActionArrayOutput) Index(i pulumi.IntInput) GetExecutionActionsExecutionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExecutionActionsExecutionAction {
+		return vs[0].([]GetExecutionActionsExecutionAction)[vs[1].(int)]
+	}).(GetExecutionActionsExecutionActionOutput)
+}
+
+type GetExecutionActionsExecutionActionActionMember struct {
+	// The estimated time of the execution action in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId string `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder int `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status string `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+}
+
+// GetExecutionActionsExecutionActionActionMemberInput is an input type that accepts GetExecutionActionsExecutionActionActionMemberArgs and GetExecutionActionsExecutionActionActionMemberOutput values.
+// You can construct a concrete instance of `GetExecutionActionsExecutionActionActionMemberInput` via:
+//
+//	GetExecutionActionsExecutionActionActionMemberArgs{...}
+type GetExecutionActionsExecutionActionActionMemberInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionsExecutionActionActionMemberOutput() GetExecutionActionsExecutionActionActionMemberOutput
+	ToGetExecutionActionsExecutionActionActionMemberOutputWithContext(context.Context) GetExecutionActionsExecutionActionActionMemberOutput
+}
+
+type GetExecutionActionsExecutionActionActionMemberArgs struct {
+	// The estimated time of the execution action in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The priority order of the execution action member.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+	// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+	// * SCHEDULED
+	// * IN_PROGRESS
+	// * FAILED
+	// * CANCELED
+	// * DURATION_EXCEEDED
+	// * RESCHEDULED
+	// * SUCCEEDED
+	Status pulumi.StringInput `pulumi:"status"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+}
+
+func (GetExecutionActionsExecutionActionActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionsExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetExecutionActionsExecutionActionActionMemberArgs) ToGetExecutionActionsExecutionActionActionMemberOutput() GetExecutionActionsExecutionActionActionMemberOutput {
+	return i.ToGetExecutionActionsExecutionActionActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionsExecutionActionActionMemberArgs) ToGetExecutionActionsExecutionActionActionMemberOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionsExecutionActionActionMemberOutput)
+}
+
+// GetExecutionActionsExecutionActionActionMemberArrayInput is an input type that accepts GetExecutionActionsExecutionActionActionMemberArray and GetExecutionActionsExecutionActionActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetExecutionActionsExecutionActionActionMemberArrayInput` via:
+//
+//	GetExecutionActionsExecutionActionActionMemberArray{ GetExecutionActionsExecutionActionActionMemberArgs{...} }
+type GetExecutionActionsExecutionActionActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionsExecutionActionActionMemberArrayOutput() GetExecutionActionsExecutionActionActionMemberArrayOutput
+	ToGetExecutionActionsExecutionActionActionMemberArrayOutputWithContext(context.Context) GetExecutionActionsExecutionActionActionMemberArrayOutput
+}
+
+type GetExecutionActionsExecutionActionActionMemberArray []GetExecutionActionsExecutionActionActionMemberInput
+
+func (GetExecutionActionsExecutionActionActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionsExecutionActionActionMember)(nil)).Elem()
+}
+
+func (i GetExecutionActionsExecutionActionActionMemberArray) ToGetExecutionActionsExecutionActionActionMemberArrayOutput() GetExecutionActionsExecutionActionActionMemberArrayOutput {
+	return i.ToGetExecutionActionsExecutionActionActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionsExecutionActionActionMemberArray) ToGetExecutionActionsExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionsExecutionActionActionMemberArrayOutput)
+}
+
+type GetExecutionActionsExecutionActionActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionsExecutionActionActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionsExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetExecutionActionsExecutionActionActionMemberOutput) ToGetExecutionActionsExecutionActionActionMemberOutput() GetExecutionActionsExecutionActionActionMemberOutput {
+	return o
+}
+
+func (o GetExecutionActionsExecutionActionActionMemberOutput) ToGetExecutionActionsExecutionActionActionMemberOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionActionMemberOutput {
+	return o
+}
+
+// The estimated time of the execution action in minutes.
+func (o GetExecutionActionsExecutionActionActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionActionActionMember) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+func (o GetExecutionActionsExecutionActionActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionActionActionMember) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The priority order of the execution action member.
+func (o GetExecutionActionsExecutionActionActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionActionActionMember) int { return v.MemberOrder }).(pulumi.IntOutput)
+}
+
+// The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+// * SCHEDULED
+// * IN_PROGRESS
+// * FAILED
+// * CANCELED
+// * DURATION_EXCEEDED
+// * RESCHEDULED
+// * SUCCEEDED
+func (o GetExecutionActionsExecutionActionActionMemberOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionActionActionMember) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetExecutionActionsExecutionActionActionMemberOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionActionsExecutionActionActionMember) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+type GetExecutionActionsExecutionActionActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionsExecutionActionActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionsExecutionActionActionMember)(nil)).Elem()
+}
+
+func (o GetExecutionActionsExecutionActionActionMemberArrayOutput) ToGetExecutionActionsExecutionActionActionMemberArrayOutput() GetExecutionActionsExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionsExecutionActionActionMemberArrayOutput) ToGetExecutionActionsExecutionActionActionMemberArrayOutputWithContext(ctx context.Context) GetExecutionActionsExecutionActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionsExecutionActionActionMemberArrayOutput) Index(i pulumi.IntInput) GetExecutionActionsExecutionActionActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExecutionActionsExecutionActionActionMember {
+		return vs[0].([]GetExecutionActionsExecutionActionActionMember)[vs[1].(int)]
+	}).(GetExecutionActionsExecutionActionActionMemberOutput)
+}
+
+type GetExecutionActionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExecutionActionsFilterInput is an input type that accepts GetExecutionActionsFilterArgs and GetExecutionActionsFilterOutput values.
+// You can construct a concrete instance of `GetExecutionActionsFilterInput` via:
+//
+//	GetExecutionActionsFilterArgs{...}
+type GetExecutionActionsFilterInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionsFilterOutput() GetExecutionActionsFilterOutput
+	ToGetExecutionActionsFilterOutputWithContext(context.Context) GetExecutionActionsFilterOutput
+}
+
+type GetExecutionActionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExecutionActionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionsFilter)(nil)).Elem()
+}
+
+func (i GetExecutionActionsFilterArgs) ToGetExecutionActionsFilterOutput() GetExecutionActionsFilterOutput {
+	return i.ToGetExecutionActionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionsFilterArgs) ToGetExecutionActionsFilterOutputWithContext(ctx context.Context) GetExecutionActionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionsFilterOutput)
+}
+
+// GetExecutionActionsFilterArrayInput is an input type that accepts GetExecutionActionsFilterArray and GetExecutionActionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetExecutionActionsFilterArrayInput` via:
+//
+//	GetExecutionActionsFilterArray{ GetExecutionActionsFilterArgs{...} }
+type GetExecutionActionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExecutionActionsFilterArrayOutput() GetExecutionActionsFilterArrayOutput
+	ToGetExecutionActionsFilterArrayOutputWithContext(context.Context) GetExecutionActionsFilterArrayOutput
+}
+
+type GetExecutionActionsFilterArray []GetExecutionActionsFilterInput
+
+func (GetExecutionActionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionsFilter)(nil)).Elem()
+}
+
+func (i GetExecutionActionsFilterArray) ToGetExecutionActionsFilterArrayOutput() GetExecutionActionsFilterArrayOutput {
+	return i.ToGetExecutionActionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExecutionActionsFilterArray) ToGetExecutionActionsFilterArrayOutputWithContext(ctx context.Context) GetExecutionActionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionActionsFilterArrayOutput)
+}
+
+type GetExecutionActionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionActionsFilter)(nil)).Elem()
+}
+
+func (o GetExecutionActionsFilterOutput) ToGetExecutionActionsFilterOutput() GetExecutionActionsFilterOutput {
+	return o
+}
+
+func (o GetExecutionActionsFilterOutput) ToGetExecutionActionsFilterOutputWithContext(ctx context.Context) GetExecutionActionsFilterOutput {
+	return o
+}
+
+func (o GetExecutionActionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionActionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExecutionActionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExecutionActionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExecutionActionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExecutionActionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExecutionActionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionActionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionActionsFilter)(nil)).Elem()
+}
+
+func (o GetExecutionActionsFilterArrayOutput) ToGetExecutionActionsFilterArrayOutput() GetExecutionActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionsFilterArrayOutput) ToGetExecutionActionsFilterArrayOutputWithContext(ctx context.Context) GetExecutionActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetExecutionActionsFilterArrayOutput) Index(i pulumi.IntInput) GetExecutionActionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExecutionActionsFilter {
+		return vs[0].([]GetExecutionActionsFilter)[vs[1].(int)]
+	}).(GetExecutionActionsFilterOutput)
+}
+
+type GetExecutionWindowsExecutionWindow struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the execution window.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// A filter to return only resources that match the given resource id exactly.
+	ExecutionResourceId string `pulumi:"executionResourceId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+	Id string `pulumi:"id"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration bool `pulumi:"isEnforcedDuration"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the execution window ended.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The scheduled start date and time of the execution window.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time that the execution window was started.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	WindowDurationInMins int `pulumi:"windowDurationInMins"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetExecutionWindowsExecutionWindowInput is an input type that accepts GetExecutionWindowsExecutionWindowArgs and GetExecutionWindowsExecutionWindowOutput values.
+// You can construct a concrete instance of `GetExecutionWindowsExecutionWindowInput` via:
+//
+//	GetExecutionWindowsExecutionWindowArgs{...}
+type GetExecutionWindowsExecutionWindowInput interface {
+	pulumi.Input
+
+	ToGetExecutionWindowsExecutionWindowOutput() GetExecutionWindowsExecutionWindowOutput
+	ToGetExecutionWindowsExecutionWindowOutputWithContext(context.Context) GetExecutionWindowsExecutionWindowOutput
+}
+
+type GetExecutionWindowsExecutionWindowArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the execution window.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time of the execution window in minutes.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// A filter to return only resources that match the given resource id exactly.
+	ExecutionResourceId pulumi.StringInput `pulumi:"executionResourceId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration pulumi.BoolInput `pulumi:"isEnforcedDuration"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the execution window was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the execution window ended.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The scheduled start date and time of the execution window.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time that the execution window was started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The last date and time that the execution window was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	WindowDurationInMins pulumi.IntInput `pulumi:"windowDurationInMins"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetExecutionWindowsExecutionWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionWindowsExecutionWindow)(nil)).Elem()
+}
+
+func (i GetExecutionWindowsExecutionWindowArgs) ToGetExecutionWindowsExecutionWindowOutput() GetExecutionWindowsExecutionWindowOutput {
+	return i.ToGetExecutionWindowsExecutionWindowOutputWithContext(context.Background())
+}
+
+func (i GetExecutionWindowsExecutionWindowArgs) ToGetExecutionWindowsExecutionWindowOutputWithContext(ctx context.Context) GetExecutionWindowsExecutionWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionWindowsExecutionWindowOutput)
+}
+
+// GetExecutionWindowsExecutionWindowArrayInput is an input type that accepts GetExecutionWindowsExecutionWindowArray and GetExecutionWindowsExecutionWindowArrayOutput values.
+// You can construct a concrete instance of `GetExecutionWindowsExecutionWindowArrayInput` via:
+//
+//	GetExecutionWindowsExecutionWindowArray{ GetExecutionWindowsExecutionWindowArgs{...} }
+type GetExecutionWindowsExecutionWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetExecutionWindowsExecutionWindowArrayOutput() GetExecutionWindowsExecutionWindowArrayOutput
+	ToGetExecutionWindowsExecutionWindowArrayOutputWithContext(context.Context) GetExecutionWindowsExecutionWindowArrayOutput
+}
+
+type GetExecutionWindowsExecutionWindowArray []GetExecutionWindowsExecutionWindowInput
+
+func (GetExecutionWindowsExecutionWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionWindowsExecutionWindow)(nil)).Elem()
+}
+
+func (i GetExecutionWindowsExecutionWindowArray) ToGetExecutionWindowsExecutionWindowArrayOutput() GetExecutionWindowsExecutionWindowArrayOutput {
+	return i.ToGetExecutionWindowsExecutionWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetExecutionWindowsExecutionWindowArray) ToGetExecutionWindowsExecutionWindowArrayOutputWithContext(ctx context.Context) GetExecutionWindowsExecutionWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionWindowsExecutionWindowArrayOutput)
+}
+
+type GetExecutionWindowsExecutionWindowOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionWindowsExecutionWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionWindowsExecutionWindow)(nil)).Elem()
+}
+
+func (o GetExecutionWindowsExecutionWindowOutput) ToGetExecutionWindowsExecutionWindowOutput() GetExecutionWindowsExecutionWindowOutput {
+	return o
+}
+
+func (o GetExecutionWindowsExecutionWindowOutput) ToGetExecutionWindowsExecutionWindowOutputWithContext(ctx context.Context) GetExecutionWindowsExecutionWindowOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExecutionWindowsExecutionWindowOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExecutionWindowsExecutionWindowOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description of the execution window.
+func (o GetExecutionWindowsExecutionWindowOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExecutionWindowsExecutionWindowOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated time of the execution window in minutes.
+func (o GetExecutionWindowsExecutionWindowOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given resource id exactly.
+func (o GetExecutionWindowsExecutionWindowOutput) ExecutionResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.ExecutionResourceId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExecutionWindowsExecutionWindowOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+func (o GetExecutionWindowsExecutionWindowOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+func (o GetExecutionWindowsExecutionWindowOutput) IsEnforcedDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) bool { return v.IsEnforcedDuration }).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExecutionWindowsExecutionWindowOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+func (o GetExecutionWindowsExecutionWindowOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.LifecycleSubstate }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetExecutionWindowsExecutionWindowOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the execution window was created.
+func (o GetExecutionWindowsExecutionWindowOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the execution window ended.
+func (o GetExecutionWindowsExecutionWindowOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The scheduled start date and time of the execution window.
+func (o GetExecutionWindowsExecutionWindowOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The date and time that the execution window was started.
+func (o GetExecutionWindowsExecutionWindowOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The last date and time that the execution window was updated.
+func (o GetExecutionWindowsExecutionWindowOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetExecutionWindowsExecutionWindowOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+func (o GetExecutionWindowsExecutionWindowOutput) WindowDurationInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) int { return v.WindowDurationInMins }).(pulumi.IntOutput)
+}
+
+// The execution window is of PLANNED or UNPLANNED type.
+func (o GetExecutionWindowsExecutionWindowOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsExecutionWindow) string { return v.WindowType }).(pulumi.StringOutput)
+}
+
+type GetExecutionWindowsExecutionWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionWindowsExecutionWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionWindowsExecutionWindow)(nil)).Elem()
+}
+
+func (o GetExecutionWindowsExecutionWindowArrayOutput) ToGetExecutionWindowsExecutionWindowArrayOutput() GetExecutionWindowsExecutionWindowArrayOutput {
+	return o
+}
+
+func (o GetExecutionWindowsExecutionWindowArrayOutput) ToGetExecutionWindowsExecutionWindowArrayOutputWithContext(ctx context.Context) GetExecutionWindowsExecutionWindowArrayOutput {
+	return o
+}
+
+func (o GetExecutionWindowsExecutionWindowArrayOutput) Index(i pulumi.IntInput) GetExecutionWindowsExecutionWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExecutionWindowsExecutionWindow {
+		return vs[0].([]GetExecutionWindowsExecutionWindow)[vs[1].(int)]
+	}).(GetExecutionWindowsExecutionWindowOutput)
+}
+
+type GetExecutionWindowsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExecutionWindowsFilterInput is an input type that accepts GetExecutionWindowsFilterArgs and GetExecutionWindowsFilterOutput values.
+// You can construct a concrete instance of `GetExecutionWindowsFilterInput` via:
+//
+//	GetExecutionWindowsFilterArgs{...}
+type GetExecutionWindowsFilterInput interface {
+	pulumi.Input
+
+	ToGetExecutionWindowsFilterOutput() GetExecutionWindowsFilterOutput
+	ToGetExecutionWindowsFilterOutputWithContext(context.Context) GetExecutionWindowsFilterOutput
+}
+
+type GetExecutionWindowsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExecutionWindowsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionWindowsFilter)(nil)).Elem()
+}
+
+func (i GetExecutionWindowsFilterArgs) ToGetExecutionWindowsFilterOutput() GetExecutionWindowsFilterOutput {
+	return i.ToGetExecutionWindowsFilterOutputWithContext(context.Background())
+}
+
+func (i GetExecutionWindowsFilterArgs) ToGetExecutionWindowsFilterOutputWithContext(ctx context.Context) GetExecutionWindowsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionWindowsFilterOutput)
+}
+
+// GetExecutionWindowsFilterArrayInput is an input type that accepts GetExecutionWindowsFilterArray and GetExecutionWindowsFilterArrayOutput values.
+// You can construct a concrete instance of `GetExecutionWindowsFilterArrayInput` via:
+//
+//	GetExecutionWindowsFilterArray{ GetExecutionWindowsFilterArgs{...} }
+type GetExecutionWindowsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExecutionWindowsFilterArrayOutput() GetExecutionWindowsFilterArrayOutput
+	ToGetExecutionWindowsFilterArrayOutputWithContext(context.Context) GetExecutionWindowsFilterArrayOutput
+}
+
+type GetExecutionWindowsFilterArray []GetExecutionWindowsFilterInput
+
+func (GetExecutionWindowsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionWindowsFilter)(nil)).Elem()
+}
+
+func (i GetExecutionWindowsFilterArray) ToGetExecutionWindowsFilterArrayOutput() GetExecutionWindowsFilterArrayOutput {
+	return i.ToGetExecutionWindowsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExecutionWindowsFilterArray) ToGetExecutionWindowsFilterArrayOutputWithContext(ctx context.Context) GetExecutionWindowsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExecutionWindowsFilterArrayOutput)
+}
+
+type GetExecutionWindowsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionWindowsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExecutionWindowsFilter)(nil)).Elem()
+}
+
+func (o GetExecutionWindowsFilterOutput) ToGetExecutionWindowsFilterOutput() GetExecutionWindowsFilterOutput {
+	return o
+}
+
+func (o GetExecutionWindowsFilterOutput) ToGetExecutionWindowsFilterOutputWithContext(ctx context.Context) GetExecutionWindowsFilterOutput {
+	return o
+}
+
+func (o GetExecutionWindowsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExecutionWindowsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExecutionWindowsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExecutionWindowsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExecutionWindowsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExecutionWindowsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExecutionWindowsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExecutionWindowsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExecutionWindowsFilter)(nil)).Elem()
+}
+
+func (o GetExecutionWindowsFilterArrayOutput) ToGetExecutionWindowsFilterArrayOutput() GetExecutionWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetExecutionWindowsFilterArrayOutput) ToGetExecutionWindowsFilterArrayOutputWithContext(ctx context.Context) GetExecutionWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetExecutionWindowsFilterArrayOutput) Index(i pulumi.IntInput) GetExecutionWindowsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExecutionWindowsFilter {
+		return vs[0].([]GetExecutionWindowsFilter)[vs[1].(int)]
+	}).(GetExecutionWindowsFilterOutput)
 }
 
 type GetExternalContainerDatabaseDatabaseManagementConfig struct {
@@ -12078,6 +15478,8 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular bool `pulumi:"isMaintenanceRunGranular"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The sub-type of the maintenance run.
@@ -12115,6 +15517,8 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	TimeScheduled string `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted string `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
 }
 
 // GetMaintenanceRunsMaintenanceRunInput is an input type that accepts GetMaintenanceRunsMaintenanceRunArgs and GetMaintenanceRunsMaintenanceRunOutput values.
@@ -12153,6 +15557,8 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled pulumi.BoolInput `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular pulumi.BoolInput `pulumi:"isMaintenanceRunGranular"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The sub-type of the maintenance run.
@@ -12190,6 +15596,8 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
 }
 
 func (GetMaintenanceRunsMaintenanceRunArgs) ElementType() reflect.Type {
@@ -12305,6 +15713,11 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) IsDstFileUpdateEnabled() pulumi.
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
+// If `FALSE`, the maintenance run doesn't support granular maintenance.
+func (o GetMaintenanceRunsMaintenanceRunOutput) IsMaintenanceRunGranular() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) bool { return v.IsMaintenanceRunGranular }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current lifecycle state.
 func (o GetMaintenanceRunsMaintenanceRunOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -12397,6 +15810,11 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) TimeScheduled() pulumi.StringOut
 // The date and time the maintenance run starts.
 func (o GetMaintenanceRunsMaintenanceRunOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
 }
 
 type GetMaintenanceRunsMaintenanceRunArrayOutput struct{ *pulumi.OutputState }
@@ -14953,6 +18371,3437 @@ func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig {
 		return vs[0].([]GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig)[vs[1].(int)]
 	}).(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput)
+}
+
+type GetScheduledActionActionMember struct {
+	// The estimated patching time for the scheduled action.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The ocid of the action member.
+	MemberId string `pulumi:"memberId"`
+	// The order of the action member in a scheduled action.
+	MemberOrder int `pulumi:"memberOrder"`
+}
+
+// GetScheduledActionActionMemberInput is an input type that accepts GetScheduledActionActionMemberArgs and GetScheduledActionActionMemberOutput values.
+// You can construct a concrete instance of `GetScheduledActionActionMemberInput` via:
+//
+//	GetScheduledActionActionMemberArgs{...}
+type GetScheduledActionActionMemberInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionActionMemberOutput() GetScheduledActionActionMemberOutput
+	ToGetScheduledActionActionMemberOutputWithContext(context.Context) GetScheduledActionActionMemberOutput
+}
+
+type GetScheduledActionActionMemberArgs struct {
+	// The estimated patching time for the scheduled action.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The ocid of the action member.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The order of the action member in a scheduled action.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+}
+
+func (GetScheduledActionActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionActionMember)(nil)).Elem()
+}
+
+func (i GetScheduledActionActionMemberArgs) ToGetScheduledActionActionMemberOutput() GetScheduledActionActionMemberOutput {
+	return i.ToGetScheduledActionActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionActionMemberArgs) ToGetScheduledActionActionMemberOutputWithContext(ctx context.Context) GetScheduledActionActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionActionMemberOutput)
+}
+
+// GetScheduledActionActionMemberArrayInput is an input type that accepts GetScheduledActionActionMemberArray and GetScheduledActionActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionActionMemberArrayInput` via:
+//
+//	GetScheduledActionActionMemberArray{ GetScheduledActionActionMemberArgs{...} }
+type GetScheduledActionActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionActionMemberArrayOutput() GetScheduledActionActionMemberArrayOutput
+	ToGetScheduledActionActionMemberArrayOutputWithContext(context.Context) GetScheduledActionActionMemberArrayOutput
+}
+
+type GetScheduledActionActionMemberArray []GetScheduledActionActionMemberInput
+
+func (GetScheduledActionActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionActionMember)(nil)).Elem()
+}
+
+func (i GetScheduledActionActionMemberArray) ToGetScheduledActionActionMemberArrayOutput() GetScheduledActionActionMemberArrayOutput {
+	return i.ToGetScheduledActionActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionActionMemberArray) ToGetScheduledActionActionMemberArrayOutputWithContext(ctx context.Context) GetScheduledActionActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionActionMemberArrayOutput)
+}
+
+type GetScheduledActionActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionActionMember)(nil)).Elem()
+}
+
+func (o GetScheduledActionActionMemberOutput) ToGetScheduledActionActionMemberOutput() GetScheduledActionActionMemberOutput {
+	return o
+}
+
+func (o GetScheduledActionActionMemberOutput) ToGetScheduledActionActionMemberOutputWithContext(ctx context.Context) GetScheduledActionActionMemberOutput {
+	return o
+}
+
+// The estimated patching time for the scheduled action.
+func (o GetScheduledActionActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledActionActionMember) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// The ocid of the action member.
+func (o GetScheduledActionActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionActionMember) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The order of the action member in a scheduled action.
+func (o GetScheduledActionActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledActionActionMember) int { return v.MemberOrder }).(pulumi.IntOutput)
+}
+
+type GetScheduledActionActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionActionMember)(nil)).Elem()
+}
+
+func (o GetScheduledActionActionMemberArrayOutput) ToGetScheduledActionActionMemberArrayOutput() GetScheduledActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionActionMemberArrayOutput) ToGetScheduledActionActionMemberArrayOutputWithContext(ctx context.Context) GetScheduledActionActionMemberArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionActionMemberArrayOutput) Index(i pulumi.IntInput) GetScheduledActionActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionActionMember {
+		return vs[0].([]GetScheduledActionActionMember)[vs[1].(int)]
+	}).(GetScheduledActionActionMemberOutput)
+}
+
+type GetScheduledActionParamsActionParamValuesCollection struct {
+	// List of Action Parameters and their possible values.
+	Items []GetScheduledActionParamsActionParamValuesCollectionItem `pulumi:"items"`
+}
+
+// GetScheduledActionParamsActionParamValuesCollectionInput is an input type that accepts GetScheduledActionParamsActionParamValuesCollectionArgs and GetScheduledActionParamsActionParamValuesCollectionOutput values.
+// You can construct a concrete instance of `GetScheduledActionParamsActionParamValuesCollectionInput` via:
+//
+//	GetScheduledActionParamsActionParamValuesCollectionArgs{...}
+type GetScheduledActionParamsActionParamValuesCollectionInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionParamsActionParamValuesCollectionOutput() GetScheduledActionParamsActionParamValuesCollectionOutput
+	ToGetScheduledActionParamsActionParamValuesCollectionOutputWithContext(context.Context) GetScheduledActionParamsActionParamValuesCollectionOutput
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionArgs struct {
+	// List of Action Parameters and their possible values.
+	Items GetScheduledActionParamsActionParamValuesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetScheduledActionParamsActionParamValuesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollection)(nil)).Elem()
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionArgs) ToGetScheduledActionParamsActionParamValuesCollectionOutput() GetScheduledActionParamsActionParamValuesCollectionOutput {
+	return i.ToGetScheduledActionParamsActionParamValuesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionArgs) ToGetScheduledActionParamsActionParamValuesCollectionOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionParamsActionParamValuesCollectionOutput)
+}
+
+// GetScheduledActionParamsActionParamValuesCollectionArrayInput is an input type that accepts GetScheduledActionParamsActionParamValuesCollectionArray and GetScheduledActionParamsActionParamValuesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionParamsActionParamValuesCollectionArrayInput` via:
+//
+//	GetScheduledActionParamsActionParamValuesCollectionArray{ GetScheduledActionParamsActionParamValuesCollectionArgs{...} }
+type GetScheduledActionParamsActionParamValuesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionParamsActionParamValuesCollectionArrayOutput() GetScheduledActionParamsActionParamValuesCollectionArrayOutput
+	ToGetScheduledActionParamsActionParamValuesCollectionArrayOutputWithContext(context.Context) GetScheduledActionParamsActionParamValuesCollectionArrayOutput
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionArray []GetScheduledActionParamsActionParamValuesCollectionInput
+
+func (GetScheduledActionParamsActionParamValuesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionParamsActionParamValuesCollection)(nil)).Elem()
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionArray) ToGetScheduledActionParamsActionParamValuesCollectionArrayOutput() GetScheduledActionParamsActionParamValuesCollectionArrayOutput {
+	return i.ToGetScheduledActionParamsActionParamValuesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionArray) ToGetScheduledActionParamsActionParamValuesCollectionArrayOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionParamsActionParamValuesCollectionArrayOutput)
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionParamsActionParamValuesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollection)(nil)).Elem()
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionOutput) ToGetScheduledActionParamsActionParamValuesCollectionOutput() GetScheduledActionParamsActionParamValuesCollectionOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionOutput) ToGetScheduledActionParamsActionParamValuesCollectionOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionOutput {
+	return o
+}
+
+// List of Action Parameters and their possible values.
+func (o GetScheduledActionParamsActionParamValuesCollectionOutput) Items() GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsActionParamValuesCollection) []GetScheduledActionParamsActionParamValuesCollectionItem {
+		return v.Items
+	}).(GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput)
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionParamsActionParamValuesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionParamsActionParamValuesCollection)(nil)).Elem()
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionArrayOutput) ToGetScheduledActionParamsActionParamValuesCollectionArrayOutput() GetScheduledActionParamsActionParamValuesCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionArrayOutput) ToGetScheduledActionParamsActionParamValuesCollectionArrayOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionArrayOutput) Index(i pulumi.IntInput) GetScheduledActionParamsActionParamValuesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionParamsActionParamValuesCollection {
+		return vs[0].([]GetScheduledActionParamsActionParamValuesCollection)[vs[1].(int)]
+	}).(GetScheduledActionParamsActionParamValuesCollectionOutput)
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionItem struct {
+	// The default value for this parameter.
+	DefaultValue string `pulumi:"defaultValue"`
+	// Whether this parameter is required or not for this action type.、
+	IsRequired bool `pulumi:"isRequired"`
+	// The name of this parameter.
+	ParameterName string `pulumi:"parameterName"`
+	// The type of the parameter.
+	ParameterType string `pulumi:"parameterType"`
+	// Possible values for this parameter. In case of integer it's min and max values.
+	ParameterValues []string `pulumi:"parameterValues"`
+}
+
+// GetScheduledActionParamsActionParamValuesCollectionItemInput is an input type that accepts GetScheduledActionParamsActionParamValuesCollectionItemArgs and GetScheduledActionParamsActionParamValuesCollectionItemOutput values.
+// You can construct a concrete instance of `GetScheduledActionParamsActionParamValuesCollectionItemInput` via:
+//
+//	GetScheduledActionParamsActionParamValuesCollectionItemArgs{...}
+type GetScheduledActionParamsActionParamValuesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionParamsActionParamValuesCollectionItemOutput() GetScheduledActionParamsActionParamValuesCollectionItemOutput
+	ToGetScheduledActionParamsActionParamValuesCollectionItemOutputWithContext(context.Context) GetScheduledActionParamsActionParamValuesCollectionItemOutput
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionItemArgs struct {
+	// The default value for this parameter.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// Whether this parameter is required or not for this action type.、
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// The name of this parameter.
+	ParameterName pulumi.StringInput `pulumi:"parameterName"`
+	// The type of the parameter.
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// Possible values for this parameter. In case of integer it's min and max values.
+	ParameterValues pulumi.StringArrayInput `pulumi:"parameterValues"`
+}
+
+func (GetScheduledActionParamsActionParamValuesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionItemArgs) ToGetScheduledActionParamsActionParamValuesCollectionItemOutput() GetScheduledActionParamsActionParamValuesCollectionItemOutput {
+	return i.ToGetScheduledActionParamsActionParamValuesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionItemArgs) ToGetScheduledActionParamsActionParamValuesCollectionItemOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionParamsActionParamValuesCollectionItemOutput)
+}
+
+// GetScheduledActionParamsActionParamValuesCollectionItemArrayInput is an input type that accepts GetScheduledActionParamsActionParamValuesCollectionItemArray and GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionParamsActionParamValuesCollectionItemArrayInput` via:
+//
+//	GetScheduledActionParamsActionParamValuesCollectionItemArray{ GetScheduledActionParamsActionParamValuesCollectionItemArgs{...} }
+type GetScheduledActionParamsActionParamValuesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutput() GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput
+	ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutputWithContext(context.Context) GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionItemArray []GetScheduledActionParamsActionParamValuesCollectionItemInput
+
+func (GetScheduledActionParamsActionParamValuesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionParamsActionParamValuesCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionItemArray) ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutput() GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput {
+	return i.ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionParamsActionParamValuesCollectionItemArray) ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput)
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionParamsActionParamValuesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) ToGetScheduledActionParamsActionParamValuesCollectionItemOutput() GetScheduledActionParamsActionParamValuesCollectionItemOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) ToGetScheduledActionParamsActionParamValuesCollectionItemOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionItemOutput {
+	return o
+}
+
+// The default value for this parameter.
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsActionParamValuesCollectionItem) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// Whether this parameter is required or not for this action type.、
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsActionParamValuesCollectionItem) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// The name of this parameter.
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) ParameterName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsActionParamValuesCollectionItem) string { return v.ParameterName }).(pulumi.StringOutput)
+}
+
+// The type of the parameter.
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsActionParamValuesCollectionItem) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// Possible values for this parameter. In case of integer it's min and max values.
+func (o GetScheduledActionParamsActionParamValuesCollectionItemOutput) ParameterValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsActionParamValuesCollectionItem) []string { return v.ParameterValues }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionParamsActionParamValuesCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput) ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutput() GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput) ToGetScheduledActionParamsActionParamValuesCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetScheduledActionParamsActionParamValuesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionParamsActionParamValuesCollectionItem {
+		return vs[0].([]GetScheduledActionParamsActionParamValuesCollectionItem)[vs[1].(int)]
+	}).(GetScheduledActionParamsActionParamValuesCollectionItemOutput)
+}
+
+type GetScheduledActionParamsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetScheduledActionParamsFilterInput is an input type that accepts GetScheduledActionParamsFilterArgs and GetScheduledActionParamsFilterOutput values.
+// You can construct a concrete instance of `GetScheduledActionParamsFilterInput` via:
+//
+//	GetScheduledActionParamsFilterArgs{...}
+type GetScheduledActionParamsFilterInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionParamsFilterOutput() GetScheduledActionParamsFilterOutput
+	ToGetScheduledActionParamsFilterOutputWithContext(context.Context) GetScheduledActionParamsFilterOutput
+}
+
+type GetScheduledActionParamsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetScheduledActionParamsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionParamsFilter)(nil)).Elem()
+}
+
+func (i GetScheduledActionParamsFilterArgs) ToGetScheduledActionParamsFilterOutput() GetScheduledActionParamsFilterOutput {
+	return i.ToGetScheduledActionParamsFilterOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionParamsFilterArgs) ToGetScheduledActionParamsFilterOutputWithContext(ctx context.Context) GetScheduledActionParamsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionParamsFilterOutput)
+}
+
+// GetScheduledActionParamsFilterArrayInput is an input type that accepts GetScheduledActionParamsFilterArray and GetScheduledActionParamsFilterArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionParamsFilterArrayInput` via:
+//
+//	GetScheduledActionParamsFilterArray{ GetScheduledActionParamsFilterArgs{...} }
+type GetScheduledActionParamsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionParamsFilterArrayOutput() GetScheduledActionParamsFilterArrayOutput
+	ToGetScheduledActionParamsFilterArrayOutputWithContext(context.Context) GetScheduledActionParamsFilterArrayOutput
+}
+
+type GetScheduledActionParamsFilterArray []GetScheduledActionParamsFilterInput
+
+func (GetScheduledActionParamsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionParamsFilter)(nil)).Elem()
+}
+
+func (i GetScheduledActionParamsFilterArray) ToGetScheduledActionParamsFilterArrayOutput() GetScheduledActionParamsFilterArrayOutput {
+	return i.ToGetScheduledActionParamsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionParamsFilterArray) ToGetScheduledActionParamsFilterArrayOutputWithContext(ctx context.Context) GetScheduledActionParamsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionParamsFilterArrayOutput)
+}
+
+type GetScheduledActionParamsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionParamsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionParamsFilter)(nil)).Elem()
+}
+
+func (o GetScheduledActionParamsFilterOutput) ToGetScheduledActionParamsFilterOutput() GetScheduledActionParamsFilterOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsFilterOutput) ToGetScheduledActionParamsFilterOutputWithContext(ctx context.Context) GetScheduledActionParamsFilterOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetScheduledActionParamsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetScheduledActionParamsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledActionParamsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledActionParamsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionParamsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionParamsFilter)(nil)).Elem()
+}
+
+func (o GetScheduledActionParamsFilterArrayOutput) ToGetScheduledActionParamsFilterArrayOutput() GetScheduledActionParamsFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsFilterArrayOutput) ToGetScheduledActionParamsFilterArrayOutputWithContext(ctx context.Context) GetScheduledActionParamsFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionParamsFilterArrayOutput) Index(i pulumi.IntInput) GetScheduledActionParamsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionParamsFilter {
+		return vs[0].([]GetScheduledActionParamsFilter)[vs[1].(int)]
+	}).(GetScheduledActionParamsFilterOutput)
+}
+
+type GetScheduledActionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetScheduledActionsFilterInput is an input type that accepts GetScheduledActionsFilterArgs and GetScheduledActionsFilterOutput values.
+// You can construct a concrete instance of `GetScheduledActionsFilterInput` via:
+//
+//	GetScheduledActionsFilterArgs{...}
+type GetScheduledActionsFilterInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsFilterOutput() GetScheduledActionsFilterOutput
+	ToGetScheduledActionsFilterOutputWithContext(context.Context) GetScheduledActionsFilterOutput
+}
+
+type GetScheduledActionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetScheduledActionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsFilter)(nil)).Elem()
+}
+
+func (i GetScheduledActionsFilterArgs) ToGetScheduledActionsFilterOutput() GetScheduledActionsFilterOutput {
+	return i.ToGetScheduledActionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsFilterArgs) ToGetScheduledActionsFilterOutputWithContext(ctx context.Context) GetScheduledActionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsFilterOutput)
+}
+
+// GetScheduledActionsFilterArrayInput is an input type that accepts GetScheduledActionsFilterArray and GetScheduledActionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionsFilterArrayInput` via:
+//
+//	GetScheduledActionsFilterArray{ GetScheduledActionsFilterArgs{...} }
+type GetScheduledActionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsFilterArrayOutput() GetScheduledActionsFilterArrayOutput
+	ToGetScheduledActionsFilterArrayOutputWithContext(context.Context) GetScheduledActionsFilterArrayOutput
+}
+
+type GetScheduledActionsFilterArray []GetScheduledActionsFilterInput
+
+func (GetScheduledActionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsFilter)(nil)).Elem()
+}
+
+func (i GetScheduledActionsFilterArray) ToGetScheduledActionsFilterArrayOutput() GetScheduledActionsFilterArrayOutput {
+	return i.ToGetScheduledActionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsFilterArray) ToGetScheduledActionsFilterArrayOutputWithContext(ctx context.Context) GetScheduledActionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsFilterArrayOutput)
+}
+
+type GetScheduledActionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsFilter)(nil)).Elem()
+}
+
+func (o GetScheduledActionsFilterOutput) ToGetScheduledActionsFilterOutput() GetScheduledActionsFilterOutput {
+	return o
+}
+
+func (o GetScheduledActionsFilterOutput) ToGetScheduledActionsFilterOutputWithContext(ctx context.Context) GetScheduledActionsFilterOutput {
+	return o
+}
+
+func (o GetScheduledActionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetScheduledActionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScheduledActionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetScheduledActionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledActionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledActionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsFilter)(nil)).Elem()
+}
+
+func (o GetScheduledActionsFilterArrayOutput) ToGetScheduledActionsFilterArrayOutput() GetScheduledActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsFilterArrayOutput) ToGetScheduledActionsFilterArrayOutputWithContext(ctx context.Context) GetScheduledActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsFilterArrayOutput) Index(i pulumi.IntInput) GetScheduledActionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionsFilter {
+		return vs[0].([]GetScheduledActionsFilter)[vs[1].(int)]
+	}).(GetScheduledActionsFilterOutput)
+}
+
+type GetScheduledActionsScheduledActionCollection struct {
+	Items []GetScheduledActionsScheduledActionCollectionItem `pulumi:"items"`
+}
+
+// GetScheduledActionsScheduledActionCollectionInput is an input type that accepts GetScheduledActionsScheduledActionCollectionArgs and GetScheduledActionsScheduledActionCollectionOutput values.
+// You can construct a concrete instance of `GetScheduledActionsScheduledActionCollectionInput` via:
+//
+//	GetScheduledActionsScheduledActionCollectionArgs{...}
+type GetScheduledActionsScheduledActionCollectionInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsScheduledActionCollectionOutput() GetScheduledActionsScheduledActionCollectionOutput
+	ToGetScheduledActionsScheduledActionCollectionOutputWithContext(context.Context) GetScheduledActionsScheduledActionCollectionOutput
+}
+
+type GetScheduledActionsScheduledActionCollectionArgs struct {
+	Items GetScheduledActionsScheduledActionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetScheduledActionsScheduledActionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsScheduledActionCollection)(nil)).Elem()
+}
+
+func (i GetScheduledActionsScheduledActionCollectionArgs) ToGetScheduledActionsScheduledActionCollectionOutput() GetScheduledActionsScheduledActionCollectionOutput {
+	return i.ToGetScheduledActionsScheduledActionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsScheduledActionCollectionArgs) ToGetScheduledActionsScheduledActionCollectionOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsScheduledActionCollectionOutput)
+}
+
+// GetScheduledActionsScheduledActionCollectionArrayInput is an input type that accepts GetScheduledActionsScheduledActionCollectionArray and GetScheduledActionsScheduledActionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionsScheduledActionCollectionArrayInput` via:
+//
+//	GetScheduledActionsScheduledActionCollectionArray{ GetScheduledActionsScheduledActionCollectionArgs{...} }
+type GetScheduledActionsScheduledActionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsScheduledActionCollectionArrayOutput() GetScheduledActionsScheduledActionCollectionArrayOutput
+	ToGetScheduledActionsScheduledActionCollectionArrayOutputWithContext(context.Context) GetScheduledActionsScheduledActionCollectionArrayOutput
+}
+
+type GetScheduledActionsScheduledActionCollectionArray []GetScheduledActionsScheduledActionCollectionInput
+
+func (GetScheduledActionsScheduledActionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsScheduledActionCollection)(nil)).Elem()
+}
+
+func (i GetScheduledActionsScheduledActionCollectionArray) ToGetScheduledActionsScheduledActionCollectionArrayOutput() GetScheduledActionsScheduledActionCollectionArrayOutput {
+	return i.ToGetScheduledActionsScheduledActionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsScheduledActionCollectionArray) ToGetScheduledActionsScheduledActionCollectionArrayOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsScheduledActionCollectionArrayOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsScheduledActionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsScheduledActionCollection)(nil)).Elem()
+}
+
+func (o GetScheduledActionsScheduledActionCollectionOutput) ToGetScheduledActionsScheduledActionCollectionOutput() GetScheduledActionsScheduledActionCollectionOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionOutput) ToGetScheduledActionsScheduledActionCollectionOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionOutput) Items() GetScheduledActionsScheduledActionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollection) []GetScheduledActionsScheduledActionCollectionItem {
+		return v.Items
+	}).(GetScheduledActionsScheduledActionCollectionItemArrayOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsScheduledActionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsScheduledActionCollection)(nil)).Elem()
+}
+
+func (o GetScheduledActionsScheduledActionCollectionArrayOutput) ToGetScheduledActionsScheduledActionCollectionArrayOutput() GetScheduledActionsScheduledActionCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionArrayOutput) ToGetScheduledActionsScheduledActionCollectionArrayOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionArrayOutput) Index(i pulumi.IntInput) GetScheduledActionsScheduledActionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionsScheduledActionCollection {
+		return vs[0].([]GetScheduledActionsScheduledActionCollection)[vs[1].(int)]
+	}).(GetScheduledActionsScheduledActionCollectionOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionItem struct {
+	// The list of action members in a scheduled action.
+	ActionMembers []GetScheduledActionsScheduledActionCollectionItemActionMember `pulumi:"actionMembers"`
+	// The order of the scheduled action.
+	ActionOrder int `pulumi:"actionOrder"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams map[string]string `pulumi:"actionParams"`
+	// The type of the scheduled action being performed
+	ActionType string `pulumi:"actionType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated patching time for the scheduled action.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A filter to return only resources that match the given Scheduled Action id exactly.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the given scheduling policy id exactly.
+	SchedulingPlanId string `pulumi:"schedulingPlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+	SchedulingWindowId string `pulumi:"schedulingWindowId"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Scheduled Action Resource was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Scheduled Action Resource was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetScheduledActionsScheduledActionCollectionItemInput is an input type that accepts GetScheduledActionsScheduledActionCollectionItemArgs and GetScheduledActionsScheduledActionCollectionItemOutput values.
+// You can construct a concrete instance of `GetScheduledActionsScheduledActionCollectionItemInput` via:
+//
+//	GetScheduledActionsScheduledActionCollectionItemArgs{...}
+type GetScheduledActionsScheduledActionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsScheduledActionCollectionItemOutput() GetScheduledActionsScheduledActionCollectionItemOutput
+	ToGetScheduledActionsScheduledActionCollectionItemOutputWithContext(context.Context) GetScheduledActionsScheduledActionCollectionItemOutput
+}
+
+type GetScheduledActionsScheduledActionCollectionItemArgs struct {
+	// The list of action members in a scheduled action.
+	ActionMembers GetScheduledActionsScheduledActionCollectionItemActionMemberArrayInput `pulumi:"actionMembers"`
+	// The order of the scheduled action.
+	ActionOrder pulumi.IntInput `pulumi:"actionOrder"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams pulumi.StringMapInput `pulumi:"actionParams"`
+	// The type of the scheduled action being performed
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated patching time for the scheduled action.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A filter to return only resources that match the given Scheduled Action id exactly.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the given scheduling policy id exactly.
+	SchedulingPlanId pulumi.StringInput `pulumi:"schedulingPlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+	SchedulingWindowId pulumi.StringInput `pulumi:"schedulingWindowId"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Scheduled Action Resource was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Scheduled Action Resource was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetScheduledActionsScheduledActionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemArgs) ToGetScheduledActionsScheduledActionCollectionItemOutput() GetScheduledActionsScheduledActionCollectionItemOutput {
+	return i.ToGetScheduledActionsScheduledActionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemArgs) ToGetScheduledActionsScheduledActionCollectionItemOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsScheduledActionCollectionItemOutput)
+}
+
+// GetScheduledActionsScheduledActionCollectionItemArrayInput is an input type that accepts GetScheduledActionsScheduledActionCollectionItemArray and GetScheduledActionsScheduledActionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionsScheduledActionCollectionItemArrayInput` via:
+//
+//	GetScheduledActionsScheduledActionCollectionItemArray{ GetScheduledActionsScheduledActionCollectionItemArgs{...} }
+type GetScheduledActionsScheduledActionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsScheduledActionCollectionItemArrayOutput() GetScheduledActionsScheduledActionCollectionItemArrayOutput
+	ToGetScheduledActionsScheduledActionCollectionItemArrayOutputWithContext(context.Context) GetScheduledActionsScheduledActionCollectionItemArrayOutput
+}
+
+type GetScheduledActionsScheduledActionCollectionItemArray []GetScheduledActionsScheduledActionCollectionItemInput
+
+func (GetScheduledActionsScheduledActionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsScheduledActionCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemArray) ToGetScheduledActionsScheduledActionCollectionItemArrayOutput() GetScheduledActionsScheduledActionCollectionItemArrayOutput {
+	return i.ToGetScheduledActionsScheduledActionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemArray) ToGetScheduledActionsScheduledActionCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsScheduledActionCollectionItemArrayOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsScheduledActionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) ToGetScheduledActionsScheduledActionCollectionItemOutput() GetScheduledActionsScheduledActionCollectionItemOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) ToGetScheduledActionsScheduledActionCollectionItemOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemOutput {
+	return o
+}
+
+// The list of action members in a scheduled action.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) ActionMembers() GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) []GetScheduledActionsScheduledActionCollectionItemActionMember {
+		return v.ActionMembers
+	}).(GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput)
+}
+
+// The order of the scheduled action.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) ActionOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) int { return v.ActionOrder }).(pulumi.IntOutput)
+}
+
+// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) ActionParams() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) map[string]string { return v.ActionParams }).(pulumi.StringMapOutput)
+}
+
+// The type of the scheduled action being performed
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated patching time for the scheduled action.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given Scheduled Action id exactly.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given scheduling policy id exactly.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) SchedulingPlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.SchedulingPlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) SchedulingWindowId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.SchedulingWindowId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Scheduled Action Resource was created.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Scheduled Action Resource was updated.
+func (o GetScheduledActionsScheduledActionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsScheduledActionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsScheduledActionCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemArrayOutput) ToGetScheduledActionsScheduledActionCollectionItemArrayOutput() GetScheduledActionsScheduledActionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemArrayOutput) ToGetScheduledActionsScheduledActionCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetScheduledActionsScheduledActionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionsScheduledActionCollectionItem {
+		return vs[0].([]GetScheduledActionsScheduledActionCollectionItem)[vs[1].(int)]
+	}).(GetScheduledActionsScheduledActionCollectionItemOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionItemActionMember struct {
+	// The estimated patching time for the scheduled action.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The ocid of the action member.
+	MemberId string `pulumi:"memberId"`
+	// The order of the action member in a scheduled action.
+	MemberOrder int `pulumi:"memberOrder"`
+}
+
+// GetScheduledActionsScheduledActionCollectionItemActionMemberInput is an input type that accepts GetScheduledActionsScheduledActionCollectionItemActionMemberArgs and GetScheduledActionsScheduledActionCollectionItemActionMemberOutput values.
+// You can construct a concrete instance of `GetScheduledActionsScheduledActionCollectionItemActionMemberInput` via:
+//
+//	GetScheduledActionsScheduledActionCollectionItemActionMemberArgs{...}
+type GetScheduledActionsScheduledActionCollectionItemActionMemberInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutput() GetScheduledActionsScheduledActionCollectionItemActionMemberOutput
+	ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutputWithContext(context.Context) GetScheduledActionsScheduledActionCollectionItemActionMemberOutput
+}
+
+type GetScheduledActionsScheduledActionCollectionItemActionMemberArgs struct {
+	// The estimated patching time for the scheduled action.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The ocid of the action member.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The order of the action member in a scheduled action.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+}
+
+func (GetScheduledActionsScheduledActionCollectionItemActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItemActionMember)(nil)).Elem()
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemActionMemberArgs) ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutput() GetScheduledActionsScheduledActionCollectionItemActionMemberOutput {
+	return i.ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemActionMemberArgs) ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsScheduledActionCollectionItemActionMemberOutput)
+}
+
+// GetScheduledActionsScheduledActionCollectionItemActionMemberArrayInput is an input type that accepts GetScheduledActionsScheduledActionCollectionItemActionMemberArray and GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetScheduledActionsScheduledActionCollectionItemActionMemberArrayInput` via:
+//
+//	GetScheduledActionsScheduledActionCollectionItemActionMemberArray{ GetScheduledActionsScheduledActionCollectionItemActionMemberArgs{...} }
+type GetScheduledActionsScheduledActionCollectionItemActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput() GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput
+	ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutputWithContext(context.Context) GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput
+}
+
+type GetScheduledActionsScheduledActionCollectionItemActionMemberArray []GetScheduledActionsScheduledActionCollectionItemActionMemberInput
+
+func (GetScheduledActionsScheduledActionCollectionItemActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsScheduledActionCollectionItemActionMember)(nil)).Elem()
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemActionMemberArray) ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput() GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput {
+	return i.ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledActionsScheduledActionCollectionItemActionMemberArray) ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionItemActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsScheduledActionCollectionItemActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItemActionMember)(nil)).Elem()
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberOutput) ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutput() GetScheduledActionsScheduledActionCollectionItemActionMemberOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberOutput) ToGetScheduledActionsScheduledActionCollectionItemActionMemberOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemActionMemberOutput {
+	return o
+}
+
+// The estimated patching time for the scheduled action.
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItemActionMember) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// The ocid of the action member.
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItemActionMember) string { return v.MemberId }).(pulumi.StringOutput)
+}
+
+// The order of the action member in a scheduled action.
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledActionsScheduledActionCollectionItemActionMember) int { return v.MemberOrder }).(pulumi.IntOutput)
+}
+
+type GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledActionsScheduledActionCollectionItemActionMember)(nil)).Elem()
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput) ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput() GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput) ToGetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutputWithContext(ctx context.Context) GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput {
+	return o
+}
+
+func (o GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput) Index(i pulumi.IntInput) GetScheduledActionsScheduledActionCollectionItemActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledActionsScheduledActionCollectionItemActionMember {
+		return vs[0].([]GetScheduledActionsScheduledActionCollectionItemActionMember)[vs[1].(int)]
+	}).(GetScheduledActionsScheduledActionCollectionItemActionMemberOutput)
+}
+
+type GetSchedulingPlansFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulingPlansFilterInput is an input type that accepts GetSchedulingPlansFilterArgs and GetSchedulingPlansFilterOutput values.
+// You can construct a concrete instance of `GetSchedulingPlansFilterInput` via:
+//
+//	GetSchedulingPlansFilterArgs{...}
+type GetSchedulingPlansFilterInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPlansFilterOutput() GetSchedulingPlansFilterOutput
+	ToGetSchedulingPlansFilterOutputWithContext(context.Context) GetSchedulingPlansFilterOutput
+}
+
+type GetSchedulingPlansFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulingPlansFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPlansFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPlansFilterArgs) ToGetSchedulingPlansFilterOutput() GetSchedulingPlansFilterOutput {
+	return i.ToGetSchedulingPlansFilterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPlansFilterArgs) ToGetSchedulingPlansFilterOutputWithContext(ctx context.Context) GetSchedulingPlansFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPlansFilterOutput)
+}
+
+// GetSchedulingPlansFilterArrayInput is an input type that accepts GetSchedulingPlansFilterArray and GetSchedulingPlansFilterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPlansFilterArrayInput` via:
+//
+//	GetSchedulingPlansFilterArray{ GetSchedulingPlansFilterArgs{...} }
+type GetSchedulingPlansFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPlansFilterArrayOutput() GetSchedulingPlansFilterArrayOutput
+	ToGetSchedulingPlansFilterArrayOutputWithContext(context.Context) GetSchedulingPlansFilterArrayOutput
+}
+
+type GetSchedulingPlansFilterArray []GetSchedulingPlansFilterInput
+
+func (GetSchedulingPlansFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPlansFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPlansFilterArray) ToGetSchedulingPlansFilterArrayOutput() GetSchedulingPlansFilterArrayOutput {
+	return i.ToGetSchedulingPlansFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPlansFilterArray) ToGetSchedulingPlansFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPlansFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPlansFilterArrayOutput)
+}
+
+type GetSchedulingPlansFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPlansFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPlansFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPlansFilterOutput) ToGetSchedulingPlansFilterOutput() GetSchedulingPlansFilterOutput {
+	return o
+}
+
+func (o GetSchedulingPlansFilterOutput) ToGetSchedulingPlansFilterOutputWithContext(ctx context.Context) GetSchedulingPlansFilterOutput {
+	return o
+}
+
+func (o GetSchedulingPlansFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulingPlansFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulingPlansFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSchedulingPlansFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPlansFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulingPlansFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPlansFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPlansFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPlansFilterArrayOutput) ToGetSchedulingPlansFilterArrayOutput() GetSchedulingPlansFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPlansFilterArrayOutput) ToGetSchedulingPlansFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPlansFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPlansFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulingPlansFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPlansFilter {
+		return vs[0].([]GetSchedulingPlansFilter)[vs[1].(int)]
+	}).(GetSchedulingPlansFilterOutput)
+}
+
+type GetSchedulingPlansSchedulingPlanCollection struct {
+	Items []GetSchedulingPlansSchedulingPlanCollectionItem `pulumi:"items"`
+}
+
+// GetSchedulingPlansSchedulingPlanCollectionInput is an input type that accepts GetSchedulingPlansSchedulingPlanCollectionArgs and GetSchedulingPlansSchedulingPlanCollectionOutput values.
+// You can construct a concrete instance of `GetSchedulingPlansSchedulingPlanCollectionInput` via:
+//
+//	GetSchedulingPlansSchedulingPlanCollectionArgs{...}
+type GetSchedulingPlansSchedulingPlanCollectionInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPlansSchedulingPlanCollectionOutput() GetSchedulingPlansSchedulingPlanCollectionOutput
+	ToGetSchedulingPlansSchedulingPlanCollectionOutputWithContext(context.Context) GetSchedulingPlansSchedulingPlanCollectionOutput
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionArgs struct {
+	Items GetSchedulingPlansSchedulingPlanCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSchedulingPlansSchedulingPlanCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollection)(nil)).Elem()
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionArgs) ToGetSchedulingPlansSchedulingPlanCollectionOutput() GetSchedulingPlansSchedulingPlanCollectionOutput {
+	return i.ToGetSchedulingPlansSchedulingPlanCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionArgs) ToGetSchedulingPlansSchedulingPlanCollectionOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPlansSchedulingPlanCollectionOutput)
+}
+
+// GetSchedulingPlansSchedulingPlanCollectionArrayInput is an input type that accepts GetSchedulingPlansSchedulingPlanCollectionArray and GetSchedulingPlansSchedulingPlanCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPlansSchedulingPlanCollectionArrayInput` via:
+//
+//	GetSchedulingPlansSchedulingPlanCollectionArray{ GetSchedulingPlansSchedulingPlanCollectionArgs{...} }
+type GetSchedulingPlansSchedulingPlanCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPlansSchedulingPlanCollectionArrayOutput() GetSchedulingPlansSchedulingPlanCollectionArrayOutput
+	ToGetSchedulingPlansSchedulingPlanCollectionArrayOutputWithContext(context.Context) GetSchedulingPlansSchedulingPlanCollectionArrayOutput
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionArray []GetSchedulingPlansSchedulingPlanCollectionInput
+
+func (GetSchedulingPlansSchedulingPlanCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPlansSchedulingPlanCollection)(nil)).Elem()
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionArray) ToGetSchedulingPlansSchedulingPlanCollectionArrayOutput() GetSchedulingPlansSchedulingPlanCollectionArrayOutput {
+	return i.ToGetSchedulingPlansSchedulingPlanCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionArray) ToGetSchedulingPlansSchedulingPlanCollectionArrayOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPlansSchedulingPlanCollectionArrayOutput)
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPlansSchedulingPlanCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollection)(nil)).Elem()
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionOutput) ToGetSchedulingPlansSchedulingPlanCollectionOutput() GetSchedulingPlansSchedulingPlanCollectionOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionOutput) ToGetSchedulingPlansSchedulingPlanCollectionOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionOutput) Items() GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollection) []GetSchedulingPlansSchedulingPlanCollectionItem {
+		return v.Items
+	}).(GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput)
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPlansSchedulingPlanCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPlansSchedulingPlanCollection)(nil)).Elem()
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionArrayOutput) ToGetSchedulingPlansSchedulingPlanCollectionArrayOutput() GetSchedulingPlansSchedulingPlanCollectionArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionArrayOutput) ToGetSchedulingPlansSchedulingPlanCollectionArrayOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetSchedulingPlansSchedulingPlanCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPlansSchedulingPlanCollection {
+		return vs[0].([]GetSchedulingPlansSchedulingPlanCollection)[vs[1].(int)]
+	}).(GetSchedulingPlansSchedulingPlanCollectionOutput)
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionItem struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated time for the Scheduling Plan.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A filter to return only resources that match the given Schedule Plan id exactly.
+	Id string `pulumi:"id"`
+	// If true, recommended scheduled actions will be generated for the scheduling plan.
+	IsUsingRecommendedScheduledActions bool `pulumi:"isUsingRecommendedScheduledActions"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+	PlanIntent string `pulumi:"planIntent"`
+	// A filter to return only resources that match the given resource id exactly.
+	ResourceId string `pulumi:"resourceId"`
+	// A filter to return only resources that match the given scheduling policy id exactly.
+	SchedulingPolicyId string `pulumi:"schedulingPolicyId"`
+	// The service type of the Scheduling Plan.
+	ServiceType string `pulumi:"serviceType"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Scheduling Plan Resource was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Scheduling Plan Resource was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSchedulingPlansSchedulingPlanCollectionItemInput is an input type that accepts GetSchedulingPlansSchedulingPlanCollectionItemArgs and GetSchedulingPlansSchedulingPlanCollectionItemOutput values.
+// You can construct a concrete instance of `GetSchedulingPlansSchedulingPlanCollectionItemInput` via:
+//
+//	GetSchedulingPlansSchedulingPlanCollectionItemArgs{...}
+type GetSchedulingPlansSchedulingPlanCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPlansSchedulingPlanCollectionItemOutput() GetSchedulingPlansSchedulingPlanCollectionItemOutput
+	ToGetSchedulingPlansSchedulingPlanCollectionItemOutputWithContext(context.Context) GetSchedulingPlansSchedulingPlanCollectionItemOutput
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionItemArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated time for the Scheduling Plan.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A filter to return only resources that match the given Schedule Plan id exactly.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, recommended scheduled actions will be generated for the scheduling plan.
+	IsUsingRecommendedScheduledActions pulumi.BoolInput `pulumi:"isUsingRecommendedScheduledActions"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+	PlanIntent pulumi.StringInput `pulumi:"planIntent"`
+	// A filter to return only resources that match the given resource id exactly.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// A filter to return only resources that match the given scheduling policy id exactly.
+	SchedulingPolicyId pulumi.StringInput `pulumi:"schedulingPolicyId"`
+	// The service type of the Scheduling Plan.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Scheduling Plan Resource was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Scheduling Plan Resource was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSchedulingPlansSchedulingPlanCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollectionItem)(nil)).Elem()
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionItemArgs) ToGetSchedulingPlansSchedulingPlanCollectionItemOutput() GetSchedulingPlansSchedulingPlanCollectionItemOutput {
+	return i.ToGetSchedulingPlansSchedulingPlanCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionItemArgs) ToGetSchedulingPlansSchedulingPlanCollectionItemOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPlansSchedulingPlanCollectionItemOutput)
+}
+
+// GetSchedulingPlansSchedulingPlanCollectionItemArrayInput is an input type that accepts GetSchedulingPlansSchedulingPlanCollectionItemArray and GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPlansSchedulingPlanCollectionItemArrayInput` via:
+//
+//	GetSchedulingPlansSchedulingPlanCollectionItemArray{ GetSchedulingPlansSchedulingPlanCollectionItemArgs{...} }
+type GetSchedulingPlansSchedulingPlanCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutput() GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput
+	ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutputWithContext(context.Context) GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionItemArray []GetSchedulingPlansSchedulingPlanCollectionItemInput
+
+func (GetSchedulingPlansSchedulingPlanCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPlansSchedulingPlanCollectionItem)(nil)).Elem()
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionItemArray) ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutput() GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput {
+	return i.ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPlansSchedulingPlanCollectionItemArray) ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput)
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPlansSchedulingPlanCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollectionItem)(nil)).Elem()
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) ToGetSchedulingPlansSchedulingPlanCollectionItemOutput() GetSchedulingPlansSchedulingPlanCollectionItemOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) ToGetSchedulingPlansSchedulingPlanCollectionItemOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionItemOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated time for the Scheduling Plan.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) int { return v.EstimatedTimeInMins }).(pulumi.IntOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given Schedule Plan id exactly.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If true, recommended scheduled actions will be generated for the scheduling plan.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) IsUsingRecommendedScheduledActions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) bool {
+		return v.IsUsingRecommendedScheduledActions
+	}).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) PlanIntent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.PlanIntent }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given resource id exactly.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given scheduling policy id exactly.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) SchedulingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.SchedulingPolicyId }).(pulumi.StringOutput)
+}
+
+// The service type of the Scheduling Plan.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Scheduling Plan Resource was created.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Scheduling Plan Resource was updated.
+func (o GetSchedulingPlansSchedulingPlanCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPlansSchedulingPlanCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPlansSchedulingPlanCollectionItem)(nil)).Elem()
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput) ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutput() GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput) ToGetSchedulingPlansSchedulingPlanCollectionItemArrayOutputWithContext(ctx context.Context) GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSchedulingPlansSchedulingPlanCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPlansSchedulingPlanCollectionItem {
+		return vs[0].([]GetSchedulingPlansSchedulingPlanCollectionItem)[vs[1].(int)]
+	}).(GetSchedulingPlansSchedulingPlanCollectionItemOutput)
+}
+
+type GetSchedulingPoliciesFilter struct {
+	// Name of the month of the year.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulingPoliciesFilterInput is an input type that accepts GetSchedulingPoliciesFilterArgs and GetSchedulingPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSchedulingPoliciesFilterInput` via:
+//
+//	GetSchedulingPoliciesFilterArgs{...}
+type GetSchedulingPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPoliciesFilterOutput() GetSchedulingPoliciesFilterOutput
+	ToGetSchedulingPoliciesFilterOutputWithContext(context.Context) GetSchedulingPoliciesFilterOutput
+}
+
+type GetSchedulingPoliciesFilterArgs struct {
+	// Name of the month of the year.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulingPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPoliciesFilterArgs) ToGetSchedulingPoliciesFilterOutput() GetSchedulingPoliciesFilterOutput {
+	return i.ToGetSchedulingPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPoliciesFilterArgs) ToGetSchedulingPoliciesFilterOutputWithContext(ctx context.Context) GetSchedulingPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPoliciesFilterOutput)
+}
+
+// GetSchedulingPoliciesFilterArrayInput is an input type that accepts GetSchedulingPoliciesFilterArray and GetSchedulingPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPoliciesFilterArrayInput` via:
+//
+//	GetSchedulingPoliciesFilterArray{ GetSchedulingPoliciesFilterArgs{...} }
+type GetSchedulingPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPoliciesFilterArrayOutput() GetSchedulingPoliciesFilterArrayOutput
+	ToGetSchedulingPoliciesFilterArrayOutputWithContext(context.Context) GetSchedulingPoliciesFilterArrayOutput
+}
+
+type GetSchedulingPoliciesFilterArray []GetSchedulingPoliciesFilterInput
+
+func (GetSchedulingPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPoliciesFilterArray) ToGetSchedulingPoliciesFilterArrayOutput() GetSchedulingPoliciesFilterArrayOutput {
+	return i.ToGetSchedulingPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPoliciesFilterArray) ToGetSchedulingPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPoliciesFilterArrayOutput)
+}
+
+type GetSchedulingPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPoliciesFilterOutput) ToGetSchedulingPoliciesFilterOutput() GetSchedulingPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesFilterOutput) ToGetSchedulingPoliciesFilterOutputWithContext(ctx context.Context) GetSchedulingPoliciesFilterOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulingPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSchedulingPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulingPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPoliciesFilterArrayOutput) ToGetSchedulingPoliciesFilterArrayOutput() GetSchedulingPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesFilterArrayOutput) ToGetSchedulingPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulingPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPoliciesFilter {
+		return vs[0].([]GetSchedulingPoliciesFilter)[vs[1].(int)]
+	}).(GetSchedulingPoliciesFilterOutput)
+}
+
+type GetSchedulingPoliciesSchedulingPolicy struct {
+	// The cadence period.
+	Cadence string `pulumi:"cadence"`
+	// Start of the month to be followed during the cadence period.
+	CadenceStartMonths []GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth `pulumi:"cadenceStartMonths"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the Scheduling Policy was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the next scheduling window associated with the schedulingPolicy is planned to start.
+	TimeNextWindowStarts string `pulumi:"timeNextWindowStarts"`
+	// The last date and time that the Scheduling Policy was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSchedulingPoliciesSchedulingPolicyInput is an input type that accepts GetSchedulingPoliciesSchedulingPolicyArgs and GetSchedulingPoliciesSchedulingPolicyOutput values.
+// You can construct a concrete instance of `GetSchedulingPoliciesSchedulingPolicyInput` via:
+//
+//	GetSchedulingPoliciesSchedulingPolicyArgs{...}
+type GetSchedulingPoliciesSchedulingPolicyInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPoliciesSchedulingPolicyOutput() GetSchedulingPoliciesSchedulingPolicyOutput
+	ToGetSchedulingPoliciesSchedulingPolicyOutputWithContext(context.Context) GetSchedulingPoliciesSchedulingPolicyOutput
+}
+
+type GetSchedulingPoliciesSchedulingPolicyArgs struct {
+	// The cadence period.
+	Cadence pulumi.StringInput `pulumi:"cadence"`
+	// Start of the month to be followed during the cadence period.
+	CadenceStartMonths GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayInput `pulumi:"cadenceStartMonths"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Scheduling Policy was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the next scheduling window associated with the schedulingPolicy is planned to start.
+	TimeNextWindowStarts pulumi.StringInput `pulumi:"timeNextWindowStarts"`
+	// The last date and time that the Scheduling Policy was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSchedulingPoliciesSchedulingPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicy)(nil)).Elem()
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyArgs) ToGetSchedulingPoliciesSchedulingPolicyOutput() GetSchedulingPoliciesSchedulingPolicyOutput {
+	return i.ToGetSchedulingPoliciesSchedulingPolicyOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyArgs) ToGetSchedulingPoliciesSchedulingPolicyOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPoliciesSchedulingPolicyOutput)
+}
+
+// GetSchedulingPoliciesSchedulingPolicyArrayInput is an input type that accepts GetSchedulingPoliciesSchedulingPolicyArray and GetSchedulingPoliciesSchedulingPolicyArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPoliciesSchedulingPolicyArrayInput` via:
+//
+//	GetSchedulingPoliciesSchedulingPolicyArray{ GetSchedulingPoliciesSchedulingPolicyArgs{...} }
+type GetSchedulingPoliciesSchedulingPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPoliciesSchedulingPolicyArrayOutput() GetSchedulingPoliciesSchedulingPolicyArrayOutput
+	ToGetSchedulingPoliciesSchedulingPolicyArrayOutputWithContext(context.Context) GetSchedulingPoliciesSchedulingPolicyArrayOutput
+}
+
+type GetSchedulingPoliciesSchedulingPolicyArray []GetSchedulingPoliciesSchedulingPolicyInput
+
+func (GetSchedulingPoliciesSchedulingPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPoliciesSchedulingPolicy)(nil)).Elem()
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyArray) ToGetSchedulingPoliciesSchedulingPolicyArrayOutput() GetSchedulingPoliciesSchedulingPolicyArrayOutput {
+	return i.ToGetSchedulingPoliciesSchedulingPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyArray) ToGetSchedulingPoliciesSchedulingPolicyArrayOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPoliciesSchedulingPolicyArrayOutput)
+}
+
+type GetSchedulingPoliciesSchedulingPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPoliciesSchedulingPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicy)(nil)).Elem()
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) ToGetSchedulingPoliciesSchedulingPolicyOutput() GetSchedulingPoliciesSchedulingPolicyOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) ToGetSchedulingPoliciesSchedulingPolicyOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyOutput {
+	return o
+}
+
+// The cadence period.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) Cadence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.Cadence }).(pulumi.StringOutput)
+}
+
+// Start of the month to be followed during the cadence period.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) CadenceStartMonths() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) []GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth {
+		return v.CadenceStartMonths
+	}).(GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Scheduling Policy was created.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the next scheduling window associated with the schedulingPolicy is planned to start.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) TimeNextWindowStarts() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.TimeNextWindowStarts }).(pulumi.StringOutput)
+}
+
+// The last date and time that the Scheduling Policy was updated.
+func (o GetSchedulingPoliciesSchedulingPolicyOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicy) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSchedulingPoliciesSchedulingPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPoliciesSchedulingPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPoliciesSchedulingPolicy)(nil)).Elem()
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyArrayOutput) ToGetSchedulingPoliciesSchedulingPolicyArrayOutput() GetSchedulingPoliciesSchedulingPolicyArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyArrayOutput) ToGetSchedulingPoliciesSchedulingPolicyArrayOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyArrayOutput) Index(i pulumi.IntInput) GetSchedulingPoliciesSchedulingPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPoliciesSchedulingPolicy {
+		return vs[0].([]GetSchedulingPoliciesSchedulingPolicy)[vs[1].(int)]
+	}).(GetSchedulingPoliciesSchedulingPolicyOutput)
+}
+
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthInput is an input type that accepts GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs and GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput values.
+// You can construct a concrete instance of `GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthInput` via:
+//
+//	GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs{...}
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput
+	ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutputWithContext(context.Context) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput
+}
+
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput {
+	return i.ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput)
+}
+
+// GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayInput is an input type that accepts GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray and GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayInput` via:
+//
+//	GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray{ GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs{...} }
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput
+	ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutputWithContext(context.Context) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput
+}
+
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray []GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthInput
+
+func (GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput {
+	return i.ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput)
+}
+
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput() GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput) ToGetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput) Index(i pulumi.IntInput) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth {
+		return vs[0].([]GetSchedulingPoliciesSchedulingPolicyCadenceStartMonth)[vs[1].(int)]
+	}).(GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput)
+}
+
+type GetSchedulingPolicyCadenceStartMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetSchedulingPolicyCadenceStartMonthInput is an input type that accepts GetSchedulingPolicyCadenceStartMonthArgs and GetSchedulingPolicyCadenceStartMonthOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyCadenceStartMonthInput` via:
+//
+//	GetSchedulingPolicyCadenceStartMonthArgs{...}
+type GetSchedulingPolicyCadenceStartMonthInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyCadenceStartMonthOutput() GetSchedulingPolicyCadenceStartMonthOutput
+	ToGetSchedulingPolicyCadenceStartMonthOutputWithContext(context.Context) GetSchedulingPolicyCadenceStartMonthOutput
+}
+
+type GetSchedulingPolicyCadenceStartMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSchedulingPolicyCadenceStartMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyCadenceStartMonthArgs) ToGetSchedulingPolicyCadenceStartMonthOutput() GetSchedulingPolicyCadenceStartMonthOutput {
+	return i.ToGetSchedulingPolicyCadenceStartMonthOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyCadenceStartMonthArgs) ToGetSchedulingPolicyCadenceStartMonthOutputWithContext(ctx context.Context) GetSchedulingPolicyCadenceStartMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyCadenceStartMonthOutput)
+}
+
+// GetSchedulingPolicyCadenceStartMonthArrayInput is an input type that accepts GetSchedulingPolicyCadenceStartMonthArray and GetSchedulingPolicyCadenceStartMonthArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyCadenceStartMonthArrayInput` via:
+//
+//	GetSchedulingPolicyCadenceStartMonthArray{ GetSchedulingPolicyCadenceStartMonthArgs{...} }
+type GetSchedulingPolicyCadenceStartMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyCadenceStartMonthArrayOutput() GetSchedulingPolicyCadenceStartMonthArrayOutput
+	ToGetSchedulingPolicyCadenceStartMonthArrayOutputWithContext(context.Context) GetSchedulingPolicyCadenceStartMonthArrayOutput
+}
+
+type GetSchedulingPolicyCadenceStartMonthArray []GetSchedulingPolicyCadenceStartMonthInput
+
+func (GetSchedulingPolicyCadenceStartMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyCadenceStartMonthArray) ToGetSchedulingPolicyCadenceStartMonthArrayOutput() GetSchedulingPolicyCadenceStartMonthArrayOutput {
+	return i.ToGetSchedulingPolicyCadenceStartMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyCadenceStartMonthArray) ToGetSchedulingPolicyCadenceStartMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyCadenceStartMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyCadenceStartMonthArrayOutput)
+}
+
+type GetSchedulingPolicyCadenceStartMonthOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyCadenceStartMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyCadenceStartMonthOutput) ToGetSchedulingPolicyCadenceStartMonthOutput() GetSchedulingPolicyCadenceStartMonthOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyCadenceStartMonthOutput) ToGetSchedulingPolicyCadenceStartMonthOutputWithContext(ctx context.Context) GetSchedulingPolicyCadenceStartMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPolicyCadenceStartMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyCadenceStartMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSchedulingPolicyCadenceStartMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyCadenceStartMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyCadenceStartMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyCadenceStartMonthArrayOutput) ToGetSchedulingPolicyCadenceStartMonthArrayOutput() GetSchedulingPolicyCadenceStartMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyCadenceStartMonthArrayOutput) ToGetSchedulingPolicyCadenceStartMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyCadenceStartMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyCadenceStartMonthArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicyCadenceStartMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicyCadenceStartMonth {
+		return vs[0].([]GetSchedulingPolicyCadenceStartMonth)[vs[1].(int)]
+	}).(GetSchedulingPolicyCadenceStartMonthOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsFilterInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsFilterArgs and GetSchedulingPolicyRecommendedScheduledActionsFilterOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsFilterInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsFilterArgs{...}
+type GetSchedulingPolicyRecommendedScheduledActionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutput() GetSchedulingPolicyRecommendedScheduledActionsFilterOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsFilterOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulingPolicyRecommendedScheduledActionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsFilterArgs) ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutput() GetSchedulingPolicyRecommendedScheduledActionsFilterOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsFilterArgs) ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsFilterOutput)
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsFilterArrayInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsFilterArray and GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsFilterArrayInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsFilterArray{ GetSchedulingPolicyRecommendedScheduledActionsFilterArgs{...} }
+type GetSchedulingPolicyRecommendedScheduledActionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsFilterArray []GetSchedulingPolicyRecommendedScheduledActionsFilterInput
+
+func (GetSchedulingPolicyRecommendedScheduledActionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsFilterArray) ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsFilterArray) ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterOutput) ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutput() GetSchedulingPolicyRecommendedScheduledActionsFilterOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterOutput) ToGetSchedulingPolicyRecommendedScheduledActionsFilterOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsFilterOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicyRecommendedScheduledActionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicyRecommendedScheduledActionsFilter {
+		return vs[0].([]GetSchedulingPolicyRecommendedScheduledActionsFilter)[vs[1].(int)]
+	}).(GetSchedulingPolicyRecommendedScheduledActionsFilterOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection struct {
+	// List of scheduled actions.
+	Items []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem `pulumi:"items"`
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs and GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs{...}
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs struct {
+	// List of scheduled actions.
+	Items GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput)
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray and GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray{ GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs{...} }
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionInput
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput {
+	return o
+}
+
+// List of scheduled actions.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput) Items() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection) []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem {
+		return v.Items
+	}).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection {
+		return vs[0].([]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollection)[vs[1].(int)]
+	}).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem struct {
+	// The list of action members in a scheduled action.
+	ActionMembers []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember `pulumi:"actionMembers"`
+	// The order of the scheduled action.
+	ActionOrder int `pulumi:"actionOrder"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams map[string]string `pulumi:"actionParams"`
+	// The type of the scheduled action being performed
+	ActionType string `pulumi:"actionType"`
+	// Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated patching time in minutes for the entire scheduled action.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The id of the scheduling window this scheduled action belongs to.
+	SchedulingWindowId string `pulumi:"schedulingWindowId"`
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs and GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs{...}
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs struct {
+	// The list of action members in a scheduled action.
+	ActionMembers GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayInput `pulumi:"actionMembers"`
+	// The order of the scheduled action.
+	ActionOrder pulumi.IntInput `pulumi:"actionOrder"`
+	// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+	ActionParams pulumi.StringMapInput `pulumi:"actionParams"`
+	// The type of the scheduled action being performed
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated patching time in minutes for the entire scheduled action.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The id of the scheduling window this scheduled action belongs to.
+	SchedulingWindowId pulumi.StringInput `pulumi:"schedulingWindowId"`
+}
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput)
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray and GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray{ GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs{...} }
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemInput
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput {
+	return o
+}
+
+// The list of action members in a scheduled action.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ActionMembers() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember {
+		return v.ActionMembers
+	}).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput)
+}
+
+// The order of the scheduled action.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ActionOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) int {
+		return v.ActionOrder
+	}).(pulumi.IntOutput)
+}
+
+// Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ActionParams() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) map[string]string {
+		return v.ActionParams
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of the scheduled action being performed
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) string {
+		return v.ActionType
+	}).(pulumi.StringOutput)
+}
+
+// Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated patching time in minutes for the entire scheduled action.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The id of the scheduling window this scheduled action belongs to.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput) SchedulingWindowId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem) string {
+		return v.SchedulingWindowId
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem {
+		return vs[0].([]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItem)[vs[1].(int)]
+	}).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember struct {
+	// The estimated patching time in minutes for the entire scheduled action.
+	EstimatedTimeInMins int `pulumi:"estimatedTimeInMins"`
+	// The ocid of the action member.
+	MemberId string `pulumi:"memberId"`
+	// The order of the action member in a scheduled action.
+	MemberOrder int `pulumi:"memberOrder"`
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs and GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs{...}
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs struct {
+	// The estimated patching time in minutes for the entire scheduled action.
+	EstimatedTimeInMins pulumi.IntInput `pulumi:"estimatedTimeInMins"`
+	// The ocid of the action member.
+	MemberId pulumi.StringInput `pulumi:"memberId"`
+	// The order of the action member in a scheduled action.
+	MemberOrder pulumi.IntInput `pulumi:"memberOrder"`
+}
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput)
+}
+
+// GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayInput is an input type that accepts GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray and GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayInput` via:
+//
+//	GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray{ GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs{...} }
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput
+	ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutputWithContext(context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray []GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberInput
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput {
+	return i.ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput {
+	return o
+}
+
+// The estimated patching time in minutes for the entire scheduled action.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput) EstimatedTimeInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember) int {
+		return v.EstimatedTimeInMins
+	}).(pulumi.IntOutput)
+}
+
+// The ocid of the action member.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput) MemberId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember) string {
+		return v.MemberId
+	}).(pulumi.StringOutput)
+}
+
+// The order of the action member in a scheduled action.
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput) MemberOrder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember) int {
+		return v.MemberOrder
+	}).(pulumi.IntOutput)
+}
+
+type GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput() GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput) ToGetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutputWithContext(ctx context.Context) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember {
+		return vs[0].([]GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMember)[vs[1].(int)]
+	}).(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreference struct {
+	// Days during the week when scheduling window should be performed.
+	DaysOfWeeks []GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek `pulumi:"daysOfWeeks"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	Duration int `pulumi:"duration"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration bool `pulumi:"isEnforcedDuration"`
+	// Months during the year when scheduled window should be performed.
+	Months []GetSchedulingPolicySchedulingWindowWindowPreferenceMonth `pulumi:"months"`
+	// The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+	StartTime string `pulumi:"startTime"`
+	// Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetSchedulingPolicySchedulingWindowWindowPreferenceInput is an input type that accepts GetSchedulingPolicySchedulingWindowWindowPreferenceArgs and GetSchedulingPolicySchedulingWindowWindowPreferenceOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowWindowPreferenceInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowWindowPreferenceArgs{...}
+type GetSchedulingPolicySchedulingWindowWindowPreferenceInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceOutput
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceOutput
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceArgs struct {
+	// Days during the week when scheduling window should be performed.
+	DaysOfWeeks GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	Duration pulumi.IntInput `pulumi:"duration"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration pulumi.BoolInput `pulumi:"isEnforcedDuration"`
+	// Months during the year when scheduled window should be performed.
+	Months GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayInput `pulumi:"months"`
+	// The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceArgs) ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceArgs) ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowWindowPreferenceOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowWindowPreferenceArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowWindowPreferenceArray and GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowWindowPreferenceArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowWindowPreferenceArray{ GetSchedulingPolicySchedulingWindowWindowPreferenceArgs{...} }
+type GetSchedulingPolicySchedulingWindowWindowPreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceArray []GetSchedulingPolicySchedulingWindowWindowPreferenceInput
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceArray) ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceArray) ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceOutput {
+	return o
+}
+
+// Days during the week when scheduling window should be performed.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) DaysOfWeeks() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreference) []GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput)
+}
+
+// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) Duration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreference) int { return v.Duration }).(pulumi.IntOutput)
+}
+
+// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) IsEnforcedDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreference) bool { return v.IsEnforcedDuration }).(pulumi.BoolOutput)
+}
+
+// Months during the year when scheduled window should be performed.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) Months() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreference) []GetSchedulingPolicySchedulingWindowWindowPreferenceMonth {
+		return v.Months
+	}).(GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput)
+}
+
+// The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreference) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+// Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreference) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowWindowPreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowWindowPreference {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowWindowPreference)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowWindowPreferenceOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekInput is an input type that accepts GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs and GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs{...}
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray and GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray{ GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs{...} }
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray []GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekInput
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetSchedulingPolicySchedulingWindowWindowPreferenceMonthInput is an input type that accepts GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs and GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowWindowPreferenceMonthInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs{...}
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonthInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray and GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray{ GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs{...} }
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput
+	ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray []GetSchedulingPolicySchedulingWindowWindowPreferenceMonthInput
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowWindowPreferenceMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput() GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput) ToGetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowWindowPreferenceMonth {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowWindowPreferenceMonth)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsFilter struct {
+	// Name of the month of the year.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulingPolicySchedulingWindowsFilterInput is an input type that accepts GetSchedulingPolicySchedulingWindowsFilterArgs and GetSchedulingPolicySchedulingWindowsFilterOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsFilterInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsFilterArgs{...}
+type GetSchedulingPolicySchedulingWindowsFilterInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsFilterOutput() GetSchedulingPolicySchedulingWindowsFilterOutput
+	ToGetSchedulingPolicySchedulingWindowsFilterOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsFilterOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsFilterArgs struct {
+	// Name of the month of the year.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulingPolicySchedulingWindowsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsFilterArgs) ToGetSchedulingPolicySchedulingWindowsFilterOutput() GetSchedulingPolicySchedulingWindowsFilterOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsFilterArgs) ToGetSchedulingPolicySchedulingWindowsFilterOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsFilterOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowsFilterArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowsFilterArray and GetSchedulingPolicySchedulingWindowsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsFilterArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsFilterArray{ GetSchedulingPolicySchedulingWindowsFilterArgs{...} }
+type GetSchedulingPolicySchedulingWindowsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsFilterArrayOutput() GetSchedulingPolicySchedulingWindowsFilterArrayOutput
+	ToGetSchedulingPolicySchedulingWindowsFilterArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsFilterArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsFilterArray []GetSchedulingPolicySchedulingWindowsFilterInput
+
+func (GetSchedulingPolicySchedulingWindowsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsFilter)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsFilterArray) ToGetSchedulingPolicySchedulingWindowsFilterArrayOutput() GetSchedulingPolicySchedulingWindowsFilterArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsFilterArray) ToGetSchedulingPolicySchedulingWindowsFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsFilterArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterOutput) ToGetSchedulingPolicySchedulingWindowsFilterOutput() GetSchedulingPolicySchedulingWindowsFilterOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterOutput) ToGetSchedulingPolicySchedulingWindowsFilterOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsFilterOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPolicySchedulingWindowsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsFilter)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterArrayOutput) ToGetSchedulingPolicySchedulingWindowsFilterArrayOutput() GetSchedulingPolicySchedulingWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterArrayOutput) ToGetSchedulingPolicySchedulingWindowsFilterArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowsFilter {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowsFilter)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowsFilterOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindow struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SchedulingPolicyId string `pulumi:"schedulingPolicyId"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the Scheduling Window was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
+	TimeNextSchedulingWindowStarts string `pulumi:"timeNextSchedulingWindowStarts"`
+	// The last date and time that the Scheduling Window was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The Single Scheduling Window details.
+	WindowPreferences []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference `pulumi:"windowPreferences"`
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs and GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs{...}
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SchedulingPolicyId pulumi.StringInput `pulumi:"schedulingPolicyId"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Scheduling Window was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
+	TimeNextSchedulingWindowStarts pulumi.StringInput `pulumi:"timeNextSchedulingWindowStarts"`
+	// The last date and time that the Scheduling Window was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The Single Scheduling Window details.
+	WindowPreferences GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayInput `pulumi:"windowPreferences"`
+}
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindow)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowArray and GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowArray{ GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs{...} }
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowArray []GetSchedulingPolicySchedulingWindowsSchedulingWindowInput
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindow)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindow)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) SchedulingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.SchedulingPolicyId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Scheduling Window was created.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) TimeNextSchedulingWindowStarts() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string {
+		return v.TimeNextSchedulingWindowStarts
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time that the Scheduling Window was updated.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The Single Scheduling Window details.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput) WindowPreferences() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindow) []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference {
+		return v.WindowPreferences
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindow)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowsSchedulingWindow {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowsSchedulingWindow)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference struct {
+	// Days during the week when scheduling window should be performed.
+	DaysOfWeeks []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek `pulumi:"daysOfWeeks"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	Duration int `pulumi:"duration"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration bool `pulumi:"isEnforcedDuration"`
+	// Months during the year when scheduled window should be performed.
+	Months []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth `pulumi:"months"`
+	// The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+	StartTime string `pulumi:"startTime"`
+	// Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs and GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs{...}
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs struct {
+	// Days during the week when scheduling window should be performed.
+	DaysOfWeeks GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+	Duration pulumi.IntInput `pulumi:"duration"`
+	// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+	IsEnforcedDuration pulumi.BoolInput `pulumi:"isEnforcedDuration"`
+	// Months during the year when scheduled window should be performed.
+	Months GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayInput `pulumi:"months"`
+	// The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray and GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray{ GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs{...} }
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceInput
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput {
+	return o
+}
+
+// Days during the week when scheduling window should be performed.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) DaysOfWeeks() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference) []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput)
+}
+
+// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) Duration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference) int { return v.Duration }).(pulumi.IntOutput)
+}
+
+// Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) IsEnforcedDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference) bool {
+		return v.IsEnforcedDuration
+	}).(pulumi.BoolOutput)
+}
+
+// Months during the year when scheduled window should be performed.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) Months() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference) []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth {
+		return v.Months
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput)
+}
+
+// The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference) string {
+		return v.StartTime
+	}).(pulumi.StringOutput)
+}
+
+// Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference) []int {
+		return v.WeeksOfMonths
+	}).(pulumi.IntArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreference)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs and GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs{...}
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray and GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray{ GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs{...} }
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekInput
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeek)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs and GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs{...}
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput)
+}
+
+// GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayInput is an input type that accepts GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray and GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput values.
+// You can construct a concrete instance of `GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayInput` via:
+//
+//	GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray{ GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs{...} }
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput
+	ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutputWithContext(context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray []GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthInput
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput {
+	return i.ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth)(nil)).Elem()
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput() GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput) ToGetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutputWithContext(ctx context.Context) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput {
+	return o
+}
+
+func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput) Index(i pulumi.IntInput) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth {
+		return vs[0].([]GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonth)[vs[1].(int)]
+	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput)
 }
 
 type GetSystemVersionsFilter struct {
@@ -20051,6 +26900,34 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesFilterInput)(nil)).Elem(), GetDbSystemStoragePerformancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesFilterArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemInput)(nil)).Elem(), GetDbSystemsDbSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemArrayInput)(nil)).Elem(), GetDbSystemsDbSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDataCollectionOptionInput)(nil)).Elem(), GetDbSystemsDbSystemDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDataCollectionOptionArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbSystemOptionInput)(nil)).Elem(), GetDbSystemsDbSystemDbSystemOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbSystemOptionArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbSystemOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachArrayInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlanInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{})
@@ -20141,6 +27018,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput)(nil)).Elem(), GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsFilterInput)(nil)).Elem(), GetExascaleDbStorageVaultsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsFilterArrayInput)(nil)).Elem(), GetExascaleDbStorageVaultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionActionMemberInput)(nil)).Elem(), GetExecutionActionActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionActionMemberArrayInput)(nil)).Elem(), GetExecutionActionActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionsExecutionActionInput)(nil)).Elem(), GetExecutionActionsExecutionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionsExecutionActionArrayInput)(nil)).Elem(), GetExecutionActionsExecutionActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionsExecutionActionActionMemberInput)(nil)).Elem(), GetExecutionActionsExecutionActionActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionsExecutionActionActionMemberArrayInput)(nil)).Elem(), GetExecutionActionsExecutionActionActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionsFilterInput)(nil)).Elem(), GetExecutionActionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionActionsFilterArrayInput)(nil)).Elem(), GetExecutionActionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionWindowsExecutionWindowInput)(nil)).Elem(), GetExecutionWindowsExecutionWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionWindowsExecutionWindowArrayInput)(nil)).Elem(), GetExecutionWindowsExecutionWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionWindowsFilterInput)(nil)).Elem(), GetExecutionWindowsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExecutionWindowsFilterArrayInput)(nil)).Elem(), GetExecutionWindowsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalContainerDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalContainerDatabaseStackMonitoringConfigArgs{})
@@ -20269,6 +27158,60 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionActionMemberInput)(nil)).Elem(), GetScheduledActionActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionActionMemberArrayInput)(nil)).Elem(), GetScheduledActionActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollectionInput)(nil)).Elem(), GetScheduledActionParamsActionParamValuesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollectionArrayInput)(nil)).Elem(), GetScheduledActionParamsActionParamValuesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollectionItemInput)(nil)).Elem(), GetScheduledActionParamsActionParamValuesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionParamsActionParamValuesCollectionItemArrayInput)(nil)).Elem(), GetScheduledActionParamsActionParamValuesCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionParamsFilterInput)(nil)).Elem(), GetScheduledActionParamsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionParamsFilterArrayInput)(nil)).Elem(), GetScheduledActionParamsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsFilterInput)(nil)).Elem(), GetScheduledActionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsFilterArrayInput)(nil)).Elem(), GetScheduledActionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionInput)(nil)).Elem(), GetScheduledActionsScheduledActionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionArrayInput)(nil)).Elem(), GetScheduledActionsScheduledActionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItemInput)(nil)).Elem(), GetScheduledActionsScheduledActionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItemArrayInput)(nil)).Elem(), GetScheduledActionsScheduledActionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItemActionMemberInput)(nil)).Elem(), GetScheduledActionsScheduledActionCollectionItemActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledActionsScheduledActionCollectionItemActionMemberArrayInput)(nil)).Elem(), GetScheduledActionsScheduledActionCollectionItemActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPlansFilterInput)(nil)).Elem(), GetSchedulingPlansFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPlansFilterArrayInput)(nil)).Elem(), GetSchedulingPlansFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollectionInput)(nil)).Elem(), GetSchedulingPlansSchedulingPlanCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollectionArrayInput)(nil)).Elem(), GetSchedulingPlansSchedulingPlanCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollectionItemInput)(nil)).Elem(), GetSchedulingPlansSchedulingPlanCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPlansSchedulingPlanCollectionItemArrayInput)(nil)).Elem(), GetSchedulingPlansSchedulingPlanCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPoliciesFilterInput)(nil)).Elem(), GetSchedulingPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPoliciesFilterArrayInput)(nil)).Elem(), GetSchedulingPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicyInput)(nil)).Elem(), GetSchedulingPoliciesSchedulingPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicyArrayInput)(nil)).Elem(), GetSchedulingPoliciesSchedulingPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthInput)(nil)).Elem(), GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayInput)(nil)).Elem(), GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyCadenceStartMonthInput)(nil)).Elem(), GetSchedulingPolicyCadenceStartMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyCadenceStartMonthArrayInput)(nil)).Elem(), GetSchedulingPolicyCadenceStartMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsFilterInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsFilterArrayInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayInput)(nil)).Elem(), GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowWindowPreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowWindowPreferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceMonthInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsFilterInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsFilterArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsFilterInput)(nil)).Elem(), GetSystemVersionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsFilterArrayInput)(nil)).Elem(), GetSystemVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionArgs{})
@@ -20345,6 +27288,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbSystemOptionOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbSystemOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachDbPlanOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput{})
@@ -20435,6 +27406,18 @@ func init() {
 	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsFilterOutput{})
 	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionActionMemberOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionsExecutionActionOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionsExecutionActionArrayOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionsExecutionActionActionMemberOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionsExecutionActionActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionsFilterOutput{})
+	pulumi.RegisterOutputType(GetExecutionActionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExecutionWindowsExecutionWindowOutput{})
+	pulumi.RegisterOutputType(GetExecutionWindowsExecutionWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetExecutionWindowsFilterOutput{})
+	pulumi.RegisterOutputType(GetExecutionWindowsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabaseStackMonitoringConfigOutput{})
@@ -20563,6 +27546,60 @@ func init() {
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionActionMemberOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionParamsActionParamValuesCollectionOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionParamsActionParamValuesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionParamsActionParamValuesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionParamsActionParamValuesCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionParamsFilterOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionParamsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsFilterOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsScheduledActionCollectionOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsScheduledActionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsScheduledActionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsScheduledActionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsScheduledActionCollectionItemActionMemberOutput{})
+	pulumi.RegisterOutputType(GetScheduledActionsScheduledActionCollectionItemActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPlansFilterOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPlansFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPlansSchedulingPlanCollectionOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPlansSchedulingPlanCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPlansSchedulingPlanCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPlansSchedulingPlanCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPoliciesSchedulingPolicyOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPoliciesSchedulingPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPoliciesSchedulingPolicyCadenceStartMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyCadenceStartMonthOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyCadenceStartMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicyRecommendedScheduledActionsRecommendedScheduledActionsCollectionItemActionMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowWindowPreferenceOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowWindowPreferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowWindowPreferenceMonthOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowWindowPreferenceMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsFilterOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput{})
+	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsFilterOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionOutput{})

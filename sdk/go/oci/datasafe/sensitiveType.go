@@ -78,7 +78,7 @@ type SensitiveType struct {
 	DataPattern pulumi.StringOutput `pulumi:"dataPattern"`
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId pulumi.StringOutput `pulumi:"defaultMaskingFormatId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive type.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -157,7 +157,7 @@ type sensitiveTypeState struct {
 	DataPattern *string `pulumi:"dataPattern"`
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId *string `pulumi:"defaultMaskingFormatId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive type.
 	Description *string `pulumi:"description"`
@@ -201,7 +201,7 @@ type SensitiveTypeState struct {
 	DataPattern pulumi.StringPtrInput
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the sensitive type.
 	Description pulumi.StringPtrInput
@@ -249,7 +249,7 @@ type sensitiveTypeArgs struct {
 	DataPattern *string `pulumi:"dataPattern"`
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId *string `pulumi:"defaultMaskingFormatId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive type.
 	Description *string `pulumi:"description"`
@@ -282,7 +282,7 @@ type SensitiveTypeArgs struct {
 	DataPattern pulumi.StringPtrInput
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the sensitive type.
 	Description pulumi.StringPtrInput
@@ -412,7 +412,7 @@ func (o SensitiveTypeOutput) DefaultMaskingFormatId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SensitiveType) pulumi.StringOutput { return v.DefaultMaskingFormatId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o SensitiveTypeOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SensitiveType) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

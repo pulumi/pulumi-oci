@@ -64,13 +64,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableArray<Outputs.AuditPolicyManagementAuditSpecification>> AuditSpecifications { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the compartment containing the target.
+        /// (Updatable) The OCID of the compartment containing the audit policy.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Unique target identifier.
+        /// The OCID of the target for which the audit policy is created.
         /// </summary>
         [Output("targetId")]
         public Output<string?> TargetId { get; private set; } = null!;
@@ -218,7 +218,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the compartment containing the target.
+        /// (Updatable) The OCID of the compartment containing the audit policy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -227,7 +227,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -278,7 +278,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? RetrieveFromTargetTrigger { get; set; }
 
         /// <summary>
-        /// Unique target identifier.
+        /// The OCID of the target for which the audit policy is created.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
@@ -316,7 +316,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the compartment containing the target.
+        /// (Updatable) The OCID of the compartment containing the audit policy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -325,7 +325,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -400,7 +400,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Unique target identifier.
+        /// The OCID of the target for which the audit policy is created.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

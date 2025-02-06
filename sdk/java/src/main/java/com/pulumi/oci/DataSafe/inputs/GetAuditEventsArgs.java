@@ -74,7 +74,7 @@ public final class GetAuditEventsArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
-     * **Example:** (operationTime ge &#34;2021-06-04T12:00:00.000Z&#34;) and (eventName eq &#34;LOGON&#34;)
+     * **Example:** (operationTime ge &#34;2021-06-04T01-00-26&#34;) and (eventName eq &#34;LOGON&#34;) The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user activity, common user activity, sensitive data activity and data safe activity **Example:** (adminUser eq 1)
      * 
      */
     @Import(name="scimQuery")
@@ -83,7 +83,7 @@ public final class GetAuditEventsArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * @return The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
-     * **Example:** (operationTime ge &#34;2021-06-04T12:00:00.000Z&#34;) and (eventName eq &#34;LOGON&#34;)
+     * **Example:** (operationTime ge &#34;2021-06-04T01-00-26&#34;) and (eventName eq &#34;LOGON&#34;) The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user activity, common user activity, sensitive data activity and data safe activity **Example:** (adminUser eq 1)
      * 
      */
     public Optional<Output<String>> scimQuery() {
@@ -197,7 +197,7 @@ public final class GetAuditEventsArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
-         * **Example:** (operationTime ge &#34;2021-06-04T12:00:00.000Z&#34;) and (eventName eq &#34;LOGON&#34;)
+         * **Example:** (operationTime ge &#34;2021-06-04T01-00-26&#34;) and (eventName eq &#34;LOGON&#34;) The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user activity, common user activity, sensitive data activity and data safe activity **Example:** (adminUser eq 1)
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class GetAuditEventsArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
-         * **Example:** (operationTime ge &#34;2021-06-04T12:00:00.000Z&#34;) and (eventName eq &#34;LOGON&#34;)
+         * **Example:** (operationTime ge &#34;2021-06-04T01-00-26&#34;) and (eventName eq &#34;LOGON&#34;) The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary. adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1. These define admin user activity, common user activity, sensitive data activity and data safe activity **Example:** (adminUser eq 1)
          * 
          * @return builder
          * 

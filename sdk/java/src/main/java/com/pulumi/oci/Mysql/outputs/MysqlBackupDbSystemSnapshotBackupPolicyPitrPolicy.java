@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private @Nullable Boolean isEnabled;
 
     private MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy() {}
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Optional<Boolean> isEnabled() {

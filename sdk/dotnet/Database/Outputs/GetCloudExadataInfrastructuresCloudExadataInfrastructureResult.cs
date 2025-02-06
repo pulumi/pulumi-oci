@@ -82,6 +82,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// If true, the infrastructure is using granular maintenance scheduling preference.
+        /// </summary>
+        public readonly bool IsSchedulingPolicyAssociated;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         public readonly string LastMaintenanceRunId;
@@ -194,6 +198,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string id,
 
+            bool isSchedulingPolicyAssociated,
+
             string lastMaintenanceRunId,
 
             string lifecycleDetails,
@@ -249,6 +255,7 @@ namespace Pulumi.Oci.Database.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LifecycleDetails = lifecycleDetails;
             MaintenanceWindows = maintenanceWindows;

@@ -64,13 +64,13 @@ type AuditProfileManagement struct {
 	AuditCollectedVolume pulumi.StringOutput `pulumi:"auditCollectedVolume"`
 	// (Updatable) An optional property when set to true triggers Change Retention.
 	ChangeRetentionTrigger pulumi.BoolPtrOutput `pulumi:"changeRetentionTrigger"`
-	// The OCID of the compartment that contains the target.
+	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -131,13 +131,13 @@ type auditProfileManagementState struct {
 	AuditCollectedVolume *string `pulumi:"auditCollectedVolume"`
 	// (Updatable) An optional property when set to true triggers Change Retention.
 	ChangeRetentionTrigger *bool `pulumi:"changeRetentionTrigger"`
-	// The OCID of the compartment that contains the target.
+	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -169,13 +169,13 @@ type AuditProfileManagementState struct {
 	AuditCollectedVolume pulumi.StringPtrInput
 	// (Updatable) An optional property when set to true triggers Change Retention.
 	ChangeRetentionTrigger pulumi.BoolPtrInput
-	// The OCID of the compartment that contains the target.
+	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -209,13 +209,13 @@ func (AuditProfileManagementState) ElementType() reflect.Type {
 type auditProfileManagementArgs struct {
 	// (Updatable) An optional property when set to true triggers Change Retention.
 	ChangeRetentionTrigger *bool `pulumi:"changeRetentionTrigger"`
-	// The OCID of the compartment that contains the target.
+	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -238,13 +238,13 @@ type auditProfileManagementArgs struct {
 type AuditProfileManagementArgs struct {
 	// (Updatable) An optional property when set to true triggers Change Retention.
 	ChangeRetentionTrigger pulumi.BoolPtrInput
-	// The OCID of the compartment that contains the target.
+	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -360,12 +360,12 @@ func (o AuditProfileManagementOutput) ChangeRetentionTrigger() pulumi.BoolPtrOut
 	return o.ApplyT(func(v *AuditProfileManagement) pulumi.BoolPtrOutput { return v.ChangeRetentionTrigger }).(pulumi.BoolPtrOutput)
 }
 
-// The OCID of the compartment that contains the target.
+// (Updatable) The OCID of the compartment that contains the audit.
 func (o AuditProfileManagementOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfileManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o AuditProfileManagementOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditProfileManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -375,7 +375,7 @@ func (o AuditProfileManagementOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfileManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 func (o AuditProfileManagementOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfileManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

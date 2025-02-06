@@ -43,6 +43,12 @@ export interface GetMysqlDbSystemArgs {
  * A collection of values returned by getMysqlDbSystem.
  */
 export interface GetMysqlDbSystemResult {
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+     * * UNRESTRICTED: the access to the database is not restricted;
+     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     */
+    readonly accessMode: string;
     readonly adminPassword: string;
     readonly adminUsername: string;
     /**
@@ -89,6 +95,12 @@ export interface GetMysqlDbSystemResult {
      * Whether to enable monitoring via the Database Management service.
      */
     readonly databaseManagement: string;
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE: allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     */
+    readonly databaseMode: string;
     /**
      * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      */
@@ -169,6 +181,10 @@ export interface GetMysqlDbSystemResult {
      * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      */
     readonly portX: number;
+    /**
+     * The read endpoint of a DB System.
+     */
+    readonly readEndpoints: outputs.Mysql.GetMysqlDbSystemReadEndpoint[];
     /**
      * Secure connection configuration details.
      */

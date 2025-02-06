@@ -31,6 +31,8 @@ import * as utilities from "../utilities";
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserTimeLastLoginLessThan,
+ *     timePasswordExpiryGreaterThanOrEqualTo: userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo,
+ *     timePasswordExpiryLessThan: userAssessmentUserTimePasswordExpiryLessThan,
  *     timePasswordLastChangedGreaterThanOrEqualTo: userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo,
  *     timePasswordLastChangedLessThan: userAssessmentUserTimePasswordLastChangedLessThan,
  *     timeUserCreatedGreaterThanOrEqualTo: userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo,
@@ -57,6 +59,8 @@ export function getUserAssessmentUsers(args: GetUserAssessmentUsersArgs, opts?: 
         "targetId": args.targetId,
         "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
         "timeLastLoginLessThan": args.timeLastLoginLessThan,
+        "timePasswordExpiryGreaterThanOrEqualTo": args.timePasswordExpiryGreaterThanOrEqualTo,
+        "timePasswordExpiryLessThan": args.timePasswordExpiryLessThan,
         "timePasswordLastChangedGreaterThanOrEqualTo": args.timePasswordLastChangedGreaterThanOrEqualTo,
         "timePasswordLastChangedLessThan": args.timePasswordLastChangedLessThan,
         "timeUserCreatedGreaterThanOrEqualTo": args.timeUserCreatedGreaterThanOrEqualTo,
@@ -114,6 +118,14 @@ export interface GetUserAssessmentUsersArgs {
      * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
     timeLastLoginLessThan?: string;
+    /**
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryGreaterThanOrEqualTo?: string;
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryLessThan?: string;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -202,6 +214,8 @@ export interface GetUserAssessmentUsersResult {
     readonly targetId?: string;
     readonly timeLastLoginGreaterThanOrEqualTo?: string;
     readonly timeLastLoginLessThan?: string;
+    readonly timePasswordExpiryGreaterThanOrEqualTo?: string;
+    readonly timePasswordExpiryLessThan?: string;
     readonly timePasswordLastChangedGreaterThanOrEqualTo?: string;
     readonly timePasswordLastChangedLessThan?: string;
     readonly timeUserCreatedGreaterThanOrEqualTo?: string;
@@ -252,6 +266,8 @@ export interface GetUserAssessmentUsersResult {
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserTimeLastLoginLessThan,
+ *     timePasswordExpiryGreaterThanOrEqualTo: userAssessmentUserTimePasswordExpiryGreaterThanOrEqualTo,
+ *     timePasswordExpiryLessThan: userAssessmentUserTimePasswordExpiryLessThan,
  *     timePasswordLastChangedGreaterThanOrEqualTo: userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo,
  *     timePasswordLastChangedLessThan: userAssessmentUserTimePasswordLastChangedLessThan,
  *     timeUserCreatedGreaterThanOrEqualTo: userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo,
@@ -278,6 +294,8 @@ export function getUserAssessmentUsersOutput(args: GetUserAssessmentUsersOutputA
         "targetId": args.targetId,
         "timeLastLoginGreaterThanOrEqualTo": args.timeLastLoginGreaterThanOrEqualTo,
         "timeLastLoginLessThan": args.timeLastLoginLessThan,
+        "timePasswordExpiryGreaterThanOrEqualTo": args.timePasswordExpiryGreaterThanOrEqualTo,
+        "timePasswordExpiryLessThan": args.timePasswordExpiryLessThan,
         "timePasswordLastChangedGreaterThanOrEqualTo": args.timePasswordLastChangedGreaterThanOrEqualTo,
         "timePasswordLastChangedLessThan": args.timePasswordLastChangedLessThan,
         "timeUserCreatedGreaterThanOrEqualTo": args.timeUserCreatedGreaterThanOrEqualTo,
@@ -335,6 +353,14 @@ export interface GetUserAssessmentUsersOutputArgs {
      * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
     timeLastLoginLessThan?: pulumi.Input<string>;
+    /**
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryGreaterThanOrEqualTo?: pulumi.Input<string>;
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timePasswordExpiryLessThan?: pulumi.Input<string>;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *

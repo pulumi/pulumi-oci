@@ -77,6 +77,7 @@ from .get_masking_policy_health_report_logs import *
 from .get_masking_policy_health_reports import *
 from .get_masking_policy_masking_objects import *
 from .get_masking_policy_masking_schemas import *
+from .get_masking_policy_referential_relations import *
 from .get_masking_report import *
 from .get_masking_report_masked_columns import *
 from .get_masking_reports import *
@@ -115,6 +116,8 @@ from .get_security_policy_report_database_view_access_entry import *
 from .get_security_policy_report_role_grant_paths import *
 from .get_security_policy_reports import *
 from .get_sensitive_data_model import *
+from .get_sensitive_data_model_referential_relation import *
+from .get_sensitive_data_model_referential_relations import *
 from .get_sensitive_data_model_sensitive_objects import *
 from .get_sensitive_data_model_sensitive_schemas import *
 from .get_sensitive_data_model_sensitive_types import *
@@ -123,6 +126,8 @@ from .get_sensitive_data_models_sensitive_column import *
 from .get_sensitive_data_models_sensitive_columns import *
 from .get_sensitive_type import *
 from .get_sensitive_types import *
+from .get_sensitive_types_export import *
+from .get_sensitive_types_exports import *
 from .get_sql_collection import *
 from .get_sql_collection_analytics import *
 from .get_sql_collection_log_insights import *
@@ -148,6 +153,7 @@ from .get_target_databases_schemas import *
 from .get_target_databases_tables import *
 from .get_user_assessment import *
 from .get_user_assessment_comparison import *
+from .get_user_assessment_password_expiry_date_analytics import *
 from .get_user_assessment_profile_analytics import *
 from .get_user_assessment_profiles import *
 from .get_user_assessment_user_access_analytics import *
@@ -171,9 +177,11 @@ from .security_policy_deployment import *
 from .security_policy_deployment_management import *
 from .security_policy_management import *
 from .sensitive_data_model import *
+from .sensitive_data_model_referential_relation import *
 from .sensitive_data_models_apply_discovery_job_results import *
 from .sensitive_data_models_sensitive_column import *
 from .sensitive_type import *
+from .sensitive_types_export import *
 from .set_security_assessment_baseline import *
 from .set_security_assessment_baseline_management import *
 from .set_user_assessment_baseline import *

@@ -73,11 +73,11 @@ export class AuditPolicyManagement extends pulumi.CustomResource {
      */
     public /*out*/ readonly auditSpecifications!: pulumi.Output<outputs.DataSafe.AuditPolicyManagementAuditSpecification[]>;
     /**
-     * The OCID of the compartment containing the target.
+     * (Updatable) The OCID of the compartment containing the audit policy.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -117,7 +117,7 @@ export class AuditPolicyManagement extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * Unique target identifier.
+     * The OCID of the target for which the audit policy is created.
      */
     public readonly targetId!: pulumi.Output<string | undefined>;
     /**
@@ -207,11 +207,11 @@ export interface AuditPolicyManagementState {
      */
     auditSpecifications?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditPolicyManagementAuditSpecification>[]>;
     /**
-     * The OCID of the compartment containing the target.
+     * (Updatable) The OCID of the compartment containing the audit policy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -251,7 +251,7 @@ export interface AuditPolicyManagementState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Unique target identifier.
+     * The OCID of the target for which the audit policy is created.
      */
     targetId?: pulumi.Input<string>;
     /**
@@ -281,11 +281,11 @@ export interface AuditPolicyManagementArgs {
      */
     auditConditions?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditPolicyManagementAuditCondition>[]>;
     /**
-     * The OCID of the compartment containing the target.
+     * (Updatable) The OCID of the compartment containing the audit policy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -313,7 +313,7 @@ export interface AuditPolicyManagementArgs {
      */
     retrieveFromTargetTrigger?: pulumi.Input<boolean>;
     /**
-     * Unique target identifier.
+     * The OCID of the target for which the audit policy is created.
      */
     targetId?: pulumi.Input<string>;
 }

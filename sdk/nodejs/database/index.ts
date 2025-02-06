@@ -205,6 +205,16 @@ export type ExascaleDbStorageVault = import("./exascaleDbStorageVault").Exascale
 export const ExascaleDbStorageVault: typeof import("./exascaleDbStorageVault").ExascaleDbStorageVault = null as any;
 utilities.lazyLoad(exports, ["ExascaleDbStorageVault"], () => require("./exascaleDbStorageVault"));
 
+export { ExecutionActionArgs, ExecutionActionState } from "./executionAction";
+export type ExecutionAction = import("./executionAction").ExecutionAction;
+export const ExecutionAction: typeof import("./executionAction").ExecutionAction = null as any;
+utilities.lazyLoad(exports, ["ExecutionAction"], () => require("./executionAction"));
+
+export { ExecutionWindowArgs, ExecutionWindowState } from "./executionWindow";
+export type ExecutionWindow = import("./executionWindow").ExecutionWindow;
+export const ExecutionWindow: typeof import("./executionWindow").ExecutionWindow = null as any;
+utilities.lazyLoad(exports, ["ExecutionWindow"], () => require("./executionWindow"));
+
 export { ExternalContainerDatabaseArgs, ExternalContainerDatabaseState } from "./externalContainerDatabase";
 export type ExternalContainerDatabase = import("./externalContainerDatabase").ExternalContainerDatabase;
 export const ExternalContainerDatabase: typeof import("./externalContainerDatabase").ExternalContainerDatabase = null as any;
@@ -750,6 +760,26 @@ export const getExascaleDbStorageVaults: typeof import("./getExascaleDbStorageVa
 export const getExascaleDbStorageVaultsOutput: typeof import("./getExascaleDbStorageVaults").getExascaleDbStorageVaultsOutput = null as any;
 utilities.lazyLoad(exports, ["getExascaleDbStorageVaults","getExascaleDbStorageVaultsOutput"], () => require("./getExascaleDbStorageVaults"));
 
+export { GetExecutionActionArgs, GetExecutionActionResult, GetExecutionActionOutputArgs } from "./getExecutionAction";
+export const getExecutionAction: typeof import("./getExecutionAction").getExecutionAction = null as any;
+export const getExecutionActionOutput: typeof import("./getExecutionAction").getExecutionActionOutput = null as any;
+utilities.lazyLoad(exports, ["getExecutionAction","getExecutionActionOutput"], () => require("./getExecutionAction"));
+
+export { GetExecutionActionsArgs, GetExecutionActionsResult, GetExecutionActionsOutputArgs } from "./getExecutionActions";
+export const getExecutionActions: typeof import("./getExecutionActions").getExecutionActions = null as any;
+export const getExecutionActionsOutput: typeof import("./getExecutionActions").getExecutionActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getExecutionActions","getExecutionActionsOutput"], () => require("./getExecutionActions"));
+
+export { GetExecutionWindowArgs, GetExecutionWindowResult, GetExecutionWindowOutputArgs } from "./getExecutionWindow";
+export const getExecutionWindow: typeof import("./getExecutionWindow").getExecutionWindow = null as any;
+export const getExecutionWindowOutput: typeof import("./getExecutionWindow").getExecutionWindowOutput = null as any;
+utilities.lazyLoad(exports, ["getExecutionWindow","getExecutionWindowOutput"], () => require("./getExecutionWindow"));
+
+export { GetExecutionWindowsArgs, GetExecutionWindowsResult, GetExecutionWindowsOutputArgs } from "./getExecutionWindows";
+export const getExecutionWindows: typeof import("./getExecutionWindows").getExecutionWindows = null as any;
+export const getExecutionWindowsOutput: typeof import("./getExecutionWindows").getExecutionWindowsOutput = null as any;
+utilities.lazyLoad(exports, ["getExecutionWindows","getExecutionWindowsOutput"], () => require("./getExecutionWindows"));
+
 export { GetExternalContainerDatabaseArgs, GetExternalContainerDatabaseResult, GetExternalContainerDatabaseOutputArgs } from "./getExternalContainerDatabase";
 export const getExternalContainerDatabase: typeof import("./getExternalContainerDatabase").getExternalContainerDatabase = null as any;
 export const getExternalContainerDatabaseOutput: typeof import("./getExternalContainerDatabase").getExternalContainerDatabaseOutput = null as any;
@@ -859,6 +889,56 @@ export { GetPluggableDatabasesArgs, GetPluggableDatabasesResult, GetPluggableDat
 export const getPluggableDatabases: typeof import("./getPluggableDatabases").getPluggableDatabases = null as any;
 export const getPluggableDatabasesOutput: typeof import("./getPluggableDatabases").getPluggableDatabasesOutput = null as any;
 utilities.lazyLoad(exports, ["getPluggableDatabases","getPluggableDatabasesOutput"], () => require("./getPluggableDatabases"));
+
+export { GetScheduledActionArgs, GetScheduledActionResult, GetScheduledActionOutputArgs } from "./getScheduledAction";
+export const getScheduledAction: typeof import("./getScheduledAction").getScheduledAction = null as any;
+export const getScheduledActionOutput: typeof import("./getScheduledAction").getScheduledActionOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledAction","getScheduledActionOutput"], () => require("./getScheduledAction"));
+
+export { GetScheduledActionParamsArgs, GetScheduledActionParamsResult, GetScheduledActionParamsOutputArgs } from "./getScheduledActionParams";
+export const getScheduledActionParams: typeof import("./getScheduledActionParams").getScheduledActionParams = null as any;
+export const getScheduledActionParamsOutput: typeof import("./getScheduledActionParams").getScheduledActionParamsOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledActionParams","getScheduledActionParamsOutput"], () => require("./getScheduledActionParams"));
+
+export { GetScheduledActionsArgs, GetScheduledActionsResult, GetScheduledActionsOutputArgs } from "./getScheduledActions";
+export const getScheduledActions: typeof import("./getScheduledActions").getScheduledActions = null as any;
+export const getScheduledActionsOutput: typeof import("./getScheduledActions").getScheduledActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledActions","getScheduledActionsOutput"], () => require("./getScheduledActions"));
+
+export { GetSchedulingPlanArgs, GetSchedulingPlanResult, GetSchedulingPlanOutputArgs } from "./getSchedulingPlan";
+export const getSchedulingPlan: typeof import("./getSchedulingPlan").getSchedulingPlan = null as any;
+export const getSchedulingPlanOutput: typeof import("./getSchedulingPlan").getSchedulingPlanOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPlan","getSchedulingPlanOutput"], () => require("./getSchedulingPlan"));
+
+export { GetSchedulingPlansArgs, GetSchedulingPlansResult, GetSchedulingPlansOutputArgs } from "./getSchedulingPlans";
+export const getSchedulingPlans: typeof import("./getSchedulingPlans").getSchedulingPlans = null as any;
+export const getSchedulingPlansOutput: typeof import("./getSchedulingPlans").getSchedulingPlansOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPlans","getSchedulingPlansOutput"], () => require("./getSchedulingPlans"));
+
+export { GetSchedulingPoliciesArgs, GetSchedulingPoliciesResult, GetSchedulingPoliciesOutputArgs } from "./getSchedulingPolicies";
+export const getSchedulingPolicies: typeof import("./getSchedulingPolicies").getSchedulingPolicies = null as any;
+export const getSchedulingPoliciesOutput: typeof import("./getSchedulingPolicies").getSchedulingPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPolicies","getSchedulingPoliciesOutput"], () => require("./getSchedulingPolicies"));
+
+export { GetSchedulingPolicyArgs, GetSchedulingPolicyResult, GetSchedulingPolicyOutputArgs } from "./getSchedulingPolicy";
+export const getSchedulingPolicy: typeof import("./getSchedulingPolicy").getSchedulingPolicy = null as any;
+export const getSchedulingPolicyOutput: typeof import("./getSchedulingPolicy").getSchedulingPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPolicy","getSchedulingPolicyOutput"], () => require("./getSchedulingPolicy"));
+
+export { GetSchedulingPolicyRecommendedScheduledActionsArgs, GetSchedulingPolicyRecommendedScheduledActionsResult, GetSchedulingPolicyRecommendedScheduledActionsOutputArgs } from "./getSchedulingPolicyRecommendedScheduledActions";
+export const getSchedulingPolicyRecommendedScheduledActions: typeof import("./getSchedulingPolicyRecommendedScheduledActions").getSchedulingPolicyRecommendedScheduledActions = null as any;
+export const getSchedulingPolicyRecommendedScheduledActionsOutput: typeof import("./getSchedulingPolicyRecommendedScheduledActions").getSchedulingPolicyRecommendedScheduledActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPolicyRecommendedScheduledActions","getSchedulingPolicyRecommendedScheduledActionsOutput"], () => require("./getSchedulingPolicyRecommendedScheduledActions"));
+
+export { GetSchedulingPolicySchedulingWindowArgs, GetSchedulingPolicySchedulingWindowResult, GetSchedulingPolicySchedulingWindowOutputArgs } from "./getSchedulingPolicySchedulingWindow";
+export const getSchedulingPolicySchedulingWindow: typeof import("./getSchedulingPolicySchedulingWindow").getSchedulingPolicySchedulingWindow = null as any;
+export const getSchedulingPolicySchedulingWindowOutput: typeof import("./getSchedulingPolicySchedulingWindow").getSchedulingPolicySchedulingWindowOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPolicySchedulingWindow","getSchedulingPolicySchedulingWindowOutput"], () => require("./getSchedulingPolicySchedulingWindow"));
+
+export { GetSchedulingPolicySchedulingWindowsArgs, GetSchedulingPolicySchedulingWindowsResult, GetSchedulingPolicySchedulingWindowsOutputArgs } from "./getSchedulingPolicySchedulingWindows";
+export const getSchedulingPolicySchedulingWindows: typeof import("./getSchedulingPolicySchedulingWindows").getSchedulingPolicySchedulingWindows = null as any;
+export const getSchedulingPolicySchedulingWindowsOutput: typeof import("./getSchedulingPolicySchedulingWindows").getSchedulingPolicySchedulingWindowsOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedulingPolicySchedulingWindows","getSchedulingPolicySchedulingWindowsOutput"], () => require("./getSchedulingPolicySchedulingWindows"));
 
 export { GetSystemVersionsArgs, GetSystemVersionsResult, GetSystemVersionsOutputArgs } from "./getSystemVersions";
 export const getSystemVersions: typeof import("./getSystemVersions").getSystemVersions = null as any;
@@ -970,6 +1050,26 @@ export type PluggableDatabasesRemoteClone = import("./pluggableDatabasesRemoteCl
 export const PluggableDatabasesRemoteClone: typeof import("./pluggableDatabasesRemoteClone").PluggableDatabasesRemoteClone = null as any;
 utilities.lazyLoad(exports, ["PluggableDatabasesRemoteClone"], () => require("./pluggableDatabasesRemoteClone"));
 
+export { ScheduledActionArgs, ScheduledActionState } from "./scheduledAction";
+export type ScheduledAction = import("./scheduledAction").ScheduledAction;
+export const ScheduledAction: typeof import("./scheduledAction").ScheduledAction = null as any;
+utilities.lazyLoad(exports, ["ScheduledAction"], () => require("./scheduledAction"));
+
+export { SchedulingPlanArgs, SchedulingPlanState } from "./schedulingPlan";
+export type SchedulingPlan = import("./schedulingPlan").SchedulingPlan;
+export const SchedulingPlan: typeof import("./schedulingPlan").SchedulingPlan = null as any;
+utilities.lazyLoad(exports, ["SchedulingPlan"], () => require("./schedulingPlan"));
+
+export { SchedulingPolicyArgs, SchedulingPolicyState } from "./schedulingPolicy";
+export type SchedulingPolicy = import("./schedulingPolicy").SchedulingPolicy;
+export const SchedulingPolicy: typeof import("./schedulingPolicy").SchedulingPolicy = null as any;
+utilities.lazyLoad(exports, ["SchedulingPolicy"], () => require("./schedulingPolicy"));
+
+export { SchedulingPolicySchedulingWindowArgs, SchedulingPolicySchedulingWindowState } from "./schedulingPolicySchedulingWindow";
+export type SchedulingPolicySchedulingWindow = import("./schedulingPolicySchedulingWindow").SchedulingPolicySchedulingWindow;
+export const SchedulingPolicySchedulingWindow: typeof import("./schedulingPolicySchedulingWindow").SchedulingPolicySchedulingWindow = null as any;
+utilities.lazyLoad(exports, ["SchedulingPolicySchedulingWindow"], () => require("./schedulingPolicySchedulingWindow"));
+
 export { VmClusterArgs, VmClusterState } from "./vmCluster";
 export type VmCluster = import("./vmCluster").VmCluster;
 export const VmCluster: typeof import("./vmCluster").VmCluster = null as any;
@@ -1075,6 +1175,10 @@ const _module = {
                 return new ExadbVmCluster(name, <any>undefined, { urn })
             case "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault":
                 return new ExascaleDbStorageVault(name, <any>undefined, { urn })
+            case "oci:Database/executionAction:ExecutionAction":
+                return new ExecutionAction(name, <any>undefined, { urn })
+            case "oci:Database/executionWindow:ExecutionWindow":
+                return new ExecutionWindow(name, <any>undefined, { urn })
             case "oci:Database/externalContainerDatabase:ExternalContainerDatabase":
                 return new ExternalContainerDatabase(name, <any>undefined, { urn })
             case "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement":
@@ -1113,6 +1217,14 @@ const _module = {
                 return new PluggableDatabasesLocalClone(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone":
                 return new PluggableDatabasesRemoteClone(name, <any>undefined, { urn })
+            case "oci:Database/scheduledAction:ScheduledAction":
+                return new ScheduledAction(name, <any>undefined, { urn })
+            case "oci:Database/schedulingPlan:SchedulingPlan":
+                return new SchedulingPlan(name, <any>undefined, { urn })
+            case "oci:Database/schedulingPolicy:SchedulingPolicy":
+                return new SchedulingPolicy(name, <any>undefined, { urn })
+            case "oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow":
+                return new SchedulingPolicySchedulingWindow(name, <any>undefined, { urn })
             case "oci:Database/vmCluster:VmCluster":
                 return new VmCluster(name, <any>undefined, { urn })
             case "oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork":
@@ -1166,6 +1278,8 @@ pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureStor
 pulumi.runtime.registerResourceModule("oci", "Database/exadataIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadbVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exascaleDbStorageVault", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/executionAction", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/executionWindow", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabaseManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabasesStackMonitoring", _module)
@@ -1185,6 +1299,10 @@ pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabase", _modu
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabaseManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesLocalClone", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesRemoteClone", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/scheduledAction", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/schedulingPlan", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/schedulingPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/schedulingPolicySchedulingWindow", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/vmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/vmClusterAddVirtualNetwork", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/vmClusterNetwork", _module)

@@ -70,19 +70,19 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
     public readonly allowedClientIps!: pulumi.Output<string[]>;
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
     public readonly allowedClientOsUsernames!: pulumi.Output<string[]>;
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
     public readonly allowedClientPrograms!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL collection.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -90,19 +90,19 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
      */
     public readonly dbUserName!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
     public readonly enforcementScope!: pulumi.Output<string>;
     /**
@@ -232,19 +232,19 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
  */
 export interface SqlFirewallPolicyManagementState {
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
     allowedClientIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
     allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
     allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL collection.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -252,19 +252,19 @@ export interface SqlFirewallPolicyManagementState {
      */
     dbUserName?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
     enforcementScope?: pulumi.Input<string>;
     /**
@@ -330,19 +330,19 @@ export interface SqlFirewallPolicyManagementState {
  */
 export interface SqlFirewallPolicyManagementArgs {
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
     allowedClientIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
     allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
     allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL collection.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -350,19 +350,19 @@ export interface SqlFirewallPolicyManagementArgs {
      */
     dbUserName?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
     enforcementScope?: pulumi.Input<string>;
     /**

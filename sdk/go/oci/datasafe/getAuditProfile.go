@@ -67,7 +67,7 @@ type LookupAuditProfileResult struct {
 	ChangeRetentionTrigger int                         `pulumi:"changeRetentionTrigger"`
 	// The OCID of the compartment that contains the audit.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
@@ -85,7 +85,7 @@ type LookupAuditProfileResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
 	OfflineMonths int `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 	OnlineMonths int `pulumi:"onlineMonths"`
 	// The current state of the audit profile.
 	State string `pulumi:"state"`
@@ -157,7 +157,7 @@ func (o LookupAuditProfileResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditProfileResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupAuditProfileResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupAuditProfileResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -202,7 +202,7 @@ func (o LookupAuditProfileResultOutput) OfflineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAuditProfileResult) int { return v.OfflineMonths }).(pulumi.IntOutput)
 }
 
-// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 func (o LookupAuditProfileResultOutput) OnlineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAuditProfileResult) int { return v.OnlineMonths }).(pulumi.IntOutput)
 }

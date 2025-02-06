@@ -54,14 +54,14 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -84,14 +84,14 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
+     * (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s updatable.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
+     * @return (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s updatable.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -303,7 +303,7 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
+         * @param displayName (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s updatable.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
+         * @param displayName (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s updatable.
          * 
          * @return builder
          * 

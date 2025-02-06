@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
     /**
-     * @return The OCID of the masking policy..
+     * @return The OCID of the masking policy.
      * 
      */
     private String policyId;
@@ -23,7 +23,7 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
 
     private GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension() {}
     /**
-     * @return The OCID of the masking policy..
+     * @return The OCID of the masking policy.
      * 
      */
     public String policyId() {

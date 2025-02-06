@@ -22,22 +22,17 @@ __all__ = ['SecurityAssessmentArgs', 'SecurityAssessment']
 class SecurityAssessmentArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 target_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
-                 schedule: Optional[pulumi.Input[str]] = None):
+                 schedule: Optional[pulumi.Input[str]] = None,
+                 target_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SecurityAssessment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -45,9 +40,13 @@ class SecurityAssessmentArgs:
         :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+        :param pulumi.Input[str] target_id: The OCID of the target database on which security assessment is to be run.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "target_id", target_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -60,6 +59,8 @@ class SecurityAssessmentArgs:
             pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -74,26 +75,10 @@ class SecurityAssessmentArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
-    @pulumi.getter(name="targetId")
-    def target_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "target_id")
-
-    @target_id.setter
-    def target_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "target_id", value)
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -163,6 +148,22 @@ class SecurityAssessmentArgs:
     def schedule(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "schedule", value)
 
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the target database on which security assessment is to be run.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_id", value)
+
 
 @pulumi.input_type
 class _SecurityAssessmentState:
@@ -196,7 +197,7 @@ class _SecurityAssessmentState:
         """
         Input properties used for looking up and filtering SecurityAssessment resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -297,7 +298,7 @@ class _SecurityAssessmentState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -629,7 +630,6 @@ class SecurityAssessment(pulumi.CustomResource):
 
         test_security_assessment = oci.data_safe.SecurityAssessment("test_security_assessment",
             compartment_id=compartment_id,
-            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -639,7 +639,8 @@ class SecurityAssessment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_assessment_scheduled=security_assessment_is_assessment_scheduled,
-            schedule=security_assessment_schedule)
+            schedule=security_assessment_schedule,
+            target_id=test_target["id"])
         ```
 
         ## Import
@@ -653,7 +654,7 @@ class SecurityAssessment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -688,7 +689,6 @@ class SecurityAssessment(pulumi.CustomResource):
 
         test_security_assessment = oci.data_safe.SecurityAssessment("test_security_assessment",
             compartment_id=compartment_id,
-            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -698,7 +698,8 @@ class SecurityAssessment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_assessment_scheduled=security_assessment_is_assessment_scheduled,
-            schedule=security_assessment_schedule)
+            schedule=security_assessment_schedule,
+            target_id=test_target["id"])
         ```
 
         ## Import
@@ -750,8 +751,6 @@ class SecurityAssessment(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_assessment_scheduled"] = is_assessment_scheduled
             __props__.__dict__["schedule"] = schedule
-            if target_id is None and not opts.urn:
-                raise TypeError("Missing required property 'target_id'")
             __props__.__dict__["target_id"] = target_id
             __props__.__dict__["ignored_assessment_ids"] = None
             __props__.__dict__["ignored_targets"] = None
@@ -815,7 +814,7 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Description of the security assessment.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -891,7 +890,7 @@ class SecurityAssessment(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 

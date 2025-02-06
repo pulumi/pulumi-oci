@@ -26,7 +26,7 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private Boolean isEnabled;
@@ -62,7 +62,7 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
         return this.freeformTags;
     }
     /**
-     * @return Specifies if PITR is enabled or disabled.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Boolean isEnabled() {

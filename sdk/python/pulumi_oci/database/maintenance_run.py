@@ -161,6 +161,7 @@ class _MaintenanceRunState:
                  estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_maintenance_run_granular: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_subtype: Optional[pulumi.Input[str]] = None,
                  maintenance_type: Optional[pulumi.Input[str]] = None,
@@ -179,7 +180,8 @@ class _MaintenanceRunState:
                  target_storage_server_version: Optional[pulumi.Input[str]] = None,
                  time_ended: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
-                 time_started: Optional[pulumi.Input[str]] = None):
+                 time_started: Optional[pulumi.Input[str]] = None,
+                 total_time_taken_in_mins: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering MaintenanceRun resources.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
@@ -193,6 +195,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param pulumi.Input[bool] is_maintenance_run_granular: If `FALSE`, the maintenance run doesn't support granular maintenance.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_subtype: Maintenance sub-type.
         :param pulumi.Input[str] maintenance_type: Maintenance type.
@@ -218,6 +221,7 @@ class _MaintenanceRunState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
+        :param pulumi.Input[int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -241,6 +245,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_dst_file_update_enabled is not None:
             pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        if is_maintenance_run_granular is not None:
+            pulumi.set(__self__, "is_maintenance_run_granular", is_maintenance_run_granular)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_subtype is not None:
@@ -279,6 +285,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "time_scheduled", time_scheduled)
         if time_started is not None:
             pulumi.set(__self__, "time_started", time_started)
+        if total_time_taken_in_mins is not None:
+            pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -411,6 +419,18 @@ class _MaintenanceRunState:
     @is_dst_file_update_enabled.setter
     def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_dst_file_update_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMaintenanceRunGranular")
+    def is_maintenance_run_granular(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+        """
+        return pulumi.get(self, "is_maintenance_run_granular")
+
+    @is_maintenance_run_granular.setter
+    def is_maintenance_run_granular(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_maintenance_run_granular", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -646,6 +666,18 @@ class _MaintenanceRunState:
     def time_started(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_started", value)
 
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
+    @total_time_taken_in_mins.setter
+    def total_time_taken_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_time_taken_in_mins", value)
+
 
 class MaintenanceRun(pulumi.CustomResource):
     @overload
@@ -798,6 +830,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["estimated_component_patching_start_time"] = None
             __props__.__dict__["estimated_patching_times"] = None
             __props__.__dict__["is_custom_action_timeout_enabled"] = None
+            __props__.__dict__["is_maintenance_run_granular"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_subtype"] = None
             __props__.__dict__["maintenance_type"] = None
@@ -813,6 +846,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["target_storage_server_version"] = None
             __props__.__dict__["time_ended"] = None
             __props__.__dict__["time_started"] = None
+            __props__.__dict__["total_time_taken_in_mins"] = None
         super(MaintenanceRun, __self__).__init__(
             'oci:Database/maintenanceRun:MaintenanceRun',
             resource_name,
@@ -834,6 +868,7 @@ class MaintenanceRun(pulumi.CustomResource):
             estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]]] = None,
             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
             is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
+            is_maintenance_run_granular: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_subtype: Optional[pulumi.Input[str]] = None,
             maintenance_type: Optional[pulumi.Input[str]] = None,
@@ -852,7 +887,8 @@ class MaintenanceRun(pulumi.CustomResource):
             target_storage_server_version: Optional[pulumi.Input[str]] = None,
             time_ended: Optional[pulumi.Input[str]] = None,
             time_scheduled: Optional[pulumi.Input[str]] = None,
-            time_started: Optional[pulumi.Input[str]] = None) -> 'MaintenanceRun':
+            time_started: Optional[pulumi.Input[str]] = None,
+            total_time_taken_in_mins: Optional[pulumi.Input[int]] = None) -> 'MaintenanceRun':
         """
         Get an existing MaintenanceRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -871,6 +907,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param pulumi.Input[bool] is_maintenance_run_granular: If `FALSE`, the maintenance run doesn't support granular maintenance.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_subtype: Maintenance sub-type.
         :param pulumi.Input[str] maintenance_type: Maintenance type.
@@ -896,6 +933,7 @@ class MaintenanceRun(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
+        :param pulumi.Input[int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -912,6 +950,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["estimated_patching_times"] = estimated_patching_times
         __props__.__dict__["is_custom_action_timeout_enabled"] = is_custom_action_timeout_enabled
         __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
+        __props__.__dict__["is_maintenance_run_granular"] = is_maintenance_run_granular
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_subtype"] = maintenance_subtype
         __props__.__dict__["maintenance_type"] = maintenance_type
@@ -931,6 +970,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["time_ended"] = time_ended
         __props__.__dict__["time_scheduled"] = time_scheduled
         __props__.__dict__["time_started"] = time_started
+        __props__.__dict__["total_time_taken_in_mins"] = total_time_taken_in_mins
         return MaintenanceRun(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1020,6 +1060,14 @@ class MaintenanceRun(pulumi.CustomResource):
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMaintenanceRunGranular")
+    def is_maintenance_run_granular(self) -> pulumi.Output[bool]:
+        """
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+        """
+        return pulumi.get(self, "is_maintenance_run_granular")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -1178,4 +1226,12 @@ class MaintenanceRun(pulumi.CustomResource):
         The date and time the maintenance run starts.
         """
         return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> pulumi.Output[int]:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
 

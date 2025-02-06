@@ -365,6 +365,11 @@ export const getMaskingPolicyMaskingSchemas: typeof import("./getMaskingPolicyMa
 export const getMaskingPolicyMaskingSchemasOutput: typeof import("./getMaskingPolicyMaskingSchemas").getMaskingPolicyMaskingSchemasOutput = null as any;
 utilities.lazyLoad(exports, ["getMaskingPolicyMaskingSchemas","getMaskingPolicyMaskingSchemasOutput"], () => require("./getMaskingPolicyMaskingSchemas"));
 
+export { GetMaskingPolicyReferentialRelationsArgs, GetMaskingPolicyReferentialRelationsResult, GetMaskingPolicyReferentialRelationsOutputArgs } from "./getMaskingPolicyReferentialRelations";
+export const getMaskingPolicyReferentialRelations: typeof import("./getMaskingPolicyReferentialRelations").getMaskingPolicyReferentialRelations = null as any;
+export const getMaskingPolicyReferentialRelationsOutput: typeof import("./getMaskingPolicyReferentialRelations").getMaskingPolicyReferentialRelationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicyReferentialRelations","getMaskingPolicyReferentialRelationsOutput"], () => require("./getMaskingPolicyReferentialRelations"));
+
 export { GetMaskingReportArgs, GetMaskingReportResult, GetMaskingReportOutputArgs } from "./getMaskingReport";
 export const getMaskingReport: typeof import("./getMaskingReport").getMaskingReport = null as any;
 export const getMaskingReportOutput: typeof import("./getMaskingReport").getMaskingReportOutput = null as any;
@@ -555,6 +560,16 @@ export const getSensitiveDataModel: typeof import("./getSensitiveDataModel").get
 export const getSensitiveDataModelOutput: typeof import("./getSensitiveDataModel").getSensitiveDataModelOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveDataModel","getSensitiveDataModelOutput"], () => require("./getSensitiveDataModel"));
 
+export { GetSensitiveDataModelReferentialRelationArgs, GetSensitiveDataModelReferentialRelationResult, GetSensitiveDataModelReferentialRelationOutputArgs } from "./getSensitiveDataModelReferentialRelation";
+export const getSensitiveDataModelReferentialRelation: typeof import("./getSensitiveDataModelReferentialRelation").getSensitiveDataModelReferentialRelation = null as any;
+export const getSensitiveDataModelReferentialRelationOutput: typeof import("./getSensitiveDataModelReferentialRelation").getSensitiveDataModelReferentialRelationOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelReferentialRelation","getSensitiveDataModelReferentialRelationOutput"], () => require("./getSensitiveDataModelReferentialRelation"));
+
+export { GetSensitiveDataModelReferentialRelationsArgs, GetSensitiveDataModelReferentialRelationsResult, GetSensitiveDataModelReferentialRelationsOutputArgs } from "./getSensitiveDataModelReferentialRelations";
+export const getSensitiveDataModelReferentialRelations: typeof import("./getSensitiveDataModelReferentialRelations").getSensitiveDataModelReferentialRelations = null as any;
+export const getSensitiveDataModelReferentialRelationsOutput: typeof import("./getSensitiveDataModelReferentialRelations").getSensitiveDataModelReferentialRelationsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelReferentialRelations","getSensitiveDataModelReferentialRelationsOutput"], () => require("./getSensitiveDataModelReferentialRelations"));
+
 export { GetSensitiveDataModelSensitiveObjectsArgs, GetSensitiveDataModelSensitiveObjectsResult, GetSensitiveDataModelSensitiveObjectsOutputArgs } from "./getSensitiveDataModelSensitiveObjects";
 export const getSensitiveDataModelSensitiveObjects: typeof import("./getSensitiveDataModelSensitiveObjects").getSensitiveDataModelSensitiveObjects = null as any;
 export const getSensitiveDataModelSensitiveObjectsOutput: typeof import("./getSensitiveDataModelSensitiveObjects").getSensitiveDataModelSensitiveObjectsOutput = null as any;
@@ -594,6 +609,16 @@ export { GetSensitiveTypesArgs, GetSensitiveTypesResult, GetSensitiveTypesOutput
 export const getSensitiveTypes: typeof import("./getSensitiveTypes").getSensitiveTypes = null as any;
 export const getSensitiveTypesOutput: typeof import("./getSensitiveTypes").getSensitiveTypesOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveTypes","getSensitiveTypesOutput"], () => require("./getSensitiveTypes"));
+
+export { GetSensitiveTypesExportArgs, GetSensitiveTypesExportResult, GetSensitiveTypesExportOutputArgs } from "./getSensitiveTypesExport";
+export const getSensitiveTypesExport: typeof import("./getSensitiveTypesExport").getSensitiveTypesExport = null as any;
+export const getSensitiveTypesExportOutput: typeof import("./getSensitiveTypesExport").getSensitiveTypesExportOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveTypesExport","getSensitiveTypesExportOutput"], () => require("./getSensitiveTypesExport"));
+
+export { GetSensitiveTypesExportsArgs, GetSensitiveTypesExportsResult, GetSensitiveTypesExportsOutputArgs } from "./getSensitiveTypesExports";
+export const getSensitiveTypesExports: typeof import("./getSensitiveTypesExports").getSensitiveTypesExports = null as any;
+export const getSensitiveTypesExportsOutput: typeof import("./getSensitiveTypesExports").getSensitiveTypesExportsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveTypesExports","getSensitiveTypesExportsOutput"], () => require("./getSensitiveTypesExports"));
 
 export { GetSqlCollectionArgs, GetSqlCollectionResult, GetSqlCollectionOutputArgs } from "./getSqlCollection";
 export const getSqlCollection: typeof import("./getSqlCollection").getSqlCollection = null as any;
@@ -720,6 +745,11 @@ export const getUserAssessmentComparison: typeof import("./getUserAssessmentComp
 export const getUserAssessmentComparisonOutput: typeof import("./getUserAssessmentComparison").getUserAssessmentComparisonOutput = null as any;
 utilities.lazyLoad(exports, ["getUserAssessmentComparison","getUserAssessmentComparisonOutput"], () => require("./getUserAssessmentComparison"));
 
+export { GetUserAssessmentPasswordExpiryDateAnalyticsArgs, GetUserAssessmentPasswordExpiryDateAnalyticsResult, GetUserAssessmentPasswordExpiryDateAnalyticsOutputArgs } from "./getUserAssessmentPasswordExpiryDateAnalytics";
+export const getUserAssessmentPasswordExpiryDateAnalytics: typeof import("./getUserAssessmentPasswordExpiryDateAnalytics").getUserAssessmentPasswordExpiryDateAnalytics = null as any;
+export const getUserAssessmentPasswordExpiryDateAnalyticsOutput: typeof import("./getUserAssessmentPasswordExpiryDateAnalytics").getUserAssessmentPasswordExpiryDateAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessmentPasswordExpiryDateAnalytics","getUserAssessmentPasswordExpiryDateAnalyticsOutput"], () => require("./getUserAssessmentPasswordExpiryDateAnalytics"));
+
 export { GetUserAssessmentProfileAnalyticsArgs, GetUserAssessmentProfileAnalyticsResult, GetUserAssessmentProfileAnalyticsOutputArgs } from "./getUserAssessmentProfileAnalytics";
 export const getUserAssessmentProfileAnalytics: typeof import("./getUserAssessmentProfileAnalytics").getUserAssessmentProfileAnalytics = null as any;
 export const getUserAssessmentProfileAnalyticsOutput: typeof import("./getUserAssessmentProfileAnalytics").getUserAssessmentProfileAnalyticsOutput = null as any;
@@ -835,6 +865,11 @@ export type SensitiveDataModel = import("./sensitiveDataModel").SensitiveDataMod
 export const SensitiveDataModel: typeof import("./sensitiveDataModel").SensitiveDataModel = null as any;
 utilities.lazyLoad(exports, ["SensitiveDataModel"], () => require("./sensitiveDataModel"));
 
+export { SensitiveDataModelReferentialRelationArgs, SensitiveDataModelReferentialRelationState } from "./sensitiveDataModelReferentialRelation";
+export type SensitiveDataModelReferentialRelation = import("./sensitiveDataModelReferentialRelation").SensitiveDataModelReferentialRelation;
+export const SensitiveDataModelReferentialRelation: typeof import("./sensitiveDataModelReferentialRelation").SensitiveDataModelReferentialRelation = null as any;
+utilities.lazyLoad(exports, ["SensitiveDataModelReferentialRelation"], () => require("./sensitiveDataModelReferentialRelation"));
+
 export { SensitiveDataModelsApplyDiscoveryJobResultsArgs, SensitiveDataModelsApplyDiscoveryJobResultsState } from "./sensitiveDataModelsApplyDiscoveryJobResults";
 export type SensitiveDataModelsApplyDiscoveryJobResults = import("./sensitiveDataModelsApplyDiscoveryJobResults").SensitiveDataModelsApplyDiscoveryJobResults;
 export const SensitiveDataModelsApplyDiscoveryJobResults: typeof import("./sensitiveDataModelsApplyDiscoveryJobResults").SensitiveDataModelsApplyDiscoveryJobResults = null as any;
@@ -849,6 +884,11 @@ export { SensitiveTypeArgs, SensitiveTypeState } from "./sensitiveType";
 export type SensitiveType = import("./sensitiveType").SensitiveType;
 export const SensitiveType: typeof import("./sensitiveType").SensitiveType = null as any;
 utilities.lazyLoad(exports, ["SensitiveType"], () => require("./sensitiveType"));
+
+export { SensitiveTypesExportArgs, SensitiveTypesExportState } from "./sensitiveTypesExport";
+export type SensitiveTypesExport = import("./sensitiveTypesExport").SensitiveTypesExport;
+export const SensitiveTypesExport: typeof import("./sensitiveTypesExport").SensitiveTypesExport = null as any;
+utilities.lazyLoad(exports, ["SensitiveTypesExport"], () => require("./sensitiveTypesExport"));
 
 export { SetSecurityAssessmentBaselineArgs, SetSecurityAssessmentBaselineState } from "./setSecurityAssessmentBaseline";
 export type SetSecurityAssessmentBaseline = import("./setSecurityAssessmentBaseline").SetSecurityAssessmentBaseline;
@@ -1008,12 +1048,16 @@ const _module = {
                 return new SecurityPolicyManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveDataModel:SensitiveDataModel":
                 return new SensitiveDataModel(name, <any>undefined, { urn })
+            case "oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation":
+                return new SensitiveDataModelReferentialRelation(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults":
                 return new SensitiveDataModelsApplyDiscoveryJobResults(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn":
                 return new SensitiveDataModelsSensitiveColumn(name, <any>undefined, { urn })
             case "oci:DataSafe/sensitiveType:SensitiveType":
                 return new SensitiveType(name, <any>undefined, { urn })
+            case "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport":
+                return new SensitiveTypesExport(name, <any>undefined, { urn })
             case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
                 return new SetSecurityAssessmentBaseline(name, <any>undefined, { urn })
             case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
@@ -1088,9 +1132,11 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyDeployment"
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyDeploymentManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModel", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelReferentialRelation", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsApplyDiscoveryJobResults", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsSensitiveColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveType", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveTypesExport", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaseline", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaselineManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setUserAssessmentBaseline", _module)

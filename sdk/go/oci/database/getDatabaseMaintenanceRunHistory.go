@@ -58,8 +58,12 @@ type GetDatabaseMaintenanceRunHistoryArgs struct {
 
 // A collection of values returned by getDatabaseMaintenanceRunHistory.
 type GetDatabaseMaintenanceRunHistoryResult struct {
+	// The OCID of the current execution window.
+	CurrentExecutionWindow string `pulumi:"currentExecutionWindow"`
 	// List of database server history details.
 	DbServersHistoryDetails []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail `pulumi:"dbServersHistoryDetails"`
+	// The list of granular maintenance history details.
+	GranularMaintenanceHistories []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory `pulumi:"granularMaintenanceHistories"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Details of a maintenance run.
@@ -101,11 +105,23 @@ func (o GetDatabaseMaintenanceRunHistoryResultOutput) ToGetDatabaseMaintenanceRu
 	return o
 }
 
+// The OCID of the current execution window.
+func (o GetDatabaseMaintenanceRunHistoryResultOutput) CurrentExecutionWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryResult) string { return v.CurrentExecutionWindow }).(pulumi.StringOutput)
+}
+
 // List of database server history details.
 func (o GetDatabaseMaintenanceRunHistoryResultOutput) DbServersHistoryDetails() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryResult) []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
 		return v.DbServersHistoryDetails
 	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+// The list of granular maintenance history details.
+func (o GetDatabaseMaintenanceRunHistoryResultOutput) GranularMaintenanceHistories() GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryResult) []GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory {
+		return v.GranularMaintenanceHistories
+	}).(GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -76,7 +76,7 @@ export class UserAssessment extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -258,7 +258,7 @@ export interface UserAssessmentState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -366,7 +366,7 @@ export interface UserAssessmentArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**

@@ -63,7 +63,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {

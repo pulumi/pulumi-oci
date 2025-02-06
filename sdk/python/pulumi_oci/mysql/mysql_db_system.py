@@ -25,6 +25,7 @@ class MysqlDbSystemArgs:
                  compartment_id: pulumi.Input[str],
                  shape_name: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
+                 access_mode: Optional[pulumi.Input[str]] = None,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
                  backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
@@ -34,6 +35,7 @@ class MysqlDbSystemArgs:
                  data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
+                 database_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -47,6 +49,7 @@ class MysqlDbSystemArgs:
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
                  secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
@@ -62,6 +65,9 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
+        :param pulumi.Input[str] access_mode: (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+               * UNRESTRICTED (default): the access to the database is not restricted;
+               * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input['MysqlDbSystemBackupPolicyArgs'] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
@@ -71,6 +77,9 @@ class MysqlDbSystemArgs:
         :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
+        :param pulumi.Input[str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+               * READ_WRITE (default): allow running read and write statements on the DB system;
+               * READ_ONLY: only allow running read statements on the DB system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -94,6 +103,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input['MysqlDbSystemReadEndpointArgs'] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
                
@@ -106,6 +116,8 @@ class MysqlDbSystemArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if access_mode is not None:
+            pulumi.set(__self__, "access_mode", access_mode)
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
         if admin_username is not None:
@@ -124,6 +136,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
+        if database_mode is not None:
+            pulumi.set(__self__, "database_mode", database_mode)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deletion_policies is not None:
@@ -150,6 +164,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if read_endpoint is not None:
+            pulumi.set(__self__, "read_endpoint", read_endpoint)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shutdown_type is not None:
@@ -211,6 +227,20 @@ class MysqlDbSystemArgs:
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="accessMode")
+    def access_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+        * UNRESTRICTED (default): the access to the database is not restricted;
+        * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        """
+        return pulumi.get(self, "access_mode")
+
+    @access_mode.setter
+    def access_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_mode", value)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -319,6 +349,20 @@ class MysqlDbSystemArgs:
     @database_management.setter
     def database_management(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_management", value)
+
+    @property
+    @pulumi.getter(name="databaseMode")
+    def database_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+        * READ_WRITE (default): allow running read and write statements on the DB system;
+        * READ_ONLY: only allow running read statements on the DB system.
+        """
+        return pulumi.get(self, "database_mode")
+
+    @database_mode.setter
+    def database_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_mode", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -487,6 +531,18 @@ class MysqlDbSystemArgs:
         pulumi.set(self, "port_x", value)
 
     @property
+    @pulumi.getter(name="readEndpoint")
+    def read_endpoint(self) -> Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]:
+        """
+        (Updatable) Details required to create a Read Endpoint.
+        """
+        return pulumi.get(self, "read_endpoint")
+
+    @read_endpoint.setter
+    def read_endpoint(self, value: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]):
+        pulumi.set(self, "read_endpoint", value)
+
+    @property
     @pulumi.getter(name="secureConnections")
     def secure_connections(self) -> Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]:
         """
@@ -541,6 +597,7 @@ class MysqlDbSystemArgs:
 @pulumi.input_type
 class _MysqlDbSystemState:
     def __init__(__self__, *,
+                 access_mode: Optional[pulumi.Input[str]] = None,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
@@ -554,6 +611,7 @@ class _MysqlDbSystemState:
                  data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
+                 database_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -572,6 +630,7 @@ class _MysqlDbSystemState:
                  point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
                  secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
@@ -582,6 +641,9 @@ class _MysqlDbSystemState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MysqlDbSystem resources.
+        :param pulumi.Input[str] access_mode: (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+               * UNRESTRICTED (default): the access to the database is not restricted;
+               * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -599,6 +661,9 @@ class _MysqlDbSystemState:
         :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
+        :param pulumi.Input[str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+               * READ_WRITE (default): allow running read and write statements on the DB system;
+               * READ_ONLY: only allow running read statements on the DB system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -627,6 +692,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input['MysqlDbSystemReadEndpointArgs'] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -640,6 +706,8 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] time_created: The date and time the DB System was created.
         :param pulumi.Input[str] time_updated: The time the DB System was last updated.
         """
+        if access_mode is not None:
+            pulumi.set(__self__, "access_mode", access_mode)
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
         if admin_username is not None:
@@ -666,6 +734,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
+        if database_mode is not None:
+            pulumi.set(__self__, "database_mode", database_mode)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deletion_policies is not None:
@@ -702,6 +772,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if read_endpoint is not None:
+            pulumi.set(__self__, "read_endpoint", read_endpoint)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
@@ -718,6 +790,20 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="accessMode")
+    def access_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+        * UNRESTRICTED (default): the access to the database is not restricted;
+        * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        """
+        return pulumi.get(self, "access_mode")
+
+    @access_mode.setter
+    def access_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_mode", value)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -878,6 +964,20 @@ class _MysqlDbSystemState:
     @database_management.setter
     def database_management(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_management", value)
+
+    @property
+    @pulumi.getter(name="databaseMode")
+    def database_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+        * READ_WRITE (default): allow running read and write statements on the DB system;
+        * READ_ONLY: only allow running read statements on the DB system.
+        """
+        return pulumi.get(self, "database_mode")
+
+    @database_mode.setter
+    def database_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_mode", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1106,6 +1206,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "port_x", value)
 
     @property
+    @pulumi.getter(name="readEndpoint")
+    def read_endpoint(self) -> Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]:
+        """
+        (Updatable) Details required to create a Read Endpoint.
+        """
+        return pulumi.get(self, "read_endpoint")
+
+    @read_endpoint.setter
+    def read_endpoint(self, value: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]):
+        pulumi.set(self, "read_endpoint", value)
+
+    @property
     @pulumi.getter(name="secureConnections")
     def secure_connections(self) -> Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']]:
         """
@@ -1211,6 +1323,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 access_mode: Optional[pulumi.Input[str]] = None,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
@@ -1222,6 +1335,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
+                 database_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -1235,6 +1349,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
                  secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
@@ -1258,6 +1373,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             compartment_id=compartment_id,
             shape_name=mysql_shape_name,
             subnet_id=test_subnet["id"],
+            access_mode=mysql_db_system_access_mode,
             admin_password=mysql_db_system_admin_password,
             admin_username=mysql_db_system_admin_username,
             backup_policy={
@@ -1285,6 +1401,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
             database_management=mysql_db_system_database_management,
+            database_mode=mysql_db_system_database_mode,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -1307,6 +1424,12 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             port=mysql_db_system_port,
             port_x=mysql_db_system_port_x,
+            read_endpoint={
+                "exclude_ips": mysql_db_system_read_endpoint_exclude_ips,
+                "is_enabled": mysql_db_system_read_endpoint_is_enabled,
+                "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
+                "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
+            },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
                 "certificate_id": test_certificate["id"],
@@ -1327,6 +1450,9 @@ class MysqlDbSystem(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] access_mode: (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+               * UNRESTRICTED (default): the access to the database is not restricted;
+               * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -1342,6 +1468,9 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
+        :param pulumi.Input[str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+               * READ_WRITE (default): allow running read and write statements on the DB system;
+               * READ_ONLY: only allow running read statements on the DB system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -1365,6 +1494,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -1398,6 +1528,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             compartment_id=compartment_id,
             shape_name=mysql_shape_name,
             subnet_id=test_subnet["id"],
+            access_mode=mysql_db_system_access_mode,
             admin_password=mysql_db_system_admin_password,
             admin_username=mysql_db_system_admin_username,
             backup_policy={
@@ -1425,6 +1556,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
             database_management=mysql_db_system_database_management,
+            database_mode=mysql_db_system_database_mode,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -1447,6 +1579,12 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             port=mysql_db_system_port,
             port_x=mysql_db_system_port_x,
+            read_endpoint={
+                "exclude_ips": mysql_db_system_read_endpoint_exclude_ips,
+                "is_enabled": mysql_db_system_read_endpoint_is_enabled,
+                "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
+                "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
+            },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
                 "certificate_id": test_certificate["id"],
@@ -1480,6 +1618,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 access_mode: Optional[pulumi.Input[str]] = None,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
@@ -1491,6 +1630,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_management: Optional[pulumi.Input[str]] = None,
+                 database_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -1504,6 +1644,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
                  secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  shutdown_type: Optional[pulumi.Input[str]] = None,
@@ -1519,6 +1660,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MysqlDbSystemArgs.__new__(MysqlDbSystemArgs)
 
+            __props__.__dict__["access_mode"] = access_mode
             __props__.__dict__["admin_password"] = None if admin_password is None else pulumi.Output.secret(admin_password)
             __props__.__dict__["admin_username"] = admin_username
             if availability_domain is None and not opts.urn:
@@ -1534,6 +1676,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["data_storage"] = data_storage
             __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
             __props__.__dict__["database_management"] = database_management
+            __props__.__dict__["database_mode"] = database_mode
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["deletion_policies"] = deletion_policies
             __props__.__dict__["description"] = description
@@ -1547,6 +1690,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["mysql_version"] = mysql_version
             __props__.__dict__["port"] = port
             __props__.__dict__["port_x"] = port_x
+            __props__.__dict__["read_endpoint"] = read_endpoint
             __props__.__dict__["secure_connections"] = secure_connections
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
@@ -1578,6 +1722,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            access_mode: Optional[pulumi.Input[str]] = None,
             admin_password: Optional[pulumi.Input[str]] = None,
             admin_username: Optional[pulumi.Input[str]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
@@ -1591,6 +1736,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             database_management: Optional[pulumi.Input[str]] = None,
+            database_mode: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -1609,6 +1755,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]]] = None,
             port: Optional[pulumi.Input[int]] = None,
             port_x: Optional[pulumi.Input[int]] = None,
+            read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
             secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             shutdown_type: Optional[pulumi.Input[str]] = None,
@@ -1624,6 +1771,9 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] access_mode: (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+               * UNRESTRICTED (default): the access to the database is not restricted;
+               * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -1641,6 +1791,9 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
+        :param pulumi.Input[str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+               * READ_WRITE (default): allow running read and write statements on the DB system;
+               * READ_ONLY: only allow running read statements on the DB system.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -1669,6 +1822,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
         :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -1686,6 +1840,7 @@ class MysqlDbSystem(pulumi.CustomResource):
 
         __props__ = _MysqlDbSystemState.__new__(_MysqlDbSystemState)
 
+        __props__.__dict__["access_mode"] = access_mode
         __props__.__dict__["admin_password"] = admin_password
         __props__.__dict__["admin_username"] = admin_username
         __props__.__dict__["availability_domain"] = availability_domain
@@ -1699,6 +1854,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["data_storage"] = data_storage
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["database_management"] = database_management
+        __props__.__dict__["database_mode"] = database_mode
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deletion_policies"] = deletion_policies
         __props__.__dict__["description"] = description
@@ -1717,6 +1873,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["point_in_time_recovery_details"] = point_in_time_recovery_details
         __props__.__dict__["port"] = port
         __props__.__dict__["port_x"] = port_x
+        __props__.__dict__["read_endpoint"] = read_endpoint
         __props__.__dict__["secure_connections"] = secure_connections
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["shutdown_type"] = shutdown_type
@@ -1726,6 +1883,16 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return MysqlDbSystem(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="accessMode")
+    def access_mode(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+        * UNRESTRICTED (default): the access to the database is not restricted;
+        * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        """
+        return pulumi.get(self, "access_mode")
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -1834,6 +2001,16 @@ class MysqlDbSystem(pulumi.CustomResource):
         (Updatable) Whether to enable monitoring via the Database Management service.
         """
         return pulumi.get(self, "database_management")
+
+    @property
+    @pulumi.getter(name="databaseMode")
+    def database_mode(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+        * READ_WRITE (default): allow running read and write statements on the DB system;
+        * READ_ONLY: only allow running read statements on the DB system.
+        """
+        return pulumi.get(self, "database_mode")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1988,6 +2165,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="readEndpoint")
+    def read_endpoint(self) -> pulumi.Output['outputs.MysqlDbSystemReadEndpoint']:
+        """
+        (Updatable) Details required to create a Read Endpoint.
+        """
+        return pulumi.get(self, "read_endpoint")
 
     @property
     @pulumi.getter(name="secureConnections")

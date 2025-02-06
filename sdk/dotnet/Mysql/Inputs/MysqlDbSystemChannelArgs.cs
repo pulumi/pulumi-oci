@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Whether the Channel has been enabled by the user.
+        /// Specifies if the DB System read endpoint is enabled or not.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

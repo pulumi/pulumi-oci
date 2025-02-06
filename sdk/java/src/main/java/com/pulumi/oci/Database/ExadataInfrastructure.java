@@ -517,6 +517,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.isMultiRackDeployment;
     }
     /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    @Export(name="isSchedulingPolicyAssociated", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSchedulingPolicyAssociated;
+
+    /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    public Output<Boolean> isSchedulingPolicyAssociated() {
+        return this.isSchedulingPolicyAssociated;
+    }
+    /**
      * Additional information about the current lifecycle state.
      * 
      */

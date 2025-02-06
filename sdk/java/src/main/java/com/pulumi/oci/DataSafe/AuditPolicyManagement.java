@@ -101,28 +101,28 @@ public class AuditPolicyManagement extends com.pulumi.resources.CustomResource {
         return this.auditSpecifications;
     }
     /**
-     * The OCID of the compartment containing the target.
+     * (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the target.
+     * @return (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
@@ -255,14 +255,14 @@ public class AuditPolicyManagement extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * Unique target identifier.
+     * The OCID of the target for which the audit policy is created.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> targetId;
 
     /**
-     * @return Unique target identifier.
+     * @return The OCID of the target for which the audit policy is created.
      * 
      */
     public Output<Optional<String>> targetId() {

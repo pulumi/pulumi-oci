@@ -82,6 +82,8 @@ type LookupMaintenanceRunResult struct {
 	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular bool `pulumi:"isMaintenanceRunGranular"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	MaintenanceRunId string `pulumi:"maintenanceRunId"`
@@ -120,6 +122,8 @@ type LookupMaintenanceRunResult struct {
 	TimeScheduled string `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted string `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
 }
 
 func LookupMaintenanceRunOutput(ctx *pulumi.Context, args LookupMaintenanceRunOutputArgs, opts ...pulumi.InvokeOption) LookupMaintenanceRunResultOutput {
@@ -218,6 +222,11 @@ func (o LookupMaintenanceRunResultOutput) IsDstFileUpdateEnabled() pulumi.BoolOu
 	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
+// If `FALSE`, the maintenance run doesn't support granular maintenance.
+func (o LookupMaintenanceRunResultOutput) IsMaintenanceRunGranular() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsMaintenanceRunGranular }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current lifecycle state.
 func (o LookupMaintenanceRunResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMaintenanceRunResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -314,6 +323,11 @@ func (o LookupMaintenanceRunResultOutput) TimeScheduled() pulumi.StringOutput {
 // The date and time the maintenance run starts.
 func (o LookupMaintenanceRunResultOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMaintenanceRunResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o LookupMaintenanceRunResultOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupMaintenanceRunResult) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
 }
 
 func init() {

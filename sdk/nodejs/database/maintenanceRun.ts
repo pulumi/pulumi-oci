@@ -112,6 +112,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public readonly isDstFileUpdateEnabled!: pulumi.Output<boolean>;
     /**
+     * If `FALSE`, the maintenance run doesn't support granular maintenance.
+     */
+    public /*out*/ readonly isMaintenanceRunGranular!: pulumi.Output<boolean>;
+    /**
      * Additional information about the current lifecycle state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -193,6 +197,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      * The date and time the maintenance run starts.
      */
     public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     */
+    public /*out*/ readonly totalTimeTakenInMins!: pulumi.Output<number>;
 
     /**
      * Create a MaintenanceRun resource with the given unique name, arguments, and options.
@@ -218,6 +226,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["estimatedPatchingTimes"] = state ? state.estimatedPatchingTimes : undefined;
             resourceInputs["isCustomActionTimeoutEnabled"] = state ? state.isCustomActionTimeoutEnabled : undefined;
             resourceInputs["isDstFileUpdateEnabled"] = state ? state.isDstFileUpdateEnabled : undefined;
+            resourceInputs["isMaintenanceRunGranular"] = state ? state.isMaintenanceRunGranular : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenanceSubtype"] = state ? state.maintenanceSubtype : undefined;
             resourceInputs["maintenanceType"] = state ? state.maintenanceType : undefined;
@@ -237,6 +246,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["timeEnded"] = state ? state.timeEnded : undefined;
             resourceInputs["timeScheduled"] = state ? state.timeScheduled : undefined;
             resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
+            resourceInputs["totalTimeTakenInMins"] = state ? state.totalTimeTakenInMins : undefined;
         } else {
             const args = argsOrState as MaintenanceRunArgs | undefined;
             if ((!args || args.patchType === undefined) && !opts.urn) {
@@ -263,6 +273,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["estimatedComponentPatchingStartTime"] = undefined /*out*/;
             resourceInputs["estimatedPatchingTimes"] = undefined /*out*/;
             resourceInputs["isCustomActionTimeoutEnabled"] = undefined /*out*/;
+            resourceInputs["isMaintenanceRunGranular"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceSubtype"] = undefined /*out*/;
             resourceInputs["maintenanceType"] = undefined /*out*/;
@@ -278,6 +289,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["targetStorageServerVersion"] = undefined /*out*/;
             resourceInputs["timeEnded"] = undefined /*out*/;
             resourceInputs["timeStarted"] = undefined /*out*/;
+            resourceInputs["totalTimeTakenInMins"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaintenanceRun.__pulumiType, name, resourceInputs, opts);
@@ -332,6 +344,10 @@ export interface MaintenanceRunState {
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
     isDstFileUpdateEnabled?: pulumi.Input<boolean>;
+    /**
+     * If `FALSE`, the maintenance run doesn't support granular maintenance.
+     */
+    isMaintenanceRunGranular?: pulumi.Input<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -414,6 +430,10 @@ export interface MaintenanceRunState {
      * The date and time the maintenance run starts.
      */
     timeStarted?: pulumi.Input<string>;
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     */
+    totalTimeTakenInMins?: pulumi.Input<number>;
 }
 
 /**

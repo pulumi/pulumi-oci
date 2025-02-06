@@ -443,6 +443,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    @Import(name="isSchedulingPolicyAssociated")
+    private @Nullable Output<Boolean> isSchedulingPolicyAssociated;
+
+    /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    public Optional<Output<Boolean>> isSchedulingPolicyAssociated() {
+        return Optional.ofNullable(this.isSchedulingPolicyAssociated);
+    }
+
+    /**
      * Additional information about the current lifecycle state.
      * 
      */
@@ -773,6 +788,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.infiniBandNetworkCidr = $.infiniBandNetworkCidr;
         this.isCpsOfflineReportEnabled = $.isCpsOfflineReportEnabled;
         this.isMultiRackDeployment = $.isMultiRackDeployment;
+        this.isSchedulingPolicyAssociated = $.isSchedulingPolicyAssociated;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceSloStatus = $.maintenanceSloStatus;
         this.maintenanceWindow = $.maintenanceWindow;
@@ -1423,6 +1439,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
             return isMultiRackDeployment(Output.of(isMultiRackDeployment));
+        }
+
+        /**
+         * @param isSchedulingPolicyAssociated If true, the infrastructure is using granular maintenance scheduling preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSchedulingPolicyAssociated(@Nullable Output<Boolean> isSchedulingPolicyAssociated) {
+            $.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+            return this;
+        }
+
+        /**
+         * @param isSchedulingPolicyAssociated If true, the infrastructure is using granular maintenance scheduling preference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            return isSchedulingPolicyAssociated(Output.of(isSchedulingPolicyAssociated));
         }
 
         /**

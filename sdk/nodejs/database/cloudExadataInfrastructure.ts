@@ -153,6 +153,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     */
+    public /*out*/ readonly isSchedulingPolicyAssociated!: pulumi.Output<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
@@ -262,6 +266,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isSchedulingPolicyAssociated"] = state ? state.isSchedulingPolicyAssociated : undefined;
             resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
@@ -315,6 +320,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["dbServerVersion"] = undefined /*out*/;
             resourceInputs["definedFileSystemConfigurations"] = undefined /*out*/;
+            resourceInputs["isSchedulingPolicyAssociated"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maxCpuCount"] = undefined /*out*/;
@@ -404,6 +410,10 @@ export interface CloudExadataInfrastructureState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     */
+    isSchedulingPolicyAssociated?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */

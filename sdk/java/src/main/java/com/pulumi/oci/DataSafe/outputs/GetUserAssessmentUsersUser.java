@@ -58,6 +58,11 @@ public final class GetUserAssessmentUsersUser {
      */
     private String timePasswordChanged;
     /**
+     * @return The date and time the user&#39;s password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timePasswordExpiry;
+    /**
      * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -148,6 +153,13 @@ public final class GetUserAssessmentUsersUser {
         return this.timePasswordChanged;
     }
     /**
+     * @return The date and time the user&#39;s password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timePasswordExpiry() {
+        return this.timePasswordExpiry;
+    }
+    /**
      * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -201,6 +213,7 @@ public final class GetUserAssessmentUsersUser {
         private String targetId;
         private String timeLastLogin;
         private String timePasswordChanged;
+        private String timePasswordExpiry;
         private String timeUserCreated;
         private String userCategory;
         private String userName;
@@ -218,6 +231,7 @@ public final class GetUserAssessmentUsersUser {
     	      this.targetId = defaults.targetId;
     	      this.timeLastLogin = defaults.timeLastLogin;
     	      this.timePasswordChanged = defaults.timePasswordChanged;
+    	      this.timePasswordExpiry = defaults.timePasswordExpiry;
     	      this.timeUserCreated = defaults.timeUserCreated;
     	      this.userCategory = defaults.userCategory;
     	      this.userName = defaults.userName;
@@ -304,6 +318,14 @@ public final class GetUserAssessmentUsersUser {
             return this;
         }
         @CustomType.Setter
+        public Builder timePasswordExpiry(String timePasswordExpiry) {
+            if (timePasswordExpiry == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "timePasswordExpiry");
+            }
+            this.timePasswordExpiry = timePasswordExpiry;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUserCreated(String timeUserCreated) {
             if (timeUserCreated == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentUsersUser", "timeUserCreated");
@@ -357,6 +379,7 @@ public final class GetUserAssessmentUsersUser {
             _resultValue.targetId = targetId;
             _resultValue.timeLastLogin = timeLastLogin;
             _resultValue.timePasswordChanged = timePasswordChanged;
+            _resultValue.timePasswordExpiry = timePasswordExpiry;
             _resultValue.timeUserCreated = timeUserCreated;
             _resultValue.userCategory = userCategory;
             _resultValue.userName = userName;

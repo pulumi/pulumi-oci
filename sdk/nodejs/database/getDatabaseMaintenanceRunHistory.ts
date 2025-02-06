@@ -44,9 +44,17 @@ export interface GetDatabaseMaintenanceRunHistoryArgs {
  */
 export interface GetDatabaseMaintenanceRunHistoryResult {
     /**
+     * The OCID of the current execution window.
+     */
+    readonly currentExecutionWindow: string;
+    /**
      * List of database server history details.
      */
     readonly dbServersHistoryDetails: outputs.Database.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail[];
+    /**
+     * The list of granular maintenance history details.
+     */
+    readonly granularMaintenanceHistories: outputs.Database.GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistory[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */

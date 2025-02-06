@@ -62,7 +62,7 @@ type LookupSensitiveDataModelResult struct {
 	AppSuiteName string `pulumi:"appSuiteName"`
 	// The OCID of the compartment that contains the sensitive data model.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive data model.
 	Description string `pulumi:"description"`
@@ -143,7 +143,7 @@ func (o LookupSensitiveDataModelResultOutput) CompartmentId() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupSensitiveDataModelResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

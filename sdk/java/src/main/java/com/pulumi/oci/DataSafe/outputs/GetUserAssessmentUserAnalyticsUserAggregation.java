@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetUserAssessmentUserAnalyticsUserAggregation {
     /**
-     * @return The array of user aggregation data.
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     private List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
 
     private GetUserAssessmentUserAnalyticsUserAggregation() {}
     /**
-     * @return The array of user aggregation data.
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     public List<GetUserAssessmentUserAnalyticsUserAggregationItem> items() {

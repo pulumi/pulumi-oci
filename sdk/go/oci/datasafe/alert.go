@@ -38,7 +38,7 @@ type Alert struct {
 	Comment pulumi.StringOutput `pulumi:"comment"`
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The description of the alert.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -124,7 +124,7 @@ type alertState struct {
 	Comment *string `pulumi:"comment"`
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the alert.
 	Description *string `pulumi:"description"`
@@ -178,7 +178,7 @@ type AlertState struct {
 	Comment pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// The description of the alert.
 	Description pulumi.StringPtrInput
@@ -230,7 +230,7 @@ type alertArgs struct {
 	Comment *string `pulumi:"comment"`
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -249,7 +249,7 @@ type AlertArgs struct {
 	Comment pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
@@ -377,7 +377,7 @@ func (o AlertOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o AlertOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

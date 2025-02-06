@@ -200,6 +200,14 @@ import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
 import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultPlainArgs;
 import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
 import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionActionPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionActionsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionWindowPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
+import com.pulumi.oci.Database.inputs.GetExecutionWindowsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
@@ -244,6 +252,26 @@ import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
+import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
+import com.pulumi.oci.Database.inputs.GetScheduledActionParamsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetScheduledActionPlainArgs;
+import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
+import com.pulumi.oci.Database.inputs.GetScheduledActionsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPlanPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPlansPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicyPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
+import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
 import com.pulumi.oci.Database.inputs.GetSystemVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
@@ -371,6 +399,10 @@ import com.pulumi.oci.Database.outputs.GetExadbVmClusterUpdatesResult;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersResult;
 import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultResult;
 import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultsResult;
+import com.pulumi.oci.Database.outputs.GetExecutionActionResult;
+import com.pulumi.oci.Database.outputs.GetExecutionActionsResult;
+import com.pulumi.oci.Database.outputs.GetExecutionWindowResult;
+import com.pulumi.oci.Database.outputs.GetExecutionWindowsResult;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetExternalDatabaseConnectorResult;
@@ -393,6 +425,16 @@ import com.pulumi.oci.Database.outputs.GetOneoffPatchResult;
 import com.pulumi.oci.Database.outputs.GetOneoffPatchesResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesResult;
+import com.pulumi.oci.Database.outputs.GetScheduledActionParamsResult;
+import com.pulumi.oci.Database.outputs.GetScheduledActionResult;
+import com.pulumi.oci.Database.outputs.GetScheduledActionsResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPlanResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPlansResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPoliciesResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPolicyRecommendedScheduledActionsResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPolicyResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPolicySchedulingWindowResult;
+import com.pulumi.oci.Database.outputs.GetSchedulingPolicySchedulingWindowsResult;
 import com.pulumi.oci.Database.outputs.GetSystemVersionsResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkDownloadConfigFileResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkResult;
@@ -22854,6 +22896,916 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", TypeShape.of(GetExascaleDbStorageVaultsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Execution Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionAction = DatabaseFunctions.getExecutionAction(GetExecutionActionArgs.builder()
+     *             .executionActionId(testExecutionActionOciDatabaseExecutionAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionActionResult> getExecutionAction(GetExecutionActionArgs args) {
+        return getExecutionAction(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Execution Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionAction = DatabaseFunctions.getExecutionAction(GetExecutionActionArgs.builder()
+     *             .executionActionId(testExecutionActionOciDatabaseExecutionAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionActionResult> getExecutionActionPlain(GetExecutionActionPlainArgs args) {
+        return getExecutionActionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Execution Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionAction = DatabaseFunctions.getExecutionAction(GetExecutionActionArgs.builder()
+     *             .executionActionId(testExecutionActionOciDatabaseExecutionAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionActionResult> getExecutionAction(GetExecutionActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionAction:getExecutionAction", TypeShape.of(GetExecutionActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Execution Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionAction = DatabaseFunctions.getExecutionAction(GetExecutionActionArgs.builder()
+     *             .executionActionId(testExecutionActionOciDatabaseExecutionAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionActionResult> getExecutionAction(GetExecutionActionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionAction:getExecutionAction", TypeShape.of(GetExecutionActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Execution Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionAction = DatabaseFunctions.getExecutionAction(GetExecutionActionArgs.builder()
+     *             .executionActionId(testExecutionActionOciDatabaseExecutionAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionActionResult> getExecutionActionPlain(GetExecutionActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExecutionAction:getExecutionAction", TypeShape.of(GetExecutionActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Execution Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionActions = DatabaseFunctions.getExecutionActions(GetExecutionActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionActionDisplayName)
+     *             .executionWindowId(testExecutionWindow.id())
+     *             .state(executionActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionActionsResult> getExecutionActions(GetExecutionActionsArgs args) {
+        return getExecutionActions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Execution Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionActions = DatabaseFunctions.getExecutionActions(GetExecutionActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionActionDisplayName)
+     *             .executionWindowId(testExecutionWindow.id())
+     *             .state(executionActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionActionsResult> getExecutionActionsPlain(GetExecutionActionsPlainArgs args) {
+        return getExecutionActionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Execution Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionActions = DatabaseFunctions.getExecutionActions(GetExecutionActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionActionDisplayName)
+     *             .executionWindowId(testExecutionWindow.id())
+     *             .state(executionActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionActionsResult> getExecutionActions(GetExecutionActionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionActions:getExecutionActions", TypeShape.of(GetExecutionActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Execution Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionActions = DatabaseFunctions.getExecutionActions(GetExecutionActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionActionDisplayName)
+     *             .executionWindowId(testExecutionWindow.id())
+     *             .state(executionActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionActionsResult> getExecutionActions(GetExecutionActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionActions:getExecutionActions", TypeShape.of(GetExecutionActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Execution Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionActions = DatabaseFunctions.getExecutionActions(GetExecutionActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionActionDisplayName)
+     *             .executionWindowId(testExecutionWindow.id())
+     *             .state(executionActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionActionsResult> getExecutionActionsPlain(GetExecutionActionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExecutionActions:getExecutionActions", TypeShape.of(GetExecutionActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Execution Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindow = DatabaseFunctions.getExecutionWindow(GetExecutionWindowArgs.builder()
+     *             .executionWindowId(testExecutionWindowOciDatabaseExecutionWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionWindowResult> getExecutionWindow(GetExecutionWindowArgs args) {
+        return getExecutionWindow(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Execution Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindow = DatabaseFunctions.getExecutionWindow(GetExecutionWindowArgs.builder()
+     *             .executionWindowId(testExecutionWindowOciDatabaseExecutionWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionWindowResult> getExecutionWindowPlain(GetExecutionWindowPlainArgs args) {
+        return getExecutionWindowPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Execution Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindow = DatabaseFunctions.getExecutionWindow(GetExecutionWindowArgs.builder()
+     *             .executionWindowId(testExecutionWindowOciDatabaseExecutionWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionWindowResult> getExecutionWindow(GetExecutionWindowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionWindow:getExecutionWindow", TypeShape.of(GetExecutionWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Execution Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindow = DatabaseFunctions.getExecutionWindow(GetExecutionWindowArgs.builder()
+     *             .executionWindowId(testExecutionWindowOciDatabaseExecutionWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionWindowResult> getExecutionWindow(GetExecutionWindowArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionWindow:getExecutionWindow", TypeShape.of(GetExecutionWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Execution Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified execution window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindow = DatabaseFunctions.getExecutionWindow(GetExecutionWindowArgs.builder()
+     *             .executionWindowId(testExecutionWindowOciDatabaseExecutionWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionWindowResult> getExecutionWindowPlain(GetExecutionWindowPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExecutionWindow:getExecutionWindow", TypeShape.of(GetExecutionWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Execution Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindows = DatabaseFunctions.getExecutionWindows(GetExecutionWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionWindowDisplayName)
+     *             .executionResourceId(testResource.id())
+     *             .state(executionWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionWindowsResult> getExecutionWindows(GetExecutionWindowsArgs args) {
+        return getExecutionWindows(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Execution Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindows = DatabaseFunctions.getExecutionWindows(GetExecutionWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionWindowDisplayName)
+     *             .executionResourceId(testResource.id())
+     *             .state(executionWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionWindowsResult> getExecutionWindowsPlain(GetExecutionWindowsPlainArgs args) {
+        return getExecutionWindowsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Execution Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindows = DatabaseFunctions.getExecutionWindows(GetExecutionWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionWindowDisplayName)
+     *             .executionResourceId(testResource.id())
+     *             .state(executionWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionWindowsResult> getExecutionWindows(GetExecutionWindowsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionWindows:getExecutionWindows", TypeShape.of(GetExecutionWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Execution Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindows = DatabaseFunctions.getExecutionWindows(GetExecutionWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionWindowDisplayName)
+     *             .executionResourceId(testResource.id())
+     *             .state(executionWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExecutionWindowsResult> getExecutionWindows(GetExecutionWindowsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExecutionWindows:getExecutionWindows", TypeShape.of(GetExecutionWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Execution Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the execution window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExecutionWindows = DatabaseFunctions.getExecutionWindows(GetExecutionWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(executionWindowDisplayName)
+     *             .executionResourceId(testResource.id())
+     *             .state(executionWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExecutionWindowsResult> getExecutionWindowsPlain(GetExecutionWindowsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExecutionWindows:getExecutionWindows", TypeShape.of(GetExecutionWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific External Container Database resource in Oracle Cloud Infrastructure Database service.
      * 
      * Gets information about the specified external container database.
@@ -27961,6 +28913,2296 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getPluggableDatabases:getPluggableDatabases", TypeShape.of(GetPluggableDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduled Action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledAction = DatabaseFunctions.getScheduledAction(GetScheduledActionArgs.builder()
+     *             .scheduledActionId(testScheduledActionOciDatabaseScheduledAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionResult> getScheduledAction(GetScheduledActionArgs args) {
+        return getScheduledAction(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduled Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduled Action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledAction = DatabaseFunctions.getScheduledAction(GetScheduledActionArgs.builder()
+     *             .scheduledActionId(testScheduledActionOciDatabaseScheduledAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledActionResult> getScheduledActionPlain(GetScheduledActionPlainArgs args) {
+        return getScheduledActionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduled Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduled Action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledAction = DatabaseFunctions.getScheduledAction(GetScheduledActionArgs.builder()
+     *             .scheduledActionId(testScheduledActionOciDatabaseScheduledAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionResult> getScheduledAction(GetScheduledActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getScheduledAction:getScheduledAction", TypeShape.of(GetScheduledActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduled Action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledAction = DatabaseFunctions.getScheduledAction(GetScheduledActionArgs.builder()
+     *             .scheduledActionId(testScheduledActionOciDatabaseScheduledAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionResult> getScheduledAction(GetScheduledActionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getScheduledAction:getScheduledAction", TypeShape.of(GetScheduledActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Action resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduled Action.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledAction = DatabaseFunctions.getScheduledAction(GetScheduledActionArgs.builder()
+     *             .scheduledActionId(testScheduledActionOciDatabaseScheduledAction.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledActionResult> getScheduledActionPlain(GetScheduledActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getScheduledAction:getScheduledAction", TypeShape.of(GetScheduledActionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
+     * 
+     * List all the action params and their possible values for a given action type
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActionParams = DatabaseFunctions.getScheduledActionParams(GetScheduledActionParamsArgs.builder()
+     *             .type(scheduledActionParamType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionParamsResult> getScheduledActionParams(GetScheduledActionParamsArgs args) {
+        return getScheduledActionParams(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
+     * 
+     * List all the action params and their possible values for a given action type
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActionParams = DatabaseFunctions.getScheduledActionParams(GetScheduledActionParamsArgs.builder()
+     *             .type(scheduledActionParamType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledActionParamsResult> getScheduledActionParamsPlain(GetScheduledActionParamsPlainArgs args) {
+        return getScheduledActionParamsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
+     * 
+     * List all the action params and their possible values for a given action type
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActionParams = DatabaseFunctions.getScheduledActionParams(GetScheduledActionParamsArgs.builder()
+     *             .type(scheduledActionParamType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionParamsResult> getScheduledActionParams(GetScheduledActionParamsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getScheduledActionParams:getScheduledActionParams", TypeShape.of(GetScheduledActionParamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
+     * 
+     * List all the action params and their possible values for a given action type
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActionParams = DatabaseFunctions.getScheduledActionParams(GetScheduledActionParamsArgs.builder()
+     *             .type(scheduledActionParamType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionParamsResult> getScheduledActionParams(GetScheduledActionParamsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getScheduledActionParams:getScheduledActionParams", TypeShape.of(GetScheduledActionParamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
+     * 
+     * List all the action params and their possible values for a given action type
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActionParams = DatabaseFunctions.getScheduledActionParams(GetScheduledActionParamsArgs.builder()
+     *             .type(scheduledActionParamType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledActionParamsResult> getScheduledActionParamsPlain(GetScheduledActionParamsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getScheduledActionParams:getScheduledActionParams", TypeShape.of(GetScheduledActionParamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduled Action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActions = DatabaseFunctions.getScheduledActions(GetScheduledActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduledActionDisplayName)
+     *             .id(scheduledActionId)
+     *             .schedulingPlanId(testSchedulingPlan.id())
+     *             .serviceType(scheduledActionServiceType)
+     *             .state(scheduledActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionsResult> getScheduledActions(GetScheduledActionsArgs args) {
+        return getScheduledActions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduled Action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActions = DatabaseFunctions.getScheduledActions(GetScheduledActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduledActionDisplayName)
+     *             .id(scheduledActionId)
+     *             .schedulingPlanId(testSchedulingPlan.id())
+     *             .serviceType(scheduledActionServiceType)
+     *             .state(scheduledActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledActionsResult> getScheduledActionsPlain(GetScheduledActionsPlainArgs args) {
+        return getScheduledActionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduled Action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActions = DatabaseFunctions.getScheduledActions(GetScheduledActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduledActionDisplayName)
+     *             .id(scheduledActionId)
+     *             .schedulingPlanId(testSchedulingPlan.id())
+     *             .serviceType(scheduledActionServiceType)
+     *             .state(scheduledActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionsResult> getScheduledActions(GetScheduledActionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getScheduledActions:getScheduledActions", TypeShape.of(GetScheduledActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduled Action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActions = DatabaseFunctions.getScheduledActions(GetScheduledActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduledActionDisplayName)
+     *             .id(scheduledActionId)
+     *             .schedulingPlanId(testSchedulingPlan.id())
+     *             .serviceType(scheduledActionServiceType)
+     *             .state(scheduledActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledActionsResult> getScheduledActions(GetScheduledActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getScheduledActions:getScheduledActions", TypeShape.of(GetScheduledActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduled Action resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledActions = DatabaseFunctions.getScheduledActions(GetScheduledActionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduledActionDisplayName)
+     *             .id(scheduledActionId)
+     *             .schedulingPlanId(testSchedulingPlan.id())
+     *             .serviceType(scheduledActionServiceType)
+     *             .state(scheduledActionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledActionsResult> getScheduledActionsPlain(GetScheduledActionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getScheduledActions:getScheduledActions", TypeShape.of(GetScheduledActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Plan resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Plan.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlan = DatabaseFunctions.getSchedulingPlan(GetSchedulingPlanArgs.builder()
+     *             .schedulingPlanId(testSchedulingPlanOciDatabaseSchedulingPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPlanResult> getSchedulingPlan(GetSchedulingPlanArgs args) {
+        return getSchedulingPlan(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduling Plan resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Plan.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlan = DatabaseFunctions.getSchedulingPlan(GetSchedulingPlanArgs.builder()
+     *             .schedulingPlanId(testSchedulingPlanOciDatabaseSchedulingPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPlanResult> getSchedulingPlanPlain(GetSchedulingPlanPlainArgs args) {
+        return getSchedulingPlanPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduling Plan resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Plan.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlan = DatabaseFunctions.getSchedulingPlan(GetSchedulingPlanArgs.builder()
+     *             .schedulingPlanId(testSchedulingPlanOciDatabaseSchedulingPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPlanResult> getSchedulingPlan(GetSchedulingPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPlan:getSchedulingPlan", TypeShape.of(GetSchedulingPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Plan resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Plan.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlan = DatabaseFunctions.getSchedulingPlan(GetSchedulingPlanArgs.builder()
+     *             .schedulingPlanId(testSchedulingPlanOciDatabaseSchedulingPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPlanResult> getSchedulingPlan(GetSchedulingPlanArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPlan:getSchedulingPlan", TypeShape.of(GetSchedulingPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Plan resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Plan.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlan = DatabaseFunctions.getSchedulingPlan(GetSchedulingPlanArgs.builder()
+     *             .schedulingPlanId(testSchedulingPlanOciDatabaseSchedulingPlan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPlanResult> getSchedulingPlanPlain(GetSchedulingPlanPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPlan:getSchedulingPlan", TypeShape.of(GetSchedulingPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Plan resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlans = DatabaseFunctions.getSchedulingPlans(GetSchedulingPlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPlanDisplayName)
+     *             .id(schedulingPlanId)
+     *             .resourceId(testResource.id())
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .state(schedulingPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPlansResult> getSchedulingPlans(GetSchedulingPlansArgs args) {
+        return getSchedulingPlans(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Plan resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlans = DatabaseFunctions.getSchedulingPlans(GetSchedulingPlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPlanDisplayName)
+     *             .id(schedulingPlanId)
+     *             .resourceId(testResource.id())
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .state(schedulingPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPlansResult> getSchedulingPlansPlain(GetSchedulingPlansPlainArgs args) {
+        return getSchedulingPlansPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Plan resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlans = DatabaseFunctions.getSchedulingPlans(GetSchedulingPlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPlanDisplayName)
+     *             .id(schedulingPlanId)
+     *             .resourceId(testResource.id())
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .state(schedulingPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPlansResult> getSchedulingPlans(GetSchedulingPlansArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPlans:getSchedulingPlans", TypeShape.of(GetSchedulingPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Plan resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlans = DatabaseFunctions.getSchedulingPlans(GetSchedulingPlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPlanDisplayName)
+     *             .id(schedulingPlanId)
+     *             .resourceId(testResource.id())
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .state(schedulingPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPlansResult> getSchedulingPlans(GetSchedulingPlansArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPlans:getSchedulingPlans", TypeShape.of(GetSchedulingPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Plan resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPlans = DatabaseFunctions.getSchedulingPlans(GetSchedulingPlansArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPlanDisplayName)
+     *             .id(schedulingPlanId)
+     *             .resourceId(testResource.id())
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .state(schedulingPlanState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPlansResult> getSchedulingPlansPlain(GetSchedulingPlansPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPlans:getSchedulingPlans", TypeShape.of(GetSchedulingPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policies in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Policy resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicies = DatabaseFunctions.getSchedulingPolicies(GetSchedulingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicyDisplayName)
+     *             .state(schedulingPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPoliciesResult> getSchedulingPolicies(GetSchedulingPoliciesArgs args) {
+        return getSchedulingPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Policies in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Policy resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicies = DatabaseFunctions.getSchedulingPolicies(GetSchedulingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicyDisplayName)
+     *             .state(schedulingPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPoliciesResult> getSchedulingPoliciesPlain(GetSchedulingPoliciesPlainArgs args) {
+        return getSchedulingPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Policies in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Policy resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicies = DatabaseFunctions.getSchedulingPolicies(GetSchedulingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicyDisplayName)
+     *             .state(schedulingPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPoliciesResult> getSchedulingPolicies(GetSchedulingPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicies:getSchedulingPolicies", TypeShape.of(GetSchedulingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policies in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Policy resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicies = DatabaseFunctions.getSchedulingPolicies(GetSchedulingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicyDisplayName)
+     *             .state(schedulingPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPoliciesResult> getSchedulingPolicies(GetSchedulingPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicies:getSchedulingPolicies", TypeShape.of(GetSchedulingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policies in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Policy resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicies = DatabaseFunctions.getSchedulingPolicies(GetSchedulingPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicyDisplayName)
+     *             .state(schedulingPolicyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPoliciesResult> getSchedulingPoliciesPlain(GetSchedulingPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPolicies:getSchedulingPolicies", TypeShape.of(GetSchedulingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicy = DatabaseFunctions.getSchedulingPolicy(GetSchedulingPolicyArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicyOciDatabaseSchedulingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicyResult> getSchedulingPolicy(GetSchedulingPolicyArgs args) {
+        return getSchedulingPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicy = DatabaseFunctions.getSchedulingPolicy(GetSchedulingPolicyArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicyOciDatabaseSchedulingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicyResult> getSchedulingPolicyPlain(GetSchedulingPolicyPlainArgs args) {
+        return getSchedulingPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicy = DatabaseFunctions.getSchedulingPolicy(GetSchedulingPolicyArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicyOciDatabaseSchedulingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicyResult> getSchedulingPolicy(GetSchedulingPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicy:getSchedulingPolicy", TypeShape.of(GetSchedulingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicy = DatabaseFunctions.getSchedulingPolicy(GetSchedulingPolicyArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicyOciDatabaseSchedulingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicyResult> getSchedulingPolicy(GetSchedulingPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicy:getSchedulingPolicy", TypeShape.of(GetSchedulingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicy = DatabaseFunctions.getSchedulingPolicy(GetSchedulingPolicyArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicyOciDatabaseSchedulingPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicyResult> getSchedulingPolicyPlain(GetSchedulingPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPolicy:getSchedulingPolicy", TypeShape.of(GetSchedulingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicyRecommendedScheduledActions = DatabaseFunctions.getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs.builder()
+     *             .planIntent(schedulingPolicyRecommendedScheduledActionPlanIntent)
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingPolicyTargetResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicyRecommendedScheduledActionsResult> getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs args) {
+        return getSchedulingPolicyRecommendedScheduledActions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicyRecommendedScheduledActions = DatabaseFunctions.getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs.builder()
+     *             .planIntent(schedulingPolicyRecommendedScheduledActionPlanIntent)
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingPolicyTargetResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicyRecommendedScheduledActionsResult> getSchedulingPolicyRecommendedScheduledActionsPlain(GetSchedulingPolicyRecommendedScheduledActionsPlainArgs args) {
+        return getSchedulingPolicyRecommendedScheduledActionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicyRecommendedScheduledActions = DatabaseFunctions.getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs.builder()
+     *             .planIntent(schedulingPolicyRecommendedScheduledActionPlanIntent)
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingPolicyTargetResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicyRecommendedScheduledActionsResult> getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicyRecommendedScheduledActions:getSchedulingPolicyRecommendedScheduledActions", TypeShape.of(GetSchedulingPolicyRecommendedScheduledActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicyRecommendedScheduledActions = DatabaseFunctions.getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs.builder()
+     *             .planIntent(schedulingPolicyRecommendedScheduledActionPlanIntent)
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingPolicyTargetResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicyRecommendedScheduledActionsResult> getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicyRecommendedScheduledActions:getSchedulingPolicyRecommendedScheduledActions", TypeShape.of(GetSchedulingPolicyRecommendedScheduledActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicyRecommendedScheduledActions = DatabaseFunctions.getSchedulingPolicyRecommendedScheduledActions(GetSchedulingPolicyRecommendedScheduledActionsArgs.builder()
+     *             .planIntent(schedulingPolicyRecommendedScheduledActionPlanIntent)
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingPolicyTargetResourceId(testResource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicyRecommendedScheduledActionsResult> getSchedulingPolicyRecommendedScheduledActionsPlain(GetSchedulingPolicyRecommendedScheduledActionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPolicyRecommendedScheduledActions:getSchedulingPolicyRecommendedScheduledActions", TypeShape.of(GetSchedulingPolicyRecommendedScheduledActionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindow = DatabaseFunctions.getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingWindowId(testSchedulingWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicySchedulingWindowResult> getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs args) {
+        return getSchedulingPolicySchedulingWindow(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindow = DatabaseFunctions.getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingWindowId(testSchedulingWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicySchedulingWindowResult> getSchedulingPolicySchedulingWindowPlain(GetSchedulingPolicySchedulingWindowPlainArgs args) {
+        return getSchedulingPolicySchedulingWindowPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindow = DatabaseFunctions.getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingWindowId(testSchedulingWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicySchedulingWindowResult> getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicySchedulingWindow:getSchedulingPolicySchedulingWindow", TypeShape.of(GetSchedulingPolicySchedulingWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindow = DatabaseFunctions.getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingWindowId(testSchedulingWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicySchedulingWindowResult> getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicySchedulingWindow:getSchedulingPolicySchedulingWindow", TypeShape.of(GetSchedulingPolicySchedulingWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Scheduling Window.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindow = DatabaseFunctions.getSchedulingPolicySchedulingWindow(GetSchedulingPolicySchedulingWindowArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .schedulingWindowId(testSchedulingWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicySchedulingWindowResult> getSchedulingPolicySchedulingWindowPlain(GetSchedulingPolicySchedulingWindowPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPolicySchedulingWindow:getSchedulingPolicySchedulingWindow", TypeShape.of(GetSchedulingPolicySchedulingWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Scheduling Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindows = DatabaseFunctions.getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicySchedulingWindowDisplayName)
+     *             .state(schedulingPolicySchedulingWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicySchedulingWindowsResult> getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs args) {
+        return getSchedulingPolicySchedulingWindows(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Scheduling Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindows = DatabaseFunctions.getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicySchedulingWindowDisplayName)
+     *             .state(schedulingPolicySchedulingWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicySchedulingWindowsResult> getSchedulingPolicySchedulingWindowsPlain(GetSchedulingPolicySchedulingWindowsPlainArgs args) {
+        return getSchedulingPolicySchedulingWindowsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Scheduling Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindows = DatabaseFunctions.getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicySchedulingWindowDisplayName)
+     *             .state(schedulingPolicySchedulingWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicySchedulingWindowsResult> getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicySchedulingWindows:getSchedulingPolicySchedulingWindows", TypeShape.of(GetSchedulingPolicySchedulingWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Scheduling Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindows = DatabaseFunctions.getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicySchedulingWindowDisplayName)
+     *             .state(schedulingPolicySchedulingWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulingPolicySchedulingWindowsResult> getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSchedulingPolicySchedulingWindows:getSchedulingPolicySchedulingWindows", TypeShape.of(GetSchedulingPolicySchedulingWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduling Policy Scheduling Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Scheduling Window resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedulingPolicySchedulingWindows = DatabaseFunctions.getSchedulingPolicySchedulingWindows(GetSchedulingPolicySchedulingWindowsArgs.builder()
+     *             .schedulingPolicyId(testSchedulingPolicy.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(schedulingPolicySchedulingWindowDisplayName)
+     *             .state(schedulingPolicySchedulingWindowState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulingPolicySchedulingWindowsResult> getSchedulingPolicySchedulingWindowsPlain(GetSchedulingPolicySchedulingWindowsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPolicySchedulingWindows:getSchedulingPolicySchedulingWindows", TypeShape.of(GetSchedulingPolicySchedulingWindowsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.

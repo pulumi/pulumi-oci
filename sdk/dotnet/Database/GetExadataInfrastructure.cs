@@ -184,6 +184,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsMultiRackDeployment;
         /// <summary>
+        /// If true, the infrastructure is using granular maintenance scheduling preference.
+        /// </summary>
+        public readonly bool IsSchedulingPolicyAssociated;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -326,6 +330,8 @@ namespace Pulumi.Oci.Database
 
             bool isMultiRackDeployment,
 
+            bool isSchedulingPolicyAssociated,
+
             string lifecycleDetails,
 
             string maintenanceSloStatus,
@@ -396,6 +402,7 @@ namespace Pulumi.Oci.Database
             InfiniBandNetworkCidr = infiniBandNetworkCidr;
             IsCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
             IsMultiRackDeployment = isMultiRackDeployment;
+            IsSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             LifecycleDetails = lifecycleDetails;
             MaintenanceSloStatus = maintenanceSloStatus;
             MaintenanceWindows = maintenanceWindows;

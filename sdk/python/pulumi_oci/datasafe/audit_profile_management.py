@@ -33,10 +33,10 @@ class AuditProfileManagementArgs:
         """
         The set of arguments for constructing a AuditProfileManagement resource.
         :param pulumi.Input[bool] change_retention_trigger: (Updatable) An optional property when set to true triggers Change Retention.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the target.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
         :param pulumi.Input[bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -86,7 +86,7 @@ class AuditProfileManagementArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment that contains the target.
+        (Updatable) The OCID of the compartment that contains the audit.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -98,7 +98,7 @@ class AuditProfileManagementArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -122,7 +122,7 @@ class AuditProfileManagementArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
@@ -229,10 +229,10 @@ class _AuditProfileManagementState:
         Input properties used for looking up and filtering AuditProfileManagement resources.
         :param pulumi.Input[str] audit_collected_volume: Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         :param pulumi.Input[bool] change_retention_trigger: (Updatable) An optional property when set to true triggers Change Retention.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the target.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
         :param pulumi.Input[bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -308,7 +308,7 @@ class _AuditProfileManagementState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment that contains the target.
+        (Updatable) The OCID of the compartment that contains the audit.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -320,7 +320,7 @@ class _AuditProfileManagementState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -344,7 +344,7 @@ class _AuditProfileManagementState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
@@ -528,10 +528,10 @@ class AuditProfileManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] change_retention_trigger: (Updatable) An optional property when set to true triggers Change Retention.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the target.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
         :param pulumi.Input[bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -666,10 +666,10 @@ class AuditProfileManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] audit_collected_volume: Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         :param pulumi.Input[bool] change_retention_trigger: (Updatable) An optional property when set to true triggers Change Retention.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the target.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
         :param pulumi.Input[bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -726,7 +726,7 @@ class AuditProfileManagement(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the compartment that contains the target.
+        (Updatable) The OCID of the compartment that contains the audit.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -734,7 +734,7 @@ class AuditProfileManagement(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -750,7 +750,7 @@ class AuditProfileManagement(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 

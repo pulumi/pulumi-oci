@@ -26,7 +26,7 @@ public final class GetMysqlDbSystemBackupPolicy {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private Boolean isEnabled;
@@ -62,7 +62,7 @@ public final class GetMysqlDbSystemBackupPolicy {
         return this.freeformTags;
     }
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Boolean isEnabled() {

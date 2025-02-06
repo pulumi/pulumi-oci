@@ -14,9 +14,17 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult
     {
         /// <summary>
+        /// The OCID of the current execution window.
+        /// </summary>
+        public readonly string CurrentExecutionWindow;
+        /// <summary>
         /// List of database server history details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult> DbServersHistoryDetails;
+        /// <summary>
+        /// The list of granular maintenance history details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryResult> GranularMaintenanceHistories;
         /// <summary>
         /// The OCID of the maintenance run.
         /// </summary>
@@ -28,13 +36,19 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult(
+            string currentExecutionWindow,
+
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult> dbServersHistoryDetails,
+
+            ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryResult> granularMaintenanceHistories,
 
             string id,
 
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult> maintenanceRunDetails)
         {
+            CurrentExecutionWindow = currentExecutionWindow;
             DbServersHistoryDetails = dbServersHistoryDetails;
+            GranularMaintenanceHistories = granularMaintenanceHistories;
             Id = id;
             MaintenanceRunDetails = maintenanceRunDetails;
         }

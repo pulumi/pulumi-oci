@@ -40,7 +40,7 @@ class ReportDefinitionArgs:
         :param pulumi.Input[str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the report definition.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
@@ -146,7 +146,7 @@ class ReportDefinitionArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -218,7 +218,7 @@ class _ReportDefinitionState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] compliance_standards: The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         :param pulumi.Input[str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the report definition.
         :param pulumi.Input[str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[int] display_order: Specifies the order in which the summary must be displayed.
@@ -382,7 +382,7 @@ class _ReportDefinitionState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -700,7 +700,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the report definition.
         :param pulumi.Input[str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -898,7 +898,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] compliance_standards: The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         :param pulumi.Input[str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the report definition.
         :param pulumi.Input[str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[int] display_order: Specifies the order in which the summary must be displayed.
@@ -1012,7 +1012,7 @@ class ReportDefinition(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 

@@ -83,6 +83,8 @@ type MaintenanceRun struct {
 	IsCustomActionTimeoutEnabled pulumi.BoolOutput `pulumi:"isCustomActionTimeoutEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled pulumi.BoolOutput `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular pulumi.BoolOutput `pulumi:"isMaintenanceRunGranular"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Maintenance sub-type.
@@ -126,6 +128,8 @@ type MaintenanceRun struct {
 	TimeScheduled pulumi.StringOutput `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntOutput `pulumi:"totalTimeTakenInMins"`
 }
 
 // NewMaintenanceRun registers a new resource with the given unique name, arguments, and options.
@@ -189,6 +193,8 @@ type maintenanceRunState struct {
 	IsCustomActionTimeoutEnabled *bool `pulumi:"isCustomActionTimeoutEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular *bool `pulumi:"isMaintenanceRunGranular"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Maintenance sub-type.
@@ -232,6 +238,8 @@ type maintenanceRunState struct {
 	TimeScheduled *string `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted *string `pulumi:"timeStarted"`
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins *int `pulumi:"totalTimeTakenInMins"`
 }
 
 type MaintenanceRunState struct {
@@ -257,6 +265,8 @@ type MaintenanceRunState struct {
 	IsCustomActionTimeoutEnabled pulumi.BoolPtrInput
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled pulumi.BoolPtrInput
+	// If `FALSE`, the maintenance run doesn't support granular maintenance.
+	IsMaintenanceRunGranular pulumi.BoolPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Maintenance sub-type.
@@ -300,6 +310,8 @@ type MaintenanceRunState struct {
 	TimeScheduled pulumi.StringPtrInput
 	// The date and time the maintenance run starts.
 	TimeStarted pulumi.StringPtrInput
+	// The total time taken by corresponding resource activity in minutes.
+	TotalTimeTakenInMins pulumi.IntPtrInput
 }
 
 func (MaintenanceRunState) ElementType() reflect.Type {
@@ -495,6 +507,11 @@ func (o MaintenanceRunOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
+// If `FALSE`, the maintenance run doesn't support granular maintenance.
+func (o MaintenanceRunOutput) IsMaintenanceRunGranular() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsMaintenanceRunGranular }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current lifecycle state.
 func (o MaintenanceRunOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -593,6 +610,11 @@ func (o MaintenanceRunOutput) TimeScheduled() pulumi.StringOutput {
 // The date and time the maintenance run starts.
 func (o MaintenanceRunOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The total time taken by corresponding resource activity in minutes.
+func (o MaintenanceRunOutput) TotalTimeTakenInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
 }
 
 type MaintenanceRunArrayOutput struct{ *pulumi.OutputState }

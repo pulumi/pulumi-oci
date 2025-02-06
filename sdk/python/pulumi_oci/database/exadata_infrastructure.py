@@ -463,6 +463,7 @@ class _ExadataInfrastructureState:
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
                  is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
+                 is_scheduling_policy_associated: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_slo_status: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
@@ -515,6 +516,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
+        :param pulumi.Input[bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -592,6 +594,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         if is_multi_rack_deployment is not None:
             pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
+        if is_scheduling_policy_associated is not None:
+            pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_slo_status is not None:
@@ -968,6 +972,18 @@ class _ExadataInfrastructureState:
     @is_multi_rack_deployment.setter
     def is_multi_rack_deployment(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_multi_rack_deployment", value)
+
+    @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
+
+    @is_scheduling_policy_associated.setter
+    def is_scheduling_policy_associated(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_scheduling_policy_associated", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -1537,6 +1553,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["db_server_version"] = None
             __props__.__dict__["defined_file_system_configurations"] = None
+            __props__.__dict__["is_scheduling_policy_associated"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_slo_status"] = None
             __props__.__dict__["max_cpu_count"] = None
@@ -1587,6 +1604,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
             is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
             is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
+            is_scheduling_policy_associated: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_slo_status: Optional[pulumi.Input[str]] = None,
             maintenance_window: Optional[pulumi.Input[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
@@ -1644,6 +1662,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
+        :param pulumi.Input[bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param pulumi.Input[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -1697,6 +1716,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
         __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
         __props__.__dict__["is_multi_rack_deployment"] = is_multi_rack_deployment
+        __props__.__dict__["is_scheduling_policy_associated"] = is_scheduling_policy_associated
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_slo_status"] = maintenance_slo_status
         __props__.__dict__["maintenance_window"] = maintenance_window
@@ -1942,6 +1962,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         (Updatable) Indicates if deployment is Multi-Rack or not.
         """
         return pulumi.get(self, "is_multi_rack_deployment")
+
+    @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> pulumi.Output[bool]:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

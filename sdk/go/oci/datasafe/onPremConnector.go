@@ -66,7 +66,7 @@ type OnPremConnector struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Created version of the on-premises connector.
 	CreatedVersion pulumi.StringOutput `pulumi:"createdVersion"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -126,7 +126,7 @@ type onPremConnectorState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Created version of the on-premises connector.
 	CreatedVersion *string `pulumi:"createdVersion"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
 	Description *string `pulumi:"description"`
@@ -154,7 +154,7 @@ type OnPremConnectorState struct {
 	CompartmentId pulumi.StringPtrInput
 	// Created version of the on-premises connector.
 	CreatedVersion pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the on-premises connector.
 	Description pulumi.StringPtrInput
@@ -182,7 +182,7 @@ func (OnPremConnectorState) ElementType() reflect.Type {
 type onPremConnectorArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
 	Description *string `pulumi:"description"`
@@ -199,7 +199,7 @@ type onPremConnectorArgs struct {
 type OnPremConnectorArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the on-premises connector.
 	Description pulumi.StringPtrInput
@@ -314,7 +314,7 @@ func (o OnPremConnectorOutput) CreatedVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *OnPremConnector) pulumi.StringOutput { return v.CreatedVersion }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o OnPremConnectorOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *OnPremConnector) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

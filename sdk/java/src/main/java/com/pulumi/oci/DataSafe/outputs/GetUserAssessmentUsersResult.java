@@ -51,6 +51,8 @@ public final class GetUserAssessmentUsersResult {
     private @Nullable String targetId;
     private @Nullable String timeLastLoginGreaterThanOrEqualTo;
     private @Nullable String timeLastLoginLessThan;
+    private @Nullable String timePasswordExpiryGreaterThanOrEqualTo;
+    private @Nullable String timePasswordExpiryLessThan;
     private @Nullable String timePasswordLastChangedGreaterThanOrEqualTo;
     private @Nullable String timePasswordLastChangedLessThan;
     private @Nullable String timeUserCreatedGreaterThanOrEqualTo;
@@ -138,6 +140,12 @@ public final class GetUserAssessmentUsersResult {
     public Optional<String> timeLastLoginLessThan() {
         return Optional.ofNullable(this.timeLastLoginLessThan);
     }
+    public Optional<String> timePasswordExpiryGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timePasswordExpiryGreaterThanOrEqualTo);
+    }
+    public Optional<String> timePasswordExpiryLessThan() {
+        return Optional.ofNullable(this.timePasswordExpiryLessThan);
+    }
     public Optional<String> timePasswordLastChangedGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timePasswordLastChangedGreaterThanOrEqualTo);
     }
@@ -211,6 +219,8 @@ public final class GetUserAssessmentUsersResult {
         private @Nullable String targetId;
         private @Nullable String timeLastLoginGreaterThanOrEqualTo;
         private @Nullable String timeLastLoginLessThan;
+        private @Nullable String timePasswordExpiryGreaterThanOrEqualTo;
+        private @Nullable String timePasswordExpiryLessThan;
         private @Nullable String timePasswordLastChangedGreaterThanOrEqualTo;
         private @Nullable String timePasswordLastChangedLessThan;
         private @Nullable String timeUserCreatedGreaterThanOrEqualTo;
@@ -237,6 +247,8 @@ public final class GetUserAssessmentUsersResult {
     	      this.targetId = defaults.targetId;
     	      this.timeLastLoginGreaterThanOrEqualTo = defaults.timeLastLoginGreaterThanOrEqualTo;
     	      this.timeLastLoginLessThan = defaults.timeLastLoginLessThan;
+    	      this.timePasswordExpiryGreaterThanOrEqualTo = defaults.timePasswordExpiryGreaterThanOrEqualTo;
+    	      this.timePasswordExpiryLessThan = defaults.timePasswordExpiryLessThan;
     	      this.timePasswordLastChangedGreaterThanOrEqualTo = defaults.timePasswordLastChangedGreaterThanOrEqualTo;
     	      this.timePasswordLastChangedLessThan = defaults.timePasswordLastChangedLessThan;
     	      this.timeUserCreatedGreaterThanOrEqualTo = defaults.timeUserCreatedGreaterThanOrEqualTo;
@@ -323,6 +335,18 @@ public final class GetUserAssessmentUsersResult {
         public Builder timeLastLoginLessThan(@Nullable String timeLastLoginLessThan) {
 
             this.timeLastLoginLessThan = timeLastLoginLessThan;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timePasswordExpiryGreaterThanOrEqualTo(@Nullable String timePasswordExpiryGreaterThanOrEqualTo) {
+
+            this.timePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timePasswordExpiryLessThan(@Nullable String timePasswordExpiryLessThan) {
+
+            this.timePasswordExpiryLessThan = timePasswordExpiryLessThan;
             return this;
         }
         @CustomType.Setter
@@ -417,6 +441,8 @@ public final class GetUserAssessmentUsersResult {
             _resultValue.targetId = targetId;
             _resultValue.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
             _resultValue.timeLastLoginLessThan = timeLastLoginLessThan;
+            _resultValue.timePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            _resultValue.timePasswordExpiryLessThan = timePasswordExpiryLessThan;
             _resultValue.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
             _resultValue.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
             _resultValue.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;

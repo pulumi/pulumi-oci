@@ -18,7 +18,7 @@ import (
 // the critical category. This data is especially useful content for dashboards or to support analytics.
 //
 // When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
 // permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
 // root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
 // compartmentId, then "Not Authorized" is returned.
@@ -44,14 +44,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetUserAssessmentUserAnalytics(ctx, &datasafe.GetUserAssessmentUserAnalyticsArgs{
-//				UserAssessmentId:                  testUserAssessment.Id,
-//				AccessLevel:                       pulumi.StringRef(userAssessmentUserAnalyticAccessLevel),
-//				AccountStatus:                     pulumi.StringRef(userAssessmentUserAnalyticAccountStatus),
-//				AuthenticationType:                pulumi.StringRef(userAssessmentUserAnalyticAuthenticationType),
-//				CompartmentIdInSubtree:            pulumi.BoolRef(userAssessmentUserAnalyticCompartmentIdInSubtree),
-//				TargetId:                          pulumi.StringRef(testTarget.Id),
-//				TimeLastLoginGreaterThanOrEqualTo: pulumi.StringRef(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo),
-//				TimeLastLoginLessThan:             pulumi.StringRef(userAssessmentUserAnalyticTimeLastLoginLessThan),
+//				UserAssessmentId:                            testUserAssessment.Id,
+//				AccessLevel:                                 pulumi.StringRef(userAssessmentUserAnalyticAccessLevel),
+//				AccountStatus:                               pulumi.StringRef(userAssessmentUserAnalyticAccountStatus),
+//				AuthenticationType:                          pulumi.StringRef(userAssessmentUserAnalyticAuthenticationType),
+//				CompartmentIdInSubtree:                      pulumi.BoolRef(userAssessmentUserAnalyticCompartmentIdInSubtree),
+//				TargetId:                                    pulumi.StringRef(testTarget.Id),
+//				TimeLastLoginGreaterThanOrEqualTo:           pulumi.StringRef(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo),
+//				TimeLastLoginLessThan:                       pulumi.StringRef(userAssessmentUserAnalyticTimeLastLoginLessThan),
+//				TimePasswordExpiryGreaterThanOrEqualTo:      pulumi.StringRef(userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo),
+//				TimePasswordExpiryLessThan:                  pulumi.StringRef(userAssessmentUserAnalyticTimePasswordExpiryLessThan),
 //				TimePasswordLastChangedGreaterThanOrEqualTo: pulumi.StringRef(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo),
 //				TimePasswordLastChangedLessThan:             pulumi.StringRef(userAssessmentUserAnalyticTimePasswordLastChangedLessThan),
 //				TimeUserCreatedGreaterThanOrEqualTo:         pulumi.StringRef(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo),
@@ -97,6 +99,10 @@ type GetUserAssessmentUserAnalyticsArgs struct {
 	TimeLastLoginGreaterThanOrEqualTo *string `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
 	// A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
 	TimeLastLoginLessThan *string `pulumi:"timeLastLoginLessThan"`
+	// A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+	TimePasswordExpiryGreaterThanOrEqualTo *string `pulumi:"timePasswordExpiryGreaterThanOrEqualTo"`
+	// A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+	TimePasswordExpiryLessThan *string `pulumi:"timePasswordExpiryLessThan"`
 	// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -131,6 +137,8 @@ type GetUserAssessmentUserAnalyticsResult struct {
 	TargetId                                    *string `pulumi:"targetId"`
 	TimeLastLoginGreaterThanOrEqualTo           *string `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
 	TimeLastLoginLessThan                       *string `pulumi:"timeLastLoginLessThan"`
+	TimePasswordExpiryGreaterThanOrEqualTo      *string `pulumi:"timePasswordExpiryGreaterThanOrEqualTo"`
+	TimePasswordExpiryLessThan                  *string `pulumi:"timePasswordExpiryLessThan"`
 	TimePasswordLastChangedGreaterThanOrEqualTo *string `pulumi:"timePasswordLastChangedGreaterThanOrEqualTo"`
 	TimePasswordLastChangedLessThan             *string `pulumi:"timePasswordLastChangedLessThan"`
 	TimeUserCreatedGreaterThanOrEqualTo         *string `pulumi:"timeUserCreatedGreaterThanOrEqualTo"`
@@ -171,6 +179,10 @@ type GetUserAssessmentUserAnalyticsOutputArgs struct {
 	TimeLastLoginGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
 	// A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
 	TimeLastLoginLessThan pulumi.StringPtrInput `pulumi:"timeLastLoginLessThan"`
+	// A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+	TimePasswordExpiryGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timePasswordExpiryGreaterThanOrEqualTo"`
+	// A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+	TimePasswordExpiryLessThan pulumi.StringPtrInput `pulumi:"timePasswordExpiryLessThan"`
 	// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -247,6 +259,14 @@ func (o GetUserAssessmentUserAnalyticsResultOutput) TimeLastLoginGreaterThanOrEq
 
 func (o GetUserAssessmentUserAnalyticsResultOutput) TimeLastLoginLessThan() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsResult) *string { return v.TimeLastLoginLessThan }).(pulumi.StringPtrOutput)
+}
+
+func (o GetUserAssessmentUserAnalyticsResultOutput) TimePasswordExpiryGreaterThanOrEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsResult) *string { return v.TimePasswordExpiryGreaterThanOrEqualTo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetUserAssessmentUserAnalyticsResultOutput) TimePasswordExpiryLessThan() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsResult) *string { return v.TimePasswordExpiryLessThan }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUserAssessmentUserAnalyticsResultOutput) TimePasswordLastChangedGreaterThanOrEqualTo() pulumi.StringPtrOutput {

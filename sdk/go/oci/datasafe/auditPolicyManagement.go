@@ -61,9 +61,9 @@ type AuditPolicyManagement struct {
 	AuditConditions AuditPolicyManagementAuditConditionArrayOutput `pulumi:"auditConditions"`
 	// Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
 	AuditSpecifications AuditPolicyManagementAuditSpecificationArrayOutput `pulumi:"auditSpecifications"`
-	// The OCID of the compartment containing the target.
+	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit policy.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -83,7 +83,7 @@ type AuditPolicyManagement struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Unique target identifier.
+	// The OCID of the target for which the audit policy is created.
 	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// The time the audit policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -129,9 +129,9 @@ type auditPolicyManagementState struct {
 	AuditConditions []AuditPolicyManagementAuditCondition `pulumi:"auditConditions"`
 	// Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
 	AuditSpecifications []AuditPolicyManagementAuditSpecification `pulumi:"auditSpecifications"`
-	// The OCID of the compartment containing the target.
+	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit policy.
 	Description *string `pulumi:"description"`
@@ -151,7 +151,7 @@ type auditPolicyManagementState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Unique target identifier.
+	// The OCID of the target for which the audit policy is created.
 	TargetId *string `pulumi:"targetId"`
 	// The time the audit policy was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -168,9 +168,9 @@ type AuditPolicyManagementState struct {
 	AuditConditions AuditPolicyManagementAuditConditionArrayInput
 	// Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
 	AuditSpecifications AuditPolicyManagementAuditSpecificationArrayInput
-	// The OCID of the compartment containing the target.
+	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit policy.
 	Description pulumi.StringPtrInput
@@ -190,7 +190,7 @@ type AuditPolicyManagementState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// Unique target identifier.
+	// The OCID of the target for which the audit policy is created.
 	TargetId pulumi.StringPtrInput
 	// The time the audit policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
@@ -209,9 +209,9 @@ func (AuditPolicyManagementState) ElementType() reflect.Type {
 type auditPolicyManagementArgs struct {
 	// Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
 	AuditConditions []AuditPolicyManagementAuditCondition `pulumi:"auditConditions"`
-	// The OCID of the compartment containing the target.
+	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit policy.
 	Description *string `pulumi:"description"`
@@ -225,7 +225,7 @@ type auditPolicyManagementArgs struct {
 	ProvisionTrigger *bool `pulumi:"provisionTrigger"`
 	// (Updatable) An optional property when set to true triggers Retrieve From Target.
 	RetrieveFromTargetTrigger *bool `pulumi:"retrieveFromTargetTrigger"`
-	// Unique target identifier.
+	// The OCID of the target for which the audit policy is created.
 	TargetId *string `pulumi:"targetId"`
 }
 
@@ -233,9 +233,9 @@ type auditPolicyManagementArgs struct {
 type AuditPolicyManagementArgs struct {
 	// Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
 	AuditConditions AuditPolicyManagementAuditConditionArrayInput
-	// The OCID of the compartment containing the target.
+	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit policy.
 	Description pulumi.StringPtrInput
@@ -249,7 +249,7 @@ type AuditPolicyManagementArgs struct {
 	ProvisionTrigger pulumi.BoolPtrInput
 	// (Updatable) An optional property when set to true triggers Retrieve From Target.
 	RetrieveFromTargetTrigger pulumi.BoolPtrInput
-	// Unique target identifier.
+	// The OCID of the target for which the audit policy is created.
 	TargetId pulumi.StringPtrInput
 }
 
@@ -354,12 +354,12 @@ func (o AuditPolicyManagementOutput) AuditSpecifications() AuditPolicyManagement
 	}).(AuditPolicyManagementAuditSpecificationArrayOutput)
 }
 
-// The OCID of the compartment containing the target.
+// (Updatable) The OCID of the compartment containing the audit policy.
 func (o AuditPolicyManagementOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditPolicyManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o AuditPolicyManagementOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditPolicyManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -409,7 +409,7 @@ func (o AuditPolicyManagementOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditPolicyManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Unique target identifier.
+// The OCID of the target for which the audit policy is created.
 func (o AuditPolicyManagementOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AuditPolicyManagement) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }

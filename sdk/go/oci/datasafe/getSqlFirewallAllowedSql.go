@@ -64,7 +64,7 @@ type GetSqlFirewallAllowedSqlResult struct {
 	CurrentUser string `pulumi:"currentUser"`
 	// The database user name.
 	DbUserName string `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the SQL Firewall allowed SQL.
 	Description string `pulumi:"description"`
@@ -144,7 +144,7 @@ func (o GetSqlFirewallAllowedSqlResultOutput) DbUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSqlFirewallAllowedSqlResult) string { return v.DbUserName }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSqlFirewallAllowedSqlResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSqlFirewallAllowedSqlResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

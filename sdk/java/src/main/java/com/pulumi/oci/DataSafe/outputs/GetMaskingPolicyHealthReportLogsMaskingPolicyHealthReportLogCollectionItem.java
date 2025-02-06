@@ -16,6 +16,11 @@ public final class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogC
      */
     private String description;
     /**
+     * @return An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it&#39;s not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     * 
+     */
+    private String healthCheckType;
+    /**
      * @return A human-readable log entry.
      * 
      */
@@ -43,6 +48,13 @@ public final class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogC
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it&#39;s not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     * 
+     */
+    public String healthCheckType() {
+        return this.healthCheckType;
     }
     /**
      * @return A human-readable log entry.
@@ -83,6 +95,7 @@ public final class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogC
     @CustomType.Builder
     public static final class Builder {
         private String description;
+        private String healthCheckType;
         private String message;
         private String messageType;
         private String remediation;
@@ -91,6 +104,7 @@ public final class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogC
         public Builder(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
+    	      this.healthCheckType = defaults.healthCheckType;
     	      this.message = defaults.message;
     	      this.messageType = defaults.messageType;
     	      this.remediation = defaults.remediation;
@@ -103,6 +117,14 @@ public final class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogC
               throw new MissingRequiredPropertyException("GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder healthCheckType(String healthCheckType) {
+            if (healthCheckType == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem", "healthCheckType");
+            }
+            this.healthCheckType = healthCheckType;
             return this;
         }
         @CustomType.Setter
@@ -140,6 +162,7 @@ public final class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogC
         public GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem build() {
             final var _resultValue = new GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem();
             _resultValue.description = description;
+            _resultValue.healthCheckType = healthCheckType;
             _resultValue.message = message;
             _resultValue.messageType = messageType;
             _resultValue.remediation = remediation;

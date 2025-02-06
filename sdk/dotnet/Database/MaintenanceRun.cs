@@ -119,6 +119,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsDstFileUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// If `FALSE`, the maintenance run doesn't support granular maintenance.
+        /// </summary>
+        [Output("isMaintenanceRunGranular")]
+        public Output<bool> IsMaintenanceRunGranular { get; private set; } = null!;
+
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -237,6 +243,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeStarted")]
         public Output<string> TimeStarted { get; private set; } = null!;
+
+        /// <summary>
+        /// The total time taken by corresponding resource activity in minutes.
+        /// </summary>
+        [Output("totalTimeTakenInMins")]
+        public Output<int> TotalTimeTakenInMins { get; private set; } = null!;
 
 
         /// <summary>
@@ -413,6 +425,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDstFileUpdateEnabled { get; set; }
 
         /// <summary>
+        /// If `FALSE`, the maintenance run doesn't support granular maintenance.
+        /// </summary>
+        [Input("isMaintenanceRunGranular")]
+        public Input<bool>? IsMaintenanceRunGranular { get; set; }
+
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -531,6 +549,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeStarted")]
         public Input<string>? TimeStarted { get; set; }
+
+        /// <summary>
+        /// The total time taken by corresponding resource activity in minutes.
+        /// </summary>
+        [Input("totalTimeTakenInMins")]
+        public Input<int>? TotalTimeTakenInMins { get; set; }
 
         public MaintenanceRunState()
         {

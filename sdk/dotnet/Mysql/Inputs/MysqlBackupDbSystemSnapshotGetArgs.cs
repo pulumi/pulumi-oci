@@ -198,6 +198,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("portX")]
         public Input<int>? PortX { get; set; }
 
+        [Input("readEndpoints")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotReadEndpointGetArgs>? _readEndpoints;
+
+        /// <summary>
+        /// The read endpoint of a DB System.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotReadEndpointGetArgs> ReadEndpoints
+        {
+            get => _readEndpoints ?? (_readEndpoints = new InputList<Inputs.MysqlBackupDbSystemSnapshotReadEndpointGetArgs>());
+            set => _readEndpoints = value;
+        }
+
         /// <summary>
         /// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         /// </summary>

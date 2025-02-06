@@ -63,7 +63,7 @@ type DatabaseSecurityConfigManagement struct {
 
 	// (Updatable) The OCID of the compartment containing the database security config.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -126,7 +126,7 @@ func GetDatabaseSecurityConfigManagement(ctx *pulumi.Context,
 type databaseSecurityConfigManagementState struct {
 	// (Updatable) The OCID of the compartment containing the database security config.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
@@ -160,7 +160,7 @@ type databaseSecurityConfigManagementState struct {
 type DatabaseSecurityConfigManagementState struct {
 	// (Updatable) The OCID of the compartment containing the database security config.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
@@ -198,7 +198,7 @@ func (DatabaseSecurityConfigManagementState) ElementType() reflect.Type {
 type databaseSecurityConfigManagementArgs struct {
 	// (Updatable) The OCID of the compartment containing the database security config.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
@@ -221,7 +221,7 @@ type databaseSecurityConfigManagementArgs struct {
 type DatabaseSecurityConfigManagementArgs struct {
 	// (Updatable) The OCID of the compartment containing the database security config.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
@@ -332,7 +332,7 @@ func (o DatabaseSecurityConfigManagementOutput) CompartmentId() pulumi.StringOut
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o DatabaseSecurityConfigManagementOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

@@ -34,14 +34,14 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -134,8 +134,8 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="targetId", required=true)
-    private Output<String> targetId;
+    @Import(name="targetId")
+    private @Nullable Output<String> targetId;
 
     /**
      * @return The OCID of the target database on which security assessment is to be run.
@@ -144,8 +144,8 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Optional<Output<String>> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
 
     private SecurityAssessmentArgs() {}
@@ -201,7 +201,7 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          */
-        public Builder targetId(Output<String> targetId) {
+        public Builder targetId(@Nullable Output<String> targetId) {
             $.targetId = targetId;
             return this;
         }
@@ -360,9 +360,6 @@ public final class SecurityAssessmentArgs extends com.pulumi.resources.ResourceA
         public SecurityAssessmentArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("SecurityAssessmentArgs", "compartmentId");
-            }
-            if ($.targetId == null) {
-                throw new MissingRequiredPropertyException("SecurityAssessmentArgs", "targetId");
             }
             return $;
         }

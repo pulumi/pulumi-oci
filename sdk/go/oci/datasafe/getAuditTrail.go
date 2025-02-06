@@ -65,7 +65,7 @@ type LookupAuditTrailResult struct {
 	AuditTrailId   string `pulumi:"auditTrailId"`
 	// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit trail.
 	Description string `pulumi:"description"`
@@ -163,7 +163,7 @@ func (o LookupAuditTrailResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupAuditTrailResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

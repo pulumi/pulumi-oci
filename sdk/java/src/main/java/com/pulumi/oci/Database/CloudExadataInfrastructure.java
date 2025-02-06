@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureCustomerContact
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -325,6 +326,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    @Export(name="isSchedulingPolicyAssociated", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSchedulingPolicyAssociated;
+
+    /**
+     * @return If true, the infrastructure is using granular maintenance scheduling preference.
+     * 
+     */
+    public Output<Boolean> isSchedulingPolicyAssociated() {
+        return this.isSchedulingPolicyAssociated;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

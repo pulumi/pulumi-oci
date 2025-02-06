@@ -60,12 +60,14 @@ type GetMaskingPolicyHealthReportArgs struct {
 type GetMaskingPolicyHealthReportResult struct {
 	// The OCID of the compartment that contains the health report.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the masking health report.
 	Description string `pulumi:"description"`
 	// The display name of the health report.
 	DisplayName string `pulumi:"displayName"`
+	// The count of errors in the masking health report.
+	ErrorCount string `pulumi:"errorCount"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
@@ -81,6 +83,8 @@ type GetMaskingPolicyHealthReportResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The count of warnings in the masking health report.
+	WarningCount string `pulumi:"warningCount"`
 }
 
 func GetMaskingPolicyHealthReportOutput(ctx *pulumi.Context, args GetMaskingPolicyHealthReportOutputArgs, opts ...pulumi.InvokeOption) GetMaskingPolicyHealthReportResultOutput {
@@ -122,7 +126,7 @@ func (o GetMaskingPolicyHealthReportResultOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetMaskingPolicyHealthReportResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -135,6 +139,11 @@ func (o GetMaskingPolicyHealthReportResultOutput) Description() pulumi.StringOut
 // The display name of the health report.
 func (o GetMaskingPolicyHealthReportResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The count of errors in the masking health report.
+func (o GetMaskingPolicyHealthReportResultOutput) ErrorCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) string { return v.ErrorCount }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -174,6 +183,11 @@ func (o GetMaskingPolicyHealthReportResultOutput) TimeCreated() pulumi.StringOut
 // The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 func (o GetMaskingPolicyHealthReportResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The count of warnings in the masking health report.
+func (o GetMaskingPolicyHealthReportResultOutput) WarningCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) string { return v.WarningCount }).(pulumi.StringOutput)
 }
 
 func init() {

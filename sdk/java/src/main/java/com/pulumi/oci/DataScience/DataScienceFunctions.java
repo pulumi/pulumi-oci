@@ -8,6 +8,8 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+import com.pulumi.oci.DataScience.inputs.GetContainersPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
 import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobArgs;
@@ -58,6 +60,11 @@ import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
+import com.pulumi.oci.DataScience.inputs.GetSchedulePlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
+import com.pulumi.oci.DataScience.inputs.GetSchedulesPlainArgs;
+import com.pulumi.oci.DataScience.outputs.GetContainersResult;
 import com.pulumi.oci.DataScience.outputs.GetFastLaunchJobConfigsResult;
 import com.pulumi.oci.DataScience.outputs.GetJobResult;
 import com.pulumi.oci.DataScience.outputs.GetJobRunResult;
@@ -83,10 +90,362 @@ import com.pulumi.oci.DataScience.outputs.GetPrivateEndpointResult;
 import com.pulumi.oci.DataScience.outputs.GetPrivateEndpointsResult;
 import com.pulumi.oci.DataScience.outputs.GetProjectResult;
 import com.pulumi.oci.DataScience.outputs.GetProjectsResult;
+import com.pulumi.oci.DataScience.outputs.GetScheduleResult;
+import com.pulumi.oci.DataScience.outputs.GetSchedulesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class DataScienceFunctions {
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainersResult> getContainers() {
+        return getContainers(GetContainersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetContainersResult> getContainersPlain() {
+        return getContainersPlain(GetContainersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainersResult> getContainers(GetContainersArgs args) {
+        return getContainers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetContainersResult> getContainersPlain(GetContainersPlainArgs args) {
+        return getContainersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainersResult> getContainers(GetContainersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getContainers:getContainers", TypeShape.of(GetContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetContainersResult> getContainers(GetContainersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getContainers:getContainers", TypeShape.of(GetContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List containers.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainers = DataScienceFunctions.getContainers(GetContainersArgs.builder()
+     *             .containerName(testContainer.name())
+     *             .displayName(containerDisplayName)
+     *             .isLatest(containerIsLatest)
+     *             .state(containerState)
+     *             .tagQueryParam(containerTagQueryParam)
+     *             .targetWorkload(containerTargetWorkload)
+     *             .usageQueryParam(containerUsageQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetContainersResult> getContainersPlain(GetContainersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getContainers:getContainers", TypeShape.of(GetContainersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
      * 
@@ -5831,5 +6190,465 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Schedule by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args) {
+        return getSchedule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Schedule by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args) {
+        return getSchedulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Schedule by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Schedule by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a Schedule by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = DataScienceFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(testScheduleOciDatascienceSchedule.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = DataScienceFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduleDisplayName)
+     *             .id(scheduleId)
+     *             .projectId(testProject.id())
+     *             .state(scheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args) {
+        return getSchedules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = DataScienceFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduleDisplayName)
+     *             .id(scheduleId)
+     *             .projectId(testProject.id())
+     *             .state(scheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args) {
+        return getSchedulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = DataScienceFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduleDisplayName)
+     *             .id(scheduleId)
+     *             .projectId(testProject.id())
+     *             .state(scheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = DataScienceFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduleDisplayName)
+     *             .id(scheduleId)
+     *             .projectId(testProject.id())
+     *             .state(scheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of Schedules.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = DataScienceFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(scheduleDisplayName)
+     *             .id(scheduleId)
+     *             .projectId(testProject.id())
+     *             .state(scheduleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
     }
 }

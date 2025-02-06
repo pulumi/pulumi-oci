@@ -27,7 +27,10 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+        if access_mode and not isinstance(access_mode, str):
+            raise TypeError("Expected argument 'access_mode' to be a str")
+        pulumi.set(__self__, "access_mode", access_mode)
         if admin_password and not isinstance(admin_password, str):
             raise TypeError("Expected argument 'admin_password' to be a str")
         pulumi.set(__self__, "admin_password", admin_password)
@@ -67,6 +70,9 @@ class GetMysqlDbSystemResult:
         if database_management and not isinstance(database_management, str):
             raise TypeError("Expected argument 'database_management' to be a str")
         pulumi.set(__self__, "database_management", database_management)
+        if database_mode and not isinstance(database_mode, str):
+            raise TypeError("Expected argument 'database_mode' to be a str")
+        pulumi.set(__self__, "database_mode", database_mode)
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -127,6 +133,9 @@ class GetMysqlDbSystemResult:
         if port_x and not isinstance(port_x, int):
             raise TypeError("Expected argument 'port_x' to be a int")
         pulumi.set(__self__, "port_x", port_x)
+        if read_endpoints and not isinstance(read_endpoints, list):
+            raise TypeError("Expected argument 'read_endpoints' to be a list")
+        pulumi.set(__self__, "read_endpoints", read_endpoints)
         if secure_connections and not isinstance(secure_connections, list):
             raise TypeError("Expected argument 'secure_connections' to be a list")
         pulumi.set(__self__, "secure_connections", secure_connections)
@@ -151,6 +160,16 @@ class GetMysqlDbSystemResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="accessMode")
+    def access_mode(self) -> str:
+        """
+        The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
+        * UNRESTRICTED: the access to the database is not restricted;
+        * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        """
+        return pulumi.get(self, "access_mode")
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -249,6 +268,16 @@ class GetMysqlDbSystemResult:
         Whether to enable monitoring via the Database Management service.
         """
         return pulumi.get(self, "database_management")
+
+    @property
+    @pulumi.getter(name="databaseMode")
+    def database_mode(self) -> str:
+        """
+        The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
+        * READ_WRITE: allow running read and write statements on the DB system;
+        * READ_ONLY: only allow running read statements on the DB system.
+        """
+        return pulumi.get(self, "database_mode")
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -411,6 +440,14 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter(name="readEndpoints")
+    def read_endpoints(self) -> Sequence['outputs.GetMysqlDbSystemReadEndpointResult']:
+        """
+        The read endpoint of a DB System.
+        """
+        return pulumi.get(self, "read_endpoints")
+
+    @property
     @pulumi.getter(name="secureConnections")
     def secure_connections(self) -> Sequence['outputs.GetMysqlDbSystemSecureConnectionResult']:
         """
@@ -478,6 +515,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
         if False:
             yield self
         return GetMysqlDbSystemResult(
+            access_mode=self.access_mode,
             admin_password=self.admin_password,
             admin_username=self.admin_username,
             availability_domain=self.availability_domain,
@@ -491,6 +529,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storages=self.data_storages,
             database_management=self.database_management,
+            database_mode=self.database_mode,
             db_system_id=self.db_system_id,
             defined_tags=self.defined_tags,
             deletion_policies=self.deletion_policies,
@@ -511,6 +550,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             point_in_time_recovery_details=self.point_in_time_recovery_details,
             port=self.port,
             port_x=self.port_x,
+            read_endpoints=self.read_endpoints,
             secure_connections=self.secure_connections,
             shape_name=self.shape_name,
             shutdown_type=self.shutdown_type,
@@ -546,6 +586,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlDbSystem:getMysqlDbSystem', __args__, opts=opts, typ=GetMysqlDbSystemResult).value
 
     return AwaitableGetMysqlDbSystemResult(
+        access_mode=pulumi.get(__ret__, 'access_mode'),
         admin_password=pulumi.get(__ret__, 'admin_password'),
         admin_username=pulumi.get(__ret__, 'admin_username'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
@@ -559,6 +600,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
         data_storages=pulumi.get(__ret__, 'data_storages'),
         database_management=pulumi.get(__ret__, 'database_management'),
+        database_mode=pulumi.get(__ret__, 'database_mode'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         deletion_policies=pulumi.get(__ret__, 'deletion_policies'),
@@ -579,6 +621,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         point_in_time_recovery_details=pulumi.get(__ret__, 'point_in_time_recovery_details'),
         port=pulumi.get(__ret__, 'port'),
         port_x=pulumi.get(__ret__, 'port_x'),
+        read_endpoints=pulumi.get(__ret__, 'read_endpoints'),
         secure_connections=pulumi.get(__ret__, 'secure_connections'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         shutdown_type=pulumi.get(__ret__, 'shutdown_type'),
@@ -611,6 +654,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlDbSystem:getMysqlDbSystem', __args__, opts=opts, typ=GetMysqlDbSystemResult)
     return __ret__.apply(lambda __response__: GetMysqlDbSystemResult(
+        access_mode=pulumi.get(__response__, 'access_mode'),
         admin_password=pulumi.get(__response__, 'admin_password'),
         admin_username=pulumi.get(__response__, 'admin_username'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
@@ -624,6 +668,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
         data_storage_size_in_gb=pulumi.get(__response__, 'data_storage_size_in_gb'),
         data_storages=pulumi.get(__response__, 'data_storages'),
         database_management=pulumi.get(__response__, 'database_management'),
+        database_mode=pulumi.get(__response__, 'database_mode'),
         db_system_id=pulumi.get(__response__, 'db_system_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         deletion_policies=pulumi.get(__response__, 'deletion_policies'),
@@ -644,6 +689,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
         point_in_time_recovery_details=pulumi.get(__response__, 'point_in_time_recovery_details'),
         port=pulumi.get(__response__, 'port'),
         port_x=pulumi.get(__response__, 'port_x'),
+        read_endpoints=pulumi.get(__response__, 'read_endpoints'),
         secure_connections=pulumi.get(__response__, 'secure_connections'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         shutdown_type=pulumi.get(__response__, 'shutdown_type'),

@@ -74,11 +74,11 @@ export class AuditProfileManagement extends pulumi.CustomResource {
      */
     public readonly changeRetentionTrigger!: pulumi.Output<boolean | undefined>;
     /**
-     * The OCID of the compartment that contains the target.
+     * (Updatable) The OCID of the compartment that contains the audit.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -86,7 +86,7 @@ export class AuditProfileManagement extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -199,11 +199,11 @@ export interface AuditProfileManagementState {
      */
     changeRetentionTrigger?: pulumi.Input<boolean>;
     /**
-     * The OCID of the compartment that contains the target.
+     * (Updatable) The OCID of the compartment that contains the audit.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -211,7 +211,7 @@ export interface AuditProfileManagementState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -268,11 +268,11 @@ export interface AuditProfileManagementArgs {
      */
     changeRetentionTrigger?: pulumi.Input<boolean>;
     /**
-     * The OCID of the compartment that contains the target.
+     * (Updatable) The OCID of the compartment that contains the audit.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -280,7 +280,7 @@ export interface AuditProfileManagementArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
     displayName?: pulumi.Input<string>;
     /**

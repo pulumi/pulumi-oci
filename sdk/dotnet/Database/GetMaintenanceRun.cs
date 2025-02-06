@@ -172,6 +172,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsDstFileUpdateEnabled;
         /// <summary>
+        /// If `FALSE`, the maintenance run doesn't support granular maintenance.
+        /// </summary>
+        public readonly bool IsMaintenanceRunGranular;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -245,6 +249,10 @@ namespace Pulumi.Oci.Database
         /// The date and time the maintenance run starts.
         /// </summary>
         public readonly string TimeStarted;
+        /// <summary>
+        /// The total time taken by corresponding resource activity in minutes.
+        /// </summary>
+        public readonly int TotalTimeTakenInMins;
 
         [OutputConstructor]
         private GetMaintenanceRunResult(
@@ -271,6 +279,8 @@ namespace Pulumi.Oci.Database
             bool isCustomActionTimeoutEnabled,
 
             bool isDstFileUpdateEnabled,
+
+            bool isMaintenanceRunGranular,
 
             string lifecycleDetails,
 
@@ -310,7 +320,9 @@ namespace Pulumi.Oci.Database
 
             string timeScheduled,
 
-            string timeStarted)
+            string timeStarted,
+
+            int totalTimeTakenInMins)
         {
             CompartmentId = compartmentId;
             CurrentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
@@ -324,6 +336,7 @@ namespace Pulumi.Oci.Database
             Id = id;
             IsCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             IsDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            IsMaintenanceRunGranular = isMaintenanceRunGranular;
             LifecycleDetails = lifecycleDetails;
             MaintenanceRunId = maintenanceRunId;
             MaintenanceSubtype = maintenanceSubtype;
@@ -344,6 +357,7 @@ namespace Pulumi.Oci.Database
             TimeEnded = timeEnded;
             TimeScheduled = timeScheduled;
             TimeStarted = timeStarted;
+            TotalTimeTakenInMins = totalTimeTakenInMins;
         }
     }
 }

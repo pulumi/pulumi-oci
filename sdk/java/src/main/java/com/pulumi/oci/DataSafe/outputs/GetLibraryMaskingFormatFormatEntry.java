@@ -84,7 +84,7 @@ public final class GetLibraryMaskingFormatFormatEntry {
      */
     private String regularExpression;
     /**
-     * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+     * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
      * 
      */
     private String replaceWith;
@@ -234,7 +234,7 @@ public final class GetLibraryMaskingFormatFormatEntry {
         return this.regularExpression;
     }
     /**
-     * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+     * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
      * 
      */
     public String replaceWith() {

@@ -32,7 +32,7 @@ type LibraryMasingFormat struct {
 
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the library masking format.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -95,7 +95,7 @@ func GetLibraryMasingFormat(ctx *pulumi.Context,
 type libraryMasingFormatState struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the library masking format.
 	Description *string `pulumi:"description"`
@@ -123,7 +123,7 @@ type libraryMasingFormatState struct {
 type LibraryMasingFormatState struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the library masking format.
 	Description pulumi.StringPtrInput
@@ -155,7 +155,7 @@ func (LibraryMasingFormatState) ElementType() reflect.Type {
 type libraryMasingFormatArgs struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the library masking format.
 	Description *string `pulumi:"description"`
@@ -176,7 +176,7 @@ type libraryMasingFormatArgs struct {
 type LibraryMasingFormatArgs struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the library masking format.
 	Description pulumi.StringPtrInput
@@ -285,7 +285,7 @@ func (o LibraryMasingFormatOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LibraryMasingFormatOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

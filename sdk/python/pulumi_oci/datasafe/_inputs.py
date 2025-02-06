@@ -77,6 +77,10 @@ __all__ = [
     'SecurityAssessmentStatisticMediumRiskArgsDict',
     'SecurityAssessmentStatisticPassArgs',
     'SecurityAssessmentStatisticPassArgsDict',
+    'SensitiveDataModelReferentialRelationChildArgs',
+    'SensitiveDataModelReferentialRelationChildArgsDict',
+    'SensitiveDataModelReferentialRelationParentArgs',
+    'SensitiveDataModelReferentialRelationParentArgsDict',
     'SensitiveDataModelTablesForDiscoveryArgs',
     'SensitiveDataModelTablesForDiscoveryArgsDict',
     'TargetDatabaseConnectionOptionArgs',
@@ -149,6 +153,8 @@ __all__ = [
     'GetMaskingPolicyMaskingObjectsFilterArgsDict',
     'GetMaskingPolicyMaskingSchemasFilterArgs',
     'GetMaskingPolicyMaskingSchemasFilterArgsDict',
+    'GetMaskingPolicyReferentialRelationsFilterArgs',
+    'GetMaskingPolicyReferentialRelationsFilterArgsDict',
     'GetMaskingReportMaskedColumnsFilterArgs',
     'GetMaskingReportMaskedColumnsFilterArgsDict',
     'GetMaskingReportsFilterArgs',
@@ -191,6 +197,8 @@ __all__ = [
     'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict',
     'GetSecurityPolicyReportsFilterArgs',
     'GetSecurityPolicyReportsFilterArgsDict',
+    'GetSensitiveDataModelReferentialRelationsFilterArgs',
+    'GetSensitiveDataModelReferentialRelationsFilterArgsDict',
     'GetSensitiveDataModelSensitiveObjectsFilterArgs',
     'GetSensitiveDataModelSensitiveObjectsFilterArgsDict',
     'GetSensitiveDataModelSensitiveSchemasFilterArgs',
@@ -201,6 +209,8 @@ __all__ = [
     'GetSensitiveDataModelsFilterArgsDict',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgsDict',
+    'GetSensitiveTypesExportsFilterArgs',
+    'GetSensitiveTypesExportsFilterArgsDict',
     'GetSensitiveTypesFilterArgs',
     'GetSensitiveTypesFilterArgsDict',
     'GetSqlCollectionAnalyticsFilterArgs',
@@ -237,6 +247,8 @@ __all__ = [
     'GetTargetDatabasesSchemasFilterArgsDict',
     'GetTargetDatabasesTablesFilterArgs',
     'GetTargetDatabasesTablesFilterArgsDict',
+    'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs',
+    'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict',
     'GetUserAssessmentProfileAnalyticsFilterArgs',
     'GetUserAssessmentProfileAnalyticsFilterArgsDict',
     'GetUserAssessmentProfilesFilterArgs',
@@ -1204,7 +1216,7 @@ if not MYPY:
         """
         defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         description: NotRequired[pulumi.Input[str]]
         """
@@ -1212,7 +1224,7 @@ if not MYPY:
         """
         display_name: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
         """
@@ -1320,9 +1332,9 @@ class AuditProfileAuditTrailArgs:
         :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The OCID of the audit profile.
         :param pulumi.Input[bool] is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -1431,7 +1443,7 @@ class AuditProfileAuditTrailArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1455,7 +1467,7 @@ class AuditProfileAuditTrailArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         """
         return pulumi.get(self, "display_name")
 
@@ -2261,7 +2273,7 @@ if not MYPY:
         """
         replace_with: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         schema_name: NotRequired[pulumi.Input[str]]
         """
@@ -2345,7 +2357,7 @@ class LibraryMasingFormatFormatEntryArgs:
                In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
                
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param pulumi.Input[str] schema_name: (Updatable) The name of the schema that contains the substitution column.
         :param pulumi.Input[str] sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param pulumi.Input[str] start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -2591,7 +2603,7 @@ class LibraryMasingFormatFormatEntryArgs:
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -2835,7 +2847,7 @@ if not MYPY:
         """
         replace_with: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         schema_name: NotRequired[pulumi.Input[str]]
         """
@@ -2919,7 +2931,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
                In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
                
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         :param pulumi.Input[str] schema_name: (Updatable) The name of the schema that contains the substitution column.
         :param pulumi.Input[str] sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param pulumi.Input[str] start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
@@ -3165,7 +3177,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         """
         return pulumi.get(self, "replace_with")
 
@@ -5141,6 +5153,260 @@ class SecurityAssessmentStatisticPassArgs:
     @user_accounts_findings_count.setter
     def user_accounts_findings_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
+
+
+if not MYPY:
+    class SensitiveDataModelReferentialRelationChildArgsDict(TypedDict):
+        app_name: pulumi.Input[str]
+        """
+        The application name.
+        """
+        column_groups: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        object: pulumi.Input[str]
+        """
+        The database object that contains the columns.
+        """
+        object_type: pulumi.Input[str]
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        schema_name: pulumi.Input[str]
+        """
+        The schema name.
+        """
+        sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+elif False:
+    SensitiveDataModelReferentialRelationChildArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SensitiveDataModelReferentialRelationChildArgs:
+    def __init__(__self__, *,
+                 app_name: pulumi.Input[str],
+                 column_groups: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 object: pulumi.Input[str],
+                 object_type: pulumi.Input[str],
+                 schema_name: pulumi.Input[str],
+                 sensitive_type_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app_name: The application name.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param pulumi.Input[str] object: The database object that contains the columns.
+        :param pulumi.Input[str] object_type: The type of the database object that contains the sensitive column.
+        :param pulumi.Input[str] schema_name: The schema name.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        if sensitive_type_ids is not None:
+            pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> pulumi.Input[str]:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @app_name.setter
+    def app_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "app_name", value)
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @column_groups.setter
+    def column_groups(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "column_groups", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> pulumi.Input[str]:
+        """
+        The database object that contains the columns.
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: pulumi.Input[str]):
+        pulumi.set(self, "object", value)
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> pulumi.Input[str]:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @object_type.setter
+    def object_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "object_type", value)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> pulumi.Input[str]:
+        """
+        The schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @schema_name.setter
+    def schema_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "schema_name", value)
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+    @sensitive_type_ids.setter
+    def sensitive_type_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sensitive_type_ids", value)
+
+
+if not MYPY:
+    class SensitiveDataModelReferentialRelationParentArgsDict(TypedDict):
+        app_name: pulumi.Input[str]
+        """
+        The application name.
+        """
+        column_groups: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        object: pulumi.Input[str]
+        """
+        The database object that contains the columns.
+        """
+        object_type: pulumi.Input[str]
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        schema_name: pulumi.Input[str]
+        """
+        The schema name.
+        """
+        sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+elif False:
+    SensitiveDataModelReferentialRelationParentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SensitiveDataModelReferentialRelationParentArgs:
+    def __init__(__self__, *,
+                 app_name: pulumi.Input[str],
+                 column_groups: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 object: pulumi.Input[str],
+                 object_type: pulumi.Input[str],
+                 schema_name: pulumi.Input[str],
+                 sensitive_type_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app_name: The application name.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] column_groups: Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        :param pulumi.Input[str] object: The database object that contains the columns.
+        :param pulumi.Input[str] object_type: The type of the database object that contains the sensitive column.
+        :param pulumi.Input[str] schema_name: The schema name.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        if sensitive_type_ids is not None:
+            pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+
+    @property
+    @pulumi.getter(name="appName")
+    def app_name(self) -> pulumi.Input[str]:
+        """
+        The application name.
+        """
+        return pulumi.get(self, "app_name")
+
+    @app_name.setter
+    def app_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "app_name", value)
+
+    @property
+    @pulumi.getter(name="columnGroups")
+    def column_groups(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+        """
+        return pulumi.get(self, "column_groups")
+
+    @column_groups.setter
+    def column_groups(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "column_groups", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> pulumi.Input[str]:
+        """
+        The database object that contains the columns.
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: pulumi.Input[str]):
+        pulumi.set(self, "object", value)
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> pulumi.Input[str]:
+        """
+        The type of the database object that contains the sensitive column.
+        """
+        return pulumi.get(self, "object_type")
+
+    @object_type.setter
+    def object_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "object_type", value)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> pulumi.Input[str]:
+        """
+        The schema name.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @schema_name.setter
+    def schema_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "schema_name", value)
+
+    @property
+    @pulumi.getter(name="sensitiveTypeIds")
+    def sensitive_type_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+        """
+        return pulumi.get(self, "sensitive_type_ids")
+
+    @sensitive_type_ids.setter
+    def sensitive_type_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sensitive_type_ids", value)
 
 
 if not MYPY:
@@ -7935,6 +8201,53 @@ class GetMaskingPolicyMaskingSchemasFilterArgs:
 
 
 if not MYPY:
+    class GetMaskingPolicyReferentialRelationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMaskingPolicyReferentialRelationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMaskingPolicyReferentialRelationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetMaskingReportMaskedColumnsFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -8931,6 +9244,53 @@ class GetSecurityPolicyReportsFilterArgs:
 
 
 if not MYPY:
+    class GetSensitiveDataModelReferentialRelationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSensitiveDataModelReferentialRelationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSensitiveDataModelReferentialRelationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetSensitiveDataModelSensitiveObjectsFilterArgsDict(TypedDict):
         name: str
         values: Sequence[str]
@@ -9128,6 +9488,53 @@ elif False:
 
 @pulumi.input_type
 class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSensitiveTypesExportsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSensitiveTypesExportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSensitiveTypesExportsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -9974,6 +10381,53 @@ elif False:
 
 @pulumi.input_type
 class GetTargetDatabasesTablesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

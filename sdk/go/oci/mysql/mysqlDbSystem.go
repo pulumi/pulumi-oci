@@ -35,6 +35,7 @@ import (
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				ShapeName:          pulumi.Any(mysqlShapeName),
 //				SubnetId:           pulumi.Any(testSubnet.Id),
+//				AccessMode:         pulumi.Any(mysqlDbSystemAccessMode),
 //				AdminPassword:      pulumi.Any(mysqlDbSystemAdminPassword),
 //				AdminUsername:      pulumi.Any(mysqlDbSystemAdminUsername),
 //				BackupPolicy: &mysql.MysqlDbSystemBackupPolicyArgs{
@@ -64,6 +65,7 @@ import (
 //				},
 //				DataStorageSizeInGb: pulumi.Any(mysqlDbSystemDataStorageSizeInGb),
 //				DatabaseManagement:  pulumi.Any(mysqlDbSystemDatabaseManagement),
+//				DatabaseMode:        pulumi.Any(mysqlDbSystemDatabaseMode),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -88,6 +90,12 @@ import (
 //				},
 //				Port:  pulumi.Any(mysqlDbSystemPort),
 //				PortX: pulumi.Any(mysqlDbSystemPortX),
+//				ReadEndpoint: &mysql.MysqlDbSystemReadEndpointArgs{
+//					ExcludeIps:                pulumi.Any(mysqlDbSystemReadEndpointExcludeIps),
+//					IsEnabled:                 pulumi.Any(mysqlDbSystemReadEndpointIsEnabled),
+//					ReadEndpointHostnameLabel: pulumi.Any(mysqlDbSystemReadEndpointReadEndpointHostnameLabel),
+//					ReadEndpointIpAddress:     pulumi.Any(mysqlDbSystemReadEndpointReadEndpointIpAddress),
+//				},
 //				SecureConnections: &mysql.MysqlDbSystemSecureConnectionsArgs{
 //					CertificateGenerationType: pulumi.Any(mysqlDbSystemSecureConnectionsCertificateGenerationType),
 //					CertificateId:             pulumi.Any(testCertificate.Id),
@@ -116,6 +124,10 @@ import (
 type MysqlDbSystem struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+	// * UNRESTRICTED (default): the access to the database is not restricted;
+	// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode pulumi.StringOutput `pulumi:"accessMode"`
 	// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	AdminPassword pulumi.StringOutput `pulumi:"adminPassword"`
 	// The username for the administrative user.
@@ -146,6 +158,10 @@ type MysqlDbSystem struct {
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringOutput `pulumi:"databaseManagement"`
+	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE (default): allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode pulumi.StringOutput `pulumi:"databaseMode"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -192,6 +208,8 @@ type MysqlDbSystem struct {
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntOutput `pulumi:"portX"`
+	// (Updatable) Details required to create a Read Endpoint.
+	ReadEndpoint MysqlDbSystemReadEndpointOutput `pulumi:"readEndpoint"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsOutput `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -263,6 +281,10 @@ func GetMysqlDbSystem(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MysqlDbSystem resources.
 type mysqlDbSystemState struct {
+	// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+	// * UNRESTRICTED (default): the access to the database is not restricted;
+	// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode *string `pulumi:"accessMode"`
 	// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	AdminPassword *string `pulumi:"adminPassword"`
 	// The username for the administrative user.
@@ -293,6 +315,10 @@ type mysqlDbSystemState struct {
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
+	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE (default): allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode *string `pulumi:"databaseMode"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -339,6 +365,8 @@ type mysqlDbSystemState struct {
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// (Updatable) Details required to create a Read Endpoint.
+	ReadEndpoint *MysqlDbSystemReadEndpoint `pulumi:"readEndpoint"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -362,6 +390,10 @@ type mysqlDbSystemState struct {
 }
 
 type MysqlDbSystemState struct {
+	// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+	// * UNRESTRICTED (default): the access to the database is not restricted;
+	// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode pulumi.StringPtrInput
 	// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	AdminPassword pulumi.StringPtrInput
 	// The username for the administrative user.
@@ -392,6 +424,10 @@ type MysqlDbSystemState struct {
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput
+	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE (default): allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -438,6 +474,8 @@ type MysqlDbSystemState struct {
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
+	// (Updatable) Details required to create a Read Endpoint.
+	ReadEndpoint MysqlDbSystemReadEndpointPtrInput
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -465,6 +503,10 @@ func (MysqlDbSystemState) ElementType() reflect.Type {
 }
 
 type mysqlDbSystemArgs struct {
+	// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+	// * UNRESTRICTED (default): the access to the database is not restricted;
+	// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode *string `pulumi:"accessMode"`
 	// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	AdminPassword *string `pulumi:"adminPassword"`
 	// The username for the administrative user.
@@ -491,6 +533,10 @@ type mysqlDbSystemArgs struct {
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
+	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE (default): allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode *string `pulumi:"databaseMode"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -527,6 +573,8 @@ type mysqlDbSystemArgs struct {
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// (Updatable) Details required to create a Read Endpoint.
+	ReadEndpoint *MysqlDbSystemReadEndpoint `pulumi:"readEndpoint"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -547,6 +595,10 @@ type mysqlDbSystemArgs struct {
 
 // The set of arguments for constructing a MysqlDbSystem resource.
 type MysqlDbSystemArgs struct {
+	// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+	// * UNRESTRICTED (default): the access to the database is not restricted;
+	// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+	AccessMode pulumi.StringPtrInput
 	// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	AdminPassword pulumi.StringPtrInput
 	// The username for the administrative user.
@@ -573,6 +625,10 @@ type MysqlDbSystemArgs struct {
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput
+	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+	// * READ_WRITE (default): allow running read and write statements on the DB system;
+	// * READ_ONLY: only allow running read statements on the DB system.
+	DatabaseMode pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -609,6 +665,8 @@ type MysqlDbSystemArgs struct {
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
+	// (Updatable) Details required to create a Read Endpoint.
+	ReadEndpoint MysqlDbSystemReadEndpointPtrInput
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -714,6 +772,13 @@ func (o MysqlDbSystemOutput) ToMysqlDbSystemOutputWithContext(ctx context.Contex
 	return o
 }
 
+// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+// * UNRESTRICTED (default): the access to the database is not restricted;
+// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+func (o MysqlDbSystemOutput) AccessMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.AccessMode }).(pulumi.StringOutput)
+}
+
 // The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 func (o MysqlDbSystemOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.AdminPassword }).(pulumi.StringOutput)
@@ -781,6 +846,13 @@ func (o MysqlDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 // (Updatable) Whether to enable monitoring via the Database Management service.
 func (o MysqlDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.DatabaseManagement }).(pulumi.StringOutput)
+}
+
+// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+// * READ_WRITE (default): allow running read and write statements on the DB system;
+// * READ_ONLY: only allow running read statements on the DB system.
+func (o MysqlDbSystemOutput) DatabaseMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.DatabaseMode }).(pulumi.StringOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -883,6 +955,11 @@ func (o MysqlDbSystemOutput) Port() pulumi.IntOutput {
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 func (o MysqlDbSystemOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.PortX }).(pulumi.IntOutput)
+}
+
+// (Updatable) Details required to create a Read Endpoint.
+func (o MysqlDbSystemOutput) ReadEndpoint() MysqlDbSystemReadEndpointOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemReadEndpointOutput { return v.ReadEndpoint }).(MysqlDbSystemReadEndpointOutput)
 }
 
 // (Updatable) Secure connection configuration details.

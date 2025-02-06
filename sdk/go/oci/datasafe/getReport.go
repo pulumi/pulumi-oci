@@ -60,7 +60,7 @@ type LookupReportArgs struct {
 type LookupReportResult struct {
 	// The OCID of the compartment containing the report.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies a description of the report.
 	Description string `pulumi:"description"`
@@ -126,7 +126,7 @@ func (o LookupReportResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupReportResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupReportResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

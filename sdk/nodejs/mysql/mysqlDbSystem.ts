@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     shapeName: mysqlShapeName,
  *     subnetId: testSubnet.id,
+ *     accessMode: mysqlDbSystemAccessMode,
  *     adminPassword: mysqlDbSystemAdminPassword,
  *     adminUsername: mysqlDbSystemAdminUsername,
  *     backupPolicy: {
@@ -49,6 +50,7 @@ import * as utilities from "../utilities";
  *     },
  *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
  *     databaseManagement: mysqlDbSystemDatabaseManagement,
+ *     databaseMode: mysqlDbSystemDatabaseMode,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -71,6 +73,12 @@ import * as utilities from "../utilities";
  *     },
  *     port: mysqlDbSystemPort,
  *     portX: mysqlDbSystemPortX,
+ *     readEndpoint: {
+ *         excludeIps: mysqlDbSystemReadEndpointExcludeIps,
+ *         isEnabled: mysqlDbSystemReadEndpointIsEnabled,
+ *         readEndpointHostnameLabel: mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
+ *         readEndpointIpAddress: mysqlDbSystemReadEndpointReadEndpointIpAddress,
+ *     },
  *     secureConnections: {
  *         certificateGenerationType: mysqlDbSystemSecureConnectionsCertificateGenerationType,
  *         certificateId: testCertificate.id,
@@ -118,6 +126,12 @@ export class MysqlDbSystem extends pulumi.CustomResource {
         return obj['__pulumiType'] === MysqlDbSystem.__pulumiType;
     }
 
+    /**
+     * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     */
+    public readonly accessMode!: pulumi.Output<string>;
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
@@ -174,6 +188,12 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
     public readonly databaseManagement!: pulumi.Output<string>;
+    /**
+     * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     */
+    public readonly databaseMode!: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -257,6 +277,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly portX!: pulumi.Output<number>;
     /**
+     * (Updatable) Details required to create a Read Endpoint.
+     */
+    public readonly readEndpoint!: pulumi.Output<outputs.Mysql.MysqlDbSystemReadEndpoint>;
+    /**
      * (Updatable) Secure connection configuration details.
      */
     public readonly secureConnections!: pulumi.Output<outputs.Mysql.MysqlDbSystemSecureConnections>;
@@ -306,6 +330,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MysqlDbSystemState | undefined;
+            resourceInputs["accessMode"] = state ? state.accessMode : undefined;
             resourceInputs["adminPassword"] = state ? state.adminPassword : undefined;
             resourceInputs["adminUsername"] = state ? state.adminUsername : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
@@ -319,6 +344,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["dataStorage"] = state ? state.dataStorage : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["databaseManagement"] = state ? state.databaseManagement : undefined;
+            resourceInputs["databaseMode"] = state ? state.databaseMode : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deletionPolicies"] = state ? state.deletionPolicies : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -337,6 +363,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["pointInTimeRecoveryDetails"] = state ? state.pointInTimeRecoveryDetails : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["portX"] = state ? state.portX : undefined;
+            resourceInputs["readEndpoint"] = state ? state.readEndpoint : undefined;
             resourceInputs["secureConnections"] = state ? state.secureConnections : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["shutdownType"] = state ? state.shutdownType : undefined;
@@ -359,6 +386,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["accessMode"] = args ? args.accessMode : undefined;
             resourceInputs["adminPassword"] = args?.adminPassword ? pulumi.secret(args.adminPassword) : undefined;
             resourceInputs["adminUsername"] = args ? args.adminUsername : undefined;
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
@@ -370,6 +398,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["dataStorage"] = args ? args.dataStorage : undefined;
             resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
             resourceInputs["databaseManagement"] = args ? args.databaseManagement : undefined;
+            resourceInputs["databaseMode"] = args ? args.databaseMode : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["deletionPolicies"] = args ? args.deletionPolicies : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -383,6 +412,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["mysqlVersion"] = args ? args.mysqlVersion : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
             resourceInputs["portX"] = args ? args.portX : undefined;
+            resourceInputs["readEndpoint"] = args ? args.readEndpoint : undefined;
             resourceInputs["secureConnections"] = args ? args.secureConnections : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["shutdownType"] = args ? args.shutdownType : undefined;
@@ -410,6 +440,12 @@ export class MysqlDbSystem extends pulumi.CustomResource {
  * Input properties used for looking up and filtering MysqlDbSystem resources.
  */
 export interface MysqlDbSystemState {
+    /**
+     * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     */
+    accessMode?: pulumi.Input<string>;
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
@@ -466,6 +502,12 @@ export interface MysqlDbSystemState {
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
     databaseManagement?: pulumi.Input<string>;
+    /**
+     * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     */
+    databaseMode?: pulumi.Input<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -549,6 +591,10 @@ export interface MysqlDbSystemState {
      */
     portX?: pulumi.Input<number>;
     /**
+     * (Updatable) Details required to create a Read Endpoint.
+     */
+    readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint>;
+    /**
      * (Updatable) Secure connection configuration details.
      */
     secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections>;
@@ -590,6 +636,12 @@ export interface MysqlDbSystemState {
  * The set of arguments for constructing a MysqlDbSystem resource.
  */
 export interface MysqlDbSystemArgs {
+    /**
+     * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
+     * * UNRESTRICTED (default): the access to the database is not restricted;
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     */
+    accessMode?: pulumi.Input<string>;
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
@@ -638,6 +690,12 @@ export interface MysqlDbSystemArgs {
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
     databaseManagement?: pulumi.Input<string>;
+    /**
+     * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
+     * * READ_WRITE (default): allow running read and write statements on the DB system;
+     * * READ_ONLY: only allow running read statements on the DB system.
+     */
+    databaseMode?: pulumi.Input<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -700,6 +758,10 @@ export interface MysqlDbSystemArgs {
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
     portX?: pulumi.Input<number>;
+    /**
+     * (Updatable) Details required to create a Read Endpoint.
+     */
+    readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint>;
     /**
      * (Updatable) Secure connection configuration details.
      */

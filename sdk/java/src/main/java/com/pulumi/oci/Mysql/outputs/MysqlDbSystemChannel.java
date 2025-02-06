@@ -42,7 +42,7 @@ public final class MysqlDbSystemChannel {
      */
     private @Nullable String id;
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private @Nullable Boolean isEnabled;
@@ -114,7 +114,7 @@ public final class MysqlDbSystemChannel {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Optional<Boolean> isEnabled() {

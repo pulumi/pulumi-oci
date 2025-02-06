@@ -29,7 +29,6 @@ namespace Pulumi.Oci.DataSafe
     ///     var testSecurityAssessment = new Oci.DataSafe.SecurityAssessment("test_security_assessment", new()
     ///     {
     ///         CompartmentId = compartmentId,
-    ///         TargetId = testTarget.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -42,6 +41,7 @@ namespace Pulumi.Oci.DataSafe
     ///         },
     ///         IsAssessmentScheduled = securityAssessmentIsAssessmentScheduled,
     ///         Schedule = securityAssessmentSchedule,
+    ///         TargetId = testTarget.Id,
     ///     });
     /// 
     /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
@@ -276,7 +276,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -329,8 +329,8 @@ namespace Pulumi.Oci.DataSafe
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("targetId", required: true)]
-        public Input<string> TargetId { get; set; } = null!;
+        [Input("targetId")]
+        public Input<string>? TargetId { get; set; }
 
         public SecurityAssessmentArgs()
         {
@@ -350,7 +350,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {

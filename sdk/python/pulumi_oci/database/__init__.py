@@ -45,6 +45,8 @@ from .exadata_infrastructure_storage import *
 from .exadata_iorm_config import *
 from .exadb_vm_cluster import *
 from .exascale_db_storage_vault import *
+from .execution_action import *
+from .execution_window import *
 from .external_container_database import *
 from .external_container_database_management import *
 from .external_container_databases_stack_monitoring import *
@@ -154,6 +156,10 @@ from .get_exadb_vm_cluster_updates import *
 from .get_exadb_vm_clusters import *
 from .get_exascale_db_storage_vault import *
 from .get_exascale_db_storage_vaults import *
+from .get_execution_action import *
+from .get_execution_actions import *
+from .get_execution_window import *
+from .get_execution_windows import *
 from .get_external_container_database import *
 from .get_external_container_databases import *
 from .get_external_database_connector import *
@@ -176,6 +182,16 @@ from .get_oneoff_patch import *
 from .get_oneoff_patches import *
 from .get_pluggable_database import *
 from .get_pluggable_databases import *
+from .get_scheduled_action import *
+from .get_scheduled_action_params import *
+from .get_scheduled_actions import *
+from .get_scheduling_plan import *
+from .get_scheduling_plans import *
+from .get_scheduling_policies import *
+from .get_scheduling_policy import *
+from .get_scheduling_policy_recommended_scheduled_actions import *
+from .get_scheduling_policy_scheduling_window import *
+from .get_scheduling_policy_scheduling_windows import *
 from .get_system_versions import *
 from .get_vm_cluster import *
 from .get_vm_cluster_network import *
@@ -198,6 +214,10 @@ from .pluggable_database import *
 from .pluggable_database_managements_management import *
 from .pluggable_databases_local_clone import *
 from .pluggable_databases_remote_clone import *
+from .scheduled_action import *
+from .scheduling_plan import *
+from .scheduling_policy import *
+from .scheduling_policy_scheduling_window import *
 from .vm_cluster import *
 from .vm_cluster_add_virtual_network import *
 from .vm_cluster_network import *

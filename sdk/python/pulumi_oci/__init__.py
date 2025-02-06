@@ -2246,6 +2246,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/sensitiveDataModelReferentialRelation",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation": "SensitiveDataModelReferentialRelation"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/sensitiveDataModelsApplyDiscoveryJobResults",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2266,6 +2274,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/sensitiveType:SensitiveType": "SensitiveType"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/sensitiveTypesExport",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport": "SensitiveTypesExport"
   }
  },
  {
@@ -2490,6 +2506,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datascience",
   "classes": {
    "oci:DataScience/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/schedule",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/schedule:Schedule": "Schedule"
   }
  },
  {
@@ -2814,6 +2838,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/executionAction",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/executionAction:ExecutionAction": "ExecutionAction"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/executionWindow",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/executionWindow:ExecutionWindow": "ExecutionWindow"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/externalContainerDatabase",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -2962,6 +3002,38 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone": "PluggableDatabasesRemoteClone"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/scheduledAction",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/scheduledAction:ScheduledAction": "ScheduledAction"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/schedulingPlan",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/schedulingPlan:SchedulingPlan": "SchedulingPlan"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/schedulingPolicy",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/schedulingPolicy:SchedulingPolicy": "SchedulingPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/schedulingPolicySchedulingWindow",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow": "SchedulingPolicySchedulingWindow"
   }
  },
  {

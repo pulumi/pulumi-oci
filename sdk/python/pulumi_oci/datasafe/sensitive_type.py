@@ -39,7 +39,7 @@ class SensitiveTypeArgs:
         :param pulumi.Input[str] comment_pattern: (Updatable) A regular expression to be used by data discovery for matching column comments.
         :param pulumi.Input[str] data_pattern: (Updatable) A regular expression to be used by data discovery for matching column data values.
         :param pulumi.Input[str] default_masking_format_id: (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the sensitive type.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -141,7 +141,7 @@ class SensitiveTypeArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -266,7 +266,7 @@ class _SensitiveTypeState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the sensitive type should be created.
         :param pulumi.Input[str] data_pattern: (Updatable) A regular expression to be used by data discovery for matching column data values.
         :param pulumi.Input[str] default_masking_format_id: (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the sensitive type.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[str] entity_type: (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
@@ -377,7 +377,7 @@ class _SensitiveTypeState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -624,7 +624,7 @@ class SensitiveType(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the sensitive type should be created.
         :param pulumi.Input[str] data_pattern: (Updatable) A regular expression to be used by data discovery for matching column data values.
         :param pulumi.Input[str] default_masking_format_id: (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the sensitive type.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[str] entity_type: (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
@@ -785,7 +785,7 @@ class SensitiveType(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the sensitive type should be created.
         :param pulumi.Input[str] data_pattern: (Updatable) A regular expression to be used by data discovery for matching column data values.
         :param pulumi.Input[str] default_masking_format_id: (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the sensitive type.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[str] entity_type: (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
@@ -866,7 +866,7 @@ class SensitiveType(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 

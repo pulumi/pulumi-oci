@@ -10,6 +10,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotDataSto
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenance;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -140,6 +141,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * 
      */
     private Integer portX;
+    /**
+     * @return The read endpoint of a DB System.
+     * 
+     */
+    private List<GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint> readEndpoints;
     /**
      * @return The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
      * 
@@ -331,6 +337,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         return this.portX;
     }
     /**
+     * @return The read endpoint of a DB System.
+     * 
+     */
+    public List<GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint> readEndpoints() {
+        return this.readEndpoints;
+    }
+    /**
      * @return The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
      * 
      */
@@ -392,6 +405,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         private String mysqlVersion;
         private Integer port;
         private Integer portX;
+        private List<GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint> readEndpoints;
         private String region;
         private List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections;
         private String shapeName;
@@ -423,6 +437,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.readEndpoints = defaults.readEndpoints;
     	      this.region = defaults.region;
     	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
@@ -637,6 +652,17 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder readEndpoints(List<GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint> readEndpoints) {
+            if (readEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "readEndpoints");
+            }
+            this.readEndpoints = readEndpoints;
+            return this;
+        }
+        public Builder readEndpoints(GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint... readEndpoints) {
+            return readEndpoints(List.of(readEndpoints));
+        }
+        @CustomType.Setter
         public Builder region(String region) {
             if (region == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "region");
@@ -697,6 +723,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.readEndpoints = readEndpoints;
             _resultValue.region = region;
             _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;

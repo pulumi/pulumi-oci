@@ -37,7 +37,7 @@ class TargetDatabaseArgs:
         :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -115,7 +115,7 @@ class TargetDatabaseArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -211,7 +211,7 @@ class _TargetDatabaseState:
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -323,7 +323,7 @@ class _TargetDatabaseState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -567,7 +567,7 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -755,7 +755,7 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -835,7 +835,7 @@ class TargetDatabase(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 

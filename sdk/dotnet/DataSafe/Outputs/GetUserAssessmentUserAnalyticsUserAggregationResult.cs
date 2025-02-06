@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetUserAssessmentUserAnalyticsUserAggregationResult
     {
         /// <summary>
-        /// The array of user aggregation data.
+        /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUserAssessmentUserAnalyticsUserAggregationItemResult> Items;
 

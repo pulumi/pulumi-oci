@@ -76,56 +76,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement")
 public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      * 
      */
     @Export(name="allowedClientIps", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedClientIps;
 
     /**
-     * @return (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * @return (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      * 
      */
     public Output<List<String>> allowedClientIps() {
         return this.allowedClientIps;
     }
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      * 
      */
     @Export(name="allowedClientOsUsernames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedClientOsUsernames;
 
     /**
-     * @return (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * @return (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      * 
      */
     public Output<List<String>> allowedClientOsUsernames() {
         return this.allowedClientOsUsernames;
     }
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      * 
      */
     @Export(name="allowedClientPrograms", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedClientPrograms;
 
     /**
-     * @return (Updatable) List of allowed client programs for the SQL firewall policy.
+     * @return (Updatable) List of allowed client programs for the SQL Firewall policy.
      * 
      */
     public Output<List<String>> allowedClientPrograms() {
         return this.allowedClientPrograms;
     }
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL collection.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * @return (Updatable) The OCID of the compartment containing the SQL collection.
      * 
      */
     public Output<String> compartmentId() {
@@ -146,56 +146,56 @@ public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomReso
         return this.dbUserName;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the SQL firewall policy.
+     * @return (Updatable) The description of the SQL Firewall policy.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * @return (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      * 
      */
     @Export(name="enforcementScope", refs={String.class}, tree="[0]")
     private Output<String> enforcementScope;
 
     /**
-     * @return (Updatable) Specifies the SQL firewall policy enforcement option.
+     * @return (Updatable) Specifies the SQL Firewall policy enforcement option.
      * 
      */
     public Output<String> enforcementScope() {

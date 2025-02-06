@@ -51,14 +51,14 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the compartment containing the target.
+     * (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the target.
+     * @return (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -66,14 +66,14 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -216,14 +216,14 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
     }
 
     /**
-     * Unique target identifier.
+     * The OCID of the target for which the audit policy is created.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return Unique target identifier.
+     * @return The OCID of the target for which the audit policy is created.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -394,7 +394,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the target.
+         * @param compartmentId (Updatable) The OCID of the compartment containing the audit policy.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the target.
+         * @param compartmentId (Updatable) The OCID of the compartment containing the audit policy.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -625,7 +625,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId The OCID of the target for which the audit policy is created.
          * 
          * @return builder
          * 
@@ -636,7 +636,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId The OCID of the target for which the audit policy is created.
          * 
          * @return builder
          * 

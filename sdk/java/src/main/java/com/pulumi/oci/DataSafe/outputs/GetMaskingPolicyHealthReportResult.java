@@ -17,7 +17,7 @@ public final class GetMaskingPolicyHealthReportResult {
      */
     private String compartmentId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,String> definedTags;
@@ -31,6 +31,11 @@ public final class GetMaskingPolicyHealthReportResult {
      * 
      */
     private String displayName;
+    /**
+     * @return The count of errors in the masking health report.
+     * 
+     */
+    private String errorCount;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -67,6 +72,11 @@ public final class GetMaskingPolicyHealthReportResult {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The count of warnings in the masking health report.
+     * 
+     */
+    private String warningCount;
 
     private GetMaskingPolicyHealthReportResult() {}
     /**
@@ -77,7 +87,7 @@ public final class GetMaskingPolicyHealthReportResult {
         return this.compartmentId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,String> definedTags() {
@@ -96,6 +106,13 @@ public final class GetMaskingPolicyHealthReportResult {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return The count of errors in the masking health report.
+     * 
+     */
+    public String errorCount() {
+        return this.errorCount;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -149,6 +166,13 @@ public final class GetMaskingPolicyHealthReportResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The count of warnings in the masking health report.
+     * 
+     */
+    public String warningCount() {
+        return this.warningCount;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -163,6 +187,7 @@ public final class GetMaskingPolicyHealthReportResult {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private String errorCount;
         private Map<String,String> freeformTags;
         private String id;
         private String maskingPolicyHealthReportId;
@@ -171,6 +196,7 @@ public final class GetMaskingPolicyHealthReportResult {
         private String targetId;
         private String timeCreated;
         private String timeUpdated;
+        private String warningCount;
         public Builder() {}
         public Builder(GetMaskingPolicyHealthReportResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -178,6 +204,7 @@ public final class GetMaskingPolicyHealthReportResult {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.errorCount = defaults.errorCount;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.maskingPolicyHealthReportId = defaults.maskingPolicyHealthReportId;
@@ -186,6 +213,7 @@ public final class GetMaskingPolicyHealthReportResult {
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.warningCount = defaults.warningCount;
         }
 
         @CustomType.Setter
@@ -218,6 +246,14 @@ public final class GetMaskingPolicyHealthReportResult {
               throw new MissingRequiredPropertyException("GetMaskingPolicyHealthReportResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder errorCount(String errorCount) {
+            if (errorCount == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyHealthReportResult", "errorCount");
+            }
+            this.errorCount = errorCount;
             return this;
         }
         @CustomType.Setter
@@ -284,12 +320,21 @@ public final class GetMaskingPolicyHealthReportResult {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder warningCount(String warningCount) {
+            if (warningCount == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyHealthReportResult", "warningCount");
+            }
+            this.warningCount = warningCount;
+            return this;
+        }
         public GetMaskingPolicyHealthReportResult build() {
             final var _resultValue = new GetMaskingPolicyHealthReportResult();
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.errorCount = errorCount;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.maskingPolicyHealthReportId = maskingPolicyHealthReportId;
@@ -298,6 +343,7 @@ public final class GetMaskingPolicyHealthReportResult {
             _resultValue.targetId = targetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.warningCount = warningCount;
             return _resultValue;
         }
     }

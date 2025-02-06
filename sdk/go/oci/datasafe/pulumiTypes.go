@@ -1027,11 +1027,11 @@ type AuditProfileAuditTrail struct {
 	AuditProfileId *string `pulumi:"auditProfileId"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -1089,11 +1089,11 @@ type AuditProfileAuditTrailArgs struct {
 	AuditProfileId pulumi.StringPtrInput `pulumi:"auditProfileId"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
@@ -1199,7 +1199,7 @@ func (o AuditProfileAuditTrailOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o AuditProfileAuditTrailOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -1209,7 +1209,7 @@ func (o AuditProfileAuditTrailOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
 func (o AuditProfileAuditTrailOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AuditProfileAuditTrail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2311,7 +2311,7 @@ type LibraryMasingFormatFormatEntry struct {
 	//
 	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression *string `pulumi:"regularExpression"`
-	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith *string `pulumi:"replaceWith"`
 	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName *string `pulumi:"schemaName"`
@@ -2377,7 +2377,7 @@ type LibraryMasingFormatFormatEntryArgs struct {
 	//
 	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
-	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
 	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringPtrInput `pulumi:"schemaName"`
@@ -2524,7 +2524,7 @@ func (o LibraryMasingFormatFormatEntryOutput) RegularExpression() pulumi.StringP
 	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.RegularExpression }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 func (o LibraryMasingFormatFormatEntryOutput) ReplaceWith() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.ReplaceWith }).(pulumi.StringPtrOutput)
 }
@@ -2744,7 +2744,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	//
 	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression *string `pulumi:"regularExpression"`
-	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith *string `pulumi:"replaceWith"`
 	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName *string `pulumi:"schemaName"`
@@ -2810,7 +2810,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	//
 	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
-	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
 	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringPtrInput `pulumi:"schemaName"`
@@ -2957,7 +2957,7 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) RegularExpre
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.RegularExpression }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ReplaceWith() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.ReplaceWith }).(pulumi.StringPtrOutput)
 }
@@ -4952,6 +4952,470 @@ func (o SecurityAssessmentStatisticPassArrayOutput) Index(i pulumi.IntInput) Sec
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecurityAssessmentStatisticPass {
 		return vs[0].([]SecurityAssessmentStatisticPass)[vs[1].(int)]
 	}).(SecurityAssessmentStatisticPassOutput)
+}
+
+type SensitiveDataModelReferentialRelationChild struct {
+	// The application name.
+	AppName string `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups []string `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType string `pulumi:"objectType"`
+	// The schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+}
+
+// SensitiveDataModelReferentialRelationChildInput is an input type that accepts SensitiveDataModelReferentialRelationChildArgs and SensitiveDataModelReferentialRelationChildOutput values.
+// You can construct a concrete instance of `SensitiveDataModelReferentialRelationChildInput` via:
+//
+//	SensitiveDataModelReferentialRelationChildArgs{...}
+type SensitiveDataModelReferentialRelationChildInput interface {
+	pulumi.Input
+
+	ToSensitiveDataModelReferentialRelationChildOutput() SensitiveDataModelReferentialRelationChildOutput
+	ToSensitiveDataModelReferentialRelationChildOutputWithContext(context.Context) SensitiveDataModelReferentialRelationChildOutput
+}
+
+type SensitiveDataModelReferentialRelationChildArgs struct {
+	// The application name.
+	AppName pulumi.StringInput `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups pulumi.StringArrayInput `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// The schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+}
+
+func (SensitiveDataModelReferentialRelationChildArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (i SensitiveDataModelReferentialRelationChildArgs) ToSensitiveDataModelReferentialRelationChildOutput() SensitiveDataModelReferentialRelationChildOutput {
+	return i.ToSensitiveDataModelReferentialRelationChildOutputWithContext(context.Background())
+}
+
+func (i SensitiveDataModelReferentialRelationChildArgs) ToSensitiveDataModelReferentialRelationChildOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationChildOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelReferentialRelationChildOutput)
+}
+
+func (i SensitiveDataModelReferentialRelationChildArgs) ToSensitiveDataModelReferentialRelationChildPtrOutput() SensitiveDataModelReferentialRelationChildPtrOutput {
+	return i.ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(context.Background())
+}
+
+func (i SensitiveDataModelReferentialRelationChildArgs) ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationChildPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelReferentialRelationChildOutput).ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(ctx)
+}
+
+// SensitiveDataModelReferentialRelationChildPtrInput is an input type that accepts SensitiveDataModelReferentialRelationChildArgs, SensitiveDataModelReferentialRelationChildPtr and SensitiveDataModelReferentialRelationChildPtrOutput values.
+// You can construct a concrete instance of `SensitiveDataModelReferentialRelationChildPtrInput` via:
+//
+//	        SensitiveDataModelReferentialRelationChildArgs{...}
+//
+//	or:
+//
+//	        nil
+type SensitiveDataModelReferentialRelationChildPtrInput interface {
+	pulumi.Input
+
+	ToSensitiveDataModelReferentialRelationChildPtrOutput() SensitiveDataModelReferentialRelationChildPtrOutput
+	ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(context.Context) SensitiveDataModelReferentialRelationChildPtrOutput
+}
+
+type sensitiveDataModelReferentialRelationChildPtrType SensitiveDataModelReferentialRelationChildArgs
+
+func SensitiveDataModelReferentialRelationChildPtr(v *SensitiveDataModelReferentialRelationChildArgs) SensitiveDataModelReferentialRelationChildPtrInput {
+	return (*sensitiveDataModelReferentialRelationChildPtrType)(v)
+}
+
+func (*sensitiveDataModelReferentialRelationChildPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (i *sensitiveDataModelReferentialRelationChildPtrType) ToSensitiveDataModelReferentialRelationChildPtrOutput() SensitiveDataModelReferentialRelationChildPtrOutput {
+	return i.ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(context.Background())
+}
+
+func (i *sensitiveDataModelReferentialRelationChildPtrType) ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationChildPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelReferentialRelationChildPtrOutput)
+}
+
+type SensitiveDataModelReferentialRelationChildOutput struct{ *pulumi.OutputState }
+
+func (SensitiveDataModelReferentialRelationChildOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (o SensitiveDataModelReferentialRelationChildOutput) ToSensitiveDataModelReferentialRelationChildOutput() SensitiveDataModelReferentialRelationChildOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationChildOutput) ToSensitiveDataModelReferentialRelationChildOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationChildOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationChildOutput) ToSensitiveDataModelReferentialRelationChildPtrOutput() SensitiveDataModelReferentialRelationChildPtrOutput {
+	return o.ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(context.Background())
+}
+
+func (o SensitiveDataModelReferentialRelationChildOutput) ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationChildPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SensitiveDataModelReferentialRelationChild) *SensitiveDataModelReferentialRelationChild {
+		return &v
+	}).(SensitiveDataModelReferentialRelationChildPtrOutput)
+}
+
+// The application name.
+func (o SensitiveDataModelReferentialRelationChildOutput) AppName() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationChild) string { return v.AppName }).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o SensitiveDataModelReferentialRelationChildOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationChild) []string { return v.ColumnGroups }).(pulumi.StringArrayOutput)
+}
+
+// The database object that contains the columns.
+func (o SensitiveDataModelReferentialRelationChildOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationChild) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o SensitiveDataModelReferentialRelationChildOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationChild) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// The schema name.
+func (o SensitiveDataModelReferentialRelationChildOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationChild) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o SensitiveDataModelReferentialRelationChildOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationChild) []string { return v.SensitiveTypeIds }).(pulumi.StringArrayOutput)
+}
+
+type SensitiveDataModelReferentialRelationChildPtrOutput struct{ *pulumi.OutputState }
+
+func (SensitiveDataModelReferentialRelationChildPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) ToSensitiveDataModelReferentialRelationChildPtrOutput() SensitiveDataModelReferentialRelationChildPtrOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) ToSensitiveDataModelReferentialRelationChildPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationChildPtrOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) Elem() SensitiveDataModelReferentialRelationChildOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) SensitiveDataModelReferentialRelationChild {
+		if v != nil {
+			return *v
+		}
+		var ret SensitiveDataModelReferentialRelationChild
+		return ret
+	}).(SensitiveDataModelReferentialRelationChildOutput)
+}
+
+// The application name.
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) AppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AppName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ColumnGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// The database object that contains the columns.
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Object
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ObjectType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The schema name.
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) SchemaName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SchemaName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o SensitiveDataModelReferentialRelationChildPtrOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationChild) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SensitiveTypeIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type SensitiveDataModelReferentialRelationParent struct {
+	// The application name.
+	AppName string `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups []string `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType string `pulumi:"objectType"`
+	// The schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+}
+
+// SensitiveDataModelReferentialRelationParentInput is an input type that accepts SensitiveDataModelReferentialRelationParentArgs and SensitiveDataModelReferentialRelationParentOutput values.
+// You can construct a concrete instance of `SensitiveDataModelReferentialRelationParentInput` via:
+//
+//	SensitiveDataModelReferentialRelationParentArgs{...}
+type SensitiveDataModelReferentialRelationParentInput interface {
+	pulumi.Input
+
+	ToSensitiveDataModelReferentialRelationParentOutput() SensitiveDataModelReferentialRelationParentOutput
+	ToSensitiveDataModelReferentialRelationParentOutputWithContext(context.Context) SensitiveDataModelReferentialRelationParentOutput
+}
+
+type SensitiveDataModelReferentialRelationParentArgs struct {
+	// The application name.
+	AppName pulumi.StringInput `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups pulumi.StringArrayInput `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// The schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+}
+
+func (SensitiveDataModelReferentialRelationParentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (i SensitiveDataModelReferentialRelationParentArgs) ToSensitiveDataModelReferentialRelationParentOutput() SensitiveDataModelReferentialRelationParentOutput {
+	return i.ToSensitiveDataModelReferentialRelationParentOutputWithContext(context.Background())
+}
+
+func (i SensitiveDataModelReferentialRelationParentArgs) ToSensitiveDataModelReferentialRelationParentOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationParentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelReferentialRelationParentOutput)
+}
+
+func (i SensitiveDataModelReferentialRelationParentArgs) ToSensitiveDataModelReferentialRelationParentPtrOutput() SensitiveDataModelReferentialRelationParentPtrOutput {
+	return i.ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(context.Background())
+}
+
+func (i SensitiveDataModelReferentialRelationParentArgs) ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationParentPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelReferentialRelationParentOutput).ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(ctx)
+}
+
+// SensitiveDataModelReferentialRelationParentPtrInput is an input type that accepts SensitiveDataModelReferentialRelationParentArgs, SensitiveDataModelReferentialRelationParentPtr and SensitiveDataModelReferentialRelationParentPtrOutput values.
+// You can construct a concrete instance of `SensitiveDataModelReferentialRelationParentPtrInput` via:
+//
+//	        SensitiveDataModelReferentialRelationParentArgs{...}
+//
+//	or:
+//
+//	        nil
+type SensitiveDataModelReferentialRelationParentPtrInput interface {
+	pulumi.Input
+
+	ToSensitiveDataModelReferentialRelationParentPtrOutput() SensitiveDataModelReferentialRelationParentPtrOutput
+	ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(context.Context) SensitiveDataModelReferentialRelationParentPtrOutput
+}
+
+type sensitiveDataModelReferentialRelationParentPtrType SensitiveDataModelReferentialRelationParentArgs
+
+func SensitiveDataModelReferentialRelationParentPtr(v *SensitiveDataModelReferentialRelationParentArgs) SensitiveDataModelReferentialRelationParentPtrInput {
+	return (*sensitiveDataModelReferentialRelationParentPtrType)(v)
+}
+
+func (*sensitiveDataModelReferentialRelationParentPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (i *sensitiveDataModelReferentialRelationParentPtrType) ToSensitiveDataModelReferentialRelationParentPtrOutput() SensitiveDataModelReferentialRelationParentPtrOutput {
+	return i.ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(context.Background())
+}
+
+func (i *sensitiveDataModelReferentialRelationParentPtrType) ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationParentPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelReferentialRelationParentPtrOutput)
+}
+
+type SensitiveDataModelReferentialRelationParentOutput struct{ *pulumi.OutputState }
+
+func (SensitiveDataModelReferentialRelationParentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (o SensitiveDataModelReferentialRelationParentOutput) ToSensitiveDataModelReferentialRelationParentOutput() SensitiveDataModelReferentialRelationParentOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationParentOutput) ToSensitiveDataModelReferentialRelationParentOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationParentOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationParentOutput) ToSensitiveDataModelReferentialRelationParentPtrOutput() SensitiveDataModelReferentialRelationParentPtrOutput {
+	return o.ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(context.Background())
+}
+
+func (o SensitiveDataModelReferentialRelationParentOutput) ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationParentPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SensitiveDataModelReferentialRelationParent) *SensitiveDataModelReferentialRelationParent {
+		return &v
+	}).(SensitiveDataModelReferentialRelationParentPtrOutput)
+}
+
+// The application name.
+func (o SensitiveDataModelReferentialRelationParentOutput) AppName() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationParent) string { return v.AppName }).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o SensitiveDataModelReferentialRelationParentOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationParent) []string { return v.ColumnGroups }).(pulumi.StringArrayOutput)
+}
+
+// The database object that contains the columns.
+func (o SensitiveDataModelReferentialRelationParentOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationParent) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o SensitiveDataModelReferentialRelationParentOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationParent) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// The schema name.
+func (o SensitiveDataModelReferentialRelationParentOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationParent) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o SensitiveDataModelReferentialRelationParentOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SensitiveDataModelReferentialRelationParent) []string { return v.SensitiveTypeIds }).(pulumi.StringArrayOutput)
+}
+
+type SensitiveDataModelReferentialRelationParentPtrOutput struct{ *pulumi.OutputState }
+
+func (SensitiveDataModelReferentialRelationParentPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) ToSensitiveDataModelReferentialRelationParentPtrOutput() SensitiveDataModelReferentialRelationParentPtrOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) ToSensitiveDataModelReferentialRelationParentPtrOutputWithContext(ctx context.Context) SensitiveDataModelReferentialRelationParentPtrOutput {
+	return o
+}
+
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) Elem() SensitiveDataModelReferentialRelationParentOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) SensitiveDataModelReferentialRelationParent {
+		if v != nil {
+			return *v
+		}
+		var ret SensitiveDataModelReferentialRelationParent
+		return ret
+	}).(SensitiveDataModelReferentialRelationParentOutput)
+}
+
+// The application name.
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) AppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AppName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ColumnGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// The database object that contains the columns.
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Object
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ObjectType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The schema name.
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) SchemaName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SchemaName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o SensitiveDataModelReferentialRelationParentPtrOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModelReferentialRelationParent) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SensitiveTypeIds
+	}).(pulumi.StringArrayOutput)
 }
 
 type SensitiveDataModelTablesForDiscovery struct {
@@ -7756,7 +8220,7 @@ type GetAlertPoliciesAlertPolicyCollectionItem struct {
 	AlertPolicyType string `pulumi:"alertPolicyType"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the alert policy.
 	Description string `pulumi:"description"`
@@ -7799,7 +8263,7 @@ type GetAlertPoliciesAlertPolicyCollectionItemArgs struct {
 	AlertPolicyType pulumi.StringInput `pulumi:"alertPolicyType"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the alert policy.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -7892,7 +8356,7 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) CompartmentId() pulumi.
 	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -8761,7 +9225,7 @@ type GetAlertsAlertCollectionItem struct {
 	Comment string `pulumi:"comment"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the alert.
 	Description string `pulumi:"description"`
@@ -8824,7 +9288,7 @@ type GetAlertsAlertCollectionItemArgs struct {
 	Comment pulumi.StringInput `pulumi:"comment"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the alert.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -8944,7 +9408,7 @@ func (o GetAlertsAlertCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetAlertsAlertCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAlertsAlertCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -9266,7 +9730,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem struct {
 	AuditEventCount string `pulumi:"auditEventCount"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the archive retrieval.
 	Description string `pulumi:"description"`
@@ -9314,7 +9778,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs struct {
 	AuditEventCount pulumi.StringInput `pulumi:"auditEventCount"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the archive retrieval.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -9407,7 +9871,7 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) Comp
 	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -10481,7 +10945,7 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	DatabaseUniqueName string `pulumi:"databaseUniqueName"`
 	// The name of the database user whose actions were audited.
 	DbUserName string `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode string `pulumi:"errorCode"`
@@ -10576,7 +11040,7 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	DatabaseUniqueName pulumi.StringInput `pulumi:"databaseUniqueName"`
 	// The name of the database user whose actions were audited.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
@@ -10761,7 +11225,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) DbUserName() pulumi.String
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditEventsAuditEventCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -11102,7 +11566,7 @@ type GetAuditPoliciesAuditPolicyCollectionItem struct {
 	AuditSpecifications []GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification `pulumi:"auditSpecifications"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the audit policy.
 	Description string `pulumi:"description"`
@@ -11154,7 +11618,7 @@ type GetAuditPoliciesAuditPolicyCollectionItemArgs struct {
 	AuditSpecifications GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayInput `pulumi:"auditSpecifications"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the audit policy.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -11261,7 +11725,7 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) CompartmentId() pulumi.
 	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -12569,7 +13033,7 @@ type GetAuditProfileAuditTrail struct {
 	AuditProfileId string `pulumi:"auditProfileId"`
 	// The OCID of the compartment that contains the audit.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
@@ -12631,7 +13095,7 @@ type GetAuditProfileAuditTrailArgs struct {
 	AuditProfileId pulumi.StringInput `pulumi:"auditProfileId"`
 	// The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -12741,7 +13205,7 @@ func (o GetAuditProfileAuditTrailOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditProfileAuditTrailOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -14114,7 +14578,7 @@ type GetAuditProfilesAuditProfileCollectionItem struct {
 	ChangeRetentionTrigger int                                                    `pulumi:"changeRetentionTrigger"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
@@ -14132,7 +14596,7 @@ type GetAuditProfilesAuditProfileCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
 	OfflineMonths int `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 	OnlineMonths int `pulumi:"onlineMonths"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
@@ -14167,7 +14631,7 @@ type GetAuditProfilesAuditProfileCollectionItemArgs struct {
 	ChangeRetentionTrigger pulumi.IntInput                                                `pulumi:"changeRetentionTrigger"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -14185,7 +14649,7 @@ type GetAuditProfilesAuditProfileCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
 	OfflineMonths pulumi.IntInput `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 	OnlineMonths pulumi.IntInput `pulumi:"onlineMonths"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
@@ -14276,7 +14740,7 @@ func (o GetAuditProfilesAuditProfileCollectionItemOutput) CompartmentId() pulumi
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditProfilesAuditProfileCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -14321,7 +14785,7 @@ func (o GetAuditProfilesAuditProfileCollectionItemOutput) OfflineMonths() pulumi
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) int { return v.OfflineMonths }).(pulumi.IntOutput)
 }
 
-// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
 func (o GetAuditProfilesAuditProfileCollectionItemOutput) OnlineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) int { return v.OnlineMonths }).(pulumi.IntOutput)
 }
@@ -14378,7 +14842,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	AuditProfileId string `pulumi:"auditProfileId"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
@@ -14440,7 +14904,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	AuditProfileId pulumi.StringInput `pulumi:"auditProfileId"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -14550,7 +15014,7 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) CompartmentI
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -15114,7 +15578,7 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	AuditTrailId string `pulumi:"auditTrailId"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit trail.
 	Description string `pulumi:"description"`
@@ -15179,7 +15643,7 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	AuditTrailId pulumi.StringInput `pulumi:"auditTrailId"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit trail.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -15295,7 +15759,7 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) CompartmentId() pulumi.Str
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetAuditTrailsAuditTrailCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -16096,7 +16560,7 @@ func (o GetDataSafeConfigurationGlobalSettingArrayOutput) Index(i pulumi.IntInpu
 type GetDataSafePrivateEndpointsDataSafePrivateEndpoint struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description string `pulumi:"description"`
@@ -16140,7 +16604,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpointInput interface {
 type GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -16226,7 +16690,7 @@ func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) CompartmentId(
 	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -16647,7 +17111,7 @@ type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
 	DatabaseSecurityConfigId string `pulumi:"databaseSecurityConfigId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the database security config.
 	Description string `pulumi:"description"`
@@ -16692,7 +17156,7 @@ type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
 	DatabaseSecurityConfigId pulumi.StringInput `pulumi:"databaseSecurityConfigId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the database security config.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -16784,7 +17248,7 @@ func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) Da
 	}).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -18632,7 +19096,7 @@ type GetLibraryMaskingFormatFormatEntry struct {
 	RandomLists []string `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression string `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith string `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName string `pulumi:"schemaName"`
@@ -18694,7 +19158,7 @@ type GetLibraryMaskingFormatFormatEntryArgs struct {
 	RandomLists pulumi.StringArrayInput `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression pulumi.StringInput `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
@@ -18837,7 +19301,7 @@ func (o GetLibraryMaskingFormatFormatEntryOutput) RegularExpression() pulumi.Str
 	return o.ApplyT(func(v GetLibraryMaskingFormatFormatEntry) string { return v.RegularExpression }).(pulumi.StringOutput)
 }
 
-// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 func (o GetLibraryMaskingFormatFormatEntryOutput) ReplaceWith() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLibraryMaskingFormatFormatEntry) string { return v.ReplaceWith }).(pulumi.StringOutput)
 }
@@ -19112,7 +19576,7 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput) Index
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the format entry.
 	Description string `pulumi:"description"`
@@ -19150,7 +19614,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemInput interface {
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the format entry.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -19230,7 +19694,7 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) Compar
 	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -19340,7 +19804,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry struc
 	RandomLists []string `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression string `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith string `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName string `pulumi:"schemaName"`
@@ -19402,7 +19866,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs s
 	RandomLists pulumi.StringArrayInput `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression pulumi.StringInput `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
@@ -19565,7 +20029,7 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOut
 	}).(pulumi.StringOutput)
 }
 
-// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput) ReplaceWith() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry) string {
 		return v.ReplaceWith
@@ -20436,7 +20900,7 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput) Index(i pu
 }
 
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension struct {
-	// The OCID of the masking policy..
+	// The OCID of the masking policy.
 	PolicyId string `pulumi:"policyId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
@@ -20454,7 +20918,7 @@ type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionInput interface {
 }
 
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs struct {
-	// The OCID of the masking policy..
+	// The OCID of the masking policy.
 	PolicyId pulumi.StringInput `pulumi:"policyId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
@@ -20511,7 +20975,7 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput) ToGetM
 	return o
 }
 
-// The OCID of the masking policy..
+// The OCID of the masking policy.
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput) PolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension) string { return v.PolicyId }).(pulumi.StringOutput)
 }
@@ -20793,7 +21257,7 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	RandomLists []string `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression string `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith string `pulumi:"replaceWith"`
 	// The name of the schema that contains the database column.
 	SchemaName string `pulumi:"schemaName"`
@@ -20855,7 +21319,7 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	RandomLists pulumi.StringArrayInput `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression pulumi.StringInput `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// The name of the schema that contains the database column.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
@@ -21002,7 +21466,7 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) RegularEx
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry) string { return v.RegularExpression }).(pulumi.StringOutput)
 }
 
-// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ReplaceWith() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry) string { return v.ReplaceWith }).(pulumi.StringOutput)
 }
@@ -21660,7 +22124,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 	RandomLists []string `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression string `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith string `pulumi:"replaceWith"`
 	// A filter to return only items related to specific schema name.
 	SchemaName string `pulumi:"schemaName"`
@@ -21722,7 +22186,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 	RandomLists pulumi.StringArrayInput `pulumi:"randomLists"`
 	// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 	RegularExpression pulumi.StringInput `pulumi:"regularExpression"`
-	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+	// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 	ReplaceWith pulumi.StringInput `pulumi:"replaceWith"`
 	// A filter to return only items related to specific schema name.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
@@ -21893,7 +22357,7 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	}).(pulumi.StringOutput)
 }
 
-// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) ReplaceWith() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry) string {
 		return v.ReplaceWith
@@ -22085,7 +22549,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 	ColumnSources []GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource `pulumi:"columnSources"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the masking policy.
 	Description string `pulumi:"description"`
@@ -22135,7 +22599,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemArgs struct {
 	ColumnSources GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput `pulumi:"columnSources"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the masking policy.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -22235,7 +22699,7 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) CompartmentId() pul
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -22774,6 +23238,8 @@ func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionAr
 type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem struct {
 	// A human-readable description for the log entry.
 	Description string `pulumi:"description"`
+	// An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+	HealthCheckType string `pulumi:"healthCheckType"`
 	// A human-readable log entry.
 	Message string `pulumi:"message"`
 	// A filter to return only the resources that match the specified log message type.
@@ -22798,6 +23264,8 @@ type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemI
 type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs struct {
 	// A human-readable description for the log entry.
 	Description pulumi.StringInput `pulumi:"description"`
+	// An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+	HealthCheckType pulumi.StringInput `pulumi:"healthCheckType"`
 	// A human-readable log entry.
 	Message pulumi.StringInput `pulumi:"message"`
 	// A filter to return only the resources that match the specified log message type.
@@ -22863,6 +23331,13 @@ func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionIt
 func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
 		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) HealthCheckType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
+		return v.HealthCheckType
 	}).(pulumi.StringOutput)
 }
 
@@ -23119,12 +23594,14 @@ func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOut
 type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the masking health report.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
+	// The count of errors in the masking health report.
+	ErrorCount string `pulumi:"errorCount"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the health report.
@@ -23139,6 +23616,8 @@ type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem struct
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The count of warnings in the masking health report.
+	WarningCount string `pulumi:"warningCount"`
 }
 
 // GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput is an input type that accepts GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs and GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput values.
@@ -23155,12 +23634,14 @@ type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput i
 type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the masking health report.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The count of errors in the masking health report.
+	ErrorCount pulumi.StringInput `pulumi:"errorCount"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the health report.
@@ -23175,6 +23656,8 @@ type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs st
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The count of warnings in the masking health report.
+	WarningCount pulumi.StringInput `pulumi:"warningCount"`
 }
 
 func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs) ElementType() reflect.Type {
@@ -23235,7 +23718,7 @@ func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutp
 	}).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -23253,6 +23736,13 @@ func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutp
 func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
 		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The count of errors in the masking health report.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) ErrorCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.ErrorCount
 	}).(pulumi.StringOutput)
 }
 
@@ -23296,6 +23786,13 @@ func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutp
 func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
 		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The count of warnings in the masking health report.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) WarningCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.WarningCount
 	}).(pulumi.StringOutput)
 }
 
@@ -23939,6 +24436,618 @@ func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
 		return vs[0].([]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem)[vs[1].(int)]
 	}).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaskingPolicyReferentialRelationsFilterInput is an input type that accepts GetMaskingPolicyReferentialRelationsFilterArgs and GetMaskingPolicyReferentialRelationsFilterOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsFilterInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsFilterArgs{...}
+type GetMaskingPolicyReferentialRelationsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsFilterOutput() GetMaskingPolicyReferentialRelationsFilterOutput
+	ToGetMaskingPolicyReferentialRelationsFilterOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsFilterOutput
+}
+
+type GetMaskingPolicyReferentialRelationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaskingPolicyReferentialRelationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsFilterArgs) ToGetMaskingPolicyReferentialRelationsFilterOutput() GetMaskingPolicyReferentialRelationsFilterOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsFilterArgs) ToGetMaskingPolicyReferentialRelationsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsFilterOutput)
+}
+
+// GetMaskingPolicyReferentialRelationsFilterArrayInput is an input type that accepts GetMaskingPolicyReferentialRelationsFilterArray and GetMaskingPolicyReferentialRelationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsFilterArrayInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsFilterArray{ GetMaskingPolicyReferentialRelationsFilterArgs{...} }
+type GetMaskingPolicyReferentialRelationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsFilterArrayOutput() GetMaskingPolicyReferentialRelationsFilterArrayOutput
+	ToGetMaskingPolicyReferentialRelationsFilterArrayOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsFilterArrayOutput
+}
+
+type GetMaskingPolicyReferentialRelationsFilterArray []GetMaskingPolicyReferentialRelationsFilterInput
+
+func (GetMaskingPolicyReferentialRelationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsFilterArray) ToGetMaskingPolicyReferentialRelationsFilterArrayOutput() GetMaskingPolicyReferentialRelationsFilterArrayOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsFilterArray) ToGetMaskingPolicyReferentialRelationsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsFilterArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterOutput) ToGetMaskingPolicyReferentialRelationsFilterOutput() GetMaskingPolicyReferentialRelationsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterOutput) ToGetMaskingPolicyReferentialRelationsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterArrayOutput) ToGetMaskingPolicyReferentialRelationsFilterArrayOutput() GetMaskingPolicyReferentialRelationsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterArrayOutput) ToGetMaskingPolicyReferentialRelationsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyReferentialRelationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyReferentialRelationsFilter {
+		return vs[0].([]GetMaskingPolicyReferentialRelationsFilter)[vs[1].(int)]
+	}).(GetMaskingPolicyReferentialRelationsFilterOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection struct {
+	// An array of referential relation summary objects.
+	Items []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem `pulumi:"items"`
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs{...}
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs struct {
+	// An array of referential relation summary objects.
+	Items GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput)
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray{ GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs{...} }
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionInput
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput {
+	return o
+}
+
+// An array of referential relation summary objects.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput) Items() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection) []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem {
+		return v.Items
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection {
+		return vs[0].([]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollection)[vs[1].(int)]
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem struct {
+	// maskingPolicyColumnsInfo object has details of column group with schema details.
+	Children []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild `pulumi:"children"`
+	// The masking format associated with the parent column.
+	MaskingFormats []string `pulumi:"maskingFormats"`
+	// The OCID of the masking policy.
+	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	// maskingPolicyColumnsInfo object has details of column group with schema details.
+	Parents []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent `pulumi:"parents"`
+	// A filter to return columns based on their relationship with their parent columns. If set to NONE, it returns the columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+	RelationType string `pulumi:"relationType"`
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs{...}
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs struct {
+	// maskingPolicyColumnsInfo object has details of column group with schema details.
+	Children GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayInput `pulumi:"children"`
+	// The masking format associated with the parent column.
+	MaskingFormats pulumi.StringArrayInput `pulumi:"maskingFormats"`
+	// The OCID of the masking policy.
+	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
+	// maskingPolicyColumnsInfo object has details of column group with schema details.
+	Parents GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayInput `pulumi:"parents"`
+	// A filter to return columns based on their relationship with their parent columns. If set to NONE, it returns the columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+	RelationType pulumi.StringInput `pulumi:"relationType"`
+}
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput)
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray{ GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs{...} }
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemInput
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput {
+	return o
+}
+
+// maskingPolicyColumnsInfo object has details of column group with schema details.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) Children() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem) []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild {
+		return v.Children
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput)
+}
+
+// The masking format associated with the parent column.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) MaskingFormats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem) []string {
+		return v.MaskingFormats
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the masking policy.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) MaskingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem) string {
+		return v.MaskingPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// maskingPolicyColumnsInfo object has details of column group with schema details.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) Parents() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem) []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent {
+		return v.Parents
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput)
+}
+
+// A filter to return columns based on their relationship with their parent columns. If set to NONE, it returns the columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput) RelationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem) string {
+		return v.RelationType
+	}).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem {
+		return vs[0].([]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItem)[vs[1].(int)]
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild struct {
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the masking policy.
+	ObjectType string `pulumi:"objectType"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ReferentialColumnGroups []string `pulumi:"referentialColumnGroups"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs{...}
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs struct {
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the masking policy.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ReferentialColumnGroups pulumi.StringArrayInput `pulumi:"referentialColumnGroups"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput)
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray{ GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs{...} }
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildInput
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput {
+	return o
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the masking policy.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) ReferentialColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild) []string {
+		return v.ReferentialColumnGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild {
+		return vs[0].([]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChild)[vs[1].(int)]
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent struct {
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the masking policy.
+	ObjectType string `pulumi:"objectType"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ReferentialColumnGroups []string `pulumi:"referentialColumnGroups"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs{...}
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs struct {
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the masking policy.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ReferentialColumnGroups pulumi.StringArrayInput `pulumi:"referentialColumnGroups"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+}
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput)
+}
+
+// GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayInput is an input type that accepts GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray and GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayInput` via:
+//
+//	GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray{ GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs{...} }
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput
+	ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutputWithContext(context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray []GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentInput
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput {
+	return i.ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput {
+	return o
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the masking policy.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) ReferentialColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent) []string {
+		return v.ReferentialColumnGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput() GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput) ToGetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutputWithContext(ctx context.Context) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent {
+		return vs[0].([]GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParent)[vs[1].(int)]
+	}).(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput)
 }
 
 type GetMaskingReportMaskedColumnsFilter struct {
@@ -25076,7 +26185,7 @@ type GetOnpremConnectorsOnPremConnector struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Created version of the on-premises connector.
 	CreatedVersion string `pulumi:"createdVersion"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the on-premises connector.
 	Description string `pulumi:"description"`
@@ -25114,7 +26223,7 @@ type GetOnpremConnectorsOnPremConnectorArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Created version of the on-premises connector.
 	CreatedVersion pulumi.StringInput `pulumi:"createdVersion"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the on-premises connector.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -25200,7 +26309,7 @@ func (o GetOnpremConnectorsOnPremConnectorOutput) CreatedVersion() pulumi.String
 	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) string { return v.CreatedVersion }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetOnpremConnectorsOnPremConnectorOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -26008,7 +27117,7 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource string `pulumi:"dataSource"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the report definition.
 	Description string `pulumi:"description"`
@@ -26078,7 +27187,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	ComplianceStandards pulumi.StringArrayInput `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource pulumi.StringInput `pulumi:"dataSource"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the report definition.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -26214,7 +27323,7 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DataSource() p
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.DataSource }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -27069,7 +28178,7 @@ func (o GetReportsReportCollectionArrayOutput) Index(i pulumi.IntInput) GetRepor
 type GetReportsReportCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies a description of the report.
 	Description string `pulumi:"description"`
@@ -27110,7 +28219,7 @@ type GetReportsReportCollectionItemInput interface {
 type GetReportsReportCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Specifies a description of the report.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -27193,7 +28302,7 @@ func (o GetReportsReportCollectionItemOutput) CompartmentId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetReportsReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -27893,7 +29002,7 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayO
 type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
 	DifferenceType string `pulumi:"differenceType"`
@@ -27931,7 +29040,7 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemInput
 type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
 	DifferenceType pulumi.StringInput `pulumi:"differenceType"`
@@ -28013,7 +29122,7 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOu
 	}).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -38691,7 +39800,7 @@ func (o GetSecurityAssessmentsFilterArrayOutput) Index(i pulumi.IntInput) GetSec
 type GetSecurityAssessmentsSecurityAssessment struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security assessment.
 	Description string `pulumi:"description"`
@@ -38759,7 +39868,7 @@ type GetSecurityAssessmentsSecurityAssessmentInput interface {
 type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security assessment.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -38869,7 +39978,7 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) CompartmentId() pulumi.S
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -40604,7 +41713,7 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) Index(i pulumi.I
 type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy.
 	Description string `pulumi:"description"`
@@ -40642,7 +41751,7 @@ type GetSecurityPoliciesSecurityPolicyCollectionItemInput interface {
 type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security policy.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -40722,7 +41831,7 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) CompartmentId() p
 	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -41591,7 +42700,7 @@ func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutpu
 type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy deployment.
 	Description string `pulumi:"description"`
@@ -41633,7 +42742,7 @@ type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput int
 type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security policy deployment.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -41719,7 +42828,7 @@ func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
 	}).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -43599,6 +44708,875 @@ func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput) I
 	}).(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput)
 }
 
+type GetSensitiveDataModelReferentialRelationChild struct {
+	// The application name.
+	AppName string `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups []string `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType string `pulumi:"objectType"`
+	// The schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+}
+
+// GetSensitiveDataModelReferentialRelationChildInput is an input type that accepts GetSensitiveDataModelReferentialRelationChildArgs and GetSensitiveDataModelReferentialRelationChildOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationChildInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationChildArgs{...}
+type GetSensitiveDataModelReferentialRelationChildInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationChildOutput() GetSensitiveDataModelReferentialRelationChildOutput
+	ToGetSensitiveDataModelReferentialRelationChildOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationChildOutput
+}
+
+type GetSensitiveDataModelReferentialRelationChildArgs struct {
+	// The application name.
+	AppName pulumi.StringInput `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups pulumi.StringArrayInput `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// The schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+}
+
+func (GetSensitiveDataModelReferentialRelationChildArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationChildArgs) ToGetSensitiveDataModelReferentialRelationChildOutput() GetSensitiveDataModelReferentialRelationChildOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationChildOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationChildArgs) ToGetSensitiveDataModelReferentialRelationChildOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationChildOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationChildOutput)
+}
+
+// GetSensitiveDataModelReferentialRelationChildArrayInput is an input type that accepts GetSensitiveDataModelReferentialRelationChildArray and GetSensitiveDataModelReferentialRelationChildArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationChildArrayInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationChildArray{ GetSensitiveDataModelReferentialRelationChildArgs{...} }
+type GetSensitiveDataModelReferentialRelationChildArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationChildArrayOutput() GetSensitiveDataModelReferentialRelationChildArrayOutput
+	ToGetSensitiveDataModelReferentialRelationChildArrayOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationChildArrayOutput
+}
+
+type GetSensitiveDataModelReferentialRelationChildArray []GetSensitiveDataModelReferentialRelationChildInput
+
+func (GetSensitiveDataModelReferentialRelationChildArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationChildArray) ToGetSensitiveDataModelReferentialRelationChildArrayOutput() GetSensitiveDataModelReferentialRelationChildArrayOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationChildArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationChildArray) ToGetSensitiveDataModelReferentialRelationChildArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationChildArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationChildArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationChildOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationChildOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationChildOutput) ToGetSensitiveDataModelReferentialRelationChildOutput() GetSensitiveDataModelReferentialRelationChildOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationChildOutput) ToGetSensitiveDataModelReferentialRelationChildOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationChildOutput {
+	return o
+}
+
+// The application name.
+func (o GetSensitiveDataModelReferentialRelationChildOutput) AppName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationChild) string { return v.AppName }).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o GetSensitiveDataModelReferentialRelationChildOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationChild) []string { return v.ColumnGroups }).(pulumi.StringArrayOutput)
+}
+
+// The database object that contains the columns.
+func (o GetSensitiveDataModelReferentialRelationChildOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationChild) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o GetSensitiveDataModelReferentialRelationChildOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationChild) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// The schema name.
+func (o GetSensitiveDataModelReferentialRelationChildOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationChild) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o GetSensitiveDataModelReferentialRelationChildOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationChild) []string { return v.SensitiveTypeIds }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationChildArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationChildArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationChild)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationChildArrayOutput) ToGetSensitiveDataModelReferentialRelationChildArrayOutput() GetSensitiveDataModelReferentialRelationChildArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationChildArrayOutput) ToGetSensitiveDataModelReferentialRelationChildArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationChildArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationChildArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelReferentialRelationChildOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelReferentialRelationChild {
+		return vs[0].([]GetSensitiveDataModelReferentialRelationChild)[vs[1].(int)]
+	}).(GetSensitiveDataModelReferentialRelationChildOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationParent struct {
+	// The application name.
+	AppName string `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups []string `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType string `pulumi:"objectType"`
+	// The schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+}
+
+// GetSensitiveDataModelReferentialRelationParentInput is an input type that accepts GetSensitiveDataModelReferentialRelationParentArgs and GetSensitiveDataModelReferentialRelationParentOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationParentInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationParentArgs{...}
+type GetSensitiveDataModelReferentialRelationParentInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationParentOutput() GetSensitiveDataModelReferentialRelationParentOutput
+	ToGetSensitiveDataModelReferentialRelationParentOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationParentOutput
+}
+
+type GetSensitiveDataModelReferentialRelationParentArgs struct {
+	// The application name.
+	AppName pulumi.StringInput `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups pulumi.StringArrayInput `pulumi:"columnGroups"`
+	// The database object that contains the columns.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// The schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+}
+
+func (GetSensitiveDataModelReferentialRelationParentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationParentArgs) ToGetSensitiveDataModelReferentialRelationParentOutput() GetSensitiveDataModelReferentialRelationParentOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationParentOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationParentArgs) ToGetSensitiveDataModelReferentialRelationParentOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationParentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationParentOutput)
+}
+
+// GetSensitiveDataModelReferentialRelationParentArrayInput is an input type that accepts GetSensitiveDataModelReferentialRelationParentArray and GetSensitiveDataModelReferentialRelationParentArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationParentArrayInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationParentArray{ GetSensitiveDataModelReferentialRelationParentArgs{...} }
+type GetSensitiveDataModelReferentialRelationParentArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationParentArrayOutput() GetSensitiveDataModelReferentialRelationParentArrayOutput
+	ToGetSensitiveDataModelReferentialRelationParentArrayOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationParentArrayOutput
+}
+
+type GetSensitiveDataModelReferentialRelationParentArray []GetSensitiveDataModelReferentialRelationParentInput
+
+func (GetSensitiveDataModelReferentialRelationParentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationParentArray) ToGetSensitiveDataModelReferentialRelationParentArrayOutput() GetSensitiveDataModelReferentialRelationParentArrayOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationParentArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationParentArray) ToGetSensitiveDataModelReferentialRelationParentArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationParentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationParentArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationParentOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationParentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationParentOutput) ToGetSensitiveDataModelReferentialRelationParentOutput() GetSensitiveDataModelReferentialRelationParentOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationParentOutput) ToGetSensitiveDataModelReferentialRelationParentOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationParentOutput {
+	return o
+}
+
+// The application name.
+func (o GetSensitiveDataModelReferentialRelationParentOutput) AppName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationParent) string { return v.AppName }).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o GetSensitiveDataModelReferentialRelationParentOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationParent) []string { return v.ColumnGroups }).(pulumi.StringArrayOutput)
+}
+
+// The database object that contains the columns.
+func (o GetSensitiveDataModelReferentialRelationParentOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationParent) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o GetSensitiveDataModelReferentialRelationParentOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationParent) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// The schema name.
+func (o GetSensitiveDataModelReferentialRelationParentOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationParent) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o GetSensitiveDataModelReferentialRelationParentOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationParent) []string { return v.SensitiveTypeIds }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationParentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationParentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationParent)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationParentArrayOutput) ToGetSensitiveDataModelReferentialRelationParentArrayOutput() GetSensitiveDataModelReferentialRelationParentArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationParentArrayOutput) ToGetSensitiveDataModelReferentialRelationParentArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationParentArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationParentArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelReferentialRelationParentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelReferentialRelationParent {
+		return vs[0].([]GetSensitiveDataModelReferentialRelationParent)[vs[1].(int)]
+	}).(GetSensitiveDataModelReferentialRelationParentOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveDataModelReferentialRelationsFilterInput is an input type that accepts GetSensitiveDataModelReferentialRelationsFilterArgs and GetSensitiveDataModelReferentialRelationsFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsFilterInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsFilterArgs{...}
+type GetSensitiveDataModelReferentialRelationsFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsFilterOutput() GetSensitiveDataModelReferentialRelationsFilterOutput
+	ToGetSensitiveDataModelReferentialRelationsFilterOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsFilterOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveDataModelReferentialRelationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsFilterArgs) ToGetSensitiveDataModelReferentialRelationsFilterOutput() GetSensitiveDataModelReferentialRelationsFilterOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsFilterArgs) ToGetSensitiveDataModelReferentialRelationsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsFilterOutput)
+}
+
+// GetSensitiveDataModelReferentialRelationsFilterArrayInput is an input type that accepts GetSensitiveDataModelReferentialRelationsFilterArray and GetSensitiveDataModelReferentialRelationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsFilterArrayInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsFilterArray{ GetSensitiveDataModelReferentialRelationsFilterArgs{...} }
+type GetSensitiveDataModelReferentialRelationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsFilterArrayOutput() GetSensitiveDataModelReferentialRelationsFilterArrayOutput
+	ToGetSensitiveDataModelReferentialRelationsFilterArrayOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsFilterArrayOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsFilterArray []GetSensitiveDataModelReferentialRelationsFilterInput
+
+func (GetSensitiveDataModelReferentialRelationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsFilterArray) ToGetSensitiveDataModelReferentialRelationsFilterArrayOutput() GetSensitiveDataModelReferentialRelationsFilterArrayOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsFilterArray) ToGetSensitiveDataModelReferentialRelationsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsFilterArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterOutput) ToGetSensitiveDataModelReferentialRelationsFilterOutput() GetSensitiveDataModelReferentialRelationsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterOutput) ToGetSensitiveDataModelReferentialRelationsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterArrayOutput) ToGetSensitiveDataModelReferentialRelationsFilterArrayOutput() GetSensitiveDataModelReferentialRelationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterArrayOutput) ToGetSensitiveDataModelReferentialRelationsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelReferentialRelationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelReferentialRelationsFilter {
+		return vs[0].([]GetSensitiveDataModelReferentialRelationsFilter)[vs[1].(int)]
+	}).(GetSensitiveDataModelReferentialRelationsFilterOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollection struct {
+	Items []GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionInput is an input type that accepts GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs and GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs{...}
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs struct {
+	Items GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput)
+}
+
+// GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayInput is an input type that accepts GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray and GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray{ GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs{...} }
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray []GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionInput
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationsReferentialRelationCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput) Items() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollection) []GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem {
+		return v.Items
+	}).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationsReferentialRelationCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelReferentialRelationsReferentialRelationCollection {
+		return vs[0].([]GetSensitiveDataModelReferentialRelationsReferentialRelationCollection)[vs[1].(int)]
+	}).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem struct {
+	// columnsInfo object has details of column group with schema details.
+	Child GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild `pulumi:"child"`
+	// Returns referential relations containing sensitive columns when true. Returns referential relations containing non sensitive columns when false.
+	IsSensitive bool `pulumi:"isSensitive"`
+	// The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+	Key string `pulumi:"key"`
+	// columnsInfo object has details of column group with schema details.
+	Parent GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent `pulumi:"parent"`
+	// A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+	RelationType string `pulumi:"relationType"`
+	// The OCID of the sensitive data model.
+	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// The current state of the referential relation.
+	State string `pulumi:"state"`
+}
+
+// GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemInput is an input type that accepts GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs and GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs{...}
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs struct {
+	// columnsInfo object has details of column group with schema details.
+	Child GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildInput `pulumi:"child"`
+	// Returns referential relations containing sensitive columns when true. Returns referential relations containing non sensitive columns when false.
+	IsSensitive pulumi.BoolInput `pulumi:"isSensitive"`
+	// The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+	Key pulumi.StringInput `pulumi:"key"`
+	// columnsInfo object has details of column group with schema details.
+	Parent GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentInput `pulumi:"parent"`
+	// A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+	RelationType pulumi.StringInput `pulumi:"relationType"`
+	// The OCID of the sensitive data model.
+	SensitiveDataModelId pulumi.StringInput `pulumi:"sensitiveDataModelId"`
+	// The current state of the referential relation.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput)
+}
+
+// GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray and GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray{ GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs{...} }
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray []GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemInput
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput {
+	return o
+}
+
+// columnsInfo object has details of column group with schema details.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) Child() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild {
+		return v.Child
+	}).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput)
+}
+
+// Returns referential relations containing sensitive columns when true. Returns referential relations containing non sensitive columns when false.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) IsSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) bool {
+		return v.IsSensitive
+	}).(pulumi.BoolOutput)
+}
+
+// The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// columnsInfo object has details of column group with schema details.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) Parent() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent {
+		return v.Parent
+	}).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput)
+}
+
+// A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) RelationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) string {
+		return v.RelationType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the sensitive data model.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) SensitiveDataModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) string {
+		return v.SensitiveDataModelId
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the referential relation.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem {
+		return vs[0].([]GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild struct {
+	// The application name.
+	AppName string `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups []string `pulumi:"columnGroups"`
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+}
+
+// GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildInput is an input type that accepts GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs and GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs{...}
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs struct {
+	// The application name.
+	AppName pulumi.StringInput `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups pulumi.StringArrayInput `pulumi:"columnGroups"`
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+}
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput {
+	return o
+}
+
+// The application name.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) AppName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild) string {
+		return v.AppName
+	}).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild) []string {
+		return v.ColumnGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChild) []string {
+		return v.SensitiveTypeIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent struct {
+	// The application name.
+	AppName string `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups []string `pulumi:"columnGroups"`
+	// A filter to return only items related to a specific object name.
+	Object string `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName string `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+}
+
+// GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentInput is an input type that accepts GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs and GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput values.
+// You can construct a concrete instance of `GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentInput` via:
+//
+//	GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs{...}
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentInput interface {
+	pulumi.Input
+
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput
+	ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutputWithContext(context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs struct {
+	// The application name.
+	AppName pulumi.StringInput `pulumi:"appName"`
+	// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+	ColumnGroups pulumi.StringArrayInput `pulumi:"columnGroups"`
+	// A filter to return only items related to a specific object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The type of the database object that contains the sensitive column.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only items related to specific schema name.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+}
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent)(nil)).Elem()
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput {
+	return i.ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput)
+}
+
+type GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent)(nil)).Elem()
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput() GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput {
+	return o
+}
+
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) ToGetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutputWithContext(ctx context.Context) GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput {
+	return o
+}
+
+// The application name.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) AppName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent) string {
+		return v.AppName
+	}).(pulumi.StringOutput)
+}
+
+// Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) ColumnGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent) []string {
+		return v.ColumnGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only items related to a specific object name.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// The type of the database object that contains the sensitive column.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to specific schema name.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+func (o GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParent) []string {
+		return v.SensitiveTypeIds
+	}).(pulumi.StringArrayOutput)
+}
+
 type GetSensitiveDataModelSensitiveObjectsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -45367,7 +47345,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 	AppSuiteName string `pulumi:"appSuiteName"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive data model.
 	Description string `pulumi:"description"`
@@ -45419,7 +47397,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs struct {
 	AppSuiteName pulumi.StringInput `pulumi:"appSuiteName"`
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the sensitive data model.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -45516,7 +47494,7 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) Compartmen
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -45745,6 +47723,414 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscovery
 	}).(GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryOutput)
 }
 
+type GetSensitiveTypesExportsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSensitiveTypesExportsFilterInput is an input type that accepts GetSensitiveTypesExportsFilterArgs and GetSensitiveTypesExportsFilterOutput values.
+// You can construct a concrete instance of `GetSensitiveTypesExportsFilterInput` via:
+//
+//	GetSensitiveTypesExportsFilterArgs{...}
+type GetSensitiveTypesExportsFilterInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypesExportsFilterOutput() GetSensitiveTypesExportsFilterOutput
+	ToGetSensitiveTypesExportsFilterOutputWithContext(context.Context) GetSensitiveTypesExportsFilterOutput
+}
+
+type GetSensitiveTypesExportsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSensitiveTypesExportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypesExportsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveTypesExportsFilterArgs) ToGetSensitiveTypesExportsFilterOutput() GetSensitiveTypesExportsFilterOutput {
+	return i.ToGetSensitiveTypesExportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypesExportsFilterArgs) ToGetSensitiveTypesExportsFilterOutputWithContext(ctx context.Context) GetSensitiveTypesExportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesExportsFilterOutput)
+}
+
+// GetSensitiveTypesExportsFilterArrayInput is an input type that accepts GetSensitiveTypesExportsFilterArray and GetSensitiveTypesExportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypesExportsFilterArrayInput` via:
+//
+//	GetSensitiveTypesExportsFilterArray{ GetSensitiveTypesExportsFilterArgs{...} }
+type GetSensitiveTypesExportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypesExportsFilterArrayOutput() GetSensitiveTypesExportsFilterArrayOutput
+	ToGetSensitiveTypesExportsFilterArrayOutputWithContext(context.Context) GetSensitiveTypesExportsFilterArrayOutput
+}
+
+type GetSensitiveTypesExportsFilterArray []GetSensitiveTypesExportsFilterInput
+
+func (GetSensitiveTypesExportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypesExportsFilter)(nil)).Elem()
+}
+
+func (i GetSensitiveTypesExportsFilterArray) ToGetSensitiveTypesExportsFilterArrayOutput() GetSensitiveTypesExportsFilterArrayOutput {
+	return i.ToGetSensitiveTypesExportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypesExportsFilterArray) ToGetSensitiveTypesExportsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypesExportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesExportsFilterArrayOutput)
+}
+
+type GetSensitiveTypesExportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypesExportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypesExportsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveTypesExportsFilterOutput) ToGetSensitiveTypesExportsFilterOutput() GetSensitiveTypesExportsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsFilterOutput) ToGetSensitiveTypesExportsFilterOutputWithContext(ctx context.Context) GetSensitiveTypesExportsFilterOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSensitiveTypesExportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSensitiveTypesExportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSensitiveTypesExportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypesExportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypesExportsFilter)(nil)).Elem()
+}
+
+func (o GetSensitiveTypesExportsFilterArrayOutput) ToGetSensitiveTypesExportsFilterArrayOutput() GetSensitiveTypesExportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsFilterArrayOutput) ToGetSensitiveTypesExportsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypesExportsFilterArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypesExportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypesExportsFilter {
+		return vs[0].([]GetSensitiveTypesExportsFilter)[vs[1].(int)]
+	}).(GetSensitiveTypesExportsFilterOutput)
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollection struct {
+	Items []GetSensitiveTypesExportsSensitiveTypesExportCollectionItem `pulumi:"items"`
+}
+
+// GetSensitiveTypesExportsSensitiveTypesExportCollectionInput is an input type that accepts GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs and GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput values.
+// You can construct a concrete instance of `GetSensitiveTypesExportsSensitiveTypesExportCollectionInput` via:
+//
+//	GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs{...}
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutputWithContext(context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs struct {
+	Items GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput {
+	return i.ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput)
+}
+
+// GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayInput is an input type that accepts GetSensitiveTypesExportsSensitiveTypesExportCollectionArray and GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayInput` via:
+//
+//	GetSensitiveTypesExportsSensitiveTypesExportCollectionArray{ GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs{...} }
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutputWithContext(context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionArray []GetSensitiveTypesExportsSensitiveTypesExportCollectionInput
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypesExportsSensitiveTypesExportCollection)(nil)).Elem()
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionArray) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput {
+	return i.ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionArray) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput)
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput) Items() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollection) []GetSensitiveTypesExportsSensitiveTypesExportCollectionItem {
+		return v.Items
+	}).(GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput)
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypesExportsSensitiveTypesExportCollection)(nil)).Elem()
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypesExportsSensitiveTypesExportCollection {
+		return vs[0].([]GetSensitiveTypesExportsSensitiveTypesExportCollection)[vs[1].(int)]
+	}).(GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput)
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the sensitive types export.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the sensitive types export.
+	Id string `pulumi:"id"`
+	// Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are exported.
+	IsIncludeAllSensitiveTypes bool `pulumi:"isIncludeAllSensitiveTypes"`
+	// The OCIDs of the sensitive types used to create sensitive types export.
+	SensitiveTypeIdsForExports []string `pulumi:"sensitiveTypeIdsForExports"`
+	// A filter to return only the resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the sensitive types export was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the sensitive types export was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSensitiveTypesExportsSensitiveTypesExportCollectionItemInput is an input type that accepts GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs and GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput values.
+// You can construct a concrete instance of `GetSensitiveTypesExportsSensitiveTypesExportCollectionItemInput` via:
+//
+//	GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs{...}
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutputWithContext(context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the sensitive types export.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the sensitive types export.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are exported.
+	IsIncludeAllSensitiveTypes pulumi.BoolInput `pulumi:"isIncludeAllSensitiveTypes"`
+	// The OCIDs of the sensitive types used to create sensitive types export.
+	SensitiveTypeIdsForExports pulumi.StringArrayInput `pulumi:"sensitiveTypeIdsForExports"`
+	// A filter to return only the resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the sensitive types export was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the sensitive types export was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput {
+	return i.ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput)
+}
+
+// GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayInput is an input type that accepts GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray and GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayInput` via:
+//
+//	GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray{ GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs{...} }
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput
+	ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutputWithContext(context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray []GetSensitiveTypesExportsSensitiveTypesExportCollectionItemInput
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypesExportsSensitiveTypesExportCollectionItem)(nil)).Elem()
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput {
+	return i.ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput)
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the sensitive types export.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the sensitive types export.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are exported.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) IsIncludeAllSensitiveTypes() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) bool {
+		return v.IsIncludeAllSensitiveTypes
+	}).(pulumi.BoolOutput)
+}
+
+// The OCIDs of the sensitive types used to create sensitive types export.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) SensitiveTypeIdsForExports() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) []string {
+		return v.SensitiveTypeIdsForExports
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle state.
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the sensitive types export was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the sensitive types export was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSensitiveTypesExportsSensitiveTypesExportCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSensitiveTypesExportsSensitiveTypesExportCollectionItem)(nil)).Elem()
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput() GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput) ToGetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypesExportsSensitiveTypesExportCollectionItem {
+		return vs[0].([]GetSensitiveTypesExportsSensitiveTypesExportCollectionItem)[vs[1].(int)]
+	}).(GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput)
+}
+
 type GetSensitiveTypesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -45956,7 +48342,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItem struct {
 	DataPattern string `pulumi:"dataPattern"`
 	// A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
 	DefaultMaskingFormatId string `pulumi:"defaultMaskingFormatId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive type.
 	Description string `pulumi:"description"`
@@ -46010,7 +48396,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItemArgs struct {
 	DataPattern pulumi.StringInput `pulumi:"dataPattern"`
 	// A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
 	DefaultMaskingFormatId pulumi.StringInput `pulumi:"defaultMaskingFormatId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the sensitive type.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -46115,7 +48501,7 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) DefaultMaskingFormat
 	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) string { return v.DefaultMaskingFormatId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -47308,7 +49694,7 @@ type GetSqlCollectionsSqlCollectionCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only items that match the specified user name.
 	DbUserName string `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the SQL collection.
 	Description string `pulumi:"description"`
@@ -47361,7 +49747,7 @@ type GetSqlCollectionsSqlCollectionCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only items that match the specified user name.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the SQL collection.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -47459,7 +49845,7 @@ func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) DbUserName() pulumi.
 	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -48230,7 +50616,7 @@ type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem struct {
 	CurrentUser string `pulumi:"currentUser"`
 	// The database user name.
 	DbUserName string `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the SQL Firewall allowed SQL.
 	Description string `pulumi:"description"`
@@ -48278,7 +50664,7 @@ type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs struct {
 	CurrentUser pulumi.StringInput `pulumi:"currentUser"`
 	// The database user name.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the SQL Firewall allowed SQL.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -48374,7 +50760,7 @@ func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DbUs
 	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -48687,7 +51073,7 @@ type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only items that match the specified user name.
 	DbUserName string `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the SQL Firewall policy.
 	Description string `pulumi:"description"`
@@ -48745,7 +51131,7 @@ type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only items that match the specified user name.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the SQL Firewall policy.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -48859,7 +51245,7 @@ func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DbUserName(
 	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -50632,7 +53018,7 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionAr
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Describes the target-alert policy association.
 	Description string `pulumi:"description"`
@@ -50674,7 +53060,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemI
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Describes the target-alert policy association.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -50760,7 +53146,7 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 	}).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
 		return v.DefinedTags
@@ -54294,7 +56680,7 @@ type GetTargetDatabasesTargetDatabase struct {
 	Credentials []GetTargetDatabasesTargetDatabaseCredential `pulumi:"credentials"`
 	// Details of the database for the registration in Data Safe.
 	DatabaseDetails []GetTargetDatabasesTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the peer target database in Data Safe.
 	Description string `pulumi:"description"`
@@ -54343,7 +56729,7 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	Credentials GetTargetDatabasesTargetDatabaseCredentialArrayInput `pulumi:"credentials"`
 	// Details of the database for the registration in Data Safe.
 	DatabaseDetails GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the peer target database in Data Safe.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -54452,7 +56838,7 @@ func (o GetTargetDatabasesTargetDatabaseOutput) DatabaseDetails() GetTargetDatab
 	}).(GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetTargetDatabasesTargetDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -56464,6 +58850,299 @@ func (o GetUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi.IntInput) GetU
 	}).(GetUserAssessmentIgnoredTargetOutput)
 }
 
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUserAssessmentPasswordExpiryDateAnalyticsFilterInput is an input type that accepts GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs and GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetUserAssessmentPasswordExpiryDateAnalyticsFilterInput` via:
+//
+//	GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs{...}
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput() GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutputWithContext(context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput() GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput {
+	return i.ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput)
+}
+
+// GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayInput is an input type that accepts GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray and GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayInput` via:
+//
+//	GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray{ GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs{...} }
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutputWithContext(context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray []GetUserAssessmentPasswordExpiryDateAnalyticsFilterInput
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentPasswordExpiryDateAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput {
+	return i.ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput() GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentPasswordExpiryDateAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentPasswordExpiryDateAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentPasswordExpiryDateAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentPasswordExpiryDateAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentPasswordExpiryDateAnalyticsFilter {
+		return vs[0].([]GetUserAssessmentPasswordExpiryDateAnalyticsFilter)[vs[1].(int)]
+	}).(GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation struct {
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	Items []GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem `pulumi:"items"`
+}
+
+// GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationInput is an input type that accepts GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs and GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput values.
+// You can construct a concrete instance of `GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationInput` via:
+//
+//	GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs{...}
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutputWithContext(context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs struct {
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	Items GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayInput `pulumi:"items"`
+}
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation)(nil)).Elem()
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput {
+	return i.ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput)
+}
+
+// GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayInput is an input type that accepts GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray and GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayInput` via:
+//
+//	GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray{ GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs{...} }
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutputWithContext(context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray []GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationInput
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation)(nil)).Elem()
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput {
+	return i.ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation)(nil)).Elem()
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput {
+	return o
+}
+
+// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput) Items() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput {
+	return o.ApplyT(func(v GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation) []GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem {
+		return v.Items
+	}).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation)(nil)).Elem()
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation {
+		return vs[0].([]GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregation)[vs[1].(int)]
+	}).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem struct {
+}
+
+// GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemInput is an input type that accepts GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs and GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput values.
+// You can construct a concrete instance of `GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemInput` via:
+//
+//	GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs{...}
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutputWithContext(context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs struct {
+}
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem)(nil)).Elem()
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput {
+	return i.ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput)
+}
+
+// GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayInput is an input type that accepts GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray and GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput values.
+// You can construct a concrete instance of `GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayInput` via:
+//
+//	GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray{ GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs{...} }
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput
+	ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutputWithContext(context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray []GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemInput
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem)(nil)).Elem()
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput {
+	return i.ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput)
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem)(nil)).Elem()
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput {
+	return o
+}
+
+type GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem)(nil)).Elem()
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput() GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput) ToGetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutputWithContext(ctx context.Context) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput {
+	return o
+}
+
+func (o GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem {
+		return vs[0].([]GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItem)[vs[1].(int)]
+	}).(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput)
+}
+
 type GetUserAssessmentProfileAnalyticsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -56802,7 +59481,7 @@ type GetUserAssessmentProfilesProfile struct {
 	CpuPerCall string `pulumi:"cpuPerCall"`
 	// Specify the CPU time limit for a session, expressed in hundredth of seconds.
 	CpuPerSession string `pulumi:"cpuPerSession"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Maximum times the user is allowed in fail login before the user account is locked.
 	FailedLoginAttempts string `pulumi:"failedLoginAttempts"`
@@ -56870,7 +59549,7 @@ type GetUserAssessmentProfilesProfileArgs struct {
 	CpuPerCall pulumi.StringInput `pulumi:"cpuPerCall"`
 	// Specify the CPU time limit for a session, expressed in hundredth of seconds.
 	CpuPerSession pulumi.StringInput `pulumi:"cpuPerSession"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Maximum times the user is allowed in fail login before the user account is locked.
 	FailedLoginAttempts pulumi.StringInput `pulumi:"failedLoginAttempts"`
@@ -56992,7 +59671,7 @@ func (o GetUserAssessmentProfilesProfileOutput) CpuPerSession() pulumi.StringOut
 	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.CpuPerSession }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetUserAssessmentProfilesProfileOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -57544,7 +60223,7 @@ func (o GetUserAssessmentUserAnalyticsFilterArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetUserAssessmentUserAnalyticsUserAggregation struct {
-	// The array of user aggregation data.
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	Items []GetUserAssessmentUserAnalyticsUserAggregationItem `pulumi:"items"`
 }
 
@@ -57560,7 +60239,7 @@ type GetUserAssessmentUserAnalyticsUserAggregationInput interface {
 }
 
 type GetUserAssessmentUserAnalyticsUserAggregationArgs struct {
-	// The array of user aggregation data.
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	Items GetUserAssessmentUserAnalyticsUserAggregationItemArrayInput `pulumi:"items"`
 }
 
@@ -57615,7 +60294,7 @@ func (o GetUserAssessmentUserAnalyticsUserAggregationOutput) ToGetUserAssessment
 	return o
 }
 
-// The array of user aggregation data.
+// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 func (o GetUserAssessmentUserAnalyticsUserAggregationOutput) Items() GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput {
 	return o.ApplyT(func(v GetUserAssessmentUserAnalyticsUserAggregation) []GetUserAssessmentUserAnalyticsUserAggregationItem {
 		return v.Items
@@ -57855,6 +60534,8 @@ type GetUserAssessmentUsersUser struct {
 	TimeLastLogin string `pulumi:"timeLastLogin"`
 	// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimePasswordChanged string `pulumi:"timePasswordChanged"`
+	// The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimePasswordExpiry string `pulumi:"timePasswordExpiry"`
 	// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUserCreated string `pulumi:"timeUserCreated"`
 	// A filter to return only items that match the specified user category.
@@ -57897,6 +60578,8 @@ type GetUserAssessmentUsersUserArgs struct {
 	TimeLastLogin pulumi.StringInput `pulumi:"timeLastLogin"`
 	// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimePasswordChanged pulumi.StringInput `pulumi:"timePasswordChanged"`
+	// The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimePasswordExpiry pulumi.StringInput `pulumi:"timePasswordExpiry"`
 	// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUserCreated pulumi.StringInput `pulumi:"timeUserCreated"`
 	// A filter to return only items that match the specified user category.
@@ -58003,6 +60686,11 @@ func (o GetUserAssessmentUsersUserOutput) TimeLastLogin() pulumi.StringOutput {
 // The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimePasswordChanged() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimePasswordChanged }).(pulumi.StringOutput)
+}
+
+// The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetUserAssessmentUsersUserOutput) TimePasswordExpiry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimePasswordExpiry }).(pulumi.StringOutput)
 }
 
 // The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -58268,7 +60956,7 @@ func (o GetUserAssessmentsIgnoredTargetArrayOutput) Index(i pulumi.IntInput) Get
 type GetUserAssessmentsUserAssessment struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the user assessment.
 	Description string `pulumi:"description"`
@@ -58332,7 +61020,7 @@ type GetUserAssessmentsUserAssessmentInput interface {
 type GetUserAssessmentsUserAssessmentArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the user assessment.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -58438,7 +61126,7 @@ func (o GetUserAssessmentsUserAssessmentOutput) CompartmentId() pulumi.StringOut
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o GetUserAssessmentsUserAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
@@ -58752,6 +61440,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticMediumRiskArrayInput)(nil)).Elem(), SecurityAssessmentStatisticMediumRiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticPassInput)(nil)).Elem(), SecurityAssessmentStatisticPassArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityAssessmentStatisticPassArrayInput)(nil)).Elem(), SecurityAssessmentStatisticPassArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelReferentialRelationChildInput)(nil)).Elem(), SensitiveDataModelReferentialRelationChildArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelReferentialRelationChildPtrInput)(nil)).Elem(), SensitiveDataModelReferentialRelationChildArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelReferentialRelationParentInput)(nil)).Elem(), SensitiveDataModelReferentialRelationParentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelReferentialRelationParentPtrInput)(nil)).Elem(), SensitiveDataModelReferentialRelationParentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelTablesForDiscoveryInput)(nil)).Elem(), SensitiveDataModelTablesForDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SensitiveDataModelTablesForDiscoveryArrayInput)(nil)).Elem(), SensitiveDataModelTablesForDiscoveryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetDatabaseConnectionOptionInput)(nil)).Elem(), TargetDatabaseConnectionOptionArgs{})
@@ -59006,6 +61698,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsFilterInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsFilterArrayInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayInput)(nil)).Elem(), GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsFilterInput)(nil)).Elem(), GetMaskingReportMaskedColumnsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsFilterArrayInput)(nil)).Elem(), GetMaskingReportMaskedColumnsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingReportMaskedColumnsMaskedColumnCollectionInput)(nil)).Elem(), GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs{})
@@ -59258,6 +61960,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItemInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationChildInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationChildArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationChildArrayInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationChildArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationParentInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationParentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationParentArrayInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationParentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsFilterInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentInput)(nil)).Elem(), GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs{})
@@ -59292,6 +62006,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveDataModelCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArrayInput)(nil)).Elem(), GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsFilterInput)(nil)).Elem(), GetSensitiveTypesExportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsFilterArrayInput)(nil)).Elem(), GetSensitiveTypesExportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionInput)(nil)).Elem(), GetSensitiveTypesExportsSensitiveTypesExportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayInput)(nil)).Elem(), GetSensitiveTypesExportsSensitiveTypesExportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionItemInput)(nil)).Elem(), GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayInput)(nil)).Elem(), GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesFilterInput)(nil)).Elem(), GetSensitiveTypesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesFilterArrayInput)(nil)).Elem(), GetSensitiveTypesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesSensitiveTypeCollectionInput)(nil)).Elem(), GetSensitiveTypesSensitiveTypeCollectionArgs{})
@@ -59448,6 +62168,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentComparisonSummaryCurrentArrayInput)(nil)).Elem(), GetUserAssessmentComparisonSummaryCurrentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsFilterInput)(nil)).Elem(), GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayInput)(nil)).Elem(), GetUserAssessmentPasswordExpiryDateAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationInput)(nil)).Elem(), GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayInput)(nil)).Elem(), GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemInput)(nil)).Elem(), GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayInput)(nil)).Elem(), GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsFilterInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsFilterArrayInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentProfileAnalyticsProfileAggregationInput)(nil)).Elem(), GetUserAssessmentProfileAnalyticsProfileAggregationArgs{})
@@ -59542,6 +62268,10 @@ func init() {
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticMediumRiskArrayOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticPassOutput{})
 	pulumi.RegisterOutputType(SecurityAssessmentStatisticPassArrayOutput{})
+	pulumi.RegisterOutputType(SensitiveDataModelReferentialRelationChildOutput{})
+	pulumi.RegisterOutputType(SensitiveDataModelReferentialRelationChildPtrOutput{})
+	pulumi.RegisterOutputType(SensitiveDataModelReferentialRelationParentOutput{})
+	pulumi.RegisterOutputType(SensitiveDataModelReferentialRelationParentPtrOutput{})
 	pulumi.RegisterOutputType(SensitiveDataModelTablesForDiscoveryOutput{})
 	pulumi.RegisterOutputType(SensitiveDataModelTablesForDiscoveryArrayOutput{})
 	pulumi.RegisterOutputType(TargetDatabaseConnectionOptionOutput{})
@@ -59796,6 +62526,16 @@ func init() {
 	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemChildArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyReferentialRelationsMaskingPolicyReferentialRelationCollectionItemParentArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsFilterOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput{})
@@ -60048,6 +62788,18 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationChildOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationChildArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationParentOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationParentArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemChildOutput{})
+	pulumi.RegisterOutputType(GetSensitiveDataModelReferentialRelationsReferentialRelationCollectionItemParentOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput{})
@@ -60082,6 +62834,12 @@ func init() {
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypesExportsFilterOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypesExportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypesExportsSensitiveTypesExportCollectionOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypesExportsSensitiveTypesExportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypesExportsSensitiveTypesExportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSensitiveTypesExportsSensitiveTypesExportCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesFilterOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesSensitiveTypeCollectionOutput{})
@@ -60238,6 +62996,12 @@ func init() {
 	pulumi.RegisterOutputType(GetUserAssessmentComparisonSummaryCurrentArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentIgnoredTargetOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentIgnoredTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentPasswordExpiryDateAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentPasswordExpiryDateAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationArrayOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemOutput{})
+	pulumi.RegisterOutputType(GetUserAssessmentPasswordExpiryDateAnalyticsUserAggregationItemArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsFilterOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentProfileAnalyticsProfileAggregationOutput{})

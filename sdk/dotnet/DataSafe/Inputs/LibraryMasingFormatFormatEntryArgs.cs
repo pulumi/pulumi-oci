@@ -113,7 +113,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? RegularExpression { get; set; }
 
         /// <summary>
-        /// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+        /// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
         /// </summary>
         [Input("replaceWith")]
         public Input<string>? ReplaceWith { get; set; }

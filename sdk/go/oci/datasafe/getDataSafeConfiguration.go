@@ -62,7 +62,7 @@ type LookupDataSafeConfigurationResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Oracle Data Safe's NAT Gateway IP Address.
 	DataSafeNatGatewayIpAddress string `pulumi:"dataSafeNatGatewayIpAddress"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -123,7 +123,7 @@ func (o LookupDataSafeConfigurationResultOutput) DataSafeNatGatewayIpAddress() p
 	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.DataSafeNatGatewayIpAddress }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupDataSafeConfigurationResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDataSafeConfigurationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

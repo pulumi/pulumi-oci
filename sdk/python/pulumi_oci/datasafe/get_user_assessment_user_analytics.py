@@ -28,7 +28,7 @@ class GetUserAssessmentUserAnalyticsResult:
     """
     A collection of values returned by getUserAssessmentUserAnalytics.
     """
-    def __init__(__self__, access_level=None, account_status=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_aggregations=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None):
+    def __init__(__self__, access_level=None, account_status=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_expiry_greater_than_or_equal_to=None, time_password_expiry_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_aggregations=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -56,6 +56,12 @@ class GetUserAssessmentUserAnalyticsResult:
         if time_last_login_less_than and not isinstance(time_last_login_less_than, str):
             raise TypeError("Expected argument 'time_last_login_less_than' to be a str")
         pulumi.set(__self__, "time_last_login_less_than", time_last_login_less_than)
+        if time_password_expiry_greater_than_or_equal_to and not isinstance(time_password_expiry_greater_than_or_equal_to, str):
+            raise TypeError("Expected argument 'time_password_expiry_greater_than_or_equal_to' to be a str")
+        pulumi.set(__self__, "time_password_expiry_greater_than_or_equal_to", time_password_expiry_greater_than_or_equal_to)
+        if time_password_expiry_less_than and not isinstance(time_password_expiry_less_than, str):
+            raise TypeError("Expected argument 'time_password_expiry_less_than' to be a str")
+        pulumi.set(__self__, "time_password_expiry_less_than", time_password_expiry_less_than)
         if time_password_last_changed_greater_than_or_equal_to and not isinstance(time_password_last_changed_greater_than_or_equal_to, str):
             raise TypeError("Expected argument 'time_password_last_changed_greater_than_or_equal_to' to be a str")
         pulumi.set(__self__, "time_password_last_changed_greater_than_or_equal_to", time_password_last_changed_greater_than_or_equal_to)
@@ -133,6 +139,16 @@ class GetUserAssessmentUserAnalyticsResult:
         return pulumi.get(self, "time_last_login_less_than")
 
     @property
+    @pulumi.getter(name="timePasswordExpiryGreaterThanOrEqualTo")
+    def time_password_expiry_greater_than_or_equal_to(self) -> Optional[str]:
+        return pulumi.get(self, "time_password_expiry_greater_than_or_equal_to")
+
+    @property
+    @pulumi.getter(name="timePasswordExpiryLessThan")
+    def time_password_expiry_less_than(self) -> Optional[str]:
+        return pulumi.get(self, "time_password_expiry_less_than")
+
+    @property
     @pulumi.getter(name="timePasswordLastChangedGreaterThanOrEqualTo")
     def time_password_last_changed_greater_than_or_equal_to(self) -> Optional[str]:
         return pulumi.get(self, "time_password_last_changed_greater_than_or_equal_to")
@@ -196,6 +212,8 @@ class AwaitableGetUserAssessmentUserAnalyticsResult(GetUserAssessmentUserAnalyti
             target_id=self.target_id,
             time_last_login_greater_than_or_equal_to=self.time_last_login_greater_than_or_equal_to,
             time_last_login_less_than=self.time_last_login_less_than,
+            time_password_expiry_greater_than_or_equal_to=self.time_password_expiry_greater_than_or_equal_to,
+            time_password_expiry_less_than=self.time_password_expiry_less_than,
             time_password_last_changed_greater_than_or_equal_to=self.time_password_last_changed_greater_than_or_equal_to,
             time_password_last_changed_less_than=self.time_password_last_changed_less_than,
             time_user_created_greater_than_or_equal_to=self.time_user_created_greater_than_or_equal_to,
@@ -215,6 +233,8 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
                                        target_id: Optional[str] = None,
                                        time_last_login_greater_than_or_equal_to: Optional[str] = None,
                                        time_last_login_less_than: Optional[str] = None,
+                                       time_password_expiry_greater_than_or_equal_to: Optional[str] = None,
+                                       time_password_expiry_less_than: Optional[str] = None,
                                        time_password_last_changed_greater_than_or_equal_to: Optional[str] = None,
                                        time_password_last_changed_less_than: Optional[str] = None,
                                        time_user_created_greater_than_or_equal_to: Optional[str] = None,
@@ -232,7 +252,7 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
     the critical category. This data is especially useful content for dashboards or to support analytics.
 
     When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-    parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+    parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
     permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
     root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
     compartmentId, then "Not Authorized" is returned.
@@ -257,6 +277,8 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
         target_id=test_target["id"],
         time_last_login_greater_than_or_equal_to=user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
         time_last_login_less_than=user_assessment_user_analytic_time_last_login_less_than,
+        time_password_expiry_greater_than_or_equal_to=user_assessment_user_analytic_time_password_expiry_greater_than_or_equal_to,
+        time_password_expiry_less_than=user_assessment_user_analytic_time_password_expiry_less_than,
         time_password_last_changed_greater_than_or_equal_to=user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
         time_password_last_changed_less_than=user_assessment_user_analytic_time_password_last_changed_less_than,
         time_user_created_greater_than_or_equal_to=user_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
@@ -276,6 +298,8 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
            
            **Example:** 2016-12-19T16:39:57.600Z
     :param str time_last_login_less_than: A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+    :param str time_password_expiry_greater_than_or_equal_to: A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+    :param str time_password_expiry_less_than: A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str time_password_last_changed_greater_than_or_equal_to: A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -298,6 +322,8 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
     __args__['targetId'] = target_id
     __args__['timeLastLoginGreaterThanOrEqualTo'] = time_last_login_greater_than_or_equal_to
     __args__['timeLastLoginLessThan'] = time_last_login_less_than
+    __args__['timePasswordExpiryGreaterThanOrEqualTo'] = time_password_expiry_greater_than_or_equal_to
+    __args__['timePasswordExpiryLessThan'] = time_password_expiry_less_than
     __args__['timePasswordLastChangedGreaterThanOrEqualTo'] = time_password_last_changed_greater_than_or_equal_to
     __args__['timePasswordLastChangedLessThan'] = time_password_last_changed_less_than
     __args__['timeUserCreatedGreaterThanOrEqualTo'] = time_user_created_greater_than_or_equal_to
@@ -319,6 +345,8 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_last_login_greater_than_or_equal_to=pulumi.get(__ret__, 'time_last_login_greater_than_or_equal_to'),
         time_last_login_less_than=pulumi.get(__ret__, 'time_last_login_less_than'),
+        time_password_expiry_greater_than_or_equal_to=pulumi.get(__ret__, 'time_password_expiry_greater_than_or_equal_to'),
+        time_password_expiry_less_than=pulumi.get(__ret__, 'time_password_expiry_less_than'),
         time_password_last_changed_greater_than_or_equal_to=pulumi.get(__ret__, 'time_password_last_changed_greater_than_or_equal_to'),
         time_password_last_changed_less_than=pulumi.get(__ret__, 'time_password_last_changed_less_than'),
         time_user_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_user_created_greater_than_or_equal_to'),
@@ -336,6 +364,8 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
                                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               time_last_login_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                               time_last_login_less_than: Optional[pulumi.Input[Optional[str]]] = None,
+                                              time_password_expiry_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
+                                              time_password_expiry_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                               time_password_last_changed_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                               time_password_last_changed_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                               time_user_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
@@ -353,7 +383,7 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
     the critical category. This data is especially useful content for dashboards or to support analytics.
 
     When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-    parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+    parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
     permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
     root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
     compartmentId, then "Not Authorized" is returned.
@@ -378,6 +408,8 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
         target_id=test_target["id"],
         time_last_login_greater_than_or_equal_to=user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
         time_last_login_less_than=user_assessment_user_analytic_time_last_login_less_than,
+        time_password_expiry_greater_than_or_equal_to=user_assessment_user_analytic_time_password_expiry_greater_than_or_equal_to,
+        time_password_expiry_less_than=user_assessment_user_analytic_time_password_expiry_less_than,
         time_password_last_changed_greater_than_or_equal_to=user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
         time_password_last_changed_less_than=user_assessment_user_analytic_time_password_last_changed_less_than,
         time_user_created_greater_than_or_equal_to=user_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
@@ -397,6 +429,8 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
            
            **Example:** 2016-12-19T16:39:57.600Z
     :param str time_last_login_less_than: A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+    :param str time_password_expiry_greater_than_or_equal_to: A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+    :param str time_password_expiry_less_than: A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str time_password_last_changed_greater_than_or_equal_to: A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -419,6 +453,8 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
     __args__['targetId'] = target_id
     __args__['timeLastLoginGreaterThanOrEqualTo'] = time_last_login_greater_than_or_equal_to
     __args__['timeLastLoginLessThan'] = time_last_login_less_than
+    __args__['timePasswordExpiryGreaterThanOrEqualTo'] = time_password_expiry_greater_than_or_equal_to
+    __args__['timePasswordExpiryLessThan'] = time_password_expiry_less_than
     __args__['timePasswordLastChangedGreaterThanOrEqualTo'] = time_password_last_changed_greater_than_or_equal_to
     __args__['timePasswordLastChangedLessThan'] = time_password_last_changed_less_than
     __args__['timeUserCreatedGreaterThanOrEqualTo'] = time_user_created_greater_than_or_equal_to
@@ -439,6 +475,8 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
         target_id=pulumi.get(__response__, 'target_id'),
         time_last_login_greater_than_or_equal_to=pulumi.get(__response__, 'time_last_login_greater_than_or_equal_to'),
         time_last_login_less_than=pulumi.get(__response__, 'time_last_login_less_than'),
+        time_password_expiry_greater_than_or_equal_to=pulumi.get(__response__, 'time_password_expiry_greater_than_or_equal_to'),
+        time_password_expiry_less_than=pulumi.get(__response__, 'time_password_expiry_less_than'),
         time_password_last_changed_greater_than_or_equal_to=pulumi.get(__response__, 'time_password_last_changed_greater_than_or_equal_to'),
         time_password_last_changed_less_than=pulumi.get(__response__, 'time_password_last_changed_less_than'),
         time_user_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_user_created_greater_than_or_equal_to'),

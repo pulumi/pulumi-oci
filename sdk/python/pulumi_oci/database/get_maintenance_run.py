@@ -27,7 +27,7 @@ class GetMaintenanceRunResult:
     """
     A collection of values returned by getMaintenanceRun.
     """
-    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None):
+    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, is_maintenance_run_granular=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None, total_time_taken_in_mins=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +64,9 @@ class GetMaintenanceRunResult:
         if is_dst_file_update_enabled and not isinstance(is_dst_file_update_enabled, bool):
             raise TypeError("Expected argument 'is_dst_file_update_enabled' to be a bool")
         pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
+        if is_maintenance_run_granular and not isinstance(is_maintenance_run_granular, bool):
+            raise TypeError("Expected argument 'is_maintenance_run_granular' to be a bool")
+        pulumi.set(__self__, "is_maintenance_run_granular", is_maintenance_run_granular)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -124,6 +127,9 @@ class GetMaintenanceRunResult:
         if time_started and not isinstance(time_started, str):
             raise TypeError("Expected argument 'time_started' to be a str")
         pulumi.set(__self__, "time_started", time_started)
+        if total_time_taken_in_mins and not isinstance(total_time_taken_in_mins, int):
+            raise TypeError("Expected argument 'total_time_taken_in_mins' to be a int")
+        pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -220,6 +226,14 @@ class GetMaintenanceRunResult:
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @property
+    @pulumi.getter(name="isMaintenanceRunGranular")
+    def is_maintenance_run_granular(self) -> bool:
+        """
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+        """
+        return pulumi.get(self, "is_maintenance_run_granular")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -375,6 +389,14 @@ class GetMaintenanceRunResult:
         """
         return pulumi.get(self, "time_started")
 
+    @property
+    @pulumi.getter(name="totalTimeTakenInMins")
+    def total_time_taken_in_mins(self) -> int:
+        """
+        The total time taken by corresponding resource activity in minutes.
+        """
+        return pulumi.get(self, "total_time_taken_in_mins")
+
 
 class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
     # pylint: disable=using-constant-test
@@ -394,6 +416,7 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             id=self.id,
             is_custom_action_timeout_enabled=self.is_custom_action_timeout_enabled,
             is_dst_file_update_enabled=self.is_dst_file_update_enabled,
+            is_maintenance_run_granular=self.is_maintenance_run_granular,
             lifecycle_details=self.lifecycle_details,
             maintenance_run_id=self.maintenance_run_id,
             maintenance_subtype=self.maintenance_subtype,
@@ -413,7 +436,8 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             target_storage_server_version=self.target_storage_server_version,
             time_ended=self.time_ended,
             time_scheduled=self.time_scheduled,
-            time_started=self.time_started)
+            time_started=self.time_started,
+            total_time_taken_in_mins=self.total_time_taken_in_mins)
 
 
 def get_maintenance_run(maintenance_run_id: Optional[str] = None,
@@ -453,6 +477,7 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_custom_action_timeout_enabled=pulumi.get(__ret__, 'is_custom_action_timeout_enabled'),
         is_dst_file_update_enabled=pulumi.get(__ret__, 'is_dst_file_update_enabled'),
+        is_maintenance_run_granular=pulumi.get(__ret__, 'is_maintenance_run_granular'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_run_id=pulumi.get(__ret__, 'maintenance_run_id'),
         maintenance_subtype=pulumi.get(__ret__, 'maintenance_subtype'),
@@ -472,7 +497,8 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
         target_storage_server_version=pulumi.get(__ret__, 'target_storage_server_version'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_scheduled=pulumi.get(__ret__, 'time_scheduled'),
-        time_started=pulumi.get(__ret__, 'time_started'))
+        time_started=pulumi.get(__ret__, 'time_started'),
+        total_time_taken_in_mins=pulumi.get(__ret__, 'total_time_taken_in_mins'))
 def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceRunResult]:
     """
@@ -509,6 +535,7 @@ def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] =
         id=pulumi.get(__response__, 'id'),
         is_custom_action_timeout_enabled=pulumi.get(__response__, 'is_custom_action_timeout_enabled'),
         is_dst_file_update_enabled=pulumi.get(__response__, 'is_dst_file_update_enabled'),
+        is_maintenance_run_granular=pulumi.get(__response__, 'is_maintenance_run_granular'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         maintenance_run_id=pulumi.get(__response__, 'maintenance_run_id'),
         maintenance_subtype=pulumi.get(__response__, 'maintenance_subtype'),
@@ -528,4 +555,5 @@ def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] =
         target_storage_server_version=pulumi.get(__response__, 'target_storage_server_version'),
         time_ended=pulumi.get(__response__, 'time_ended'),
         time_scheduled=pulumi.get(__response__, 'time_scheduled'),
-        time_started=pulumi.get(__response__, 'time_started')))
+        time_started=pulumi.get(__response__, 'time_started'),
+        total_time_taken_in_mins=pulumi.get(__response__, 'total_time_taken_in_mins')))

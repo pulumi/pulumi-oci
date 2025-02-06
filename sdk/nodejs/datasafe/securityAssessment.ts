@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * const testSecurityAssessment = new oci.datasafe.SecurityAssessment("test_security_assessment", {
  *     compartmentId: compartmentId,
- *     targetId: testTarget.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -32,6 +31,7 @@ import * as utilities from "../utilities";
  *     },
  *     isAssessmentScheduled: securityAssessmentIsAssessmentScheduled,
  *     schedule: securityAssessmentSchedule,
+ *     targetId: testTarget.id,
  * });
  * ```
  *
@@ -76,7 +76,7 @@ export class SecurityAssessment extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -226,9 +226,6 @@ export class SecurityAssessment extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'targetId'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -270,7 +267,7 @@ export interface SecurityAssessmentState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -386,7 +383,7 @@ export interface SecurityAssessmentArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -418,5 +415,5 @@ export interface SecurityAssessmentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetId: pulumi.Input<string>;
+    targetId?: pulumi.Input<string>;
 }

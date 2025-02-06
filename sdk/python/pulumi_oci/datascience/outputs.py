@@ -75,6 +75,27 @@ __all__ = [
     'PipelineStepDetailStepContainerConfigurationDetails',
     'PipelineStepDetailStepInfrastructureConfigurationDetails',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails',
+    'ScheduleAction',
+    'ScheduleActionActionDetails',
+    'ScheduleActionActionDetailsCreateJobRunDetails',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails',
+    'ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails',
+    'ScheduleActionActionDetailsCreatePipelineRunDetails',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails',
+    'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails',
+    'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails',
+    'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter',
+    'ScheduleLogDetails',
+    'ScheduleTrigger',
+    'GetContainersContainerResult',
+    'GetContainersContainerTagConfigurationListResult',
+    'GetContainersContainerWorkloadConfigurationDetailsListResult',
+    'GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationResult',
+    'GetContainersFilterResult',
     'GetFastLaunchJobConfigsFastLaunchJobConfigResult',
     'GetFastLaunchJobConfigsFilterResult',
     'GetJobJobConfigurationDetailResult',
@@ -221,6 +242,40 @@ __all__ = [
     'GetPrivateEndpointsFilterResult',
     'GetProjectsFilterResult',
     'GetProjectsProjectResult',
+    'GetScheduleActionResult',
+    'GetScheduleActionActionDetailResult',
+    'GetScheduleActionActionDetailCreateJobRunDetailResult',
+    'GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult',
+    'GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult',
+    'GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult',
+    'GetScheduleActionActionDetailCreatePipelineRunDetailResult',
+    'GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult',
+    'GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult',
+    'GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult',
+    'GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult',
+    'GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult',
+    'GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult',
+    'GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult',
+    'GetScheduleLogDetailResult',
+    'GetScheduleTriggerResult',
+    'GetSchedulesFilterResult',
+    'GetSchedulesScheduleResult',
+    'GetSchedulesScheduleActionResult',
+    'GetSchedulesScheduleActionActionDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreateJobRunDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult',
+    'GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult',
+    'GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult',
+    'GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult',
+    'GetSchedulesScheduleLogDetailResult',
+    'GetSchedulesScheduleTriggerResult',
 ]
 
 @pulumi.output_type
@@ -4737,6 +4792,1657 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
         (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class ScheduleAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionDetails":
+            suggest = "action_details"
+        elif key == "actionType":
+            suggest = "action_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action_details: 'outputs.ScheduleActionActionDetails',
+                 action_type: str):
+        """
+        :param 'ScheduleActionActionDetailsArgs' action_details: (Updatable) Schedule Http action details
+        :param str action_type: (Updatable) The Schedule Action type
+        """
+        pulumi.set(__self__, "action_details", action_details)
+        pulumi.set(__self__, "action_type", action_type)
+
+    @property
+    @pulumi.getter(name="actionDetails")
+    def action_details(self) -> 'outputs.ScheduleActionActionDetails':
+        """
+        (Updatable) Schedule Http action details
+        """
+        return pulumi.get(self, "action_details")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        (Updatable) The Schedule Action type
+        """
+        return pulumi.get(self, "action_type")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpActionType":
+            suggest = "http_action_type"
+        elif key == "createJobRunDetails":
+            suggest = "create_job_run_details"
+        elif key == "createPipelineRunDetails":
+            suggest = "create_pipeline_run_details"
+        elif key == "mlApplicationInstanceViewId":
+            suggest = "ml_application_instance_view_id"
+        elif key == "triggerMlApplicationInstanceViewFlowDetails":
+            suggest = "trigger_ml_application_instance_view_flow_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http_action_type: str,
+                 create_job_run_details: Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetails'] = None,
+                 create_pipeline_run_details: Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetails'] = None,
+                 ml_application_instance_view_id: Optional[str] = None,
+                 trigger_ml_application_instance_view_flow_details: Optional['outputs.ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails'] = None):
+        """
+        :param str http_action_type: (Updatable) The type of http action to trigger.
+        :param 'ScheduleActionActionDetailsCreateJobRunDetailsArgs' create_job_run_details: (Updatable) Parameters needed to create a new job run.
+        :param 'ScheduleActionActionDetailsCreatePipelineRunDetailsArgs' create_pipeline_run_details: (Updatable) The information about new PipelineRun.
+        :param str ml_application_instance_view_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        :param 'ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs' trigger_ml_application_instance_view_flow_details: (Updatable) Payload for trigger request endpoint
+        """
+        pulumi.set(__self__, "http_action_type", http_action_type)
+        if create_job_run_details is not None:
+            pulumi.set(__self__, "create_job_run_details", create_job_run_details)
+        if create_pipeline_run_details is not None:
+            pulumi.set(__self__, "create_pipeline_run_details", create_pipeline_run_details)
+        if ml_application_instance_view_id is not None:
+            pulumi.set(__self__, "ml_application_instance_view_id", ml_application_instance_view_id)
+        if trigger_ml_application_instance_view_flow_details is not None:
+            pulumi.set(__self__, "trigger_ml_application_instance_view_flow_details", trigger_ml_application_instance_view_flow_details)
+
+    @property
+    @pulumi.getter(name="httpActionType")
+    def http_action_type(self) -> str:
+        """
+        (Updatable) The type of http action to trigger.
+        """
+        return pulumi.get(self, "http_action_type")
+
+    @property
+    @pulumi.getter(name="createJobRunDetails")
+    def create_job_run_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetails']:
+        """
+        (Updatable) Parameters needed to create a new job run.
+        """
+        return pulumi.get(self, "create_job_run_details")
+
+    @property
+    @pulumi.getter(name="createPipelineRunDetails")
+    def create_pipeline_run_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetails']:
+        """
+        (Updatable) The information about new PipelineRun.
+        """
+        return pulumi.get(self, "create_pipeline_run_details")
+
+    @property
+    @pulumi.getter(name="mlApplicationInstanceViewId")
+    def ml_application_instance_view_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        """
+        return pulumi.get(self, "ml_application_instance_view_id")
+
+    @property
+    @pulumi.getter(name="triggerMlApplicationInstanceViewFlowDetails")
+    def trigger_ml_application_instance_view_flow_details(self) -> Optional['outputs.ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails']:
+        """
+        (Updatable) Payload for trigger request endpoint
+        """
+        return pulumi.get(self, "trigger_ml_application_instance_view_flow_details")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreateJobRunDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "jobConfigurationOverrideDetails":
+            suggest = "job_configuration_override_details"
+        elif key == "jobEnvironmentConfigurationOverrideDetails":
+            suggest = "job_environment_configuration_override_details"
+        elif key == "jobId":
+            suggest = "job_id"
+        elif key == "jobLogConfigurationOverrideDetails":
+            suggest = "job_log_configuration_override_details"
+        elif key == "projectId":
+            suggest = "project_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreateJobRunDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
+                 job_configuration_override_details: Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails'] = None,
+                 job_environment_configuration_override_details: Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails'] = None,
+                 job_id: Optional[str] = None,
+                 job_log_configuration_override_details: Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails'] = None,
+                 project_id: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly display name for the resource.
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param 'ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs' job_configuration_override_details: (Updatable) The job configuration details
+        :param 'ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs' job_environment_configuration_override_details: (Updatable) Environment configuration to capture job runtime dependencies.
+        :param str job_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        :param 'ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs' job_log_configuration_override_details: (Updatable) Logging configuration for resource.
+        :param str project_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if job_configuration_override_details is not None:
+            pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        if job_environment_configuration_override_details is not None:
+            pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if job_log_configuration_override_details is not None:
+            pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly display name for the resource.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="jobConfigurationOverrideDetails")
+    def job_configuration_override_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails']:
+        """
+        (Updatable) The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails']:
+        """
+        (Updatable) Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="jobLogConfigurationOverrideDetails")
+    def job_log_configuration_override_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails']:
+        """
+        (Updatable) Logging configuration for resource.
+        """
+        return pulumi.get(self, "job_log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+        """
+        return pulumi.get(self, "project_id")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobType":
+            suggest = "job_type"
+        elif key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_type: str,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str job_type: (Updatable) The type of job.
+        :param str command_line_arguments: (Updatable) The arguments to pass to the job.
+        :param Mapping[str, str] environment_variables: (Updatable) Environment variables to set for the job.
+        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+        pulumi.set(__self__, "job_type", job_type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> str:
+        """
+        (Updatable) The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        (Updatable) The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobEnvironmentType":
+            suggest = "job_environment_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 image: str,
+                 job_environment_type: str,
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 image_digest: Optional[str] = None,
+                 image_signature_id: Optional[str] = None):
+        """
+        :param str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param str job_environment_type: (Updatable) The environment configuration type used for job runtime.
+        :param Sequence[str] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: (Updatable) OCID of the container image signature
+        """
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        (Updatable) The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[str]:
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableAutoLogCreation":
+            suggest = "enable_auto_log_creation"
+        elif key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        """
+        :param bool enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+        :param bool enable_logging: (Updatable) If customer logging is enabled for job runs.
+        :param str log_group_id: (Updatable) The log group id for where log objects are for job runs.
+        :param str log_id: (Updatable) The log id the job run will push logs too.
+        """
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> Optional[bool]:
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[bool]:
+        """
+        (Updatable) If customer logging is enabled for job runs.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The log group id for where log objects are for job runs.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[str]:
+        """
+        (Updatable) The log id the job run will push logs too.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreatePipelineRunDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "configurationOverrideDetails":
+            suggest = "configuration_override_details"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "logConfigurationOverrideDetails":
+            suggest = "log_configuration_override_details"
+        elif key == "pipelineId":
+            suggest = "pipeline_id"
+        elif key == "projectId":
+            suggest = "project_id"
+        elif key == "stepOverrideDetails":
+            suggest = "step_override_details"
+        elif key == "systemTags":
+            suggest = "system_tags"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreatePipelineRunDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
+                 configuration_override_details: Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails'] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
+                 log_configuration_override_details: Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails'] = None,
+                 pipeline_id: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 step_override_details: Optional[Sequence['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail']] = None,
+                 system_tags: Optional[Mapping[str, str]] = None):
+        """
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+        :param 'ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs' configuration_override_details: (Updatable) The configuration details of a pipeline.
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly display name for the resource.
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param 'ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs' log_configuration_override_details: (Updatable) The pipeline log configuration details.
+        :param str pipeline_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param str project_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        :param Sequence['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs'] step_override_details: (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+        :param Mapping[str, str] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration_override_details is not None:
+            pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if log_configuration_override_details is not None:
+            pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        if pipeline_id is not None:
+            pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if step_override_details is not None:
+            pulumi.set(__self__, "step_override_details", step_override_details)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationOverrideDetails")
+    def configuration_override_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails']:
+        """
+        (Updatable) The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_override_details")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly display name for the resource.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="logConfigurationOverrideDetails")
+    def log_configuration_override_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails']:
+        """
+        (Updatable) The pipeline log configuration details.
+        """
+        return pulumi.get(self, "log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="stepOverrideDetails")
+    def step_override_details(self) -> Optional[Sequence['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail']]:
+        """
+        (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+        """
+        return pulumi.get(self, "step_override_details")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str type: (Updatable) The type of pipeline.
+        :param str command_line_arguments: (Updatable) The command line arguments to set for steps in the pipeline.
+        :param Mapping[str, str] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
+        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+        """
+        pulumi.set(__self__, "type", type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        (Updatable) The command line arguments to set for steps in the pipeline.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Environment variables to set for steps in the pipeline.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableAutoLogCreation":
+            suggest = "enable_auto_log_creation"
+        elif key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        """
+        :param bool enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: (Updatable) If customer logging is enabled for pipeline.
+        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> Optional[bool]:
+        """
+        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[bool]:
+        """
+        (Updatable) If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stepConfigurationDetails":
+            suggest = "step_configuration_details"
+        elif key == "stepContainerConfigurationDetails":
+            suggest = "step_container_configuration_details"
+        elif key == "stepName":
+            suggest = "step_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 step_configuration_details: Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails'] = None,
+                 step_container_configuration_details: Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails'] = None,
+                 step_name: Optional[str] = None):
+        """
+        :param 'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: (Updatable) The configuration details of a step.
+        :param 'ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs' step_container_configuration_details: (Updatable) Container Details for a step in pipeline.
+        :param str step_name: (Updatable) The name of the step.
+        """
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_container_configuration_details is not None:
+            pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails']:
+        """
+        (Updatable) The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Optional['outputs.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails']:
+        """
+        (Updatable) Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        """
+        :param str command_line_arguments: (Updatable) The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: (Updatable) Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
+        """
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[str]:
+        """
+        (Updatable) The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
+        """
+        (Updatable) Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
+        """
+        (Updatable) A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containerType":
+            suggest = "container_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 container_type: str,
+                 image: str,
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 image_digest: Optional[str] = None,
+                 image_signature_id: Optional[str] = None):
+        """
+        :param str container_type: (Updatable) The type of container.
+        :param str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param Sequence[str] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: (Updatable) OCID of the container image signature
+        """
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "image", image)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        (Updatable) The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[str]:
+        """
+        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "triggerName":
+            suggest = "trigger_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameters: Optional[Sequence['outputs.ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter']] = None,
+                 trigger_name: Optional[str] = None):
+        """
+        :param Sequence['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs'] parameters: (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+        :param str trigger_name: (Updatable) Name of trigger
+        """
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if trigger_name is not None:
+            pulumi.set(__self__, "trigger_name", trigger_name)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[Sequence['outputs.ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter']]:
+        """
+        (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+        """
+        return pulumi.get(self, "parameters")
+
+    @property
+    @pulumi.getter(name="triggerName")
+    def trigger_name(self) -> Optional[str]:
+        """
+        (Updatable) Name of trigger
+        """
+        return pulumi.get(self, "trigger_name")
+
+
+@pulumi.output_type
+class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) Name of trigger parameter
+        :param str value: (Updatable) Value of trigger parameter
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of trigger parameter
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) Value of trigger parameter
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ScheduleLogDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleLogDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleLogDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleLogDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class ScheduleTrigger(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "triggerType":
+            suggest = "trigger_type"
+        elif key == "cronExpression":
+            suggest = "cron_expression"
+        elif key == "isRandomStartTime":
+            suggest = "is_random_start_time"
+        elif key == "timeEnd":
+            suggest = "time_end"
+        elif key == "timeStart":
+            suggest = "time_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleTrigger. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleTrigger.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleTrigger.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 trigger_type: str,
+                 cron_expression: Optional[str] = None,
+                 frequency: Optional[str] = None,
+                 interval: Optional[int] = None,
+                 is_random_start_time: Optional[bool] = None,
+                 recurrence: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None):
+        """
+        :param str trigger_type: (Updatable) The schedule trigger type
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str cron_expression: (Updatable) Schedule cron expression
+        :param str frequency: (Updatable) The type of frequency
+        :param int interval: (Updatable) The interval of frequency.
+        :param bool is_random_start_time: (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        :param str recurrence: (Updatable) This recurrence field conforms to RFC-5545 formatting
+        :param str time_end: (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_start: (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "trigger_type", trigger_type)
+        if cron_expression is not None:
+            pulumi.set(__self__, "cron_expression", cron_expression)
+        if frequency is not None:
+            pulumi.set(__self__, "frequency", frequency)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if is_random_start_time is not None:
+            pulumi.set(__self__, "is_random_start_time", is_random_start_time)
+        if recurrence is not None:
+            pulumi.set(__self__, "recurrence", recurrence)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+
+    @property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> str:
+        """
+        (Updatable) The schedule trigger type
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trigger_type")
+
+    @property
+    @pulumi.getter(name="cronExpression")
+    def cron_expression(self) -> Optional[str]:
+        """
+        (Updatable) Schedule cron expression
+        """
+        return pulumi.get(self, "cron_expression")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> Optional[str]:
+        """
+        (Updatable) The type of frequency
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[int]:
+        """
+        (Updatable) The interval of frequency.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="isRandomStartTime")
+    def is_random_start_time(self) -> Optional[bool]:
+        """
+        (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        """
+        return pulumi.get(self, "is_random_start_time")
+
+    @property
+    @pulumi.getter
+    def recurrence(self) -> Optional[str]:
+        """
+        (Updatable) This recurrence field conforms to RFC-5545 formatting
+        """
+        return pulumi.get(self, "recurrence")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> Optional[str]:
+        """
+        (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> Optional[str]:
+        """
+        (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetContainersContainerResult(dict):
+    def __init__(__self__, *,
+                 container_name: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 family_name: str,
+                 freeform_tags: Mapping[str, str],
+                 is_latest: bool,
+                 state: str,
+                 tag: str,
+                 tag_configuration_lists: Sequence['outputs.GetContainersContainerTagConfigurationListResult'],
+                 target_workloads: Sequence[str],
+                 usages: Sequence[str],
+                 workload_configuration_details_lists: Sequence['outputs.GetContainersContainerWorkloadConfigurationDetailsListResult']):
+        """
+        :param str container_name: <b>Filter</b> results by the container name.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: Description of the container.
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param str family_name: The family name of the container.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param bool is_latest: if true, this returns latest version of container.
+        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param str tag: Container Tag.
+        :param Sequence['GetContainersContainerTagConfigurationListArgs'] tag_configuration_lists: An array of defined metadata details for the model.
+        :param Sequence[str] target_workloads: The list of target workload. This Container can be used with given data science resources.
+        :param Sequence[str] usages: The list of usages of this container. This Container can be used for given use-cases.
+        :param Sequence['GetContainersContainerWorkloadConfigurationDetailsListArgs'] workload_configuration_details_lists: workload configuration of the container.
+        """
+        pulumi.set(__self__, "container_name", container_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "family_name", family_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_latest", is_latest)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "tag", tag)
+        pulumi.set(__self__, "tag_configuration_lists", tag_configuration_lists)
+        pulumi.set(__self__, "target_workloads", target_workloads)
+        pulumi.set(__self__, "usages", usages)
+        pulumi.set(__self__, "workload_configuration_details_lists", workload_configuration_details_lists)
+
+    @property
+    @pulumi.getter(name="containerName")
+    def container_name(self) -> str:
+        """
+        <b>Filter</b> results by the container name.
+        """
+        return pulumi.get(self, "container_name")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the container.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="familyName")
+    def family_name(self) -> str:
+        """
+        The family name of the container.
+        """
+        return pulumi.get(self, "family_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> bool:
+        """
+        if true, this returns latest version of container.
+        """
+        return pulumi.get(self, "is_latest")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def tag(self) -> str:
+        """
+        Container Tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @property
+    @pulumi.getter(name="tagConfigurationLists")
+    def tag_configuration_lists(self) -> Sequence['outputs.GetContainersContainerTagConfigurationListResult']:
+        """
+        An array of defined metadata details for the model.
+        """
+        return pulumi.get(self, "tag_configuration_lists")
+
+    @property
+    @pulumi.getter(name="targetWorkloads")
+    def target_workloads(self) -> Sequence[str]:
+        """
+        The list of target workload. This Container can be used with given data science resources.
+        """
+        return pulumi.get(self, "target_workloads")
+
+    @property
+    @pulumi.getter
+    def usages(self) -> Sequence[str]:
+        """
+        The list of usages of this container. This Container can be used for given use-cases.
+        """
+        return pulumi.get(self, "usages")
+
+    @property
+    @pulumi.getter(name="workloadConfigurationDetailsLists")
+    def workload_configuration_details_lists(self) -> Sequence['outputs.GetContainersContainerWorkloadConfigurationDetailsListResult']:
+        """
+        workload configuration of the container.
+        """
+        return pulumi.get(self, "workload_configuration_details_lists")
+
+
+@pulumi.output_type
+class GetContainersContainerTagConfigurationListResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: Key of the container tag Metadata
+        :param str value: Value of the container tag Metadata
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Key of the container tag Metadata
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of the container tag Metadata
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetContainersContainerWorkloadConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 additional_configurations: Mapping[str, str],
+                 cmd: str,
+                 health_check_port: int,
+                 server_port: int,
+                 use_case_configurations: Sequence['outputs.GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationResult'],
+                 workload_type: str):
+        """
+        :param Mapping[str, str] additional_configurations: The additional configurations
+        :param str cmd: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        :param Sequence['GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs'] use_case_configurations: The use-case configuration details
+        :param str workload_type: The workload use case.
+        """
+        pulumi.set(__self__, "additional_configurations", additional_configurations)
+        pulumi.set(__self__, "cmd", cmd)
+        pulumi.set(__self__, "health_check_port", health_check_port)
+        pulumi.set(__self__, "server_port", server_port)
+        pulumi.set(__self__, "use_case_configurations", use_case_configurations)
+        pulumi.set(__self__, "workload_type", workload_type)
+
+    @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> Mapping[str, str]:
+        """
+        The additional configurations
+        """
+        return pulumi.get(self, "additional_configurations")
+
+    @property
+    @pulumi.getter
+    def cmd(self) -> str:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmd")
+
+    @property
+    @pulumi.getter(name="healthCheckPort")
+    def health_check_port(self) -> int:
+        """
+        The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        """
+        return pulumi.get(self, "health_check_port")
+
+    @property
+    @pulumi.getter(name="serverPort")
+    def server_port(self) -> int:
+        """
+        The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+        """
+        return pulumi.get(self, "server_port")
+
+    @property
+    @pulumi.getter(name="useCaseConfigurations")
+    def use_case_configurations(self) -> Sequence['outputs.GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationResult']:
+        """
+        The use-case configuration details
+        """
+        return pulumi.get(self, "use_case_configurations")
+
+    @property
+    @pulumi.getter(name="workloadType")
+    def workload_type(self) -> str:
+        """
+        The workload use case.
+        """
+        return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationResult(dict):
+    def __init__(__self__, *,
+                 additional_configurations: Mapping[str, str],
+                 use_case_type: str):
+        """
+        :param Mapping[str, str] additional_configurations: The additional configurations
+        :param str use_case_type: The job-run use-case.
+        """
+        pulumi.set(__self__, "additional_configurations", additional_configurations)
+        pulumi.set(__self__, "use_case_type", use_case_type)
+
+    @property
+    @pulumi.getter(name="additionalConfigurations")
+    def additional_configurations(self) -> Mapping[str, str]:
+        """
+        The additional configurations
+        """
+        return pulumi.get(self, "additional_configurations")
+
+    @property
+    @pulumi.getter(name="useCaseType")
+    def use_case_type(self) -> str:
+        """
+        The job-run use-case.
+        """
+        return pulumi.get(self, "use_case_type")
+
+
+@pulumi.output_type
+class GetContainersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -13513,5 +15219,2106 @@ class GetProjectsProjectResult(dict):
         The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetScheduleActionResult(dict):
+    def __init__(__self__, *,
+                 action_details: Sequence['outputs.GetScheduleActionActionDetailResult'],
+                 action_type: str):
+        """
+        :param Sequence['GetScheduleActionActionDetailArgs'] action_details: Schedule Http action details
+        :param str action_type: The Schedule Action type
+        """
+        pulumi.set(__self__, "action_details", action_details)
+        pulumi.set(__self__, "action_type", action_type)
+
+    @property
+    @pulumi.getter(name="actionDetails")
+    def action_details(self) -> Sequence['outputs.GetScheduleActionActionDetailResult']:
+        """
+        Schedule Http action details
+        """
+        return pulumi.get(self, "action_details")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The Schedule Action type
+        """
+        return pulumi.get(self, "action_type")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailResult(dict):
+    def __init__(__self__, *,
+                 create_job_run_details: Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailResult'],
+                 create_pipeline_run_details: Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailResult'],
+                 http_action_type: str,
+                 ml_application_instance_view_id: str,
+                 trigger_ml_application_instance_view_flow_details: Sequence['outputs.GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult']):
+        """
+        :param Sequence['GetScheduleActionActionDetailCreateJobRunDetailArgs'] create_job_run_details: Parameters needed to create a new job run.
+        :param Sequence['GetScheduleActionActionDetailCreatePipelineRunDetailArgs'] create_pipeline_run_details: The information about new PipelineRun.
+        :param str http_action_type: The type of http action to trigger.
+        :param str ml_application_instance_view_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        :param Sequence['GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs'] trigger_ml_application_instance_view_flow_details: Payload for trigger request endpoint
+        """
+        pulumi.set(__self__, "create_job_run_details", create_job_run_details)
+        pulumi.set(__self__, "create_pipeline_run_details", create_pipeline_run_details)
+        pulumi.set(__self__, "http_action_type", http_action_type)
+        pulumi.set(__self__, "ml_application_instance_view_id", ml_application_instance_view_id)
+        pulumi.set(__self__, "trigger_ml_application_instance_view_flow_details", trigger_ml_application_instance_view_flow_details)
+
+    @property
+    @pulumi.getter(name="createJobRunDetails")
+    def create_job_run_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailResult']:
+        """
+        Parameters needed to create a new job run.
+        """
+        return pulumi.get(self, "create_job_run_details")
+
+    @property
+    @pulumi.getter(name="createPipelineRunDetails")
+    def create_pipeline_run_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailResult']:
+        """
+        The information about new PipelineRun.
+        """
+        return pulumi.get(self, "create_pipeline_run_details")
+
+    @property
+    @pulumi.getter(name="httpActionType")
+    def http_action_type(self) -> str:
+        """
+        The type of http action to trigger.
+        """
+        return pulumi.get(self, "http_action_type")
+
+    @property
+    @pulumi.getter(name="mlApplicationInstanceViewId")
+    def ml_application_instance_view_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        """
+        return pulumi.get(self, "ml_application_instance_view_id")
+
+    @property
+    @pulumi.getter(name="triggerMlApplicationInstanceViewFlowDetails")
+    def trigger_ml_application_instance_view_flow_details(self) -> Sequence['outputs.GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult']:
+        """
+        Payload for trigger request endpoint
+        """
+        return pulumi.get(self, "trigger_ml_application_instance_view_flow_details")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreateJobRunDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 job_configuration_override_details: Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult'],
+                 job_environment_configuration_override_details: Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult'],
+                 job_id: str,
+                 job_log_configuration_override_details: Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult'],
+                 project_id: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly display name for the resource. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs'] job_configuration_override_details: The job configuration details
+        :param Sequence['GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
+        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        :param Sequence['GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
+        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        pulumi.set(__self__, "project_id", project_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly display name for the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="jobConfigurationOverrideDetails")
+    def job_configuration_override_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="jobLogConfigurationOverrideDetails")
+    def job_log_configuration_override_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult']:
+        """
+        Logging configuration for resource.
+        """
+        return pulumi.get(self, "job_log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+        """
+        return pulumi.get(self, "project_id")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, str],
+                 job_type: str,
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
+        :param str job_type: The type of job.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, str]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str,
+                 job_environment_type: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreatePipelineRunDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 configuration_override_details: Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult'],
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 log_configuration_override_details: Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult'],
+                 pipeline_id: str,
+                 project_id: str,
+                 step_override_details: Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult'],
+                 system_tags: Mapping[str, str]):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+        :param Sequence['GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs'] configuration_override_details: The configuration details of a pipeline.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly display name for the resource. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs'] log_configuration_override_details: The pipeline log configuration details.
+        :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+        :param Sequence['GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs'] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "step_override_details", step_override_details)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationOverrideDetails")
+    def configuration_override_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult']:
+        """
+        The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_override_details")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly display name for the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="logConfigurationOverrideDetails")
+    def log_configuration_override_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult']:
+        """
+        The pipeline log configuration details.
+        """
+        return pulumi.get(self, "log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="stepOverrideDetails")
+    def step_override_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult']:
+        """
+        Array of step override details. Only Step Configuration is allowed to be overridden.
+        """
+        return pulumi.get(self, "step_override_details")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, str],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, str]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 step_configuration_details: Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult'],
+                 step_container_configuration_details: Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult'],
+                 step_name: str):
+        """
+        :param Sequence['GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
+        :param str step_name: The name of the step.
+        """
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult']:
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Sequence['outputs.GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, str],
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, str]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 container_type: str,
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param str container_type: The type of container.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult(dict):
+    def __init__(__self__, *,
+                 parameters: Sequence['outputs.GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult'],
+                 trigger_name: str):
+        """
+        :param Sequence['GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs'] parameters: Parameters provided for given trigger invocation (they must match predefined schema)
+        :param str trigger_name: Name of trigger
+        """
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "trigger_name", trigger_name)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult']:
+        """
+        Parameters provided for given trigger invocation (they must match predefined schema)
+        """
+        return pulumi.get(self, "parameters")
+
+    @property
+    @pulumi.getter(name="triggerName")
+    def trigger_name(self) -> str:
+        """
+        Name of trigger
+        """
+        return pulumi.get(self, "trigger_name")
+
+
+@pulumi.output_type
+class GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of trigger parameter
+        :param str value: Value of trigger parameter
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of trigger parameter
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of trigger parameter
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetScheduleLogDetailResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetScheduleTriggerResult(dict):
+    def __init__(__self__, *,
+                 cron_expression: str,
+                 frequency: str,
+                 interval: int,
+                 is_random_start_time: bool,
+                 recurrence: str,
+                 time_end: str,
+                 time_start: str,
+                 trigger_type: str):
+        """
+        :param str cron_expression: Schedule cron expression
+        :param str frequency: The type of frequency
+        :param int interval: The interval of frequency.
+        :param bool is_random_start_time: when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        :param str recurrence: This recurrence field conforms to RFC-5545 formatting
+        :param str time_end: The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_start: The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str trigger_type: The schedule trigger type
+        """
+        pulumi.set(__self__, "cron_expression", cron_expression)
+        pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "is_random_start_time", is_random_start_time)
+        pulumi.set(__self__, "recurrence", recurrence)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "trigger_type", trigger_type)
+
+    @property
+    @pulumi.getter(name="cronExpression")
+    def cron_expression(self) -> str:
+        """
+        Schedule cron expression
+        """
+        return pulumi.get(self, "cron_expression")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> str:
+        """
+        The type of frequency
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        """
+        The interval of frequency.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="isRandomStartTime")
+    def is_random_start_time(self) -> bool:
+        """
+        when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        """
+        return pulumi.get(self, "is_random_start_time")
+
+    @property
+    @pulumi.getter
+    def recurrence(self) -> str:
+        """
+        This recurrence field conforms to RFC-5545 formatting
+        """
+        return pulumi.get(self, "recurrence")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        """
+        The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        """
+        The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
+
+    @property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> str:
+        """
+        The schedule trigger type
+        """
+        return pulumi.get(self, "trigger_type")
+
+
+@pulumi.output_type
+class GetSchedulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of trigger parameter
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of trigger parameter
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleResult(dict):
+    def __init__(__self__, *,
+                 actions: Sequence['outputs.GetSchedulesScheduleActionResult'],
+                 compartment_id: str,
+                 created_by: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 last_schedule_run_details: str,
+                 lifecycle_details: str,
+                 log_details: Sequence['outputs.GetSchedulesScheduleLogDetailResult'],
+                 project_id: str,
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 time_created: str,
+                 time_last_schedule_run: str,
+                 time_next_scheduled_run: str,
+                 time_updated: str,
+                 triggers: Sequence['outputs.GetSchedulesScheduleTriggerResult']):
+        """
+        :param Sequence['GetSchedulesScheduleActionArgs'] actions: The schedule action
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A short description of the schedule.
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: unique Schedule identifier
+        :param str last_schedule_run_details: Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
+        :param str lifecycle_details: A message describing the current state in more detail.
+        :param Sequence['GetSchedulesScheduleLogDetailArgs'] log_details: Custom logging details for schedule execution.
+        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
+        :param str time_last_schedule_run: The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+        :param str time_next_scheduled_run: The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+        :param str time_updated: The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
+        :param Sequence['GetSchedulesScheduleTriggerArgs'] triggers: The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_schedule_run_details", last_schedule_run_details)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "log_details", log_details)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_schedule_run", time_last_schedule_run)
+        pulumi.set(__self__, "time_next_scheduled_run", time_next_scheduled_run)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Sequence['outputs.GetSchedulesScheduleActionResult']:
+        """
+        The schedule action
+        """
+        return pulumi.get(self, "actions")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short description of the schedule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        unique Schedule identifier
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastScheduleRunDetails")
+    def last_schedule_run_details(self) -> str:
+        """
+        Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
+        """
+        return pulumi.get(self, "last_schedule_run_details")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="logDetails")
+    def log_details(self) -> Sequence['outputs.GetSchedulesScheduleLogDetailResult']:
+        """
+        Custom logging details for schedule execution.
+        """
+        return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastScheduleRun")
+    def time_last_schedule_run(self) -> str:
+        """
+        The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+        """
+        return pulumi.get(self, "time_last_schedule_run")
+
+    @property
+    @pulumi.getter(name="timeNextScheduledRun")
+    def time_next_scheduled_run(self) -> str:
+        """
+        The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+        """
+        return pulumi.get(self, "time_next_scheduled_run")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> Sequence['outputs.GetSchedulesScheduleTriggerResult']:
+        """
+        The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+        """
+        return pulumi.get(self, "triggers")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionResult(dict):
+    def __init__(__self__, *,
+                 action_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailResult'],
+                 action_type: str):
+        """
+        :param Sequence['GetSchedulesScheduleActionActionDetailArgs'] action_details: Schedule Http action details
+        :param str action_type: The Schedule Action type
+        """
+        pulumi.set(__self__, "action_details", action_details)
+        pulumi.set(__self__, "action_type", action_type)
+
+    @property
+    @pulumi.getter(name="actionDetails")
+    def action_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailResult']:
+        """
+        Schedule Http action details
+        """
+        return pulumi.get(self, "action_details")
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        The Schedule Action type
+        """
+        return pulumi.get(self, "action_type")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailResult(dict):
+    def __init__(__self__, *,
+                 create_job_run_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailResult'],
+                 create_pipeline_run_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailResult'],
+                 http_action_type: str,
+                 ml_application_instance_view_id: str,
+                 trigger_ml_application_instance_view_flow_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult']):
+        """
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs'] create_job_run_details: Parameters needed to create a new job run.
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs'] create_pipeline_run_details: The information about new PipelineRun.
+        :param str http_action_type: The type of http action to trigger.
+        :param str ml_application_instance_view_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        :param Sequence['GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs'] trigger_ml_application_instance_view_flow_details: Payload for trigger request endpoint
+        """
+        pulumi.set(__self__, "create_job_run_details", create_job_run_details)
+        pulumi.set(__self__, "create_pipeline_run_details", create_pipeline_run_details)
+        pulumi.set(__self__, "http_action_type", http_action_type)
+        pulumi.set(__self__, "ml_application_instance_view_id", ml_application_instance_view_id)
+        pulumi.set(__self__, "trigger_ml_application_instance_view_flow_details", trigger_ml_application_instance_view_flow_details)
+
+    @property
+    @pulumi.getter(name="createJobRunDetails")
+    def create_job_run_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailResult']:
+        """
+        Parameters needed to create a new job run.
+        """
+        return pulumi.get(self, "create_job_run_details")
+
+    @property
+    @pulumi.getter(name="createPipelineRunDetails")
+    def create_pipeline_run_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailResult']:
+        """
+        The information about new PipelineRun.
+        """
+        return pulumi.get(self, "create_pipeline_run_details")
+
+    @property
+    @pulumi.getter(name="httpActionType")
+    def http_action_type(self) -> str:
+        """
+        The type of http action to trigger.
+        """
+        return pulumi.get(self, "http_action_type")
+
+    @property
+    @pulumi.getter(name="mlApplicationInstanceViewId")
+    def ml_application_instance_view_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+        """
+        return pulumi.get(self, "ml_application_instance_view_id")
+
+    @property
+    @pulumi.getter(name="triggerMlApplicationInstanceViewFlowDetails")
+    def trigger_ml_application_instance_view_flow_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult']:
+        """
+        Payload for trigger request endpoint
+        """
+        return pulumi.get(self, "trigger_ml_application_instance_view_flow_details")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreateJobRunDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 job_configuration_override_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult'],
+                 job_environment_configuration_override_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult'],
+                 job_id: str,
+                 job_log_configuration_override_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult'],
+                 project_id: str):
+        """
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs'] job_configuration_override_details: The job configuration details
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
+        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
+        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        pulumi.set(__self__, "project_id", project_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="jobConfigurationOverrideDetails")
+    def job_configuration_override_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentConfigurationOverrideDetails")
+    def job_environment_configuration_override_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="jobLogConfigurationOverrideDetails")
+    def job_log_configuration_override_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult']:
+        """
+        Logging configuration for resource.
+        """
+        return pulumi.get(self, "job_log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, str],
+                 job_type: str,
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
+        :param str job_type: The type of job.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, str]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str,
+                 job_environment_type: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        :param str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 configuration_override_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult'],
+                 defined_tags: Mapping[str, str],
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 log_configuration_override_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult'],
+                 pipeline_id: str,
+                 project_id: str,
+                 step_override_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult'],
+                 system_tags: Mapping[str, str]):
+        """
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs'] configuration_override_details: The configuration details of a pipeline.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs'] log_configuration_override_details: The pipeline log configuration details.
+        :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs'] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "step_override_details", step_override_details)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationOverrideDetails")
+    def configuration_override_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult']:
+        """
+        The configuration details of a pipeline.
+        """
+        return pulumi.get(self, "configuration_override_details")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="logConfigurationOverrideDetails")
+    def log_configuration_override_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult']:
+        """
+        The pipeline log configuration details.
+        """
+        return pulumi.get(self, "log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="stepOverrideDetails")
+    def step_override_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult']:
+        """
+        Array of step override details. Only Step Configuration is allowed to be overridden.
+        """
+        return pulumi.get(self, "step_override_details")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, str],
+                 maximum_runtime_in_minutes: str,
+                 type: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str type: The type of pipeline.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, str]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of pipeline.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 enable_auto_log_creation: bool,
+                 enable_logging: bool,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        :param bool enable_logging: If customer logging is enabled for pipeline.
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableAutoLogCreation")
+    def enable_auto_log_creation(self) -> bool:
+        """
+        If automatic on-behalf-of log object creation is enabled for pipeline runs.
+        """
+        return pulumi.get(self, "enable_auto_log_creation")
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> bool:
+        """
+        If customer logging is enabled for pipeline.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 step_configuration_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult'],
+                 step_container_configuration_details: Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult'],
+                 step_name: str):
+        """
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
+        :param str step_name: The name of the step.
+        """
+        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
+        pulumi.set(__self__, "step_name", step_name)
+
+    @property
+    @pulumi.getter(name="stepConfigurationDetails")
+    def step_configuration_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult']:
+        """
+        The configuration details of a step.
+        """
+        return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepName")
+    def step_name(self) -> str:
+        """
+        The name of the step.
+        """
+        return pulumi.get(self, "step_name")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: str,
+                 environment_variables: Mapping[str, str],
+                 maximum_runtime_in_minutes: str):
+        """
+        :param str command_line_arguments: The command line arguments to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+
+    @property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> str:
+        """
+        The command line arguments to set for step.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, str]:
+        """
+        Environment variables to set for step.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> str:
+        """
+        A time bound for the execution of the step.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 container_type: str,
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param str container_type: The type of container.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailResult(dict):
+    def __init__(__self__, *,
+                 parameters: Sequence['outputs.GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult'],
+                 trigger_name: str):
+        """
+        :param Sequence['GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs'] parameters: Parameters provided for given trigger invocation (they must match predefined schema)
+        :param str trigger_name: Name of trigger
+        """
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "trigger_name", trigger_name)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult']:
+        """
+        Parameters provided for given trigger invocation (they must match predefined schema)
+        """
+        return pulumi.get(self, "parameters")
+
+    @property
+    @pulumi.getter(name="triggerName")
+    def trigger_name(self) -> str:
+        """
+        Name of trigger
+        """
+        return pulumi.get(self, "trigger_name")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: Name of trigger parameter
+        :param str value: Value of trigger parameter
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of trigger parameter
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Value of trigger parameter
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleLogDetailResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleTriggerResult(dict):
+    def __init__(__self__, *,
+                 cron_expression: str,
+                 frequency: str,
+                 interval: int,
+                 is_random_start_time: bool,
+                 recurrence: str,
+                 time_end: str,
+                 time_start: str,
+                 trigger_type: str):
+        """
+        :param str cron_expression: Schedule cron expression
+        :param str frequency: The type of frequency
+        :param int interval: The interval of frequency.
+        :param bool is_random_start_time: when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        :param str recurrence: This recurrence field conforms to RFC-5545 formatting
+        :param str time_end: The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_start: The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str trigger_type: The schedule trigger type
+        """
+        pulumi.set(__self__, "cron_expression", cron_expression)
+        pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "is_random_start_time", is_random_start_time)
+        pulumi.set(__self__, "recurrence", recurrence)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "trigger_type", trigger_type)
+
+    @property
+    @pulumi.getter(name="cronExpression")
+    def cron_expression(self) -> str:
+        """
+        Schedule cron expression
+        """
+        return pulumi.get(self, "cron_expression")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> str:
+        """
+        The type of frequency
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        """
+        The interval of frequency.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="isRandomStartTime")
+    def is_random_start_time(self) -> bool:
+        """
+        when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+        """
+        return pulumi.get(self, "is_random_start_time")
+
+    @property
+    @pulumi.getter
+    def recurrence(self) -> str:
+        """
+        This recurrence field conforms to RFC-5545 formatting
+        """
+        return pulumi.get(self, "recurrence")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        """
+        The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        """
+        The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
+
+    @property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> str:
+        """
+        The schedule trigger type
+        """
+        return pulumi.get(self, "trigger_type")
 
 

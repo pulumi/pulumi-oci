@@ -112,14 +112,14 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
@@ -140,14 +140,14 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s changeable.
+     * (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s updatable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s changeable.
+     * @return (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s updatable.
      * 
      */
     public Output<String> displayName() {
@@ -224,14 +224,14 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
         return this.offlineMonths;
     }
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      * 
      */
     @Export(name="onlineMonths", refs={Integer.class}, tree="[0]")
     private Output<Integer> onlineMonths;
 
     /**
-     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
+     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      * 
      */
     public Output<Integer> onlineMonths() {

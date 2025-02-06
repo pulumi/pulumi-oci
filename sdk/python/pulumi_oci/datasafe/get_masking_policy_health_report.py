@@ -26,7 +26,7 @@ class GetMaskingPolicyHealthReportResult:
     """
     A collection of values returned by getMaskingPolicyHealthReport.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, masking_policy_health_report_id=None, masking_policy_id=None, state=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, error_count=None, freeform_tags=None, id=None, masking_policy_health_report_id=None, masking_policy_id=None, state=None, target_id=None, time_created=None, time_updated=None, warning_count=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,6 +39,9 @@ class GetMaskingPolicyHealthReportResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if error_count and not isinstance(error_count, str):
+            raise TypeError("Expected argument 'error_count' to be a str")
+        pulumi.set(__self__, "error_count", error_count)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -63,6 +66,9 @@ class GetMaskingPolicyHealthReportResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if warning_count and not isinstance(warning_count, str):
+            raise TypeError("Expected argument 'warning_count' to be a str")
+        pulumi.set(__self__, "warning_count", warning_count)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -76,7 +82,7 @@ class GetMaskingPolicyHealthReportResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -95,6 +101,14 @@ class GetMaskingPolicyHealthReportResult:
         The display name of the health report.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="errorCount")
+    def error_count(self) -> str:
+        """
+        The count of errors in the masking health report.
+        """
+        return pulumi.get(self, "error_count")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -157,6 +171,14 @@ class GetMaskingPolicyHealthReportResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="warningCount")
+    def warning_count(self) -> str:
+        """
+        The count of warnings in the masking health report.
+        """
+        return pulumi.get(self, "warning_count")
+
 
 class AwaitableGetMaskingPolicyHealthReportResult(GetMaskingPolicyHealthReportResult):
     # pylint: disable=using-constant-test
@@ -168,6 +190,7 @@ class AwaitableGetMaskingPolicyHealthReportResult(GetMaskingPolicyHealthReportRe
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            error_count=self.error_count,
             freeform_tags=self.freeform_tags,
             id=self.id,
             masking_policy_health_report_id=self.masking_policy_health_report_id,
@@ -175,7 +198,8 @@ class AwaitableGetMaskingPolicyHealthReportResult(GetMaskingPolicyHealthReportRe
             state=self.state,
             target_id=self.target_id,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            warning_count=self.warning_count)
 
 
 def get_masking_policy_health_report(masking_policy_health_report_id: Optional[str] = None,
@@ -207,6 +231,7 @@ def get_masking_policy_health_report(masking_policy_health_report_id: Optional[s
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        error_count=pulumi.get(__ret__, 'error_count'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         masking_policy_health_report_id=pulumi.get(__ret__, 'masking_policy_health_report_id'),
@@ -214,7 +239,8 @@ def get_masking_policy_health_report(masking_policy_health_report_id: Optional[s
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        warning_count=pulumi.get(__ret__, 'warning_count'))
 def get_masking_policy_health_report_output(masking_policy_health_report_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyHealthReportResult]:
     """
@@ -243,6 +269,7 @@ def get_masking_policy_health_report_output(masking_policy_health_report_id: Opt
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        error_count=pulumi.get(__response__, 'error_count'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         masking_policy_health_report_id=pulumi.get(__response__, 'masking_policy_health_report_id'),
@@ -250,4 +277,5 @@ def get_masking_policy_health_report_output(masking_policy_health_report_id: Opt
         state=pulumi.get(__response__, 'state'),
         target_id=pulumi.get(__response__, 'target_id'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        warning_count=pulumi.get(__response__, 'warning_count')))

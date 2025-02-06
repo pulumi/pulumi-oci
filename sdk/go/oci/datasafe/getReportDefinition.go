@@ -72,7 +72,7 @@ type LookupReportDefinitionResult struct {
 	ComplianceStandards []string `pulumi:"complianceStandards"`
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource string `pulumi:"dataSource"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the report definition.
 	Description string `pulumi:"description"`
@@ -186,7 +186,7 @@ func (o LookupReportDefinitionResultOutput) DataSource() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.DataSource }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o LookupReportDefinitionResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

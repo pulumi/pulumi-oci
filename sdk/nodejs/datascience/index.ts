@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetContainersArgs, GetContainersResult, GetContainersOutputArgs } from "./getContainers";
+export const getContainers: typeof import("./getContainers").getContainers = null as any;
+export const getContainersOutput: typeof import("./getContainers").getContainersOutput = null as any;
+utilities.lazyLoad(exports, ["getContainers","getContainersOutput"], () => require("./getContainers"));
+
 export { GetFastLaunchJobConfigsArgs, GetFastLaunchJobConfigsResult, GetFastLaunchJobConfigsOutputArgs } from "./getFastLaunchJobConfigs";
 export const getFastLaunchJobConfigs: typeof import("./getFastLaunchJobConfigs").getFastLaunchJobConfigs = null as any;
 export const getFastLaunchJobConfigsOutput: typeof import("./getFastLaunchJobConfigs").getFastLaunchJobConfigsOutput = null as any;
@@ -130,6 +135,16 @@ export const getProjects: typeof import("./getProjects").getProjects = null as a
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
 
+export { GetScheduleArgs, GetScheduleResult, GetScheduleOutputArgs } from "./getSchedule";
+export const getSchedule: typeof import("./getSchedule").getSchedule = null as any;
+export const getScheduleOutput: typeof import("./getSchedule").getScheduleOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedule","getScheduleOutput"], () => require("./getSchedule"));
+
+export { GetSchedulesArgs, GetSchedulesResult, GetSchedulesOutputArgs } from "./getSchedules";
+export const getSchedules: typeof import("./getSchedules").getSchedules = null as any;
+export const getSchedulesOutput: typeof import("./getSchedules").getSchedulesOutput = null as any;
+utilities.lazyLoad(exports, ["getSchedules","getSchedulesOutput"], () => require("./getSchedules"));
+
 export { JobArgs, JobState } from "./job";
 export type Job = import("./job").Job;
 export const Job: typeof import("./job").Job = null as any;
@@ -195,6 +210,11 @@ export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
 
+export { ScheduleArgs, ScheduleState } from "./schedule";
+export type Schedule = import("./schedule").Schedule;
+export const Schedule: typeof import("./schedule").Schedule = null as any;
+utilities.lazyLoad(exports, ["Schedule"], () => require("./schedule"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -226,6 +246,8 @@ const _module = {
                 return new PrivateEndpoint(name, <any>undefined, { urn })
             case "oci:DataScience/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "oci:DataScience/schedule:Schedule":
+                return new Schedule(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -244,3 +266,4 @@ pulumi.runtime.registerResourceModule("oci", "DataScience/pipeline", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/pipelineRun", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/privateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/project", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/schedule", _module)

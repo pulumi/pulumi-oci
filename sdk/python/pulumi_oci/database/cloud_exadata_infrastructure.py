@@ -241,6 +241,7 @@ class _CloudExadataInfrastructureState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_scheduling_policy_associated: Optional[pulumi.Input[bool]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
@@ -278,6 +279,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -334,6 +336,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_scheduling_policy_associated is not None:
+            pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         if last_maintenance_run_id is not None:
             pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         if lifecycle_details is not None:
@@ -564,6 +568,18 @@ class _CloudExadataInfrastructureState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
+
+    @is_scheduling_policy_associated.setter
+    def is_scheduling_policy_associated(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_scheduling_policy_associated", value)
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
@@ -1011,6 +1027,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["db_server_version"] = None
             __props__.__dict__["defined_file_system_configurations"] = None
+            __props__.__dict__["is_scheduling_policy_associated"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["max_cpu_count"] = None
@@ -1052,6 +1069,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_scheduling_policy_associated: Optional[pulumi.Input[bool]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
@@ -1094,6 +1112,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -1138,6 +1157,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_scheduling_policy_associated"] = is_scheduling_policy_associated
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_window"] = maintenance_window
@@ -1286,6 +1306,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isSchedulingPolicyAssociated")
+    def is_scheduling_policy_associated(self) -> pulumi.Output[bool]:
+        """
+        If true, the infrastructure is using granular maintenance scheduling preference.
+        """
+        return pulumi.get(self, "is_scheduling_policy_associated")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")

@@ -20817,7 +20817,7 @@ export namespace DataSafe {
          */
         compartmentId?: pulumi.Input<string>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -20825,7 +20825,7 @@ export namespace DataSafe {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
+         * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -21277,6 +21277,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMaskingPolicyReferentialRelationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaskingPolicyReferentialRelationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMaskingReportMaskedColumnsFilter {
         name: string;
         regex?: boolean;
@@ -21535,6 +21547,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSensitiveDataModelReferentialRelationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveDataModelReferentialRelationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSensitiveDataModelSensitiveObjectsFilter {
         name: string;
         regex?: boolean;
@@ -21590,6 +21614,18 @@ export namespace DataSafe {
     }
 
     export interface GetSensitiveDataModelsSensitiveColumnsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSensitiveTypesExportsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveTypesExportsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -21811,6 +21847,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetUserAssessmentPasswordExpiryDateAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetUserAssessmentProfileAnalyticsFilter {
         name: string;
         regex?: boolean;
@@ -21945,7 +21993,7 @@ export namespace DataSafe {
          */
         regularExpression?: pulumi.Input<string>;
         /**
-         * (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+         * (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
          */
         replaceWith?: pulumi.Input<string>;
         /**
@@ -22063,7 +22111,7 @@ export namespace DataSafe {
          */
         regularExpression?: pulumi.Input<string>;
         /**
-         * (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
+         * (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
          */
         replaceWith?: pulumi.Input<string>;
         /**
@@ -22491,6 +22539,60 @@ export namespace DataSafe {
         userAccountsFindingsCount?: pulumi.Input<number>;
     }
 
+    export interface SensitiveDataModelReferentialRelationChild {
+        /**
+         * The application name.
+         */
+        appName: pulumi.Input<string>;
+        /**
+         * Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+         */
+        columnGroups: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The database object that contains the columns.
+         */
+        object: pulumi.Input<string>;
+        /**
+         * The type of the database object that contains the sensitive column.
+         */
+        objectType: pulumi.Input<string>;
+        /**
+         * The schema name.
+         */
+        schemaName: pulumi.Input<string>;
+        /**
+         * Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+         */
+        sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface SensitiveDataModelReferentialRelationParent {
+        /**
+         * The application name.
+         */
+        appName: pulumi.Input<string>;
+        /**
+         * Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+         */
+        columnGroups: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The database object that contains the columns.
+         */
+        object: pulumi.Input<string>;
+        /**
+         * The type of the database object that contains the sensitive column.
+         */
+        objectType: pulumi.Input<string>;
+        /**
+         * The schema name.
+         */
+        schemaName: pulumi.Input<string>;
+        /**
+         * Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+         */
+        sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface SensitiveDataModelTablesForDiscovery {
         /**
          * (Updatable) This contains the name of the schema.
@@ -22848,6 +22950,18 @@ export namespace DataSafe {
 }
 
 export namespace DataScience {
+    export interface GetContainersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetContainersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetFastLaunchJobConfigsFilter {
         /**
          * The name of the fast launch job config
@@ -23041,6 +23155,24 @@ export namespace DataScience {
     }
 
     export interface GetProjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulesFilter {
+        /**
+         * Name of trigger parameter
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulesFilterArgs {
+        /**
+         * Name of trigger parameter
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -24214,6 +24346,354 @@ export namespace DataScience {
          * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus?: pulumi.Input<number>;
+    }
+
+    export interface ScheduleAction {
+        /**
+         * (Updatable) Schedule Http action details
+         */
+        actionDetails: pulumi.Input<inputs.DataScience.ScheduleActionActionDetails>;
+        /**
+         * (Updatable) The Schedule Action type
+         */
+        actionType: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetails {
+        /**
+         * (Updatable) Parameters needed to create a new job run.
+         */
+        createJobRunDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreateJobRunDetails>;
+        /**
+         * (Updatable) The information about new PipelineRun.
+         */
+        createPipelineRunDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreatePipelineRunDetails>;
+        /**
+         * (Updatable) The type of http action to trigger.
+         */
+        httpActionType: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+         */
+        mlApplicationInstanceViewId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Payload for trigger request endpoint
+         */
+        triggerMlApplicationInstanceViewFlowDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails>;
+    }
+
+    export interface ScheduleActionActionDetailsCreateJobRunDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) A user-friendly display name for the resource.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The job configuration details
+         */
+        jobConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails>;
+        /**
+         * (Updatable) Environment configuration to capture job runtime dependencies.
+         */
+        jobEnvironmentConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+         */
+        jobId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Logging configuration for resource.
+         */
+        jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+         */
+        projectId?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails {
+        /**
+         * (Updatable) The arguments to pass to the job.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * (Updatable) Environment variables to set for the job.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The type of job.
+         */
+        jobType: pulumi.Input<string>;
+        /**
+         * (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails {
+        /**
+         * (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+         */
+        image: pulumi.Input<string>;
+        /**
+         * (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The environment configuration type used for job runtime.
+         */
+        jobEnvironmentType: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails {
+        /**
+         * (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+         */
+        enableAutoLogCreation?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If customer logging is enabled for job runs.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The log group id for where log objects are for job runs.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The log id the job run will push logs too.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreatePipelineRunDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The configuration details of a pipeline.
+         */
+        configurationOverrideDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) A user-friendly display name for the resource.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The pipeline log configuration details.
+         */
+        logConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+         */
+        pipelineId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+         */
+        projectId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+         */
+        stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail>[]>;
+        /**
+         * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails {
+        /**
+         * (Updatable) The command line arguments to set for steps in the pipeline.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * (Updatable) Environment variables to set for steps in the pipeline.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of pipeline.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails {
+        /**
+         * (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+         */
+        enableAutoLogCreation?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If customer logging is enabled for pipeline.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail {
+        /**
+         * (Updatable) The configuration details of a step.
+         */
+        stepConfigurationDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails>;
+        /**
+         * (Updatable) Container Details for a step in pipeline.
+         */
+        stepContainerConfigurationDetails?: pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails>;
+        /**
+         * (Updatable) The name of the step.
+         */
+        stepName?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails {
+        /**
+         * (Updatable) The command line arguments to set for step.
+         */
+        commandLineArguments?: pulumi.Input<string>;
+        /**
+         * (Updatable) Environment variables to set for step.
+         */
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) A time bound for the execution of the step.
+         */
+        maximumRuntimeInMinutes?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails {
+        /**
+         * (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The type of container.
+         */
+        containerType: pulumi.Input<string>;
+        /**
+         * (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+         */
+        image: pulumi.Input<string>;
+        /**
+         * (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails {
+        /**
+         * (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+         */
+        parameters?: pulumi.Input<pulumi.Input<inputs.DataScience.ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter>[]>;
+        /**
+         * (Updatable) Name of trigger
+         */
+        triggerName?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter {
+        /**
+         * (Updatable) Name of trigger parameter
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of trigger parameter
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleLogDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+         */
+        logId: pulumi.Input<string>;
+    }
+
+    export interface ScheduleTrigger {
+        /**
+         * (Updatable) Schedule cron expression
+         */
+        cronExpression?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of frequency
+         */
+        frequency?: pulumi.Input<string>;
+        /**
+         * (Updatable) The interval of frequency.
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+         */
+        isRandomStartTime?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) This recurrence field conforms to RFC-5545 formatting
+         */
+        recurrence?: pulumi.Input<string>;
+        /**
+         * (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeEnd?: pulumi.Input<string>;
+        /**
+         * (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeStart?: pulumi.Input<string>;
+        /**
+         * (Updatable) The schedule trigger type
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        triggerType: pulumi.Input<string>;
     }
 }
 
@@ -27060,6 +27540,36 @@ export namespace Database {
         totalSizeInGbs: pulumi.Input<number>;
     }
 
+    export interface ExecutionActionActionMember {
+        /**
+         * (Updatable) The estimated time of the execution action member in minutes.
+         */
+        estimatedTimeInMins?: pulumi.Input<number>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+         */
+        memberId: pulumi.Input<string>;
+        /**
+         * (Updatable) The priority order of the execution action member.
+         */
+        memberOrder: pulumi.Input<number>;
+        /**
+         * (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+         * * SCHEDULED
+         * * IN_PROGRESS
+         * * FAILED
+         * * CANCELED
+         * * DURATION_EXCEEDED
+         * * RESCHEDULED
+         * * SUCCEEDED
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) The total time taken by corresponding resource activity in minutes.
+         */
+        totalTimeTakenInMins?: pulumi.Input<number>;
+    }
+
     export interface ExternalContainerDatabaseDatabaseManagementConfig {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -27904,6 +28414,30 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetExecutionActionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExecutionActionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExecutionWindowsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExecutionWindowsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetExternalContainerDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -28049,6 +28583,90 @@ export namespace Database {
     }
 
     export interface GetPluggableDatabasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetScheduledActionParamsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetScheduledActionParamsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetScheduledActionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetScheduledActionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulingPlansFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulingPlansFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulingPoliciesFilter {
+        /**
+         * Name of the month of the year.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulingPoliciesFilterArgs {
+        /**
+         * Name of the month of the year.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulingPolicyRecommendedScheduledActionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulingPolicyRecommendedScheduledActionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulingPolicySchedulingWindowsFilter {
+        /**
+         * Name of the month of the year.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulingPolicySchedulingWindowsFilterArgs {
+        /**
+         * Name of the month of the year.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -28462,6 +29080,73 @@ export namespace Database {
          * Indicates whether the Pluggable Database is a refreshable clone.
          */
         isRefreshableClone?: pulumi.Input<boolean>;
+    }
+
+    export interface ScheduledActionActionMember {
+        /**
+         * (Updatable) The estimated time for the intended action member.
+         */
+        estimatedTimeInMins?: pulumi.Input<number>;
+        /**
+         * (Updatable) The ocid of the action member.
+         */
+        memberId: pulumi.Input<string>;
+        /**
+         * (Updatable) The order of the action member in a scheduled action.
+         */
+        memberOrder: pulumi.Input<number>;
+    }
+
+    export interface SchedulingPolicyCadenceStartMonth {
+        /**
+         * (Updatable) Name of the month of the year.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface SchedulingPolicySchedulingWindowWindowPreference {
+        /**
+         * (Updatable) Days during the week when scheduling window should be performed.
+         */
+        daysOfWeeks: pulumi.Input<pulumi.Input<inputs.Database.SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek>[]>;
+        /**
+         * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+         */
+        duration: pulumi.Input<number>;
+        /**
+         * (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+         */
+        isEnforcedDuration: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Months during the year when scheduled window should be performed.
+         */
+        months: pulumi.Input<pulumi.Input<inputs.Database.SchedulingPolicySchedulingWindowWindowPreferenceMonth>[]>;
+        /**
+         * (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        startTime: pulumi.Input<string>;
+        /**
+         * (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        weeksOfMonths: pulumi.Input<pulumi.Input<number>[]>;
+    }
+
+    export interface SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeek {
+        /**
+         * (Updatable) Name of the day of the week.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface SchedulingPolicySchedulingWindowWindowPreferenceMonth {
+        /**
+         * (Updatable) Name of the month of the year.
+         */
+        name: pulumi.Input<string>;
     }
 
     export interface VmClusterAddVirtualNetworkCloudAutomationUpdateDetail {
@@ -73214,6 +73899,10 @@ export namespace Mysql {
          */
         portX?: pulumi.Input<number>;
         /**
+         * The read endpoint of a DB System.
+         */
+        readEndpoints?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotReadEndpoint>[]>;
+        /**
          * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
          */
         region?: pulumi.Input<string>;
@@ -73241,7 +73930,7 @@ export namespace Mysql {
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * Specifies if PITR is enabled or disabled.
+         * Specifies if the DB System read endpoint is enabled or not.
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
@@ -73260,7 +73949,7 @@ export namespace Mysql {
 
     export interface MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
         /**
-         * Specifies if PITR is enabled or disabled.
+         * Specifies if the DB System read endpoint is enabled or not.
          */
         isEnabled?: pulumi.Input<boolean>;
     }
@@ -73347,6 +74036,25 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotReadEndpoint {
+        /**
+         * A list of IP addresses of read replicas that are excluded from serving read requests.
+         */
+        excludeIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Specifies if the DB System read endpoint is enabled or not.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the read endpoint of the DB System. Used for DNS.
+         */
+        readEndpointHostnameLabel?: pulumi.Input<string>;
+        /**
+         * The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+         */
+        readEndpointIpAddress?: pulumi.Input<string>;
     }
 
     export interface MysqlBackupDbSystemSnapshotSecureConnection {
@@ -73896,7 +74604,7 @@ export namespace Mysql {
          */
         id?: pulumi.Input<string>;
         /**
-         * Whether the Channel has been enabled by the user.
+         * Specifies if the DB System read endpoint is enabled or not.
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
@@ -74187,6 +74895,29 @@ export namespace Mysql {
          * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          */
         timeLatestRecoveryPoint?: pulumi.Input<string>;
+    }
+
+    export interface MysqlDbSystemReadEndpoint {
+        /**
+         * (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
+         */
+        excludeIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Specifies if the DB System read endpoint is enabled or not.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The hostname for the read endpoint of the DB System. Used for DNS.
+         *
+         * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)  (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+         *
+         * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+         */
+        readEndpointHostnameLabel?: pulumi.Input<string>;
+        /**
+         * (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+         */
+        readEndpointIpAddress?: pulumi.Input<string>;
     }
 
     export interface MysqlDbSystemSecureConnections {

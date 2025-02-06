@@ -185,6 +185,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+     * 
+     */
+    @Import(name="isMaintenanceRunGranular")
+    private @Nullable Output<Boolean> isMaintenanceRunGranular;
+
+    /**
+     * @return If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+     * 
+     */
+    public Optional<Output<Boolean>> isMaintenanceRunGranular() {
+        return Optional.ofNullable(this.isMaintenanceRunGranular);
+    }
+
+    /**
      * Additional information about the current lifecycle state.
      * 
      */
@@ -479,6 +494,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.timeStarted);
     }
 
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     * 
+     */
+    @Import(name="totalTimeTakenInMins")
+    private @Nullable Output<Integer> totalTimeTakenInMins;
+
+    /**
+     * @return The total time taken by corresponding resource activity in minutes.
+     * 
+     */
+    public Optional<Output<Integer>> totalTimeTakenInMins() {
+        return Optional.ofNullable(this.totalTimeTakenInMins);
+    }
+
     private MaintenanceRunState() {}
 
     private MaintenanceRunState(MaintenanceRunState $) {
@@ -493,6 +523,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.estimatedPatchingTimes = $.estimatedPatchingTimes;
         this.isCustomActionTimeoutEnabled = $.isCustomActionTimeoutEnabled;
         this.isDstFileUpdateEnabled = $.isDstFileUpdateEnabled;
+        this.isMaintenanceRunGranular = $.isMaintenanceRunGranular;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceSubtype = $.maintenanceSubtype;
         this.maintenanceType = $.maintenanceType;
@@ -512,6 +543,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.timeEnded = $.timeEnded;
         this.timeScheduled = $.timeScheduled;
         this.timeStarted = $.timeStarted;
+        this.totalTimeTakenInMins = $.totalTimeTakenInMins;
     }
 
     public static Builder builder() {
@@ -771,6 +803,27 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
          */
         public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
             return isDstFileUpdateEnabled(Output.of(isDstFileUpdateEnabled));
+        }
+
+        /**
+         * @param isMaintenanceRunGranular If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceRunGranular(@Nullable Output<Boolean> isMaintenanceRunGranular) {
+            $.isMaintenanceRunGranular = isMaintenanceRunGranular;
+            return this;
+        }
+
+        /**
+         * @param isMaintenanceRunGranular If `FALSE`, the maintenance run doesn&#39;t support granular maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceRunGranular(Boolean isMaintenanceRunGranular) {
+            return isMaintenanceRunGranular(Output.of(isMaintenanceRunGranular));
         }
 
         /**
@@ -1180,6 +1233,27 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
          */
         public Builder timeStarted(String timeStarted) {
             return timeStarted(Output.of(timeStarted));
+        }
+
+        /**
+         * @param totalTimeTakenInMins The total time taken by corresponding resource activity in minutes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalTimeTakenInMins(@Nullable Output<Integer> totalTimeTakenInMins) {
+            $.totalTimeTakenInMins = totalTimeTakenInMins;
+            return this;
+        }
+
+        /**
+         * @param totalTimeTakenInMins The total time taken by corresponding resource activity in minutes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
+            return totalTimeTakenInMins(Output.of(totalTimeTakenInMins));
         }
 
         public MaintenanceRunState build() {

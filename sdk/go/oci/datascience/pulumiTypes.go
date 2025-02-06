@@ -9931,6 +9931,3973 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetai
 	}).(pulumi.Float64PtrOutput)
 }
 
+type ScheduleAction struct {
+	// (Updatable) Schedule Http action details
+	ActionDetails ScheduleActionActionDetails `pulumi:"actionDetails"`
+	// (Updatable) The Schedule Action type
+	ActionType string `pulumi:"actionType"`
+}
+
+// ScheduleActionInput is an input type that accepts ScheduleActionArgs and ScheduleActionOutput values.
+// You can construct a concrete instance of `ScheduleActionInput` via:
+//
+//	ScheduleActionArgs{...}
+type ScheduleActionInput interface {
+	pulumi.Input
+
+	ToScheduleActionOutput() ScheduleActionOutput
+	ToScheduleActionOutputWithContext(context.Context) ScheduleActionOutput
+}
+
+type ScheduleActionArgs struct {
+	// (Updatable) Schedule Http action details
+	ActionDetails ScheduleActionActionDetailsInput `pulumi:"actionDetails"`
+	// (Updatable) The Schedule Action type
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+}
+
+func (ScheduleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleAction)(nil)).Elem()
+}
+
+func (i ScheduleActionArgs) ToScheduleActionOutput() ScheduleActionOutput {
+	return i.ToScheduleActionOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionArgs) ToScheduleActionOutputWithContext(ctx context.Context) ScheduleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionOutput)
+}
+
+func (i ScheduleActionArgs) ToScheduleActionPtrOutput() ScheduleActionPtrOutput {
+	return i.ToScheduleActionPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionArgs) ToScheduleActionPtrOutputWithContext(ctx context.Context) ScheduleActionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionOutput).ToScheduleActionPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionPtrInput is an input type that accepts ScheduleActionArgs, ScheduleActionPtr and ScheduleActionPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionPtrInput` via:
+//
+//	        ScheduleActionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionPtrOutput() ScheduleActionPtrOutput
+	ToScheduleActionPtrOutputWithContext(context.Context) ScheduleActionPtrOutput
+}
+
+type scheduleActionPtrType ScheduleActionArgs
+
+func ScheduleActionPtr(v *ScheduleActionArgs) ScheduleActionPtrInput {
+	return (*scheduleActionPtrType)(v)
+}
+
+func (*scheduleActionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleAction)(nil)).Elem()
+}
+
+func (i *scheduleActionPtrType) ToScheduleActionPtrOutput() ScheduleActionPtrOutput {
+	return i.ToScheduleActionPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionPtrType) ToScheduleActionPtrOutputWithContext(ctx context.Context) ScheduleActionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionPtrOutput)
+}
+
+type ScheduleActionOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleAction)(nil)).Elem()
+}
+
+func (o ScheduleActionOutput) ToScheduleActionOutput() ScheduleActionOutput {
+	return o
+}
+
+func (o ScheduleActionOutput) ToScheduleActionOutputWithContext(ctx context.Context) ScheduleActionOutput {
+	return o
+}
+
+func (o ScheduleActionOutput) ToScheduleActionPtrOutput() ScheduleActionPtrOutput {
+	return o.ToScheduleActionPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionOutput) ToScheduleActionPtrOutputWithContext(ctx context.Context) ScheduleActionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleAction) *ScheduleAction {
+		return &v
+	}).(ScheduleActionPtrOutput)
+}
+
+// (Updatable) Schedule Http action details
+func (o ScheduleActionOutput) ActionDetails() ScheduleActionActionDetailsOutput {
+	return o.ApplyT(func(v ScheduleAction) ScheduleActionActionDetails { return v.ActionDetails }).(ScheduleActionActionDetailsOutput)
+}
+
+// (Updatable) The Schedule Action type
+func (o ScheduleActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleAction) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+type ScheduleActionPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleAction)(nil)).Elem()
+}
+
+func (o ScheduleActionPtrOutput) ToScheduleActionPtrOutput() ScheduleActionPtrOutput {
+	return o
+}
+
+func (o ScheduleActionPtrOutput) ToScheduleActionPtrOutputWithContext(ctx context.Context) ScheduleActionPtrOutput {
+	return o
+}
+
+func (o ScheduleActionPtrOutput) Elem() ScheduleActionOutput {
+	return o.ApplyT(func(v *ScheduleAction) ScheduleAction {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleAction
+		return ret
+	}).(ScheduleActionOutput)
+}
+
+// (Updatable) Schedule Http action details
+func (o ScheduleActionPtrOutput) ActionDetails() ScheduleActionActionDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleAction) *ScheduleActionActionDetails {
+		if v == nil {
+			return nil
+		}
+		return &v.ActionDetails
+	}).(ScheduleActionActionDetailsPtrOutput)
+}
+
+// (Updatable) The Schedule Action type
+func (o ScheduleActionPtrOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleAction) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ActionType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetails struct {
+	// (Updatable) Parameters needed to create a new job run.
+	CreateJobRunDetails *ScheduleActionActionDetailsCreateJobRunDetails `pulumi:"createJobRunDetails"`
+	// (Updatable) The information about new PipelineRun.
+	CreatePipelineRunDetails *ScheduleActionActionDetailsCreatePipelineRunDetails `pulumi:"createPipelineRunDetails"`
+	// (Updatable) The type of http action to trigger.
+	HttpActionType string `pulumi:"httpActionType"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	MlApplicationInstanceViewId *string `pulumi:"mlApplicationInstanceViewId"`
+	// (Updatable) Payload for trigger request endpoint
+	TriggerMlApplicationInstanceViewFlowDetails *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails `pulumi:"triggerMlApplicationInstanceViewFlowDetails"`
+}
+
+// ScheduleActionActionDetailsInput is an input type that accepts ScheduleActionActionDetailsArgs and ScheduleActionActionDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsInput` via:
+//
+//	ScheduleActionActionDetailsArgs{...}
+type ScheduleActionActionDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsOutput() ScheduleActionActionDetailsOutput
+	ToScheduleActionActionDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsOutput
+}
+
+type ScheduleActionActionDetailsArgs struct {
+	// (Updatable) Parameters needed to create a new job run.
+	CreateJobRunDetails ScheduleActionActionDetailsCreateJobRunDetailsPtrInput `pulumi:"createJobRunDetails"`
+	// (Updatable) The information about new PipelineRun.
+	CreatePipelineRunDetails ScheduleActionActionDetailsCreatePipelineRunDetailsPtrInput `pulumi:"createPipelineRunDetails"`
+	// (Updatable) The type of http action to trigger.
+	HttpActionType pulumi.StringInput `pulumi:"httpActionType"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	MlApplicationInstanceViewId pulumi.StringPtrInput `pulumi:"mlApplicationInstanceViewId"`
+	// (Updatable) Payload for trigger request endpoint
+	TriggerMlApplicationInstanceViewFlowDetails ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrInput `pulumi:"triggerMlApplicationInstanceViewFlowDetails"`
+}
+
+func (ScheduleActionActionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsArgs) ToScheduleActionActionDetailsOutput() ScheduleActionActionDetailsOutput {
+	return i.ToScheduleActionActionDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsArgs) ToScheduleActionActionDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsArgs) ToScheduleActionActionDetailsPtrOutput() ScheduleActionActionDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsArgs) ToScheduleActionActionDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsOutput).ToScheduleActionActionDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsArgs, ScheduleActionActionDetailsPtr and ScheduleActionActionDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsPtrOutput() ScheduleActionActionDetailsPtrOutput
+	ToScheduleActionActionDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsPtrType ScheduleActionActionDetailsArgs
+
+func ScheduleActionActionDetailsPtr(v *ScheduleActionActionDetailsArgs) ScheduleActionActionDetailsPtrInput {
+	return (*scheduleActionActionDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsPtrType) ToScheduleActionActionDetailsPtrOutput() ScheduleActionActionDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsPtrType) ToScheduleActionActionDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsOutput) ToScheduleActionActionDetailsOutput() ScheduleActionActionDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsOutput) ToScheduleActionActionDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsOutput) ToScheduleActionActionDetailsPtrOutput() ScheduleActionActionDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsOutput) ToScheduleActionActionDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetails) *ScheduleActionActionDetails {
+		return &v
+	}).(ScheduleActionActionDetailsPtrOutput)
+}
+
+// (Updatable) Parameters needed to create a new job run.
+func (o ScheduleActionActionDetailsOutput) CreateJobRunDetails() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetails) *ScheduleActionActionDetailsCreateJobRunDetails {
+		return v.CreateJobRunDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput)
+}
+
+// (Updatable) The information about new PipelineRun.
+func (o ScheduleActionActionDetailsOutput) CreatePipelineRunDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetails) *ScheduleActionActionDetailsCreatePipelineRunDetails {
+		return v.CreatePipelineRunDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput)
+}
+
+// (Updatable) The type of http action to trigger.
+func (o ScheduleActionActionDetailsOutput) HttpActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetails) string { return v.HttpActionType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+func (o ScheduleActionActionDetailsOutput) MlApplicationInstanceViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetails) *string { return v.MlApplicationInstanceViewId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Payload for trigger request endpoint
+func (o ScheduleActionActionDetailsOutput) TriggerMlApplicationInstanceViewFlowDetails() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetails) *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails {
+		return v.TriggerMlApplicationInstanceViewFlowDetails
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsPtrOutput) ToScheduleActionActionDetailsPtrOutput() ScheduleActionActionDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsPtrOutput) ToScheduleActionActionDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsPtrOutput) Elem() ScheduleActionActionDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetails) ScheduleActionActionDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetails
+		return ret
+	}).(ScheduleActionActionDetailsOutput)
+}
+
+// (Updatable) Parameters needed to create a new job run.
+func (o ScheduleActionActionDetailsPtrOutput) CreateJobRunDetails() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetails) *ScheduleActionActionDetailsCreateJobRunDetails {
+		if v == nil {
+			return nil
+		}
+		return v.CreateJobRunDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput)
+}
+
+// (Updatable) The information about new PipelineRun.
+func (o ScheduleActionActionDetailsPtrOutput) CreatePipelineRunDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetails) *ScheduleActionActionDetailsCreatePipelineRunDetails {
+		if v == nil {
+			return nil
+		}
+		return v.CreatePipelineRunDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput)
+}
+
+// (Updatable) The type of http action to trigger.
+func (o ScheduleActionActionDetailsPtrOutput) HttpActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.HttpActionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+func (o ScheduleActionActionDetailsPtrOutput) MlApplicationInstanceViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MlApplicationInstanceViewId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Payload for trigger request endpoint
+func (o ScheduleActionActionDetailsPtrOutput) TriggerMlApplicationInstanceViewFlowDetails() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetails) *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerMlApplicationInstanceViewFlowDetails
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetails struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) A user-friendly display name for the resource.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The job configuration details
+	JobConfigurationOverrideDetails *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails `pulumi:"jobConfigurationOverrideDetails"`
+	// (Updatable) Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+	JobId *string `pulumi:"jobId"`
+	// (Updatable) Logging configuration for resource.
+	JobLogConfigurationOverrideDetails *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+	ProjectId *string `pulumi:"projectId"`
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsArgs and ScheduleActionActionDetailsCreateJobRunDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreateJobRunDetailsArgs{...}
+type ScheduleActionActionDetailsCreateJobRunDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// (Updatable) A user-friendly display name for the resource.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// (Updatable) The job configuration details
+	JobConfigurationOverrideDetails ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrInput `pulumi:"jobConfigurationOverrideDetails"`
+	// (Updatable) Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrInput `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+	JobId pulumi.StringPtrInput `pulumi:"jobId"`
+	// (Updatable) Logging configuration for resource.
+	JobLogConfigurationOverrideDetails ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrInput `pulumi:"jobLogConfigurationOverrideDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+}
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsOutput).ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsArgs, ScheduleActionActionDetailsCreateJobRunDetailsPtr and ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreateJobRunDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreateJobRunDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreateJobRunDetailsPtrType ScheduleActionActionDetailsCreateJobRunDetailsArgs
+
+func ScheduleActionActionDetailsCreateJobRunDetailsPtr(v *ScheduleActionActionDetailsCreateJobRunDetailsArgs) ScheduleActionActionDetailsCreateJobRunDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreateJobRunDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreateJobRunDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A user-friendly display name for the resource.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The job configuration details
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) JobConfigurationOverrideDetails() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails {
+		return v.JobConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) Environment configuration to capture job runtime dependencies.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) JobEnvironmentConfigurationOverrideDetails() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails {
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) JobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *string { return v.JobId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Logging configuration for resource.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) JobLogConfigurationOverrideDetails() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails {
+		return v.JobLogConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetails) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreateJobRunDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) ScheduleActionActionDetailsCreateJobRunDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreateJobRunDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A user-friendly display name for the resource.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The job configuration details
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) JobConfigurationOverrideDetails() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails {
+		if v == nil {
+			return nil
+		}
+		return v.JobConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) Environment configuration to capture job runtime dependencies.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) JobEnvironmentConfigurationOverrideDetails() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails {
+		if v == nil {
+			return nil
+		}
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) JobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JobId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Logging configuration for resource.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) JobLogConfigurationOverrideDetails() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails {
+		if v == nil {
+			return nil
+		}
+		return v.JobLogConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails struct {
+	// (Updatable) The arguments to pass to the job.
+	CommandLineArguments *string `pulumi:"commandLineArguments"`
+	// (Updatable) Environment variables to set for the job.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// (Updatable) The type of job.
+	JobType string `pulumi:"jobType"`
+	// (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs and ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs{...}
+type ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs struct {
+	// (Updatable) The arguments to pass to the job.
+	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
+	// (Updatable) Environment variables to set for the job.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// (Updatable) The type of job.
+	JobType pulumi.StringInput `pulumi:"jobType"`
+	// (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput).ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs, ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtr and ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrType ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs
+
+func ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtr(v *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The arguments to pass to the job.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) CommandLineArguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) *string {
+		return v.CommandLineArguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for the job.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The type of job.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) JobType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) string {
+		return v.JobType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) *string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput)
+}
+
+// (Updatable) The arguments to pass to the job.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) CommandLineArguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CommandLineArguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for the job.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The type of job.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) JobType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.JobType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails struct {
+	// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image string `pulumi:"image"`
+	// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// (Updatable) OCID of the container image signature
+	ImageSignatureId *string `pulumi:"imageSignatureId"`
+	// (Updatable) The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs and ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs{...}
+type ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs struct {
+	// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+	Image pulumi.StringInput `pulumi:"image"`
+	// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// (Updatable) OCID of the container image signature
+	ImageSignatureId pulumi.StringPtrInput `pulumi:"imageSignatureId"`
+	// (Updatable) The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput).ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs, ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtr and ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrType ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs
+
+func ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtr(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *string {
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the container image signature
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *string {
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The environment configuration type used for job runtime.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) string {
+		return v.JobEnvironmentType
+	}).(pulumi.StringOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput)
+}
+
+// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the container image signature
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The environment configuration type used for job runtime.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput) JobEnvironmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.JobEnvironmentType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails struct {
+	// (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+	EnableAutoLogCreation *bool `pulumi:"enableAutoLogCreation"`
+	// (Updatable) If customer logging is enabled for job runs.
+	EnableLogging *bool `pulumi:"enableLogging"`
+	// (Updatable) The log group id for where log objects are for job runs.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) The log id the job run will push logs too.
+	LogId *string `pulumi:"logId"`
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs and ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs{...}
+type ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs struct {
+	// (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+	EnableAutoLogCreation pulumi.BoolPtrInput `pulumi:"enableAutoLogCreation"`
+	// (Updatable) If customer logging is enabled for job runs.
+	EnableLogging pulumi.BoolPtrInput `pulumi:"enableLogging"`
+	// (Updatable) The log group id for where log objects are for job runs.
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
+	// (Updatable) The log id the job run will push logs too.
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
+}
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput).ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs, ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtr and ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput
+	ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrType ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs
+
+func ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtr(v *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) EnableAutoLogCreation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *bool {
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If customer logging is enabled for job runs.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *bool {
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The log group id for where log objects are for job runs.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *string {
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The log id the job run will push logs too.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *string {
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput)
+}
+
+// (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) EnableAutoLogCreation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If customer logging is enabled for job runs.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The log group id for where log objects are for job runs.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The log id the job run will push logs too.
+func (o ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetails struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The configuration details of a pipeline.
+	ConfigurationOverrideDetails *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails `pulumi:"configurationOverrideDetails"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) A user-friendly display name for the resource.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The pipeline log configuration details.
+	LogConfigurationOverrideDetails *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails `pulumi:"logConfigurationOverrideDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+	PipelineId *string `pulumi:"pipelineId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+	ProjectId *string `pulumi:"projectId"`
+	// (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+	StepOverrideDetails []ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail `pulumi:"stepOverrideDetails"`
+	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsArgs and ScheduleActionActionDetailsCreatePipelineRunDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsArgs{...}
+type ScheduleActionActionDetailsCreatePipelineRunDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) The configuration details of a pipeline.
+	ConfigurationOverrideDetails ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrInput `pulumi:"configurationOverrideDetails"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// (Updatable) A user-friendly display name for the resource.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// (Updatable) The pipeline log configuration details.
+	LogConfigurationOverrideDetails ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrInput `pulumi:"logConfigurationOverrideDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+	PipelineId pulumi.StringPtrInput `pulumi:"pipelineId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+	StepOverrideDetails ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayInput `pulumi:"stepOverrideDetails"`
+	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsOutput).ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsArgs, ScheduleActionActionDetailsCreatePipelineRunDetailsPtr and ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreatePipelineRunDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreatePipelineRunDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreatePipelineRunDetailsPtrType ScheduleActionActionDetailsCreatePipelineRunDetailsArgs
+
+func ScheduleActionActionDetailsCreatePipelineRunDetailsPtr(v *ScheduleActionActionDetailsCreatePipelineRunDetailsArgs) ScheduleActionActionDetailsCreatePipelineRunDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreatePipelineRunDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreatePipelineRunDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreatePipelineRunDetails) *ScheduleActionActionDetailsCreatePipelineRunDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The configuration details of a pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ConfigurationOverrideDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails {
+		return v.ConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A user-friendly display name for the resource.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The pipeline log configuration details.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) LogConfigurationOverrideDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails {
+		return v.LogConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) PipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) *string { return v.PipelineId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) StepOverrideDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) []ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail {
+		return v.StepOverrideDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput)
+}
+
+// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetails) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreatePipelineRunDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) ScheduleActionActionDetailsCreatePipelineRunDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreatePipelineRunDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The configuration details of a pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) ConfigurationOverrideDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A user-friendly display name for the resource.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The pipeline log configuration details.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) LogConfigurationOverrideDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails {
+		if v == nil {
+			return nil
+		}
+		return v.LogConfigurationOverrideDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) PipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PipelineId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) StepOverrideDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) []ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail {
+		if v == nil {
+			return nil
+		}
+		return v.StepOverrideDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput)
+}
+
+// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails struct {
+	// (Updatable) The command line arguments to set for steps in the pipeline.
+	CommandLineArguments *string `pulumi:"commandLineArguments"`
+	// (Updatable) Environment variables to set for steps in the pipeline.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
+	// (Updatable) The type of pipeline.
+	Type string `pulumi:"type"`
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs and ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs{...}
+type ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs struct {
+	// (Updatable) The command line arguments to set for steps in the pipeline.
+	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
+	// (Updatable) Environment variables to set for steps in the pipeline.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
+	// (Updatable) The type of pipeline.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput).ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs, ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtr and ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrType ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs
+
+func ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtr(v *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) The command line arguments to set for steps in the pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) CommandLineArguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) *string {
+		return v.CommandLineArguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for steps in the pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) *string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput)
+}
+
+// (Updatable) The command line arguments to set for steps in the pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) CommandLineArguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CommandLineArguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for steps in the pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails struct {
+	// (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation *bool `pulumi:"enableAutoLogCreation"`
+	// (Updatable) If customer logging is enabled for pipeline.
+	EnableLogging *bool `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId *string `pulumi:"logId"`
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs and ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs{...}
+type ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs struct {
+	// (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolPtrInput `pulumi:"enableAutoLogCreation"`
+	// (Updatable) If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolPtrInput `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
+}
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput).ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs, ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtr and ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrType ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs
+
+func ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtr(v *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput)
+}
+
+// (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) EnableAutoLogCreation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *bool {
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If customer logging is enabled for pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *bool {
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *string {
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *string {
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput)
+}
+
+// (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) EnableAutoLogCreation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If customer logging is enabled for pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail struct {
+	// (Updatable) The configuration details of a step.
+	StepConfigurationDetails *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails `pulumi:"stepConfigurationDetails"`
+	// (Updatable) Container Details for a step in pipeline.
+	StepContainerConfigurationDetails *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails `pulumi:"stepContainerConfigurationDetails"`
+	// (Updatable) The name of the step.
+	StepName *string `pulumi:"stepName"`
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs and ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs{...}
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs struct {
+	// (Updatable) The configuration details of a step.
+	StepConfigurationDetails ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrInput `pulumi:"stepConfigurationDetails"`
+	// (Updatable) Container Details for a step in pipeline.
+	StepContainerConfigurationDetails ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrInput `pulumi:"stepContainerConfigurationDetails"`
+	// (Updatable) The name of the step.
+	StepName pulumi.StringPtrInput `pulumi:"stepName"`
+}
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput)
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray and ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray{ ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs{...} }
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray []ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailInput
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput {
+	return o
+}
+
+// (Updatable) The configuration details of a step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput) StepConfigurationDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail) *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails {
+		return v.StepConfigurationDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) Container Details for a step in pipeline.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput) StepContainerConfigurationDetails() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail) *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails {
+		return v.StepContainerConfigurationDetails
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) The name of the step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput) StepName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail) *string {
+		return v.StepName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput) Index(i pulumi.IntInput) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail {
+		return vs[0].([]ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetail)[vs[1].(int)]
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails struct {
+	// (Updatable) The command line arguments to set for step.
+	CommandLineArguments *string `pulumi:"commandLineArguments"`
+	// (Updatable) Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// (Updatable) A time bound for the execution of the step.
+	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs and ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs{...}
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs struct {
+	// (Updatable) The command line arguments to set for step.
+	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
+	// (Updatable) Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// (Updatable) A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput).ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs, ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtr and ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrType ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs
+
+func ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtr(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) The command line arguments to set for step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) CommandLineArguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) *string {
+		return v.CommandLineArguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A time bound for the execution of the step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) *string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput)
+}
+
+// (Updatable) The command line arguments to set for step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) CommandLineArguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CommandLineArguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Environment variables to set for step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) A time bound for the execution of the step.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails struct {
+	// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// (Updatable) The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// (Updatable) OCID of the container image signature
+	ImageSignatureId *string `pulumi:"imageSignatureId"`
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs and ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsInput` via:
+//
+//	ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs{...}
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs struct {
+	// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// (Updatable) The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// (Updatable) OCID of the container image signature
+	ImageSignatureId pulumi.StringPtrInput `pulumi:"imageSignatureId"`
+}
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput).ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs, ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtr and ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput
+	ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrType ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs
+
+func ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtr(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrInput {
+	return (*scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrType) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails {
+		return &v
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The type of container.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) string {
+		return v.ContainerType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *string {
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the container image signature
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *string {
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ToScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Elem() ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails
+		return ret
+	}).(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput)
+}
+
+// (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The type of container.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ContainerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContainerType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the container image signature
+func (o ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails struct {
+	// (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+	Parameters []ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter `pulumi:"parameters"`
+	// (Updatable) Name of trigger
+	TriggerName *string `pulumi:"triggerName"`
+}
+
+// ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsInput is an input type that accepts ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs and ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsInput` via:
+//
+//	ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs{...}
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutputWithContext(context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs struct {
+	// (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+	Parameters ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayInput `pulumi:"parameters"`
+	// (Updatable) Name of trigger
+	TriggerName pulumi.StringPtrInput `pulumi:"triggerName"`
+}
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput {
+	return i.ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput)
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput).ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrInput is an input type that accepts ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs, ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtr and ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrInput` via:
+//
+//	        ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput
+}
+
+type scheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrType ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs
+
+func ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtr(v *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrInput {
+	return (*scheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrType)(v)
+}
+
+func (*scheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails)(nil)).Elem()
+}
+
+func (i *scheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrType) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return i.ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrType) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput)
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return o.ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails) *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails {
+		return &v
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput)
+}
+
+// (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) Parameters() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails) []ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter {
+		return v.Parameters
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput)
+}
+
+// (Updatable) Name of trigger
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput) TriggerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails) *string {
+		return v.TriggerName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput) Elem() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails
+		return ret
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput)
+}
+
+// (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput) Parameters() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails) []ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter {
+		if v == nil {
+			return nil
+		}
+		return v.Parameters
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput)
+}
+
+// (Updatable) Name of trigger
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput) TriggerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter struct {
+	// (Updatable) Name of trigger parameter
+	Name *string `pulumi:"name"`
+	// (Updatable) Value of trigger parameter
+	Value *string `pulumi:"value"`
+}
+
+// ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterInput is an input type that accepts ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs and ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterInput` via:
+//
+//	ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs{...}
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutputWithContext(context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs struct {
+	// (Updatable) Name of trigger parameter
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Value of trigger parameter
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput {
+	return i.ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput)
+}
+
+// ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayInput is an input type that accepts ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray and ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput values.
+// You can construct a concrete instance of `ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayInput` via:
+//
+//	ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray{ ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs{...} }
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayInput interface {
+	pulumi.Input
+
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput
+	ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutputWithContext(context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray []ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterInput
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter)(nil)).Elem()
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput {
+	return i.ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput)
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput {
+	return o
+}
+
+// (Updatable) Name of trigger parameter
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value of trigger parameter
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter)(nil)).Elem()
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput() ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput) ToScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutputWithContext(ctx context.Context) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput {
+	return o
+}
+
+func (o ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput) Index(i pulumi.IntInput) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter {
+		return vs[0].([]ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameter)[vs[1].(int)]
+	}).(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput)
+}
+
+type ScheduleLogDetails struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// ScheduleLogDetailsInput is an input type that accepts ScheduleLogDetailsArgs and ScheduleLogDetailsOutput values.
+// You can construct a concrete instance of `ScheduleLogDetailsInput` via:
+//
+//	ScheduleLogDetailsArgs{...}
+type ScheduleLogDetailsInput interface {
+	pulumi.Input
+
+	ToScheduleLogDetailsOutput() ScheduleLogDetailsOutput
+	ToScheduleLogDetailsOutputWithContext(context.Context) ScheduleLogDetailsOutput
+}
+
+type ScheduleLogDetailsArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (ScheduleLogDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleLogDetails)(nil)).Elem()
+}
+
+func (i ScheduleLogDetailsArgs) ToScheduleLogDetailsOutput() ScheduleLogDetailsOutput {
+	return i.ToScheduleLogDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduleLogDetailsArgs) ToScheduleLogDetailsOutputWithContext(ctx context.Context) ScheduleLogDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleLogDetailsOutput)
+}
+
+func (i ScheduleLogDetailsArgs) ToScheduleLogDetailsPtrOutput() ScheduleLogDetailsPtrOutput {
+	return i.ToScheduleLogDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleLogDetailsArgs) ToScheduleLogDetailsPtrOutputWithContext(ctx context.Context) ScheduleLogDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleLogDetailsOutput).ToScheduleLogDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduleLogDetailsPtrInput is an input type that accepts ScheduleLogDetailsArgs, ScheduleLogDetailsPtr and ScheduleLogDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduleLogDetailsPtrInput` via:
+//
+//	        ScheduleLogDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleLogDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduleLogDetailsPtrOutput() ScheduleLogDetailsPtrOutput
+	ToScheduleLogDetailsPtrOutputWithContext(context.Context) ScheduleLogDetailsPtrOutput
+}
+
+type scheduleLogDetailsPtrType ScheduleLogDetailsArgs
+
+func ScheduleLogDetailsPtr(v *ScheduleLogDetailsArgs) ScheduleLogDetailsPtrInput {
+	return (*scheduleLogDetailsPtrType)(v)
+}
+
+func (*scheduleLogDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleLogDetails)(nil)).Elem()
+}
+
+func (i *scheduleLogDetailsPtrType) ToScheduleLogDetailsPtrOutput() ScheduleLogDetailsPtrOutput {
+	return i.ToScheduleLogDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleLogDetailsPtrType) ToScheduleLogDetailsPtrOutputWithContext(ctx context.Context) ScheduleLogDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleLogDetailsPtrOutput)
+}
+
+type ScheduleLogDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduleLogDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleLogDetails)(nil)).Elem()
+}
+
+func (o ScheduleLogDetailsOutput) ToScheduleLogDetailsOutput() ScheduleLogDetailsOutput {
+	return o
+}
+
+func (o ScheduleLogDetailsOutput) ToScheduleLogDetailsOutputWithContext(ctx context.Context) ScheduleLogDetailsOutput {
+	return o
+}
+
+func (o ScheduleLogDetailsOutput) ToScheduleLogDetailsPtrOutput() ScheduleLogDetailsPtrOutput {
+	return o.ToScheduleLogDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleLogDetailsOutput) ToScheduleLogDetailsPtrOutputWithContext(ctx context.Context) ScheduleLogDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleLogDetails) *ScheduleLogDetails {
+		return &v
+	}).(ScheduleLogDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o ScheduleLogDetailsOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleLogDetails) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o ScheduleLogDetailsOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleLogDetails) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type ScheduleLogDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleLogDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleLogDetails)(nil)).Elem()
+}
+
+func (o ScheduleLogDetailsPtrOutput) ToScheduleLogDetailsPtrOutput() ScheduleLogDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleLogDetailsPtrOutput) ToScheduleLogDetailsPtrOutputWithContext(ctx context.Context) ScheduleLogDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduleLogDetailsPtrOutput) Elem() ScheduleLogDetailsOutput {
+	return o.ApplyT(func(v *ScheduleLogDetails) ScheduleLogDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleLogDetails
+		return ret
+	}).(ScheduleLogDetailsOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o ScheduleLogDetailsPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleLogDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o ScheduleLogDetailsPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleLogDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleTrigger struct {
+	// (Updatable) Schedule cron expression
+	CronExpression *string `pulumi:"cronExpression"`
+	// (Updatable) The type of frequency
+	Frequency *string `pulumi:"frequency"`
+	// (Updatable) The interval of frequency.
+	Interval *int `pulumi:"interval"`
+	// (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+	IsRandomStartTime *bool `pulumi:"isRandomStartTime"`
+	// (Updatable) This recurrence field conforms to RFC-5545 formatting
+	Recurrence *string `pulumi:"recurrence"`
+	// (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnd *string `pulumi:"timeEnd"`
+	// (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStart *string `pulumi:"timeStart"`
+	// (Updatable) The schedule trigger type
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerType string `pulumi:"triggerType"`
+}
+
+// ScheduleTriggerInput is an input type that accepts ScheduleTriggerArgs and ScheduleTriggerOutput values.
+// You can construct a concrete instance of `ScheduleTriggerInput` via:
+//
+//	ScheduleTriggerArgs{...}
+type ScheduleTriggerInput interface {
+	pulumi.Input
+
+	ToScheduleTriggerOutput() ScheduleTriggerOutput
+	ToScheduleTriggerOutputWithContext(context.Context) ScheduleTriggerOutput
+}
+
+type ScheduleTriggerArgs struct {
+	// (Updatable) Schedule cron expression
+	CronExpression pulumi.StringPtrInput `pulumi:"cronExpression"`
+	// (Updatable) The type of frequency
+	Frequency pulumi.StringPtrInput `pulumi:"frequency"`
+	// (Updatable) The interval of frequency.
+	Interval pulumi.IntPtrInput `pulumi:"interval"`
+	// (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+	IsRandomStartTime pulumi.BoolPtrInput `pulumi:"isRandomStartTime"`
+	// (Updatable) This recurrence field conforms to RFC-5545 formatting
+	Recurrence pulumi.StringPtrInput `pulumi:"recurrence"`
+	// (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
+	// (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
+	// (Updatable) The schedule trigger type
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TriggerType pulumi.StringInput `pulumi:"triggerType"`
+}
+
+func (ScheduleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleTrigger)(nil)).Elem()
+}
+
+func (i ScheduleTriggerArgs) ToScheduleTriggerOutput() ScheduleTriggerOutput {
+	return i.ToScheduleTriggerOutputWithContext(context.Background())
+}
+
+func (i ScheduleTriggerArgs) ToScheduleTriggerOutputWithContext(ctx context.Context) ScheduleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleTriggerOutput)
+}
+
+func (i ScheduleTriggerArgs) ToScheduleTriggerPtrOutput() ScheduleTriggerPtrOutput {
+	return i.ToScheduleTriggerPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleTriggerArgs) ToScheduleTriggerPtrOutputWithContext(ctx context.Context) ScheduleTriggerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleTriggerOutput).ToScheduleTriggerPtrOutputWithContext(ctx)
+}
+
+// ScheduleTriggerPtrInput is an input type that accepts ScheduleTriggerArgs, ScheduleTriggerPtr and ScheduleTriggerPtrOutput values.
+// You can construct a concrete instance of `ScheduleTriggerPtrInput` via:
+//
+//	        ScheduleTriggerArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleTriggerPtrInput interface {
+	pulumi.Input
+
+	ToScheduleTriggerPtrOutput() ScheduleTriggerPtrOutput
+	ToScheduleTriggerPtrOutputWithContext(context.Context) ScheduleTriggerPtrOutput
+}
+
+type scheduleTriggerPtrType ScheduleTriggerArgs
+
+func ScheduleTriggerPtr(v *ScheduleTriggerArgs) ScheduleTriggerPtrInput {
+	return (*scheduleTriggerPtrType)(v)
+}
+
+func (*scheduleTriggerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleTrigger)(nil)).Elem()
+}
+
+func (i *scheduleTriggerPtrType) ToScheduleTriggerPtrOutput() ScheduleTriggerPtrOutput {
+	return i.ToScheduleTriggerPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleTriggerPtrType) ToScheduleTriggerPtrOutputWithContext(ctx context.Context) ScheduleTriggerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleTriggerPtrOutput)
+}
+
+type ScheduleTriggerOutput struct{ *pulumi.OutputState }
+
+func (ScheduleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleTrigger)(nil)).Elem()
+}
+
+func (o ScheduleTriggerOutput) ToScheduleTriggerOutput() ScheduleTriggerOutput {
+	return o
+}
+
+func (o ScheduleTriggerOutput) ToScheduleTriggerOutputWithContext(ctx context.Context) ScheduleTriggerOutput {
+	return o
+}
+
+func (o ScheduleTriggerOutput) ToScheduleTriggerPtrOutput() ScheduleTriggerPtrOutput {
+	return o.ToScheduleTriggerPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleTriggerOutput) ToScheduleTriggerPtrOutputWithContext(ctx context.Context) ScheduleTriggerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleTrigger) *ScheduleTrigger {
+		return &v
+	}).(ScheduleTriggerPtrOutput)
+}
+
+// (Updatable) Schedule cron expression
+func (o ScheduleTriggerOutput) CronExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *string { return v.CronExpression }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of frequency
+func (o ScheduleTriggerOutput) Frequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *string { return v.Frequency }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The interval of frequency.
+func (o ScheduleTriggerOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *int { return v.Interval }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+func (o ScheduleTriggerOutput) IsRandomStartTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *bool { return v.IsRandomStartTime }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) This recurrence field conforms to RFC-5545 formatting
+func (o ScheduleTriggerOutput) Recurrence() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *string { return v.Recurrence }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o ScheduleTriggerOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o ScheduleTriggerOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleTrigger) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The schedule trigger type
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ScheduleTriggerOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleTrigger) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type ScheduleTriggerPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleTriggerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleTrigger)(nil)).Elem()
+}
+
+func (o ScheduleTriggerPtrOutput) ToScheduleTriggerPtrOutput() ScheduleTriggerPtrOutput {
+	return o
+}
+
+func (o ScheduleTriggerPtrOutput) ToScheduleTriggerPtrOutputWithContext(ctx context.Context) ScheduleTriggerPtrOutput {
+	return o
+}
+
+func (o ScheduleTriggerPtrOutput) Elem() ScheduleTriggerOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) ScheduleTrigger {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleTrigger
+		return ret
+	}).(ScheduleTriggerOutput)
+}
+
+// (Updatable) Schedule cron expression
+func (o ScheduleTriggerPtrOutput) CronExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CronExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of frequency
+func (o ScheduleTriggerPtrOutput) Frequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Frequency
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The interval of frequency.
+func (o ScheduleTriggerPtrOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Interval
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+func (o ScheduleTriggerPtrOutput) IsRandomStartTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsRandomStartTime
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) This recurrence field conforms to RFC-5545 formatting
+func (o ScheduleTriggerPtrOutput) Recurrence() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Recurrence
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o ScheduleTriggerPtrOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeEnd
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o ScheduleTriggerPtrOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeStart
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The schedule trigger type
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ScheduleTriggerPtrOutput) TriggerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TriggerType
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetContainersContainer struct {
+	// <b>Filter</b> results by the container name.
+	ContainerName string `pulumi:"containerName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the container.
+	Description string `pulumi:"description"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// The family name of the container.
+	FamilyName string `pulumi:"familyName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// if true, this returns latest version of container.
+	IsLatest bool `pulumi:"isLatest"`
+	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// Container Tag.
+	Tag string `pulumi:"tag"`
+	// An array of defined metadata details for the model.
+	TagConfigurationLists []GetContainersContainerTagConfigurationList `pulumi:"tagConfigurationLists"`
+	// The list of target workload. This Container can be used with given data science resources.
+	TargetWorkloads []string `pulumi:"targetWorkloads"`
+	// The list of usages of this container. This Container can be used for given use-cases.
+	Usages []string `pulumi:"usages"`
+	// workload configuration of the container.
+	WorkloadConfigurationDetailsLists []GetContainersContainerWorkloadConfigurationDetailsList `pulumi:"workloadConfigurationDetailsLists"`
+}
+
+// GetContainersContainerInput is an input type that accepts GetContainersContainerArgs and GetContainersContainerOutput values.
+// You can construct a concrete instance of `GetContainersContainerInput` via:
+//
+//	GetContainersContainerArgs{...}
+type GetContainersContainerInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerOutput() GetContainersContainerOutput
+	ToGetContainersContainerOutputWithContext(context.Context) GetContainersContainerOutput
+}
+
+type GetContainersContainerArgs struct {
+	// <b>Filter</b> results by the container name.
+	ContainerName pulumi.StringInput `pulumi:"containerName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the container.
+	Description pulumi.StringInput `pulumi:"description"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The family name of the container.
+	FamilyName pulumi.StringInput `pulumi:"familyName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// if true, this returns latest version of container.
+	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// Container Tag.
+	Tag pulumi.StringInput `pulumi:"tag"`
+	// An array of defined metadata details for the model.
+	TagConfigurationLists GetContainersContainerTagConfigurationListArrayInput `pulumi:"tagConfigurationLists"`
+	// The list of target workload. This Container can be used with given data science resources.
+	TargetWorkloads pulumi.StringArrayInput `pulumi:"targetWorkloads"`
+	// The list of usages of this container. This Container can be used for given use-cases.
+	Usages pulumi.StringArrayInput `pulumi:"usages"`
+	// workload configuration of the container.
+	WorkloadConfigurationDetailsLists GetContainersContainerWorkloadConfigurationDetailsListArrayInput `pulumi:"workloadConfigurationDetailsLists"`
+}
+
+func (GetContainersContainerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainer)(nil)).Elem()
+}
+
+func (i GetContainersContainerArgs) ToGetContainersContainerOutput() GetContainersContainerOutput {
+	return i.ToGetContainersContainerOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerArgs) ToGetContainersContainerOutputWithContext(ctx context.Context) GetContainersContainerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerOutput)
+}
+
+// GetContainersContainerArrayInput is an input type that accepts GetContainersContainerArray and GetContainersContainerArrayOutput values.
+// You can construct a concrete instance of `GetContainersContainerArrayInput` via:
+//
+//	GetContainersContainerArray{ GetContainersContainerArgs{...} }
+type GetContainersContainerArrayInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerArrayOutput() GetContainersContainerArrayOutput
+	ToGetContainersContainerArrayOutputWithContext(context.Context) GetContainersContainerArrayOutput
+}
+
+type GetContainersContainerArray []GetContainersContainerInput
+
+func (GetContainersContainerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainer)(nil)).Elem()
+}
+
+func (i GetContainersContainerArray) ToGetContainersContainerArrayOutput() GetContainersContainerArrayOutput {
+	return i.ToGetContainersContainerArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerArray) ToGetContainersContainerArrayOutputWithContext(ctx context.Context) GetContainersContainerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerArrayOutput)
+}
+
+type GetContainersContainerOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainer)(nil)).Elem()
+}
+
+func (o GetContainersContainerOutput) ToGetContainersContainerOutput() GetContainersContainerOutput {
+	return o
+}
+
+func (o GetContainersContainerOutput) ToGetContainersContainerOutputWithContext(ctx context.Context) GetContainersContainerOutput {
+	return o
+}
+
+// <b>Filter</b> results by the container name.
+func (o GetContainersContainerOutput) ContainerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainer) string { return v.ContainerName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetContainersContainerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainersContainer) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description of the container.
+func (o GetContainersContainerOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainer) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetContainersContainerOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainer) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The family name of the container.
+func (o GetContainersContainerOutput) FamilyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainer) string { return v.FamilyName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetContainersContainerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainersContainer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// if true, this returns latest version of container.
+func (o GetContainersContainerOutput) IsLatest() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetContainersContainer) bool { return v.IsLatest }).(pulumi.BoolOutput)
+}
+
+// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetContainersContainerOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainer) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Container Tag.
+func (o GetContainersContainerOutput) Tag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainer) string { return v.Tag }).(pulumi.StringOutput)
+}
+
+// An array of defined metadata details for the model.
+func (o GetContainersContainerOutput) TagConfigurationLists() GetContainersContainerTagConfigurationListArrayOutput {
+	return o.ApplyT(func(v GetContainersContainer) []GetContainersContainerTagConfigurationList {
+		return v.TagConfigurationLists
+	}).(GetContainersContainerTagConfigurationListArrayOutput)
+}
+
+// The list of target workload. This Container can be used with given data science resources.
+func (o GetContainersContainerOutput) TargetWorkloads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetContainersContainer) []string { return v.TargetWorkloads }).(pulumi.StringArrayOutput)
+}
+
+// The list of usages of this container. This Container can be used for given use-cases.
+func (o GetContainersContainerOutput) Usages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetContainersContainer) []string { return v.Usages }).(pulumi.StringArrayOutput)
+}
+
+// workload configuration of the container.
+func (o GetContainersContainerOutput) WorkloadConfigurationDetailsLists() GetContainersContainerWorkloadConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetContainersContainer) []GetContainersContainerWorkloadConfigurationDetailsList {
+		return v.WorkloadConfigurationDetailsLists
+	}).(GetContainersContainerWorkloadConfigurationDetailsListArrayOutput)
+}
+
+type GetContainersContainerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainer)(nil)).Elem()
+}
+
+func (o GetContainersContainerArrayOutput) ToGetContainersContainerArrayOutput() GetContainersContainerArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerArrayOutput) ToGetContainersContainerArrayOutputWithContext(ctx context.Context) GetContainersContainerArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerArrayOutput) Index(i pulumi.IntInput) GetContainersContainerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainersContainer {
+		return vs[0].([]GetContainersContainer)[vs[1].(int)]
+	}).(GetContainersContainerOutput)
+}
+
+type GetContainersContainerTagConfigurationList struct {
+	// Key of the container tag Metadata
+	Key string `pulumi:"key"`
+	// Value of the container tag Metadata
+	Value string `pulumi:"value"`
+}
+
+// GetContainersContainerTagConfigurationListInput is an input type that accepts GetContainersContainerTagConfigurationListArgs and GetContainersContainerTagConfigurationListOutput values.
+// You can construct a concrete instance of `GetContainersContainerTagConfigurationListInput` via:
+//
+//	GetContainersContainerTagConfigurationListArgs{...}
+type GetContainersContainerTagConfigurationListInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerTagConfigurationListOutput() GetContainersContainerTagConfigurationListOutput
+	ToGetContainersContainerTagConfigurationListOutputWithContext(context.Context) GetContainersContainerTagConfigurationListOutput
+}
+
+type GetContainersContainerTagConfigurationListArgs struct {
+	// Key of the container tag Metadata
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the container tag Metadata
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetContainersContainerTagConfigurationListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainerTagConfigurationList)(nil)).Elem()
+}
+
+func (i GetContainersContainerTagConfigurationListArgs) ToGetContainersContainerTagConfigurationListOutput() GetContainersContainerTagConfigurationListOutput {
+	return i.ToGetContainersContainerTagConfigurationListOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerTagConfigurationListArgs) ToGetContainersContainerTagConfigurationListOutputWithContext(ctx context.Context) GetContainersContainerTagConfigurationListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerTagConfigurationListOutput)
+}
+
+// GetContainersContainerTagConfigurationListArrayInput is an input type that accepts GetContainersContainerTagConfigurationListArray and GetContainersContainerTagConfigurationListArrayOutput values.
+// You can construct a concrete instance of `GetContainersContainerTagConfigurationListArrayInput` via:
+//
+//	GetContainersContainerTagConfigurationListArray{ GetContainersContainerTagConfigurationListArgs{...} }
+type GetContainersContainerTagConfigurationListArrayInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerTagConfigurationListArrayOutput() GetContainersContainerTagConfigurationListArrayOutput
+	ToGetContainersContainerTagConfigurationListArrayOutputWithContext(context.Context) GetContainersContainerTagConfigurationListArrayOutput
+}
+
+type GetContainersContainerTagConfigurationListArray []GetContainersContainerTagConfigurationListInput
+
+func (GetContainersContainerTagConfigurationListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainerTagConfigurationList)(nil)).Elem()
+}
+
+func (i GetContainersContainerTagConfigurationListArray) ToGetContainersContainerTagConfigurationListArrayOutput() GetContainersContainerTagConfigurationListArrayOutput {
+	return i.ToGetContainersContainerTagConfigurationListArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerTagConfigurationListArray) ToGetContainersContainerTagConfigurationListArrayOutputWithContext(ctx context.Context) GetContainersContainerTagConfigurationListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerTagConfigurationListArrayOutput)
+}
+
+type GetContainersContainerTagConfigurationListOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerTagConfigurationListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainerTagConfigurationList)(nil)).Elem()
+}
+
+func (o GetContainersContainerTagConfigurationListOutput) ToGetContainersContainerTagConfigurationListOutput() GetContainersContainerTagConfigurationListOutput {
+	return o
+}
+
+func (o GetContainersContainerTagConfigurationListOutput) ToGetContainersContainerTagConfigurationListOutputWithContext(ctx context.Context) GetContainersContainerTagConfigurationListOutput {
+	return o
+}
+
+// Key of the container tag Metadata
+func (o GetContainersContainerTagConfigurationListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainerTagConfigurationList) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the container tag Metadata
+func (o GetContainersContainerTagConfigurationListOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainerTagConfigurationList) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetContainersContainerTagConfigurationListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerTagConfigurationListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainerTagConfigurationList)(nil)).Elem()
+}
+
+func (o GetContainersContainerTagConfigurationListArrayOutput) ToGetContainersContainerTagConfigurationListArrayOutput() GetContainersContainerTagConfigurationListArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerTagConfigurationListArrayOutput) ToGetContainersContainerTagConfigurationListArrayOutputWithContext(ctx context.Context) GetContainersContainerTagConfigurationListArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerTagConfigurationListArrayOutput) Index(i pulumi.IntInput) GetContainersContainerTagConfigurationListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainersContainerTagConfigurationList {
+		return vs[0].([]GetContainersContainerTagConfigurationList)[vs[1].(int)]
+	}).(GetContainersContainerTagConfigurationListOutput)
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsList struct {
+	// The additional configurations
+	AdditionalConfigurations map[string]string `pulumi:"additionalConfigurations"`
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmd string `pulumi:"cmd"`
+	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort int `pulumi:"healthCheckPort"`
+	// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort int `pulumi:"serverPort"`
+	// The use-case configuration details
+	UseCaseConfigurations []GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration `pulumi:"useCaseConfigurations"`
+	// The workload use case.
+	WorkloadType string `pulumi:"workloadType"`
+}
+
+// GetContainersContainerWorkloadConfigurationDetailsListInput is an input type that accepts GetContainersContainerWorkloadConfigurationDetailsListArgs and GetContainersContainerWorkloadConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetContainersContainerWorkloadConfigurationDetailsListInput` via:
+//
+//	GetContainersContainerWorkloadConfigurationDetailsListArgs{...}
+type GetContainersContainerWorkloadConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerWorkloadConfigurationDetailsListOutput() GetContainersContainerWorkloadConfigurationDetailsListOutput
+	ToGetContainersContainerWorkloadConfigurationDetailsListOutputWithContext(context.Context) GetContainersContainerWorkloadConfigurationDetailsListOutput
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListArgs struct {
+	// The additional configurations
+	AdditionalConfigurations pulumi.StringMapInput `pulumi:"additionalConfigurations"`
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmd pulumi.StringInput `pulumi:"cmd"`
+	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	HealthCheckPort pulumi.IntInput `pulumi:"healthCheckPort"`
+	// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+	ServerPort pulumi.IntInput `pulumi:"serverPort"`
+	// The use-case configuration details
+	UseCaseConfigurations GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayInput `pulumi:"useCaseConfigurations"`
+	// The workload use case.
+	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
+}
+
+func (GetContainersContainerWorkloadConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListArgs) ToGetContainersContainerWorkloadConfigurationDetailsListOutput() GetContainersContainerWorkloadConfigurationDetailsListOutput {
+	return i.ToGetContainersContainerWorkloadConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListArgs) ToGetContainersContainerWorkloadConfigurationDetailsListOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerWorkloadConfigurationDetailsListOutput)
+}
+
+// GetContainersContainerWorkloadConfigurationDetailsListArrayInput is an input type that accepts GetContainersContainerWorkloadConfigurationDetailsListArray and GetContainersContainerWorkloadConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetContainersContainerWorkloadConfigurationDetailsListArrayInput` via:
+//
+//	GetContainersContainerWorkloadConfigurationDetailsListArray{ GetContainersContainerWorkloadConfigurationDetailsListArgs{...} }
+type GetContainersContainerWorkloadConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutput() GetContainersContainerWorkloadConfigurationDetailsListArrayOutput
+	ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutputWithContext(context.Context) GetContainersContainerWorkloadConfigurationDetailsListArrayOutput
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListArray []GetContainersContainerWorkloadConfigurationDetailsListInput
+
+func (GetContainersContainerWorkloadConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainerWorkloadConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListArray) ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutput() GetContainersContainerWorkloadConfigurationDetailsListArrayOutput {
+	return i.ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListArray) ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerWorkloadConfigurationDetailsListArrayOutput)
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerWorkloadConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) ToGetContainersContainerWorkloadConfigurationDetailsListOutput() GetContainersContainerWorkloadConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) ToGetContainersContainerWorkloadConfigurationDetailsListOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListOutput {
+	return o
+}
+
+// The additional configurations
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) AdditionalConfigurations() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsList) map[string]string {
+		return v.AdditionalConfigurations
+	}).(pulumi.StringMapOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) Cmd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsList) string { return v.Cmd }).(pulumi.StringOutput)
+}
+
+// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) HealthCheckPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsList) int { return v.HealthCheckPort }).(pulumi.IntOutput)
+}
+
+// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) ServerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsList) int { return v.ServerPort }).(pulumi.IntOutput)
+}
+
+// The use-case configuration details
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) UseCaseConfigurations() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsList) []GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration {
+		return v.UseCaseConfigurations
+	}).(GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput)
+}
+
+// The workload use case.
+func (o GetContainersContainerWorkloadConfigurationDetailsListOutput) WorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsList) string { return v.WorkloadType }).(pulumi.StringOutput)
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerWorkloadConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainerWorkloadConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListArrayOutput) ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutput() GetContainersContainerWorkloadConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListArrayOutput) ToGetContainersContainerWorkloadConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetContainersContainerWorkloadConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainersContainerWorkloadConfigurationDetailsList {
+		return vs[0].([]GetContainersContainerWorkloadConfigurationDetailsList)[vs[1].(int)]
+	}).(GetContainersContainerWorkloadConfigurationDetailsListOutput)
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration struct {
+	// The additional configurations
+	AdditionalConfigurations map[string]string `pulumi:"additionalConfigurations"`
+	// The job-run use-case.
+	UseCaseType string `pulumi:"useCaseType"`
+}
+
+// GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationInput is an input type that accepts GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs and GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput values.
+// You can construct a concrete instance of `GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationInput` via:
+//
+//	GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs{...}
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput
+	ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutputWithContext(context.Context) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs struct {
+	// The additional configurations
+	AdditionalConfigurations pulumi.StringMapInput `pulumi:"additionalConfigurations"`
+	// The job-run use-case.
+	UseCaseType pulumi.StringInput `pulumi:"useCaseType"`
+}
+
+func (GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration)(nil)).Elem()
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput {
+	return i.ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput)
+}
+
+// GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayInput is an input type that accepts GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray and GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayInput` via:
+//
+//	GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray{ GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs{...} }
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput
+	ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutputWithContext(context.Context) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray []GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationInput
+
+func (GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration)(nil)).Elem()
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput {
+	return i.ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput)
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration)(nil)).Elem()
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput {
+	return o
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput {
+	return o
+}
+
+// The additional configurations
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput) AdditionalConfigurations() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration) map[string]string {
+		return v.AdditionalConfigurations
+	}).(pulumi.StringMapOutput)
+}
+
+// The job-run use-case.
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput) UseCaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration) string {
+		return v.UseCaseType
+	}).(pulumi.StringOutput)
+}
+
+type GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration)(nil)).Elem()
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput() GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput) ToGetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutputWithContext(ctx context.Context) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput {
+	return o
+}
+
+func (o GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput) Index(i pulumi.IntInput) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration {
+		return vs[0].([]GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfiguration)[vs[1].(int)]
+	}).(GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput)
+}
+
+type GetContainersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetContainersFilterInput is an input type that accepts GetContainersFilterArgs and GetContainersFilterOutput values.
+// You can construct a concrete instance of `GetContainersFilterInput` via:
+//
+//	GetContainersFilterArgs{...}
+type GetContainersFilterInput interface {
+	pulumi.Input
+
+	ToGetContainersFilterOutput() GetContainersFilterOutput
+	ToGetContainersFilterOutputWithContext(context.Context) GetContainersFilterOutput
+}
+
+type GetContainersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetContainersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersFilter)(nil)).Elem()
+}
+
+func (i GetContainersFilterArgs) ToGetContainersFilterOutput() GetContainersFilterOutput {
+	return i.ToGetContainersFilterOutputWithContext(context.Background())
+}
+
+func (i GetContainersFilterArgs) ToGetContainersFilterOutputWithContext(ctx context.Context) GetContainersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersFilterOutput)
+}
+
+// GetContainersFilterArrayInput is an input type that accepts GetContainersFilterArray and GetContainersFilterArrayOutput values.
+// You can construct a concrete instance of `GetContainersFilterArrayInput` via:
+//
+//	GetContainersFilterArray{ GetContainersFilterArgs{...} }
+type GetContainersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetContainersFilterArrayOutput() GetContainersFilterArrayOutput
+	ToGetContainersFilterArrayOutputWithContext(context.Context) GetContainersFilterArrayOutput
+}
+
+type GetContainersFilterArray []GetContainersFilterInput
+
+func (GetContainersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersFilter)(nil)).Elem()
+}
+
+func (i GetContainersFilterArray) ToGetContainersFilterArrayOutput() GetContainersFilterArrayOutput {
+	return i.ToGetContainersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetContainersFilterArray) ToGetContainersFilterArrayOutputWithContext(ctx context.Context) GetContainersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContainersFilterArrayOutput)
+}
+
+type GetContainersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetContainersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContainersFilter)(nil)).Elem()
+}
+
+func (o GetContainersFilterOutput) ToGetContainersFilterOutput() GetContainersFilterOutput {
+	return o
+}
+
+func (o GetContainersFilterOutput) ToGetContainersFilterOutputWithContext(ctx context.Context) GetContainersFilterOutput {
+	return o
+}
+
+func (o GetContainersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetContainersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetContainersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetContainersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetContainersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetContainersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContainersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContainersFilter)(nil)).Elem()
+}
+
+func (o GetContainersFilterArrayOutput) ToGetContainersFilterArrayOutput() GetContainersFilterArrayOutput {
+	return o
+}
+
+func (o GetContainersFilterArrayOutput) ToGetContainersFilterArrayOutputWithContext(ctx context.Context) GetContainersFilterArrayOutput {
+	return o
+}
+
+func (o GetContainersFilterArrayOutput) Index(i pulumi.IntInput) GetContainersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainersFilter {
+		return vs[0].([]GetContainersFilter)[vs[1].(int)]
+	}).(GetContainersFilterOutput)
+}
+
 type GetFastLaunchJobConfigsFastLaunchJobConfig struct {
 	// The number of cores associated with this fast launch job shape.
 	CoreCount int `pulumi:"coreCount"`
@@ -29584,6 +33551,4720 @@ func (o GetProjectsProjectArrayOutput) Index(i pulumi.IntInput) GetProjectsProje
 	}).(GetProjectsProjectOutput)
 }
 
+type GetScheduleAction struct {
+	// Schedule Http action details
+	ActionDetails []GetScheduleActionActionDetail `pulumi:"actionDetails"`
+	// The Schedule Action type
+	ActionType string `pulumi:"actionType"`
+}
+
+// GetScheduleActionInput is an input type that accepts GetScheduleActionArgs and GetScheduleActionOutput values.
+// You can construct a concrete instance of `GetScheduleActionInput` via:
+//
+//	GetScheduleActionArgs{...}
+type GetScheduleActionInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionOutput() GetScheduleActionOutput
+	ToGetScheduleActionOutputWithContext(context.Context) GetScheduleActionOutput
+}
+
+type GetScheduleActionArgs struct {
+	// Schedule Http action details
+	ActionDetails GetScheduleActionActionDetailArrayInput `pulumi:"actionDetails"`
+	// The Schedule Action type
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+}
+
+func (GetScheduleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleAction)(nil)).Elem()
+}
+
+func (i GetScheduleActionArgs) ToGetScheduleActionOutput() GetScheduleActionOutput {
+	return i.ToGetScheduleActionOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionArgs) ToGetScheduleActionOutputWithContext(ctx context.Context) GetScheduleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionOutput)
+}
+
+// GetScheduleActionArrayInput is an input type that accepts GetScheduleActionArray and GetScheduleActionArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionArrayInput` via:
+//
+//	GetScheduleActionArray{ GetScheduleActionArgs{...} }
+type GetScheduleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionArrayOutput() GetScheduleActionArrayOutput
+	ToGetScheduleActionArrayOutputWithContext(context.Context) GetScheduleActionArrayOutput
+}
+
+type GetScheduleActionArray []GetScheduleActionInput
+
+func (GetScheduleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleAction)(nil)).Elem()
+}
+
+func (i GetScheduleActionArray) ToGetScheduleActionArrayOutput() GetScheduleActionArrayOutput {
+	return i.ToGetScheduleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionArray) ToGetScheduleActionArrayOutputWithContext(ctx context.Context) GetScheduleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionArrayOutput)
+}
+
+type GetScheduleActionOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleAction)(nil)).Elem()
+}
+
+func (o GetScheduleActionOutput) ToGetScheduleActionOutput() GetScheduleActionOutput {
+	return o
+}
+
+func (o GetScheduleActionOutput) ToGetScheduleActionOutputWithContext(ctx context.Context) GetScheduleActionOutput {
+	return o
+}
+
+// Schedule Http action details
+func (o GetScheduleActionOutput) ActionDetails() GetScheduleActionActionDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleAction) []GetScheduleActionActionDetail { return v.ActionDetails }).(GetScheduleActionActionDetailArrayOutput)
+}
+
+// The Schedule Action type
+func (o GetScheduleActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleAction) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+type GetScheduleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleAction)(nil)).Elem()
+}
+
+func (o GetScheduleActionArrayOutput) ToGetScheduleActionArrayOutput() GetScheduleActionArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionArrayOutput) ToGetScheduleActionArrayOutputWithContext(ctx context.Context) GetScheduleActionArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionArrayOutput) Index(i pulumi.IntInput) GetScheduleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleAction {
+		return vs[0].([]GetScheduleAction)[vs[1].(int)]
+	}).(GetScheduleActionOutput)
+}
+
+type GetScheduleActionActionDetail struct {
+	// Parameters needed to create a new job run.
+	CreateJobRunDetails []GetScheduleActionActionDetailCreateJobRunDetail `pulumi:"createJobRunDetails"`
+	// The information about new PipelineRun.
+	CreatePipelineRunDetails []GetScheduleActionActionDetailCreatePipelineRunDetail `pulumi:"createPipelineRunDetails"`
+	// The type of http action to trigger.
+	HttpActionType string `pulumi:"httpActionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	MlApplicationInstanceViewId string `pulumi:"mlApplicationInstanceViewId"`
+	// Payload for trigger request endpoint
+	TriggerMlApplicationInstanceViewFlowDetails []GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail `pulumi:"triggerMlApplicationInstanceViewFlowDetails"`
+}
+
+// GetScheduleActionActionDetailInput is an input type that accepts GetScheduleActionActionDetailArgs and GetScheduleActionActionDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailInput` via:
+//
+//	GetScheduleActionActionDetailArgs{...}
+type GetScheduleActionActionDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailOutput() GetScheduleActionActionDetailOutput
+	ToGetScheduleActionActionDetailOutputWithContext(context.Context) GetScheduleActionActionDetailOutput
+}
+
+type GetScheduleActionActionDetailArgs struct {
+	// Parameters needed to create a new job run.
+	CreateJobRunDetails GetScheduleActionActionDetailCreateJobRunDetailArrayInput `pulumi:"createJobRunDetails"`
+	// The information about new PipelineRun.
+	CreatePipelineRunDetails GetScheduleActionActionDetailCreatePipelineRunDetailArrayInput `pulumi:"createPipelineRunDetails"`
+	// The type of http action to trigger.
+	HttpActionType pulumi.StringInput `pulumi:"httpActionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	MlApplicationInstanceViewId pulumi.StringInput `pulumi:"mlApplicationInstanceViewId"`
+	// Payload for trigger request endpoint
+	TriggerMlApplicationInstanceViewFlowDetails GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput `pulumi:"triggerMlApplicationInstanceViewFlowDetails"`
+}
+
+func (GetScheduleActionActionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailArgs) ToGetScheduleActionActionDetailOutput() GetScheduleActionActionDetailOutput {
+	return i.ToGetScheduleActionActionDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailArgs) ToGetScheduleActionActionDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailOutput)
+}
+
+// GetScheduleActionActionDetailArrayInput is an input type that accepts GetScheduleActionActionDetailArray and GetScheduleActionActionDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailArray{ GetScheduleActionActionDetailArgs{...} }
+type GetScheduleActionActionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailArrayOutput() GetScheduleActionActionDetailArrayOutput
+	ToGetScheduleActionActionDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailArray []GetScheduleActionActionDetailInput
+
+func (GetScheduleActionActionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailArray) ToGetScheduleActionActionDetailArrayOutput() GetScheduleActionActionDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailArray) ToGetScheduleActionActionDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailOutput) ToGetScheduleActionActionDetailOutput() GetScheduleActionActionDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailOutput) ToGetScheduleActionActionDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailOutput {
+	return o
+}
+
+// Parameters needed to create a new job run.
+func (o GetScheduleActionActionDetailOutput) CreateJobRunDetails() GetScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetail) []GetScheduleActionActionDetailCreateJobRunDetail {
+		return v.CreateJobRunDetails
+	}).(GetScheduleActionActionDetailCreateJobRunDetailArrayOutput)
+}
+
+// The information about new PipelineRun.
+func (o GetScheduleActionActionDetailOutput) CreatePipelineRunDetails() GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetail) []GetScheduleActionActionDetailCreatePipelineRunDetail {
+		return v.CreatePipelineRunDetails
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput)
+}
+
+// The type of http action to trigger.
+func (o GetScheduleActionActionDetailOutput) HttpActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetail) string { return v.HttpActionType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+func (o GetScheduleActionActionDetailOutput) MlApplicationInstanceViewId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetail) string { return v.MlApplicationInstanceViewId }).(pulumi.StringOutput)
+}
+
+// Payload for trigger request endpoint
+func (o GetScheduleActionActionDetailOutput) TriggerMlApplicationInstanceViewFlowDetails() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetail) []GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail {
+		return v.TriggerMlApplicationInstanceViewFlowDetails
+	}).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailArrayOutput) ToGetScheduleActionActionDetailArrayOutput() GetScheduleActionActionDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailArrayOutput) ToGetScheduleActionActionDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetail {
+		return vs[0].([]GetScheduleActionActionDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly display name for the resource. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The job configuration details
+	JobConfigurationOverrideDetails []GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails []GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+	JobId string `pulumi:"jobId"`
+	// Logging configuration for resource.
+	JobLogConfigurationOverrideDetails []GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail `pulumi:"jobLogConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+	ProjectId string `pulumi:"projectId"`
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailArgs and GetScheduleActionActionDetailCreateJobRunDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailArgs{...}
+type GetScheduleActionActionDetailCreateJobRunDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly display name for the resource. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The job configuration details
+	JobConfigurationOverrideDetails GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+	JobId pulumi.StringInput `pulumi:"jobId"`
+	// Logging configuration for resource.
+	JobLogConfigurationOverrideDetails GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput `pulumi:"jobLogConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+}
+
+func (GetScheduleActionActionDetailCreateJobRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailArray and GetScheduleActionActionDetailCreateJobRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailArray{ GetScheduleActionActionDetailCreateJobRunDetailArgs{...} }
+type GetScheduleActionActionDetailCreateJobRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailArrayOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailArray []GetScheduleActionActionDetailCreateJobRunDetailInput
+
+func (GetScheduleActionActionDetailCreateJobRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A user-friendly display name for the resource. Avoid entering confidential information.
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The job configuration details
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) JobConfigurationOverrideDetails() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) []GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail {
+		return v.JobConfigurationOverrideDetails
+	}).(GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) JobEnvironmentConfigurationOverrideDetails() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) []GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail {
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) JobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) string { return v.JobId }).(pulumi.StringOutput)
+}
+
+// Logging configuration for resource.
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) JobLogConfigurationOverrideDetails() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) []GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail {
+		return v.JobLogConfigurationOverrideDetails
+	}).(GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+func (o GetScheduleActionActionDetailCreateJobRunDetailOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetail) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreateJobRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreateJobRunDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreateJobRunDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreateJobRunDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// The type of job.
+	JobType string `pulumi:"jobType"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs and GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs{...}
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// The type of job.
+	JobType pulumi.StringInput `pulumi:"jobType"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray and GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray{ GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs{...} }
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray []GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) string {
+		return v.CommandLineArguments
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of job.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) JobType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) string {
+		return v.JobType
+	}).(pulumi.StringOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs and GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs{...}
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray and GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray{ GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs{...} }
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray []GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.JobEnvironmentType
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs and GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs{...}
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray and GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray{ GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs{...} }
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput
+	ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray []GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) bool {
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolOutput)
+}
+
+// If customer logging is enabled for pipeline.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The configuration details of a pipeline.
+	ConfigurationOverrideDetails []GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail `pulumi:"configurationOverrideDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly display name for the resource. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The pipeline log configuration details.
+	LogConfigurationOverrideDetails []GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail `pulumi:"logConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+	PipelineId string `pulumi:"pipelineId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+	ProjectId string `pulumi:"projectId"`
+	// Array of step override details. Only Step Configuration is allowed to be overridden.
+	StepOverrideDetails []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail `pulumi:"stepOverrideDetails"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailArgs and GetScheduleActionActionDetailCreatePipelineRunDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailArgs{...}
+type GetScheduleActionActionDetailCreatePipelineRunDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The configuration details of a pipeline.
+	ConfigurationOverrideDetails GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput `pulumi:"configurationOverrideDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly display name for the resource. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The pipeline log configuration details.
+	LogConfigurationOverrideDetails GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput `pulumi:"logConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Array of step override details. Only Step Configuration is allowed to be overridden.
+	StepOverrideDetails GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput `pulumi:"stepOverrideDetails"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailArray and GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailArray{ GetScheduleActionActionDetailCreatePipelineRunDetailArgs{...} }
+type GetScheduleActionActionDetailCreatePipelineRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailArray []GetScheduleActionActionDetailCreatePipelineRunDetailInput
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the schedule.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The configuration details of a pipeline.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) ConfigurationOverrideDetails() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) []GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail {
+		return v.ConfigurationOverrideDetails
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A user-friendly display name for the resource. Avoid entering confidential information.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The pipeline log configuration details.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) LogConfigurationOverrideDetails() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) []GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail {
+		return v.LogConfigurationOverrideDetails
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) PipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) string { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the schedule.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Array of step override details. Only Step Configuration is allowed to be overridden.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) StepOverrideDetails() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail {
+		return v.StepOverrideDetails
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreatePipelineRunDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreatePipelineRunDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type string `pulumi:"type"`
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs and GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs{...}
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray and GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray{ GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs{...} }
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray []GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) string {
+		return v.CommandLineArguments
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+// The type of pipeline.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs and GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs{...}
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray and GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray{ GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs{...} }
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray []GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) bool {
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolOutput)
+}
+
+// If customer logging is enabled for pipeline.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail struct {
+	// The configuration details of a step.
+	StepConfigurationDetails []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The name of the step.
+	StepName string `pulumi:"stepName"`
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs and GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs{...}
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs struct {
+	// The configuration details of a step.
+	StepConfigurationDetails GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The name of the step.
+	StepName pulumi.StringInput `pulumi:"stepName"`
+}
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray and GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray{ GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs{...} }
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return o
+}
+
+// The configuration details of a step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) StepConfigurationDetails() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail) []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail {
+		return v.StepConfigurationDetails
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) StepContainerConfigurationDetails() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail) []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+// The name of the step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) StepName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail) string {
+		return v.StepName
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs and GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs{...}
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray and GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray{ GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs{...} }
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail) string {
+		return v.CommandLineArguments
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs and GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs{...}
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray and GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray{ GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs{...} }
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+	ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray []GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ContainerType
+	}).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail struct {
+	// Parameters provided for given trigger invocation (they must match predefined schema)
+	Parameters []GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter `pulumi:"parameters"`
+	// Name of trigger
+	TriggerName string `pulumi:"triggerName"`
+}
+
+// GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput is an input type that accepts GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs and GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput` via:
+//
+//	GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs{...}
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs struct {
+	// Parameters provided for given trigger invocation (they must match predefined schema)
+	Parameters GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput `pulumi:"parameters"`
+	// Name of trigger
+	TriggerName pulumi.StringInput `pulumi:"triggerName"`
+}
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return i.ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput)
+}
+
+// GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput is an input type that accepts GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray and GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput` via:
+//
+//	GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray{ GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs{...} }
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray []GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return i.ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput)
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return o
+}
+
+// Parameters provided for given trigger invocation (they must match predefined schema)
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) Parameters() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail) []GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter {
+		return v.Parameters
+	}).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput)
+}
+
+// Name of trigger
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) TriggerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail) string {
+		return v.TriggerName
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail {
+		return vs[0].([]GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput)
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter struct {
+	// Name of trigger parameter
+	Name string `pulumi:"name"`
+	// Value of trigger parameter
+	Value string `pulumi:"value"`
+}
+
+// GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput is an input type that accepts GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs and GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput` via:
+//
+//	GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs{...}
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs struct {
+	// Name of trigger parameter
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of trigger parameter
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return i.ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput)
+}
+
+// GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput is an input type that accepts GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray and GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput values.
+// You can construct a concrete instance of `GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput` via:
+//
+//	GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray{ GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs{...} }
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput
+	ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray []GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return i.ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput)
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return o
+}
+
+// Name of trigger parameter
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Value of trigger parameter
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput() GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) ToGetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(ctx context.Context) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return o
+}
+
+func (o GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) Index(i pulumi.IntInput) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter {
+		return vs[0].([]GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)[vs[1].(int)]
+	}).(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput)
+}
+
+type GetScheduleLogDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// GetScheduleLogDetailInput is an input type that accepts GetScheduleLogDetailArgs and GetScheduleLogDetailOutput values.
+// You can construct a concrete instance of `GetScheduleLogDetailInput` via:
+//
+//	GetScheduleLogDetailArgs{...}
+type GetScheduleLogDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduleLogDetailOutput() GetScheduleLogDetailOutput
+	ToGetScheduleLogDetailOutputWithContext(context.Context) GetScheduleLogDetailOutput
+}
+
+type GetScheduleLogDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetScheduleLogDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleLogDetail)(nil)).Elem()
+}
+
+func (i GetScheduleLogDetailArgs) ToGetScheduleLogDetailOutput() GetScheduleLogDetailOutput {
+	return i.ToGetScheduleLogDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduleLogDetailArgs) ToGetScheduleLogDetailOutputWithContext(ctx context.Context) GetScheduleLogDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleLogDetailOutput)
+}
+
+// GetScheduleLogDetailArrayInput is an input type that accepts GetScheduleLogDetailArray and GetScheduleLogDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduleLogDetailArrayInput` via:
+//
+//	GetScheduleLogDetailArray{ GetScheduleLogDetailArgs{...} }
+type GetScheduleLogDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleLogDetailArrayOutput() GetScheduleLogDetailArrayOutput
+	ToGetScheduleLogDetailArrayOutputWithContext(context.Context) GetScheduleLogDetailArrayOutput
+}
+
+type GetScheduleLogDetailArray []GetScheduleLogDetailInput
+
+func (GetScheduleLogDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleLogDetail)(nil)).Elem()
+}
+
+func (i GetScheduleLogDetailArray) ToGetScheduleLogDetailArrayOutput() GetScheduleLogDetailArrayOutput {
+	return i.ToGetScheduleLogDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleLogDetailArray) ToGetScheduleLogDetailArrayOutputWithContext(ctx context.Context) GetScheduleLogDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleLogDetailArrayOutput)
+}
+
+type GetScheduleLogDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleLogDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleLogDetail)(nil)).Elem()
+}
+
+func (o GetScheduleLogDetailOutput) ToGetScheduleLogDetailOutput() GetScheduleLogDetailOutput {
+	return o
+}
+
+func (o GetScheduleLogDetailOutput) ToGetScheduleLogDetailOutputWithContext(ctx context.Context) GetScheduleLogDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetScheduleLogDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleLogDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o GetScheduleLogDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleLogDetail) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetScheduleLogDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleLogDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleLogDetail)(nil)).Elem()
+}
+
+func (o GetScheduleLogDetailArrayOutput) ToGetScheduleLogDetailArrayOutput() GetScheduleLogDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleLogDetailArrayOutput) ToGetScheduleLogDetailArrayOutputWithContext(ctx context.Context) GetScheduleLogDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduleLogDetailArrayOutput) Index(i pulumi.IntInput) GetScheduleLogDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleLogDetail {
+		return vs[0].([]GetScheduleLogDetail)[vs[1].(int)]
+	}).(GetScheduleLogDetailOutput)
+}
+
+type GetScheduleTrigger struct {
+	// Schedule cron expression
+	CronExpression string `pulumi:"cronExpression"`
+	// The type of frequency
+	Frequency string `pulumi:"frequency"`
+	// The interval of frequency.
+	Interval int `pulumi:"interval"`
+	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+	IsRandomStartTime bool `pulumi:"isRandomStartTime"`
+	// This recurrence field conforms to RFC-5545 formatting
+	Recurrence string `pulumi:"recurrence"`
+	// The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnd string `pulumi:"timeEnd"`
+	// The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStart string `pulumi:"timeStart"`
+	// The schedule trigger type
+	TriggerType string `pulumi:"triggerType"`
+}
+
+// GetScheduleTriggerInput is an input type that accepts GetScheduleTriggerArgs and GetScheduleTriggerOutput values.
+// You can construct a concrete instance of `GetScheduleTriggerInput` via:
+//
+//	GetScheduleTriggerArgs{...}
+type GetScheduleTriggerInput interface {
+	pulumi.Input
+
+	ToGetScheduleTriggerOutput() GetScheduleTriggerOutput
+	ToGetScheduleTriggerOutputWithContext(context.Context) GetScheduleTriggerOutput
+}
+
+type GetScheduleTriggerArgs struct {
+	// Schedule cron expression
+	CronExpression pulumi.StringInput `pulumi:"cronExpression"`
+	// The type of frequency
+	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// The interval of frequency.
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+	IsRandomStartTime pulumi.BoolInput `pulumi:"isRandomStartTime"`
+	// This recurrence field conforms to RFC-5545 formatting
+	Recurrence pulumi.StringInput `pulumi:"recurrence"`
+	// The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	// The schedule trigger type
+	TriggerType pulumi.StringInput `pulumi:"triggerType"`
+}
+
+func (GetScheduleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleTrigger)(nil)).Elem()
+}
+
+func (i GetScheduleTriggerArgs) ToGetScheduleTriggerOutput() GetScheduleTriggerOutput {
+	return i.ToGetScheduleTriggerOutputWithContext(context.Background())
+}
+
+func (i GetScheduleTriggerArgs) ToGetScheduleTriggerOutputWithContext(ctx context.Context) GetScheduleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleTriggerOutput)
+}
+
+// GetScheduleTriggerArrayInput is an input type that accepts GetScheduleTriggerArray and GetScheduleTriggerArrayOutput values.
+// You can construct a concrete instance of `GetScheduleTriggerArrayInput` via:
+//
+//	GetScheduleTriggerArray{ GetScheduleTriggerArgs{...} }
+type GetScheduleTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleTriggerArrayOutput() GetScheduleTriggerArrayOutput
+	ToGetScheduleTriggerArrayOutputWithContext(context.Context) GetScheduleTriggerArrayOutput
+}
+
+type GetScheduleTriggerArray []GetScheduleTriggerInput
+
+func (GetScheduleTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleTrigger)(nil)).Elem()
+}
+
+func (i GetScheduleTriggerArray) ToGetScheduleTriggerArrayOutput() GetScheduleTriggerArrayOutput {
+	return i.ToGetScheduleTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleTriggerArray) ToGetScheduleTriggerArrayOutputWithContext(ctx context.Context) GetScheduleTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleTriggerArrayOutput)
+}
+
+type GetScheduleTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleTrigger)(nil)).Elem()
+}
+
+func (o GetScheduleTriggerOutput) ToGetScheduleTriggerOutput() GetScheduleTriggerOutput {
+	return o
+}
+
+func (o GetScheduleTriggerOutput) ToGetScheduleTriggerOutputWithContext(ctx context.Context) GetScheduleTriggerOutput {
+	return o
+}
+
+// Schedule cron expression
+func (o GetScheduleTriggerOutput) CronExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) string { return v.CronExpression }).(pulumi.StringOutput)
+}
+
+// The type of frequency
+func (o GetScheduleTriggerOutput) Frequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) string { return v.Frequency }).(pulumi.StringOutput)
+}
+
+// The interval of frequency.
+func (o GetScheduleTriggerOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+func (o GetScheduleTriggerOutput) IsRandomStartTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) bool { return v.IsRandomStartTime }).(pulumi.BoolOutput)
+}
+
+// This recurrence field conforms to RFC-5545 formatting
+func (o GetScheduleTriggerOutput) Recurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) string { return v.Recurrence }).(pulumi.StringOutput)
+}
+
+// The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetScheduleTriggerOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetScheduleTriggerOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+// The schedule trigger type
+func (o GetScheduleTriggerOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type GetScheduleTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleTrigger)(nil)).Elem()
+}
+
+func (o GetScheduleTriggerArrayOutput) ToGetScheduleTriggerArrayOutput() GetScheduleTriggerArrayOutput {
+	return o
+}
+
+func (o GetScheduleTriggerArrayOutput) ToGetScheduleTriggerArrayOutputWithContext(ctx context.Context) GetScheduleTriggerArrayOutput {
+	return o
+}
+
+func (o GetScheduleTriggerArrayOutput) Index(i pulumi.IntInput) GetScheduleTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleTrigger {
+		return vs[0].([]GetScheduleTrigger)[vs[1].(int)]
+	}).(GetScheduleTriggerOutput)
+}
+
+type GetSchedulesFilter struct {
+	// Name of trigger parameter
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulesFilterInput is an input type that accepts GetSchedulesFilterArgs and GetSchedulesFilterOutput values.
+// You can construct a concrete instance of `GetSchedulesFilterInput` via:
+//
+//	GetSchedulesFilterArgs{...}
+type GetSchedulesFilterInput interface {
+	pulumi.Input
+
+	ToGetSchedulesFilterOutput() GetSchedulesFilterOutput
+	ToGetSchedulesFilterOutputWithContext(context.Context) GetSchedulesFilterOutput
+}
+
+type GetSchedulesFilterArgs struct {
+	// Name of trigger parameter
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetSchedulesFilterArgs) ToGetSchedulesFilterOutput() GetSchedulesFilterOutput {
+	return i.ToGetSchedulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesFilterArgs) ToGetSchedulesFilterOutputWithContext(ctx context.Context) GetSchedulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesFilterOutput)
+}
+
+// GetSchedulesFilterArrayInput is an input type that accepts GetSchedulesFilterArray and GetSchedulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesFilterArrayInput` via:
+//
+//	GetSchedulesFilterArray{ GetSchedulesFilterArgs{...} }
+type GetSchedulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesFilterArrayOutput() GetSchedulesFilterArrayOutput
+	ToGetSchedulesFilterArrayOutputWithContext(context.Context) GetSchedulesFilterArrayOutput
+}
+
+type GetSchedulesFilterArray []GetSchedulesFilterInput
+
+func (GetSchedulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetSchedulesFilterArray) ToGetSchedulesFilterArrayOutput() GetSchedulesFilterArrayOutput {
+	return i.ToGetSchedulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesFilterArray) ToGetSchedulesFilterArrayOutputWithContext(ctx context.Context) GetSchedulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesFilterArrayOutput)
+}
+
+type GetSchedulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutput() GetSchedulesFilterOutput {
+	return o
+}
+
+func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutputWithContext(ctx context.Context) GetSchedulesFilterOutput {
+	return o
+}
+
+// Name of trigger parameter
+func (o GetSchedulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSchedulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetSchedulesFilterArrayOutput) ToGetSchedulesFilterArrayOutput() GetSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesFilterArrayOutput) ToGetSchedulesFilterArrayOutputWithContext(ctx context.Context) GetSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesFilter {
+		return vs[0].([]GetSchedulesFilter)[vs[1].(int)]
+	}).(GetSchedulesFilterOutput)
+}
+
+type GetSchedulesSchedule struct {
+	// The schedule action
+	Actions []GetSchedulesScheduleAction `pulumi:"actions"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
+	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the schedule.
+	Description string `pulumi:"description"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// unique Schedule identifier
+	Id string `pulumi:"id"`
+	// Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
+	LastScheduleRunDetails string `pulumi:"lastScheduleRunDetails"`
+	// A message describing the current state in more detail.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Custom logging details for schedule execution.
+	LogDetails []GetSchedulesScheduleLogDetail `pulumi:"logDetails"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId string `pulumi:"projectId"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+	TimeLastScheduleRun string `pulumi:"timeLastScheduleRun"`
+	// The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+	TimeNextScheduledRun string `pulumi:"timeNextScheduledRun"`
+	// The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+	Triggers []GetSchedulesScheduleTrigger `pulumi:"triggers"`
+}
+
+// GetSchedulesScheduleInput is an input type that accepts GetSchedulesScheduleArgs and GetSchedulesScheduleOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleInput` via:
+//
+//	GetSchedulesScheduleArgs{...}
+type GetSchedulesScheduleInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleOutput() GetSchedulesScheduleOutput
+	ToGetSchedulesScheduleOutputWithContext(context.Context) GetSchedulesScheduleOutput
+}
+
+type GetSchedulesScheduleArgs struct {
+	// The schedule action
+	Actions GetSchedulesScheduleActionArrayInput `pulumi:"actions"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the schedule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// unique Schedule identifier
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
+	LastScheduleRunDetails pulumi.StringInput `pulumi:"lastScheduleRunDetails"`
+	// A message describing the current state in more detail.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Custom logging details for schedule execution.
+	LogDetails GetSchedulesScheduleLogDetailArrayInput `pulumi:"logDetails"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+	TimeLastScheduleRun pulumi.StringInput `pulumi:"timeLastScheduleRun"`
+	// The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+	TimeNextScheduledRun pulumi.StringInput `pulumi:"timeNextScheduledRun"`
+	// The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+	Triggers GetSchedulesScheduleTriggerArrayInput `pulumi:"triggers"`
+}
+
+func (GetSchedulesScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesSchedule)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleArgs) ToGetSchedulesScheduleOutput() GetSchedulesScheduleOutput {
+	return i.ToGetSchedulesScheduleOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleArgs) ToGetSchedulesScheduleOutputWithContext(ctx context.Context) GetSchedulesScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleOutput)
+}
+
+// GetSchedulesScheduleArrayInput is an input type that accepts GetSchedulesScheduleArray and GetSchedulesScheduleArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleArrayInput` via:
+//
+//	GetSchedulesScheduleArray{ GetSchedulesScheduleArgs{...} }
+type GetSchedulesScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleArrayOutput() GetSchedulesScheduleArrayOutput
+	ToGetSchedulesScheduleArrayOutputWithContext(context.Context) GetSchedulesScheduleArrayOutput
+}
+
+type GetSchedulesScheduleArray []GetSchedulesScheduleInput
+
+func (GetSchedulesScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesSchedule)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleArray) ToGetSchedulesScheduleArrayOutput() GetSchedulesScheduleArrayOutput {
+	return i.ToGetSchedulesScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleArray) ToGetSchedulesScheduleArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleArrayOutput)
+}
+
+type GetSchedulesScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesSchedule)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleOutput) ToGetSchedulesScheduleOutput() GetSchedulesScheduleOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleOutput) ToGetSchedulesScheduleOutputWithContext(ctx context.Context) GetSchedulesScheduleOutput {
+	return o
+}
+
+// The schedule action
+func (o GetSchedulesScheduleOutput) Actions() GetSchedulesScheduleActionArrayOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) []GetSchedulesScheduleAction { return v.Actions }).(GetSchedulesScheduleActionArrayOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetSchedulesScheduleOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
+func (o GetSchedulesScheduleOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetSchedulesScheduleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the schedule.
+func (o GetSchedulesScheduleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetSchedulesScheduleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetSchedulesScheduleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// unique Schedule identifier
+func (o GetSchedulesScheduleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
+func (o GetSchedulesScheduleOutput) LastScheduleRunDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.LastScheduleRunDetails }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail.
+func (o GetSchedulesScheduleOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Custom logging details for schedule execution.
+func (o GetSchedulesScheduleOutput) LogDetails() GetSchedulesScheduleLogDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) []GetSchedulesScheduleLogDetail { return v.LogDetails }).(GetSchedulesScheduleLogDetailArrayOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+func (o GetSchedulesScheduleOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetSchedulesScheduleOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSchedulesScheduleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
+func (o GetSchedulesScheduleOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+func (o GetSchedulesScheduleOutput) TimeLastScheduleRun() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.TimeLastScheduleRun }).(pulumi.StringOutput)
+}
+
+// The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
+func (o GetSchedulesScheduleOutput) TimeNextScheduledRun() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.TimeNextScheduledRun }).(pulumi.StringOutput)
+}
+
+// The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
+func (o GetSchedulesScheduleOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+func (o GetSchedulesScheduleOutput) Triggers() GetSchedulesScheduleTriggerArrayOutput {
+	return o.ApplyT(func(v GetSchedulesSchedule) []GetSchedulesScheduleTrigger { return v.Triggers }).(GetSchedulesScheduleTriggerArrayOutput)
+}
+
+type GetSchedulesScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesSchedule)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleArrayOutput) ToGetSchedulesScheduleArrayOutput() GetSchedulesScheduleArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleArrayOutput) ToGetSchedulesScheduleArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesSchedule {
+		return vs[0].([]GetSchedulesSchedule)[vs[1].(int)]
+	}).(GetSchedulesScheduleOutput)
+}
+
+type GetSchedulesScheduleAction struct {
+	// Schedule Http action details
+	ActionDetails []GetSchedulesScheduleActionActionDetail `pulumi:"actionDetails"`
+	// The Schedule Action type
+	ActionType string `pulumi:"actionType"`
+}
+
+// GetSchedulesScheduleActionInput is an input type that accepts GetSchedulesScheduleActionArgs and GetSchedulesScheduleActionOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionInput` via:
+//
+//	GetSchedulesScheduleActionArgs{...}
+type GetSchedulesScheduleActionInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionOutput() GetSchedulesScheduleActionOutput
+	ToGetSchedulesScheduleActionOutputWithContext(context.Context) GetSchedulesScheduleActionOutput
+}
+
+type GetSchedulesScheduleActionArgs struct {
+	// Schedule Http action details
+	ActionDetails GetSchedulesScheduleActionActionDetailArrayInput `pulumi:"actionDetails"`
+	// The Schedule Action type
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+}
+
+func (GetSchedulesScheduleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleAction)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionArgs) ToGetSchedulesScheduleActionOutput() GetSchedulesScheduleActionOutput {
+	return i.ToGetSchedulesScheduleActionOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionArgs) ToGetSchedulesScheduleActionOutputWithContext(ctx context.Context) GetSchedulesScheduleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionOutput)
+}
+
+// GetSchedulesScheduleActionArrayInput is an input type that accepts GetSchedulesScheduleActionArray and GetSchedulesScheduleActionArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionArrayInput` via:
+//
+//	GetSchedulesScheduleActionArray{ GetSchedulesScheduleActionArgs{...} }
+type GetSchedulesScheduleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionArrayOutput() GetSchedulesScheduleActionArrayOutput
+	ToGetSchedulesScheduleActionArrayOutputWithContext(context.Context) GetSchedulesScheduleActionArrayOutput
+}
+
+type GetSchedulesScheduleActionArray []GetSchedulesScheduleActionInput
+
+func (GetSchedulesScheduleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleAction)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionArray) ToGetSchedulesScheduleActionArrayOutput() GetSchedulesScheduleActionArrayOutput {
+	return i.ToGetSchedulesScheduleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionArray) ToGetSchedulesScheduleActionArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionArrayOutput)
+}
+
+type GetSchedulesScheduleActionOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleAction)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionOutput) ToGetSchedulesScheduleActionOutput() GetSchedulesScheduleActionOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionOutput) ToGetSchedulesScheduleActionOutputWithContext(ctx context.Context) GetSchedulesScheduleActionOutput {
+	return o
+}
+
+// Schedule Http action details
+func (o GetSchedulesScheduleActionOutput) ActionDetails() GetSchedulesScheduleActionActionDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleAction) []GetSchedulesScheduleActionActionDetail { return v.ActionDetails }).(GetSchedulesScheduleActionActionDetailArrayOutput)
+}
+
+// The Schedule Action type
+func (o GetSchedulesScheduleActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleAction) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleAction)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionArrayOutput) ToGetSchedulesScheduleActionArrayOutput() GetSchedulesScheduleActionArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionArrayOutput) ToGetSchedulesScheduleActionArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleAction {
+		return vs[0].([]GetSchedulesScheduleAction)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionOutput)
+}
+
+type GetSchedulesScheduleActionActionDetail struct {
+	// Parameters needed to create a new job run.
+	CreateJobRunDetails []GetSchedulesScheduleActionActionDetailCreateJobRunDetail `pulumi:"createJobRunDetails"`
+	// The information about new PipelineRun.
+	CreatePipelineRunDetails []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail `pulumi:"createPipelineRunDetails"`
+	// The type of http action to trigger.
+	HttpActionType string `pulumi:"httpActionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	MlApplicationInstanceViewId string `pulumi:"mlApplicationInstanceViewId"`
+	// Payload for trigger request endpoint
+	TriggerMlApplicationInstanceViewFlowDetails []GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail `pulumi:"triggerMlApplicationInstanceViewFlowDetails"`
+}
+
+// GetSchedulesScheduleActionActionDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailArgs and GetSchedulesScheduleActionActionDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailOutput() GetSchedulesScheduleActionActionDetailOutput
+	ToGetSchedulesScheduleActionActionDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailArgs struct {
+	// Parameters needed to create a new job run.
+	CreateJobRunDetails GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayInput `pulumi:"createJobRunDetails"`
+	// The information about new PipelineRun.
+	CreatePipelineRunDetails GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayInput `pulumi:"createPipelineRunDetails"`
+	// The type of http action to trigger.
+	HttpActionType pulumi.StringInput `pulumi:"httpActionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	MlApplicationInstanceViewId pulumi.StringInput `pulumi:"mlApplicationInstanceViewId"`
+	// Payload for trigger request endpoint
+	TriggerMlApplicationInstanceViewFlowDetails GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput `pulumi:"triggerMlApplicationInstanceViewFlowDetails"`
+}
+
+func (GetSchedulesScheduleActionActionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailArgs) ToGetSchedulesScheduleActionActionDetailOutput() GetSchedulesScheduleActionActionDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailArgs) ToGetSchedulesScheduleActionActionDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailArray and GetSchedulesScheduleActionActionDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailArray{ GetSchedulesScheduleActionActionDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailArrayOutput() GetSchedulesScheduleActionActionDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailArray []GetSchedulesScheduleActionActionDetailInput
+
+func (GetSchedulesScheduleActionActionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailArray) ToGetSchedulesScheduleActionActionDetailArrayOutput() GetSchedulesScheduleActionActionDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailArray) ToGetSchedulesScheduleActionActionDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailOutput) ToGetSchedulesScheduleActionActionDetailOutput() GetSchedulesScheduleActionActionDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailOutput) ToGetSchedulesScheduleActionActionDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailOutput {
+	return o
+}
+
+// Parameters needed to create a new job run.
+func (o GetSchedulesScheduleActionActionDetailOutput) CreateJobRunDetails() GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetail) []GetSchedulesScheduleActionActionDetailCreateJobRunDetail {
+		return v.CreateJobRunDetails
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput)
+}
+
+// The information about new PipelineRun.
+func (o GetSchedulesScheduleActionActionDetailOutput) CreatePipelineRunDetails() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetail) []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail {
+		return v.CreatePipelineRunDetails
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput)
+}
+
+// The type of http action to trigger.
+func (o GetSchedulesScheduleActionActionDetailOutput) HttpActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetail) string { return v.HttpActionType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+func (o GetSchedulesScheduleActionActionDetailOutput) MlApplicationInstanceViewId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetail) string { return v.MlApplicationInstanceViewId }).(pulumi.StringOutput)
+}
+
+// Payload for trigger request endpoint
+func (o GetSchedulesScheduleActionActionDetailOutput) TriggerMlApplicationInstanceViewFlowDetails() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetail) []GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail {
+		return v.TriggerMlApplicationInstanceViewFlowDetails
+	}).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailArrayOutput() GetSchedulesScheduleActionActionDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetail struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The job configuration details
+	JobConfigurationOverrideDetails []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+	JobId string `pulumi:"jobId"`
+	// Logging configuration for resource.
+	JobLogConfigurationOverrideDetails []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail `pulumi:"jobLogConfigurationOverrideDetails"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId string `pulumi:"projectId"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs and GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The job configuration details
+	JobConfigurationOverrideDetails GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput `pulumi:"jobConfigurationOverrideDetails"`
+	// Environment configuration to capture job runtime dependencies.
+	JobEnvironmentConfigurationOverrideDetails GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+	JobId pulumi.StringInput `pulumi:"jobId"`
+	// Logging configuration for resource.
+	JobLogConfigurationOverrideDetails GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput `pulumi:"jobLogConfigurationOverrideDetails"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray and GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray{ GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray []GetSchedulesScheduleActionActionDetailCreateJobRunDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput {
+	return o
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The job configuration details
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) JobConfigurationOverrideDetails() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail {
+		return v.JobConfigurationOverrideDetails
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput)
+}
+
+// Environment configuration to capture job runtime dependencies.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) JobEnvironmentConfigurationOverrideDetails() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail {
+		return v.JobEnvironmentConfigurationOverrideDetails
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) JobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) string { return v.JobId }).(pulumi.StringOutput)
+}
+
+// Logging configuration for resource.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) JobLogConfigurationOverrideDetails() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail {
+		return v.JobLogConfigurationOverrideDetails
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetail) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreateJobRunDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreateJobRunDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// The type of job.
+	JobType string `pulumi:"jobType"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs and GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// The type of job.
+	JobType pulumi.StringInput `pulumi:"jobType"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray and GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray{ GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) string {
+		return v.CommandLineArguments
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of job.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) JobType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) string {
+		return v.JobType
+	}).(pulumi.StringOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType string `pulumi:"jobEnvironmentType"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs and GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+	// The environment configuration type used for job runtime.
+	JobEnvironmentType pulumi.StringInput `pulumi:"jobEnvironmentType"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray and GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray{ GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+// The environment configuration type used for job runtime.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput) JobEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail) string {
+		return v.JobEnvironmentType
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs and GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray and GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray{ GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray []GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) bool {
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolOutput)
+}
+
+// If customer logging is enabled for pipeline.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The configuration details of a pipeline.
+	ConfigurationOverrideDetails []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail `pulumi:"configurationOverrideDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The pipeline log configuration details.
+	LogConfigurationOverrideDetails []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail `pulumi:"logConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+	PipelineId string `pulumi:"pipelineId"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId string `pulumi:"projectId"`
+	// Array of step override details. Only Step Configuration is allowed to be overridden.
+	StepOverrideDetails []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail `pulumi:"stepOverrideDetails"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The configuration details of a pipeline.
+	ConfigurationOverrideDetails GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput `pulumi:"configurationOverrideDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The pipeline log configuration details.
+	LogConfigurationOverrideDetails GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput `pulumi:"logConfigurationOverrideDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Array of step override details. Only Step Configuration is allowed to be overridden.
+	StepOverrideDetails GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput `pulumi:"stepOverrideDetails"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray{ GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return o
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The configuration details of a pipeline.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) ConfigurationOverrideDetails() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail {
+		return v.ConfigurationOverrideDetails
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The pipeline log configuration details.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) LogConfigurationOverrideDetails() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail {
+		return v.LogConfigurationOverrideDetails
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) PipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) string { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Array of step override details. Only Step Configuration is allowed to be overridden.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) StepOverrideDetails() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail {
+		return v.StepOverrideDetails
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type string `pulumi:"type"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray{ GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) string {
+		return v.CommandLineArguments
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+// The type of pipeline.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray{ GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) bool {
+		return v.EnableAutoLogCreation
+	}).(pulumi.BoolOutput)
+}
+
+// If customer logging is enabled for pipeline.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail struct {
+	// The configuration details of a step.
+	StepConfigurationDetails []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The name of the step.
+	StepName string `pulumi:"stepName"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs struct {
+	// The configuration details of a step.
+	StepConfigurationDetails GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The name of the step.
+	StepName pulumi.StringInput `pulumi:"stepName"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray{ GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return o
+}
+
+// The configuration details of a step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) StepConfigurationDetails() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail) []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail {
+		return v.StepConfigurationDetails
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) StepContainerConfigurationDetails() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail) []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+// The name of the step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput) StepName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail) string {
+		return v.StepName
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray{ GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail) string {
+		return v.CommandLineArguments
+	}).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray and GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray{ GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray []GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ContainerType
+	}).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail struct {
+	// Parameters provided for given trigger invocation (they must match predefined schema)
+	Parameters []GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter `pulumi:"parameters"`
+	// Name of trigger
+	TriggerName string `pulumi:"triggerName"`
+}
+
+// GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput is an input type that accepts GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs and GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs{...}
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs struct {
+	// Parameters provided for given trigger invocation (they must match predefined schema)
+	Parameters GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput `pulumi:"parameters"`
+	// Name of trigger
+	TriggerName pulumi.StringInput `pulumi:"triggerName"`
+}
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray and GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray{ GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs{...} }
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray []GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return o
+}
+
+// Parameters provided for given trigger invocation (they must match predefined schema)
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) Parameters() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail) []GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter {
+		return v.Parameters
+	}).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput)
+}
+
+// Name of trigger
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput) TriggerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail) string {
+		return v.TriggerName
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter struct {
+	// Name of trigger parameter
+	Name string `pulumi:"name"`
+	// Value of trigger parameter
+	Value string `pulumi:"value"`
+}
+
+// GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput is an input type that accepts GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs and GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs{...}
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs struct {
+	// Name of trigger parameter
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of trigger parameter
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput)
+}
+
+// GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput is an input type that accepts GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray and GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput` via:
+//
+//	GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray{ GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs{...} }
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput
+	ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray []GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return i.ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return o
+}
+
+// Name of trigger parameter
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Value of trigger parameter
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput() GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) ToGetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter {
+		return vs[0].([]GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameter)[vs[1].(int)]
+	}).(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput)
+}
+
+type GetSchedulesScheduleLogDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId string `pulumi:"logId"`
+}
+
+// GetSchedulesScheduleLogDetailInput is an input type that accepts GetSchedulesScheduleLogDetailArgs and GetSchedulesScheduleLogDetailOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleLogDetailInput` via:
+//
+//	GetSchedulesScheduleLogDetailArgs{...}
+type GetSchedulesScheduleLogDetailInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleLogDetailOutput() GetSchedulesScheduleLogDetailOutput
+	ToGetSchedulesScheduleLogDetailOutputWithContext(context.Context) GetSchedulesScheduleLogDetailOutput
+}
+
+type GetSchedulesScheduleLogDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetSchedulesScheduleLogDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleLogDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleLogDetailArgs) ToGetSchedulesScheduleLogDetailOutput() GetSchedulesScheduleLogDetailOutput {
+	return i.ToGetSchedulesScheduleLogDetailOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleLogDetailArgs) ToGetSchedulesScheduleLogDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleLogDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleLogDetailOutput)
+}
+
+// GetSchedulesScheduleLogDetailArrayInput is an input type that accepts GetSchedulesScheduleLogDetailArray and GetSchedulesScheduleLogDetailArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleLogDetailArrayInput` via:
+//
+//	GetSchedulesScheduleLogDetailArray{ GetSchedulesScheduleLogDetailArgs{...} }
+type GetSchedulesScheduleLogDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleLogDetailArrayOutput() GetSchedulesScheduleLogDetailArrayOutput
+	ToGetSchedulesScheduleLogDetailArrayOutputWithContext(context.Context) GetSchedulesScheduleLogDetailArrayOutput
+}
+
+type GetSchedulesScheduleLogDetailArray []GetSchedulesScheduleLogDetailInput
+
+func (GetSchedulesScheduleLogDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleLogDetail)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleLogDetailArray) ToGetSchedulesScheduleLogDetailArrayOutput() GetSchedulesScheduleLogDetailArrayOutput {
+	return i.ToGetSchedulesScheduleLogDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleLogDetailArray) ToGetSchedulesScheduleLogDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleLogDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleLogDetailArrayOutput)
+}
+
+type GetSchedulesScheduleLogDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleLogDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleLogDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleLogDetailOutput) ToGetSchedulesScheduleLogDetailOutput() GetSchedulesScheduleLogDetailOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleLogDetailOutput) ToGetSchedulesScheduleLogDetailOutputWithContext(ctx context.Context) GetSchedulesScheduleLogDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetSchedulesScheduleLogDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleLogDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+func (o GetSchedulesScheduleLogDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleLogDetail) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleLogDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleLogDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleLogDetail)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleLogDetailArrayOutput) ToGetSchedulesScheduleLogDetailArrayOutput() GetSchedulesScheduleLogDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleLogDetailArrayOutput) ToGetSchedulesScheduleLogDetailArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleLogDetailArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleLogDetailArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleLogDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleLogDetail {
+		return vs[0].([]GetSchedulesScheduleLogDetail)[vs[1].(int)]
+	}).(GetSchedulesScheduleLogDetailOutput)
+}
+
+type GetSchedulesScheduleTrigger struct {
+	// Schedule cron expression
+	CronExpression string `pulumi:"cronExpression"`
+	// The type of frequency
+	Frequency string `pulumi:"frequency"`
+	// The interval of frequency.
+	Interval int `pulumi:"interval"`
+	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+	IsRandomStartTime bool `pulumi:"isRandomStartTime"`
+	// This recurrence field conforms to RFC-5545 formatting
+	Recurrence string `pulumi:"recurrence"`
+	// The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnd string `pulumi:"timeEnd"`
+	// The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStart string `pulumi:"timeStart"`
+	// The schedule trigger type
+	TriggerType string `pulumi:"triggerType"`
+}
+
+// GetSchedulesScheduleTriggerInput is an input type that accepts GetSchedulesScheduleTriggerArgs and GetSchedulesScheduleTriggerOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleTriggerInput` via:
+//
+//	GetSchedulesScheduleTriggerArgs{...}
+type GetSchedulesScheduleTriggerInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleTriggerOutput() GetSchedulesScheduleTriggerOutput
+	ToGetSchedulesScheduleTriggerOutputWithContext(context.Context) GetSchedulesScheduleTriggerOutput
+}
+
+type GetSchedulesScheduleTriggerArgs struct {
+	// Schedule cron expression
+	CronExpression pulumi.StringInput `pulumi:"cronExpression"`
+	// The type of frequency
+	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// The interval of frequency.
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+	IsRandomStartTime pulumi.BoolInput `pulumi:"isRandomStartTime"`
+	// This recurrence field conforms to RFC-5545 formatting
+	Recurrence pulumi.StringInput `pulumi:"recurrence"`
+	// The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	// The schedule trigger type
+	TriggerType pulumi.StringInput `pulumi:"triggerType"`
+}
+
+func (GetSchedulesScheduleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleTrigger)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleTriggerArgs) ToGetSchedulesScheduleTriggerOutput() GetSchedulesScheduleTriggerOutput {
+	return i.ToGetSchedulesScheduleTriggerOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleTriggerArgs) ToGetSchedulesScheduleTriggerOutputWithContext(ctx context.Context) GetSchedulesScheduleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleTriggerOutput)
+}
+
+// GetSchedulesScheduleTriggerArrayInput is an input type that accepts GetSchedulesScheduleTriggerArray and GetSchedulesScheduleTriggerArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleTriggerArrayInput` via:
+//
+//	GetSchedulesScheduleTriggerArray{ GetSchedulesScheduleTriggerArgs{...} }
+type GetSchedulesScheduleTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleTriggerArrayOutput() GetSchedulesScheduleTriggerArrayOutput
+	ToGetSchedulesScheduleTriggerArrayOutputWithContext(context.Context) GetSchedulesScheduleTriggerArrayOutput
+}
+
+type GetSchedulesScheduleTriggerArray []GetSchedulesScheduleTriggerInput
+
+func (GetSchedulesScheduleTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleTrigger)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleTriggerArray) ToGetSchedulesScheduleTriggerArrayOutput() GetSchedulesScheduleTriggerArrayOutput {
+	return i.ToGetSchedulesScheduleTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleTriggerArray) ToGetSchedulesScheduleTriggerArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleTriggerArrayOutput)
+}
+
+type GetSchedulesScheduleTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleTrigger)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleTriggerOutput) ToGetSchedulesScheduleTriggerOutput() GetSchedulesScheduleTriggerOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleTriggerOutput) ToGetSchedulesScheduleTriggerOutputWithContext(ctx context.Context) GetSchedulesScheduleTriggerOutput {
+	return o
+}
+
+// Schedule cron expression
+func (o GetSchedulesScheduleTriggerOutput) CronExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.CronExpression }).(pulumi.StringOutput)
+}
+
+// The type of frequency
+func (o GetSchedulesScheduleTriggerOutput) Frequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.Frequency }).(pulumi.StringOutput)
+}
+
+// The interval of frequency.
+func (o GetSchedulesScheduleTriggerOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+func (o GetSchedulesScheduleTriggerOutput) IsRandomStartTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) bool { return v.IsRandomStartTime }).(pulumi.BoolOutput)
+}
+
+// This recurrence field conforms to RFC-5545 formatting
+func (o GetSchedulesScheduleTriggerOutput) Recurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.Recurrence }).(pulumi.StringOutput)
+}
+
+// The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSchedulesScheduleTriggerOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSchedulesScheduleTriggerOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+// The schedule trigger type
+func (o GetSchedulesScheduleTriggerOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleTrigger)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleTriggerArrayOutput) ToGetSchedulesScheduleTriggerArrayOutput() GetSchedulesScheduleTriggerArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleTriggerArrayOutput) ToGetSchedulesScheduleTriggerArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleTriggerArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleTriggerArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleTrigger {
+		return vs[0].([]GetSchedulesScheduleTrigger)[vs[1].(int)]
+	}).(GetSchedulesScheduleTriggerOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobConfigurationDetailsInput)(nil)).Elem(), JobJobConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobConfigurationDetailsPtrInput)(nil)).Elem(), JobJobConfigurationDetailsArgs{})
@@ -29700,6 +38381,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionInput)(nil)).Elem(), ScheduleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionPtrInput)(nil)).Elem(), ScheduleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsInput)(nil)).Elem(), ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrInput)(nil)).Elem(), ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterInput)(nil)).Elem(), ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayInput)(nil)).Elem(), ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleLogDetailsInput)(nil)).Elem(), ScheduleLogDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleLogDetailsPtrInput)(nil)).Elem(), ScheduleLogDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleTriggerInput)(nil)).Elem(), ScheduleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleTriggerPtrInput)(nil)).Elem(), ScheduleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerInput)(nil)).Elem(), GetContainersContainerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerArrayInput)(nil)).Elem(), GetContainersContainerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerTagConfigurationListInput)(nil)).Elem(), GetContainersContainerTagConfigurationListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerTagConfigurationListArrayInput)(nil)).Elem(), GetContainersContainerTagConfigurationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsListInput)(nil)).Elem(), GetContainersContainerWorkloadConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsListArrayInput)(nil)).Elem(), GetContainersContainerWorkloadConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationInput)(nil)).Elem(), GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayInput)(nil)).Elem(), GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersFilterInput)(nil)).Elem(), GetContainersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContainersFilterArrayInput)(nil)).Elem(), GetContainersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFastLaunchJobConfigInput)(nil)).Elem(), GetFastLaunchJobConfigsFastLaunchJobConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFastLaunchJobConfigArrayInput)(nil)).Elem(), GetFastLaunchJobConfigsFastLaunchJobConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFilterInput)(nil)).Elem(), GetFastLaunchJobConfigsFilterArgs{})
@@ -29992,6 +38715,74 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterArrayInput)(nil)).Elem(), GetProjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectInput)(nil)).Elem(), GetProjectsProjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectArrayInput)(nil)).Elem(), GetProjectsProjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionInput)(nil)).Elem(), GetScheduleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionArrayInput)(nil)).Elem(), GetScheduleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailInput)(nil)).Elem(), GetScheduleActionActionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput)(nil)).Elem(), GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput)(nil)).Elem(), GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput)(nil)).Elem(), GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput)(nil)).Elem(), GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleLogDetailInput)(nil)).Elem(), GetScheduleLogDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleLogDetailArrayInput)(nil)).Elem(), GetScheduleLogDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleTriggerInput)(nil)).Elem(), GetScheduleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleTriggerArrayInput)(nil)).Elem(), GetScheduleTriggerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesFilterInput)(nil)).Elem(), GetSchedulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesFilterArrayInput)(nil)).Elem(), GetSchedulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleInput)(nil)).Elem(), GetSchedulesScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleArrayInput)(nil)).Elem(), GetSchedulesScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionInput)(nil)).Elem(), GetSchedulesScheduleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionArrayInput)(nil)).Elem(), GetSchedulesScheduleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayInput)(nil)).Elem(), GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleLogDetailInput)(nil)).Elem(), GetSchedulesScheduleLogDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleLogDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleLogDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleTriggerInput)(nil)).Elem(), GetSchedulesScheduleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleTriggerArrayInput)(nil)).Elem(), GetSchedulesScheduleTriggerArray{})
 	pulumi.RegisterOutputType(JobJobConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(JobJobConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobJobEnvironmentConfigurationDetailsOutput{})
@@ -30107,6 +38898,48 @@ func init() {
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionOutput{})
+	pulumi.RegisterOutputType(ScheduleActionPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterOutput{})
+	pulumi.RegisterOutputType(ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArrayOutput{})
+	pulumi.RegisterOutputType(ScheduleLogDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduleLogDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleTriggerOutput{})
+	pulumi.RegisterOutputType(ScheduleTriggerPtrOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerArrayOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerTagConfigurationListOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerTagConfigurationListArrayOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerWorkloadConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerWorkloadConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationOutput{})
+	pulumi.RegisterOutputType(GetContainersContainerWorkloadConfigurationDetailsListUseCaseConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetContainersFilterOutput{})
+	pulumi.RegisterOutputType(GetContainersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFastLaunchJobConfigOutput{})
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFastLaunchJobConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFilterOutput{})
@@ -30399,4 +39232,72 @@ func init() {
 	pulumi.RegisterOutputType(GetProjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput{})
+	pulumi.RegisterOutputType(GetScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleLogDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduleLogDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleTriggerOutput{})
+	pulumi.RegisterOutputType(GetScheduleTriggerArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesFilterOutput{})
+	pulumi.RegisterOutputType(GetSchedulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobEnvironmentConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreateJobRunDetailJobLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailCreatePipelineRunDetailStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleActionActionDetailTriggerMlApplicationInstanceViewFlowDetailParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleLogDetailOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleLogDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleTriggerOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleTriggerArrayOutput{})
 }

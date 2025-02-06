@@ -184,6 +184,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// If true, the infrastructure is using granular maintenance scheduling preference.
+        /// </summary>
+        [Output("isSchedulingPolicyAssociated")]
+        public Output<bool> IsSchedulingPolicyAssociated { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         [Output("lastMaintenanceRunId")]
@@ -568,6 +574,12 @@ namespace Pulumi.Oci.Database
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// If true, the infrastructure is using granular maintenance scheduling preference.
+        /// </summary>
+        [Input("isSchedulingPolicyAssociated")]
+        public Input<bool>? IsSchedulingPolicyAssociated { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

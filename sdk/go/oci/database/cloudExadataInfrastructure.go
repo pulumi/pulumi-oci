@@ -120,6 +120,8 @@ type CloudExadataInfrastructure struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated pulumi.BoolOutput `pulumi:"isSchedulingPolicyAssociated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
@@ -237,6 +239,8 @@ type cloudExadataInfrastructureState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated *bool `pulumi:"isSchedulingPolicyAssociated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
@@ -313,6 +317,8 @@ type CloudExadataInfrastructureState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
@@ -590,6 +596,11 @@ func (o CloudExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o CloudExadataInfrastructureOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// If true, the infrastructure is using granular maintenance scheduling preference.
+func (o CloudExadataInfrastructureOutput) IsSchedulingPolicyAssociated() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.BoolOutput { return v.IsSchedulingPolicyAssociated }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

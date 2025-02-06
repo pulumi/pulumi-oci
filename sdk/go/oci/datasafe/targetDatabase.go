@@ -122,7 +122,7 @@ type TargetDatabase struct {
 	Credentials TargetDatabaseCredentialsOutput `pulumi:"credentials"`
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsOutput `pulumi:"databaseDetails"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -194,7 +194,7 @@ type targetDatabaseState struct {
 	Credentials *TargetDatabaseCredentials `pulumi:"credentials"`
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails *TargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
 	Description *string `pulumi:"description"`
@@ -231,7 +231,7 @@ type TargetDatabaseState struct {
 	Credentials TargetDatabaseCredentialsPtrInput
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringPtrInput
@@ -270,7 +270,7 @@ type targetDatabaseArgs struct {
 	Credentials *TargetDatabaseCredentials `pulumi:"credentials"`
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
 	Description *string `pulumi:"description"`
@@ -294,7 +294,7 @@ type TargetDatabaseArgs struct {
 	Credentials TargetDatabaseCredentialsPtrInput
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringPtrInput
@@ -420,7 +420,7 @@ func (o TargetDatabaseOutput) DatabaseDetails() TargetDatabaseDatabaseDetailsOut
 	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseDatabaseDetailsOutput { return v.DatabaseDetails }).(TargetDatabaseDatabaseDetailsOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o TargetDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *TargetDatabase) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }

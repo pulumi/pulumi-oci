@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetMysqlDbSystemBackupPolicyPitrPolicy {
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     private Boolean isEnabled;
 
     private GetMysqlDbSystemBackupPolicyPitrPolicy() {}
     /**
-     * @return Whether the Channel has been enabled by the user.
+     * @return Specifies if the DB System read endpoint is enabled or not.
      * 
      */
     public Boolean isEnabled() {

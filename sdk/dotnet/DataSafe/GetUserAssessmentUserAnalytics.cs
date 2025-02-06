@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
         /// the critical category. This data is especially useful content for dashboards or to support analytics.
         /// 
         /// When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
@@ -51,6 +51,8 @@ namespace Pulumi.Oci.DataSafe
         ///         TargetId = testTarget.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
         ///         TimeLastLoginLessThan = userAssessmentUserAnalyticTimeLastLoginLessThan,
+        ///         TimePasswordExpiryGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo,
+        ///         TimePasswordExpiryLessThan = userAssessmentUserAnalyticTimePasswordExpiryLessThan,
         ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
         ///         TimePasswordLastChangedLessThan = userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
         ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
@@ -74,7 +76,7 @@ namespace Pulumi.Oci.DataSafe
         /// the critical category. This data is especially useful content for dashboards or to support analytics.
         /// 
         /// When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
@@ -106,6 +108,8 @@ namespace Pulumi.Oci.DataSafe
         ///         TargetId = testTarget.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
         ///         TimeLastLoginLessThan = userAssessmentUserAnalyticTimeLastLoginLessThan,
+        ///         TimePasswordExpiryGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo,
+        ///         TimePasswordExpiryLessThan = userAssessmentUserAnalyticTimePasswordExpiryLessThan,
         ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
         ///         TimePasswordLastChangedLessThan = userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
         ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
@@ -129,7 +133,7 @@ namespace Pulumi.Oci.DataSafe
         /// the critical category. This data is especially useful content for dashboards or to support analytics.
         /// 
         /// When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        /// parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has READ
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
@@ -161,6 +165,8 @@ namespace Pulumi.Oci.DataSafe
         ///         TargetId = testTarget.Id,
         ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
         ///         TimeLastLoginLessThan = userAssessmentUserAnalyticTimeLastLoginLessThan,
+        ///         TimePasswordExpiryGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordExpiryGreaterThanOrEqualTo,
+        ///         TimePasswordExpiryLessThan = userAssessmentUserAnalyticTimePasswordExpiryLessThan,
         ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
         ///         TimePasswordLastChangedLessThan = userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
         ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
@@ -231,6 +237,18 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("timeLastLoginLessThan")]
         public string? TimeLastLoginLessThan { get; set; }
+
+        /// <summary>
+        /// A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryGreaterThanOrEqualTo")]
+        public string? TimePasswordExpiryGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryLessThan")]
+        public string? TimePasswordExpiryLessThan { get; set; }
 
         /// <summary>
         /// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -345,6 +363,18 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TimeLastLoginLessThan { get; set; }
 
         /// <summary>
+        /// A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryGreaterThanOrEqualTo")]
+        public Input<string>? TimePasswordExpiryGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timePasswordExpiryLessThan")]
+        public Input<string>? TimePasswordExpiryLessThan { get; set; }
+
+        /// <summary>
         /// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// 
         /// **Example:** 2016-12-19T16:39:57.600Z
@@ -418,6 +448,8 @@ namespace Pulumi.Oci.DataSafe
         public readonly string? TargetId;
         public readonly string? TimeLastLoginGreaterThanOrEqualTo;
         public readonly string? TimeLastLoginLessThan;
+        public readonly string? TimePasswordExpiryGreaterThanOrEqualTo;
+        public readonly string? TimePasswordExpiryLessThan;
         public readonly string? TimePasswordLastChangedGreaterThanOrEqualTo;
         public readonly string? TimePasswordLastChangedLessThan;
         public readonly string? TimeUserCreatedGreaterThanOrEqualTo;
@@ -451,6 +483,10 @@ namespace Pulumi.Oci.DataSafe
 
             string? timeLastLoginLessThan,
 
+            string? timePasswordExpiryGreaterThanOrEqualTo,
+
+            string? timePasswordExpiryLessThan,
+
             string? timePasswordLastChangedGreaterThanOrEqualTo,
 
             string? timePasswordLastChangedLessThan,
@@ -478,6 +514,8 @@ namespace Pulumi.Oci.DataSafe
             TargetId = targetId;
             TimeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
             TimeLastLoginLessThan = timeLastLoginLessThan;
+            TimePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            TimePasswordExpiryLessThan = timePasswordExpiryLessThan;
             TimePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
             TimePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
             TimeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;

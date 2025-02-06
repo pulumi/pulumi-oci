@@ -145,6 +145,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly isMultiRackDeployment: boolean;
     /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     */
+    readonly isSchedulingPolicyAssociated: boolean;
+    /**
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;

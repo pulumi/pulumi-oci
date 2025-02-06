@@ -59,25 +59,25 @@ namespace Pulumi.Oci.DataSafe
     public partial class SqlFirewallPolicyManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+        /// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         /// </summary>
         [Output("allowedClientIps")]
         public Output<ImmutableArray<string>> AllowedClientIps { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+        /// (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         /// </summary>
         [Output("allowedClientOsUsernames")]
         public Output<ImmutableArray<string>> AllowedClientOsUsernames { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of allowed client programs for the SQL firewall policy.
+        /// (Updatable) List of allowed client programs for the SQL Firewall policy.
         /// </summary>
         [Output("allowedClientPrograms")]
         public Output<ImmutableArray<string>> AllowedClientPrograms { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+        /// (Updatable) The OCID of the compartment containing the SQL collection.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -89,25 +89,25 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> DbUserName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The description of the SQL firewall policy.
+        /// (Updatable) The description of the SQL Firewall policy.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        /// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall policy enforcement option.
+        /// (Updatable) Specifies the SQL Firewall policy enforcement option.
         /// </summary>
         [Output("enforcementScope")]
         public Output<string> EnforcementScope { get; private set; } = null!;
@@ -244,7 +244,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientIps;
 
         /// <summary>
-        /// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+        /// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientIps
         {
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientOsUsernames;
 
         /// <summary>
-        /// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+        /// (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientOsUsernames
         {
@@ -268,7 +268,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientPrograms;
 
         /// <summary>
-        /// (Updatable) List of allowed client programs for the SQL firewall policy.
+        /// (Updatable) List of allowed client programs for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientPrograms
         {
@@ -277,7 +277,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+        /// (Updatable) The OCID of the compartment containing the SQL collection.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -292,7 +292,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -301,19 +301,19 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the SQL firewall policy.
+        /// (Updatable) The description of the SQL Firewall policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        /// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall policy enforcement option.
+        /// (Updatable) Specifies the SQL Firewall policy enforcement option.
         /// </summary>
         [Input("enforcementScope")]
         public Input<string>? EnforcementScope { get; set; }
@@ -382,7 +382,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientIps;
 
         /// <summary>
-        /// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+        /// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientIps
         {
@@ -394,7 +394,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientOsUsernames;
 
         /// <summary>
-        /// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+        /// (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientOsUsernames
         {
@@ -406,7 +406,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientPrograms;
 
         /// <summary>
-        /// (Updatable) List of allowed client programs for the SQL firewall policy.
+        /// (Updatable) List of allowed client programs for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientPrograms
         {
@@ -415,7 +415,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+        /// (Updatable) The OCID of the compartment containing the SQL collection.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -430,7 +430,7 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -439,19 +439,19 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the SQL firewall policy.
+        /// (Updatable) The description of the SQL Firewall policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        /// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall policy enforcement option.
+        /// (Updatable) Specifies the SQL Firewall policy enforcement option.
         /// </summary>
         [Input("enforcementScope")]
         public Input<string>? EnforcementScope { get; set; }
